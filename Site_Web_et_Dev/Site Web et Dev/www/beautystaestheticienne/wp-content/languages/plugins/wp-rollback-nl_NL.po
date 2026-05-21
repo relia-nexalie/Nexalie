@@ -1,0 +1,135 @@
+# Translation of Plugins - WP Rollback - Stable (latest release) in Dutch
+# This file is distributed under the same license as the Plugins - WP Rollback - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-03-24 20:20:18+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: nl\n"
+"Project-Id-Version: Plugins - WP Rollback - Stable (latest release)\n"
+
+#. Author URI of the plugin
+msgid "https://givewp.com/"
+msgstr "https://givewp.com/"
+
+#. Author of the plugin
+msgid "GiveWP.com"
+msgstr "GiveWP.com"
+
+#: wp-rollback.php:497
+msgid "It appears there are no version to select. This is likely due to the %s author not using tags for their versions and only committing new releases to the repository trunk."
+msgstr "Het schijnt dat er geen versie is om te selecteren. Dit komt waarschijnlijk doordat de %s auteur geen tags gebruikt voor hun versies, en alleen nieuwe versies commit naar de repository trunk."
+
+#. Plugin URI of the plugin
+msgid "https://impress.org/"
+msgstr "https://impress.org/"
+
+#: wp-rollback.php:524
+msgid "View Changelog"
+msgstr "Bekijk wijzigingslog"
+
+#: wp-rollback.php:299
+msgid "Sorry, we couldn't find a changelog entry found for this version. Try checking the <a href=\"%s\" target=\"_blank\">developer log</a> on WP.org."
+msgstr "Sorry, we konden geen wijzigingslog regel vinden voor deze versie. Controleer de <a href=\"%s\" target=\"_blank\">ontwikkelaar log</a> op WP.org."
+
+#: includes/rollback-menu.php:47
+msgid "Oh no! We're missing required rollback query strings. Please contact support so we can check this bug out and squash it!"
+msgstr "We missen de vereiste rollback query strings. Neem contact met support op zodat wij deze fout kunnen oplossen."
+
+#. Description of the plugin
+msgid "Rollback (or forward) any WordPress.org plugin or theme like a boss."
+msgstr "Rollback (of updaten) van een WordPress.org plugin of thema wordt zeer eenvoudig."
+
+#: wp-rollback.php:828
+msgid "(WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.)"
+msgstr "(WordPress kon geen beveiligde verbinding opzetten naar WordPress.org. Neem contact op met je systeembeheerder.)"
+
+#: wp-rollback.php:828
+msgid "An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href=\"https://wordpress.org/support/\">support forums</a>."
+msgstr "Er is een onverwachte fout opgetreden. Er is mogelijk iets mis met WordPress.org of de configuratie van deze server. Als je problemen blijft ondervinden, probeer dan de <a href=\"https://wordpress.org/support/\"> ondersteuningsforums te raadplegen</a>."
+
+#: wp-rollback.php:517
+msgid "Installed Version"
+msgstr "Geïnstalleerde versie"
+
+#: wp-rollback.php:346
+msgid "You do not have sufficient permissions to perform rollbacks for this site."
+msgstr "Je hebt hebt niet voldoende rechten om oude plugins of thema's terug te plaatsen voor deze site."
+
+#: wp-rollback.php:300
+msgid "Please select a version number to perform a rollback."
+msgstr "Selecteer een versienummer om een plugin of thema terug te plaatsen."
+
+#: wp-rollback.php:268
+msgid "Loading..."
+msgstr "Laden..."
+
+#: wp-rollback.php:267
+msgid "No Rollback Available: This is a non-WordPress.org theme."
+msgstr "Geen rollback beschikbaar. Dit is helaas geen WordPress.org thema."
+
+#: wp-rollback.php:148 wp-rollback.php:160
+msgid "Cheatin&#8217; huh?"
+msgstr "Valsspelen, hé?"
+
+#: includes/rollback-menu.php:130
+msgid "<strong>Notice:</strong> We strongly recommend you <strong>create a complete backup</strong> of your WordPress files and database prior to performing a rollback. We are not responsible for any misuse, deletions, white screens, fatal errors, or any other issue resulting from the use of this plugin."
+msgstr "<strong>Bericht:</strong> We raden je sterk aan <strong>om een complete back-up te maken</strong> van je WordPress bestanden en database voordat je een rollback uitvoert. We zijn niet verantwoordelijk voor elk misbruik, verwijderingen, witte schermen, fatale fouten, of elk ander probleem als gevolg van het gebruik van deze plugin."
+
+#: includes/rollback-menu.php:120
+msgid "New Version:"
+msgstr "Nieuwe versie:"
+
+#: includes/rollback-menu.php:114
+msgid "Installed Version:"
+msgstr "Geïnstalleerde versie:"
+
+#: includes/rollback-menu.php:105
+msgid "Theme Name:"
+msgstr "Themanaam:"
+
+#: includes/rollback-menu.php:103
+msgid "Plugin Name:"
+msgstr "Pluginnaam:"
+
+#: includes/rollback-menu.php:92
+msgid "Are you sure you want to perform the following rollback?"
+msgstr "Weet je zeker dat je deze versie wilt terugplaatsen?"
+
+#: includes/rollback-menu.php:73 includes/rollback-menu.php:135
+msgid "Cancel"
+msgstr "Annuleer"
+
+#: includes/rollback-menu.php:72 includes/rollback-menu.php:134
+#: wp-rollback.php:266 wp-rollback.php:582 wp-rollback.php:657
+#: wp-rollback.php:712
+msgid "Rollback"
+msgstr "Terugplaatsen"
+
+#: includes/rollback-menu.php:26
+msgid "plugin"
+msgstr "plugin"
+
+#: includes/rollback-menu.php:26
+msgid "theme"
+msgstr "thema"
+
+#: includes/rollback-menu.php:26
+msgid "Please select which %1$s version you would like to rollback to from the releases listed below. You currently have version %2$s installed of %3$s."
+msgstr "Selecteer de %1$s versie die je terug zou willen plaatsen van onderstaande release(s). Op dit moment is versie %2$s geïnstalleerd van %3$s."
+
+#. Plugin Name of the plugin
+#: includes/rollback-menu.php:23
+msgid "WP Rollback"
+msgstr "WP Rollback"
+
+#: includes/rollback-menu.php:10
+msgid "WP Rollback is missing necessary parameters to continue. Please contact support."
+msgstr "WP Rollback mist de benodigde parameters om door te gaan. Neem contact op met support."
+
+#: includes/rollback-action.php:50
+msgid "This rollback request is missing a proper query string. Please contact support."
+msgstr "Voor het terugplaatsen ontbreekt een goede querystring. Neem contact op met support."

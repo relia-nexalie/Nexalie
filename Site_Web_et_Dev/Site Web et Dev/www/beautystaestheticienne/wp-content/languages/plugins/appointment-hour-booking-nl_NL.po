@@ -1,0 +1,1245 @@
+# Translation of Plugins - Appointment Hour Booking &#8211; WordPress Booking Plugin - Development (trunk) in Dutch
+# This file is distributed under the same license as the Plugins - Appointment Hour Booking &#8211; WordPress Booking Plugin - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-04-19 06:44:09+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/3.0.0\n"
+"Language: nl\n"
+"Project-Id-Version: Plugins - Appointment Hour Booking &#8211; WordPress Booking Plugin - Development (trunk)\n"
+
+#: cp-admin-int.inc.php:326
+msgid "\"Selected time is no longer available...\" text"
+msgstr "\"De geselecteerde tijd is niet meer beschikbaar...\" tekst"
+
+#: cp-settings.inc.php:385
+msgid "Other parameters"
+msgstr "Andere parameters"
+
+#: cp-settings.inc.php:360
+msgid "ADVANCED SETTINGS"
+msgstr "GEAVANCEERDE INSTELLINGEN"
+
+#: cp-settings.inc.php:310
+msgid "CONTENTS FOR CALENDAR DISPLAYED ADMIN AREA"
+msgstr "INHOUD VOOR KALENDER WEERGEGEVEN BEHEERGEBIED"
+
+#: cp-settings.inc.php:325 cp-settings.inc.php:350
+msgid "Event Content"
+msgstr "Evenement inhoud"
+
+#: cp-settings.inc.php:315 cp-settings.inc.php:340
+msgid "Event title"
+msgstr "Evenement titel"
+
+#: cp-settings.inc.php:130 cp-settings.inc.php:300
+msgid "Schedule Calendar Contents"
+msgstr "Planning kalender inhouden"
+
+#: cp-settings.inc.php:365
+msgid "Include admin blocked times?"
+msgstr "Voeg de beheer geblokkeerde tijden toe?"
+
+#: cp-settings.inc.php:335
+msgid "CONTENTS FOR CALENDAR DISPLAYED PUBLIC WEBSITE"
+msgstr "INHOUD VAN DE GETOONDE KALENDER OP PUBLIEKE SITE"
+
+#: cp-settings.inc.php:376
+msgid "Exclude calendar from schedule contents"
+msgstr "Sluit kalender uit van planning inhouden"
+
+#: cp-settings.inc.php:279
+msgid "Enter field names comma separated, example: <b>final_price,referrer,fieldname1,fieldname2<b>"
+msgstr "Geef hier de veldnamen gescheiden door een komma, bijvoorbeeld: <b>definitieve_prijs,omschrijving,veldnaam1,veldnaam2<b>"
+
+#: cp-settings.inc.php:288
+msgid "Enter field names comma separated, example: <b>paid,cancelled<b>"
+msgstr "Geef hier de veldnamen gescheiden door een komma, bijvoorbeeld: <b>betaald,geannuleerd<b>"
+
+#: cp-settings.inc.php:293
+msgid "Update Changes"
+msgstr "Update wijzigingen"
+
+#: cp-settings.inc.php:191
+msgid "Update Report Settings"
+msgstr "Update rapportinstellingen"
+
+#: addons/dashboard-box.addon.php:103
+msgid "Time"
+msgstr "Tijd"
+
+#: addons/dashboard-box.addon.php:84
+msgid "Appointment Hour Booking: Upcoming appointments"
+msgstr "Appointment Hour Booking: Toekomstige afspraken"
+
+#: cp-main-class.inc.php:791
+msgid "Online Demo"
+msgstr "Online demo"
+
+#: cp-main-class.inc.php:793
+msgid "Upgrade Plugin"
+msgstr "Plugin upgraden"
+
+#: cp-main-class.inc.php:792
+msgid "I Need Help"
+msgstr "Ik heb hulp nodig"
+
+#: cp-admin-int-schedule.inc.php:121
+msgid "Qty"
+msgstr "Aant"
+
+#: cp-admin-int.inc.php:322
+msgid "\"Cost\" label"
+msgstr "\"Kosten\" label"
+
+#: cp-admin-int.inc.php:312
+msgid "\"Quantity\" field label"
+msgstr "\"Aantal\" veld label"
+
+#: cp-admin-int.inc.php:307
+msgid "Other Texts"
+msgstr "Overige teksten"
+
+#: cp-admin-int.inc.php:316
+msgid "\"Cancel\" link label"
+msgstr "\"Annuleren\" link label"
+
+#: cp-settings.inc.php:477
+msgid "Hide the service drop-down:"
+msgstr "Verberg de dienst dropdown:"
+
+#: cp-addons.inc.php:191
+msgid "The following Add Ons are included in the commercial versions of the plugin:"
+msgstr "De volgende uitbreidingen zijn inbegrepen in de commerciële versie van de plugin:"
+
+#: addons/dashboard-box.addon.php:55
+msgid "Save settings"
+msgstr "Instellingen opslaan"
+
+#: addons/dashboard-box.addon.php:35
+msgid "Maximum items listed"
+msgstr "Maximaal aantal items"
+
+#: cp-admin-int.inc.php:201
+msgid "Save Changes and Continue Editing"
+msgstr "Sla wijzigingen op en ga verder met bewerken"
+
+#: cp-settings.inc.php:252
+msgid "semicolon: \";\""
+msgstr "puntkomma: \";\""
+
+#: cp-settings.inc.php:251
+msgid "comma: \",\""
+msgstr "komma: \",\""
+
+#: cp-settings.inc.php:247
+msgid "Field separator for CSV files?"
+msgstr "Scheidingsteken voor CSV bestanden?"
+
+#: cp-settings.inc.php:254
+msgid "Change it if you get the CSV columns mixed"
+msgstr "Aanpassen als de CSV kolommen door elkaar worden gezet"
+
+#: cp-settings.inc.php:242
+msgid "Set to \"No\" if special characters appear with question marks \"?\" in the CSV file."
+msgstr "Zet op \"Nee\" als speciale karakters als \"?\" getoond worden in het CSV bestand."
+
+#: cp-settings.inc.php:235
+msgid "Auto-fix character for CSV files?"
+msgstr "Speciale karakters automatisch aanpassen in CSV bestanden?"
+
+#: cp-main-class.inc.php:410
+msgid "No appointments found with the selected filters"
+msgstr "Geen afspraken gevonden met de geselecteerde filters"
+
+#: cp-admin-int-block-times.inc.php:37 cp-admin-int-list.inc.php:210
+msgid "Block Times"
+msgstr "Blokkeer deze tijden"
+
+#: cp-public-int.inc.php:32
+msgid "Block selected dates"
+msgstr "Blokkeer de geselecteerde data"
+
+#: cp-main-class.inc.php:1445
+msgid "BLOCKED BY ADMIN"
+msgstr "GEBLOKKEERD DOOR BEHEER"
+
+#: cp-admin-int-block-times.inc.php:47
+msgid "If you want to block complete dates please use instead the <a href=\"https://apphourbooking.dwbooster.com/customdownloads/invalid-dates.png\" target=\"_blank\">invalid dates feature</a>."
+msgstr "Als je volledige datums wil blokkeren, gebruikt je in plaats daarvan de functie <a href=\"https://apphourbooking.dwbooster.com/customdownloads/invalid-dates.png\" target=\"_blank\"> functie voor ongeldige datums </a>."
+
+#: cp-admin-int-block-times.inc.php:44
+msgid "This page is for <strong>blocking some of the available times</strong>. For services with multiple capacity be sure to select the \"quantity\" to be blocked."
+msgstr "Deze pagina is voor <strong> het blokkeren van enkele van de beschikbare tijden </strong>. Selecteer voor diensten met meerdere capaciteit de \"hoeveelheid\" die moet worden geblokkeerd."
+
+#: cp-main-class.inc.php:569
+msgid "No more slots available."
+msgstr "Er zijn geen periodes beschikbaar."
+
+#: addons/dashboard-box.addon.php:121
+msgid "Next"
+msgstr "Volgende"
+
+#: addons/dashboard-box.addon.php:236
+msgid "delete"
+msgstr "verwijderen"
+
+#: addons/dashboard-box.addon.php:168
+msgid "No upcoming appointments found"
+msgstr "Geen aanstaande afspraken gevonden"
+
+#: addons/dashboard-box.addon.php:121
+msgid "upcoming appointments:"
+msgstr "aanstaande afspraken:"
+
+#: addons/dashboard-box.addon.php:75
+msgid "The add-on adds a widget to display a list of upcoming appointments in the dashboard welcome page."
+msgstr "De add-on voegt een widget toe om een lijst met komende afspraken weer te geven op de welkomstpagina van het dashboard."
+
+#: cp-main-class.inc.php:549
+msgid "Please enter at least {0} characters."
+msgstr "Vul ten minste {0} karakters in."
+
+#: cp-main-class.inc.php:548
+msgid "Please enter no more than {0} characters."
+msgstr "Voer niet meer dan {0} tekens in."
+
+#: cp-admin-int.inc.php:474
+msgid "Include appointment end-time in the confirmation emails?"
+msgstr "Eindtijd afspraak in de bevestigingsmail opnemen?"
+
+#: cp-settings.inc.php:129
+msgid "CSV Settings"
+msgstr "CSV instellingen"
+
+#: cp-settings.inc.php:284
+msgid "Exclude fields from \"Schedule List View\" CSV export"
+msgstr "Velden uitsluiten van CSV-export \"Schema lijstweergave\""
+
+#: cp-settings.inc.php:266
+msgid "CSV Settings Area"
+msgstr "CSV-instellingengebied"
+
+#: cp-settings.inc.php:275
+msgid "Exclude fields from \"Booking Orders\" CSV export"
+msgstr "Velden uitsluiten van CSV export \"Boekingsopdrachten\""
+
+#: cp-settings.inc.php:532
+msgid "For other styles check the design section in the FAQ:"
+msgstr "Kijk voor andere stijlen in het ontwerpsectie in de FAQ:"
+
+#: addons/icalexport.addon.php:90
+msgid "iCal timezone difference"
+msgstr "iCal tijdzoneverschil"
+
+#: cp-admin-int.inc.php:521
+msgid "Allow selected users access also to the calendar settings?"
+msgstr "Geselecteerde gebruikers ook toegang geven tot de kalenderinstellingen?"
+
+#. Author of the plugin
+#: controllers/elementor/cp-elementor-widget.inc.php:49
+msgid "CodePeople"
+msgstr "CodePeople"
+
+#. Plugin Name of the plugin
+msgid "Appointment Hour Booking"
+msgstr "Appointment Hour Booking"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://apphourbooking.dwbooster.com"
+msgstr "https://apphourbooking.dwbooster.com"
+
+#: cp-admin-int.inc.php:761 cp-settings.inc.php:153
+msgid "Send report every"
+msgstr "Verstuur rapport elke"
+
+#: addons/dashboard-box.addon.php:228 cp-admin-int.inc.php:478
+#: cp-admin-int.inc.php:525 cp-admin-int.inc.php:606 cp-admin-int.inc.php:636
+#: cp-admin-int.inc.php:684 cp-admin-int.inc.php:756 cp-main-class.inc.php:450
+#: cp-main-class.inc.php:2369 cp-settings.inc.php:150 cp-settings.inc.php:239
+#: cp-settings.inc.php:416 cp-settings.inc.php:429
+msgid "Yes"
+msgstr "Ja"
+
+#: cp-admin-int.inc.php:479 cp-admin-int.inc.php:526 cp-admin-int.inc.php:607
+#: cp-admin-int.inc.php:637 cp-admin-int.inc.php:685 cp-admin-int.inc.php:755
+#: cp-settings.inc.php:149 cp-settings.inc.php:240 cp-settings.inc.php:415
+#: cp-settings.inc.php:428
+msgid "No"
+msgstr "Nee"
+
+#: cp-admin-int.inc.php:751 cp-settings.inc.php:146
+msgid "Enable Reports?"
+msgstr "Rapporten inschakelen?"
+
+#: cp-settings.inc.php:153
+msgid "days"
+msgstr "dagen"
+
+#: cp-settings.inc.php:201
+msgid "Important!"
+msgstr "Belangrijk!"
+
+#: cp-settings.inc.php:214
+msgid "Classic (Recommended)"
+msgstr "Klassiek (aangeraden)"
+
+#: cp-settings.inc.php:215
+msgid "Direct"
+msgstr "Direct"
+
+#: cp-admin-int-message-list.inc.php:148 cp-admin-int-report.inc.php:145
+#: cp-admin-int-schedule.inc.php:81
+msgid "From"
+msgstr "Van"
+
+#: cp-admin-int-message-list.inc.php:149 cp-admin-int-report.inc.php:146
+#: cp-admin-int-schedule.inc.php:82
+msgid "To"
+msgstr "Aan"
+
+#: cp-admin-int-message-list.inc.php:150 cp-admin-int-report.inc.php:147
+#: cp-admin-int-schedule.inc.php:88
+msgid "Item"
+msgstr "Item"
+
+#: cp-admin-int-message-list.inc.php:151 cp-admin-int-report.inc.php:148
+#: cp-admin-int-schedule.inc.php:89
+msgid "All Items"
+msgstr "Alle items"
+
+#: cp-admin-int-message-list.inc.php:167 cp-admin-int-report.inc.php:156
+#: cp-admin-int-schedule.inc.php:105
+msgid "Export to CSV"
+msgstr "Exporteer naar CSV"
+
+#: cp-admin-int-message-list.inc.php:166 cp-admin-int-report.inc.php:157
+#: cp-admin-int-schedule.inc.php:104
+msgid "Filter"
+msgstr "Filter"
+
+#: cp-admin-int-list.inc.php:202 cp-admin-int.inc.php:63
+msgid "Edit"
+msgstr "Bewerk"
+
+#: cp-admin-int-schedule.inc.php:125
+msgid "Status"
+msgstr "Status"
+
+#: addons/dashboard-box.addon.php:103 cp-admin-int-schedule.inc.php:124
+msgid "Data"
+msgstr "Data"
+
+#: addons/dashboard-box.addon.php:103 cp-admin-int-schedule.inc.php:120
+msgid "Service"
+msgstr "Service"
+
+#: addons/dashboard-box.addon.php:109 cp-admin-int-schedule.inc.php:118
+msgid "Date"
+msgstr "Datum"
+
+#: cp-admin-int-schedule.inc.php:84
+msgid "All"
+msgstr "Alle"
+
+#: cp-admin-int-schedule.inc.php:85
+msgid "Paid only"
+msgstr "Alleen betaalde"
+
+#: cp-admin-int-list.inc.php:214
+msgid "Delete"
+msgstr "Verwijder"
+
+#: cp-admin-int-list.inc.php:213
+msgid "Clone"
+msgstr "Dupliceer"
+
+#: cp-admin-int-list.inc.php:211
+msgid "Stats"
+msgstr "Statistieken"
+
+#: cp-publish-wizzard.inc.php:78
+msgid "Select calendar"
+msgstr "Selecteer kalender"
+
+#: cp-admin-int-list.inc.php:205
+msgid "Publish"
+msgstr "Publiceer"
+
+#: cp-admin-int-list.inc.php:183
+msgid "Shortcode for Pages and Posts"
+msgstr "Shortcode voor pagina's en berichten"
+
+#: cp-admin-int-list.inc.php:183
+msgid "Form Name"
+msgstr "Formuliernaam"
+
+#: cp-admin-int-list.inc.php:169
+msgid "New Calendar"
+msgstr "Nieuwe kalender"
+
+#: cp-main-class.inc.php:778
+msgid "Settings"
+msgstr "Instellingen"
+
+#: addons/dashboard-box.addon.php:219 cp-main-class.inc.php:239
+#: cp-main-class.inc.php:441 cp-main-class.inc.php:2212
+#: cp-main-class.inc.php:2226 cp-main-class.inc.php:2361
+#: cp-main-class.inc.php:2598 cp-main-class.inc.php:2612
+msgid "Approved"
+msgstr "Goedgekeurd"
+
+#: cp-main-class.inc.php:238
+msgid "[All]"
+msgstr "[Alle]"
+
+#: controllers/elementor/elementorwidget_class.inc.php:96
+msgid "Select Form"
+msgstr "Selecteer formulier"
+
+#: cp-admin-int-message-list.inc.php:243 cp-admin-int-schedule.inc.php:122
+msgid "Paid"
+msgstr "Betaald"
+
+#: cp-admin-int-list.inc.php:183 cp-admin-int-message-list.inc.php:212
+#: cp-main-class.inc.php:787 cp-main-class.inc.php:788
+msgid "Options"
+msgstr "Opties"
+
+#: cp-admin-int-message-list.inc.php:211 cp-admin-int-schedule.inc.php:83
+msgid "Paid Status"
+msgstr "Betaalstatus"
+
+#: cp-admin-int-message-list.inc.php:209 cp-admin-int-schedule.inc.php:123
+msgid "Email"
+msgstr "E-mail"
+
+#: cp-admin-int-message-list.inc.php:188
+msgid "Next &raquo;"
+msgstr "Volgende &raquo;"
+
+#: cp-admin-int-message-list.inc.php:187
+msgid "&laquo; Previous"
+msgstr "&laquo; Vorige"
+
+#: cp-admin-int-list.inc.php:252 cp-admin-int.inc.php:845
+#: cp-main-class.inc.php:780
+msgid "Help"
+msgstr "Help"
+
+#: cp-admin-int-list.inc.php:252 cp-admin-int.inc.php:845
+msgid "Free Support"
+msgstr "Gratis ondersteuning"
+
+#: cp-admin-int.inc.php:598 cp-admin-int.inc.php:646 cp-admin-int.inc.php:781
+#: cp-settings.inc.php:173
+msgid "Email subject"
+msgstr "E-mail onderwerp"
+
+#: cp-admin-int.inc.php:612 cp-admin-int.inc.php:650 cp-admin-int.inc.php:785
+#: cp-settings.inc.php:177
+msgid "Email format?"
+msgstr "E-mail formaat?"
+
+#: cp-admin-int.inc.php:616 cp-admin-int.inc.php:654 cp-admin-int.inc.php:789
+#: cp-settings.inc.php:181
+msgid "Plain Text (default)"
+msgstr "Platte tekst (standaard)"
+
+#: cp-admin-int.inc.php:617 cp-admin-int.inc.php:655 cp-admin-int.inc.php:790
+#: cp-settings.inc.php:182
+msgid "HTML (use html in the textarea below)"
+msgstr "HTML (gebruik html in het tekstgebied hieronder)"
+
+#: cp-public-int.inc.php:23
+msgid "Security Code"
+msgstr "Beveiligingscode"
+
+#: cp-public-int.inc.php:25
+msgid "Please enter the security code"
+msgstr "Vul beveiligingscode in"
+
+#: cp-settings.inc.php:227
+msgid "try this first"
+msgstr "probeer dit eerst"
+
+#: cp-admin-int.inc.php:335 cp-admin-int.inc.php:535 cp-admin-int.inc.php:668
+#: cp-admin-int.inc.php:740 cp-admin-int.inc.php:803 cp-admin-int.inc.php:829
+msgid "Save and Publish"
+msgstr "Bewaar en publiceer"
+
+#: cp-admin-int.inc.php:336 cp-admin-int.inc.php:536 cp-admin-int.inc.php:669
+#: cp-admin-int.inc.php:741 cp-admin-int.inc.php:804 cp-admin-int.inc.php:830
+msgid "Save and Return"
+msgstr "Bewaar en ga terug"
+
+#: cp-admin-int.inc.php:693
+msgid "Height"
+msgstr "Hoogte"
+
+#: cp-admin-int.inc.php:691
+msgid "Width"
+msgstr "Breedte"
+
+#: cp-admin-int.inc.php:705
+msgid "Preview"
+msgstr "Voorbeeld"
+
+#: cp-main-class.inc.php:1361
+msgid "Appointments"
+msgstr "Afspraken"
+
+#: cp-admin-int-message-list.inc.php:210 cp-admin-int.inc.php:622
+#: cp-admin-int.inc.php:660
+msgid "Message"
+msgstr "Bericht"
+
+#: cp-admin-int.inc.php:680
+msgid "Use Captcha Verification?"
+msgstr "Gebruik captcha verificatie?"
+
+#: cp-publish-wizzard.inc.php:169
+msgid "Publish Calendar"
+msgstr "Publiceer kalender"
+
+#: cp-publish-wizzard.inc.php:150
+msgid "Select post"
+msgstr "Selecteer bericht"
+
+#: cp-publish-wizzard.inc.php:214
+msgid "Note"
+msgstr "Notitie"
+
+#: cp-publish-wizzard.inc.php:58
+msgid "Now you can:"
+msgstr "Nu kan je:"
+
+#: cp-admin-int-schedule.inc.php:119
+msgid "Slot"
+msgstr "Periode"
+
+#: cp-publish-wizzard.inc.php:132 cp-publish-wizzard.inc.php:216
+msgid "Insert "
+msgstr "Invoegen"
+
+#: cp-publish-wizzard.inc.php:102
+msgid "Page/Post Title"
+msgstr "Pagina/Bericht titel"
+
+#: cp-publish-wizzard.inc.php:60
+msgid "View the Published Booking Form"
+msgstr "Bekijk het geplubiceerde boekings formulier"
+
+#: addons/icalexport.addon.php:124
+msgid "Observe daylight saving time?"
+msgstr "Zomertijd in acht nemen?"
+
+#: addons/icalexport.addon.php:132
+msgid "Daylight saving time zone"
+msgstr "Zomertijdzone"
+
+#: cp-publish-wizzard.inc.php:56
+msgid "Great! Form successfully published"
+msgstr "Super! Formulier succesvol gepubliceerd"
+
+#: cp-admin-int-list.inc.php:176
+msgid "Calendars List"
+msgstr "Kalenderlijst"
+
+#: addons/icalexport.addon.php:194
+msgid "The add-on adds support for exporting iCal files."
+msgstr "De add-on voegt ondersteuning toe voor het exporteren van iCal-bestanden."
+
+#: addons/icalexport.addon.php:160
+msgid "iCal entry description"
+msgstr "iCal beschrijving"
+
+#: addons/icalexport.addon.php:153
+msgid "iCal entry summary"
+msgstr "iCal invoeroverzicht"
+
+#: cp-publish-wizzard.inc.php:119
+msgid "Using Elementor?"
+msgstr "Gebruik je Elementor?"
+
+#: cp-publish-wizzard.inc.php:111
+msgid "Classic way? Just copy and paste the following shortcode into the page/post:"
+msgstr "Klassieke manier? Kopieer en plak de volgende shortcode in de pagina / het bericht:"
+
+#: cp-publish-wizzard.inc.php:96
+msgid "Into an existent post"
+msgstr "In een bestaand bericht"
+
+#: cp-publish-wizzard.inc.php:94
+msgid "Into a new post"
+msgstr "In een nieuw bericht"
+
+#: cp-publish-wizzard.inc.php:90
+msgid "Where to publish it?"
+msgstr "Waar publiceren?"
+
+#: cp-publish-wizzard.inc.php:95
+msgid "Into an existent page"
+msgstr "In een bestaande pagina"
+
+#: cp-publish-wizzard.inc.php:93
+msgid "Into a new page"
+msgstr "In een nieuwe pagina"
+
+#: cp-publish-wizzard.inc.php:64
+msgid "Edit the booking form settings and calendar availability"
+msgstr "Bewerk de instellingen van het boekingsformulier en de beschikbaarheid van de kalender"
+
+#: cp-publish-wizzard.inc.php:57
+msgid "The booking form was placed into the page"
+msgstr "Het boekingsformulier is op de pagina geplaatst"
+
+#: controllers/elementor/elementorwidget_class.inc.php:82
+#: cp-main-class.inc.php:816
+msgid "Insert Appointment Hour Booking"
+msgstr "Appointment Hour Booking invoegen"
+
+#: cp-admin-int-list.inc.php:183 cp-admin-int-message-list.inc.php:207
+msgid "ID"
+msgstr "ID"
+
+#: cp-admin-int-list.inc.php:252 cp-admin-int.inc.php:845
+msgid "Request Custom Modifications"
+msgstr "Aangepaste wijzigingen aanvragen"
+
+#: cp-admin-int.inc.php:822
+msgid "The add ons can be enabled to add new features"
+msgstr "De add-ons kunnen worden ingeschakeld om nieuwe functies toe te voegen"
+
+#: cp-admin-int.inc.php:777
+msgid "Send the report to the following email addresses (comma separated)"
+msgstr "Verzend het rapport naar de volgende e-mailadressen (gescheiden door komma's)"
+
+#: cp-admin-int.inc.php:765
+msgid "Send report after this hour (server time)"
+msgstr "Verzend rapport na deze tijd (servertijd)"
+
+#: cp-admin-int.inc.php:762
+msgid "days (Put a 0 to send the report immediately after each submission)"
+msgstr "dagen (plaats een 0 om het rapport direct na elke inzending te verzenden)"
+
+#: cp-admin-int.inc.php:739
+msgid "Next Step - Reports >"
+msgstr "Volgende stap - Rapporten >"
+
+#: cp-admin-int.inc.php:725
+msgid "Font"
+msgstr "Lettertype"
+
+#: cp-admin-int.inc.php:723
+msgid "Border"
+msgstr "Rand"
+
+#: cp-admin-int.inc.php:721
+msgid "Background"
+msgstr "Achtergrond"
+
+#: cp-admin-int.inc.php:695
+msgid "Chars"
+msgstr "Tekens"
+
+#: cp-admin-int.inc.php:676
+msgid "Captcha Verification"
+msgstr "Captcha verificatie"
+
+#: cp-admin-int.inc.php:667
+msgid "Next Step - Antispam >"
+msgstr "Volgende stap - Antispam >"
+
+#: cp-admin-int.inc.php:642
+msgid "Email field on the form"
+msgstr "E-mailveld op het formulier"
+
+#: cp-admin-int.inc.php:628
+msgid "Email Copy to the User / Customer"
+msgstr "E-mail kopie naar de gebruiker / klant"
+
+#: cp-admin-int.inc.php:602
+msgid "Include additional information?"
+msgstr "Inclusief aanvullende informatie?"
+
+#: cp-admin-int.inc.php:586
+msgid "Field that contains the destination email(s)"
+msgstr "Veld dat de bestemmings-e-mail (s) bevat"
+
+#: cp-settings.inc.php:138
+msgid "Automatic Email Reports"
+msgstr "Automatische e-mail rapporten"
+
+#: cp-settings.inc.php:133 cp-settings.inc.php:543
+msgid "Edit Scripts"
+msgstr "Scripts bewerken"
+
+#: cp-settings.inc.php:132 cp-settings.inc.php:443
+msgid "Edit Styles"
+msgstr "Stijlen bewerken"
+
+#: cp-settings.inc.php:127
+msgid "Email Report Settings"
+msgstr "Instellingen e-mail rapport"
+
+#: cp-settings.inc.php:121
+msgid "Appointment Hour Booking - General Settings"
+msgstr "Appointment Hour Booking - Algemene instellingen"
+
+#: cp-settings.inc.php:169
+msgid "Send to email(s)"
+msgstr "Verzenden naar e-mail (s)"
+
+#: cp-settings.inc.php:165
+msgid "Send email from"
+msgstr "Verzend e-mail van"
+
+#: cp-settings.inc.php:155
+msgid "Send after this hour (server time)"
+msgstr "Verzenden na deze tijd (servertijd)"
+
+#: cp-settings.inc.php:187
+msgid "Email Text (CSV file will be attached"
+msgstr "E-mail tekst (CSV-bestand wordt bijgevoegd)"
+
+#: cp-settings.inc.php:462
+msgid "Sample Styles"
+msgstr "Voorbeeldstijlen"
+
+#: cp-settings.inc.php:445
+msgid "For commonly used CSS styles please check the following FAQ section:"
+msgstr "Raadpleeg de veelgestelde vragen voor veelgebruikte CSS-stijlen:"
+
+#: cp-settings.inc.php:226
+msgid "Keep current charset (Recommended)"
+msgstr "Huidige tekenset behouden (aanbevolen)"
+
+#: cp-settings.inc.php:222
+msgid "Character encoding"
+msgstr "Tekencodering"
+
+#: cp-settings.inc.php:210
+msgid "Script load method"
+msgstr "Methode voor het laden van scripts"
+
+#: cp-addons.inc.php:151 cp-admin-int-add-booking.inc.php:36
+#: cp-admin-int-block-times.inc.php:40 cp-admin-int-message-list.inc.php:136
+#: cp-admin-int-message-list.inc.php:263 cp-admin-int-report.inc.php:132
+#: cp-admin-int-report.inc.php:251 cp-admin-int-schedule.inc.php:69
+#: cp-admin-int-schedule.inc.php:146 cp-admin-int.inc.php:74
+#: cp-admin-int.inc.php:838 cp-publish-wizzard.inc.php:41
+msgid "Return to the calendars list"
+msgstr "Keer terug naar de kalenderlijst"
+
+#: cp-settings.inc.php:529
+msgid "Other styles:"
+msgstr "Andere stijlen:"
+
+#: cp-settings.inc.php:520
+msgid "Change the calendar header color:"
+msgstr "Wijzig de kleur van de kalender header:"
+
+#: cp-settings.inc.php:507
+msgid "Change color of fonts into all fields"
+msgstr "Wijzig de kleur van lettertypen in alle velden"
+
+#: cp-settings.inc.php:498
+msgid "Change the color of all form field labels:"
+msgstr "Wijzig de kleur van alle formulierveld labels:"
+
+#: cp-admin-int.inc.php:82
+msgid "Editor"
+msgstr "Editor"
+
+#: cp-admin-int.inc.php:73
+msgid "Save Changes and Return"
+msgstr "Wijzigingen opslaan en teruggaan"
+
+#: cp-admin-int-report.inc.php:250
+msgid "Print Stats"
+msgstr "Statistieken afdrukken"
+
+#: cp-admin-int-report.inc.php:239
+msgid "to"
+msgstr "naar"
+
+#: cp-admin-int-report.inc.php:239
+msgid "Date range from"
+msgstr "Datumbereik vanaf"
+
+#: cp-admin-int-report.inc.php:215
+msgid "Report of values for"
+msgstr "Waarderapport voor"
+
+#: cp-admin-int-report.inc.php:202
+msgid "Select field for the report"
+msgstr "Selecteer veld voor het rapport"
+
+#: cp-admin-int-report.inc.php:185
+msgid "Hours from 0 to 23"
+msgstr "Uren van 0 tot 23"
+
+#: cp-admin-int-report.inc.php:172
+msgid "Days from"
+msgstr "Dagen vanaf"
+
+#: cp-admin-int.inc.php:231
+msgid "Page {0} of {0} (text"
+msgstr "Pagina {0} van {0} (tekst"
+
+#: cp-admin-int.inc.php:227
+msgid "Submit button label (text)"
+msgstr "Knop versturen label (tekst)"
+
+#: cp-admin-int.inc.php:222
+msgid "Button Labels"
+msgstr "Knop labels"
+
+#: cp-admin-int.inc.php:219
+msgid "Labels and Texts"
+msgstr "Labels en tekst"
+
+#: cp-admin-int.inc.php:207
+msgid "The full set of fields also supports:"
+msgstr "De volledige set velden ondersteunt ook:"
+
+#: cp-admin-int.inc.php:206
+msgid "Activate the FULL form builder"
+msgstr "Activeer de volledige formulierbouwer"
+
+#: cp-admin-int.inc.php:205
+msgid "<STRONG>In this version</STRONG> the form builder supports <STRONG>calendar, text, email and acceptance checkbox fields</STRONG>."
+msgstr "<STRONG> In deze versie </STRONG> ondersteunt de formulierbouwer de velden <STRONG> kalender, tekst, e-mail en acceptatie </STRONG>."
+
+#: cp-admin-int.inc.php:184
+msgid "Form Settings"
+msgstr "Formulier instellingen"
+
+#: cp-admin-int.inc.php:183
+msgid "Field Settings"
+msgstr "Veld instellingen"
+
+#: cp-admin-int.inc.php:182
+msgid "Add a Field"
+msgstr "Voeg een veld toe"
+
+#: cp-admin-int.inc.php:98
+msgid "Reports"
+msgstr "Rapporten"
+
+#: cp-admin-int.inc.php:94
+msgid "Antispam"
+msgstr "Antispam"
+
+#: cp-admin-int.inc.php:90
+msgid "Notification Emails"
+msgstr "Kennisgeving e-mail"
+
+#: cp-admin-int.inc.php:86 cp-main-class.inc.php:789
+msgid "General Settings"
+msgstr "Algemene Instellingen"
+
+#: cp-admin-int.inc.php:334
+msgid "Next Step - General Settings >"
+msgstr "Volgende stap - Algemene instellingen >"
+
+#: cp-admin-int.inc.php:297
+msgid "\"Max appointments allowed messsage\" text"
+msgstr "Tekst \"Max afspraken toegestaan bericht\""
+
+#: cp-admin-int.inc.php:293
+msgid "\"over minimum\" text"
+msgstr "\"over minimum\" tekst"
+
+#: cp-admin-int.inc.php:287
+msgid "\"under maximum\" text"
+msgstr "\"onder maximum\" tekst"
+
+#: cp-admin-int.inc.php:283
+msgid "\"only digits\" text"
+msgstr "\"alleen cijfers\" tekst"
+
+#: cp-admin-int.inc.php:277
+msgid "\"is number\" text"
+msgstr "\"is nummer\" tekst"
+
+#: cp-admin-int.inc.php:273
+msgid "\"is valid date (dd/mm/yyyy)\" text"
+msgstr "\"is geldige datum (dd/mm/jjjj)\" tekst"
+
+#: cp-admin-int.inc.php:269
+msgid "\"is valid date (mm/dd/yyyy)\" text"
+msgstr "\"is geldige datum (mm/dd/jjjj)\" tekst"
+
+#: cp-admin-int.inc.php:266
+msgid "\"is valid captcha\" text"
+msgstr "\"is geldige captcha\" tekst"
+
+#: cp-admin-int.inc.php:260
+msgid "\"is email\" text"
+msgstr "\"is e-mail\" tekst"
+
+#: cp-admin-int.inc.php:240
+msgid "Next page button label (text)"
+msgstr "Knoplabel volgende pagina (tekst)"
+
+#: cp-admin-int.inc.php:237
+msgid "Previous page button label (text)"
+msgstr "Knoplabel vorige pagina (tekst)"
+
+#: cp-admin-int.inc.php:572
+msgid "To the email address selected in a form field (ex: captcha image enabled is recommended in this case)"
+msgstr "Naar het e-mailadres dat in een formulierveld is geselecteerd (captcha-afbeelding ingeschakeld wordt in dit geval aanbevolen)"
+
+#: cp-admin-int.inc.php:571
+msgid "To the fixed email(s) address(es) indicated below - Recommended option"
+msgstr "Naar de hieronder aangegeven vaste e-mail adressen - Aanbevolen optie "
+
+#: cp-admin-int.inc.php:567
+msgid "Send email \"To\""
+msgstr "Stuur email \"naar\""
+
+#: cp-admin-int.inc.php:563
+msgid "\"From\" email (for fixed \"from\" addresses)"
+msgstr "\"Van\" e-mail (voor vaste \"van\" adressen)"
+
+#: cp-admin-int.inc.php:552
+msgid "From the email address indicated by the customer"
+msgstr "Van het e-mailadres aangegeven door de klant"
+
+#: cp-admin-int.inc.php:551
+msgid "From fixed email address indicated below - Recommended option"
+msgstr "Van vast e-mailadres hieronder aangegeven - Aanbevolen optie"
+
+#: cp-admin-int.inc.php:547
+msgid "Send email \"From\""
+msgstr "Stuur e-mail \"Van\""
+
+#: cp-admin-int.inc.php:542
+msgid "From / To Email Addresses"
+msgstr "Van / naar e-mailadressen"
+
+#: cp-admin-int.inc.php:505
+msgid "Select users with access (CTRL+click for multiple selection)"
+msgstr "Selecteer gebruikers met toegang (CTRL + klik voor meervoudige selectie)"
+
+#: cp-admin-int.inc.php:501
+msgid "Users with access to the messages list"
+msgstr "Gebruikers met toegang tot de berichtenlijst"
+
+#: cp-admin-int.inc.php:498
+msgid "Note: To enable a payment method enable first the related addon."
+msgstr "Opmerking: Schakel eerst de bijbehorende add-on in om een betaalmethode in te schakelen."
+
+#: cp-admin-int.inc.php:494
+msgid "Label of \"Pay Later\" option (if enabled)"
+msgstr "Label van de optie \"Later betalen\" (indien ingeschakeld)"
+
+#: cp-admin-int.inc.php:490
+msgid "Product name at payment page"
+msgstr "Productnaam op betaalpagina"
+
+#: cp-admin-int.inc.php:486
+msgid "Payment Integration Settings"
+msgstr "Instellingen voor betalingsintegratie"
+
+#: cp-admin-int.inc.php:393
+msgid "Calendar Language"
+msgstr "Kalender taal"
+
+#: cp-admin-int.inc.php:347 cp-admin-int.inc.php:350
+msgid "Confirmation / Thank you page"
+msgstr "Bevestiging / bedank pagina"
+
+#: cp-admin-int-list.inc.php:208 cp-admin-int-schedule.inc.php:60
+msgid "Schedule"
+msgstr "Planning"
+
+#: cp-admin-int-list.inc.php:199
+msgid "Rename"
+msgstr "Naam wijzigen"
+
+#: addons/icalexport.addon.php:142
+msgid "Attach iCal file to notification emails?"
+msgstr "ICal-bestand bijvoegen bij e-mailberichten?"
+
+#: cp-publish-wizzard.inc.php:97
+msgid "Widget in a sidebar, header or footer - upgrade required for this option -"
+msgstr "Widget in een zijbalk, header of footer - upgrade vereist voor deze optie -"
+
+#: cp-admin-int-schedule.inc.php:145
+msgid "Print"
+msgstr "Print"
+
+#: cp-publish-wizzard.inc.php:130
+msgid "Using classic WordPress editor or other editors?"
+msgstr "Gebruik je de klassieke WordPress editor of andere editors?"
+
+#: cp-publish-wizzard.inc.php:125
+msgid "Using New WordPress Editor (Gutenberg)?"
+msgstr "Gebruik je de nieuwe WordPress editor (Gutenberg)?"
+
+#: cp-addons.inc.php:145
+msgid "Appointment Hour Booking - Add Ons"
+msgstr "Appointment Hour Booking - Add-ons"
+
+#: cp-main-class.inc.php:816
+msgid "Insert  Appointment Hour Booking"
+msgstr "Invoegen afspraak Hour Booking"
+
+#: cp-main-class.inc.php:776
+msgid "Request custom changes"
+msgstr "Vraag aangepaste wijzigingen aan"
+
+#: cp-admin-int.inc.php:534
+msgid "Next Step - Notification Emails >"
+msgstr "Volgende stap - Kennisgeving e-mails >"
+
+#: cp-admin-int.inc.php:375
+msgid "Date Format"
+msgstr "Datum format"
+
+#: cp-admin-int.inc.php:372
+msgid "Global Calendar Settings"
+msgstr "Globale kalender instellingen"
+
+#: cp-admin-int.inc.php:367
+msgid "If a payment add-on is enabled the booking will be changed to this status after the payment."
+msgstr "Als een add-on voor betalingen is ingeschakeld, wordt de boeking na de betaling gewijzigd in deze status."
+
+#: cp-admin-int.inc.php:365
+msgid "Default status of paid bookings"
+msgstr "Standaardstatus van betaalde boekingen"
+
+#: cp-admin-int.inc.php:362
+msgid "Only \"Approved\" items are taken in account for the availability verification."
+msgstr "Alleen \"Goedgekeurde\" items worden in aanmerking genomen voor de beschikbaarheid verificatie."
+
+#: cp-admin-int.inc.php:360
+msgid "Default status of new bookings"
+msgstr "Standaardstatus van nieuwe boekingen"
+
+#: cp-admin-int-schedule.inc.php:87 cp-admin-int.inc.php:357
+msgid "Booking Status"
+msgstr "Boeking status"
+
+#: cp-admin-int.inc.php:352
+msgid "Address / URL of the page where the user will be redirected after submiting the booking form"
+msgstr "Adres / URL van de pagina waarnaar de gebruiker wordt doorgestuurd na het indienen van het boekingsformulier"
+
+#: cp-admin-int-schedule.inc.php:155
+msgid "add bookings from the dashboard"
+msgstr "boekingen toevoegen vanaf het dashboard"
+
+#: cp-admin-int-add-booking.inc.php:33 cp-admin-int-list.inc.php:209
+msgid "Add Booking"
+msgstr "Boeking toevoegen"
+
+#: cp-admin-int-message-list.inc.php:208
+msgid "Submission Date"
+msgstr "Datum van inzending"
+
+#: cp-admin-int-list.inc.php:207 cp-admin-int-message-list.inc.php:133
+msgid "Booking Orders"
+msgstr "Boekingsbestellingen"
+
+#: cp-admin-int-message-list.inc.php:46
+msgid "Manually updated"
+msgstr "Handmatig geüpdatet"
+
+#: cp-admin-int.inc.php:821
+msgid "You can optionally"
+msgstr "Optioneel kunt je"
+
+#: cp-admin-int.inc.php:815
+msgid "<h2>Add-Ons Settings:</h2><hr />"
+msgstr "<h2>Add-ons Instellingen:</h2><hr />"
+
+#: cp-admin-int.inc.php:802
+msgid "Next Step - Add Ons >"
+msgstr "Volgende stap - Add-ons>"
+
+#: cp-publish-wizzard.inc.php:62
+msgid "Note: If the calendar was published in a new page or post it will be a 'draft', you have to publish the page/post in the future if needed."
+msgstr "Opmerking: als de kalender in een nieuwe pagina of bericht is gepubliceerd, is het een 'concept', je moet de pagina/het bericht indien nodig nog publiceren."
+
+#: cp-admin-int-schedule.inc.php:155
+msgid "and the bookings will appear in this calendar.<br />For CSV export, print and filter options switch to the \"<strong>List View</strong>\" with the button above this text."
+msgstr "en de boekingen verschijnen in deze kalender.<br />Voor CSV-export schakel de afdruk- en filteropties naar de <strong>\"Lijstweergave\"</strong>\" met de knop boven deze tekst."
+
+#: cp-admin-int-schedule.inc.php:155
+msgid "The purpose of this page is to <strong>display the bookings/schedule in a calendar view</strong>. You can add bookings from the public booking form or"
+msgstr "Het doel van deze pagina is om <strong> de boekings/planning weer te geven in een kalenderweergave </strong>. Je kunt boekingen toevoegen via het openbare boekingsformulier of"
+
+#: cp-admin-int-schedule.inc.php:65
+msgid "Change to Schedule Calendar View"
+msgstr "Wijzig naar  planning kalenderweergave"
+
+#: cp-admin-int-schedule.inc.php:67
+msgid "Change to Schedule List View"
+msgstr "Wijzig naar planning lijstweergave"
+
+#: cp-publish-wizzard.inc.php:217
+msgid "which has been added to your Upload/Insert Menu, just below the title of your Post/Page or under the \"+\" icon if using the Gutenberg editor."
+msgstr "die is toegevoegd aan je menu Uploaden/Invoegen, net onder de titel van je bericht/pagina of onder het pictogram \"+\" als je de Gutemberg editor gebruikt."
+
+#: cp-publish-wizzard.inc.php:133
+msgid "which has been added to your Upload/Insert Menu, just below the title of your Post/Page"
+msgstr "die is toegevoegd aan je menu Uploaden/Invoegen, net onder de titel van je bericht/pagina"
+
+#: cp-publish-wizzard.inc.php:132 cp-publish-wizzard.inc.php:216
+msgid "You can also publish the form in a post/page, use the dedicated icon"
+msgstr "Je kunt het formulier ook in een bericht/pagina publiceren, gebruik het speciale pictogram"
+
+#: cp-admin-int-add-booking.inc.php:40
+msgid "This page is for adding bookings from the administration area. The captcha and payment process are disabled in order to allow the website manager easily adding bookings."
+msgstr "Deze pagina is voor het toevoegen van boekingen vanuit de beheer sectie. De captcha en het betalingsproces zijn uitgeschakeld zodat de beheerder eenvoudig boekingen kan toevoegen."
+
+#: cp-admin-int.inc.php:823
+msgid "If you don't want to enable add ons now then <strong>continue saving these settings and publishing the booking form</strong>."
+msgstr "Als je add-ons nu niet wilt inschakelen, <strong> sla deze instellingen op en publiceer het boekingsformulier.</strong>"
+
+#: cp-admin-int.inc.php:821
+msgid "activate add ons in the add ons section"
+msgstr "activeer add-ons in het sectie add-ons"
+
+#: cp-admin-int.inc.php:795
+msgid "Email Text (CSV file will be attached with the submissions)"
+msgstr "E-mail tekst (CSV bestand wordt bijgevoegd bij de inzendingen)"
+
+#: cp-admin-int.inc.php:747
+msgid "Automatic Reports: Send submissions in CSV format via email"
+msgstr "Automatische rapporten: verzend inzendingen in CSV format via e-mail"
+
+#: cp-admin-int.inc.php:713
+msgid "Noise"
+msgstr "Ruis"
+
+#: cp-admin-int.inc.php:715
+msgid "Noise Length"
+msgstr "Ruis lengte"
+
+#: cp-admin-int.inc.php:702
+msgid "Max font size"
+msgstr "Maximale lettertype grootte"
+
+#: cp-admin-int.inc.php:700
+msgid "Min font size"
+msgstr "Minimale lettertype grootte"
+
+#: cp-admin-int.inc.php:632
+msgid "Send confirmation/thank you message to user?"
+msgstr "Bevestiging/bedankbericht naar gebruiker verzenden?"
+
+#: cp-admin-int.inc.php:594
+msgid "Email Notification to Website Administrator"
+msgstr "E-mail kennisgeving aan sitebeheerder"
+
+#: cp-admin-int.inc.php:582
+msgid "Destination emails (comma separated)"
+msgstr "Bestemmings e-mails (gescheiden door komma's)"
+
+#: cp-settings.inc.php:128 cp-settings.inc.php:200
+msgid "Troubleshoot Area"
+msgstr "Probleemoplosser gebied"
+
+#. Description of the plugin
+msgid "Appointment Hour Booking is a plugin for creating booking forms for appointments with a start time and a defined duration."
+msgstr "Appointment Hour Booking is een plugin voor het maken van boekingsformulieren voor afspraken met een starttijd en een gedefinieerde duur."
+
+#: cp-settings.inc.php:194
+msgid "Note: For setting up a report only for a specific form use the setting area available for that when editing each form settings"
+msgstr "Opmerking: voor het instellen van een rapport alleen voor een specifiek formulier gebruik je het daarvoor beschikbare instelling gebied bij het bewerken van dat formulier"
+
+#: cp-settings.inc.php:139
+msgid "Automatic email reports for <b>ALL forms</b>: Send submissions in CSV format via email."
+msgstr "Automatische e-mailrapporten voor <b>ALLE formulieren</b> : verzend inzendingen in CSV format via e-mail."
+
+#: cp-settings.inc.php:486
+msgid "Make the send button in a hover format:"
+msgstr "Maak de verzendknop in een hover format:"
+
+#: cp-settings.inc.php:468
+msgid "Make the calendar 100% width / responsive:"
+msgstr "Maak de kalender 100% breed/responsive:"
+
+#: cp-settings.inc.php:444
+msgid "Use this area to add custom CSS styles. These styles will be keep safe even after updating the plugin."
+msgstr "Gebruik dit gebied om aangepaste CSS-stijlen toe te voegen. Deze stijlen blijven bewaard, zelfs na het updaten van de plugin."
+
+#: cp-settings.inc.php:230
+msgid "Update the charset if you are getting problems displaying special/non-latin characters. After updated you need to edit the special characters again."
+msgstr "Werk de tekenset bij als je problemen ondervindt bij het weergeven van speciale/niet Latijnse tekens. Na een update moet je de speciale tekens opnieuw bewerken."
+
+#: cp-settings.inc.php:217
+msgid "Change the script load method if the form doesn't appear in the public website."
+msgstr "Wijzig de methode voor het laden van het script als het formulier niet op de openbare site verschijnt."
+
+#: cp-settings.inc.php:201
+msgid "Use this area only if you are experiencing conflicts with third party plugins, with the theme scripts or with the character encoding."
+msgstr "Gebruik dit gebied alleen als je conflicten ondervindt met plugins van derden, met de thema scripts of met de tekencodering."
+
+#: cp-admin-int-message-list.inc.php:147 cp-admin-int-report.inc.php:144
+msgid "Search for"
+msgstr "Zoeken naar"
+
+#: cp-settings.inc.php:544
+msgid "Use this area to add custom scripts. These scripts will be keep safe even after updating the plugin."
+msgstr "Gebruik dit gebied om eigen aangepaste scripts toe te voegen. Deze scripts blijven veilig, zelfs nadat de plugin is geüpdatet."
+
+#: cp-addons.inc.php:161 cp-admin-int.inc.php:102 cp-main-class.inc.php:790
+msgid "Add Ons"
+msgstr "Add-ons"
+
+#: cp-admin-int.inc.php:256
+msgid "\"is required\" text"
+msgstr "\"is vereist\" tekst"
+
+#: cp-admin-int.inc.php:251
+msgid "Error messages for validation rules"
+msgstr "Fout bericht voor validatie regels"
+
+#: cp-admin-int-report.inc.php:179
+msgid "Submissions per hour"
+msgstr "Inzendingen per uur"
+
+#: cp-admin-int-report.inc.php:166
+msgid "Submissions per day"
+msgstr "Inzendingen per dag"
+
+#: cp-admin-int-report.inc.php:239
+msgid "Number of times that appears each value. Percent in relation to the total of submissions."
+msgstr "Aantal keren dat elke waarde voorkomt. Percentage in verhouding tot het totaal van de inzendingen."
+
+#: cp-admin-int-report.inc.php:185
+msgid "Total submissions per hour in the selected date range."
+msgstr "Totaal aantal inzendingen per uur in het geselecteerde datumbereik."
+
+#: cp-admin-int-report.inc.php:172
+msgid "Submissions per day in the selected date range."
+msgstr "Inzendingen per dag in het geselecteerde datumbereik."
+
+#: cp-admin-int.inc.php:555
+msgid "If you select \"from fixed...\" the customer email address will appear in the \"to\" address when you hit \"reply\", this is the recommended setting to avoid mail server restrictions."
+msgstr "Als je \"van vast...\" selecteert, zal het e-mailadres van de klant verschijnen in het \"aan\"-adres wanneer je op \"beantwoorden\" drukt, dit is de aanbevolen instelling om e-mailserver beperkingen te vermijden."
+
+#: cp-admin-int.inc.php:557
+msgid ""
+"If you select \"from customer email\" then the customer email will appear also visually when you receive the email, but this isn't supported by all hosting services, so this\n"
+"                option isn't recommended in most cases."
+msgstr ""
+"Als je \"van e-mail van klant\" selecteert, zal de e-mail van de klant ook visueel verschijnen wanneer je de e-mail ontvangt, maar dit wordt niet door alle hostingdiensten ondersteund, dus deze\n"
+"                optie is niet aan te raden in de meeste gevallen."
+
+#: cp-admin-int.inc.php:575
+msgid "If you select \"To fixed...\" enter the destination emails in the next field. "
+msgstr "Als je  \"Naar vast...\" selecteert, voer je in het volgende veld de e-mails van de bestemming in. "
+
+#: cp-admin-int.inc.php:577
+msgid "If you select \"To email ...in form field\" then add a field like a drop-down, radio-button or checkbox that contains the email address in the field value (not needed in the field text but in the internal value)."
+msgstr "Als je \"Naar e-mail ...in formulierveld\" selecteert, voeg dan een veld toe zoals een dropdown, radio-knop of checkbox dat het e-mailadres in de veldwaarde bevat (niet nodig in de veldtekst, maar in de interne waarde)."

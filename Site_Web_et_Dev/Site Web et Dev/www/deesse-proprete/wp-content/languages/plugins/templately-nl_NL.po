@@ -1,0 +1,265 @@
+# Translation of Plugins - Templately &#8211; Templates Cloud for Elementor &amp; Gutenberg : 1000+ Free Designs! - Stable (latest release) in Dutch
+# This file is distributed under the same license as the Plugins - Templately &#8211; Templates Cloud for Elementor &amp; Gutenberg : 1000+ Free Designs! - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-05-06 09:14:36+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: nl\n"
+"Project-Id-Version: Plugins - Templately &#8211; Templates Cloud for Elementor &amp; Gutenberg : 1000+ Free Designs! - Stable (latest release)\n"
+
+#: core/api/class-rest-api.php:79
+msgid "400 Bad Request."
+msgstr "400 ongeldige aanvraag."
+
+#: core/api/class-rest-api.php:76
+msgid "Unathorized Access: You have to logged in first."
+msgstr "Niet geautoriseerde toegang: Je moet eerst inloggen."
+
+#: core/api/class-api.php:1311
+msgid "You have no items in your cloud."
+msgstr "Je hebt geen items in je cloud."
+
+#. Description of the plugin
+msgid "The Best Templates Cloud for Elementor & Gutenberg. Get access to stunning templates, WorkSpace, Cloud Library & many more."
+msgstr "De beste templatescloud voor Elementor en Gutenberg. Krijg toegang tot verbluffende templates, WorkSpace, Cloud Library en nog veel meer."
+
+#: core/api/class-api.php:397 core/api/class-api.php:910
+msgid "Something went wrong with fetching dependencies data."
+msgstr "Er is iets misgegaan met het ophalen van afhankelijkheidsgegevens."
+
+#: core/api/class-requirement-installer.php:97
+msgid "Unable to connect to the filesystem. Please confirm your credentials."
+msgstr "Kan geen verbinding maken met het bestandssysteem. Bevestig je inloggegevens."
+
+#: core/api/class-api.php:1069
+msgid "Something went wrong. Maybe Invalid Credentials."
+msgstr "Er is iets fout gegaan. Misschien ongeldige inloggegevens."
+
+#: core/api/class-api.php:820
+msgid "You have the plugin installed."
+msgstr "Je hebt de plugin geïnstalleerd."
+
+#: core/admin/class-admin.php:66
+msgid "plugin to be installed and activated. Please install Elementor to continue."
+msgstr "plugin die moet worden geïnstalleerd en geactiveerd. Installeer Elementor om door te gaan."
+
+#: core/api/class-api.php:803 core/admin/class-admin.php:65
+msgid "Elementor"
+msgstr "Elementor"
+
+#: core/admin/class-admin.php:64
+msgid "requires"
+msgstr "vereist"
+
+#: core/admin/views/header.php:6
+msgid "Version"
+msgstr "Versie"
+
+#: core/api/class-api.php:1720
+msgid "Something went wrong regarding adding files to your Workspace. Try again or contact with Templately Support."
+msgstr "Er is iets misgegaan met het toevoegen van bestanden aan je werkruimte. Probeer het opnieuw of neem contact op met Templately ondersteuning."
+
+#: core/api/class-api.php:1701 core/api/class-api.php:1705
+msgid "Workspace Not Found."
+msgstr "Werkruimte niet gevonden."
+
+#: core/api/class-api.php:1690
+msgid "Something went wrong regarding collecting your usage limit. Try again or contact with Templately Support."
+msgstr "Er is iets misgegaan met het innen van je gebruikslimiet. Probeer het opnieuw of neem contact op met Templately ondersteuning."
+
+#: core/api/class-api.php:1670
+msgid "Something went wrong regarding loading your WorkSpace. Try again or contact with Templately Support."
+msgstr "Er is iets misgegaan met het laden van je WorkSpace. Probeer het opnieuw of neem contact op met Templately ondersteuning."
+
+#: core/api/class-api.php:1642
+msgid "Slug can't be empty."
+msgstr "Slug mag niet leeg zijn."
+
+#: core/api/class-api.php:1615
+msgid "No WorkSpace is selected, where the item will "
+msgstr "Er is geen WorkSpace geselecteerd, waar het item wel zal"
+
+#: core/api/class-api.php:1611
+msgid "No Cloud Item is selected to"
+msgstr "Er is geen Cloud-item geselecteerd"
+
+#: core/api/class-api.php:1600
+msgid "Something went wrong regarding delete WorkSpace. Try again or contact with Templately Support."
+msgstr "Er is iets misgegaan met het verwijderen van WorkSpace. Probeer het opnieuw of neem contact op met Templately ondersteuning."
+
+#: core/api/class-api.php:1549 core/api/class-api.php:1583
+msgid "Workspace not found."
+msgstr "Werkruimte niet gevonden."
+
+#: core/api/class-api.php:1523
+msgid "Something went wrong regarding create WorkSpace. Try again or contact with Templately Support."
+msgstr "Er is iets misgegaan met het maken van WorkSpace. Probeer het opnieuw of neem contact op met Templately ondersteuning."
+
+#: core/api/class-api.php:1505 core/api/class-api.php:1533
+msgid "You have to give title at least."
+msgstr "Je moet tenminste een titel geven."
+
+#: core/api/class-api.php:1495
+msgid "Something went wrong loading WorkSpace. Try again or contact with Templately Support."
+msgstr "Er is iets misgegaan bij het laden van WorkSpace. Probeer het opnieuw of neem contact op met Templately ondersteuning."
+
+#: core/api/class-api.php:1465 core/api/class-api.php:1501
+#: core/api/class-api.php:1529 core/api/class-api.php:1579
+#: core/api/class-api.php:1606 core/api/class-api.php:1638
+#: core/api/class-api.php:1676 core/api/class-api.php:1696
+msgid "You need to re-logged in."
+msgstr "Je moet opnieuw inloggen."
+
+#: core/api/class-api.php:1409
+msgid "Item ID or Item Type is not found."
+msgstr "Artikel ID of artikeltype is niet gevonden."
+
+#: core/api/class-api.php:1404
+msgid "Something went wrong. Please, try logged in again."
+msgstr "Er is iets fout gegaan. Probeer opnieuw in te loggen."
+
+#: core/api/class-api.php:1339
+msgid "Logged Out"
+msgstr "Uitgelogd"
+
+#: core/api/class-api.php:1314
+msgid "You have to logged in first via your admin dashboard."
+msgstr "Je moet eerst inloggen via je beheer dashboard."
+
+#: core/api/class-api.php:1271
+msgid "Successfully Deleted."
+msgstr "Succesvol verwijderd."
+
+#: core/api/class-api.php:1259
+msgid "Template ID is not found to delete"
+msgstr "Template ID is niet gevonden om te verwijderen"
+
+#: core/api/class-api.php:1246
+msgid "Successfully Connected"
+msgstr "Succesvol verbonden"
+
+#: core/api/class-api.php:1230
+msgid "API Key is not found"
+msgstr "API-sleutel is niet gevonden"
+
+#: core/api/class-api.php:1115
+msgid "Password Field Can't be Empty."
+msgstr "Wachtwoordveld mag niet leeg zijn."
+
+#: core/api/class-api.php:1108
+msgid "Email Field Can't be Empty."
+msgstr "E-mailveld mag niet leeg zijn."
+
+#: core/api/class-api.php:1104
+msgid "Last Name Can't be Empty."
+msgstr "Achternaam mag niet leeg zijn."
+
+#: core/api/class-api.php:1101
+msgid "First Name Can't be Empty."
+msgstr "Voornaam mag niet leeg zijn."
+
+#: core/api/class-api.php:1051
+msgid "Password Field Cannot be Empty."
+msgstr "Wachtwoordveld mag niet leeg zijn."
+
+#: core/api/class-api.php:1047 core/api/class-api.php:1111
+msgid "Make sure you have given a valid email address."
+msgstr "Zorg ervoor dat je een geldig e-mailadres hebt opgegeven."
+
+#: core/api/class-api.php:1036
+msgid "API Key Field Cannot be Empty."
+msgstr "API sleutelveld mag niet leeg zijn."
+
+#: core/api/class-api.php:947
+msgid "Something went wrong with Import!"
+msgstr "Er is iets misgegaan met importeren!"
+
+#: core/api/class-api.php:730
+msgid "You have no rights to delete file from Cloud. You have to logged in first"
+msgstr "Je hebt geen rechten om het bestand uit de Cloud te verwijderen. Je moet eerst inloggen"
+
+#: core/api/class-api.php:726
+msgid "ID not found to remove Template from Cloud."
+msgstr "ID niet gevonden om template uit Cloud te verwijderen."
+
+#: core/api/class-api.php:714 core/api/class-api.php:1086
+msgid "Something went wrong"
+msgstr "Er is iets fout gegaan"
+
+#: core/api/class-api.php:695
+msgid "ID not found to push the item in cloud."
+msgstr "ID niet gevonden om het item in de cloud te pushen."
+
+#: core/api/class-api.php:648
+msgid "API Key is not found, try to re-login."
+msgstr "API-sleutel is niet gevonden, probeer opnieuw in te loggen."
+
+#: core/api/class-api.php:641
+msgid "There is no data to push."
+msgstr "Er zijn geen gegevens om te pushen."
+
+#: core/api/class-api.php:638
+msgid "Data has to be an array."
+msgstr "Gegevens moeten een array zijn."
+
+#: core/api/class-api.php:634
+msgid "Name can't be empty."
+msgstr "Naam mag niet leeg zijn."
+
+#: core/api/class-api.php:629
+msgid "There is no Template Content to be inserted."
+msgstr "Er hoeft geen template inhoud te worden ingevoegd."
+
+#: core/api/class-api.php:604
+msgid "Templates ID Not Found."
+msgstr "Templates ID niet gevonden."
+
+#: core/api/class-api.php:580 core/api/class-api.php:591
+#: core/api/class-api.php:884 core/api/class-api.php:921
+#: core/api/class-api.php:961 core/api/class-api.php:1010
+msgid "Something went wrong!"
+msgstr "Er is iets fout gegaan!"
+
+#: core/api/class-api.php:535
+msgid "Activate Your Account!"
+msgstr "Activeer je account!"
+
+#: core/api/class-api.php:250
+msgid "No ID found to save your template."
+msgstr "Geen ID gevonden om je template op te slaan."
+
+#: core/api/class-api.php:247
+msgid "There is nothing to save in your template."
+msgstr "Er is niets om op te slaan in je template."
+
+#: core/api/class-api.php:244
+msgid "Something Went Wrong"
+msgstr "Er is iets fout gegaan"
+
+#: core/api/class-api.php:78 core/api/class-api.php:527
+#: core/api/class-api.php:747 core/api/class-api.php:784
+#: core/api/class-api.php:843 core/api/class-api.php:1459
+msgid "Something went wrong."
+msgstr "Er is iets fout gegaan."
+
+#: core/api/class-api.php:74
+msgid "Something went wrong. Nonce Issue."
+msgstr "Er is iets fout gegaan. Nonce probleem."
+
+#. Author URI of the plugin
+msgid "https://templately.com/"
+msgstr "https://templately.com/"
+
+#. Plugin URI of the plugin
+msgid "https://templately.com"
+msgstr "https://templately.com"
+
+#. Plugin Name of the plugin
+#. Author of the plugin
+#: core/admin/class-admin.php:63 core/admin/views/header.php:3
+msgid "Templately"
+msgstr "Templately"

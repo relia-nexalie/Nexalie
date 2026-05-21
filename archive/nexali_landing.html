@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexalie — Transformation digitale IA · France & Afrique</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --navy: #0A1628;
+    --navy2: #1B2E4A;
+    --gold: #C9A84C;
+    --teal: #2E9B8B;
+    --teal2: #1D6B60;
+    --orng: #E07B39;
+    --green: #2E7D52;
+    --text: #1A1A2A;
+    --muted: #6B7A94;
+    --light: #F5F7FA;
+    --border: rgba(0,0,0,0.08);
+    --white: #FFFFFF;
+  }
+  body {
+    font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,22,40,0.97);
+    backdrop-filter: blur(12px);
+    padding: 0 40px;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+  .nav-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; align-items: center;
+    justify-content: space-between; height: 60px;
+  }
+  .logo { display: flex; align-items: baseline; gap: 8px; text-decoration: none; }
+  .logo-name {
+    font-size: 22px; font-weight: 300; color: #fff;
+    font-family: Georgia, serif; letter-spacing: -0.5px;
+  }
+  .logo-tag {
+    font-size: 9px; letter-spacing: 2.5px; color: var(--gold);
+    font-weight: 600; text-transform: uppercase;
+  }
+  .nav-right { display: flex; align-items: center; gap: 12px; }
+  .badge-mode {
+    display: flex; background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; overflow: hidden;
+  }
+  .badge-mode span {
+    padding: 6px 14px; font-size: 12px; color: rgba(255,255,255,0.5); cursor: pointer;
+  }
+  .badge-mode span.active {
+    background: var(--teal); color: #fff; font-weight: 600;
+  }
+  .btn-cta {
+    padding: 9px 22px; background: var(--gold);
+    border: none; border-radius: 8px; color: var(--navy);
+    font-size: 13px; font-weight: 700; cursor: pointer; text-decoration: none;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(160deg, #0A1628 0%, #0F2040 60%, #0A1628 100%);
+    padding: 90px 40px 80px; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute;
+    top: -120px; right: -120px; width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(46,155,139,0.12), transparent 65%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: ''; position: absolute;
+    bottom: -80px; left: -80px; width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.08), transparent 65%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 420px; gap: 60px;
+    align-items: center; position: relative; z-index: 1;
+  }
+  .hero-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(46,155,139,0.12); border: 1px solid rgba(46,155,139,0.3);
+    border-radius: 20px; padding: 6px 16px; margin-bottom: 24px;
+    font-size: 11px; letter-spacing: 1.5px; color: var(--teal);
+    text-transform: uppercase; font-weight: 600;
+  }
+  .hero h1 {
+    font-size: clamp(32px, 4vw, 52px); font-weight: 200;
+    color: #fff; line-height: 1.2; margin-bottom: 20px;
+    font-family: Georgia, serif;
+  }
+  .hero h1 em { color: var(--teal); font-style: normal; }
+  .hero p {
+    font-size: 16px; color: rgba(255,255,255,0.55);
+    line-height: 1.8; margin-bottom: 32px; max-width: 480px;
+  }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    padding: 14px 28px; background: var(--teal);
+    border: none; border-radius: 10px; color: #fff;
+    font-size: 15px; font-weight: 700; cursor: pointer;
+    box-shadow: 0 6px 24px rgba(46,155,139,0.3);
+    text-decoration: none; display: inline-block;
+  }
+  .btn-secondary {
+    padding: 14px 26px; background: transparent;
+    border: 1px solid rgba(255,255,255,0.18); border-radius: 10px;
+    color: rgba(255,255,255,0.7); font-size: 15px; cursor: pointer;
+    text-decoration: none; display: inline-block;
+  }
+
+  /* Score card */
+  .score-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(46,155,139,0.2);
+    border-radius: 20px; padding: 28px;
+  }
+  .score-label {
+    font-size: 9px; letter-spacing: 2px; color: rgba(255,255,255,0.35);
+    text-transform: uppercase; margin-bottom: 20px; font-weight: 600;
+  }
+  .score-dim { margin-bottom: 14px; }
+  .score-dim-header {
+    display: flex; justify-content: space-between; margin-bottom: 6px;
+  }
+  .score-dim-name { font-size: 12px; color: rgba(255,255,255,0.55); }
+  .score-dim-val { font-size: 10px; font-family: monospace; }
+  .score-bar-bg {
+    height: 5px; background: rgba(255,255,255,0.08);
+    border-radius: 3px; overflow: hidden;
+  }
+  .score-bar { height: 100%; border-radius: 3px; }
+  .score-cta {
+    width: 100%; margin-top: 10px; padding: 13px;
+    background: var(--teal); border: none; border-radius: 10px;
+    color: #fff; font-size: 13px; font-weight: 700; cursor: pointer;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── STATS ── */
+  .stats {
+    border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    padding: 28px 40px; background: #FAFBFC;
+  }
+  .stats-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  }
+  .stat { text-align: center; padding: 16px; }
+  .stat-val {
+    font-size: 26px; font-weight: 300; color: var(--teal);
+    font-family: Georgia, serif; margin-bottom: 4px;
+  }
+  .stat-label { font-size: 12px; color: var(--muted); }
+
+  /* ── SECTION ── */
+  section { padding: 72px 40px; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-eyebrow {
+    font-size: 10px; letter-spacing: 3px; color: var(--muted);
+    text-transform: uppercase; font-weight: 600; margin-bottom: 10px;
+  }
+  .section-title {
+    font-size: clamp(24px, 3vw, 36px); font-weight: 200;
+    color: var(--navy); margin-bottom: 8px;
+    font-family: Georgia, serif; line-height: 1.3;
+  }
+  .section-title em { color: var(--teal); font-style: normal; }
+  .section-sub {
+    font-size: 15px; color: var(--muted); max-width: 520px;
+    line-height: 1.7; margin-bottom: 40px;
+  }
+
+  /* ── OUTILS ── */
+  .tools-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+  }
+  .tool-card {
+    padding: 20px; border-radius: 14px;
+    border: 1px solid var(--border); background: var(--white);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .tool-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+  }
+  .tool-icon { font-size: 22px; margin-bottom: 10px; display: block; }
+  .tool-name { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+  .tool-desc { font-size: 11px; color: var(--muted); line-height: 1.5; margin-bottom: 10px; }
+  .tool-badge {
+    display: inline-block; padding: 2px 8px; border-radius: 5px;
+    font-size: 9px; font-weight: 700; letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .free { background: rgba(46,125,82,0.1); color: var(--green); }
+  .premium { background: rgba(201,168,76,0.12); color: #8B6A1A; }
+
+  /* ── OFFRES ── */
+  .offres-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
+  }
+  .offre-card {
+    padding: 24px; border-radius: 16px; position: relative; overflow: hidden;
+  }
+  .offre-emoji { font-size: 28px; margin-bottom: 10px; display: block; }
+  .offre-name {
+    font-size: 20px; font-weight: 300; font-family: Georgia, serif;
+    margin-bottom: 4px;
+  }
+  .offre-score { font-size: 10px; font-family: monospace; font-weight: 600; margin-bottom: 14px; }
+  .offre-prix { font-size: 22px; font-weight: 300; font-family: Georgia, serif; margin-bottom: 14px; }
+  .offre-items { list-style: none; margin-bottom: 18px; }
+  .offre-items li { font-size: 12px; color: var(--muted); padding: 3px 0; }
+  .offre-items li::before { content: '✓  '; font-weight: 700; }
+  .offre-btn {
+    width: 100%; padding: 11px; border-radius: 9px;
+    font-size: 13px; font-weight: 700; cursor: pointer; border: none;
+  }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid; grid-template-columns: 280px 1fr; gap: 60px; align-items: start;
+  }
+  .about-avatar {
+    width: 100%; aspect-ratio: 1; border-radius: 20px;
+    background: linear-gradient(135deg, rgba(46,155,139,0.15), rgba(201,168,76,0.1));
+    border: 1px solid rgba(46,155,139,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 64px; color: rgba(10,22,40,0.15);
+    font-family: Georgia, serif; font-weight: 300;
+    margin-bottom: 20px;
+  }
+  .about-name {
+    font-size: 22px; font-weight: 300; font-family: Georgia, serif;
+    color: var(--navy); margin-bottom: 4px;
+  }
+  .about-title {
+    font-size: 10px; letter-spacing: 1.5px; color: var(--teal);
+    text-transform: uppercase; font-weight: 600; margin-bottom: 16px;
+  }
+  .about-infos { list-style: none; }
+  .about-infos li { font-size: 13px; color: var(--muted); padding: 4px 0; }
+  .about-contact {
+    width: 100%; margin-top: 16px; padding: 12px;
+    background: var(--teal); border: none; border-radius: 10px;
+    color: #fff; font-size: 13px; font-weight: 700; cursor: pointer;
+  }
+  .about-text {
+    font-size: 15px; color: var(--muted); line-height: 1.9; margin-bottom: 24px;
+  }
+  .about-skills {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 28px;
+  }
+  .skill-card {
+    padding: 14px; background: var(--light); border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+  .skill-icon { font-size: 18px; margin-bottom: 6px; }
+  .skill-name { font-size: 12px; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
+  .skill-sub { font-size: 11px; color: var(--muted); }
+  .timeline { list-style: none; }
+  .timeline li {
+    display: flex; gap: 12px; margin-bottom: 12px; align-items: flex-start;
+  }
+  .tl-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    flex-shrink: 0; margin-top: 5px;
+  }
+  .tl-period { font-size: 10px; font-family: monospace; margin-bottom: 1px; }
+  .tl-role { font-size: 13px; color: var(--navy); }
+
+  /* ── PRICING ── */
+  .pricing-bg { background: var(--light); }
+  .pricing-grid {
+    display: grid; grid-template-columns: 1fr 1.15fr 1fr; gap: 14px;
+    max-width: 900px; margin: 0 auto;
+  }
+  .pricing-card {
+    padding: 26px; background: var(--white);
+    border: 1px solid var(--border); border-radius: 16px;
+    position: relative;
+  }
+  .pricing-card.featured {
+    border: 2px solid var(--gold); transform: scale(1.02);
+  }
+  .pricing-badge {
+    position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
+    background: var(--gold); color: var(--navy); padding: 3px 14px;
+    border-radius: 15px; font-size: 9px; font-weight: 700;
+    text-transform: uppercase; white-space: nowrap;
+  }
+  .pricing-name { font-size: 20px; font-family: Georgia, serif; margin-bottom: 8px; }
+  .pricing-price { font-size: 36px; font-family: Georgia, serif; margin-bottom: 16px; }
+  .pricing-price span { font-size: 14px; color: var(--muted); font-family: sans-serif; }
+  .pricing-items { list-style: none; margin-bottom: 20px; }
+  .pricing-items li {
+    font-size: 12px; color: var(--muted); padding: 5px 0;
+    border-bottom: 1px solid var(--border); display: flex; gap: 8px;
+  }
+  .pricing-items li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+  .pricing-btn {
+    width: 100%; padding: 12px; border-radius: 9px;
+    font-size: 13px; font-weight: 700; cursor: pointer;
+  }
+
+  /* ── CTA FINAL ── */
+  .cta-section {
+    background: var(--navy);
+    padding: 80px 40px; text-align: center;
+  }
+  .cta-inner { max-width: 680px; margin: 0 auto; }
+  .cta-inner h2 {
+    font-size: clamp(26px, 4vw, 40px); font-weight: 200;
+    color: #fff; font-family: Georgia, serif; margin-bottom: 12px; line-height: 1.3;
+  }
+  .cta-inner h2 em { color: var(--teal); font-style: normal; }
+  .cta-inner p { font-size: 15px; color: rgba(255,255,255,0.5); margin-bottom: 28px; line-height: 1.7; }
+  .cta-btn {
+    padding: 16px 40px; background: var(--teal); border: none;
+    border-radius: 12px; color: #fff; font-size: 16px; font-weight: 700;
+    cursor: pointer; box-shadow: 0 8px 28px rgba(46,155,139,0.35);
+  }
+  .cta-contact {
+    font-size: 13px; color: rgba(255,255,255,0.35); margin-top: 14px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #060E1C; padding: 32px 40px;
+    border-top: 1px solid rgba(201,168,76,0.15);
+  }
+  .footer-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-logo { font-family: Georgia, serif; font-size: 18px; color: rgba(255,255,255,0.6); }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); font-family: monospace; }
+  .footer-link { font-size: 12px; color: var(--teal); font-family: monospace; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .hero { padding: 60px 20px 50px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 36px; }
+    .score-card { display: none; }
+    section { padding: 48px 20px; }
+    .tools-grid { grid-template-columns: 1fr 1fr; }
+    .offres-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .pricing-card.featured { transform: none; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#">
+      <span class="logo-name">Nexalie</span>
+      <span class="logo-tag">Studio</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:8px;" class="desktop-nav">
+      <a href="#outils" style="color:rgba(255,255,255,0.55);font-size:13px;text-decoration:none;padding:8px 12px;">Outils</a>
+      <a href="#offres" style="color:rgba(255,255,255,0.55);font-size:13px;text-decoration:none;padding:8px 12px;">Offres</a>
+      <a href="#about" style="color:rgba(255,255,255,0.55);font-size:13px;text-decoration:none;padding:8px 12px;">À propos</a>
+      <a href="#pricing" style="color:rgba(255,255,255,0.55);font-size:13px;text-decoration:none;padding:8px 12px;">Tarifs</a>
+    </div>
+    <div class="nav-right">
+      <div class="badge-mode">
+        <span class="active">🇫🇷 France</span>
+        <span>🌍 Afrique</span>
+      </div>
+      <a href="#contact" class="btn-cta">Audit gratuit →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-pill">✦ PME françaises & entreprises africaines</div>
+      <h1>Votre entreprise mérite<br><em>l'excellence</em> digitale</h1>
+      <p>Audit gratuit en 20 minutes, outils IA propriétaires, accompagnement mensuel — tout pour transformer votre business concrètement.</p>
+      <div class="hero-btns">
+        <a href="#audit" class="btn-primary">Audit gratuit →</a>
+        <a href="#offres" class="btn-secondary">Nos offres</a>
+      </div>
+    </div>
+    <div class="score-card">
+      <div class="score-label">Maturité digitale — exemple</div>
+      <div class="score-dim">
+        <div class="score-dim-header">
+          <span class="score-dim-name">◈ Stratégie & Vision</span>
+          <span class="score-dim-val" style="color:#2E9B8B;">13/20</span>
+        </div>
+        <div class="score-bar-bg"><div class="score-bar" style="width:65%;background:#2E9B8B;"></div></div>
+      </div>
+      <div class="score-dim">
+        <div class="score-dim-header">
+          <span class="score-dim-name">◉ Expérience Client</span>
+          <span class="score-dim-val" style="color:#C9A84C;">9/20</span>
+        </div>
+        <div class="score-bar-bg"><div class="score-bar" style="width:45%;background:#C9A84C;"></div></div>
+      </div>
+      <div class="score-dim">
+        <div class="score-dim-header">
+          <span class="score-dim-name">◐ Opérations</span>
+          <span class="score-dim-val" style="color:#7B5EA7;">6/20</span>
+        </div>
+        <div class="score-bar-bg"><div class="score-bar" style="width:30%;background:#7B5EA7;"></div></div>
+      </div>
+      <div class="score-dim">
+        <div class="score-dim-header">
+          <span class="score-dim-name">◎ Technologies</span>
+          <span class="score-dim-val" style="color:#569CD6;">11/20</span>
+        </div>
+        <div class="score-bar-bg"><div class="score-bar" style="width:55%;background:#569CD6;"></div></div>
+      </div>
+      <div class="score-dim">
+        <div class="score-dim-header">
+          <span class="score-dim-name">◑ Culture & Équipes</span>
+          <span class="score-dim-val" style="color:#CE9178;">8/20</span>
+        </div>
+        <div class="score-bar-bg"><div class="score-bar" style="width:40%;background:#CE9178;"></div></div>
+      </div>
+      <button class="score-cta">Démarrer mon audit gratuit</button>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-val">8</div><div class="stat-label">Outils IA disponibles</div></div>
+    <div class="stat"><div class="stat-val">20 min</div><div class="stat-label">Pour un audit complet</div></div>
+    <div class="stat"><div class="stat-val">0€</div><div class="stat-label">Pour démarrer</div></div>
+    <div class="stat"><div class="stat-val">48h</div><div class="stat-label">Rapport personnalisé</div></div>
+  </div>
+</div>
+
+<!-- OUTILS -->
+<section id="outils">
+  <div class="section-inner">
+    <div class="section-eyebrow">Plateforme SaaS</div>
+    <h2 class="section-title">8 outils IA pour <em>transformer votre business</em></h2>
+    <p class="section-sub">Commencez gratuitement. Passez Premium pour accès illimité à tous les outils.</p>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <span class="tool-icon">📊</span>
+        <div class="tool-name">Audit Digital</div>
+        <div class="tool-desc">Score de maturité /100 sur 5 dimensions. Plan d'action personnalisé.</div>
+        <span class="tool-badge free">Gratuit</span>
+      </div>
+      <div class="tool-card">
+        <span class="tool-icon">💰</span>
+        <div class="tool-name">Calculateur ROI</div>
+        <div class="tool-desc">Estimez le retour sur investissement de votre transformation digitale.</div>
+        <span class="tool-badge free">Gratuit</span>
+      </div>
+      <div class="tool-card">
+        <span class="tool-icon">🤖</span>
+        <div class="tool-name">Générateur Maquette</div>
+        <div class="tool-desc">Visualisez votre futur site en 2 minutes à partir d'un simple brief.</div>
+        <span class="tool-badge free">Gratuit</span>
+      </div>
+      <div class="tool-card">
+        <span class="tool-icon">📋</span>
+        <div class="tool-name">Business Plan IA</div>
+        <div class="tool-desc">Plan complet avec benchmark marché réel en 2 minutes.</div>
+        <span class="tool-badge premium">Premium</span>
+      </div>
+      <div class="tool-card">
+        <span class="tool-icon">🗺️</span>
+        <div class="tool-name">Roadmap 12 mois</div>
+        <div class="tool-desc">Votre plan d'action digital personnalisé sur un an.</div>
+        <span class="tool-badge premium">Premium</span>
+      </div>
+      <div class="tool-card">
+        <span class="tool-icon">🔍</span>
+        <div class="tool-name">Veille Concurrentielle</div>
+        <div class="tool-desc">Cartographie complète de votre marché et de vos concurrents.</div>
+        <span class="tool-badge premium">Premium</span>
+      </div>
+      <div class="tool-card">
+        <span class="tool-icon">📄</span>
+        <div class="tool-name">Cahier des Charges</div>
+        <div class="tool-desc">Document professionnel complet pour vos projets digitaux.</div>
+        <span class="tool-badge premium">Premium</span>
+      </div>
+      <div class="tool-card">
+        <span class="tool-icon">💸</span>
+        <div class="tool-name">Simulateur Budget</div>
+        <div class="tool-desc">Estimez précisément le budget de votre projet digital.</div>
+        <span class="tool-badge premium">Premium</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFRES -->
+<section id="offres" style="background:#FAFBFC;">
+  <div class="section-inner">
+    <div class="section-eyebrow">Accompagnement Consulting</div>
+    <h2 class="section-title">Un accompagnement pour <em>chaque niveau</em></h2>
+    <p class="section-sub">Faites d'abord l'audit gratuit — votre score détermine l'offre la plus adaptée.</p>
+    <div class="offres-grid">
+      <div class="offre-card" style="background:rgba(46,155,139,0.06);border:1px solid rgba(46,155,139,0.2);">
+        <span class="offre-emoji">🌱</span>
+        <div class="offre-name" style="color:#0A1628;">Pack Démarrage</div>
+        <div class="offre-score" style="color:#2E9B8B;">Score 0–19 / 100</div>
+        <div class="offre-prix" style="color:#2E9B8B;">400€<span style="font-size:13px;color:#6B7A94;">/mois</span></div>
+        <ul class="offre-items">
+          <li>Audit initial + rapport complet</li>
+          <li>1 session Zoom mensuelle (1h)</li>
+          <li>Roadmap digitale personnalisée</li>
+          <li>Suivi KPIs mensuel</li>
+          <li>Support WhatsApp</li>
+        </ul>
+        <button class="offre-btn" style="background:rgba(46,155,139,0.12);color:#2E9B8B;">Démarrer →</button>
+      </div>
+      <div class="offre-card" style="background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);">
+        <span class="offre-emoji">🌿</span>
+        <div class="offre-name" style="color:#0A1628;">Pack Transformation</div>
+        <div class="offre-score" style="color:#C9A84C;">Score 20–39 / 100</div>
+        <div class="offre-prix" style="color:#C9A84C;">600€<span style="font-size:13px;color:#6B7A94;">/mois</span></div>
+        <ul class="offre-items">
+          <li>Tout le Pack Démarrage</li>
+          <li>2 sessions mensuelles (1h30)</li>
+          <li>Stratégie digitale complète</li>
+          <li>Formation équipe (2h/mois)</li>
+          <li>Tableau de bord KPIs dédié</li>
+        </ul>
+        <button class="offre-btn" style="background:rgba(201,168,76,0.12);color:#8B6A1A;">Démarrer →</button>
+      </div>
+      <div class="offre-card" style="background:rgba(123,94,167,0.06);border:1px solid rgba(123,94,167,0.25);">
+        <div style="position:absolute;top:-10px;right:14px;background:#7B5EA7;padding:3px 12px;border-radius:15px;font-size:9px;font-weight:700;color:#fff;letter-spacing:0.5px;">POPULAIRE</div>
+        <span class="offre-emoji">🌳</span>
+        <div class="offre-name" style="color:#0A1628;">Pack Automatisation IA</div>
+        <div class="offre-score" style="color:#7B5EA7;">Score 40–59 / 100</div>
+        <div class="offre-prix" style="color:#7B5EA7;">800€<span style="font-size:13px;color:#6B7A94;">/mois</span></div>
+        <ul class="offre-items">
+          <li>Tout le Pack Transformation</li>
+          <li>Automatisation processus (Make/Zapier)</li>
+          <li>Déploiement outils IA équipe</li>
+          <li>3 sessions mensuelles</li>
+          <li>Accès Plateforme Premium inclus</li>
+        </ul>
+        <button class="offre-btn" style="background:#7B5EA7;color:#fff;">Démarrer →</button>
+      </div>
+      <div class="offre-card" style="background:rgba(192,98,122,0.06);border:1px solid rgba(192,98,122,0.2);">
+        <span class="offre-emoji">🚀</span>
+        <div class="offre-name" style="color:#0A1628;">Pack Excellence</div>
+        <div class="offre-score" style="color:#C0627A;">Score 60–79 / 100</div>
+        <div class="offre-prix" style="color:#C0627A;">1 200€<span style="font-size:13px;color:#6B7A94;">/mois</span></div>
+        <ul class="offre-items">
+          <li>Tout le Pack Automatisation</li>
+          <li>Accompagnement stratégique avancé</li>
+          <li>Présentiel possible France/Afrique</li>
+          <li>Sessions illimitées</li>
+          <li>Réseau partenaires Nexalie</li>
+        </ul>
+        <button class="offre-btn" style="background:rgba(192,98,122,0.12);color:#C0627A;">Démarrer →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <div class="about-avatar">RE</div>
+        <div class="about-name">Relia Ebiya</div>
+        <div class="about-title">Fondatrice · Nexalie Studio</div>
+        <ul class="about-infos">
+          <li>📍 Vitry-sur-Seine, France</li>
+          <li>🇨🇬 Congo Brazzaville</li>
+          <li>💬 FR · EN · Lingala · Kitouba</li>
+          <li>✉️ relia.ebiya@gmail.com</li>
+          <li>📱 +33 7 86 62 04 09</li>
+        </ul>
+        <button class="about-contact" id="contact">Me contacter →</button>
+      </div>
+      <div>
+        <div class="section-eyebrow">La fondatrice</div>
+        <h2 class="section-title" style="margin-bottom:16px;">Un pont entre <em>deux mondes</em></h2>
+        <p class="about-text">Cheffe de projet digital avec 10+ ans d'expérience en France, formée aux standards européens les plus exigeants, ancrée dans la réalité africaine. Je parle votre langue — au sens propre comme au sens figuré.</p>
+        <div class="about-skills">
+          <div class="skill-card">
+            <div class="skill-icon">🎯</div>
+            <div class="skill-name">Transformation digitale</div>
+            <div class="skill-sub">Roadmaps & stratégie</div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">🤖</div>
+            <div class="skill-name">IA & Automatisation</div>
+            <div class="skill-sub">Claude, Make, Zapier</div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">📊</div>
+            <div class="skill-name">Data & Analytics</div>
+            <div class="skill-sub">Power BI, KPIs</div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">🌍</div>
+            <div class="skill-name">Double culture</div>
+            <div class="skill-sub">Paris ↔ Brazzaville</div>
+          </div>
+        </div>
+        <ul class="timeline">
+          <li>
+            <div class="tl-dot" style="background:#2E9B8B;"></div>
+            <div>
+              <div class="tl-period" style="color:#2E9B8B;">2022 → Présent</div>
+              <div class="tl-role">Chef de Projet Digital · 3SP Technologies</div>
+            </div>
+          </li>
+          <li>
+            <div class="tl-dot" style="background:#C9A84C;"></div>
+            <div>
+              <div class="tl-period" style="color:#C9A84C;">2021 → 2023</div>
+              <div class="tl-role">CEO & Fondatrice · WEAREEYWA</div>
+            </div>
+          </li>
+          <li>
+            <div class="tl-dot" style="background:#7B5EA7;"></div>
+            <div>
+              <div class="tl-period" style="color:#7B5EA7;">2024</div>
+              <div class="tl-role">Master Manager de Projet · ECEMA</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="pricing-bg">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:40px;">
+      <div class="section-eyebrow">Plateforme Nexalie</div>
+      <h2 class="section-title">Tarifs <em>simples et transparents</em></h2>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-name">🌱 Gratuit</div>
+        <div class="pricing-price" style="color:#2E9B8B;">0€</div>
+        <ul class="pricing-items">
+          <li>Audit digital (illimité)</li>
+          <li>Calculateur ROI</li>
+          <li>Générateur maquette (3/mois)</li>
+          <li>Articles & ressources</li>
+        </ul>
+        <button class="pricing-btn" style="background:transparent;border:1px solid #2E9B8B;color:#2E9B8B;">Commencer →</button>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">POPULAIRE</div>
+        <div class="pricing-name">🚀 Premium</div>
+        <div class="pricing-price" style="color:#C9A84C;">29€<span>/mois</span></div>
+        <ul class="pricing-items">
+          <li>Tous les outils illimités</li>
+          <li>Business Plan IA</li>
+          <li>Roadmap + Veille</li>
+          <li>CDC + Simulateur Budget</li>
+          <li>Export PDF</li>
+          <li>Support WhatsApp</li>
+        </ul>
+        <button class="pricing-btn" style="background:#C9A84C;border:none;color:#0A1628;">Passer Premium →</button>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-name">🏢 Consulting</div>
+        <div class="pricing-price" style="color:#7B5EA7;">400€+<span>/mois</span></div>
+        <ul class="pricing-items">
+          <li>Tout Premium inclus</li>
+          <li>Sessions Zoom mensuelles</li>
+          <li>Rapport personnalisé</li>
+          <li>Roadmap sur mesure</li>
+          <li>WhatsApp direct Relia</li>
+        </ul>
+        <button class="pricing-btn" style="background:transparent;border:1px solid #7B5EA7;color:#7B5EA7;">Prendre RDV →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="cta-section">
+  <div class="cta-inner">
+    <h2>Votre transformation digitale <em>commence aujourd'hui</em></h2>
+    <p>Audit gratuit en 20 minutes. Plan d'action personnalisé. Accompagnement adapté à votre niveau.</p>
+    <button class="cta-btn">Je fais mon audit gratuit →</button>
+    <p class="cta-contact">📱 WhatsApp : +33 7 86 62 04 09 · nexali.ai</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Nexalie <span style="font-size:10px;letter-spacing:2px;color:rgba(201,168,76,0.7);font-family:monospace;">STUDIO</span></div>
+    <div class="footer-copy">© 2026 Nexalie Studio · relia.ebiya@gmail.com</div>
+    <div class="footer-link">nexali.ai</div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.badge-mode span').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.badge-mode span').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

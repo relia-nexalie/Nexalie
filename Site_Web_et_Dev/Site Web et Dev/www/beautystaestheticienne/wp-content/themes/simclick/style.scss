@@ -1,0 +1,122 @@
+/*
+Theme Name: SimClick
+Theme URI: https://catchthemes.com/themes/simclick/
+Author: Catch Themes
+Author URI: https://catchthemes.com/
+Description: SimClick is a free Corporate Photography WordPress theme, crafted for creative minds. The minimal design in SimClick makes your photography website look clean, simple, and visually aesthetic. It is ideal for photographers, photo bloggers, art portfolio, freelancer, and other creative photography related website. You can use the theme either for personal use or for corporate photography websites. SimClick includes all the features that are crucial for any personal or corporate photography WordPress website. For instance, Featured Slider, Featured Content, Hero Content, Portfolio, Testimonials, Services, and more. With these exciting features, SimClick lets you highlight your special contents, categorize them elegantly and show your expertise. Flexible features, clever widgets, useful shortcodes, elegant layouts, or a clean design, SimClick has it all. The theme is super user-friendly, has a very easy working interface and saves so much time with zero need for coding. The theme is absolutely responsive and adapts all screen sizes. And also, SimClick is translation-ready. For more information, check out Theme Instructions at https://catchthemes.com/themes/simclick/#theme-instructions, support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/simclick/
+Version: 1.1
+Requires at least: 5.6
+Tested up to: 5.9
+Requires PHP: 5.6
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: simclick
+Domain Path: /languages/
+Tags: one-column, two-columns, right-sidebar, flexible-header, custom-background, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, wide-blocks, block-styles, blog, photography, portfolio
+
+SimClick is based on Underscores http://underscores.me/, (C) 2012-2019 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Variables
+	1.1 - Color
+	1.2 - Fonts
+	1.3 - Structure
+	1.4  -Transition
+2.0 - Normalize
+3.0 - Mixin
+	3.1 - Mixin
+4.0 Modules
+	4.1 - Alignments
+	4.2 - Blocks
+	4.3 - Clearings
+5.0 - Forms
+	5.1 - Buttons
+	5.2 - Fields
+6.0 - Navigation
+	6.1 - Next Previous
+	6.2 - Social Menu Navigation
+	6.3 - Menus
+7.0 Typography
+	7.1 - Headings
+	7.2 - Copy
+8.0 Sites
+	8.1 - Primary
+		8.1.1 - Archives
+		8.1.2 - Comments
+	8.2.0 - Secondary
+		8.2.1 - Widget
+	8.3.0 - Section
+		8.3.1 - Header
+		8.3.2 - Hero Content
+		8.3.3 - Promotional
+		8.3.4 - Testimonials
+		8.3.5 - Blog
+		8.3.6 - Newsletter
+		8.3.7 - Portfolio
+		8.3.8 - Feature Slider
+		8.3.9 - Footer
+		8.3.10 - Woocommerce
+		8.3.11 - Team
+		8.3.12 - Logo Slider
+		8.3.13 - Service
+		8.3.14 - Contact
+		8.3.15 - Feature Content
+		8.3.16 - Stats
+		8.3.17 - Gallery
+9.0 - Elements
+	9.1 - Lists
+	9.2 - Tables
+	9.3 - Color Selection
+
+10.0 - Media
+	10.1 - mobile-horizontal
+	10.2 - tablet
+	10.3 - desktop
+	10.4 - wide-width
+	10.5 - large
+	10.6 - ultra_wide
+--------------------------------------------------------------*/
+
+//**Variables**//
+
+@import 'sass/variables/variables';
+
+//**Normalize**//
+
+@import 'sass/normalize';
+
+//**mixin 3.0 **//
+
+@import 'sass/mixin/mixin';
+
+//**modules**//
+
+@import 'sass/modules/modules';
+
+//**Forms**//
+
+@import 'sass/forms/forms';
+
+//**Navigation**//
+
+@import 'sass/navigation/navigation';
+
+//**Typography**//
+
+@import 'sass/typography/typography';
+
+//**media**//
+
+@import 'sass/media/media';
+
+//**site**//
+
+@import 'sass/site/site';
+
+//**Elements**//
+
+@import 'sass/elements/core';

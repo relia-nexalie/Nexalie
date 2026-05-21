@@ -1,0 +1,91 @@
+/* ─── Reset ─────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ─── Dark mode ─────────────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+/* ─── Formulaires ───────────────────────────────────────────────────── */
+input,
+textarea,
+select {
+  outline: none !important;
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.25) !important;
+}
+
+/* ─── Keyframes ─────────────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.1); border-radius: 2px; }
+
+/* ─── Boutons globaux ───────────────────────────────────────────────── */
+button {
+  transition: opacity 0.15s, transform 0.1s;
+  font-family: sans-serif;
+}
+button:hover:not(:disabled) { opacity: 0.88; }
+button:active:not(:disabled) { transform: scale(0.98); }
+
+/* ─── Nav mobile NexaliSite ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  nav > div > div:nth-child(2) { display: none !important; }
+}
+
+/* ─── Keyframes ─────────────────────────────────────────────────────── */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ─── Composants réutilisables ──────────────────────────────────────── */
+.plan-card {
+  animation: fadeUp 0.4s ease both;
+}
+
+/* ─── Contenu article blog ──────────────────────────────────────────── */
+.article-content h2 {
+  font-family: Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #0A1628;
+  margin: 32px 0 14px;
+}
+.article-content h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0A1628;
+  margin: 24px 0 10px;
+}
+.article-content strong { color: #0A1628; }
+.article-content li    { margin-bottom: 8px; padding-left: 4px; }

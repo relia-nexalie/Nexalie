@@ -1,0 +1,177 @@
+0000.017 (R) [notice] Recherche de l'archive db : nom du fichier : backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db.gz
+0000.017 (R) [notice] L'archive devrait peser :  7126.7 KB: OK
+0000.022 (R) [notice] Will not delete any archives after unpacking them, because there was no cloud storage for this backup
+0000.024 (R) [notice] Décompression de la sauvegarde… (backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db.gz, 7 Mb)
+0000.097 (R) [notice] Restauration de la base de données (cela peut prendre du temps si votre site est volumineux - en cas de timeout (ce qui arrive si votre hébergeur limite vos ressources), vous devrez utiliser une autre méthode comme phpMyAdmin…
+0000.133 (R) [notice] Activation du mode maintenance&#8230;
+0000.163 (R) [notice] Sauvegarde de : https://www.beautystaestheticienne.fr
+0000.166 (R) [notice] URL de contenu : https://www.beautystaestheticienne.fr/wp-content
+0000.166 (R) [notice] URL des téléversements : https://www.beautystaestheticienne.fr/wp-content/uploads
+0000.166 (R) [notice] Ancien préfixe des tables : mod45_
+0000.166 (R) [notice] Information sur le site : multisite = 0
+0000.166 (R) [notice] Information sur le site : sql_mode = NO_ENGINE_SUBSTITUTION
+0000.168 (R) [notice] New table prefix: xm_
+0000.173 (R) [notice] Traitement de la table (InnoDB):  mod45_options - sera restauré comme : xm_options
+0000.397 (R) [notice] Atomic restore: dropping original table (mod45_options)
+0000.412 (R) [notice] Atomic restore: renaming new table (xm_options) to final table name (mod45_options)
+0000.470 (R) [notice] Traitement de la table (InnoDB):  mod45_users - sera restauré comme : xm_users
+0000.492 (R) [notice] Atomic restore: dropping original table (mod45_users)
+0000.500 (R) [notice] Atomic restore: renaming new table (xm_users) to final table name (mod45_users)
+0000.504 (R) [notice] Traitement de la table (InnoDB):  mod45_usermeta - sera restauré comme : xm_usermeta
+0000.523 (R) [notice] Atomic restore: dropping original table (mod45_usermeta)
+0000.531 (R) [notice] Atomic restore: renaming new table (xm_usermeta) to final table name (mod45_usermeta)
+0000.535 (R) [notice] Traitement de la table (InnoDB):  mod45_commentmeta - sera restauré comme : xm_commentmeta
+0000.551 (R) [notice] Atomic restore: dropping original table (mod45_commentmeta)
+0000.558 (R) [notice] Atomic restore: renaming new table (xm_commentmeta) to final table name (mod45_commentmeta)
+0000.562 (R) [notice] Traitement de la table (InnoDB):  mod45_comments - sera restauré comme : xm_comments
+0000.586 (R) [notice] Atomic restore: dropping original table (mod45_comments)
+0000.594 (R) [notice] Atomic restore: renaming new table (xm_comments) to final table name (mod45_comments)
+0000.599 (R) [notice] Traitement de la table (InnoDB):  mod45_links - sera restauré comme : xm_links
+0000.614 (R) [notice] Atomic restore: dropping original table (mod45_links)
+0000.624 (R) [notice] Atomic restore: renaming new table (xm_links) to final table name (mod45_links)
+0000.628 (R) [notice] Traitement de la table (InnoDB):  mod45_postmeta - sera restauré comme : xm_postmeta
+0001.553 (R) [notice] Database queries processed: 50 in 1.45 seconds
+0003.383 (R) [notice] Database queries processed: 100 in 3.28 seconds
+0004.802 (R) [notice] Atomic restore: dropping original table (mod45_postmeta)
+0004.812 (R) [notice] Atomic restore: renaming new table (xm_postmeta) to final table name (mod45_postmeta)
+0004.816 (R) [notice] Traitement de la table (InnoDB):  mod45_posts - sera restauré comme : xm_posts
+0005.129 (R) [notice] Database queries processed: 150 in 5.03 seconds
+0006.667 (R) [notice] Database queries processed: 200 in 6.56 seconds
+0006.667 (R) [notice] Atomic restore: dropping original table (mod45_posts)
+0006.677 (R) [notice] Atomic restore: renaming new table (xm_posts) to final table name (mod45_posts)
+0006.684 (R) [notice] Traitement de la table (InnoDB):  mod45_term_relationships - sera restauré comme : xm_term_relationships
+0006.703 (R) [notice] Atomic restore: dropping original table (mod45_term_relationships)
+0006.712 (R) [notice] Atomic restore: renaming new table (xm_term_relationships) to final table name (mod45_term_relationships)
+0006.717 (R) [notice] Traitement de la table (InnoDB):  mod45_term_taxonomy - sera restauré comme : xm_term_taxonomy
+0006.742 (R) [notice] Atomic restore: dropping original table (mod45_term_taxonomy)
+0006.758 (R) [notice] Atomic restore: renaming new table (xm_term_taxonomy) to final table name (mod45_term_taxonomy)
+0006.765 (R) [notice] Traitement de la table (InnoDB):  mod45_termmeta - sera restauré comme : xm_termmeta
+0006.782 (R) [notice] Atomic restore: dropping original table (mod45_termmeta)
+0006.790 (R) [notice] Atomic restore: renaming new table (xm_termmeta) to final table name (mod45_termmeta)
+0006.795 (R) [notice] Traitement de la table (InnoDB):  mod45_terms - sera restauré comme : xm_terms
+0006.810 (R) [notice] Atomic restore: dropping original table (mod45_terms)
+0006.817 (R) [notice] Atomic restore: renaming new table (xm_terms) to final table name (mod45_terms)
+0006.821 (R) [notice] Traitement de la table (InnoDB):  mod45_actionscheduler_actions - sera restauré comme : xm_actionscheduler_actions
+0006.855 (R) [notice] Atomic restore: dropping original table (mod45_actionscheduler_actions)
+0006.866 (R) [notice] Atomic restore: renaming new table (xm_actionscheduler_actions) to final table name (mod45_actionscheduler_actions)
+0006.871 (R) [notice] Traitement de la table (InnoDB):  mod45_actionscheduler_claims - sera restauré comme : xm_actionscheduler_claims
+0006.883 (R) [notice] Atomic restore: dropping original table (mod45_actionscheduler_claims)
+0006.889 (R) [notice] Atomic restore: renaming new table (xm_actionscheduler_claims) to final table name (mod45_actionscheduler_claims)
+0006.893 (R) [notice] Traitement de la table (InnoDB):  mod45_actionscheduler_groups - sera restauré comme : xm_actionscheduler_groups
+0006.904 (R) [notice] Atomic restore: dropping original table (mod45_actionscheduler_groups)
+0006.911 (R) [notice] Atomic restore: renaming new table (xm_actionscheduler_groups) to final table name (mod45_actionscheduler_groups)
+0006.914 (R) [notice] Traitement de la table (InnoDB):  mod45_actionscheduler_logs - sera restauré comme : xm_actionscheduler_logs
+0006.930 (R) [notice] Atomic restore: dropping original table (mod45_actionscheduler_logs)
+0006.936 (R) [notice] Atomic restore: renaming new table (xm_actionscheduler_logs) to final table name (mod45_actionscheduler_logs)
+0006.939 (R) [notice] Traitement de la table (InnoDB):  mod45_addonlibrary_addons - sera restauré comme : xm_addonlibrary_addons
+0006.950 (R) [notice] Atomic restore: dropping original table (mod45_addonlibrary_addons)
+0006.956 (R) [notice] Atomic restore: renaming new table (xm_addonlibrary_addons) to final table name (mod45_addonlibrary_addons)
+0006.960 (R) [notice] Traitement de la table (InnoDB):  mod45_addonlibrary_categories - sera restauré comme : xm_addonlibrary_categories
+0006.971 (R) [notice] Atomic restore: dropping original table (mod45_addonlibrary_categories)
+0006.976 (R) [notice] Atomic restore: renaming new table (xm_addonlibrary_categories) to final table name (mod45_addonlibrary_categories)
+0006.979 (R) [notice] Traitement de la table (InnoDB):  mod45_aioseo_notifications - sera restauré comme : xm_aioseo_notifications
+0006.993 (R) [notice] Atomic restore: dropping original table (mod45_aioseo_notifications)
+0007.001 (R) [notice] Atomic restore: renaming new table (xm_aioseo_notifications) to final table name (mod45_aioseo_notifications)
+0007.004 (R) [notice] Traitement de la table (InnoDB):  mod45_aioseo_posts - sera restauré comme : xm_aioseo_posts
+0007.030 (R) [notice] Atomic restore: dropping original table (mod45_aioseo_posts)
+0007.041 (R) [notice] Atomic restore: renaming new table (xm_aioseo_posts) to final table name (mod45_aioseo_posts)
+0007.045 (R) [notice] Traitement de la table (InnoDB):  mod45_booking - sera restauré comme : xm_booking
+0007.065 (R) [notice] Atomic restore: dropping original table (mod45_booking)
+0007.085 (R) [notice] Atomic restore: renaming new table (xm_booking) to final table name (mod45_booking)
+0007.089 (R) [notice] Traitement de la table (InnoDB):  mod45_bookingdates - sera restauré comme : xm_bookingdates
+0007.110 (R) [notice] Atomic restore: dropping original table (mod45_bookingdates)
+0007.117 (R) [notice] Atomic restore: renaming new table (xm_bookingdates) to final table name (mod45_bookingdates)
+0007.120 (R) [notice] Constraints found, will disable atomic restore for current table (mod45_ea_appointments)
+0007.120 (R) [notice] Traitement de la table (InnoDB):  mod45_ea_appointments
+0007.136 (R) [notice] Constraints found, will disable atomic restore for current table (mod45_ea_connections)
+0007.136 (R) [notice] Traitement de la table (InnoDB):  mod45_ea_connections
+0007.150 (R) [notice] Traitement de la table (InnoDB):  mod45_ea_error_logs - sera restauré comme : xm_ea_error_logs
+0007.164 (R) [notice] Atomic restore: dropping original table (mod45_ea_error_logs)
+0007.171 (R) [notice] Atomic restore: renaming new table (xm_ea_error_logs) to final table name (mod45_ea_error_logs)
+0007.174 (R) [notice] Traitement de la table (InnoDB):  mod45_ea_fields - sera restauré comme : xm_ea_fields
+0007.183 (R) [notice] Atomic restore: dropping original table (mod45_ea_fields)
+0007.184 (R) [notice] Database queries processed: 250 in 7.08 seconds
+0007.184 (R) [notice] Atomic restore: renaming new table (xm_ea_fields) to final table name (mod45_ea_fields)
+0007.187 (R) [notice] Traitement de la table (InnoDB):  mod45_ea_locations - sera restauré comme : xm_ea_locations
+0007.197 (R) [notice] Atomic restore: dropping original table (mod45_ea_locations)
+0007.197 (R) [notice] Atomic restore: renaming new table (xm_ea_locations) to final table name (mod45_ea_locations)
+0007.201 (R) [notice] Traitement de la table (InnoDB):  mod45_ea_meta_fields - sera restauré comme : xm_ea_meta_fields
+0007.213 (R) [notice] Atomic restore: dropping original table (mod45_ea_meta_fields)
+0007.213 (R) [notice] Atomic restore: renaming new table (xm_ea_meta_fields) to final table name (mod45_ea_meta_fields)
+0007.216 (R) [notice] Traitement de la table (InnoDB):  mod45_ea_options - sera restauré comme : xm_ea_options
+0007.227 (R) [notice] Atomic restore: dropping original table (mod45_ea_options)
+0007.227 (R) [notice] Atomic restore: renaming new table (xm_ea_options) to final table name (mod45_ea_options)
+0007.230 (R) [notice] Traitement de la table (InnoDB):  mod45_ea_services - sera restauré comme : xm_ea_services
+0007.238 (R) [notice] Atomic restore: dropping original table (mod45_ea_services)
+0007.239 (R) [notice] Atomic restore: renaming new table (xm_ea_services) to final table name (mod45_ea_services)
+0007.242 (R) [notice] Traitement de la table (InnoDB):  mod45_ea_staff - sera restauré comme : xm_ea_staff
+0007.252 (R) [notice] Atomic restore: dropping original table (mod45_ea_staff)
+0007.252 (R) [notice] Atomic restore: renaming new table (xm_ea_staff) to final table name (mod45_ea_staff)
+0007.256 (R) [notice] Traitement de la table (InnoDB):  mod45_statistics_exclusions - sera restauré comme : xm_statistics_exclusions
+0007.267 (R) [notice] Atomic restore: dropping original table (mod45_statistics_exclusions)
+0007.274 (R) [notice] Atomic restore: renaming new table (xm_statistics_exclusions) to final table name (mod45_statistics_exclusions)
+0007.277 (R) [notice] Traitement de la table (InnoDB):  mod45_statistics_historical - sera restauré comme : xm_statistics_historical
+0007.288 (R) [notice] Atomic restore: dropping original table (mod45_statistics_historical)
+0007.293 (R) [notice] Atomic restore: renaming new table (xm_statistics_historical) to final table name (mod45_statistics_historical)
+0007.296 (R) [notice] Traitement de la table (InnoDB):  mod45_statistics_pages - sera restauré comme : xm_statistics_pages
+0007.313 (R) [notice] Atomic restore: dropping original table (mod45_statistics_pages)
+0007.319 (R) [notice] Atomic restore: renaming new table (xm_statistics_pages) to final table name (mod45_statistics_pages)
+0007.323 (R) [notice] Traitement de la table (InnoDB):  mod45_statistics_search - sera restauré comme : xm_statistics_search
+0007.339 (R) [notice] Atomic restore: dropping original table (mod45_statistics_search)
+0007.350 (R) [notice] Atomic restore: renaming new table (xm_statistics_search) to final table name (mod45_statistics_search)
+0007.353 (R) [notice] Traitement de la table (InnoDB):  mod45_statistics_useronline - sera restauré comme : xm_statistics_useronline
+0007.363 (R) [notice] Atomic restore: dropping original table (mod45_statistics_useronline)
+0007.368 (R) [notice] Atomic restore: renaming new table (xm_statistics_useronline) to final table name (mod45_statistics_useronline)
+0007.372 (R) [notice] Traitement de la table (InnoDB):  mod45_statistics_visit - sera restauré comme : xm_statistics_visit
+0007.386 (R) [notice] Atomic restore: dropping original table (mod45_statistics_visit)
+0007.394 (R) [notice] Atomic restore: renaming new table (xm_statistics_visit) to final table name (mod45_statistics_visit)
+0007.397 (R) [notice] Traitement de la table (InnoDB):  mod45_statistics_visitor - sera restauré comme : xm_statistics_visitor
+0007.417 (R) [notice] Atomic restore: dropping original table (mod45_statistics_visitor)
+0007.439 (R) [notice] Atomic restore: renaming new table (xm_statistics_visitor) to final table name (mod45_statistics_visitor)
+0007.449 (R) [notice] Traitement de la table (InnoDB):  mod45_statistics_visitor_relationships - sera restauré comme : xm_statistics_visitor_relationships
+0007.475 (R) [notice] Atomic restore: dropping original table (mod45_statistics_visitor_relationships)
+0007.482 (R) [notice] Atomic restore: renaming new table (xm_statistics_visitor_relationships) to final table name (mod45_statistics_visitor_relationships)
+0007.486 (R) [notice] Traitement de la table (InnoDB):  mod45_tm_taskmeta - sera restauré comme : xm_tm_taskmeta
+0007.499 (R) [notice] Atomic restore: dropping original table (mod45_tm_taskmeta)
+0007.510 (R) [notice] Atomic restore: renaming new table (xm_tm_taskmeta) to final table name (mod45_tm_taskmeta)
+0007.528 (R) [notice] Traitement de la table (InnoDB):  mod45_tm_tasks - sera restauré comme : xm_tm_tasks
+0007.546 (R) [notice] Atomic restore: dropping original table (mod45_tm_tasks)
+0007.556 (R) [notice] Atomic restore: renaming new table (xm_tm_tasks) to final table name (mod45_tm_tasks)
+0007.559 (R) [notice] Traitement de la table (InnoDB):  mod45_wpsbc_calendar_meta - sera restauré comme : xm_wpsbc_calendar_meta
+0007.580 (R) [notice] Atomic restore: dropping original table (mod45_wpsbc_calendar_meta)
+0007.586 (R) [notice] Atomic restore: renaming new table (xm_wpsbc_calendar_meta) to final table name (mod45_wpsbc_calendar_meta)
+0007.591 (R) [notice] Traitement de la table (InnoDB):  mod45_wpsbc_calendars - sera restauré comme : xm_wpsbc_calendars
+0007.602 (R) [notice] Atomic restore: dropping original table (mod45_wpsbc_calendars)
+0007.608 (R) [notice] Atomic restore: renaming new table (xm_wpsbc_calendars) to final table name (mod45_wpsbc_calendars)
+0007.610 (R) [notice] Traitement de la table (InnoDB):  mod45_wpsbc_event_meta - sera restauré comme : xm_wpsbc_event_meta
+0007.622 (R) [notice] Atomic restore: dropping original table (mod45_wpsbc_event_meta)
+0007.629 (R) [notice] Atomic restore: renaming new table (xm_wpsbc_event_meta) to final table name (mod45_wpsbc_event_meta)
+0007.633 (R) [notice] Traitement de la table (InnoDB):  mod45_wpsbc_events - sera restauré comme : xm_wpsbc_events
+0007.648 (R) [notice] Atomic restore: dropping original table (mod45_wpsbc_events)
+0007.654 (R) [notice] Atomic restore: renaming new table (xm_wpsbc_events) to final table name (mod45_wpsbc_events)
+0007.657 (R) [notice] Traitement de la table (InnoDB):  mod45_wpsbc_legend_item_meta - sera restauré comme : xm_wpsbc_legend_item_meta
+0007.674 (R) [notice] Atomic restore: dropping original table (mod45_wpsbc_legend_item_meta)
+0007.681 (R) [notice] Atomic restore: renaming new table (xm_wpsbc_legend_item_meta) to final table name (mod45_wpsbc_legend_item_meta)
+0007.684 (R) [notice] Traitement de la table (InnoDB):  mod45_wpsbc_legend_items - sera restauré comme : xm_wpsbc_legend_items
+0007.696 (R) [notice] Atomic restore: dropping original table (mod45_wpsbc_legend_items)
+0007.701 (R) [notice] Atomic restore: renaming new table (xm_wpsbc_legend_items) to final table name (mod45_wpsbc_legend_items)
+0007.704 (R) [notice] Traitement de la table (InnoDB):  mod45_yoast_indexable - sera restauré comme : xm_yoast_indexable
+0007.755 (R) [notice] Atomic restore: dropping original table (mod45_yoast_indexable)
+0007.771 (R) [notice] Atomic restore: renaming new table (xm_yoast_indexable) to final table name (mod45_yoast_indexable)
+0007.777 (R) [notice] Traitement de la table (InnoDB):  mod45_yoast_indexable_hierarchy - sera restauré comme : xm_yoast_indexable_hierarchy
+0007.797 (R) [notice] Atomic restore: dropping original table (mod45_yoast_indexable_hierarchy)
+0007.806 (R) [notice] Atomic restore: renaming new table (xm_yoast_indexable_hierarchy) to final table name (mod45_yoast_indexable_hierarchy)
+0007.811 (R) [notice] Traitement de la table (InnoDB):  mod45_yoast_migrations - sera restauré comme : xm_yoast_migrations
+0007.827 (R) [notice] Atomic restore: dropping original table (mod45_yoast_migrations)
+0007.833 (R) [notice] Atomic restore: renaming new table (xm_yoast_migrations) to final table name (mod45_yoast_migrations)
+0007.836 (R) [notice] Traitement de la table (InnoDB):  mod45_yoast_primary_term - sera restauré comme : xm_yoast_primary_term
+0007.847 (R) [notice] Atomic restore: dropping original table (mod45_yoast_primary_term)
+0007.852 (R) [notice] Atomic restore: renaming new table (xm_yoast_primary_term) to final table name (mod45_yoast_primary_term)
+0007.855 (R) [notice] Traitement de la table (InnoDB):  mod45_yoast_seo_links - sera restauré comme : xm_yoast_seo_links
+0008.210 (R) [notice] Désactivation du mode maintenance&#8230;
+0008.220 (R) [notice] Atomic restore: dropping original table (mod45_yoast_seo_links)
+0008.228 (R) [notice] Atomic restore: renaming new table (xm_yoast_seo_links) to final table name (mod45_yoast_seo_links)
+0008.229 (R) [notice] Finished: lines processed: 316 in 8.13 seconds
+0008.237 (R) [notice] Nettoyage…
+0008.270 (R) [notice] Plugin path easy-appointments/main.php not found: de-activating.
+0008.313 (R) [notice] Restore successful!

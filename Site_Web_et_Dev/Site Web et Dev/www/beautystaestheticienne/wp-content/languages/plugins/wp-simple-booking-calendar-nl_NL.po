@@ -1,0 +1,802 @@
+# Translation of Plugins - WP Simple Booking Calendar - Development (trunk) in Dutch
+# This file is distributed under the same license as the Plugins - WP Simple Booking Calendar - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-08-16 14:33:29+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.1\n"
+"Language: nl\n"
+"Project-Id-Version: Plugins - WP Simple Booking Calendar - Development (trunk)\n"
+
+#: includes/base/admin/settings/class-submenu-page-settings.php:44
+msgid "General"
+msgstr "Algemeen"
+
+#: includes/base/admin/settings/views/view-settings-tab-general.php:12
+msgid "Backend Start Day"
+msgstr "Backend start dag"
+
+#: includes/abstracts/abstract-class-list-table.php:804
+msgid "Previous page"
+msgstr "Vorige pagina"
+
+#: includes/abstracts/abstract-class-list-table.php:811
+#: includes/abstracts/abstract-class-list-table.php:814
+msgid "Current Page"
+msgstr "Huidige pagina"
+
+#: includes/abstracts/abstract-class-list-table.php:758
+#: includes/abstracts/abstract-class-list-table.php:1345
+msgid "%s item"
+msgid_plural "%s items"
+msgstr[0] "%s item"
+msgstr[1] "%s items"
+
+#: includes/modules/upgrader/views/view-upgrader.php:44
+msgid "Finishing up..."
+msgstr "Afronden..."
+
+#: includes/modules/upgrader/views/view-upgrader.php:66
+msgid "Please wait..."
+msgstr "Wacht alsjeblieft"
+
+#: includes/abstracts/abstract-class-list-table.php:794
+msgid "First page"
+msgstr "Eerste pagina"
+
+#: includes/abstracts/abstract-class-list-table.php:1065
+msgid "Select All"
+msgstr "Selecteer alles"
+
+#: includes/abstracts/abstract-class-list-table.php:837
+msgid "Last page"
+msgstr "Laatste pagina"
+
+#: includes/abstracts/abstract-class-list-table.php:827
+msgid "Next page"
+msgstr "Volgende pagina"
+
+#: includes/abstracts/abstract-class-list-table.php:820
+msgctxt "paging"
+msgid "%1$s of %2$s"
+msgstr "%1$s van %2$s"
+
+#: includes/base/functions.php:56
+msgid "Monday"
+msgstr "Maandag"
+
+#: includes/base/functions.php:57
+msgid "Tuesday"
+msgstr "Dinsdag"
+
+#: includes/base/functions.php:58
+msgid "Wednesday"
+msgstr "Woensdag"
+
+#: includes/base/functions.php:59
+msgid "Thursday"
+msgstr "Donderdag"
+
+#: includes/base/functions.php:60
+msgid "Friday"
+msgstr "Vrijdag"
+
+#: includes/base/functions.php:61
+msgid "Saturday"
+msgstr "Zaterdag"
+
+#: includes/base/functions.php:62
+msgid "Sunday"
+msgstr "Zondag"
+
+#: includes/base/admin/settings/functions.php:36
+#: includes/base/admin/settings/functions.php:37
+#: includes/base/admin/settings/views/view-settings.php:19
+msgid "Settings"
+msgstr "Instellingen"
+
+#: includes/base/admin/settings/class-submenu-page-settings.php:28
+msgid "Settings saved successfully."
+msgstr "Instellingen succesvol opgeslagen."
+
+#: includes/base/admin/settings/class-submenu-page-settings.php:45
+#: includes/base/admin/settings/views/view-settings-tab-languages.php:11
+msgid "Languages"
+msgstr "Talen"
+
+#: includes/base/admin/backup/functions.php:40
+#: includes/base/admin/backup/functions.php:41
+#: includes/base/admin/backup/views/view-backup.php:11
+msgid "Backup/Restore"
+msgstr "Back-up/herstel"
+
+#: includes/base/admin/backup/functions-actions-backup.php:73
+msgid "Please select a file."
+msgstr "Een bestand selecteren."
+
+#: includes/base/legend/functions.php:202
+msgid "Available"
+msgstr "Beschikbaar"
+
+#. Author of the plugin
+msgid "Veribo, Roland Murg"
+msgstr "Veribo, Roland Murg"
+
+#: includes/abstracts/abstract-class-list-table.php:584
+msgid "All dates"
+msgstr "Alle datums"
+
+#: includes/abstracts/abstract-class-list-table.php:582
+msgid "Filter by date"
+msgstr "Filter op datum"
+
+#: includes/abstracts/abstract-class-list-table.php:519
+#: includes/abstracts/abstract-class-list-table.php:1320
+msgid "Show more details"
+msgstr "Laat meer details zien"
+
+#: includes/abstracts/abstract-class-list-table.php:469
+msgid "Apply"
+msgstr "Toepassen"
+
+#: includes/abstracts/abstract-class-list-table.php:459
+msgid "Bulk Actions"
+msgstr "Bulkacties"
+
+#: includes/abstracts/abstract-class-list-table.php:457
+msgid "Select bulk action"
+msgstr "Selecteer voor bulkactie"
+
+#: includes/abstracts/abstract-class-list-table.php:330
+msgid "No items found."
+msgstr "Geen items gevonden."
+
+#: includes/abstracts/abstract-class-list-table.php:159
+msgid "Excerpt View"
+msgstr "Samenvatting weergave"
+
+#: includes/abstracts/abstract-class-list-table.php:158
+msgid "List View"
+msgstr "Lijstweergave"
+
+#: includes/modules/blocks/single-calendar/functions.php:80
+msgid "Please select a calendar to display."
+msgstr "Selecteer een datum om weer te geven"
+
+#: includes/modules/upgrader/views/view-upgrader.php:50
+msgid "Finished"
+msgstr "Afgerond"
+
+#: includes/modules/upgrader/views/view-upgrader.php:49
+msgid "General settings"
+msgstr "Algemene instellingen"
+
+#: includes/modules/upgrader/views/view-upgrader.php:48
+msgid "Bookings"
+msgstr "Boekingen"
+
+#: includes/modules/upgrader/views/view-upgrader.php:42
+msgid "Migrating bookings..."
+msgstr "Boekingen migreren"
+
+#: includes/modules/upgrader/views/view-upgrader.php:41
+msgid "Migrating calendars..."
+msgstr "migreren kalenders"
+
+#: includes/modules/upgrader/views/view-upgrader.php:18
+msgid "Welcome to WP Simple Booking Calendar v.2"
+msgstr "Welkom bij WP Simple Booking Calendar v.2"
+
+#: includes/modules/upgrader/views/view-upgrader.php:43
+msgid "Migrating general settings..."
+msgstr "Algemene instellingen migreren"
+
+#: includes/modules/update-checker/functions.php:95
+#: includes/modules/update-checker/functions.php:113
+msgid "Something went wrong. Could not complete the operation."
+msgstr "Er is iets fout gegaan. Kan de bewerking niet voltooien."
+
+#: includes/modules/update-checker/functions.php:97
+#: includes/modules/update-checker/functions.php:115
+msgid "Please provide a serial key."
+msgstr "Geef een seriële sleutel op."
+
+#: includes/modules/uninstaller/functions.php:17
+msgid "Uninstaller"
+msgstr "Verwijder programma"
+
+#: includes/base/class-widget-calendar.php:120
+#: includes/base/class-widget-calendar.php:290
+msgid "Display legend"
+msgstr "Legenda weergeven"
+
+#: includes/base/class-widget-calendar.php:110
+#: includes/base/class-widget-calendar.php:280
+msgid "Display title"
+msgstr "Titel weergeven"
+
+#: includes/base/admin/calendar/class-list-table-calendars.php:217
+msgid "Edit Calendar Legend"
+msgstr "Bewerk kalenderlegenda"
+
+#: includes/base/admin/calendar/class-list-table-calendars.php:131
+#: includes/base/admin/calendar/class-list-table-calendars.php:218
+msgid "Trash"
+msgstr "Prullenbak"
+
+#: includes/base/admin/calendar/class-list-table-calendars.php:130
+msgid "Active"
+msgstr "Actief"
+
+#: includes/base/admin/calendar/class-list-table-calendars.php:88
+msgid "Date Modified"
+msgstr "Datum gewijzigd"
+
+#: includes/base/admin/calendar/class-list-table-calendars.php:87
+msgid "Date Created"
+msgstr "Datum aangemaakt"
+
+#: includes/base/admin/calendar/class-list-table-calendars.php:86
+msgid "ID"
+msgstr "ID"
+
+#: includes/base/admin/calendar/class-list-table-calendars.php:85
+msgid "Name"
+msgstr "Naam"
+
+#: includes/base/admin/calendar/class-calendar-editor-outputter.php:170
+msgid "Availability"
+msgstr "Beschikbaarheid"
+
+#: includes/base/admin/calendar/views/view-edit-calendar.php:183
+msgid "To configure the CSV export settings please click the button below. "
+msgstr "Klik op de onderstaande knop om de CSV-exportinstellingen te configureren."
+
+#: includes/base/admin/calendar/views/view-edit-calendar.php:179
+#: includes/base/admin/calendar/views/view-edit-calendar.php:185
+msgid "CSV Export"
+msgstr "CSV export"
+
+#: includes/base/admin/calendar/views/view-edit-calendar.php:167
+msgid "To configure the iCal import & export settings and have access to the iCal export link please click the button below."
+msgstr "Om de iCal import & export instellingen te configureren en toegang te hebben tot de iCal export link, klik op de onderstaande knop."
+
+#: includes/base/admin/calendar/views/view-edit-calendar.php:163
+#: includes/base/admin/calendar/views/view-edit-calendar.php:169
+msgid "iCal Import/Export"
+msgstr "iCal importeren / exporteren"
+
+#: includes/base/admin/calendar/views/view-edit-calendar.php:155
+msgid "Edit Legend Items"
+msgstr "Bewerk legenda-items"
+
+#: includes/base/admin/calendar/views/view-edit-calendar.php:135
+msgid "Legend"
+msgstr "legenda"
+
+#: includes/base/admin/calendar/views/view-edit-calendar.php:72
+msgid "Edit Dates"
+msgstr "Datums bewerken"
+
+#: includes/base/admin/calendar/views/view-edit-calendar.php:32
+msgid "Back to all calendars"
+msgstr "Terug naar alle kalenders"
+
+#: includes/base/admin/calendar/views/view-edit-calendar.php:26
+msgid "Calendar ID: %d"
+msgstr "Kalender-ID:%d"
+
+#: includes/base/admin/calendar/views/view-add-calendar.php:32
+msgid "Calendar Name"
+msgstr "Kalender naam"
+
+#: includes/base/admin/calendar/views/view-add-calendar.php:39
+#: includes/base/admin/calendar/views/view-shortcode-generator.php:138
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: includes/base/admin/calendar/views/view-shortcode-generator.php:112
+#: includes/base/class-widget-calendar.php:150
+#: includes/base/class-widget-calendar.php:320
+msgid "Auto (let WP choose)"
+msgstr "Automatisch (laat WP kiezen)"
+
+#: includes/base/admin/calendar/views/view-shortcode-generator.php:108
+#: includes/base/class-widget-calendar.php:141
+#: includes/base/class-widget-calendar.php:311
+#: includes/modules/blocks/single-calendar/assets/js/build/script-block-single-calendar.js:191
+#: includes/modules/blocks/single-calendar/assets/js/src/script-block-single-calendar.js:129
+msgid "Language"
+msgstr "Taal"
+
+#: includes/base/admin/calendar/views/view-shortcode-generator.php:95
+#: includes/base/class-widget-calendar.php:135
+#: includes/base/class-widget-calendar.php:305
+#: includes/modules/blocks/single-calendar/assets/js/build/script-block-single-calendar.js:186
+#: includes/modules/blocks/single-calendar/assets/js/src/script-block-single-calendar.js:124
+msgid "Bottom"
+msgstr "Onderkant"
+
+#: includes/base/admin/calendar/views/view-shortcode-generator.php:94
+#: includes/base/class-widget-calendar.php:134
+#: includes/base/class-widget-calendar.php:304
+#: includes/modules/blocks/single-calendar/assets/js/build/script-block-single-calendar.js:186
+#: includes/modules/blocks/single-calendar/assets/js/src/script-block-single-calendar.js:123
+msgid "Top"
+msgstr "Bovenkant"
+
+#: includes/base/admin/calendar/views/view-shortcode-generator.php:93
+#: includes/base/class-widget-calendar.php:133
+#: includes/base/class-widget-calendar.php:303
+#: includes/modules/blocks/single-calendar/assets/js/build/script-block-single-calendar.js:186
+#: includes/modules/blocks/single-calendar/assets/js/src/script-block-single-calendar.js:122
+msgid "Side"
+msgstr "Zijkant"
+
+#: includes/base/admin/calendar/views/view-shortcode-generator.php:90
+#: includes/base/class-widget-calendar.php:130
+#: includes/base/class-widget-calendar.php:300
+#: includes/modules/blocks/single-calendar/assets/js/build/script-block-single-calendar.js:184
+#: includes/modules/blocks/single-calendar/assets/js/src/script-block-single-calendar.js:119
+msgid "Legend Position"
+msgstr "Legenda positie"
+
+#: includes/base/admin/calendar/views/view-shortcode-generator.php:78
+#: includes/modules/blocks/single-calendar/assets/js/build/script-block-single-calendar.js:177
+#: includes/modules/blocks/single-calendar/assets/js/src/script-block-single-calendar.js:110
+msgid "Display Legend"
+msgstr "Legenda weergeven"
+
+#: includes/base/admin/calendar/views/view-shortcode-generator.php:70
+#: includes/base/admin/calendar/views/view-shortcode-generator.php:82
+#: includes/base/class-widget-calendar.php:114
+#: includes/base/class-widget-calendar.php:124
+#: includes/base/class-widget-calendar.php:284
+#: includes/base/class-widget-calendar.php:294
+#: includes/modules/blocks/single-calendar/assets/js/build/script-block-single-calendar.js:172
+#: includes/modules/blocks/single-calendar/assets/js/build/script-block-single-calendar.js:179
+#: includes/modules/blocks/single-calendar/assets/js/src/script-block-single-calendar.js:105
+#: includes/modules/blocks/single-calendar/assets/js/src/script-block-single-calendar.js:114
+msgid "No"
+msgstr "Nee"
+
+#: includes/base/admin/calendar/views/view-shortcode-generator.php:69
+#: includes/base/admin/calendar/views/view-shortcode-generator.php:81
+#: includes/base/class-widget-calendar.php:113
+#: includes/base/class-widget-calendar.php:123
+#: includes/base/class-widget-calendar.php:283
+#: includes/base/class-widget-calendar.php:293
+#: includes/modules/blocks/single-calendar/assets/js/build/script-block-single-calendar.js:172
+#: includes/modules/blocks/single-calendar/assets/js/build/script-block-single-calendar.js:179
+#: includes/modules/blocks/single-calendar/assets/js/src/script-block-single-calendar.js:104
+#: includes/modules/blocks/single-calendar/assets/js/src/script-block-single-calendar.js:113
+msgid "Yes"
+msgstr "Ja"
+
+#: includes/base/admin/calendar/views/view-edit-calendar.php:112
+#: includes/base/admin/calendar/views/view-shortcode-generator.php:52
+#: includes/base/class-widget-calendar.php:99
+#: includes/base/class-widget-calendar.php:269
+#: includes/modules/blocks/single-calendar/assets/js/build/script-block-single-calendar.js:155
+#: includes/modules/blocks/single-calendar/assets/js/src/script-block-single-calendar.js:86
+msgid "Calendar"
+msgstr "Kalender"
+
+#: includes/base/admin/calendar/views/view-shortcode-generator.php:41
+msgid "Basic Options"
+msgstr "Basisopties"
+
+#: includes/base/admin/calendar/views/view-shortcode-generator.php:38
+msgid "Insert a Calendar"
+msgstr "Voeg een kalender in"
+
+#: includes/base/admin/calendar/views/view-shortcode-generator.php:29
+msgid "Insert Search Widget"
+msgstr "Voeg zoekwidget in"
+
+#: includes/base/admin/calendar/views/view-shortcode-generator.php:28
+msgid "Insert Overview Calendar"
+msgstr "Voeg overzichtskalender in"
+
+#: includes/base/admin/calendar/views/view-shortcode-generator.php:27
+#: includes/base/admin/calendar/views/view-shortcode-generator.php:137
+msgid "Insert Calendar"
+msgstr "Agenda invoegen"
+
+#: includes/base/admin/calendar/functions-shortcode-generator.php:33
+#: includes/base/admin/calendar/views/view-add-calendar.php:40
+#: includes/base/admin/calendar/views/view-shortcode-generator.php:15
+msgid "Add Calendar"
+msgstr "Voeg nieuwe kalender toe"
+
+#: includes/base/admin/calendar/functions-actions-legend-item.php:19
+msgid "Something went wrong. Could not add the legend item."
+msgstr "Er is iets fout gegaan. Kan het legenda-item niet toevoegen."
+
+#: includes/base/admin/calendar/class-submenu-page-calendar.php:61
+msgid "Something went wrong. Could not sort the legend items."
+msgstr "Er is iets fout gegaan. Kan de legenda-items niet sorteren."
+
+#: includes/base/admin/calendar/class-submenu-page-calendar.php:58
+msgid "Legend item deleted successfully."
+msgstr "Legenda-item succesvol verwijderd."
+
+#: includes/base/admin/calendar/class-submenu-page-calendar.php:52
+msgid "Legend item created successfully."
+msgstr "Legenda-item met succes gemaakt."
+
+#: includes/base/admin/calendar/class-submenu-page-calendar.php:49
+msgid "Calendar has been successfully deleted."
+msgstr "Kalender is succesvol verwijderd."
+
+#: includes/base/admin/calendar/class-submenu-page-calendar.php:43
+msgid "Calendar successfully moved to Trash."
+msgstr "Kalender succesvol verplaatst naar prullenbak."
+
+#: includes/base/admin/calendar/class-submenu-page-calendar.php:40
+msgid "Something went wrong. Could not update the calendar."
+msgstr "Er is iets fout gegaan. Kan de kalender niet updaten."
+
+#: includes/base/admin/calendar/class-submenu-page-calendar.php:34
+msgid "Calendar created successfully."
+msgstr "Kalender succesvol aangemaakt."
+
+#: includes/base/admin/backup/class-submenu-page-backup.php:30
+msgid "Data from the file has been imported successfully."
+msgstr "De gegevens uit het bestand zijn succesvol geïmporteerd."
+
+#: includes/base/admin/backup/views/view-backup.php:65
+msgid "Import Data"
+msgstr "Data importeren"
+
+#: includes/base/admin/backup/views/view-backup.php:50
+msgid "Import data from file"
+msgstr "Importeer gegevens uit bestand"
+
+#: includes/base/admin/backup/views/view-backup.php:34
+msgid "Download Export File"
+msgstr "Download exportbestand"
+
+#: includes/base/admin/backup/views/view-backup.php:21
+msgid "Create export file"
+msgstr "Maak een exportbestand"
+
+#: includes/base/legend/functions.php:240
+msgid "Booked"
+msgstr "Geboekt"
+
+#: includes/base/class-shortcodes.php:76
+#: includes/base/class-widget-calendar.php:64
+#: includes/base/class-widget-calendar.php:232
+msgid "Calendar does not exist."
+msgstr "Kalender bestaat niet."
+
+#: includes/abstracts/abstract-class-list-table.php:681
+msgid "No pending comments"
+msgstr "Geen wachtende reacties"
+
+#: includes/abstracts/abstract-class-list-table.php:668
+msgid "No approved comments"
+msgstr "Geen goedgekeurde reacties"
+
+#: includes/modules/upgrader/functions.php:57
+#: includes/modules/upgrader/functions.php:58
+msgid "Welcome"
+msgstr "Welkom"
+
+#: includes/modules/update-checker/views/view-register-website.php:37
+msgid "Check for Updates"
+msgstr "Controleer op updates"
+
+#: includes/abstracts/abstract-class-list-table.php:656
+#: includes/abstracts/abstract-class-list-table.php:668
+#: includes/abstracts/abstract-class-list-table.php:681
+msgid "No comments"
+msgstr "Geen reacties"
+
+#: includes/modules/upgrader/views/view-upgrader.php:65
+msgid "Let's start!"
+msgstr "Laten we beginnen!"
+
+#: includes/modules/upgrader/views/view-upgrader.php:26
+msgid "The setup should take just a few moments. For safe keeping, your old data will not be removed."
+msgstr "De installatie duurt slechts enkele ogenblikken. Voor een veilige bewaring worden je oude gegevens niet verwijderd."
+
+#: includes/modules/upgrader/views/view-upgrader.php:25
+msgid "To start using the new version we will have to do a quick setup to migrate your existing data to the new format."
+msgstr "Om de nieuwe versie te kunnen gebruiken, moeten we een snelle installatie uitvoeren om je bestaande gegevens naar het nieuwe formaat te migreren."
+
+#: includes/modules/upgrader/views/view-upgrader.php:24
+msgid "This new version was written from the ground up to make the plugin easier to use, more flexible and more stable."
+msgstr "Deze nieuwe versie is vanaf de basis geschreven om de plugin gebruiksvriendelijker, flexibeler en stabieler te maken."
+
+#: includes/modules/update-checker/functions.php:62
+#: includes/modules/update-checker/views/view-register-website.php:21
+msgid "Register Website"
+msgstr "Registreer site"
+
+#: includes/modules/upgrader/views/view-upgrader.php:76
+msgid "If you wish to start fresh and skip the migration of your calendars and settings, from the old version, %sclick here%s."
+msgstr "Als je opnieuw wilt beginnen en de migratie van je agenda's en instellingen wilt overslaan, van de oude versie,%s klik hier%s."
+
+#: includes/modules/update-checker/functions.php:99
+msgid "Something went wrong. Could not connect to our server to register your website."
+msgstr "Er is iets fout gegaan. Kon geen verbinding maken met onze server om je site te registreren."
+
+#: includes/modules/uninstaller/views/view-uninstaller.php:28
+msgid "Uninstall Plugin"
+msgstr "Verwijder de plugin"
+
+#: includes/modules/uninstaller/views/view-uninstaller.php:22
+msgid "To confirm that you really want to uninstall WP Simple Booking Calendar, please type REMOVE in the field below."
+msgstr "Om te bevestigen dat je WP Simple Booking Calendar echt wilt verwijderen, typ je VERWIJDEREN in het onderstaande veld."
+
+#: includes/modules/uninstaller/views/view-uninstaller.php:16
+msgid "After the uninstall process is complete the plugin will be automatically deactivated."
+msgstr "Nadat het verwijderingsproces is voltooid, wordt de plugin automatisch gedeactiveerd."
+
+#: includes/modules/uninstaller/views/view-uninstaller.php:14
+msgid "This includes, but is not limited to, all calendars, all legend items, all bookings, all plugin settings."
+msgstr "Dit omvat, maar is niet beperkt tot, alle agenda's, alle legendapunten, alle boekingen, alle plugin instellingen."
+
+#: includes/modules/uninstaller/views/view-uninstaller.php:12
+msgid "The uninstaller will remove all WP Simple Booking Calendar information stored in the database for version 8 and higher."
+msgstr "Het verwijderprogramma verwijdert alle WP Simple Booking Calendar informatie die is opgeslagen in de database voor versie 8 en hoger."
+
+#: includes/modules/uninstaller/views/view-uninstaller.php:10
+msgid "Important!"
+msgstr "Belangrijk!"
+
+#: includes/base/class-widget-calendar.php:20
+#: includes/base/class-widget-calendar.php:194
+msgid "Insert a WP Simple Booking Calendar"
+msgstr "Voeg een WP Simple Booking kalender in"
+
+#: includes/base/admin/calendar/class-list-table-calendars.php:229
+msgid "Delete Permanently"
+msgstr "Permanent verwijderen"
+
+#: includes/base/admin/calendar/class-list-table-calendars.php:229
+msgid "Are you sure you want to delete this calendar?"
+msgstr "Weet je zeker dat je deze agenda wilt verwijderen?"
+
+#: includes/base/admin/calendar/class-list-table-calendars.php:228
+msgid "Restore Calendar"
+msgstr "Zet agenda terug"
+
+#: includes/base/admin/calendar/class-list-table-calendars.php:218
+msgid "Are you sure you want to send this calendar to the trash?"
+msgstr "Weet je zeker dat je deze agenda naar de prullenbak wil sturen?"
+
+#: includes/base/admin/calendar/class-calendar-editor-outputter.php:171
+msgid "You can use the description field of the date to add private information regarding your booking. This information will not be displayed anywhere else, but here."
+msgstr "Je kunt het beschrijvingsveld van de datum gebruiken om privé-informatie over je boeking toe te voegen. Deze informatie wordt nergens anders weergegeven, maar hier."
+
+#: includes/base/admin/calendar/class-calendar-editor-outputter.php:171
+msgid "Description"
+msgstr "Beschrijving"
+
+#: includes/base/admin/calendar/functions-actions-calendar.php:45
+msgid "Something went wrong. Could not create the calendar. Please try again."
+msgstr "Er is iets fout gegaan. Kan de agenda niet maken. Probeer het opnieuw."
+
+#: includes/base/admin/calendar/functions-actions-calendar.php:23
+msgid "Please add a name for your new calendar."
+msgstr "Voeg een naam toe voor je nieuwe agenda."
+
+#: includes/base/admin/calendar/views/view-calendars.php:24
+msgid "Search Calendars"
+msgstr "Zoek agenda's"
+
+#: includes/base/admin/calendar/views/view-edit-calendar.php:50
+msgid "Translate calendar title"
+msgstr "Vertaal de titel van de kalender"
+
+#: includes/base/admin/calendar/views/view-edit-calendar.php:35
+#: includes/base/admin/calendar/views/view-edit-calendar.php:214
+msgid "Save Calendar"
+msgstr "Kalender opslaan"
+
+#: includes/base/admin/calendar/views/view-shortcode-generator.php:66
+#: includes/modules/blocks/single-calendar/assets/js/build/script-block-single-calendar.js:170
+#: includes/modules/blocks/single-calendar/assets/js/src/script-block-single-calendar.js:101
+msgid "Display Calendar Title"
+msgstr "Geef de kalendertitel weer"
+
+#: includes/base/admin/calendar/views/view-shortcode-generator.php:39
+msgid "Select which calendar you wish to insert and use the options to customize it to your needs."
+msgstr "Selecteer welke kalender je wil invoegen en gebruik de opties om deze aan je behoeften aan te passen."
+
+#: includes/base/admin/calendar/functions-actions-legend-item.php:215
+#: includes/base/admin/calendar/functions-actions-legend-item.php:230
+#: includes/base/admin/calendar/functions-actions-legend-item.php:245
+msgid "Something went wrong. Could not delete the legend item. Please try again."
+msgstr "Er is iets fout gegaan. Kan het legenda-item niet verwijderen. Probeer het opnieuw."
+
+#: includes/base/admin/calendar/functions-actions-legend-item.php:169
+msgid "Something went wrong. Could not updated the legend item. Please try again."
+msgstr "Er is iets fout gegaan. Kan het legenda-item niet updaten. Probeer het opnieuw."
+
+#: includes/base/admin/calendar/functions-actions-legend-item.php:81
+msgid "Something went wrong. Could not add the legend item. Please try again."
+msgstr "Er is iets fout gegaan. Kan het legenda-item niet toevoegen. Probeer het opnieuw."
+
+#: includes/base/admin/calendar/functions-actions-legend-item.php:53
+#: includes/base/admin/calendar/functions-actions-legend-item.php:148
+msgid "Please select the color for your legend item."
+msgstr "Selecteer de kleur voor je legenda-item."
+
+#: includes/base/admin/calendar/functions-actions-legend-item.php:39
+#: includes/base/admin/calendar/functions-actions-legend-item.php:134
+msgid "Please select a type for your legend item."
+msgstr "Selecteer een type voor je legenda-item."
+
+#: includes/base/admin/calendar/functions-actions-legend-item.php:29
+#: includes/base/admin/calendar/functions-actions-legend-item.php:124
+msgid "Please add a name for your legend item."
+msgstr "Voeg een naam toe voor je legenda-item."
+
+#: includes/base/admin/calendar/functions.php:63
+#: includes/base/admin/calendar/functions.php:64
+#: includes/base/admin/calendar/views/view-calendars.php:11
+#: includes/modules/upgrader/views/view-upgrader.php:47
+msgid "Calendars"
+msgstr "Kalenders"
+
+#: includes/base/admin/calendar/class-submenu-page-calendar.php:80
+msgid "%s legend item is now the default one."
+msgstr "Het legenda-item van %s is nu het standaarditem."
+
+#: includes/base/admin/calendar/class-submenu-page-calendar.php:70
+msgid "Legend item %s is now hidden."
+msgstr "Legenda-item %s is nu verborgen."
+
+#: includes/base/admin/calendar/class-submenu-page-calendar.php:69
+msgid "Legend item %s is now visible."
+msgstr "Legenda item %s is nu zichtbaar."
+
+#: includes/base/admin/calendar/class-submenu-page-calendar.php:55
+msgid "Legend item updated successfully."
+msgstr "Legenda-item succesvol geüpdatet."
+
+#: includes/base/admin/calendar/class-submenu-page-calendar.php:46
+msgid "Calendar has been successfully restored."
+msgstr "Kalender is succesvol teruggezet."
+
+#: includes/base/admin/calendar/class-submenu-page-calendar.php:37
+msgid "Calendar updated successfully."
+msgstr "Kalender succesvol geüpdatet."
+
+#: includes/base/admin/backup/views/view-backup.php:65
+msgid "Are you sure you want to import data from the file?"
+msgstr "Weet je zeker dat je gegevens uit het bestand wilt importeren?"
+
+#: includes/base/admin/backup/views/view-backup.php:57
+msgid "Please take into account that this action will firstly remove all data that you currently have in the plugin, then import the data from the export file."
+msgstr "Houd er rekening mee dat deze actie eerst alle gegevens verwijdert die je momenteel in de plugin hebt, en vervolgens de gegevens uit het exportbestand importeert."
+
+#: includes/base/admin/backup/views/view-backup.php:55
+msgid "To import all data from a WP Simple Booking Calendar export file, browse for that file and click the Import Data button."
+msgstr "Om alle gegevens uit een WP Simple Booking Calendar-exportbestand te importeren, bladert je naar dat bestand en klik je op de knop Gegevens importeren."
+
+#: includes/base/admin/backup/views/view-backup.php:28
+msgid "The export file will contain all information saved by the plugin, including calendars, bookings and general settings."
+msgstr "Het exportbestand bevat alle informatie die door de plugin is opgeslagen, inclusief agenda's, boekingen en algemene instellingen."
+
+#: includes/base/admin/backup/views/view-backup.php:26
+msgid "To export a backup file for WP Simple Booking Calendar, please click the Download Export File button."
+msgstr "Om een ​​back-upbestand voor WP Simple Booking Calendar te exporteren, klik je op de knop Download exportbestand."
+
+#: includes/base/admin/backup/functions-actions-backup.php:96
+msgid "The file you are trying to import is not compatible with this version of the plugin."
+msgstr "Het bestand dat je probeert te importeren, is niet compatibel met deze versie van de plugin."
+
+#: includes/base/admin/backup/functions-actions-backup.php:83
+msgid "The file you are trying to import does not have a valid extension. The extension of the file should be \".wpsbc\"."
+msgstr "Het bestand dat je probeert te importeren, heeft geen geldige extensie. De extensie van het bestand moet \".wpsbc\" zijn."
+
+#: includes/base/admin/settings/views/view-settings-tab-languages.php:13
+msgid "What languages do you wish to use?"
+msgstr "Welke talen wil je gebruiken?"
+
+#: wp-simple-booking-calendar.php:530
+msgid "If you enjoy using <strong>WP Simple Booking Calendar</strong>, please <a href=\"%s\" target=\"_blank\">leave us a ★★★★★ rating</a>. Big thank you for this!"
+msgstr "Als je de <strong> WP Simple Booking Calendar </strong> graag gebruikt, <a href=\"%s\" target=\"_blank\"> laat ons dan een ★★★★★ waardering achter </a>. Hartelijk dank hiervoor!"
+
+#. Description of the plugin
+msgid "The availability calendar for your needs."
+msgstr "De beschikbaarheidskalender voor je behoeften."
+
+#: includes/modules/upgrader/views/view-upgrader.php:69
+msgid "Continue to plugin"
+msgstr "Ga door naar plugin"
+
+#: includes/modules/update-checker/views/view-register-website.php:46
+msgid "<strong>IMPORTANT</strong>: After updating, you will need to refresh the Plugins page and manually activate the premium plugin."
+msgstr "<strong> BELANGRIJK </strong>: na het updaten moet je de plugin pagina vernieuwen en de premium plugin handmatig activeren."
+
+#: includes/base/legend/functions.php:320
+msgid "Changeover 2"
+msgstr "Wisseling 2"
+
+#: includes/base/legend/functions.php:314
+msgid "Changeover 1"
+msgstr "Wisseling 1"
+
+#: includes/base/legend/functions.php:277
+msgid "Changeover"
+msgstr "Wisseling"
+
+#: includes/modules/update-checker/views/view-register-website.php:14
+msgid "Serial Key"
+msgstr "Serie sleutel"
+
+#: includes/modules/update-checker/views/view-register-website.php:14
+msgid "You can find your serial key in your WP Simple Booking Calendar account. %sClick here to go to your account.%s"
+msgstr "Je kunt je serie sleutel vinden in je WP Simple Booking Calendar account. %sKlik hier om naar je account te gaan.%s"
+
+#: includes/modules/update-checker/views/view-register-website.php:33
+msgid "Manual Update Check"
+msgstr "Handmatige update controle"
+
+#. translators: 1: month name, 2: 4-digit year
+#: includes/abstracts/abstract-class-list-table.php:597
+msgid "%1$s %2$d"
+msgstr "%1$s %2$d"
+
+#: includes/abstracts/abstract-class-list-table.php:649
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] "%s reactie"
+msgstr[1] "%s reacties"
+
+#: includes/abstracts/abstract-class-list-table.php:650
+msgid "%s approved comment"
+msgid_plural "%s approved comments"
+msgstr[0] "%s goedgekeurde reactie"
+msgstr[1] "%s goedgekeurde reacties"
+
+#: includes/abstracts/abstract-class-list-table.php:651
+msgid "%s pending comment"
+msgid_plural "%s pending comments"
+msgstr[0] "%s wachtende reactie"
+msgstr[1] "%s wachtende reacties"
+
+#: includes/modules/update-checker/functions.php:122
+msgid "Please visit the %sPlugins page%s to check if a new update is available for WP Simple Booking Calendar."
+msgstr "Bezoek de %sPlugins pagina%s om te controleren of er een nieuwe update beschikbaar is voor WP Simple Booking Calendar."
+
+#: includes/modules/update-checker/functions.php:101
+msgid "This website is already registered with the provided serial key. Please log into %syour account on our website%s to view all your registered websites."
+msgstr "Deze site is al geregistreerd met de aangegeven serie sleutel. Login %sop je account op onze site%s om al je geregistreerde sites te zien."
+
+#: includes/base/admin/settings/views/view-settings-tab-general.php:37
+#: includes/base/admin/settings/views/view-settings-tab-languages.php:41
+msgid "Save Settings"
+msgstr "Instellingen opslaan"
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://www.wpsimplebookingcalendar.com/"
+msgstr "https://www.wpsimplebookingcalendar.com/"
+
+#: includes/base/admin/calendar/class-list-table-calendars.php:216
+#: includes/base/admin/calendar/views/view-edit-calendar.php:26
+msgid "Edit Calendar"
+msgstr "Bewerk kalender"
+
+#: includes/base/admin/calendar/class-list-table-calendars.php:290
+msgid "No calendars found."
+msgstr "Geen kalenders gevonden."
+
+#: includes/base/admin/calendar/views/view-add-calendar.php:23
+#: includes/base/admin/calendar/views/view-calendars.php:12
+msgid "Add New Calendar"
+msgstr "Voeg nieuwe kalender toe"
+
+#. Plugin Name of the plugin
+msgid "WP Simple Booking Calendar"
+msgstr "WP Simple Booking Calendar"

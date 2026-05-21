@@ -1,0 +1,331 @@
+0000.013 (0) Opened log file at time: Wed, 23 Feb 2022 17:47:43 +0000 on https://www.beautystaestheticienne.fr
+0000.022 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.22.4 WP: 5.9.1 PHP: 7.3.32 (fpm-fcgi, Linux webd148.cluster030.gra.hosting.ovh.net 4.14.253-ovh-vps-grsec-zfs-classid #1 SMP Thu Oct 28 11:15:35 CEST 2021 x86_64) MySQL: 5.6.50-log (max packet size=33554432) WPLANG: fr_FR Server: Apache safe_mode: 0 max_execution_time: 165 memory_limit: 512M (used: 21M | 2M) multisite: N openssl: OpenSSL 1.0.1t  3 May 2016 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.024 (0) Free space on disk containing Updraft's temporary directory: Unknown
+0000.031 (0) Tasks: Backup files: 0 (schedule: unset) Backup DB: 1 (schedule: unset)
+0000.035 (0) Semaphore (d, mod45_options) being initialised
+0000.043 (0) Requesting semaphore lock (d) (apparently not via scheduler)
+0000.048 (0) Set semaphore last lock (d) time to 2022-02-23 17:47:43
+0000.050 (0) Semaphore lock (d) complete
+0000.059 (0) Backup run: resumption=0, nonce=ec9e2056a79c, file_nonce=ec9e2056a79c begun at=1645638463 (0s ago), job type=backup
+0000.063 (0) Scheduling a resumption (1) after 300 seconds (1645638763) in case this run gets aborted
+0000.090 (0) This backup run is not intended for files - skipping
+0000.093 (0) Beginning creation of database dump (WordPress DB)
+0000.096 (0) SQL compatibility mode is: NO_ENGINE_SUBSTITUTION
+0000.102 (0) Testing potential mysqldump binary: /usr/bin/mysqldump
+0000.126 (0) Output: /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;\n/*!40103 SET TIME_ZONE='+00:00' */;\n/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;\n/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;\n/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;\n/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;\nDROP TABLE IF EXISTS `mod45_options`;\n/*!40101 SET @saved_cs_client     = @@character_set_client */;\n/*!40101 SET character_set_client = utf8 */;\n (truncated - 1573 bytes total)
+0000.130 (0) Binary mysqldump: error (code: -1)
+0000.159 (0) Table mod45_options: Total expected rows (via COUNT): 593
+0000.227 (0) Table mod45_options: Rows added in this batch (next record: 16594): 589 (uncompressed bytes in this segment=1810229) in 0.08 seconds
+0000.253 (0) Table mod45_options: finishing file(s) (2, 274.7 KB)
+0000.266 (0) Table mod45_users: Total expected rows (via COUNT): 2
+0000.270 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.277 (0) Table mod45_users: Rows added in this batch (next record: 5): 2 (uncompressed bytes in this segment=1543) in 0.01 seconds
+0000.288 (0) Table mod45_users: finishing file(s) (2, 0.7 KB)
+0000.303 (0) Table mod45_usermeta: Total expected rows (via COUNT): 80
+0000.305 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.321 (0) Table mod45_usermeta: Rows added in this batch (next record: 191): 80 (uncompressed bytes in this segment=4557) in 0.03 seconds
+0000.338 (0) Table mod45_usermeta: finishing file(s) (2, 1.6 KB)
+0000.355 (0) Table mod45_commentmeta: Total expected rows (via COUNT): 0
+0000.367 (0) Table mod45_commentmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=703) in 0.02 seconds
+0000.381 (0) Table mod45_commentmeta: finishing file(s) (2, 0.4 KB)
+0000.395 (0) Table mod45_comments: Total expected rows (via COUNT): 1
+0000.399 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0000.407 (0) Table mod45_comments: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=2243) in 0.02 seconds
+0000.420 (0) Table mod45_comments: finishing file(s) (2, 0.8 KB)
+0000.436 (0) Table mod45_links: Total expected rows (via COUNT): 0
+0000.443 (0) Table mod45_links: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1328) in 0.01 seconds
+0000.454 (0) Table mod45_links: finishing file(s) (2, 0.5 KB)
+0000.840 (0) Table mod45_postmeta: Total expected rows (approximate): 11720
+0002.550 (0) Table mod45_postmeta: Rows added in this batch (next record: 17068): 12530 (uncompressed bytes in this segment=61337371) in 2.09 seconds
+0002.618 (0) Table mod45_postmeta: finishing file(s) (2, 4782.2 KB)
+0002.792 (0) Table mod45_posts: Total expected rows (approximate): 1869
+0003.548 (0) Table mod45_posts: Rows added in this batch (next record: 2421): 2118 (uncompressed bytes in this segment=29516907) in 0.92 seconds
+0003.581 (0) Table mod45_posts: finishing file(s) (2, 2025.1 KB)
+0003.589 (0) Table mod45_term_relationships: Total expected rows (approximate): 48
+0003.596 (0) Table mod45_term_relationships: Rows added in this batch (next record: 100000): 48 (uncompressed bytes in this segment=1383) in 0.01 seconds
+0003.609 (0) Table mod45_term_relationships: finishing file(s) (2, 0.5 KB)
+0003.623 (0) Table mod45_term_taxonomy: Total expected rows (via COUNT): 8
+0003.625 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0003.632 (0) Table mod45_term_taxonomy: Rows added in this batch (next record: 8): 8 (uncompressed bytes in this segment=1194) in 0.01 seconds
+0003.645 (0) Table mod45_term_taxonomy: finishing file(s) (2, 0.5 KB)
+0003.660 (0) Table mod45_termmeta: Total expected rows (via COUNT): 7
+0003.663 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0003.667 (0) Table mod45_termmeta: Rows added in this batch (next record: 7): 7 (uncompressed bytes in this segment=1069) in 0.01 seconds
+0003.680 (0) Table mod45_termmeta: finishing file(s) (2, 0.5 KB)
+0003.690 (0) Table mod45_terms: Total expected rows (via COUNT): 8
+0003.693 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0003.697 (0) Table mod45_terms: Rows added in this batch (next record: 8): 8 (uncompressed bytes in this segment=977) in 0.01 seconds
+0003.708 (0) Table mod45_terms: finishing file(s) (2, 0.5 KB)
+0003.736 (0) Table mod45_actionscheduler_actions: Total expected rows (via COUNT): 10
+0003.737 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0003.741 (0) Table mod45_actionscheduler_actions: Rows added in this batch (next record: 1795): 10 (uncompressed bytes in this segment=4993) in 0.01 seconds
+0003.756 (0) Table mod45_actionscheduler_actions: finishing file(s) (2, 1.1 KB)
+0003.767 (0) Table mod45_actionscheduler_claims: Total expected rows (via COUNT): 0
+0003.774 (0) Table mod45_actionscheduler_claims: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=633) in 0.01 seconds
+0003.785 (0) Table mod45_actionscheduler_claims: finishing file(s) (2, 0.4 KB)
+0003.797 (0) Table mod45_actionscheduler_groups: Total expected rows (via COUNT): 2
+0003.800 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0003.806 (0) Table mod45_actionscheduler_groups: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=726) in 0.01 seconds
+0003.818 (0) Table mod45_actionscheduler_groups: finishing file(s) (2, 0.4 KB)
+0003.831 (0) Table mod45_actionscheduler_logs: Total expected rows (via COUNT): 24
+0003.833 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0003.840 (0) Table mod45_actionscheduler_logs: Rows added in this batch (next record: 27): 24 (uncompressed bytes in this segment=2940) in 0.01 seconds
+0003.851 (0) Table mod45_actionscheduler_logs: finishing file(s) (2, 0.7 KB)
+0003.864 (0) Table mod45_addonlibrary_addons: Total expected rows (via COUNT): 2
+0003.867 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0003.871 (0) Table mod45_addonlibrary_addons: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=12824) in 0.01 seconds
+0003.884 (0) Table mod45_addonlibrary_addons: finishing file(s) (2, 2.9 KB)
+0003.895 (0) Table mod45_addonlibrary_categories: Total expected rows (via COUNT): 2
+0003.898 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0003.902 (0) Table mod45_addonlibrary_categories: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=981) in 0.01 seconds
+0003.915 (0) Table mod45_addonlibrary_categories: finishing file(s) (2, 0.5 KB)
+0003.932 (0) Table mod45_aioseo_notifications: Total expected rows (via COUNT): 0
+0003.938 (0) Table mod45_aioseo_notifications: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1620) in 0.02 seconds
+0003.953 (0) Table mod45_aioseo_notifications: finishing file(s) (2, 0.5 KB)
+0003.972 (0) Table mod45_aioseo_posts: Total expected rows (via COUNT): 39
+0003.975 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0003.984 (0) Table mod45_aioseo_posts: Rows added in this batch (next record: 39): 39 (uncompressed bytes in this segment=29884) in 0.02 seconds
+0003.998 (0) Table mod45_aioseo_posts: finishing file(s) (2, 2.2 KB)
+0004.010 (0) Table mod45_booking: Total expected rows (via COUNT): 2
+0004.013 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0004.019 (0) Table mod45_booking: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=1322) in 0.01 seconds
+0004.031 (0) Table mod45_booking: finishing file(s) (2, 0.6 KB)
+0004.043 (0) Table mod45_bookingdates: Total expected rows (via COUNT): 4
+0004.047 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0004.051 (0) Table mod45_bookingdates: Rows added in this batch (next record: 4): 4 (uncompressed bytes in this segment=898) in 0.01 seconds
+0004.062 (0) Table mod45_bookingdates: finishing file(s) (2, 0.4 KB)
+0004.075 (0) Table mod45_ea_appointments: Total expected rows (via COUNT): 0
+0004.082 (0) Table mod45_ea_appointments: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1734) in 0.01 seconds
+0004.093 (0) Table mod45_ea_appointments: finishing file(s) (2, 0.6 KB)
+0004.105 (0) Table mod45_ea_connections: Total expected rows (via COUNT): 0
+0004.109 (0) Table mod45_ea_connections: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1354) in 0.01 seconds
+0004.121 (0) Table mod45_ea_connections: finishing file(s) (2, 0.5 KB)
+0004.134 (0) Table mod45_ea_error_logs: Total expected rows (via COUNT): 0
+0004.138 (0) Table mod45_ea_error_logs: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=611) in 0.01 seconds
+0004.149 (0) Table mod45_ea_error_logs: finishing file(s) (2, 0.3 KB)
+0004.162 (0) Table mod45_ea_fields: Total expected rows (via COUNT): 0
+0004.165 (0) Table mod45_ea_fields: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=542) in 0.01 seconds
+0004.177 (0) Table mod45_ea_fields: finishing file(s) (2, 0.3 KB)
+0004.188 (0) Table mod45_ea_locations: Total expected rows (via COUNT): 0
+0004.192 (0) Table mod45_ea_locations: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=691) in 0.01 seconds
+0004.202 (0) Table mod45_ea_locations: finishing file(s) (2, 0.3 KB)
+0004.231 (0) Table mod45_ea_meta_fields: Total expected rows (via COUNT): 4
+0004.234 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0004.241 (0) Table mod45_ea_meta_fields: Rows added in this batch (next record: 4): 4 (uncompressed bytes in this segment=1253) in 0.01 seconds
+0004.252 (0) Table mod45_ea_meta_fields: finishing file(s) (2, 0.5 KB)
+0004.270 (0) Table mod45_ea_options: Total expected rows (via COUNT): 57
+0004.273 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0004.280 (0) Table mod45_ea_options: Rows added in this batch (next record: 57): 57 (uncompressed bytes in this segment=3285) in 0.02 seconds
+0004.289 (0) Table mod45_ea_options: finishing file(s) (2, 1.1 KB)
+0004.299 (0) Table mod45_ea_services: Total expected rows (via COUNT): 0
+0004.305 (0) Table mod45_ea_services: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=785) in 0.01 seconds
+0004.315 (0) Table mod45_ea_services: finishing file(s) (2, 0.4 KB)
+0004.327 (0) Table mod45_ea_staff: Total expected rows (via COUNT): 0
+0004.331 (0) Table mod45_ea_staff: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=663) in 0.01 seconds
+0004.344 (0) Table mod45_ea_staff: finishing file(s) (2, 0.4 KB)
+0004.355 (0) Table mod45_statistics_exclusions: Total expected rows (via COUNT): 0
+0004.359 (0) Table mod45_statistics_exclusions: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=663) in 0.01 seconds
+0004.370 (0) Table mod45_statistics_exclusions: finishing file(s) (2, 0.4 KB)
+0004.382 (0) Table mod45_statistics_historical: Total expected rows (via COUNT): 0
+0004.386 (0) Table mod45_statistics_historical: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=776) in 0.01 seconds
+0004.397 (0) Table mod45_statistics_historical: finishing file(s) (2, 0.4 KB)
+0004.408 (0) Table mod45_statistics_pages: Total expected rows (via COUNT): 0
+0004.411 (0) Table mod45_statistics_pages: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=806) in 0.01 seconds
+0004.423 (0) Table mod45_statistics_pages: finishing file(s) (2, 0.4 KB)
+0004.435 (0) Table mod45_statistics_search: Total expected rows (via COUNT): 0
+0004.439 (0) Table mod45_statistics_search: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=822) in 0.01 seconds
+0004.451 (0) Table mod45_statistics_search: finishing file(s) (2, 0.4 KB)
+0004.461 (0) Table mod45_statistics_useronline: Total expected rows (via COUNT): 0
+0004.464 (0) Table mod45_statistics_useronline: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1094) in 0.01 seconds
+0004.475 (0) Table mod45_statistics_useronline: finishing file(s) (2, 0.5 KB)
+0004.485 (0) Table mod45_statistics_visit: Total expected rows (via COUNT): 1
+0004.488 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0004.494 (0) Table mod45_statistics_visit: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=705) in 0.01 seconds
+0004.505 (0) Table mod45_statistics_visit: finishing file(s) (2, 0.4 KB)
+0004.517 (0) Table mod45_statistics_visitor: Total expected rows (via COUNT): 0
+0004.524 (0) Table mod45_statistics_visitor: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1276) in 0.01 seconds
+0004.548 (0) Table mod45_statistics_visitor: finishing file(s) (2, 0.5 KB)
+0004.559 (0) Table mod45_statistics_visitor_relationships: Total expected rows (via COUNT): 0
+0004.563 (0) Table mod45_statistics_visitor_relationships: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=716) in 0.01 seconds
+0004.574 (0) Table mod45_statistics_visitor_relationships: finishing file(s) (2, 0.4 KB)
+0004.591 (0) Table mod45_tm_taskmeta: Total expected rows (via COUNT): 0
+0004.597 (0) Table mod45_tm_taskmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=676) in 0.02 seconds
+0004.613 (0) Table mod45_tm_taskmeta: finishing file(s) (2, 0.4 KB)
+0004.626 (0) Table mod45_tm_tasks: Total expected rows (via COUNT): 0
+0004.633 (0) Table mod45_tm_tasks: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=894) in 0.01 seconds
+0004.644 (0) Table mod45_tm_tasks: finishing file(s) (2, 0.4 KB)
+0004.664 (0) Table mod45_wpsbc_calendar_meta: Total expected rows (via COUNT): 1
+0004.666 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0004.672 (0) Table mod45_wpsbc_calendar_meta: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=845) in 0.02 seconds
+0004.685 (0) Table mod45_wpsbc_calendar_meta: finishing file(s) (2, 0.4 KB)
+0004.698 (0) Table mod45_wpsbc_calendars: Total expected rows (via COUNT): 1
+0004.701 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0004.706 (0) Table mod45_wpsbc_calendars: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=873) in 0.01 seconds
+0004.717 (0) Table mod45_wpsbc_calendars: finishing file(s) (2, 0.5 KB)
+0004.734 (0) Table mod45_wpsbc_event_meta: Total expected rows (via COUNT): 0
+0004.742 (0) Table mod45_wpsbc_event_meta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=709) in 0.02 seconds
+0004.756 (0) Table mod45_wpsbc_event_meta: finishing file(s) (2, 0.4 KB)
+0004.786 (0) Table mod45_wpsbc_events: Total expected rows (via COUNT): 263
+0004.789 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0004.798 (0) Table mod45_wpsbc_events: Rows added in this batch (next record: 263): 263 (uncompressed bytes in this segment=10334) in 0.02 seconds
+0004.813 (0) Table mod45_wpsbc_events: finishing file(s) (2, 2 KB)
+0004.830 (0) Table mod45_wpsbc_legend_item_meta: Total expected rows (via COUNT): 87
+0004.832 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0004.839 (0) Table mod45_wpsbc_legend_item_meta: Rows added in this batch (next record: 87): 87 (uncompressed bytes in this segment=4543) in 0.02 seconds
+0004.853 (0) Table mod45_wpsbc_legend_item_meta: finishing file(s) (2, 1.6 KB)
+0004.866 (0) Table mod45_wpsbc_legend_items: Total expected rows (via COUNT): 5
+0004.869 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0004.875 (0) Table mod45_wpsbc_legend_items: Rows added in this batch (next record: 5): 5 (uncompressed bytes in this segment=1186) in 0.01 seconds
+0004.891 (0) Table mod45_wpsbc_legend_items: finishing file(s) (2, 0.5 KB)
+0004.908 (0) Table mod45_yoast_indexable: Total expected rows (via COUNT): 118
+0004.909 (0) Table is relatively small; fetch_rows will thus be: 200 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0004.924 (0) Table mod45_yoast_indexable: Rows added in this batch (next record: 184): 118 (uncompressed bytes in this segment=81921) in 0.02 seconds
+0004.939 (0) Table mod45_yoast_indexable: finishing file(s) (2, 10.6 KB)
+0004.951 (0) Table mod45_yoast_indexable_hierarchy: Total expected rows (approximate): 113
+0004.959 (0) Table mod45_yoast_indexable_hierarchy: Rows added in this batch (next record: 1000): 113 (uncompressed bytes in this segment=2708) in 0.01 seconds
+0004.971 (0) Table mod45_yoast_indexable_hierarchy: finishing file(s) (2, 0.7 KB)
+0004.982 (0) Table mod45_yoast_migrations: Total expected rows (via COUNT): 23
+0004.985 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0004.995 (0) Table mod45_yoast_migrations: Rows added in this batch (next record: 23): 23 (uncompressed bytes in this segment=1267) in 0.01 seconds
+0005.019 (0) Table mod45_yoast_migrations: finishing file(s) (2, 0.6 KB)
+0005.031 (0) Table mod45_yoast_primary_term: Total expected rows (via COUNT): 0
+0005.038 (0) Table mod45_yoast_primary_term: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=876) in 0.01 seconds
+0005.051 (0) Table mod45_yoast_primary_term: finishing file(s) (2, 0.4 KB)
+0005.064 (0) Table mod45_yoast_seo_links: Total expected rows (via COUNT): 157
+0005.069 (0) Table is relatively small; fetch_rows will thus be: 250 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0005.079 (0) Table mod45_yoast_seo_links: Rows added in this batch (next record: 7309): 157 (uncompressed bytes in this segment=23411) in 0.02 seconds
+0005.091 (0) Table mod45_yoast_seo_links: finishing file(s) (2, 2.9 KB)
+0005.095 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_options.table.tmpr16595.gz (1/52/fopen): adding to final database dump
+0005.103 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_options.table.gz (2/52/fopen): adding to final database dump
+0005.106 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_users.table.tmpr6.gz (3/52/fopen): adding to final database dump
+0005.109 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_users.table.gz (4/52/fopen): adding to final database dump
+0005.112 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_usermeta.table.tmpr192.gz (5/52/fopen): adding to final database dump
+0005.117 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_usermeta.table.gz (6/52/fopen): adding to final database dump
+0005.120 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_commentmeta.table.tmpr0.gz (7/52/fopen): adding to final database dump
+0005.123 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_commentmeta.table.gz (8/52/fopen): adding to final database dump
+0005.125 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_comments.table.tmpr2.gz (9/52/fopen): adding to final database dump
+0005.129 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_comments.table.gz (10/52/fopen): adding to final database dump
+0005.132 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_links.table.tmpr0.gz (11/52/fopen): adding to final database dump
+0005.136 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_links.table.gz (12/52/fopen): adding to final database dump
+0005.139 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_postmeta.table.tmpr17069.gz (13/52/fopen): adding to final database dump
+0005.194 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_postmeta.table.gz (14/52/fopen): adding to final database dump
+0005.197 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_posts.table.tmpr2422.gz (15/52/fopen): adding to final database dump
+0005.224 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_posts.table.gz (16/52/fopen): adding to final database dump
+0005.227 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_term_relationships.table.tmpr100001.gz (17/52/fopen): adding to final database dump
+0005.231 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_term_relationships.table.gz (18/52/fopen): adding to final database dump
+0005.234 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_term_taxonomy.table.tmpr9.gz (19/52/fopen): adding to final database dump
+0005.238 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_term_taxonomy.table.gz (20/52/fopen): adding to final database dump
+0005.240 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_termmeta.table.tmpr8.gz (21/52/fopen): adding to final database dump
+0005.244 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_termmeta.table.gz (22/52/fopen): adding to final database dump
+0005.247 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_terms.table.tmpr9.gz (23/52/fopen): adding to final database dump
+0005.250 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_terms.table.gz (24/52/fopen): adding to final database dump
+0005.253 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_actionscheduler_actions.table.tmpr1796.gz (25/52/fopen): adding to final database dump
+0005.256 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_actionscheduler_actions.table.gz (26/52/fopen): adding to final database dump
+0005.259 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_actionscheduler_claims.table.tmpr0.gz (27/52/fopen): adding to final database dump
+0005.261 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_actionscheduler_claims.table.gz (28/52/fopen): adding to final database dump
+0005.264 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_actionscheduler_groups.table.tmpr3.gz (29/52/fopen): adding to final database dump
+0005.268 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_actionscheduler_groups.table.gz (30/52/fopen): adding to final database dump
+0005.271 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_actionscheduler_logs.table.tmpr28.gz (31/52/fopen): adding to final database dump
+0005.274 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_actionscheduler_logs.table.gz (32/52/fopen): adding to final database dump
+0005.277 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_addonlibrary_addons.table.tmpr3.gz (33/52/fopen): adding to final database dump
+0005.280 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_addonlibrary_addons.table.gz (34/52/fopen): adding to final database dump
+0005.283 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_addonlibrary_categories.table.tmpr3.gz (35/52/fopen): adding to final database dump
+0005.285 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_addonlibrary_categories.table.gz (36/52/fopen): adding to final database dump
+0005.288 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_aioseo_notifications.table.tmpr0.gz (37/52/fopen): adding to final database dump
+0005.292 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_aioseo_notifications.table.gz (38/52/fopen): adding to final database dump
+0005.294 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_aioseo_posts.table.tmpr40.gz (39/52/fopen): adding to final database dump
+0005.297 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_aioseo_posts.table.gz (40/52/fopen): adding to final database dump
+0005.299 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_booking.table.tmpr3.gz (41/52/fopen): adding to final database dump
+0005.302 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_booking.table.gz (42/52/fopen): adding to final database dump
+0005.305 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_bookingdates.table.tmpr5.gz (43/52/fopen): adding to final database dump
+0005.310 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_bookingdates.table.gz (44/52/fopen): adding to final database dump
+0005.313 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_ea_appointments.table.tmpr0.gz (45/52/fopen): adding to final database dump
+0005.317 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_ea_appointments.table.gz (46/52/fopen): adding to final database dump
+0005.320 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_ea_connections.table.tmpr0.gz (47/52/fopen): adding to final database dump
+0005.324 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_ea_connections.table.gz (48/52/fopen): adding to final database dump
+0005.327 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_ea_error_logs.table.tmpr0.gz (49/52/fopen): adding to final database dump
+0005.329 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_ea_error_logs.table.gz (50/52/fopen): adding to final database dump
+0005.332 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_ea_fields.table.tmpr0.gz (51/52/fopen): adding to final database dump
+0005.335 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_ea_fields.table.gz (52/52/fopen): adding to final database dump
+0005.337 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_ea_locations.table.tmpr0.gz (53/52/fopen): adding to final database dump
+0005.340 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_ea_locations.table.gz (54/52/fopen): adding to final database dump
+0005.342 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_ea_meta_fields.table.tmpr5.gz (55/52/fopen): adding to final database dump
+0005.345 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_ea_meta_fields.table.gz (56/52/fopen): adding to final database dump
+0005.348 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_ea_options.table.tmpr58.gz (57/52/fopen): adding to final database dump
+0005.350 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_ea_options.table.gz (58/52/fopen): adding to final database dump
+0005.353 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_ea_services.table.tmpr0.gz (59/52/fopen): adding to final database dump
+0005.356 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_ea_services.table.gz (60/52/fopen): adding to final database dump
+0005.358 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_ea_staff.table.tmpr0.gz (61/52/fopen): adding to final database dump
+0005.361 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_ea_staff.table.gz (62/52/fopen): adding to final database dump
+0005.363 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_statistics_exclusions.table.tmpr0.gz (63/52/fopen): adding to final database dump
+0005.365 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_statistics_exclusions.table.gz (64/52/fopen): adding to final database dump
+0005.368 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_statistics_historical.table.tmpr0.gz (65/52/fopen): adding to final database dump
+0005.371 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_statistics_historical.table.gz (66/52/fopen): adding to final database dump
+0005.373 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_statistics_pages.table.tmpr0.gz (67/52/fopen): adding to final database dump
+0005.376 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_statistics_pages.table.gz (68/52/fopen): adding to final database dump
+0005.379 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_statistics_search.table.tmpr0.gz (69/52/fopen): adding to final database dump
+0005.381 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_statistics_search.table.gz (70/52/fopen): adding to final database dump
+0005.383 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_statistics_useronline.table.tmpr0.gz (71/52/fopen): adding to final database dump
+0005.386 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_statistics_useronline.table.gz (72/52/fopen): adding to final database dump
+0005.388 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_statistics_visit.table.tmpr2.gz (73/52/fopen): adding to final database dump
+0005.391 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_statistics_visit.table.gz (74/52/fopen): adding to final database dump
+0005.393 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_statistics_visitor.table.tmpr0.gz (75/52/fopen): adding to final database dump
+0005.397 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_statistics_visitor.table.gz (76/52/fopen): adding to final database dump
+0005.399 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_statistics_visitor_relationships.table.tmpr0.gz (77/52/fopen): adding to final database dump
+0005.401 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_statistics_visitor_relationships.table.gz (78/52/fopen): adding to final database dump
+0005.404 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_tm_taskmeta.table.tmpr0.gz (79/52/fopen): adding to final database dump
+0005.408 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_tm_taskmeta.table.gz (80/52/fopen): adding to final database dump
+0005.410 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_tm_tasks.table.tmpr0.gz (81/52/fopen): adding to final database dump
+0005.413 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_tm_tasks.table.gz (82/52/fopen): adding to final database dump
+0005.415 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_wpsbc_calendar_meta.table.tmpr2.gz (83/52/fopen): adding to final database dump
+0005.418 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_wpsbc_calendar_meta.table.gz (84/52/fopen): adding to final database dump
+0005.420 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_wpsbc_calendars.table.tmpr2.gz (85/52/fopen): adding to final database dump
+0005.423 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_wpsbc_calendars.table.gz (86/52/fopen): adding to final database dump
+0005.425 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_wpsbc_event_meta.table.tmpr0.gz (87/52/fopen): adding to final database dump
+0005.428 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_wpsbc_event_meta.table.gz (88/52/fopen): adding to final database dump
+0005.430 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_wpsbc_events.table.tmpr264.gz (89/52/fopen): adding to final database dump
+0005.433 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_wpsbc_events.table.gz (90/52/fopen): adding to final database dump
+0005.435 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_wpsbc_legend_item_meta.table.tmpr88.gz (91/52/fopen): adding to final database dump
+0005.438 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_wpsbc_legend_item_meta.table.gz (92/52/fopen): adding to final database dump
+0005.440 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_wpsbc_legend_items.table.tmpr6.gz (93/52/fopen): adding to final database dump
+0005.445 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_wpsbc_legend_items.table.gz (94/52/fopen): adding to final database dump
+0005.448 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_yoast_indexable.table.tmpr185.gz (95/52/fopen): adding to final database dump
+0005.452 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_yoast_indexable.table.gz (96/52/fopen): adding to final database dump
+0005.453 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_yoast_indexable_hierarchy.table.tmpr1001.gz (97/52/fopen): adding to final database dump
+0005.456 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_yoast_indexable_hierarchy.table.gz (98/52/fopen): adding to final database dump
+0005.459 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_yoast_migrations.table.tmpr24.gz (99/52/fopen): adding to final database dump
+0005.465 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_yoast_migrations.table.gz (100/52/fopen): adding to final database dump
+0005.467 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_yoast_primary_term.table.tmpr0.gz (101/52/fopen): adding to final database dump
+0005.470 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_yoast_primary_term.table.gz (102/52/fopen): adding to final database dump
+0005.472 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_yoast_seo_links.table.tmpr7310.gz (103/52/fopen): adding to final database dump
+0005.476 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db-table-mod45_yoast_seo_links.table.gz (104/52/fopen): adding to final database dump
+0005.549 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db.gz: finished writing out complete database file (7126.6 KB)
+0005.746 (0) Total database tables backed up: 52 (backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db.gz, size: 7297786, sha1: 24b247ccf09e2ee9e9affe03365bf916ab6ec317, sha256: b9e4b7010db4ac35cc736dc25f39f1ec1843b90a8d99be908d17466b6b918078)
+0005.761 (0) backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db.gz: db: This file has not yet been successfully uploaded: will queue
+0005.763 (0) Saving backup history. Total backup size: 7 MB
+0005.768 (0) Requesting upload of the files that have not yet been successfully uploaded (1)
+0005.776 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0005.777 (0) No remote despatch: user chose no remote backup service
+0005.780 (0) Recording as successfully uploaded: backup_2022-02-23-1847_beautysta_estheticienne_ec9e2056a79c-db.gz
+0005.791 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0005.795 (0) Number of backup sets in history: 1; groups (db): 1
+0005.798 (0) Examining (for databases) backup set with group_id=0, nonce=ec9e2056a79c, datestamp=1645638463 (Feb 23 2022 17:47:43)
+0005.800 (0) This backup set is the backup set just made, so will not be deleted.
+0005.800 (0) Number of backup sets in history: 1; groups (files): 1
+0005.803 (0) Examining (for files) backup set with nonce=ec9e2056a79c, datestamp=1645638463 (Feb 23 2022 17:47:43)
+0005.803 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0005.804 (0) Retain: saving new backup history (sets now: 1) and finishing retain operation
+0005.811 (0) Resume backup (ec9e2056a79c, 0): finish run
+0005.816 (0) Decremented the semaphore (d) by 1
+0005.819 (0) Semaphore (d) unlocked
+0005.821 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0005.831 (0) The backup apparently succeeded and is now complete
+0005.833 (0) No email will/can be sent - the user has not configured an email address.
+0005.836 (0) La sauvegarde a apparemment réussi et est maintenant terminée
+0000.000 (1) Opened log file at time: Wed, 13 Apr 2022 08:34:42 +0000 on https://www.beautystaestheticienne.fr
+0000.002 (1) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.22.9 WP: 5.9.3 PHP: 7.3.32 (fpm-fcgi, Linux webd148.cluster030.gra.hosting.ovh.net 4.14.253-ovh-vps-grsec-zfs-classid #1 SMP Thu Oct 28 11:15:35 CEST 2021 x86_64) MySQL: 5.6.50-log (max packet size=33554432) WPLANG: fr_FR Server: Apache safe_mode: 0 max_execution_time: 165 memory_limit: 512M (used: 17.2M | 2M) multisite: N openssl: OpenSSL 1.0.1t  3 May 2016 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.004 (1) Free space on disk containing Updraft's temporary directory: Unknown
+0000.005 (1) Requesting backup semaphore lock (ec9e2056a79c)
+0000.008 (1) [Debug] Lock option (updraft_lock_ec9e2056a79c, mod45_options) was created in the database
+0000.009 (1) [Info] Lock (updraft_lock_ec9e2056a79c, mod45_options) acquired after initialising the database
+0000.010 (1) This backup task (ec9e2056a79c) is either complete or began over 2 days ago: ending (1649838882.0877, ) (existing jobdata keys: )

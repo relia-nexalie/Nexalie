@@ -1,0 +1,59 @@
+/**
+ * 1.0 - Variables
+ */
+
+
+/**
+ * 1.1 - Colors
+ */
+
+$theme-background-color : (
+
+    background-primary-color: #fff, // #fff
+
+    background-primary-footer-color: #222, // #222
+
+    background-secondary-color: #f9f9f9, // #f9f9f9
+    
+    background-dark-color: #000, //000
+
+    background-small-text: #eee, // #eee
+
+    background-button-light-alpha-color: rgba(101, 73, 144, 0.02),
+
+    background-button-alpha-color: rgba(101, 73, 144, 0.03),
+);
+
+$theme-color:(
+
+    primary-color: #666666, // #666666
+
+    color-white-light: #fff, // ffff
+
+    color-lighter: #e9e9e9, //#e9e9e9
+
+    theme-dark-color: #222, // #222
+
+    theme-link-color: #50be68, // #50be68
+
+    fourty-six-secondary-link-color: rgba(34,34,34,0.46), // #999
+
+    fourty-six-text-with-background-color: rgba(255,255,255,0.46), // #999
+    
+    one-border-color: rgba(238,238,238,0.1), // #eee
+    
+    box-shadow-dark-alpha-color: rgba(0, 0, 0, 0.2),
+
+    quote-color: #ccc,  // #ccc
+
+    theme-border-color: #333, // #333
+
+    theme-primary-border-color: #eee, //#eee
+);
+
+$button-color: (
+ 
+    background-button: linear-gradient(to left, #96c93d, #00b09b), // #96c93d, #00b09b
+
+    background-hover-button: linear-gradient(to right, #96c93d, #00b09b) // #50be68
+);

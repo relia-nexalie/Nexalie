@@ -1,0 +1,57 @@
+body,
+.testimonials-content-wrapper .testimonial-slider-wrap .post-thumbnail .entry-header  .entry-title,
+.testimonial-slider-wrap .post-thumbnail .entry-header,
+.testimonials-content-wrapper .testimonial-slider-wrap button,
+.testimonial-slider-wrap .post-thumbnail .entry-header,
+code, 
+kbd, 
+tt, 
+var,
+.widget-title,
+.more-link,
+.nav-title,
+.catch-breadcrumb .entry-breadcrumbs,
+.author-title, 
+.woocommerce-breadcrumb,
+.entry-title,
+.entry-title .sub-title,
+.entry-title .sub-title,
+.entry-title span,
+.section-title-wrapper + .section-description,
+.section-title + .section-description,
+.section-title-wrapper + .section-subtitle,
+.testimonial-slider-wrap .more-link,
+.site-description,
+#reply-title {
+	font-family: $body-font; 
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.archive .custom-header .entry-title span,
+.hero-content-wrapper .entry-title,
+.singular-content-wrap .entry-title,
+.position,
+.job-label,
+.archive-content-wrap .section-content-wrapper.layout-one .date-day,
+.featured-content-section .entry-title a,
+.sectiont-title,
+.slider-content-wrapper .entry-title a,
+.custom-header .entry-title,
+.section-title-wrapper,
+.archive-content-wrap .entry-title a,
+.testimonials-content-wrapper .entry-content,
+.testimonials-content-wrapper .cycle-prev:before,
+.testimonials-content-wrapper .cycle-next:before,
+.testimonials-content-wrapper .cycle-pager,
+.hero-content-wrapper .entry-content p {
+    font-family: $heading-font;
+}
+
+.site-title a {
+    font-family: $brand-title-font;
+}

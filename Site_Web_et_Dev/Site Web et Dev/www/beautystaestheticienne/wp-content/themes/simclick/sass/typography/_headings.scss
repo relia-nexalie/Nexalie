@@ -1,0 +1,112 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    line-height: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    &:first-child{
+        margin-top: 0;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0.9310344827586207em 0 0.5172413793103448em 0;
+}
+
+h2 {
+    margin-bottom: 0.612244897959em;
+    margin-top: 1.102040816326531em; 
+}
+
+h3 {
+    margin-bottom: 0.8333333333333333em;
+    margin-top: 1.5em;
+}
+
+h1,
+.custom-header-content .entry-title,
+.archive .custom-header .entry-title span,
+.slider-content-wrapper .entry-container h2 {
+    font-size: 36px;
+    font-size: 2.25rem;
+    line-height: 1.31;
+
+    @include media(desktop) {
+        font-size: 43px;
+        font-size: 2.6875rem;
+    }
+
+    @include media (wide) {
+        font-size: 58px;
+        font-size: 3.625rem;
+    }
+}
+
+h2,
+.woocommerce-posts-wrapper .product_title,
+.page-title {
+    font-size: 36px;
+    font-size: 2.25rem;
+
+    @include media(desktop) {
+        font-size: 42px;
+        font-size: 2.625rem;
+    }
+
+    @include media (wide) {
+        font-size: 49px;
+        font-size: 3.0625rem;
+    }
+}
+
+h3,
+.woocommerce-tabs .woocommerce-Tabs-panel h2 {
+    font-size: 30px;
+    font-size: 1.875rem;
+    line-height: 1.36;
+
+    @include media(wide) {
+        font-size: 36px;
+        font-size: 2.25rem;
+    }
+}
+
+h4,
+.content-area .archive-content-wrap .entry-container .section-title {
+    font-size: 28px;
+    font-size: 1.75rem;
+    line-height: 1.46;
+    margin-bottom: 1.0714em;
+    margin-top: 1.9285em;
+}
+
+h5 {
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 1.4;
+    margin-bottom: 1.6666em;
+    margin-top: 3em;
+}
+
+h6 {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.17;
+    margin-bottom: 1.875em;
+    margin-top: 3.375em;
+}
