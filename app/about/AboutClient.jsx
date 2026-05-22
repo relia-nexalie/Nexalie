@@ -19,7 +19,7 @@ export default function AboutClient() {
       <section style={{ background: navy, padding: 'clamp(56px,7vw,96px) 24px' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr auto', gap: 'clamp(32px,5vw,72px)', alignItems: 'center' }}>
           <div>
-            <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: accent, textTransform: 'uppercase', marginBottom: '20px' }}>La fondatrice</p>
+            <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: '#C45E0A', textTransform: 'uppercase', marginBottom: '20px' }}>La fondatrice</p>
             <blockquote style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(17px,2.5vw,24px)', fontWeight: 300, color: '#fff', lineHeight: 1.6, borderLeft: `3px solid ${accent}`, paddingLeft: '24px', marginBottom: '32px', fontStyle: 'italic' }}>
               &ldquo;Je suis née à Brazzaville. J&apos;ai grandi en France. Et entre ces deux mondes, j&apos;ai toujours su que quelque chose manquait.&rdquo;
             </blockquote>
@@ -30,7 +30,7 @@ export default function AboutClient() {
               Consultante · Fondatrice de Nexalie
             </p>
             <div style={{ display: 'flex', gap: '8px', marginTop: '20px', flexWrap: 'wrap' }}>
-              {['📍 Vitry-sur-Seine', '🇨🇬 Brazzaville', '💬 FR · EN · Lingala'].map(t => (
+              {['📍 Paris', '🇨🇬 Brazzaville', '💬 FR · EN · Lingala'].map(t => (
                 <span key={t} style={{ padding: '4px 12px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '20px', fontSize: '12px', color: 'rgba(255,255,255,0.7)' }}>{t}</span>
               ))}
             </div>
@@ -101,7 +101,7 @@ export default function AboutClient() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginBottom: '48px' }}>
             {[
               { stat: '-20%', label: 'Délais de fabrication', sub: '3SP Technologies', color: accent },
-              { stat: '10 000+', label: 'Collaborateurs', sub: 'Safran — périmètre projet', color: '#E88C32' },
+              { stat: '17 000+', label: 'Collaborateurs', sub: 'Safran Electronics & Defense', color: '#E88C32' },
               { stat: 'Master 2', label: 'Projet Digital', sub: 'ECEMA Lyon · 2024', color: green },
             ].map(card => (
               <div key={card.stat} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', padding: '28px 20px', textAlign: 'center' }}>
@@ -115,11 +115,10 @@ export default function AboutClient() {
           <div style={{ maxWidth: '540px', margin: '0 auto' }}>
             <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '2px', color: 'rgba(255,255,255,0.4)', marginBottom: '20px', textAlign: 'center' }}>PARCOURS</p>
             {[
-              ['2022 → Présent', 'Chef de Projet Digital · 3SP Technologies', accent],
-              ['2021 → 2023', 'CEO & Fondatrice · WEAREEYWA', '#E88C32'],
-              ['2020 → 2021', 'Marketing Executive · RBEAN', green],
-              ['2015 → 2018', "Chef d'Équipe · UGC", '#7B5EA7'],
-              ['2024', 'Master Manager de Projet · ECEMA Lyon', '#C0627A'],
+              ['2026 → Présent',         'Fondatrice & CEO · Nexalie',                                              isAfrica ? '#C45E0A' : '#4EC9B0'],
+              ['Sept. 2021 → Sept. 2024','Coordinatrice Innovation Participative · Safran Electronics & Defense · Massy', '#E88C32'],
+              ['2019 → 2020',            'Cheffe de Projet MES · 3SP Technologies (ex Alcatel Optronics)',           green],
+              ['2021 → 2023',            'Co-fondatrice & CEO · WEAREEYWA',                                         '#7B5EA7'],
             ].map(([period, role, color]) => (
               <div key={period} style={{ display: 'flex', gap: '16px', marginBottom: '14px', alignItems: 'flex-start' }}>
                 <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: color, flexShrink: 0, marginTop: '4px' }} />

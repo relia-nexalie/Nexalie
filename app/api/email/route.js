@@ -479,7 +479,11 @@ function monthlyReportEmail(name, data, isAf) {
 // ─── Route handler ───────────────────────────────────────────────────
 
 export async function POST(request) {
-  const resend = new Resend(process.env.RESEND_API_KEY);
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey || apiKey.includes('placeholder')) {
+    return Response.json({ success: true, message: 'Email simulé' });
+  }
+  const resend = new Resend(apiKey);
   const supabase = createClient();
   const { data: { session } } = await supabase.auth.getSession();
 

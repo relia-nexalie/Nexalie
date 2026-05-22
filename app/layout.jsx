@@ -10,7 +10,7 @@ export const metadata = {
     default: 'Nexalie — Transformation Digitale IA · France & Afrique',
     template: '%s — Nexalie',
   },
-  description: 'Audit de maturité digitale gratuit en 3 minutes · Roadmap IA sur-mesure · Certification Digital Ready. Pour PME françaises et entreprises africaines.',
+  description: 'En 20 minutes, Nexalie analyse votre maturité digitale et génère votre plan d\'action IA. Gratuit. Adapté France et Afrique francophone.',
   keywords: ['transformation digitale', 'IA', 'Afrique francophone', 'France', 'audit digital', 'PME', 'OHADA', 'Mobile Money', 'roadmap digitale', 'consulting IA'],
   authors: [{ name: 'Rélia Ebiya', url: 'https://nexalie-ecqc.vercel.app' }],
   creator: 'Nexalie',

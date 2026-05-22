@@ -14,17 +14,17 @@ function Badge({ label, color, filled = false }) {
 }
 
 const ARTICLES = [
-  { id: 1, cat: 'Stratégie', readTime: '6 min', date: '28 mars 2026', color: '#2E9B8B',
+  { id: 1, cat: 'Stratégie', readTime: '6 min', date: '28 mars 2026', color: '#C45E0A', emoji: '🎯',
     title: 'Transformation digitale en Côte d\'Ivoire : pourquoi 2026 est l\'année décisive',
     excerpt: 'L\'État ivoirien a engagé 2 000 milliards FCFA dans le numérique. Les PME qui ne basculent pas maintenant prendront un retard difficile à rattraper.',
     tags: ['Côte d\'Ivoire', 'Digital', 'PME', 'IA'],
     content: `La Côte d'Ivoire vit un tournant numérique sans précédent. En 2026, le budget du Ministère du Numérique atteint 83,2 milliards FCFA — en hausse de 12% par rapport à l'année précédente. La Banque Mondiale a accordé un financement de 83,3 milliards FCFA spécifiquement pour accélérer l'économie numérique.\n\nPour les PME ivoiriennes, ce contexte crée une opportunité rare. Les entreprises qui digitalisent maintenant bénéficient d'un marché en forte croissance, d'une concurrence encore faible sur le digital, et d'outils IA accessibles comme jamais auparavant.\n\n**Ce que ça veut dire concrètement pour une PME abidjanaise**\n\nUne étude récente montre que les PME qui ont une présence digitale sérieuse génèrent en moyenne 34% de revenus supplémentaires par rapport à celles qui en sont absentes. Sur le marché abidjanais, ce chiffre monte à 48% dans les secteurs services et commerce.\n\n**Les 3 actions prioritaires pour une PME en 2026**\n\nPremièrement, avoir un site web professionnel mobile-first. 78% du trafic internet en CI vient du mobile. Deuxièmement, utiliser l'IA pour accélérer la production de contenu. Troisièmement, mettre en place un système de suivi des indicateurs clés.` },
-  { id: 2, cat: 'Intelligence Artificielle', readTime: '5 min', date: '22 mars 2026', color: '#1A5FA8',
+  { id: 2, cat: 'Intelligence Artificielle', readTime: '5 min', date: '22 mars 2026', color: '#4EC9B0', emoji: '🤖',
     title: 'Les agents IA vont transformer la gestion des PME africaines',
     excerpt: 'Un agent IA qui scrape votre marché, génère votre stratégie et publie vos contenus automatiquement. Ce n\'est plus de la science-fiction.',
     tags: ['Agents IA', 'Automatisation', 'PME'],
     content: `Les agents IA représentent une rupture majeure dans la façon dont les entreprises opèrent. Contrairement aux outils IA classiques qui répondent à des questions, les agents agissent : ils naviguent sur internet, analysent des données en temps réel, exécutent des tâches et surveillent des indicateurs.\n\nPour une PME africaine, les implications sont considérables. Des tâches qui nécessitaient un prestataire externe — analyse concurrentielle, création de contenu, suivi des KPIs — peuvent maintenant être déléguées à des agents qui travaillent 24h/24.\n\n**Exemple concret : un restaurant à Abidjan**\n\nUn restaurant client de Nexalie a mis en place 3 agents. Résultat en 3 mois : +23% de réservations en ligne, -60% de temps consacré à la communication digitale.\n\n**Ce qui change avec les agents**\n\nLa différence fondamentale est le passage du conseil à l'action. Les consultants traditionnels recommandent. Les agents exécutent.` },
-  { id: 3, cat: 'Méthodologie', readTime: '4 min', date: '15 mars 2026', color: '#6B3FA0',
+  { id: 3, cat: 'Méthodologie', readTime: '4 min', date: '15 mars 2026', color: '#C9A84C', emoji: '📋',
     title: 'Pourquoi l\'audit digital est la première étape de toute transformation réussie',
     excerpt: 'Trop d\'entreprises investissent dans le digital sans diagnostic préalable. Résultat : des budgets gaspillés sur des outils inadaptés.',
     tags: ['Audit', 'Méthodologie', 'Diagnostic'],
@@ -119,8 +119,8 @@ export default function BlogPage() {
               <p style={{ fontSize: '14px', color: T.textSecondary, lineHeight: 1.7, marginBottom: '14px' }}>{filtered[0].excerpt}</p>
               <span style={{ fontSize: '13px', fontWeight: 600, color: filtered[0].color }}>Lire l'article →</span>
             </div>
-            <div style={{ width: '200px', height: '160px', background: `${filtered[0].color}08`, borderRadius: '14px', border: `1px solid ${filtered[0].color}15`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <span style={{ fontFamily: 'Georgia, serif', fontSize: '48px', color: `${filtered[0].color}25`, fontWeight: 300 }}>N</span>
+            <div style={{ width: '200px', height: '160px', background: filtered[0].color, borderRadius: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+              <span style={{ fontSize: '56px' }}>{filtered[0].emoji}</span>
             </div>
           </div>
         )}

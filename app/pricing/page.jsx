@@ -233,39 +233,40 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Accompagnement consulting — masqué temporairement, à réactiver quand Rélia lance les missions */}
-      <section style={{ display: 'none', background: navy, padding: '72px 24px' }}>
-        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <p style={{ fontSize: '11px', letterSpacing: '3px', color: accent, textTransform: 'uppercase', marginBottom: '12px', textAlign: 'center', fontFamily: 'monospace' }}>Accompagnement sur mesure</p>
-          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(26px,3.5vw,40px)', fontWeight: 300, color: '#fff', textAlign: 'center', marginBottom: '10px' }}>
-            En complément de votre plan SaaS
+      {/* Comparaison */}
+      <section style={{ background: '#F8F9FA', padding: '64px 24px' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: '#9CA3AF', textTransform: 'uppercase', textAlign: 'center', marginBottom: '8px' }}>Pourquoi Nexalie</p>
+          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(22px,3vw,32px)', fontWeight: 300, color: navy, textAlign: 'center', marginBottom: '36px' }}>
+            Nexalie Pro vs. les alternatives
           </h2>
-          <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.5)', textAlign: 'center', marginBottom: '48px', lineHeight: 1.7 }}>
-            Un expert à vos côtés pour accélérer votre transformation. Sessions Zoom, stratégie sur-mesure, suivi KPIs.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', marginBottom: '36px' }}>
-            {packs.map(pack => (
-              <div key={pack.name} style={{ background: 'rgba(255,255,255,0.04)', borderRadius: '16px', padding: '24px 20px', border: `1px solid ${pack.color}30`, borderTop: `3px solid ${pack.color}`, position: 'relative' }}>
-                {pack.badge && (
-                  <div style={{ position: 'absolute', top: '-11px', right: '16px', background: pack.color, color: '#fff', fontSize: '9px', fontWeight: 700, padding: '3px 12px', borderRadius: '20px', fontFamily: 'monospace' }}>
-                    {pack.badge}
-                  </div>
-                )}
-                <div style={{ fontSize: '26px', marginBottom: '8px' }}>{pack.emoji}</div>
-                <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#fff', marginBottom: '4px' }}>{pack.name}</h3>
-                <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.35)', marginBottom: '16px', fontFamily: 'monospace' }}>Score {pack.score}/100</p>
-                <div>
-                  <span style={{ fontSize: '26px', fontWeight: 800, color: pack.color }}>{pack.price}</span>
-                  <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.4)' }}>{pack.period}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div style={{ textAlign: 'center' }}>
-            <Link href="/contact?plan=consulting" style={{ display: 'inline-block', padding: '14px 36px', background: accent, color: '#fff', borderRadius: '10px', textDecoration: 'none', fontWeight: 700, fontSize: '15px' }}>
-              Prendre RDV →
-            </Link>
-            <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.3)', marginTop: '12px' }}>Réponse sous 24h · Premier échange gratuit</p>
+          <div style={{ overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
+              <thead>
+                <tr style={{ background: navy }}>
+                  <th style={{ padding: '14px 20px', textAlign: 'left', color: 'rgba(255,255,255,0.5)', fontSize: '11px', fontWeight: 600, letterSpacing: '1px' }}></th>
+                  <th style={{ padding: '14px 20px', textAlign: 'center', color: accent, fontSize: '13px', fontWeight: 700 }}>Nexalie Pro</th>
+                  <th style={{ padding: '14px 20px', textAlign: 'center', color: 'rgba(255,255,255,0.6)', fontSize: '13px', fontWeight: 600 }}>Cabinet conseil</th>
+                  <th style={{ padding: '14px 20px', textAlign: 'center', color: 'rgba(255,255,255,0.6)', fontSize: '13px', fontWeight: 600 }}>Bpifrance Diag IA</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['Prix',             '129€/mois',   '5 000€+/mission', '7 500€'],
+                  ['Délai résultats',  '20 minutes',  '3 mois',          '8 jours'],
+                  ['Adapté Afrique',   '✅',          '❌',              '❌'],
+                  ['Suivi hebdo',      '✅',          '❌',              '❌'],
+                  ['Sans engagement',  '✅',          '❌',              '❌'],
+                ].map(([label, nexalie, cabinet, bpi], i) => (
+                  <tr key={label} style={{ background: i % 2 === 0 ? '#fff' : '#F8F9FA', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
+                    <td style={{ padding: '14px 20px', fontWeight: 600, color: '#374151' }}>{label}</td>
+                    <td style={{ padding: '14px 20px', textAlign: 'center', fontWeight: 700, color: accentText, background: `${accent}06` }}>{nexalie}</td>
+                    <td style={{ padding: '14px 20px', textAlign: 'center', color: '#9CA3AF' }}>{cabinet}</td>
+                    <td style={{ padding: '14px 20px', textAlign: 'center', color: '#9CA3AF' }}>{bpi}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
