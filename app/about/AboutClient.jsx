@@ -116,8 +116,8 @@ export default function AboutClient() {
             <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '2px', color: 'rgba(255,255,255,0.4)', marginBottom: '20px', textAlign: 'center' }}>PARCOURS</p>
             {[
               ['2026 → Présent',         'Fondatrice & CEO · Nexalie',                                              isAfrica ? '#C45E0A' : '#4EC9B0'],
-              ['Sept. 2021 → Sept. 2024','Coordinatrice Innovation Participative · Safran Electronics & Defense · Massy', '#E88C32'],
-              ['2019 → 2020',            'Cheffe de Projet MES · 3SP Technologies (ex Alcatel Optronics)',           green],
+              ['Mars 2024 → Janv. 2026', 'Coordinatrice Innovation Participative · Safran Electronics & Defense · Massy', '#E88C32'],
+              ['Août 2021 → Janv. 2024','Cheffe de Projet MES · 3SP Technologies (ex Alcatel Optronics)',            green],
               ['2021 → 2023',            'Co-fondatrice & CEO · WEAREEYWA',                                         '#7B5EA7'],
             ].map(([period, role, color]) => (
               <div key={period} style={{ display: 'flex', gap: '16px', marginBottom: '14px', alignItems: 'flex-start' }}>
