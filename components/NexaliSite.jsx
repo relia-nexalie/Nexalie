@@ -174,7 +174,7 @@ export default function NexaliSite() {
             </p>
             <div style={{ display: 'flex', gap: '8px', marginBottom: '24px', flexWrap: 'wrap' }}>
               <span style={{ padding: '4px 12px', background: `${t.teal}15`, color: t.teal === '#4EC9B0' ? '#1D6B60' : '#A85520', border: `1px solid ${t.teal}30`, borderRadius: '20px', fontSize: '12px', fontWeight: 600 }}>Gratuit</span>
-              <span style={{ padding: '4px 12px', background: `${t.accent}10`, color: t.accent, border: `1px solid ${t.accent}25`, borderRadius: '20px', fontSize: '12px', fontWeight: 600 }}>29€/mois Premium</span>
+              <span style={{ padding: '4px 12px', background: `${t.accent}10`, color: t.accent, border: `1px solid ${t.accent}25`, borderRadius: '20px', fontSize: '12px', fontWeight: 600 }}>129€/mois Premium</span>
             </div>
             <Link href="/platform" style={{ padding: '12px 24px', background: t.btnPrimary, borderRadius: '10px', color: t.btnText, fontSize: '14px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
               Découvrir la plateforme →
@@ -200,7 +200,7 @@ export default function NexaliSite() {
             Un pont entre <em style={{ color: mode === 'af' ? '#E88C32' : '#4EC9B0' }}>deux mondes</em>
           </h2>
           <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.9, marginBottom: '28px' }}>
-            Relia Ebiya — née à Brazzaville, formée en France. 10+ ans d&apos;expérience en transformation digitale. Elle parle votre langue, au sens propre comme au sens figuré.
+            Rélia Ebiya — née à Brazzaville, formée en France. 10+ ans d&apos;expérience en transformation digitale. Elle parle votre langue, au sens propre comme au sens figuré.
           </p>
           <Link href="/about" style={{ padding: '12px 28px', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '10px', color: '#fff', fontSize: '14px', textDecoration: 'none', display: 'inline-block' }}>
             Découvrir Rélia →

@@ -21,6 +21,20 @@ const PLANS = {
       limits: ['Pas de Business Plan IA', 'Pas de Roadmap digitale', 'Pas de Cahier des charges'],
     },
     {
+      id: 'starter',
+      name: 'Starter',
+      emoji: '⚡',
+      monthly: 59,
+      annual: 590,
+      currency: '€',
+      desc: 'Pour les indépendants et TPE qui veulent passer à l\'action rapidement.',
+      cta: 'Commencer Starter',
+      ctaHref: '/signup?plan=starter',
+      highlight: false,
+      features: ['Tout le plan Gratuit', 'Audit illimité', 'Roadmap digitale 6 mois', 'Export PDF', 'Support email'],
+      limits: ['Pas de Business Plan IA', 'Pas de Cahier des charges', 'Pas de Veille concurrentielle'],
+    },
+    {
       id: 'pro',
       name: 'Pro',
       emoji: '🚀',
@@ -31,7 +45,7 @@ const PLANS = {
       cta: 'Passer Pro',
       ctaHref: '/signup?plan=pro',
       highlight: true,
-      features: ['Tout le plan Gratuit', 'Business Plan IA illimité', 'Roadmap digitale 12 mois', 'Cahier des charges', 'Veille concurrentielle', 'Simulateur de budget', 'Export PDF', 'Support prioritaire'],
+      features: ['Tout le plan Starter', 'Business Plan IA illimité', 'Roadmap digitale 12 mois', 'Cahier des charges', 'Veille concurrentielle', 'Simulateur de budget', 'Support prioritaire'],
       limits: [],
     },
     {
@@ -65,6 +79,20 @@ const PLANS = {
       limits: ['Pas de Plan d\'Action Digital IA', 'Pas de Roadmap digitale', 'Pas de Cahier des charges'],
     },
     {
+      id: 'starter',
+      name: 'Starter',
+      emoji: '⚡',
+      monthly: 39000,
+      annual: 390000,
+      currency: 'FCFA',
+      desc: 'Pour les indépendants et TPE qui veulent passer à l\'action rapidement.',
+      cta: 'Commencer Starter',
+      ctaHref: '/signup?plan=starter',
+      highlight: false,
+      features: ['Tout le plan Gratuit', 'Audit illimité', 'Roadmap digitale 6 mois', 'Export PDF', 'Support WhatsApp'],
+      limits: ['Pas de Plan d\'Action Digital IA', 'Pas de Cahier des charges', 'Pas de Veille concurrentielle'],
+    },
+    {
       id: 'pro',
       name: 'Pro',
       emoji: '🚀',
@@ -75,7 +103,7 @@ const PLANS = {
       cta: 'Passer Pro',
       ctaHref: '/signup?plan=pro',
       highlight: true,
-      features: ['Tout le plan Gratuit', 'Plan d\'Action Digital IA', 'Roadmap digitale 12 mois', 'Cahier des charges', 'Veille concurrentielle', 'Simulateur de budget', 'Export PDF', 'Support WhatsApp prioritaire'],
+      features: ['Tout le plan Starter', 'Plan d\'Action Digital IA', 'Roadmap digitale 12 mois', 'Cahier des charges', 'Veille concurrentielle', 'Simulateur de budget', 'Export PDF', 'Support WhatsApp prioritaire'],
       limits: [],
     },
     {
@@ -151,7 +179,7 @@ export default function PricingPage() {
 
       {/* Plans SaaS */}
       <section style={{ maxWidth: '1000px', margin: '0 auto', padding: '60px 24px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px' }}>
           {plans.map((plan, i) => {
             const price = billing === 'annual' && plan.monthly ? Math.round(plan.annual / 12) : plan.monthly;
             return (

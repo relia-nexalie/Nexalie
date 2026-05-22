@@ -5,20 +5,20 @@ import GlobalFooter from '@/components/GlobalFooter';
 import './globals.css';
 
 export const metadata = {
-  metadataBase: new URL('https://nexalie.co'),
+  metadataBase: new URL('https://nexalie-ecqc.vercel.app'),
   title: {
     default: 'Nexalie — Transformation Digitale IA · France & Afrique',
     template: '%s — Nexalie',
   },
   description: 'Audit de maturité digitale gratuit en 3 minutes · Roadmap IA sur-mesure · Certification Digital Ready. Pour PME françaises et entreprises africaines.',
   keywords: ['transformation digitale', 'IA', 'Afrique francophone', 'France', 'audit digital', 'PME', 'OHADA', 'Mobile Money', 'roadmap digitale', 'consulting IA'],
-  authors: [{ name: 'Rélia Ebiya', url: 'https://nexalie.co' }],
+  authors: [{ name: 'Rélia Ebiya', url: 'https://nexalie-ecqc.vercel.app' }],
   creator: 'Nexalie',
   publisher: 'Nexalie',
   openGraph: {
     title: 'Nexalie — Transformation Digitale IA · France & Afrique',
     description: 'Audit gratuit 3 min · Roadmap IA · Badge Digital Ready. Pour PME françaises et africaines.',
-    url: 'https://nexalie.co',
+    url: 'https://nexalie-ecqc.vercel.app',
     siteName: 'Nexalie',
     locale: 'fr_FR',
     type: 'website',

@@ -53,10 +53,10 @@ export default function LegalPage() {
         </div>
 
         <Section id="mentions" title="Mentions légales">
-          <P><strong>Éditeur :</strong> Nexalie Consulting — Relia Ebiya</P>
+          <P><strong>Éditeur :</strong> Nexalie Consulting — Rélia Ebiya</P>
           <P><strong>Contact :</strong> relia.ebiya@nexalie.co — +33 7 86 62 04 09</P>
           <P><strong>Hébergement :</strong> Vercel Inc., 340 Pine Street, Suite 1200, San Francisco, CA 94104, États-Unis</P>
-          <P><strong>Directrice de la publication :</strong> Relia Ebiya</P>
+          <P><strong>Directrice de la publication :</strong> Rélia Ebiya</P>
         </Section>
 
         <Section id="cgv" title="Conditions générales de vente">
