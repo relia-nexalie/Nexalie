@@ -233,8 +233,8 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Accompagnement consulting */}
-      <section style={{ background: navy, padding: '72px 24px' }}>
+      {/* Accompagnement consulting — masqué temporairement, à réactiver quand Rélia lance les missions */}
+      <section style={{ display: 'none', background: navy, padding: '72px 24px' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <p style={{ fontSize: '11px', letterSpacing: '3px', color: accent, textTransform: 'uppercase', marginBottom: '12px', textAlign: 'center', fontFamily: 'monospace' }}>Accompagnement sur mesure</p>
           <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(26px,3.5vw,40px)', fontWeight: 300, color: '#fff', textAlign: 'center', marginBottom: '10px' }}>
