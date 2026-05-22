@@ -11,6 +11,9 @@ const PLANS_AF = {
 };
 
 export async function POST(request) {
+  if (!process.env.CINETPAY_API_KEY || !process.env.CINETPAY_SITE_ID) {
+    return Response.json({ error: 'Paiements Mobile Money non configurés' }, { status: 503 });
+  }
   const supabase = createClient();
   const { data: { session } } = await supabase.auth.getSession();
 

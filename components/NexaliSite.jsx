@@ -59,10 +59,22 @@ export default function NexaliSite() {
 
   return (
     <div style={{ background: t.bg, color: t.text, fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif' }}>
+      <style suppressHydrationWarning>{`
+        @media (max-width: 768px) {
+          .nx-hero-grid       { grid-template-columns: 1fr !important; gap: 32px !important; }
+          .nx-score-card      { min-width: unset !important; width: 100% !important; }
+          .nx-platform-grid   { grid-template-columns: 1fr !important; gap: 32px !important; }
+          .nx-offers-grid     { grid-template-columns: 1fr !important; }
+          .nx-cta-buttons     { flex-direction: column !important; align-items: stretch !important; }
+          .nx-cta-buttons a   { text-align: center !important; }
+          .nx-hero-buttons    { flex-direction: column !important; align-items: stretch !important; }
+          .nx-hero-buttons a  { text-align: center !important; }
+        }
+      `}</style>
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
       <section style={{ background: t.navy, padding: 'clamp(64px,8vw,100px) 24px' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr auto', gap: '60px', alignItems: 'center' }}>
+        <div className="nx-hero-grid" style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr auto', gap: '60px', alignItems: 'center' }}>
           <div>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '20px', padding: '5px 14px', marginBottom: '24px' }}>
               <span style={{ fontSize: '12px' }}>{mode === 'af' ? '🌍' : '✨'}</span>
@@ -82,7 +94,7 @@ export default function NexaliSite() {
                 ))}
               </div>
             )}
-            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+            <div className="nx-hero-buttons" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
               <Link href="/audit" style={{ padding: '15px 30px', background: mode === 'af' ? '#C45E0A' : '#4EC9B0', borderRadius: '10px', color: '#fff', fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'inline-block', boxShadow: `0 8px 24px ${mode === 'af' ? 'rgba(196,94,10,0.35)' : 'rgba(78,201,176,0.35)'}` }}>
                 Audit gratuit →
               </Link>
@@ -93,7 +105,7 @@ export default function NexaliSite() {
           </div>
 
           {/* Score card */}
-          <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '20px', padding: '28px', minWidth: '280px' }}>
+          <div className="nx-score-card" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '20px', padding: '28px', minWidth: '280px' }}>
             <p style={{ fontFamily: 'monospace', fontSize: '9px', letterSpacing: '2px', color: 'rgba(255,255,255,0.4)', marginBottom: '20px' }}>MATURITÉ DIGITALE</p>
             {[['Stratégie & Vision', 35], ['Expérience Client', 55], ['Opérations', 25], ['Technologies', 45], ['Culture & Équipes', 30]].map(([label, w]) => (
               <div key={label} style={{ marginBottom: '12px' }}>
@@ -135,7 +147,7 @@ export default function NexaliSite() {
           <p style={{ fontSize: '16px', color: t.muted, marginBottom: '40px', maxWidth: '480px', lineHeight: 1.7 }}>
             Choisissez selon votre score d&apos;audit. Commencez par l&apos;audit gratuit.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', marginBottom: '28px' }}>
+          <div className="nx-offers-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', marginBottom: '28px' }}>
             {OFFERS.map(o => (
               <div key={o.name} style={{ padding: '24px', background: '#fff', border: `2px solid ${o.color}20`, borderRadius: '16px', position: 'relative', borderTop: `3px solid ${o.color}` }}>
                 {o.badge && <div style={{ position: 'absolute', top: '-10px', right: '16px', background: o.color, padding: '2px 12px', borderRadius: '15px', fontSize: '9px', fontWeight: 700, color: '#fff', fontFamily: 'monospace' }}>{o.badge}</div>}
@@ -163,7 +175,7 @@ export default function NexaliSite() {
 
       {/* ── PLATEFORME ─────────────────────────────────────────────── */}
       <section style={{ padding: '72px 24px', background: t.bg }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
+        <div className="nx-platform-grid" style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
           <div>
             <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: t.muted, marginBottom: '10px' }}>PLATEFORME SaaS</p>
             <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(24px,3vw,34px)', fontWeight: 300, color: t.text, marginBottom: '16px' }}>
@@ -218,7 +230,7 @@ export default function NexaliSite() {
           <p style={{ fontSize: '15px', color: t.muted, marginBottom: '32px', lineHeight: 1.7 }}>
             Audit gratuit en 20 minutes. Plan d&apos;action personnalisé. Aucun engagement.
           </p>
-          <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div className="nx-cta-buttons" style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/audit" style={{ padding: '16px 40px', background: t.btnPrimary, borderRadius: '12px', color: t.btnText, fontSize: '16px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
               Je fais mon audit gratuit →
             </Link>

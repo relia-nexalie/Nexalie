@@ -13,6 +13,9 @@ const PLANS_FR = {
 };
 
 export async function POST(request) {
+  if (!process.env.STRIPE_SECRET_KEY) {
+    return Response.json({ error: 'Paiements non configurés' }, { status: 503 });
+  }
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
   const supabase = createClient();
   const { data: { session } } = await supabase.auth.getSession();
