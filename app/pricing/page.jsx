@@ -31,8 +31,8 @@ const PLANS = {
       cta: 'Commencer Starter',
       ctaHref: '/signup?plan=starter',
       highlight: false,
-      features: ['Tout le plan Gratuit', 'Audit illimité', 'Roadmap digitale 6 mois', 'Export PDF', 'Support email'],
-      limits: ['Pas de Business Plan IA', 'Pas de Cahier des charges', 'Pas de Veille concurrentielle'],
+      features: ['Tout le plan Gratuit', '3 audits complets/mois', 'Rapport PDF basique', 'Nexalie OS limité', 'Support email'],
+      limits: ['Pas de Business Plan IA', 'Pas de Roadmap digitale', 'Pas de Cahier des charges'],
     },
     {
       id: 'pro',
@@ -89,8 +89,8 @@ const PLANS = {
       cta: 'Commencer Starter',
       ctaHref: '/signup?plan=starter',
       highlight: false,
-      features: ['Tout le plan Gratuit', 'Audit illimité', 'Roadmap digitale 6 mois', 'Export PDF', 'Support WhatsApp'],
-      limits: ['Pas de Plan d\'Action Digital IA', 'Pas de Cahier des charges', 'Pas de Veille concurrentielle'],
+      features: ['Tout le plan Gratuit', '3 audits complets/mois', 'Rapport PDF basique', 'Nexalie OS limité', 'Support WhatsApp'],
+      limits: ['Pas de Plan d\'Action Digital IA', 'Pas de Roadmap digitale', 'Pas de Cahier des charges'],
     },
     {
       id: 'pro',
