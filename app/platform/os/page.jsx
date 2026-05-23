@@ -20,7 +20,8 @@ export default async function NexaliOSPage() {
     .single();
 
   const plan = profile?.plan || 'free';
-  const isUnlimited = PLANS_UNLIMITED.includes(plan);
+  const isAdmin = user.email === 'relia.ebiya@gmail.com';
+  const isUnlimited = isAdmin || PLANS_UNLIMITED.includes(plan);
 
   // Compter les messages du jour pour les comptes gratuits
   let todayCount = 0;

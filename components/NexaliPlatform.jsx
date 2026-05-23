@@ -584,7 +584,7 @@ function DashboardView() {
 
 export default function App() {
   const [activeTab, setActiveTab] = useState("dashboard");
-  const [isUnlocked, setIsUnlocked] = useState(false);
+  const [isUnlocked, setIsUnlocked] = useState(true); // TEST: outils premium accessibles
   const tab = TABS.find(t => t.id === activeTab);
   const tool = TOOLS[activeTab];
 

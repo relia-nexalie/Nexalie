@@ -20,8 +20,9 @@ export default async function CertificationPage() {
     .single();
 
   const plan = profile?.plan || 'free';
+  const isAdmin = user.email === 'relia.ebiya@gmail.com';
 
-  if (!PLANS_ALLOWED.includes(plan)) {
+  if (!isAdmin && !PLANS_ALLOWED.includes(plan)) {
     return (
       <div style={{
         minHeight: '100vh', display: 'flex', flexDirection: 'column',
