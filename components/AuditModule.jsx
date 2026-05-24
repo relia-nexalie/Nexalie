@@ -4,6 +4,79 @@ import { useState, useEffect, useRef } from 'react';
 import { useMode } from '@/lib/mode-context';
 
 // ─────────────────────────────────────────────────────────────
+// Tooltips pour termes techniques
+// ─────────────────────────────────────────────────────────────
+const TOOLTIPS = {
+  'CRM':    "Logiciel de gestion clients (ex: HubSpot, Salesforce)",
+  'KPI':    "Indicateur chiffré de performance (ex: taux de conversion, CA mensuel)",
+  'KPIs':   "Indicateurs chiffrés de performance (ex: taux de conversion, CA mensuel)",
+  'BIM':    "Maquette numérique 3D d'un bâtiment (Building Information Modeling)",
+  'ERP':    "Logiciel qui centralise toute la gestion de l'entreprise : stocks, ventes, comptabilité",
+  'agile':  "Méthode de travail par petites étapes rapides et itératives (Scrum, Kanban...)",
+  'agiles': "Méthodes de travail par petites étapes rapides et itératives (Scrum, Kanban...)",
+  'cloud':  "Stockage et traitement de données sur des serveurs distants accessibles via Internet",
+  'Cloud':  "Stockage et traitement de données sur des serveurs distants accessibles via Internet",
+};
+
+function TooltipBadge({ term, definition }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <span
+      style={{ position: 'relative', display: 'inline' }}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <span style={{ borderBottom: '1px dotted #4EC9B0', cursor: 'help' }}>{term}</span>
+      <span
+        onClick={e => { e.stopPropagation(); setOpen(o => !o); }}
+        style={{ fontSize: '0.7em', cursor: 'pointer', marginLeft: '2px', verticalAlign: 'middle', userSelect: 'none' }}
+        title={definition}
+        aria-label={`Définition de ${term}`}
+      >ℹ️</span>
+      {open && (
+        <span style={{
+          position: 'absolute',
+          bottom: '130%',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          background: '#0A1628',
+          color: '#fff',
+          padding: '7px 12px',
+          borderRadius: '8px',
+          fontSize: '0.78rem',
+          zIndex: 200,
+          lineHeight: 1.5,
+          boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
+          width: '220px',
+          textAlign: 'center',
+          pointerEvents: 'none',
+          fontWeight: 400,
+        }}>
+          <strong style={{ display: 'block', marginBottom: '2px' }}>{term}</strong>
+          {definition}
+        </span>
+      )}
+    </span>
+  );
+}
+
+function QuestionText({ text }) {
+  const terms = Object.keys(TOOLTIPS);
+  const escaped = terms.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  // Boundary-aware split: match whole words only
+  const regex = new RegExp(`\\b(${escaped.join('|')})\\b`, 'g');
+  const parts = text.split(regex);
+  return (
+    <>
+      {parts.map((part, i) =>
+        TOOLTIPS[part]
+          ? <TooltipBadge key={i} term={part} definition={TOOLTIPS[part]} />
+          : <span key={i}>{part}</span>
+      )}
+    </>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────
 // 20 Questions × 2 modes
 // ─────────────────────────────────────────────────────────────
 const QUESTIONS = {
@@ -15,7 +88,7 @@ const QUESTIONS = {
       { label: "Oui, c'est au cœur de notre organisation", score: 3 },
     ]},
     { id: 2, q: "Vos processus métier sont-ils documentés numériquement ?", answers: [
-      { label: "Non, tout est dans les têtes", score: 0 },
+      { label: "Informations transmises oralement", score: 0 },
       { label: "Quelques documents Word/PDF épars", score: 1 },
       { label: "Documentation partielle mais accessible", score: 2 },
       { label: "Documentation complète et mise à jour", score: 3 },
@@ -106,7 +179,7 @@ const QUESTIONS = {
     ]},
     { id: 17, q: "Avez-vous un plan de continuité numérique en cas de panne ?", answers: [
       { label: "Non", score: 0 },
-      { label: "Plan informel dans les têtes", score: 1 },
+      { label: "Plan informel, transmis oralement", score: 1 },
       { label: "Plan documenté mais non testé", score: 2 },
       { label: "Plan testé régulièrement", score: 3 },
     ]},
@@ -137,7 +210,7 @@ const QUESTIONS = {
       { label: "Oui, on a des outils numériques organisés pour ça", score: 3 },
     ]},
     { id: 2, q: "Vos façons de travailler sont-elles écrites ou seulement dans les têtes ?", answers: [
-      { label: "Tout est dans les têtes, rien d'écrit", score: 0 },
+      { label: "Informations transmises oralement", score: 0 },
       { label: "Quelques notes écrites, pas organisées", score: 1 },
       { label: "Des documents existent mais ne sont pas toujours suivis", score: 2 },
       { label: "Tout est documenté et tout le monde suit les mêmes règles", score: 3 },
@@ -389,7 +462,7 @@ const SECTOR_QUESTIONS_FR = {
     { id: 8,  q: "Vos équipes techniques pratiquent-elles les méthodes agile / DevOps ?", answers: [{ label: "Non, processus cascades ou ad hoc", score: 0 }, { label: "Scrum ou Kanban partiellement", score: 1 }, { label: "Agile adopté, DevOps en cours", score: 2 }, { label: "DevOps mature avec CI/CD, revues sprint et rétros", score: 3 }] },
     { id: 9,  q: "Avez-vous un système de monitoring et d'alertes en production ?", answers: [{ label: "Non, on découvre les incidents en production", score: 0 }, { label: "Logs consultés manuellement", score: 1 }, { label: "Monitoring basique avec alertes email", score: 2 }, { label: "Observabilité complète (logs, métriques, traces, alertes PagerDuty/OpsGenie)", score: 3 }] },
     { id: 10, q: "Avez-vous une politique de sécurité applicative (OWASP, pentest) ?", answers: [{ label: "Non", score: 0 }, { label: "Sensibilisation informelle", score: 1 }, { label: "Revues de code sécurité + quelques tests", score: 2 }, { label: "Pentest régulier + SAST/DAST + plan de remédiation", score: 3 }] },
-    { id: 11, q: "Votre documentation technique est-elle à jour et accessible ?", answers: [{ label: "Non, tout est dans les têtes des développeurs", score: 0 }, { label: "Quelques docs éparpillées", score: 1 }, { label: "Documentation centralisée mais incomplète", score: 2 }, { label: "Documentation complète, maintenue et intégrée au process", score: 3 }] },
+    { id: 11, q: "Votre documentation technique est-elle à jour et accessible ?", answers: [{ label: "Informations transmises oralement", score: 0 }, { label: "Quelques documents, peu centralisés", score: 1 }, { label: "Documentation centralisée mais incomplète", score: 2 }, { label: "Documentation complète, maintenue et intégrée au process", score: 3 }] },
     { id: 12, q: "Avez-vous un pipeline CI/CD en production ?", answers: [{ label: "Non, déploiements manuels", score: 0 }, { label: "Scripts de déploiement basiques", score: 1 }, { label: "CI automatisé, CD partiel", score: 2 }, { label: "CI/CD complet avec tests, staging et déploiement automatisé", score: 3 }] },
     { id: 13, q: "La gestion des incidents est-elle formalisée ?", answers: [{ label: "Non, chaos management", score: 0 }, { label: "Communication informelle en équipe", score: 1 }, { label: "Process basique (ticket, résolution, communication)", score: 2 }, { label: "ITSM complet (SLA, post-mortem, runbooks, on-call)", score: 3 }] },
     { id: 14, q: "Mesurez-vous la performance de vos systèmes (latence, uptime, erreurs) ?", answers: [{ label: "Non", score: 0 }, { label: "Vérifications manuelles ponctuelles", score: 1 }, { label: "KPIs définis et suivis", score: 2 }, { label: "SLO/SLA définis avec tableau de bord et budget d'erreur", score: 3 }] },
@@ -1261,6 +1334,15 @@ export default function AuditModule({ isPlatform = false }) {
           >
             {T.intro_cta}
           </button>
+
+          <p style={{
+            marginTop: '1.25rem',
+            fontSize: '0.8rem',
+            color: 'var(--nx-text-secondary)',
+            opacity: 0.75,
+          }}>
+            🔒 Vos données sont confidentielles. Nexalie ne partage aucune information avec des tiers.
+          </p>
         </div>
       </div>
     );
@@ -1386,7 +1468,7 @@ export default function AuditModule({ isPlatform = false }) {
               lineHeight: 1.5,
               marginBottom: '1.5rem',
             }}>
-              {currentQuestion.q}
+              <QuestionText text={currentQuestion.q} />
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
