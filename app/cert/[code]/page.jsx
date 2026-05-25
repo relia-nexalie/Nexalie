@@ -69,8 +69,8 @@ export default async function CertPage({ params }) {
   const secteur = cert?.profiles?.secteur || null;
   const country = cert?.profiles?.country || null;
 
-  const verifyUrl = `https://nexalie.co/verify/${code}`;
-  const certUrl = `https://nexalie.co/cert/${code}`;
+  const verifyUrl = `https://nexalie-ecqc.vercel.app/verify/${code}`;
+  const certUrl = `https://nexalie-ecqc.vercel.app/cert/${code}`;
   const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(verifyUrl)}&bgcolor=ffffff&color=0A1628&margin=8`;
 
   const linkedinMsg = `Je suis fier(e) d'annoncer que ${orgName} vient d'obtenir la certification #NexalieDigitalReady avec un score de ${cert?.score ?? '—'}/100 ! 🚀 Notre transformation digitale avance. Vérifiez notre certificat : ${certUrl}`;

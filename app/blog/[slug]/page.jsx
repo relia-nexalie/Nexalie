@@ -35,12 +35,12 @@ export async function generateMetadata({ params }) {
   return {
     title: article.titre,
     description: article.extrait,
-    alternates: { canonical: `https://nexalie.co/blog/${params.slug}` },
+    alternates: { canonical: `https://nexalie-ecqc.vercel.app/blog/${params.slug}` },
     openGraph: {
       title: article.titre,
       description: article.extrait,
       type: 'article',
-      url: `https://nexalie.co/blog/${params.slug}`,
+      url: `https://nexalie-ecqc.vercel.app/blog/${params.slug}`,
     },
   };
 }

@@ -85,6 +85,15 @@ export default function NexaliSite() {
                 Nos tarifs
               </Link>
             </div>
+            <a
+              href="https://wa.me/33786620409"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginTop: '16px', fontSize: '13px', color: 'rgba(255,255,255,0.55)', textDecoration: 'none' }}
+            >
+              <span style={{ fontSize: '16px' }}>💬</span>
+              Une question ? WhatsApp direct → <strong style={{ color: 'rgba(255,255,255,0.85)' }}>+33 7 86 62 04 09</strong>
+            </a>
           </div>
 
           {/* Score card */}
@@ -149,7 +158,7 @@ export default function NexaliSite() {
       {/* ── STATS ──────────────────────────────────────────────────── */}
       <section style={{ borderBottom: `1px solid ${t.border}`, padding: '28px 24px', background: t.bg }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', gap: '16px' }}>
-          {[['120', "Questions d'audit sectoriel"], ['8', 'Secteurs couverts'], ['0€', 'Pour commencer'], ['20 min', 'Pour un bilan complet']].map(([v, l]) => (
+          {[['20', "Questions par audit"], ['8', 'Secteurs couverts'], ['0€', 'Pour commencer'], ['20 min', 'Pour un bilan complet']].map(([v, l]) => (
             <div key={l} style={{ textAlign: 'center', padding: '12px' }}>
               <p style={{ fontFamily: 'Georgia, serif', fontSize: '26px', color: t.accent, marginBottom: '4px' }}>{v}</p>
               <p style={{ fontSize: '12px', color: t.muted }}>{l}</p>
@@ -204,8 +213,50 @@ export default function NexaliSite() {
         </div>
       </section>
 
+      {/* ── VIDÉO PLACEHOLDER ──────────────────────────────────────── */}
+      <section style={{ padding: '72px 24px', background: t.bg, borderBottom: `1px solid ${t.border}` }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+          <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: t.muted, marginBottom: '8px', textTransform: 'uppercase' }}>Démonstration</p>
+          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(22px,3vw,32px)', fontWeight: 300, color: t.text, marginBottom: '6px' }}>
+            Nexalie en 60 secondes
+          </h2>
+          <p style={{ fontSize: '15px', color: t.muted, marginBottom: '32px' }}>Regardez comment ça marche</p>
+
+          {/* Bloc vidéo 16:9 */}
+          <div style={{
+            position: 'relative',
+            width: '100%',
+            paddingTop: '56.25%', /* 16:9 */
+            background: t.navy,
+            borderRadius: '16px',
+            border: `2px solid ${isAf ? '#C45E0A' : '#4EC9B0'}`,
+            overflow: 'hidden',
+            boxShadow: `0 16px 48px ${isAf ? 'rgba(196,94,10,0.15)' : 'rgba(78,201,176,0.12)'}`,
+          }}>
+            <div style={{
+              position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
+              display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+              gap: '16px',
+            }}>
+              <div style={{
+                width: '72px', height: '72px', borderRadius: '50%',
+                background: isAf ? 'rgba(196,94,10,0.25)' : 'rgba(78,201,176,0.2)',
+                border: `2px solid ${isAf ? '#C45E0A' : '#4EC9B0'}`,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                fontSize: '28px',
+              }}>
+                ▶
+              </div>
+              <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.5)', fontFamily: 'monospace', letterSpacing: '1px' }}>
+                Vidéo disponible prochainement
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── PLATEFORME ─────────────────────────────────────────────── */}
-      <section style={{ padding: '72px 24px', background: t.bg }}>
+      <section style={{ padding: '72px 24px', background: t.sectionAlt }}>
         <div className="nx-platform-grid" style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
           <div>
             <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: t.muted, marginBottom: '10px', textTransform: 'uppercase' }}>Plateforme SaaS</p>
@@ -247,6 +298,25 @@ export default function NexaliSite() {
           </p>
           <Link href="/about" style={{ padding: '12px 28px', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '10px', color: '#fff', fontSize: '14px', textDecoration: 'none', display: 'inline-block' }}>
             Découvrir Rélia →
+          </Link>
+        </div>
+      </section>
+
+      {/* ── BETA TESTEURS ──────────────────────────────────────────── */}
+      <section style={{ padding: '64px 24px', background: t.bg, borderBottom: `1px solid ${t.border}` }}>
+        <div style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>
+          <div style={{ fontSize: '40px', marginBottom: '16px' }}>🧪</div>
+          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(22px,3vw,30px)', fontWeight: 300, color: t.text, marginBottom: '14px', lineHeight: 1.4 }}>
+            Les premiers retours de nos beta testeurs arrivent.
+          </h2>
+          <p style={{ fontSize: '15px', color: t.muted, lineHeight: 1.8, marginBottom: '28px', maxWidth: '500px', margin: '0 auto 28px' }}>
+            Rejoignez le programme beta et soyez parmi les premiers à tester Nexalie — avant tout le monde.
+          </p>
+          <Link
+            href="/beta"
+            style={{ padding: '14px 36px', background: isAf ? '#C45E0A' : '#0A1628', borderRadius: '10px', color: '#fff', fontSize: '14px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}
+          >
+            Rejoindre le programme beta →
           </Link>
         </div>
       </section>

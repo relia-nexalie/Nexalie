@@ -1,4 +1,4 @@
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://nexalie.co';
+const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://nexalie-ecqc.vercel.app';
 
 export default function robots() {
   return {

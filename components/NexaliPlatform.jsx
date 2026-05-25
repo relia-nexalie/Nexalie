@@ -14,6 +14,7 @@ const TABS = [
   { id: "process", icon: "◑", label: "Cartographie", sub: "Processus", free: false },
   { id: "roi", icon: "⬡", label: "ROI Digital", sub: "Calculateur", free: true },
   { id: "cdc", icon: "✦", label: "Cahier des Charges", sub: "Générateur", free: false },
+  { id: "veille", icon: "◬", label: "Veille Concurrentielle", sub: "Analyse marché", free: false },
 ];
 
 const METRICS = [
@@ -62,7 +63,13 @@ JSON uniquement.`,
 
 Format : {"titre":"CDC [Projet]","contexte":"contexte 2 phrases","objectifs":["objectif 1","objectif 2","objectif 3"],"perimetre":{"inclus":["élément inclus 1","élément inclus 2","élément inclus 3"],"exclus":["élément exclu 1","élément exclu 2"]},"fonctionnalites":[{"nom":"Fonctionnalité","priorite":"Must Have|Should Have|Nice to Have","description":"description courte"}],"contraintes":{"techniques":["contrainte 1","contrainte 2"],"budget":"fourchette","delai":"durée estimée"},"livrables":["livrable 1","livrable 2","livrable 3"],"criteresAcceptation":["critère 1","critère 2","critère 3"]}
 
-JSON uniquement.`
+JSON uniquement.`,
+
+  veille: `Tu es l'IA de Nexalie Consulting. Génère une veille concurrentielle structurée en JSON strict (sans backticks).
+
+Format : {"synthese":"synthèse du marché en 2 phrases","tendances":["tendance clé 1","tendance clé 2","tendance clé 3"],"concurrents":[{"nom":"Concurrent 1","positionnement":"1 phrase","forces":["force 1","force 2"],"faiblesses":["faiblesse 1","faiblesse 2"],"part_de_marche":"estimation"}],"opportunites":["opportunité 1","opportunité 2","opportunité 3"],"menaces":["menace 1","menace 2"],"recommandations":["action recommandée 1","action recommandée 2","action recommandée 3"],"scoreIntensiteConcurrentielle":{"valeur":number,"interpretation":"texte"}}
+
+Génère 3 concurrents principaux. JSON uniquement.`
 };
 
 async function callClaude(system, prompt, onChunk) {
@@ -387,6 +394,67 @@ const renderCdc = (r, color) => (
 );
 
 // ═══════════════════════════════════════════
+// RENDERERS VEILLE
+// ═══════════════════════════════════════════
+
+const renderVeille = (r, color) => (
+  <div style={{ animation: "fadeIn 0.5s ease" }}>
+    <Card color={color}>
+      <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.4)", fontFamily: "monospace", marginBottom: "6px" }}>SYNTHÈSE MARCHÉ</p>
+      <Txt>{r.synthese}</Txt>
+      <div style={{ marginTop: "10px" }}>
+        {r.tendances?.map((t, i) => <Tag key={i} text={t} color={color} />)}
+      </div>
+    </Card>
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px", marginBottom: "10px" }}>
+      {r.concurrents?.map((c, i) => (
+        <Card key={i} color={color}>
+          <p style={{ fontFamily: "'Fraunces', serif", fontSize: "14px", color: "#fff", marginBottom: "6px" }}>{c.nom}</p>
+          <Txt muted>{c.positionnement}</Txt>
+          <div style={{ marginTop: "8px" }}>
+            <p style={{ fontSize: "10px", color: "#4A7C59", fontFamily: "monospace", marginBottom: "3px" }}>Forces</p>
+            {c.forces?.map((f, j) => <Txt key={j} muted>✓ {f}</Txt>)}
+          </div>
+          <div style={{ marginTop: "6px" }}>
+            <p style={{ fontSize: "10px", color: "#FF6B4A", fontFamily: "monospace", marginBottom: "3px" }}>Faiblesses</p>
+            {c.faiblesses?.map((f, j) => <Txt key={j} muted>✗ {f}</Txt>)}
+          </div>
+        </Card>
+      ))}
+    </div>
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "10px" }}>
+      <Card color={color}>
+        <Section title="Opportunités" color="#4A7C59">
+          {r.opportunites?.map((o, i) => <div key={i} style={{ display: "flex", gap: "6px" }}><span style={{ color: "#4A7C59" }}>→</span><Txt muted>{o}</Txt></div>)}
+        </Section>
+      </Card>
+      <Card color={color}>
+        <Section title="Menaces" color="#FF6B4A">
+          {r.menaces?.map((m, i) => <div key={i} style={{ display: "flex", gap: "6px" }}><span style={{ color: "#FF6B4A" }}>!</span><Txt muted>{m}</Txt></div>)}
+        </Section>
+      </Card>
+    </div>
+    <Card color={color}>
+      <Section title="Recommandations" color={color}>
+        {r.recommandations?.map((rec, i) => (
+          <div key={i} style={{ display: "flex", gap: "8px", marginBottom: "4px" }}>
+            <span style={{ color, fontFamily: "monospace", fontSize: "11px" }}>{String(i + 1).padStart(2, '0')}</span>
+            <Txt muted>{rec}</Txt>
+          </div>
+        ))}
+      </Section>
+    </Card>
+    {r.scoreIntensiteConcurrentielle && (
+      <Card color={color}>
+        <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.4)", fontFamily: "monospace" }}>INTENSITÉ CONCURRENTIELLE</p>
+        <p style={{ fontFamily: "'Fraunces', serif", fontSize: "28px", color }}>{r.scoreIntensiteConcurrentielle.valeur}/10</p>
+        <Txt muted>{r.scoreIntensiteConcurrentielle.interpretation}</Txt>
+      </Card>
+    )}
+  </div>
+);
+
+// ═══════════════════════════════════════════
 // TOOLS CONFIG
 // ═══════════════════════════════════════════
 
@@ -469,6 +537,21 @@ const TOOLS = {
     ],
     promptBuilder: (v) => `Projet: ${v.projet} | Type: ${v.type} | Objectif: ${v.objectif} | Budget: ${v.budget || "non précisé"} | Délai: ${v.delai || "flexible"}`,
     renderResult: renderCdc,
+  },
+  veille: {
+    title: "Veille Concurrentielle",
+    sub: "Analysez votre marché et vos concurrents en 2 minutes",
+    color: "#FF6B4A",
+    isPremium: true,
+    systemKey: "veille",
+    fields: [
+      { key: "secteur", label: "Secteur d'activité", type: "select", required: true, options: ["Commerce / Retail", "Restauration", "BTP / Construction", "Santé", "Services aux entreprises", "Tech / SaaS", "Formation", "Agriculture", "Finance / Fintech", "Mode / Beauté", "Logistique", "Énergie"] },
+      { key: "marche", label: "Marché géographique", type: "select", required: true, options: ["France", "Côte d'Ivoire", "Congo Brazzaville", "Cameroun", "Sénégal", "Afrique francophone", "France + Afrique"] },
+      { key: "produit", label: "Votre produit / service principal", type: "text", placeholder: "Ex: Application de livraison de repas, CRM pour PME...", required: true },
+      { key: "positionnement", label: "Votre positionnement actuel", type: "textarea", placeholder: "Comment vous vous différenciez aujourd'hui...", required: true },
+    ],
+    promptBuilder: (v) => `Secteur: ${v.secteur} | Marché: ${v.marche} | Produit/Service: ${v.produit} | Positionnement: ${v.positionnement}`,
+    renderResult: renderVeille,
   },
 };
 

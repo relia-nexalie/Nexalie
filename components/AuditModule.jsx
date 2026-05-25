@@ -1068,9 +1068,13 @@ function getRecos(score, mode, sector) {
 // ─────────────────────────────────────────────────────────────
 // Composant principal
 // ─────────────────────────────────────────────────────────────
+const LS_KEY = 'nexalie_audit_draft';
+
 export default function AuditModule({ isPlatform = false }) {
   const { mode } = useMode();
   const [sector, setSector] = useState(null);
+  // Profil pré-audit
+  const [profil, setProfil] = useState({ equipe: null, pays: null });
 
   // 5 questions communes + 15 sectorielles si secteur choisi
   const baseQuestions = QUESTIONS[mode] || QUESTIONS.fr;
@@ -1081,9 +1085,18 @@ export default function AuditModule({ isPlatform = false }) {
     ? [...baseQuestions.slice(0, 5), ...sectorQs]
     : baseQuestions;
 
-  const [step, setStep] = useState('intro'); // 'intro' | 'sector' | 'questions' | 'result'
+  const [step, setStep] = useState('intro'); // 'intro' | 'profil' | 'sector' | 'questions' | 'result'
   const [currentQ, setCurrentQ] = useState(0);
-  const [answers, setAnswers] = useState(Array(20).fill(null));
+  const [answers, setAnswers] = useState(() => {
+    // Restaurer depuis localStorage si disponible
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = JSON.parse(localStorage.getItem(LS_KEY) || 'null');
+        if (saved?.answers) return saved.answers;
+      } catch {}
+    }
+    return Array(20).fill(null);
+  });
   const [score, setScore] = useState(0);
   const [level, setLevel] = useState(null);
   const [recommendations, setRecommendations] = useState('');
@@ -1151,6 +1164,10 @@ export default function AuditModule({ isPlatform = false }) {
     const updated = [...answers];
     updated[questionIndex] = answerScore;
     setAnswers(updated);
+    // Sauvegarde automatique en localStorage
+    if (typeof window !== 'undefined') {
+      try { localStorage.setItem(LS_KEY, JSON.stringify({ answers: updated, sector, step: 'questions' })); } catch {}
+    }
   }
 
   function handleFinish() {
@@ -1169,6 +1186,11 @@ export default function AuditModule({ isPlatform = false }) {
     setRecoCards(cards);
     setRecommendations(recoText);
     setStep('result');
+
+    // Effacer le brouillon localStorage
+    if (typeof window !== 'undefined') {
+      try { localStorage.removeItem(LS_KEY); } catch {}
+    }
 
     // Sauvegarde automatique si isPlatform
     if (isPlatform) {
@@ -1213,6 +1235,7 @@ export default function AuditModule({ isPlatform = false }) {
   function handleRestart() {
     setStep('intro');
     setSector(null);
+    setProfil({ equipe: null, pays: null });
     setCurrentQ(0);
     setAnswers(Array(20).fill(null));
     setScore(0);
@@ -1221,6 +1244,9 @@ export default function AuditModule({ isPlatform = false }) {
     setRecoCards([]);
     setSavedId(null);
     setDisplayScore(0);
+    if (typeof window !== 'undefined') {
+      try { localStorage.removeItem(LS_KEY); } catch {}
+    }
   }
 
   async function handlePrint() {
@@ -1316,7 +1342,7 @@ export default function AuditModule({ isPlatform = false }) {
           </div>
 
           <button
-            onClick={() => setStep('sector')}
+            onClick={() => setStep('profil')}
             style={{
               background: 'var(--nx-accent)',
               color: '#fff',
@@ -1349,16 +1375,114 @@ export default function AuditModule({ isPlatform = false }) {
   }
 
   // ─── SECTEUR ─────────────────────────────────────────────
+  // ─── PROFIL ──────────────────────────────────────────────
+  if (step === 'profil') {
+    const equipeOptions = [
+      { val: 'solo', label: mode === 'fr' ? 'Je suis seul(e)' : 'Je travaille seul(e)' },
+      { val: '2-5', label: '2 — 5 personnes' },
+      { val: '6-20', label: '6 — 20 personnes' },
+      { val: '20+', label: mode === 'fr' ? 'Plus de 20' : 'Plus de 20' },
+    ];
+    const paysOptions = [
+      { val: 'fr', label: '🇫🇷 France' },
+      { val: 'ci', label: '🇨🇮 Côte d\'Ivoire' },
+      { val: 'cg', label: '🇨🇬 Congo' },
+      { val: 'cm', label: '🇨🇲 Cameroun' },
+      { val: 'sn', label: '🇸🇳 Sénégal' },
+      { val: 'other', label: '🌍 Autre' },
+    ];
+    const canContinue = profil.equipe && profil.pays;
+    return (
+      <div style={{ minHeight: '100vh', background: 'var(--nx-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
+        <div style={{ maxWidth: 640, width: '100%' }}>
+          <button onClick={() => setStep('intro')} style={{ background: 'none', border: 'none', color: 'var(--nx-text-secondary)', cursor: 'pointer', fontSize: '0.85rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '4px', padding: 0 }}>
+            ← {mode === 'fr' ? 'Retour' : 'Retour'}
+          </button>
+          <p style={{ fontFamily: 'monospace', fontSize: '0.7rem', letterSpacing: '2px', color: 'var(--nx-accent)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+            {mode === 'fr' ? 'Étape 1 / 3 — Votre profil' : 'Étape 1 / 3 — Votre profil'}
+          </p>
+          <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(1.5rem, 4vw, 2.2rem)', fontWeight: 300, color: 'var(--nx-navy)', marginBottom: '0.5rem' }}>
+            {mode === 'fr' ? 'Parlez-nous de votre équipe' : 'Parlez-nous de votre équipe'}
+          </h2>
+          <p style={{ fontSize: '1rem', color: 'var(--nx-text-secondary)', marginBottom: '2rem', lineHeight: 1.6 }}>
+            {mode === 'fr' ? '2 questions rapides pour adapter vos résultats.' : '2 questions rapides pour adapter vos résultats.'}
+          </p>
+
+          {/* Taille équipe */}
+          <p style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--nx-navy)', marginBottom: '0.75rem' }}>
+            Combien de personnes dans votre équipe ?
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px', marginBottom: '1.75rem' }}>
+            {equipeOptions.map(opt => (
+              <button
+                key={opt.val}
+                onClick={() => setProfil(p => ({ ...p, equipe: opt.val }))}
+                style={{
+                  padding: '14px 12px', borderRadius: 10, textAlign: 'center',
+                  border: `2px solid ${profil.equipe === opt.val ? 'var(--nx-accent)' : 'rgba(0,0,0,0.08)'}`,
+                  background: profil.equipe === opt.val ? 'rgba(78,201,176,0.08)' : '#fff',
+                  cursor: 'pointer', fontSize: '0.9rem', fontWeight: 500,
+                  color: profil.equipe === opt.val ? 'var(--nx-accent)' : 'var(--nx-text-primary)',
+                  transition: 'all 0.15s',
+                }}
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Pays */}
+          <p style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--nx-navy)', marginBottom: '0.75rem' }}>
+            {mode === 'fr' ? 'Votre pays ?' : 'Votre pays ?'}
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px', marginBottom: '2rem' }}>
+            {paysOptions.map(opt => (
+              <button
+                key={opt.val}
+                onClick={() => setProfil(p => ({ ...p, pays: opt.val }))}
+                style={{
+                  padding: '12px 8px', borderRadius: 10, textAlign: 'center',
+                  border: `2px solid ${profil.pays === opt.val ? 'var(--nx-accent)' : 'rgba(0,0,0,0.08)'}`,
+                  background: profil.pays === opt.val ? 'rgba(78,201,176,0.08)' : '#fff',
+                  cursor: 'pointer', fontSize: '0.85rem', fontWeight: 500,
+                  color: profil.pays === opt.val ? 'var(--nx-accent)' : 'var(--nx-text-primary)',
+                  transition: 'all 0.15s',
+                }}
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
+
+          <button
+            disabled={!canContinue}
+            onClick={() => setStep('sector')}
+            style={{
+              background: canContinue ? 'var(--nx-accent)' : 'rgba(0,0,0,0.1)',
+              color: canContinue ? '#fff' : 'rgba(0,0,0,0.3)',
+              border: 'none', borderRadius: 12, padding: '1rem 2.5rem',
+              fontSize: '1.05rem', fontWeight: 700,
+              cursor: canContinue ? 'pointer' : 'default',
+              transition: 'all 0.2s', width: '100%',
+            }}
+          >
+            {canContinue ? (mode === 'fr' ? 'Continuer →' : 'Continuer →') : (mode === 'fr' ? 'Répondez aux 2 questions' : 'Répondez aux 2 questions')}
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   if (step === 'sector') {
     const sectorList = SECTORS[mode] || SECTORS.fr;
     return (
       <div style={{ minHeight: '100vh', background: 'var(--nx-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
         <div style={{ maxWidth: 680, width: '100%' }}>
-          <button onClick={() => setStep('intro')} style={{ background: 'none', border: 'none', color: 'var(--nx-text-secondary)', cursor: 'pointer', fontSize: '0.85rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '4px', padding: 0 }}>
+          <button onClick={() => setStep('profil')} style={{ background: 'none', border: 'none', color: 'var(--nx-text-secondary)', cursor: 'pointer', fontSize: '0.85rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '4px', padding: 0 }}>
             ← {mode === 'fr' ? 'Retour' : 'Retour'}
           </button>
           <p style={{ fontFamily: 'monospace', fontSize: '0.7rem', letterSpacing: '2px', color: 'var(--nx-accent)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-            {mode === 'fr' ? 'Étape 1 / 2' : 'Étape 1 / 2'}
+            {mode === 'fr' ? 'Étape 2 / 3' : 'Étape 2 / 3'}
           </p>
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(1.5rem, 4vw, 2.2rem)', fontWeight: 300, color: 'var(--nx-navy)', marginBottom: '0.5rem' }}>
             {mode === 'fr' ? 'Votre secteur d\'activité' : 'Votre secteur d\'activité'}

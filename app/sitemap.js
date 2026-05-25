@@ -1,4 +1,4 @@
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://nexalie.co';
+const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://nexalie-ecqc.vercel.app';
 
 export default function sitemap() {
   const staticRoutes = [
@@ -11,6 +11,7 @@ export default function sitemap() {
     { url: `${BASE_URL}/faq`, priority: 0.6, changeFrequency: 'monthly' },
     { url: `${BASE_URL}/marque-blanche`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${BASE_URL}/beta`, priority: 0.8, changeFrequency: 'weekly' },
+    { url: `${BASE_URL}/comment-ca-marche`, priority: 0.8, changeFrequency: 'monthly' },
 
     { url: `${BASE_URL}/legal`, priority: 0.3, changeFrequency: 'yearly' },
   ];
