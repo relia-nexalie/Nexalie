@@ -78,12 +78,18 @@ async function callClaude(system, prompt, onChunk) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       model: "claude-sonnet-4-6",
-      max_tokens: 1000,
+      max_tokens: 2048,
       system,
       messages: [{ role: "user", content: prompt }],
       stream: true,
     }),
   });
+
+  if (!res.ok) {
+    const err = await res.text();
+    throw new Error(`API error ${res.status}: ${err}`);
+  }
+
   const reader = res.body.getReader();
   const decoder = new TextDecoder();
   let buf = "";
@@ -103,6 +109,21 @@ async function callClaude(system, prompt, onChunk) {
   }
 }
 
+// Extrait un objet JSON depuis un texte potentiellement entouré de prose ou de code markdown
+function extractJson(text) {
+  // Enlever les balises markdown ```json ... ```
+  const stripped = text.replace(/```json\s*/gi, "").replace(/```\s*/g, "").trim();
+  // Trouver le premier { et le dernier } pour isoler le JSON
+  const start = stripped.indexOf("{");
+  const end = stripped.lastIndexOf("}");
+  if (start === -1 || end === -1 || end <= start) return null;
+  try {
+    return JSON.parse(stripped.slice(start, end + 1));
+  } catch {
+    return null;
+  }
+}
+
 // ═══════════════════════════════════════════
 // TOOL WRAPPER
 // ═══════════════════════════════════════════
@@ -111,18 +132,32 @@ function ToolWrapper({ title, sub, color, isPremium, isUnlocked, fields, systemK
   const [values, setValues] = useState({});
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
+  const [rawText, setRawText] = useState('');
+  const [error, setError] = useState('');
 
   const set = (k, v) => setValues(p => ({ ...p, [k]: v }));
 
   const generate = async () => {
     if (isPremium && !isUnlocked) return;
-    setLoading(true); setResult(null);
+    setLoading(true);
+    setResult(null);
+    setRawText('');
+    setError('');
     let text = "";
     try {
       await callClaude(SYSTEM[systemKey], promptBuilder(values), chunk => { text += chunk; });
-      const clean = text.replace(/```json|```/g, "").trim();
-      setResult(JSON.parse(clean));
-    } catch (e) { console.error(e); }
+      console.log('Réponse IA:', text); // debug temporaire
+      const parsed = extractJson(text);
+      if (parsed) {
+        setResult(parsed);
+      } else {
+        // Fallback : afficher le texte brut si pas de JSON valide
+        setRawText(text || "Réponse vide reçue.");
+      }
+    } catch (e) {
+      console.error('Erreur génération outil:', e);
+      setError(e.message || "Une erreur est survenue. Vérifiez votre connexion et réessayez.");
+    }
     setLoading(false);
   };
 
@@ -187,6 +222,19 @@ function ToolWrapper({ title, sub, color, isPremium, isUnlocked, fields, systemK
             <div style={{ padding: "20px", textAlign: "center" }}>
               <div style={{ width: "32px", height: "32px", border: `3px solid ${color}25`, borderTop: `3px solid ${color}`, borderRadius: "50%", animation: "spin 1s linear infinite", margin: "0 auto 10px" }} />
               <p style={{ color, fontFamily: "'IBM Plex Mono', monospace", fontSize: "11px" }}>L'IA analyse votre projet...</p>
+            </div>
+          )}
+
+          {error && (
+            <div style={{ padding: "12px 16px", background: "rgba(255,107,74,0.1)", border: "1px solid rgba(255,107,74,0.3)", borderRadius: "10px", marginBottom: "12px" }}>
+              <p style={{ color: "#FF6B4A", fontSize: "13px", fontFamily: "'DM Sans', sans-serif", margin: 0 }}>{error}</p>
+            </div>
+          )}
+
+          {rawText && !result && (
+            <div style={{ padding: "20px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "12px", marginBottom: "12px" }}>
+              <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", color: "rgba(255,255,255,0.4)", marginBottom: "10px", letterSpacing: "1px" }}>RÉPONSE GÉNÉRÉE</p>
+              <pre style={{ whiteSpace: "pre-wrap", overflowY: "auto", maxHeight: "400px", color: "rgba(255,255,255,0.75)", fontSize: "13px", lineHeight: 1.7, fontFamily: "'DM Sans', sans-serif", margin: 0 }}>{rawText}</pre>
             </div>
           )}
 
