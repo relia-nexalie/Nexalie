@@ -75,7 +75,7 @@ function ArticleView({ article, onBack, T }) {
 }
 
 export default function BlogPage() {
-  const { isAfrica } = useMode();
+  const { mode, setMode, isAfrica } = useMode();
   const T = isAfrica ? PALETTE.af : PALETTE.fr;
 
   const [article, setArticle] = useState(null);
@@ -94,7 +94,18 @@ export default function BlogPage() {
             <span style={{ fontFamily: 'Georgia, serif', fontSize: '20px', fontWeight: 300, color: '#fff' }}>Nexalie</span>
             <span style={{ fontFamily: 'monospace', fontSize: '9px', letterSpacing: '2.5px', color: T.accent }}>AI</span>
           </a>
-          <a href="/" style={{ fontSize: '13px', color: T.textMuted, textDecoration: 'none' }}>← Retour</a>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            {/* Toggle FR / AF */}
+            <div style={{ display: 'flex', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '8px', overflow: 'hidden' }}>
+              {[['fr', '🇫🇷'], ['af', '🌍']].map(([m, flag]) => (
+                <button key={m} onClick={() => setMode(m)}
+                  style={{ padding: '5px 10px', border: 'none', cursor: 'pointer', fontSize: '13px', background: mode === m ? T.accent : 'transparent', color: '#fff', transition: 'all 0.2s', fontWeight: mode === m ? 700 : 400 }}>
+                  {flag}
+                </button>
+              ))}
+            </div>
+            <a href="/" style={{ fontSize: '13px', color: T.textMuted, textDecoration: 'none' }}>← Retour</a>
+          </div>
         </div>
       </nav>
 

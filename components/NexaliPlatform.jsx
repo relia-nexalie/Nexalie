@@ -3,6 +3,22 @@
 import { useState } from "react";
 import { useMode } from "@/lib/mode-context";
 
+// ─── Nettoyage markdown brut dans les réponses IA ───────────
+function stripMarkdown(text) {
+  if (typeof text !== 'string') return text;
+  return text
+    .replace(/#{1,6}\s+/g, '')
+    .replace(/\*\*(.*?)\*\*/gs, '$1')
+    .replace(/\*(.*?)\*/gs, '$1')
+    .replace(/`{1,3}(.*?)`{1,3}/gs, '$1')
+    .replace(/^[-*+]\s+/gm, '')
+    .replace(/^\d+\.\s+/gm, '')
+    .replace(/^>\s+/gm, '')
+    .replace(/---+/g, '')
+    .replace(/___+/g, '')
+    .trim();
+}
+
 // ═══════════════════════════════════════════
 // CONFIG & DATA
 // ═══════════════════════════════════════════
@@ -235,7 +251,7 @@ function ToolWrapper({ title, sub, color, isPremium, isUnlocked, fields, systemK
           {rawText && !result && (
             <div style={{ padding: "20px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "12px", marginBottom: "12px" }}>
               <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", color: "rgba(255,255,255,0.4)", marginBottom: "10px", letterSpacing: "1px" }}>RÉPONSE GÉNÉRÉE</p>
-              <pre style={{ whiteSpace: "pre-wrap", overflowY: "auto", maxHeight: "400px", color: "rgba(255,255,255,0.75)", fontSize: "13px", lineHeight: 1.7, fontFamily: "'DM Sans', sans-serif", margin: 0 }}>{rawText}</pre>
+              <pre style={{ whiteSpace: "pre-wrap", overflowY: "auto", maxHeight: "400px", color: "rgba(255,255,255,0.75)", fontSize: "13px", lineHeight: 1.7, fontFamily: "'DM Sans', sans-serif", margin: 0 }}>{stripMarkdown(rawText)}</pre>
             </div>
           )}
 
@@ -272,7 +288,8 @@ function Tag({ text, color }) {
 }
 
 function Txt({ children, muted }) {
-  return <p style={{ fontSize: "13px", color: muted ? "rgba(255,255,255,0.45)" : "rgba(255,255,255,0.8)", fontFamily: "'DM Sans', sans-serif", lineHeight: 1.6, marginBottom: "4px" }}>{children}</p>;
+  const clean = stripMarkdown(children);
+  return <p style={{ fontSize: "13px", color: muted ? "rgba(255,255,255,0.45)" : "rgba(255,255,255,0.8)", fontFamily: "'DM Sans', sans-serif", lineHeight: 1.6, marginBottom: "4px" }}>{clean}</p>;
 }
 
 const renderBizplan = (r, color) => (
@@ -715,7 +732,7 @@ function DashboardView({ accent = '#4EC9B0' }) {
 // ═══════════════════════════════════════════
 
 export default function App() {
-  const { isAfrica } = useMode();
+  const { mode, setMode, isAfrica } = useMode();
   const accent  = isAfrica ? '#C45E0A' : '#4EC9B0';
   const navyBg  = isAfrica ? '#1A0800' : '#070e1c';
 
@@ -741,9 +758,17 @@ export default function App() {
 
       {/* Sidebar */}
       <div style={{ width: "220px", flexShrink: 0, borderRight: "1px solid rgba(255,255,255,0.05)", padding: "20px 12px", display: "flex", flexDirection: "column", gap: "3px" }}>
-        <div style={{ marginBottom: "20px", paddingBottom: "16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
-          <p style={{ fontFamily: "'Fraunces', serif", fontSize: "18px", fontWeight: 200, color: "#fff" }}>Nexalie</p>
-          <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "9px", letterSpacing: "2px", color: "#C9A84C" }}>PLATFORM · v2.0</p>
+        <div style={{ marginBottom: "16px", paddingBottom: "14px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+          <p style={{ fontFamily: "'Fraunces', serif", fontSize: "18px", fontWeight: 200, color: "#fff", marginBottom: "10px" }}>Nexalie</p>
+          {/* Toggle FR / AF */}
+          <div style={{ display: "flex", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "7px", overflow: "hidden" }}>
+            {[['fr', '🇫🇷 France'], ['af', '🌍 Afrique']].map(([m, label]) => (
+              <button key={m} onClick={() => setMode(m)}
+                style={{ flex: 1, padding: "5px 6px", border: "none", cursor: "pointer", fontSize: "10px", fontWeight: mode === m ? 700 : 400, background: mode === m ? accent : "transparent", color: "#fff", transition: "all 0.2s", fontFamily: "'IBM Plex Mono', monospace" }}>
+                {label}
+              </button>
+            ))}
+          </div>
         </div>
 
         <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "9px", letterSpacing: "1px", color: "rgba(255,255,255,0.2)", marginBottom: "4px", paddingLeft: "4px" }}>TABLEAU DE BORD</p>
