@@ -35,6 +35,14 @@ export default function AccountPage() {
   const [portalLoading, setPortalLoading] = useState(false);
   const [portalError,   setPortalError]   = useState('');
 
+  // Checkout Stripe
+  const [checkoutLoading, setCheckoutLoading] = useState(false);
+  const [checkoutError,   setCheckoutError]   = useState('');
+
+  // Admin upgrade
+  const [upgradeLoading, setUpgradeLoading] = useState(false);
+  const [upgradeMsg,     setUpgradeMsg]     = useState('');
+
   useEffect(() => {
     async function load() {
       const { data: { user: u } } = await supabase.auth.getUser();
@@ -79,6 +87,43 @@ export default function AccountPage() {
     if (error) { setPwdMsg('Erreur : ' + error.message); }
     else { setPwdMsg('✓ Mot de passe modifié'); setNewPassword(''); setConfirmPassword(''); }
     setTimeout(() => setPwdMsg(''), 4000);
+  }
+
+  async function handleCheckout() {
+    setCheckoutLoading(true);
+    setCheckoutError('');
+    try {
+      const res = await fetch('/api/stripe/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ planKey: 'pro_monthly' }),
+      });
+      const data = await res.json();
+      if (data.redirect) { window.location.href = data.redirect + '?next=/platform/account'; return; }
+      if (data.url) { window.location.href = data.url; return; }
+      setCheckoutError(data.error || 'Erreur inattendue.');
+    } catch {
+      setCheckoutError('Erreur réseau.');
+    }
+    setCheckoutLoading(false);
+  }
+
+  async function handleAdminUpgrade() {
+    setUpgradeLoading(true);
+    setUpgradeMsg('');
+    try {
+      const res = await fetch('/api/admin/upgrade-pro', { method: 'POST' });
+      const data = await res.json();
+      if (data.success) {
+        setUpgradeMsg('✓ Plan mis à jour en Pro ! Rechargement...');
+        setTimeout(() => window.location.reload(), 1200);
+      } else {
+        setUpgradeMsg('Erreur : ' + (data.error || 'inconnue'));
+      }
+    } catch {
+      setUpgradeMsg('Erreur réseau.');
+    }
+    setUpgradeLoading(false);
   }
 
   async function handleOpenPortal() {
@@ -160,9 +205,16 @@ export default function AccountPage() {
                 {portalError && <p style={{ fontSize: '12px', color: '#EF4444', marginTop: '6px' }}>{portalError}</p>}
               </div>
             ) : (
-              <a href="/pricing" style={{ background: TEAL, color: '#fff', borderRadius: '8px', padding: '10px 20px', fontWeight: 700, fontSize: '13px', textDecoration: 'none', display: 'inline-block' }}>
-                Passer au Pro →
-              </a>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'flex-start' }}>
+                <button
+                  onClick={handleCheckout}
+                  disabled={checkoutLoading}
+                  style={{ background: TEAL, color: '#fff', border: 'none', borderRadius: '8px', padding: '10px 20px', fontWeight: 700, fontSize: '13px', cursor: checkoutLoading ? 'default' : 'pointer', opacity: checkoutLoading ? 0.7 : 1 }}
+                >
+                  {checkoutLoading ? 'Redirection...' : 'Passer Pro →'}
+                </button>
+                {checkoutError && <p style={{ fontSize: '12px', color: '#EF4444', margin: 0 }}>{checkoutError}</p>}
+              </div>
             )}
           </div>
 
@@ -270,6 +322,30 @@ export default function AccountPage() {
             </div>
           </form>
         </div>
+
+        {/* Admin — Simuler upgrade Pro (relia.ebiya@gmail.com uniquement) */}
+        {user?.email === 'relia.ebiya@gmail.com' && (
+          <div style={{ background: '#FFFBEB', border: '1.5px solid #FDE68A', borderRadius: '14px', padding: '20px 24px', marginBottom: '16px' }}>
+            <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', color: '#92400E', textTransform: 'uppercase', marginBottom: '12px' }}>Admin — Test</p>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
+              <p style={{ fontSize: '13px', color: '#374151', margin: 0 }}>
+                Passer directement en plan Pro sans Stripe (test uniquement)
+              </p>
+              <button
+                onClick={handleAdminUpgrade}
+                disabled={upgradeLoading || profile?.plan === 'pro'}
+                style={{ background: '#D97706', color: '#fff', border: 'none', borderRadius: '8px', padding: '8px 18px', fontWeight: 700, fontSize: '13px', cursor: (upgradeLoading || profile?.plan === 'pro') ? 'default' : 'pointer', opacity: (upgradeLoading || profile?.plan === 'pro') ? 0.6 : 1 }}
+              >
+                {profile?.plan === 'pro' ? '✓ Déjà Pro' : upgradeLoading ? 'En cours...' : 'Simuler upgrade Pro'}
+              </button>
+            </div>
+            {upgradeMsg && (
+              <p style={{ fontSize: '13px', color: upgradeMsg.startsWith('✓') ? '#065F46' : '#EF4444', fontWeight: 600, marginTop: '8px' }}>
+                {upgradeMsg}
+              </p>
+            )}
+          </div>
+        )}
 
         {/* Zone danger */}
         <div style={{ background: '#FFF5F5', border: '1.5px solid #FECACA', borderRadius: '14px', padding: '20px 24px' }}>

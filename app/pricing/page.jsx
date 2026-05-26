@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useMode } from '@/lib/mode-context';
 
 const PLANS = {
@@ -147,8 +148,30 @@ function fmt(amount, currency) {
 export default function PricingPage() {
   const { mode, isAfrica } = useMode();
   const [billing, setBilling] = useState('monthly');
+  const [checkoutLoading, setCheckoutLoading] = useState('');
+  const [checkoutError, setCheckoutError] = useState('');
+  const router = useRouter();
   const plans = PLANS[mode];
   const packs = CONSULTING[mode];
+
+  async function handleCheckout(planId) {
+    setCheckoutLoading(planId);
+    setCheckoutError('');
+    try {
+      const res = await fetch('/api/stripe/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ planKey: `${planId}_${billing}` }),
+      });
+      const data = await res.json();
+      if (data.redirect) { router.push(data.redirect + '?next=/pricing'); return; }
+      if (data.url) { window.location.href = data.url; return; }
+      setCheckoutError(data.error || 'Erreur inattendue. Réessayez.');
+    } catch {
+      setCheckoutError('Erreur réseau. Vérifiez votre connexion.');
+    }
+    setCheckoutLoading('');
+  }
 
   const navy   = isAfrica ? '#1A0800' : '#0A1628';
   const accent = isAfrica ? '#C45E0A' : '#4EC9B0';
@@ -209,9 +232,19 @@ export default function PricingPage() {
                   </div>
                 )}
 
-                <Link href={plan.ctaHref} style={{ display: 'block', padding: '12px', borderRadius: '10px', textAlign: 'center', textDecoration: 'none', fontWeight: 700, fontSize: '14px', background: plan.highlight ? accent : 'transparent', color: plan.highlight ? '#fff' : navy, border: plan.highlight ? 'none' : `2px solid ${navy}`, marginBottom: '24px', transition: 'opacity 0.2s' }}>
-                  {plan.cta}
-                </Link>
+                {plan.id === 'pro' || plan.id === 'starter' ? (
+                  <button
+                    onClick={() => handleCheckout(plan.id)}
+                    disabled={!!checkoutLoading}
+                    style={{ display: 'block', width: '100%', padding: '12px', borderRadius: '10px', textAlign: 'center', fontWeight: 700, fontSize: '14px', background: plan.highlight ? accent : 'transparent', color: plan.highlight ? '#fff' : navy, border: plan.highlight ? 'none' : `2px solid ${navy}`, marginBottom: '24px', cursor: checkoutLoading ? 'default' : 'pointer', opacity: checkoutLoading === plan.id ? 0.7 : 1, transition: 'opacity 0.2s' }}
+                  >
+                    {checkoutLoading === plan.id ? 'Redirection...' : plan.cta}
+                  </button>
+                ) : (
+                  <Link href={plan.ctaHref} style={{ display: 'block', padding: '12px', borderRadius: '10px', textAlign: 'center', textDecoration: 'none', fontWeight: 700, fontSize: '14px', background: plan.highlight ? accent : 'transparent', color: plan.highlight ? '#fff' : navy, border: plan.highlight ? 'none' : `2px solid ${navy}`, marginBottom: '24px', transition: 'opacity 0.2s' }}>
+                    {plan.cta}
+                  </Link>
+                )}
 
                 <div style={{ borderTop: '1px solid rgba(0,0,0,0.06)', paddingTop: '20px' }}>
                   {plan.features.map(f => (
@@ -231,6 +264,11 @@ export default function PricingPage() {
             );
           })}
         </div>
+        {checkoutError && (
+          <p style={{ textAlign: 'center', color: '#EF4444', fontSize: '14px', marginTop: '16px', padding: '12px', background: '#FEF2F2', borderRadius: '8px', border: '1px solid #FECACA' }}>
+            {checkoutError}
+          </p>
+        )}
       </section>
 
       {/* Comparaison */}
