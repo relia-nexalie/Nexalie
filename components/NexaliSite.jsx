@@ -129,7 +129,7 @@ export default function NexaliSite() {
             <div style={{ padding: '28px 24px', background: '#fff', border: `1.5px solid ${t.border}`, borderRadius: '16px', opacity: 0.85 }}>
               <div style={{ fontSize: '32px', marginBottom: '12px' }}>🏦</div>
               <h3 style={{ fontSize: '16px', fontWeight: 700, color: t.text, marginBottom: '6px' }}>Cabinet de conseil</h3>
-              <p style={{ fontFamily: 'Georgia, serif', fontSize: '22px', color: '#9CA3AF', fontWeight: 700, marginBottom: '12px' }}>5 000 — 50 000€</p>
+              <p style={{ fontFamily: 'Georgia, serif', fontSize: '22px', color: '#9CA3AF', fontWeight: 700, marginBottom: '12px' }}>5 000 — 15 000€</p>
               <p style={{ fontSize: '13px', color: t.muted, lineHeight: 1.7 }}>Mission de 3 mois minimum. Déconnecté de votre réalité terrain.</p>
             </div>
 

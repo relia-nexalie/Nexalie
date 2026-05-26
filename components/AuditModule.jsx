@@ -339,6 +339,7 @@ const SECTORS = {
     { id: 'education',      label: 'Éducation',                    icon: '🎓' },
     { id: 'telecom',        label: 'Télécom / Tech',               icon: '💻' },
     { id: 'finance',        label: 'Services financiers',          icon: '💳' },
+    { id: 'autre',          label: 'Autre secteur',                icon: '🏢' },
   ],
   af: [
     { id: 'commerce',       label: 'Commerce / Distribution',      icon: '🛒' },
@@ -349,6 +350,7 @@ const SECTORS = {
     { id: 'education',      label: 'Éducation / Formation',        icon: '🎓' },
     { id: 'telecom',        label: 'Télécom / Digital',            icon: '💻' },
     { id: 'finance',        label: 'Finance / Mobile Money',       icon: '💳' },
+    { id: 'autre',          label: 'Autre secteur',                icon: '🏢' },
   ],
 };
 
