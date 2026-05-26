@@ -625,7 +625,13 @@ async function callClaudeSimple(system, prompt) {
   });
 
   if (!res.ok) {
-    throw new Error(`Erreur API Claude: ${res.status}`);
+    const errText = await res.text();
+    let errMsg = `Erreur API Claude: ${res.status}`;
+    try {
+      const errData = JSON.parse(errText);
+      if (errData.error) errMsg = errData.error;
+    } catch {}
+    throw new Error(errMsg);
   }
 
   // Lecture SSE stream

@@ -161,7 +161,12 @@ Génère une roadmap réaliste, progressive et adaptée à ce contexte.`;
 
   if (!res.ok) {
     const errText = await res.text();
-    throw new Error(`Erreur API : ${res.status} — ${errText.slice(0, 200)}`);
+    let errMsg = `Erreur API : ${res.status}`;
+    try {
+      const errData = JSON.parse(errText);
+      if (errData.error) errMsg = errData.error;
+    } catch {}
+    throw new Error(errMsg);
   }
 
   // Le proxy /api/claude renvoie le body Anthropic tel quel.

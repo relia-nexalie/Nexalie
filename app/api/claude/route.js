@@ -208,6 +208,24 @@ export async function POST(request) {
 
   if (!anthropicResponse.ok) {
     const errorText = await anthropicResponse.text();
+
+    let isBillingError = false;
+    try {
+      const errorData = JSON.parse(errorText);
+      const msg = (errorData?.error?.message || '').toLowerCase();
+      isBillingError =
+        msg.includes('credit balance') ||
+        msg.includes('billing') ||
+        errorData?.error?.type === 'billing_error';
+    } catch {}
+
+    if (isBillingError || anthropicResponse.status === 402) {
+      return new Response(
+        JSON.stringify({ error: '⚠️ Service temporairement indisponible. Réessayez dans quelques minutes.' }),
+        { status: 503, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+
     return new Response(errorText, {
       status: anthropicResponse.status,
       headers: { 'Content-Type': 'application/json' },

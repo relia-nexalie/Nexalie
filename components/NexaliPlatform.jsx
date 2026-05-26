@@ -103,8 +103,13 @@ async function callClaude(system, prompt, onChunk) {
   });
 
   if (!res.ok) {
-    const err = await res.text();
-    throw new Error(`API error ${res.status}: ${err}`);
+    const errText = await res.text();
+    let errMsg = `API error ${res.status}`;
+    try {
+      const errData = JSON.parse(errText);
+      if (errData.error) errMsg = errData.error;
+    } catch {}
+    throw new Error(errMsg);
   }
 
   const reader = res.body.getReader();
