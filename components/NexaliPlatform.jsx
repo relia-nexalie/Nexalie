@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from "react";
+import { useMode } from "@/lib/mode-context";
 
 // ═══════════════════════════════════════════
 // CONFIG & DATA
@@ -607,7 +608,7 @@ const TOOLS = {
 // DASHBOARD
 // ═══════════════════════════════════════════
 
-function DashboardView() {
+function DashboardView({ accent = '#4EC9B0' }) {
   return (
     <div>
       <div style={{ marginBottom: "24px" }}>
@@ -671,14 +672,14 @@ function DashboardView() {
       </div>
 
       {/* Revenue projection */}
-      <div style={{ padding: "20px", background: "rgba(78,201,176,0.05)", border: "1px solid rgba(78,201,176,0.15)", borderRadius: "14px", marginBottom: "16px" }}>
-        <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", color: "rgba(78,201,176,0.7)", marginBottom: "12px" }}>PROJECTION REVENUS PASSIFS</p>
+      <div style={{ padding: "20px", background: accent + "0D", border: `1px solid ${accent}26`, borderRadius: "14px", marginBottom: "16px" }}>
+        <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", color: accent + "B3", marginBottom: "12px" }}>PROJECTION REVENUS PASSIFS</p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "10px" }}>
           {[["Aujourd'hui", "11 abonnés", "319€/mois"], ["Dans 3 mois", "50 abonnés", "1 450€/mois"], ["Dans 6 mois", "100 abonnés", "2 900€/mois"], ["Dans 1 an", "200 abonnés", "5 800€/mois"]].map(([p, a, r]) => (
             <div key={p} style={{ textAlign: "center", padding: "10px", background: "rgba(255,255,255,0.03)", borderRadius: "8px" }}>
               <p style={{ fontSize: "10px", color: "rgba(255,255,255,0.3)", fontFamily: "monospace", marginBottom: "4px" }}>{p.toUpperCase()}</p>
               <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.5)", fontFamily: "'DM Sans', sans-serif", marginBottom: "4px" }}>{a}</p>
-              <p style={{ fontFamily: "'Fraunces', serif", fontSize: "18px", color: "#4EC9B0" }}>{r}</p>
+              <p style={{ fontFamily: "'Fraunces', serif", fontSize: "18px", color: accent }}>{r}</p>
             </div>
           ))}
         </div>
@@ -714,13 +715,17 @@ function DashboardView() {
 // ═══════════════════════════════════════════
 
 export default function App() {
+  const { isAfrica } = useMode();
+  const accent  = isAfrica ? '#C45E0A' : '#4EC9B0';
+  const navyBg  = isAfrica ? '#1A0800' : '#070e1c';
+
   const [activeTab, setActiveTab] = useState("dashboard");
   const [isUnlocked, setIsUnlocked] = useState(true); // TEST: outils premium accessibles
   const tab = TABS.find(t => t.id === activeTab);
   const tool = TOOLS[activeTab];
 
   return (
-    <div style={{ minHeight: "100vh", background: "radial-gradient(ellipse at 10% 10%, #0d1f35 0%, #070e1c 100%)", fontFamily: "'DM Sans', sans-serif", display: "flex" }}>
+    <div style={{ minHeight: "100vh", background: isAfrica ? "radial-gradient(ellipse at 10% 10%, #2a0e00 0%, #1a0800 100%)" : "radial-gradient(ellipse at 10% 10%, #0d1f35 0%, #070e1c 100%)", fontFamily: "'DM Sans', sans-serif", display: "flex" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=IBM+Plex+Mono:wght@400;500&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -743,8 +748,8 @@ export default function App() {
 
         <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "9px", letterSpacing: "1px", color: "rgba(255,255,255,0.2)", marginBottom: "4px", paddingLeft: "4px" }}>TABLEAU DE BORD</p>
         <button className="nav-btn" onClick={() => setActiveTab("dashboard")}
-          style={{ width: "100%", padding: "10px 12px", borderRadius: "8px", border: `1px solid ${activeTab === "dashboard" ? "rgba(78,201,176,0.3)" : "transparent"}`, background: activeTab === "dashboard" ? "rgba(78,201,176,0.08)" : "transparent", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: "8px", transition: "all 0.15s" }}>
-          <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "13px", color: activeTab === "dashboard" ? "#4EC9B0" : "rgba(255,255,255,0.25)" }}>◈</span>
+          style={{ width: "100%", padding: "10px 12px", borderRadius: "8px", border: `1px solid ${activeTab === "dashboard" ? accent + "4D" : "transparent"}`, background: activeTab === "dashboard" ? accent + "14" : "transparent", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: "8px", transition: "all 0.15s" }}>
+          <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "13px", color: activeTab === "dashboard" ? accent : "rgba(255,255,255,0.25)" }}>◈</span>
           <span style={{ fontSize: "13px", color: activeTab === "dashboard" ? "#fff" : "rgba(255,255,255,0.4)", fontFamily: "'DM Sans', sans-serif" }}>Dashboard</span>
         </button>
 
@@ -782,7 +787,7 @@ export default function App() {
       {/* Main */}
       <div style={{ flex: 1, overflow: "auto", padding: "28px" }}>
         {activeTab === "dashboard" ? (
-          <DashboardView />
+          <DashboardView accent={accent} />
         ) : tool ? (
           <ToolWrapper
             key={activeTab}

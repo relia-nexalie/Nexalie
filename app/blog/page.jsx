@@ -1,12 +1,21 @@
 'use client';
 
 import { useState } from 'react';
+import { useMode } from '@/lib/mode-context';
 
-const T = {
-  pageBg: '#FFFFFF', sectionBg: '#F8FAFC', navyBg: '#0A1628',
-  textPrimary: '#0A1628', textSecondary: '#6B7A94', textOnNavy: '#FFFFFF',
-  textMuted: 'rgba(255,255,255,0.5)', accent: '#2E9B8B', gold: '#C9A84C',
-  border: 'rgba(0,0,0,0.07)', btnPrimary: '#0A1628', btnAccent: '#2E9B8B',
+const PALETTE = {
+  fr: {
+    pageBg: '#FFFFFF', sectionBg: '#F8FAFC', navyBg: '#0A1628',
+    textPrimary: '#0A1628', textSecondary: '#6B7A94', textOnNavy: '#FFFFFF',
+    textMuted: 'rgba(255,255,255,0.5)', accent: '#2E9B8B', gold: '#C9A84C',
+    border: 'rgba(0,0,0,0.07)', btnPrimary: '#0A1628', btnAccent: '#2E9B8B',
+  },
+  af: {
+    pageBg: '#FFFFFF', sectionBg: '#FFF8F4', navyBg: '#1A0800',
+    textPrimary: '#1A0800', textSecondary: '#7A6B62', textOnNavy: '#FFFFFF',
+    textMuted: 'rgba(255,255,255,0.5)', accent: '#C45E0A', gold: '#F5C842',
+    border: 'rgba(0,0,0,0.07)', btnPrimary: '#1A0800', btnAccent: '#C45E0A',
+  },
 };
 
 function Badge({ label, color, filled = false }) {
@@ -31,7 +40,7 @@ const ARTICLES = [
     content: `L'erreur la plus commune dans la transformation digitale des PME est de commencer par les outils plutôt que par le diagnostic. On achète un CRM sans savoir si on en a vraiment besoin. On refait son site sans comprendre pourquoi l'ancien ne convertissait pas.\n\nL'audit de maturité digitale résout ce problème. En 20 minutes, il donne une photographie précise de la situation sur 5 dimensions.\n\n**Ce qu'on découvre avec un audit**\n\nDans 80% des cas, les entreprises surestiment leur maturité digitale d'au moins 15 points sur 100. L'audit révèle souvent des angles morts surprenants.\n\n**L'audit comme point de départ du plan d'action**\n\nUn bon audit ne se contente pas de donner un score. Il génère un plan d'action priorisé, avec les 3 actions qui auront le plus d'impact rapide.` },
 ];
 
-function ArticleView({ article, onBack }) {
+function ArticleView({ article, onBack, T }) {
   return (
     <div style={{ background: T.pageBg, minHeight: '100vh' }}>
       <div style={{ background: T.navyBg, padding: '48px 40px' }}>
@@ -66,12 +75,15 @@ function ArticleView({ article, onBack }) {
 }
 
 export default function BlogPage() {
+  const { isAfrica } = useMode();
+  const T = isAfrica ? PALETTE.af : PALETTE.fr;
+
   const [article, setArticle] = useState(null);
   const [filter, setFilter] = useState('Tous');
   const cats = ['Tous', 'Stratégie', 'Intelligence Artificielle', 'Méthodologie'];
   const filtered = filter === 'Tous' ? ARTICLES : ARTICLES.filter(a => a.cat === filter);
 
-  if (article) return <ArticleView article={article} onBack={() => setArticle(null)} />;
+  if (article) return <ArticleView article={article} onBack={() => setArticle(null)} T={T} />;
 
   return (
     <div style={{ background: T.pageBg, minHeight: '100vh', fontFamily: 'sans-serif' }}>
