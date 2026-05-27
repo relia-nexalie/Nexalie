@@ -208,10 +208,12 @@ export async function POST(request) {
 
   if (!anthropicResponse.ok) {
     const errorText = await anthropicResponse.text();
-    return new Response(errorText, {
-      status: anthropicResponse.status,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    // Log technique côté serveur uniquement — ne pas exposer au client
+    console.error(`[Anthropic] ${anthropicResponse.status}:`, errorText);
+    return new Response(
+      JSON.stringify({ error: 'service_unavailable', status: anthropicResponse.status }),
+      { status: anthropicResponse.status, headers: { 'Content-Type': 'application/json' } }
+    );
   }
 
   // Passe le stream SSE ou la réponse directement au client

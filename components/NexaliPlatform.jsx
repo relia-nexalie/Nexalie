@@ -103,8 +103,9 @@ async function callClaude(system, prompt, onChunk) {
   });
 
   if (!res.ok) {
-    const err = await res.text();
-    throw new Error(`API error ${res.status}: ${err}`);
+    const errBody = await res.text().catch(() => '');
+    console.error('[callClaude]', res.status, errBody);
+    throw new Error('SERVICE_UNAVAILABLE');
   }
 
   const reader = res.body.getReader();
@@ -173,7 +174,7 @@ function ToolWrapper({ title, sub, color, isPremium, isUnlocked, fields, systemK
       }
     } catch (e) {
       console.error('Erreur génération outil:', e);
-      setError(e.message || "Une erreur est survenue. Vérifiez votre connexion et réessayez.");
+      setError("⚠️ Service temporairement indisponible. Réessayez dans quelques minutes.");
     }
     setLoading(false);
   };
