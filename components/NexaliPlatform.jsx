@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useMode } from "@/lib/mode-context";
 
-// ─── Nettoyage markdown brut dans les réponses IA ───────────
+// ─── Nettoyage markdown brut (utilisé dans Txt et JSON tools) ─
 function stripMarkdown(text) {
   if (typeof text !== 'string') return text;
   return text
@@ -17,6 +17,58 @@ function stripMarkdown(text) {
     .replace(/---+/g, '')
     .replace(/___+/g, '')
     .trim();
+}
+
+// ─── Renderer markdown structuré pour les rapports Nexalie ───
+function parseBoldHtml(text) {
+  return text.replace(/\*\*(.*?)\*\*/g, '<strong style="color:#fff;font-weight:700">$1</strong>');
+}
+
+function RenderMd({ text, color }) {
+  if (!text) return null;
+  const lines = text.split('\n');
+  const nodes = [];
+  let i = 0;
+  while (i < lines.length) {
+    const raw = lines[i];
+    const line = raw.trim();
+    if (!line) { i++; continue; }
+
+    // ### headers — section structurée (ex: ### 🏛️ 1. L'Analyse...)
+    if (line.startsWith('###')) {
+      const content = line.replace(/^###\s*/, '');
+      nodes.push(
+        <div key={i} style={{ marginTop: nodes.length > 0 ? '28px' : '0', marginBottom: '14px', paddingBottom: '12px', borderBottom: `1px solid ${color}25` }}>
+          <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: '11px', letterSpacing: '1.5px', color, margin: 0, fontWeight: 700 }}>{content}</p>
+        </div>
+      );
+    }
+    // ## headers
+    else if (line.startsWith('##')) {
+      const content = line.replace(/^##\s*/, '');
+      nodes.push(
+        <p key={i} style={{ fontFamily: "'Fraunces', serif", fontSize: '16px', fontWeight: 300, color: '#fff', marginTop: '18px', marginBottom: '6px' }}>{content}</p>
+      );
+    }
+    // Bullet * ou -
+    else if (/^[*\-]\s+/.test(line)) {
+      const content = line.replace(/^[*\-]\s+/, '');
+      nodes.push(
+        <div key={i} style={{ display: 'flex', gap: '10px', marginBottom: '7px', alignItems: 'flex-start' }}>
+          <span style={{ color, flexShrink: 0, fontFamily: "'IBM Plex Mono', monospace", fontSize: '12px', marginTop: '1px' }}>→</span>
+          <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.82)', fontFamily: "'DM Sans', sans-serif", lineHeight: 1.65, margin: 0 }} dangerouslySetInnerHTML={{ __html: parseBoldHtml(content) }} />
+        </div>
+      );
+    }
+    // Ligne normale
+    else {
+      nodes.push(
+        <p key={i} style={{ fontSize: '14px', color: 'rgba(255,255,255,0.78)', fontFamily: "'DM Sans', sans-serif", lineHeight: 1.75, marginBottom: '10px' }} dangerouslySetInnerHTML={{ __html: parseBoldHtml(line) }} />
+      );
+    }
+    i++;
+  }
+  return <div>{nodes}</div>;
 }
 
 // ═══════════════════════════════════════════
@@ -250,9 +302,9 @@ function ToolWrapper({ title, sub, color, isPremium, isUnlocked, fields, systemK
           )}
 
           {rawText && !result && (
-            <div style={{ padding: "20px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "12px", marginBottom: "12px" }}>
-              <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", color: "rgba(255,255,255,0.4)", marginBottom: "10px", letterSpacing: "1px" }}>RÉPONSE GÉNÉRÉE</p>
-              <pre style={{ whiteSpace: "pre-wrap", overflowY: "auto", maxHeight: "400px", color: "rgba(255,255,255,0.75)", fontSize: "13px", lineHeight: 1.7, fontFamily: "'DM Sans', sans-serif", margin: 0 }}>{stripMarkdown(rawText)}</pre>
+            <div style={{ padding: "24px", background: "rgba(255,255,255,0.03)", border: `1px solid ${color}20`, borderRadius: "14px", marginBottom: "12px", overflowY: "auto", maxHeight: "520px" }}>
+              <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "9px", color: "rgba(255,255,255,0.3)", marginBottom: "18px", letterSpacing: "2px", textTransform: "uppercase" }}>Analyse Nexalie</p>
+              <RenderMd text={rawText} color={color} />
             </div>
           )}
 
