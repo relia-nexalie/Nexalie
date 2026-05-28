@@ -631,9 +631,17 @@ function DashboardView({ accent = '#4EC9B0' }) {
   const labelStyle = { fontFamily: "'IBM Plex Mono', monospace", fontSize: "9px", letterSpacing: "2px", color: "#9CA3AF", marginBottom: "16px", textTransform: "uppercase" };
   return (
     <div style={{ background: "#F8F9FA", minHeight: "100%", padding: "32px", margin: "-28px" }}>
-      <div style={{ marginBottom: "28px" }}>
-        <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", letterSpacing: "2px", color: "#9CA3AF", marginBottom: "4px" }}>NEXALIE PLATFORM — VUE D'ENSEMBLE</p>
-        <h1 style={{ fontFamily: "'Fraunces', serif", fontSize: "26px", fontWeight: 300, color: "#0A1628" }}>Bonjour Relia 👋</h1>
+      <div style={{ marginBottom: "28px", display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+        <div>
+          <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", letterSpacing: "2px", color: "#9CA3AF", marginBottom: "4px" }}>NEXALIE PLATFORM — VUE D&apos;ENSEMBLE</p>
+          <h1 style={{ fontFamily: "'Fraunces', serif", fontSize: "26px", fontWeight: 300, color: "#0A1628" }}>Bonjour, Relia</h1>
+        </div>
+        <button
+          onClick={() => window.print()}
+          style={{ display: "flex", alignItems: "center", gap: "8px", padding: "10px 20px", background: accent, border: "none", borderRadius: "10px", color: "#fff", fontSize: "13px", fontWeight: 700, cursor: "pointer", fontFamily: "'IBM Plex Mono', monospace", letterSpacing: "0.5px", flexShrink: 0 }}
+        >
+          ↓ Exporter le rapport PDF
+        </button>
       </div>
 
       {/* KPIs */}

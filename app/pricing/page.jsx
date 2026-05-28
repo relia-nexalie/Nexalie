@@ -146,9 +146,25 @@ function fmt(amount, currency) {
   return `${amount.toLocaleString('fr-FR')} €`;
 }
 
+// Conversion reference for FR users wanting FCFA preview
+const FR_TO_FCFA = { 59: 39000, 590: 390000, 129: 85000, 1290: 850000 };
+
+function fmtDisplay(amount, currency, displayCurrency, mode) {
+  if (amount === 0) return 'Gratuit';
+  if (currency === 'FCFA' || mode === 'af') {
+    return `${amount.toLocaleString('fr-FR')} FCFA`;
+  }
+  if (displayCurrency === 'fcfa') {
+    const fcfa = FR_TO_FCFA[amount];
+    return fcfa ? `${fcfa.toLocaleString('fr-FR')} F CFA` : `${amount.toLocaleString('fr-FR')} €`;
+  }
+  return `${amount.toLocaleString('fr-FR')} €`;
+}
+
 export default function PricingPage() {
   const { mode, isAfrica } = useMode();
   const [billing, setBilling] = useState('monthly');
+  const [displayCurrency, setDisplayCurrency] = useState('eur');
   const [checkoutLoading, setCheckoutLoading] = useState('');
   const [checkoutError, setCheckoutError] = useState('');
   const router = useRouter();
@@ -199,6 +215,20 @@ export default function PricingPage() {
             </button>
           ))}
         </div>
+
+        {/* Sélecteur de devise — FR uniquement */}
+        {!isAfrica && (
+          <div style={{ marginTop: '16px', display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center' }}>
+            <span style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '1.5px', color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase' }}>Devise</span>
+            <div style={{ display: 'inline-flex', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', overflow: 'hidden' }}>
+              {[['eur', 'Euros (€)'], ['fcfa', 'F CFA']].map(([c, label]) => (
+                <button key={c} onClick={() => setDisplayCurrency(c)} style={{ padding: '6px 14px', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-mono, monospace)', fontSize: '11px', fontWeight: displayCurrency === c ? 700 : 400, background: displayCurrency === c ? 'rgba(255,255,255,0.12)' : 'transparent', color: displayCurrency === c ? '#fff' : 'rgba(255,255,255,0.4)', transition: 'all 0.15s' }}>
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
       </section>
 
       {/* Plans SaaS */}
@@ -206,6 +236,7 @@ export default function PricingPage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px' }}>
           {plans.map((plan, i) => {
             const price = billing === 'annual' && plan.monthly ? Math.round(plan.annual / 12) : plan.monthly;
+            const priceAnnual = plan.annual;
             return (
               <div key={plan.id} style={{ border: plan.highlight ? `2px solid ${accent}` : '2px solid rgba(0,0,0,0.08)', borderRadius: '16px', padding: '28px 24px', position: 'relative', background: plan.highlight ? `${accentText}06` : '#fff' }}>
                 {plan.highlight && (
@@ -213,22 +244,24 @@ export default function PricingPage() {
                     Le plus populaire
                   </div>
                 )}
-                <div style={{ fontSize: '28px', marginBottom: '8px' }}>{plan.emoji}</div>
+                <div style={{ marginBottom: '8px', height: '28px', display: 'flex', alignItems: 'center' }}>
+                  <span style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '9px', letterSpacing: '2px', color: plan.highlight ? accentText : '#9CA3AF', textTransform: 'uppercase' }}>{plan.name}</span>
+                </div>
                 <h3 style={{ fontSize: '20px', fontWeight: 700, color: navy, marginBottom: '6px' }}>{plan.name}</h3>
                 <p style={{ fontSize: '13px', color: '#6B7A94', marginBottom: '20px', lineHeight: 1.5 }}>{plan.desc}</p>
 
                 {plan.monthly === null ? (
-                  <div style={{ fontSize: '24px', fontWeight: 700, color: navy, marginBottom: '24px' }}>Sur devis</div>
+                  <div style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: '24px', fontWeight: 300, color: navy, marginBottom: '24px' }}>Sur devis</div>
                 ) : plan.monthly === 0 ? (
-                  <div style={{ fontSize: '36px', fontWeight: 800, color: navy, marginBottom: '24px' }}>Gratuit</div>
+                  <div style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: '36px', fontWeight: 300, color: navy, marginBottom: '24px' }}>Gratuit</div>
                 ) : (
                   <div style={{ marginBottom: '24px' }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px' }}>
-                      <span style={{ fontSize: '36px', fontWeight: 800, color: navy }}>{fmt(price, plan.currency)}</span>
-                      <span style={{ fontSize: '14px', color: '#6B7A94' }}>/mois</span>
+                      <span style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: '34px', fontWeight: 300, color: navy }}>{fmtDisplay(price, plan.currency, displayCurrency, mode)}</span>
+                      <span style={{ fontSize: '13px', color: '#6B7A94' }}>/mois</span>
                     </div>
                     {billing === 'annual' && (
-                      <p style={{ fontSize: '12px', color: accentText, marginTop: '4px' }}>Facturé {fmt(plan.annual, plan.currency)}/an</p>
+                      <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '11px', color: accentText, marginTop: '4px' }}>Facturé {fmtDisplay(priceAnnual, plan.currency, displayCurrency, mode)}/an</p>
                     )}
                   </div>
                 )}
@@ -333,12 +366,50 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* ── RGPD & Sécurité ───────────────────────────────────────── */}
+      <section style={{ background: '#F8F9FA', padding: '64px 24px', borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: '#9CA3AF', textAlign: 'center', marginBottom: '8px', textTransform: 'uppercase' }}>Sécurité &amp; Souveraineté</p>
+          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(20px,2.5vw,28px)', fontWeight: 300, color: navy, textAlign: 'center', marginBottom: '40px' }}>
+            Vos données restent les vôtres. Point.
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
+            {[
+              {
+                label: 'HÉBERGEMENT UE',
+                title: 'Infrastructure souveraine',
+                body: 'Toutes les données de vos entreprises clientes sont hébergées en Union Européenne. Aucun transfert hors UE. Conforme au règlement RGPD (Règlement 2016/679).',
+                color: '#2D6A4F',
+              },
+              {
+                label: 'DONNÉES PROTÉGÉES',
+                title: 'Zéro revente, zéro partage',
+                body: "Chez Nexalie, vos informations stratégiques d'entreprise — audit, roadmap, documents — ne sont jamais vendues, partagées ni utilisées à des fins publicitaires.",
+                color: isAfrica ? '#C45E0A' : '#4EC9B0',
+              },
+              {
+                label: 'CONFORMITÉ RGPD',
+                title: 'Droit à l\'effacement garanti',
+                body: 'Suppression de compte complète sur simple demande. Export de toutes vos données à tout moment. Responsable de traitement identifié et joignable sous 72h.',
+                color: '#7B5EA7',
+              },
+            ].map(({ label, title, body, color }) => (
+              <div key={label} style={{ padding: '28px', background: '#fff', borderRadius: '14px', border: '1px solid rgba(0,0,0,0.06)', borderLeft: `3px solid ${color}`, boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+                <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '9px', letterSpacing: '2px', color, marginBottom: '10px', textTransform: 'uppercase' }}>{label}</p>
+                <p style={{ fontSize: '14px', fontWeight: 700, color: navy, marginBottom: '10px' }}>{title}</p>
+                <p style={{ fontSize: '13px', color: '#6B7A94', lineHeight: 1.75 }}>{body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA final */}
       <section style={{ padding: '60px 24px', textAlign: 'center' }}>
-        <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(24px,3.5vw,38px)', fontWeight: 300, color: navy, marginBottom: '12px' }}>
-          Prêt à transformer votre business ?
+        <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(24px,3.5vw,38px)', fontWeight: 300, color: navy, marginBottom: '12px' }}>
+          Commencez votre transformation avec Nexalie
         </h2>
-        <p style={{ fontSize: '16px', color: '#6B7A94', marginBottom: '28px' }}>Commencez gratuitement — pas de carte requise.</p>
+        <p style={{ fontSize: '16px', color: '#6B7A94', marginBottom: '28px' }}>Audit gratuit en 20 minutes — pas de carte requise.</p>
         <Link href="/signup" style={{ display: 'inline-block', padding: '16px 48px', background: accent, color: '#fff', borderRadius: '12px', textDecoration: 'none', fontWeight: 700, fontSize: '16px' }}>
           Créer mon compte gratuit
         </Link>

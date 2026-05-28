@@ -119,14 +119,16 @@ export default function BlogPage() {
         </div>
       </nav>
 
-      <div style={{ background: T.navyBg, padding: '60px 40px' }}>
-        <div style={{ height: '2px', background: `linear-gradient(90deg,${T.gold}40,transparent)`, marginBottom: '28px' }} />
+      <div style={{ background: T.navyBg, padding: '64px 40px 56px' }}>
+        <div style={{ height: '2px', background: `linear-gradient(90deg,${T.gold}40,transparent)`, marginBottom: '40px' }} />
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: T.textMuted, marginBottom: '10px' }}>RESSOURCES & INSIGHTS</p>
-          <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(26px,4vw,40px)', fontWeight: 200, color: '#fff', marginBottom: '10px' }}>
-            Le blog <em style={{ color: T.accent, fontStyle: 'normal' }}>Nexalie</em>
+          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: 'rgba(255,255,255,0.35)', marginBottom: '20px', textTransform: 'uppercase' }}>Think Tank</p>
+          <h1 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(32px,5vw,56px)', fontWeight: 300, color: '#fff', marginBottom: '20px', lineHeight: 1.1 }}>
+            Les Carnets de Nexalie
           </h1>
-          <p style={{ fontSize: '15px', color: T.textMuted }}>Transformation digitale · IA & Automatisation · PME africaines et françaises</p>
+          <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.55)', maxWidth: '640px', lineHeight: 1.85 }}>
+            Décryptages, retours de terrain et stratégies numériques pour les dirigeants de l&apos;espace francophone. Zéro jargon tech. Uniquement de la clarté business.
+          </p>
         </div>
       </div>
 
@@ -152,8 +154,9 @@ export default function BlogPage() {
               <p style={{ fontSize: '14px', color: T.textSecondary, lineHeight: 1.7, marginBottom: '14px' }}>{filtered[0].excerpt}</p>
               <span style={{ fontSize: '13px', fontWeight: 600, color: filtered[0].color }}>Lire l'article →</span>
             </div>
-            <div style={{ width: '200px', height: '160px', background: filtered[0].color, borderRadius: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-              <span style={{ fontSize: '56px' }}>{filtered[0].emoji}</span>
+            <div style={{ width: '200px', height: '160px', background: filtered[0].color, borderRadius: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, overflow: 'hidden', position: 'relative' }}>
+              <span style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: '120px', fontWeight: 300, color: 'rgba(255,255,255,0.18)', lineHeight: 1, userSelect: 'none', position: 'absolute' }}>{filtered[0].title.charAt(0)}</span>
+              <span style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '11px', letterSpacing: '2px', color: 'rgba(255,255,255,0.85)', textTransform: 'uppercase', position: 'relative' }}>{filtered[0].cat}</span>
             </div>
           </div>
         )}
