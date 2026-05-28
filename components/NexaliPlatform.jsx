@@ -52,41 +52,41 @@ const FUNNEL = [
 ];
 
 const SYSTEM = {
-  bizplan: `Tu es l'IA de Nexalie Consulting. Génère un business plan structuré en JSON strict (sans backticks).
+  bizplan: `Génère un business plan concret pour cette entreprise. Utilise le nom de l'entreprise fourni dans chaque section — ne dis jamais "l'entreprise" ou "votre entreprise" à la place. Cite des outils réels avec leurs vrais tarifs (€ pour la France, FCFA pour l'Afrique). Sois direct et chiffré : pas de généralités, pas de remplissage, pas de "il est important de noter", "il convient de", "n'hésitez pas à". Chaque objectif doit avoir un nombre et une date. Chaque recommandation doit citer un outil précis.
 
-Format : {"executiveSummary":"résumé 3 phrases","vision":"vision en 1 phrase","mission":"mission en 1 phrase","produits":["produit/service 1","produit/service 2","produit/service 3"],"marche":{"taille":"description marché","cible":"client idéal","concurrence":"analyse 2 phrases"},"modeleEconomique":{"revenus":["source 1","source 2","source 3"],"couts":["coût 1","coût 2"]},"objectifs":[{"periode":"6 mois","objectif":"objectif concret"},{"periode":"1 an","objectif":"objectif concret"},{"periode":"3 ans","objectif":"objectif ambitieux"}],"facteursCles":["facteur 1","facteur 2","facteur 3"]}
-
-Adapte au secteur et marché fourni. JSON uniquement.`,
-
-  roadmap: `Tu es l'IA de Nexalie Consulting. Génère une roadmap digitale 12 mois en JSON strict (sans backticks).
-
-Format : {"titre":"Roadmap [Entreprise]","phases":[{"numero":1,"periode":"Mois 1-3","theme":"Fondations","priorite":"haute","actions":["action 1","action 2","action 3"],"kpis":["KPI 1","KPI 2"],"budget":"fourchette budget"},{"numero":2,"periode":"Mois 4-6","theme":"Lancement","priorite":"haute","actions":["action 1","action 2","action 3"],"kpis":["KPI 1","KPI 2"],"budget":"fourchette"},{"numero":3,"periode":"Mois 7-9","theme":"Croissance","priorite":"moyenne","actions":["action 1","action 2","action 3"],"kpis":["KPI 1","KPI 2"],"budget":"fourchette"},{"numero":4,"periode":"Mois 10-12","theme":"Optimisation","priorite":"moyenne","actions":["action 1","action 2","action 3"],"kpis":["KPI 1","KPI 2"],"budget":"fourchette"}],"investissementTotal":"fourchette totale","roiEstime":"ROI estimé à 12 mois"}
+Format JSON strict (sans backticks) : {"executiveSummary":"résumé 3 phrases avec chiffres","vision":"vision concrète en 1 phrase","mission":"mission en 1 phrase","produits":["produit/service 1 avec prix","produit/service 2","produit/service 3"],"marche":{"taille":"chiffre marché adressable","cible":"profil client précis","concurrence":"2 concurrents nommés avec leur faiblesse"},"modeleEconomique":{"revenus":["source 1 avec montant estimé","source 2","source 3"],"couts":["coût 1 avec montant","coût 2"]},"objectifs":[{"periode":"6 mois","objectif":"objectif avec KPI chiffré"},{"periode":"1 an","objectif":"objectif avec KPI chiffré"},{"periode":"3 ans","objectif":"objectif ambitieux chiffré"}],"facteursCles":["facteur différenciateur 1","facteur 2","facteur 3"]}
 
 JSON uniquement.`,
 
-  process: `Tu es l'IA de Nexalie Consulting. Génère une cartographie des processus en JSON strict (sans backticks).
+  roadmap: `Génère une roadmap digitale 12 mois réaliste pour cette entreprise. Chaque action doit être faisable par une PME — cite des outils réels avec leur coût (€ ou FCFA). Évite le jargon sans explication. Priorise les actions à impact rapide dans les 3 premiers mois. Pas de "il convient de", "dans le cadre de", "il est important de noter".
 
-Format : {"processus":[{"nom":"Nom du processus","categorie":"Commercial|Opérations|RH|Finance|Communication","description":"description 1 phrase","etapes":["étape 1","étape 2","étape 3"],"outils":["outil actuel"],"problemes":["problème identifié"],"solution":"solution digitale recommandée","prioriteDigitalisation":"haute|moyenne|faible"}],"synthese":"synthèse 2 phrases","gainsPotentiels":["gain 1","gain 2","gain 3"]}
-
-Génère 4-5 processus clés. JSON uniquement.`,
-
-  roi: `Tu es l'IA de Nexalie Consulting. Calcule le ROI digital en JSON strict (sans backticks).
-
-Format : {"scoreActuel":{"valeur":number,"interpretation":"texte"},"potentielGains":{"tempsGagneHeures":number,"coutHeureEstime":number,"gainProductivite":number,"newRevenusEstimes":number,"totalGainAnnuel":number},"investissementNecessaire":{"outils":number,"formation":number,"accompagnement":number,"total":number},"roi":{"valeur":number,"delaiRetour":"X mois","interpretation":"texte"},"priorites":["priorité 1","priorité 2","priorité 3"],"conclusion":"conclusion 2 phrases"}
+Format JSON strict (sans backticks) : {"titre":"Roadmap [Nom entreprise] 2026","phases":[{"numero":1,"periode":"Mois 1-3","theme":"Fondations rapides","priorite":"haute","actions":["action concrète avec outil et coût","action 2","action 3"],"kpis":["KPI chiffré 1","KPI chiffré 2"],"budget":"X — Y €/FCFA"},{"numero":2,"periode":"Mois 4-6","theme":"Lancement","priorite":"haute","actions":["action 1","action 2","action 3"],"kpis":["KPI 1","KPI 2"],"budget":"fourchette"},{"numero":3,"periode":"Mois 7-9","theme":"Croissance","priorite":"moyenne","actions":["action 1","action 2","action 3"],"kpis":["KPI 1","KPI 2"],"budget":"fourchette"},{"numero":4,"periode":"Mois 10-12","theme":"Optimisation","priorite":"moyenne","actions":["action 1","action 2","action 3"],"kpis":["KPI 1","KPI 2"],"budget":"fourchette"}],"investissementTotal":"X — Y €/FCFA sur 12 mois","roiEstime":"ROI estimé à 12 mois avec base de calcul"}
 
 JSON uniquement.`,
 
-  cdc: `Tu es l'IA de Nexalie Consulting. Génère un cahier des charges digital en JSON strict (sans backticks).
+  process: `Cartographie les processus clés de cette entreprise tels qu'ils fonctionnent vraiment — pas une version idéalisée. Pour chaque processus, identifie le vrai problème (pas un problème générique) et propose une solution avec un outil réel et son coût. Pas de "il convient de", "dans le cadre de", "il est important de noter", "certes".
 
-Format : {"titre":"CDC [Projet]","contexte":"contexte 2 phrases","objectifs":["objectif 1","objectif 2","objectif 3"],"perimetre":{"inclus":["élément inclus 1","élément inclus 2","élément inclus 3"],"exclus":["élément exclu 1","élément exclu 2"]},"fonctionnalites":[{"nom":"Fonctionnalité","priorite":"Must Have|Should Have|Nice to Have","description":"description courte"}],"contraintes":{"techniques":["contrainte 1","contrainte 2"],"budget":"fourchette","delai":"durée estimée"},"livrables":["livrable 1","livrable 2","livrable 3"],"criteresAcceptation":["critère 1","critère 2","critère 3"]}
+Format JSON strict (sans backticks) : {"processus":[{"nom":"Nom du processus","categorie":"Commercial|Opérations|RH|Finance|Communication","description":"ce qui se passe vraiment en 1 phrase","etapes":["étape 1 concrète","étape 2","étape 3"],"outils":["outil utilisé actuellement"],"problemes":["problème réel observé"],"solution":"outil précis avec coût — ex: HubSpot CRM gratuit jusqu'à 1000 contacts","prioriteDigitalisation":"haute|moyenne|faible"}],"synthese":"2 phrases directes sur les 2 chantiers prioritaires","gainsPotentiels":["gain chiffré 1","gain chiffré 2","gain chiffré 3"]}
+
+4-5 processus clés. JSON uniquement.`,
+
+  roi: `Calcule le ROI digital de cette entreprise avec des chiffres réels, pas des estimations optimistes déconnectées. Base-toi sur les données fournies. Si une donnée manque, utilise une hypothèse prudente et note-la. Exprime les gains en € ou en FCFA selon le marché. Pas de "il est important de noter", "bien entendu", "force est de constater".
+
+Format JSON strict (sans backticks) : {"scoreActuel":{"valeur":number,"interpretation":"ce que ce score signifie concrètement"},"potentielGains":{"tempsGagneHeures":number,"coutHeureEstime":number,"gainProductivite":number,"newRevenusEstimes":number,"totalGainAnnuel":number},"investissementNecessaire":{"outils":number,"formation":number,"accompagnement":number,"total":number},"roi":{"valeur":number,"delaiRetour":"X mois","interpretation":"phrase directe avec les hypothèses clés"},"priorites":["action 1 avec outil et coût","action 2","action 3"],"conclusion":"2 phrases directes — qu'est-ce qui rapporte le plus vite ?"}
 
 JSON uniquement.`,
 
-  veille: `Tu es l'IA de Nexalie Consulting. Génère une veille concurrentielle structurée en JSON strict (sans backticks).
+  cdc: `Rédige un cahier des charges opérationnel pour ce projet digital — pas un document théorique. Chaque fonctionnalité doit être formulée du point de vue utilisateur ("l'utilisateur peut..."). Le budget doit être réaliste, pas une fourchette absurdement large. Cite des technologies ou outils concrets pour les contraintes techniques. Pas de "il convient de", "dans le cadre de", "n'hésitez pas à".
 
-Format : {"synthese":"synthèse du marché en 2 phrases","tendances":["tendance clé 1","tendance clé 2","tendance clé 3"],"concurrents":[{"nom":"Concurrent 1","positionnement":"1 phrase","forces":["force 1","force 2"],"faiblesses":["faiblesse 1","faiblesse 2"],"part_de_marche":"estimation"}],"opportunites":["opportunité 1","opportunité 2","opportunité 3"],"menaces":["menace 1","menace 2"],"recommandations":["action recommandée 1","action recommandée 2","action recommandée 3"],"scoreIntensiteConcurrentielle":{"valeur":number,"interpretation":"texte"}}
+Format JSON strict (sans backticks) : {"titre":"CDC — [Nom projet]","contexte":"situation actuelle en 2 phrases directes","objectifs":["objectif mesurable 1","objectif mesurable 2","objectif mesurable 3"],"perimetre":{"inclus":["fonctionnalité incluse 1","fonctionnalité incluse 2","fonctionnalité incluse 3"],"exclus":["hors périmètre 1 avec raison courte","hors périmètre 2"]},"fonctionnalites":[{"nom":"Fonctionnalité","priorite":"Must Have|Should Have|Nice to Have","description":"l'utilisateur peut... en 1 phrase"}],"contraintes":{"techniques":["contrainte concrète 1","contrainte 2"],"budget":"X — Y € ou FCFA réalistes","delai":"durée avec jalons clés"},"livrables":["livrable 1 avec format","livrable 2","livrable 3"],"criteresAcceptation":["critère testable 1","critère testable 2","critère testable 3"]}
 
-Génère 3 concurrents principaux. JSON uniquement.`
+JSON uniquement.`,
+
+  veille: `Analyse le marché de cette entreprise avec des données réelles ou des estimations raisonnées (précise dans ce cas). Nomme de vrais concurrents avec leurs vrais prix et positionnements. Pas de "il est important de noter", "certes", "en termes de", "force est de constater", "il va sans dire".
+
+Format JSON strict (sans backticks) : {"synthese":"état du marché en 2 phrases directes avec chiffres","tendances":["tendance concrète 1 avec impact","tendance 2","tendance 3"],"concurrents":[{"nom":"Concurrent réel","positionnement":"leur promesse en 1 phrase","forces":["force vérifiable 1","force 2"],"faiblesses":["faiblesse exploitable 1","faiblesse 2"],"part_de_marche":"estimation avec base"}],"opportunites":["opportunité concrète 1","opportunité 2","opportunité 3"],"menaces":["menace réelle 1","menace 2"],"recommandations":["action différenciante 1 avec outil","action 2","action 3"],"scoreIntensiteConcurrentielle":{"valeur":number,"interpretation":"ce que ce score implique pour la stratégie"}}
+
+3 concurrents réels. JSON uniquement.`
 };
 
 async function callClaude(system, prompt, onChunk) {
@@ -627,76 +627,78 @@ const TOOLS = {
 // ═══════════════════════════════════════════
 
 function DashboardView({ accent = '#4EC9B0' }) {
+  const cardStyle = { background: "#fff", borderRadius: "14px", boxShadow: "0 2px 8px rgba(0,0,0,0.06)", border: "1px solid rgba(0,0,0,0.06)", padding: "24px" };
+  const labelStyle = { fontFamily: "'IBM Plex Mono', monospace", fontSize: "9px", letterSpacing: "2px", color: "#9CA3AF", marginBottom: "16px", textTransform: "uppercase" };
   return (
-    <div>
-      <div style={{ marginBottom: "24px" }}>
-        <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", letterSpacing: "2px", color: "rgba(255,255,255,0.3)", marginBottom: "4px" }}>NEXALIE PLATFORM — VUE D'ENSEMBLE</p>
-        <h1 style={{ fontFamily: "'Fraunces', serif", fontSize: "26px", fontWeight: 300, color: "#fff" }}>Bonjour Relia 👋</h1>
+    <div style={{ background: "#F8F9FA", minHeight: "100%", padding: "32px", margin: "-28px" }}>
+      <div style={{ marginBottom: "28px" }}>
+        <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", letterSpacing: "2px", color: "#9CA3AF", marginBottom: "4px" }}>NEXALIE PLATFORM — VUE D'ENSEMBLE</p>
+        <h1 style={{ fontFamily: "'Fraunces', serif", fontSize: "26px", fontWeight: 300, color: "#0A1628" }}>Bonjour Relia 👋</h1>
       </div>
 
       {/* KPIs */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "10px", marginBottom: "20px" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px", marginBottom: "24px" }}>
         {METRICS.map(m => (
-          <div key={m.label} style={{ padding: "18px", background: `${m.color}08`, border: `1px solid ${m.color}25`, borderRadius: "12px" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
-              <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "9px", color: "rgba(255,255,255,0.3)", letterSpacing: "1px" }}>{m.label.toUpperCase()}</span>
-              <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", color: m.color }}>{m.icon}</span>
+          <div key={m.label} style={{ ...cardStyle, padding: "24px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "10px" }}>
+              <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "9px", color: "#9CA3AF", letterSpacing: "1px", textTransform: "uppercase", lineHeight: 1.4 }}>{m.label}</span>
+              <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "12px", color: m.color }}>{m.icon}</span>
             </div>
-            <p style={{ fontFamily: "'Fraunces', serif", fontSize: "26px", color: m.color, marginBottom: "2px" }}>{m.value}</p>
-            <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.35)", fontFamily: "'DM Sans', sans-serif" }}>{m.delta}</p>
+            <p style={{ fontFamily: "'Fraunces', serif", fontSize: "28px", color: "#0A1628", marginBottom: "4px" }}>{m.value}</p>
+            <p style={{ fontSize: "11px", color: m.color, fontFamily: "'DM Sans', sans-serif", fontWeight: 600 }}>{m.delta}</p>
           </div>
         ))}
       </div>
 
-      {/* Funnel */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px", marginBottom: "16px" }}>
-        <div style={{ padding: "20px", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px" }}>
-          <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", color: "rgba(255,255,255,0.3)", marginBottom: "16px" }}>TUNNEL DE CONVERSION</p>
-          {FUNNEL.map((f, i) => (
-            <div key={f.label} style={{ marginBottom: "10px" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "4px" }}>
-                <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.6)", fontFamily: "'DM Sans', sans-serif" }}>{f.label}</span>
-                <div style={{ display: "flex", gap: "8px" }}>
-                  <span style={{ fontFamily: "'Fraunces', serif", fontSize: "14px", color: f.color }}>{f.value}</span>
-                  <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", color: "rgba(255,255,255,0.3)" }}>{f.pct}%</span>
+      {/* Funnel + Outils */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px", marginBottom: "24px" }}>
+        <div style={cardStyle}>
+          <p style={labelStyle}>Tunnel de conversion</p>
+          {FUNNEL.map((f) => (
+            <div key={f.label} style={{ marginBottom: "12px" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "5px" }}>
+                <span style={{ fontSize: "12px", color: "#374151", fontFamily: "'DM Sans', sans-serif" }}>{f.label}</span>
+                <div style={{ display: "flex", gap: "10px" }}>
+                  <span style={{ fontFamily: "'Fraunces', serif", fontSize: "14px", color: "#0A1628" }}>{f.value}</span>
+                  <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", color: "#9CA3AF" }}>{f.pct}%</span>
                 </div>
               </div>
-              <div style={{ height: "5px", background: "rgba(255,255,255,0.06)", borderRadius: "3px", overflow: "hidden" }}>
+              <div style={{ height: "5px", background: "#F3F4F6", borderRadius: "3px", overflow: "hidden" }}>
                 <div style={{ width: `${f.pct}%`, height: "100%", background: f.color, borderRadius: "3px", transition: "width 1s ease" }} />
               </div>
             </div>
           ))}
         </div>
 
-        <div style={{ padding: "20px", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px" }}>
-          <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", color: "rgba(255,255,255,0.3)", marginBottom: "16px" }}>OUTILS PLATEFORME</p>
+        <div style={cardStyle}>
+          <p style={labelStyle}>Outils plateforme</p>
           {TABS.filter(t => t.id !== "dashboard").map(t => (
-            <div key={t.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 0", borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
+            <div key={t.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "7px 0", borderBottom: "1px solid #F3F4F6" }}>
               <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
-                <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "13px", color: t.free ? "#4A7C59" : "#C9A84C" }}>{t.icon}</span>
-                <span style={{ fontSize: "13px", color: "#fff", fontFamily: "'DM Sans', sans-serif" }}>{t.label}</span>
+                <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "13px", color: t.free ? "#059669" : "#D97706" }}>{t.icon}</span>
+                <span style={{ fontSize: "12px", color: "#374151", fontFamily: "'DM Sans', sans-serif" }}>{t.label}</span>
               </div>
-              <span style={{ padding: "2px 8px", borderRadius: "4px", fontSize: "9px", fontFamily: "monospace", background: t.free ? "rgba(74,124,89,0.2)" : "rgba(201,168,76,0.2)", color: t.free ? "#4A7C59" : "#C9A84C" }}>
+              <span style={{ padding: "2px 8px", borderRadius: "4px", fontSize: "9px", fontFamily: "monospace", background: t.free ? "#D1FAE5" : "#FEF3C7", color: t.free ? "#059669" : "#D97706" }}>
                 {t.free ? "GRATUIT" : "PREMIUM"}
               </span>
             </div>
           ))}
-          <div style={{ marginTop: "12px", padding: "10px", background: "rgba(201,168,76,0.08)", borderRadius: "8px", border: "1px solid rgba(201,168,76,0.2)" }}>
-            <p style={{ fontSize: "12px", color: "#C9A84C", fontFamily: "'DM Sans', sans-serif" }}>
-              💰 Revenus abonnements : <strong>129€/mois × 11 abonnés = 1 419€/mois</strong>
+          <div style={{ marginTop: "14px", padding: "10px 14px", background: "#FFFBEB", borderRadius: "8px", border: "1px solid #FDE68A" }}>
+            <p style={{ fontSize: "12px", color: "#92400E", fontFamily: "'DM Sans', sans-serif" }}>
+              💰 <strong>129€ × 11 abonnés = 1 419€/mois</strong>
             </p>
           </div>
         </div>
       </div>
 
       {/* Revenue projection */}
-      <div style={{ padding: "20px", background: accent + "0D", border: `1px solid ${accent}26`, borderRadius: "14px", marginBottom: "16px" }}>
-        <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", color: accent + "B3", marginBottom: "12px" }}>PROJECTION REVENUS PASSIFS</p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "10px" }}>
+      <div style={{ ...cardStyle, marginBottom: "24px", borderLeft: `4px solid ${accent}` }}>
+        <p style={labelStyle}>Projection revenus passifs</p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "16px" }}>
           {[["Aujourd'hui", "11 abonnés", "319€/mois"], ["Dans 3 mois", "50 abonnés", "1 450€/mois"], ["Dans 6 mois", "100 abonnés", "2 900€/mois"], ["Dans 1 an", "200 abonnés", "5 800€/mois"]].map(([p, a, r]) => (
-            <div key={p} style={{ textAlign: "center", padding: "10px", background: "rgba(255,255,255,0.03)", borderRadius: "8px" }}>
-              <p style={{ fontSize: "10px", color: "rgba(255,255,255,0.3)", fontFamily: "monospace", marginBottom: "4px" }}>{p.toUpperCase()}</p>
-              <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.5)", fontFamily: "'DM Sans', sans-serif", marginBottom: "4px" }}>{a}</p>
+            <div key={p} style={{ textAlign: "center", padding: "14px", background: "#F9FAFB", borderRadius: "10px", border: "1px solid #F3F4F6" }}>
+              <p style={{ fontSize: "9px", color: "#9CA3AF", fontFamily: "monospace", marginBottom: "4px", textTransform: "uppercase" }}>{p}</p>
+              <p style={{ fontSize: "11px", color: "#6B7280", fontFamily: "'DM Sans', sans-serif", marginBottom: "6px" }}>{a}</p>
               <p style={{ fontFamily: "'Fraunces', serif", fontSize: "18px", color: accent }}>{r}</p>
             </div>
           ))}
@@ -704,20 +706,20 @@ function DashboardView({ accent = '#4EC9B0' }) {
       </div>
 
       {/* Integrations */}
-      <div style={{ padding: "20px", background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "14px" }}>
-        <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", color: "rgba(255,255,255,0.3)", marginBottom: "16px" }}>INTÉGRATIONS DISPONIBLES</p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "12px" }}>
+      <div style={cardStyle}>
+        <p style={labelStyle}>Intégrations disponibles</p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
           {[
-            { plan: "GRATUIT", color: "#4A7C59", bg: "rgba(74,124,89,0.08)", border: "rgba(74,124,89,0.2)", items: ["Export PDF du rapport", "Partage par email", "Lien de résultat partageable"] },
-            { plan: "PRO", color: "#C9A84C", bg: "rgba(201,168,76,0.08)", border: "rgba(201,168,76,0.2)", items: ["Export Google Sheets", "Partage WhatsApp direct", "Webhook Zapier basique", "Notifications Slack"] },
-            { plan: "INSTITUTIONS", color: "#7B5EA7", bg: "rgba(123,94,167,0.08)", border: "rgba(123,94,167,0.2)", items: ["API complète documentée", "Make / Zapier avancé", "Export CSV / Excel", "Intégration CRM (HubSpot, Salesforce)", "Webhook personnalisé"] },
+            { plan: "GRATUIT", color: "#059669", bg: "#F0FDF4", border: "#BBF7D0", items: ["Export PDF du rapport", "Partage par email", "Lien de résultat partageable"] },
+            { plan: "PRO", color: "#D97706", bg: "#FFFBEB", border: "#FDE68A", items: ["Export Google Sheets", "Partage WhatsApp direct", "Webhook Zapier basique", "Notifications Slack"] },
+            { plan: "INSTITUTIONS", color: "#7B5EA7", bg: "#FAF5FF", border: "#DDD6FE", items: ["API complète documentée", "Make / Zapier avancé", "Export CSV / Excel", "Intégration CRM (HubSpot, Salesforce)", "Webhook personnalisé"] },
           ].map(({ plan, color, bg, border, items }) => (
-            <div key={plan} style={{ padding: "16px", background: bg, border: `1px solid ${border}`, borderRadius: "10px" }}>
-              <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "9px", color, letterSpacing: "1px", marginBottom: "12px" }}>{plan}</p>
+            <div key={plan} style={{ padding: "18px", background: bg, border: `1px solid ${border}`, borderRadius: "10px" }}>
+              <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "9px", color, letterSpacing: "1px", marginBottom: "14px" }}>{plan}</p>
               {items.map(item => (
-                <div key={item} style={{ display: "flex", gap: "6px", alignItems: "flex-start", marginBottom: "6px" }}>
-                  <span style={{ color, fontSize: "10px", flexShrink: 0, marginTop: "2px" }}>✓</span>
-                  <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.6)", fontFamily: "'DM Sans', sans-serif", lineHeight: 1.4 }}>{item}</span>
+                <div key={item} style={{ display: "flex", gap: "6px", alignItems: "flex-start", marginBottom: "7px" }}>
+                  <span style={{ color, fontSize: "10px", flexShrink: 0, marginTop: "2px", fontWeight: 700 }}>✓</span>
+                  <span style={{ fontSize: "11px", color: "#374151", fontFamily: "'DM Sans', sans-serif", lineHeight: 1.5 }}>{item}</span>
                 </div>
               ))}
             </div>

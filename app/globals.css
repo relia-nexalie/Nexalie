@@ -1,3 +1,24 @@
+/* ─── Typographie Nexalie ────────────────────────────────────────────── */
+h1, h2 {
+  font-family: var(--font-fraunces, 'Georgia', serif);
+}
+h1 { font-weight: 300; }
+h2 { font-weight: 600; }
+
+body {
+  font-family: var(--font-jakarta, 'system-ui', sans-serif);
+  font-weight: 400;
+}
+
+label, .label {
+  font-family: var(--font-jakarta, 'system-ui', sans-serif);
+  font-weight: 600;
+}
+
+code, pre, .mono, [class*="monospace"] {
+  font-family: var(--font-mono, 'monospace');
+}
+
 /* ─── Reset ─────────────────────────────────────────────────────────── */
 *,
 *::before,

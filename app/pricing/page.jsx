@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useMode } from '@/lib/mode-context';
+import { CheckCircle2, XCircle } from 'lucide-react';
 
 const PLANS = {
   fr: [
@@ -298,9 +299,15 @@ export default function PricingPage() {
                 ].map(([label, nexalie, cabinet, bpi], i) => (
                   <tr key={label} style={{ background: i % 2 === 0 ? '#fff' : '#F8F9FA', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
                     <td style={{ padding: '14px 20px', fontWeight: 600, color: '#374151' }}>{label}</td>
-                    <td style={{ padding: '14px 20px', textAlign: 'center', fontWeight: 700, color: accentText, background: `${accent}06` }}>{nexalie}</td>
-                    <td style={{ padding: '14px 20px', textAlign: 'center', color: '#9CA3AF' }}>{cabinet}</td>
-                    <td style={{ padding: '14px 20px', textAlign: 'center', color: '#9CA3AF' }}>{bpi}</td>
+                    <td style={{ padding: '14px 20px', textAlign: 'center', fontWeight: 700, color: accentText, background: `${accent}06` }}>
+                      {nexalie === '✅' ? <CheckCircle2 size={18} color="#2D6A4F" style={{ margin: '0 auto' }} /> : nexalie === '❌' ? <XCircle size={18} color="#9CA3AF" style={{ margin: '0 auto' }} /> : nexalie}
+                    </td>
+                    <td style={{ padding: '14px 20px', textAlign: 'center', color: '#9CA3AF' }}>
+                      {cabinet === '✅' ? <CheckCircle2 size={18} color="#2D6A4F" style={{ margin: '0 auto' }} /> : cabinet === '❌' ? <XCircle size={18} color="#9CA3AF" style={{ margin: '0 auto' }} /> : cabinet}
+                    </td>
+                    <td style={{ padding: '14px 20px', textAlign: 'center', color: '#9CA3AF' }}>
+                      {bpi === '✅' ? <CheckCircle2 size={18} color="#2D6A4F" style={{ margin: '0 auto' }} /> : bpi === '❌' ? <XCircle size={18} color="#9CA3AF" style={{ margin: '0 auto' }} /> : bpi}
+                    </td>
                   </tr>
                 ))}
               </tbody>

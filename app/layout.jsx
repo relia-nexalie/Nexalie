@@ -1,8 +1,30 @@
 import Script from 'next/script';
+import { Fraunces, Plus_Jakarta_Sans, DM_Mono } from 'next/font/google';
 import ClientProviders from '@/components/ClientProviders';
 import GlobalHeader from '@/components/GlobalHeader';
 import GlobalFooter from '@/components/GlobalFooter';
 import './globals.css';
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  variable: '--font-fraunces',
+  weight: ['300', '400', '600'],
+  display: 'swap',
+});
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-jakarta',
+  weight: ['300', '400', '500', '600'],
+  display: 'swap',
+});
+
+const mono = DM_Mono({
+  subsets: ['latin'],
+  weight: ['300', '400'],
+  variable: '--font-mono',
+  display: 'swap',
+});
 
 export const metadata = {
   metadataBase: new URL('https://nexalie-ecqc.vercel.app'),
@@ -53,12 +75,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=IBM+Plex+Mono:wght@400;500&display=swap"
-          rel="stylesheet"
-        />
 
         {/* Meta Pixel — chargé uniquement si la variable est définie */}
         {META_PIXEL_ID && (
@@ -77,7 +93,7 @@ export default function RootLayout({ children }) {
         )}
       </head>
 
-      <body style={{ margin: 0, padding: 0 }}>
+      <body className={`${fraunces.variable} ${jakarta.variable} ${mono.variable}`} style={{ margin: 0, padding: 0 }}>
         {/* Google Analytics 4 */}
         {GA_ID && (
           <>

@@ -7,15 +7,20 @@ import { useMode } from '@/lib/mode-context';
 // Tooltips pour termes techniques
 // ─────────────────────────────────────────────────────────────
 const TOOLTIPS = {
-  'CRM':    "Logiciel de gestion clients (ex: HubSpot, Salesforce)",
-  'KPI':    "Indicateur chiffré de performance (ex: taux de conversion, CA mensuel)",
-  'KPIs':   "Indicateurs chiffrés de performance (ex: taux de conversion, CA mensuel)",
-  'BIM':    "Maquette numérique 3D d'un bâtiment (Building Information Modeling)",
-  'ERP':    "Logiciel qui centralise toute la gestion de l'entreprise : stocks, ventes, comptabilité",
-  'agile':  "Méthode de travail par petites étapes rapides et itératives (Scrum, Kanban...)",
-  'agiles': "Méthodes de travail par petites étapes rapides et itératives (Scrum, Kanban...)",
-  'cloud':  "Stockage et traitement de données sur des serveurs distants accessibles via Internet",
-  'Cloud':  "Stockage et traitement de données sur des serveurs distants accessibles via Internet",
+  'CRM':               "Logiciel de gestion clients (ex: HubSpot, Salesforce)",
+  'KPI':               "Indicateur chiffré de performance (ex: taux de conversion, CA mensuel)",
+  'KPIs':              "Indicateurs chiffrés de performance (ex: taux de conversion, CA mensuel)",
+  'BIM':               "Maquette numérique 3D d'un bâtiment (Building Information Modeling)",
+  'ERP':               "Logiciel qui centralise toute la gestion de l'entreprise : stocks, ventes, comptabilité",
+  'agile':             "Méthode de travail par petites étapes rapides et itératives (Scrum, Kanban...)",
+  'agiles':            "Méthodes de travail par petites étapes rapides et itératives (Scrum, Kanban...)",
+  'cloud':             "Stockage et traitement de données sur des serveurs distants accessibles via Internet",
+  'Cloud':             "Stockage et traitement de données sur des serveurs distants accessibles via Internet",
+  'ROI':               "Retour sur Investissement — mesure combien rapporte chaque euro investi",
+  'SaaS':              "Logiciel accessible en ligne par abonnement, sans installation (ex: Notion, HubSpot)",
+  'MVP':               "Version minimale d'un produit pour tester une idée rapidement avec peu de ressources",
+  'Tunnel de vente':   "Parcours guidé du prospect jusqu'à l'achat (publicité → landing page → offre → paiement)",
+  'Cahier des charges': "Document qui décrit précisément les besoins, fonctionnalités et contraintes d'un projet",
 };
 
 function TooltipBadge({ term, definition }) {
@@ -350,6 +355,8 @@ const SECTORS = {
     { id: 'education',      label: 'Éducation / Formation',        icon: '🎓' },
     { id: 'telecom',        label: 'Télécom / Digital',            icon: '💻' },
     { id: 'finance',        label: 'Finance / Mobile Money',       icon: '💳' },
+    { id: 'transport',      label: 'Transport / Logistique',       icon: '🚚' },
+    { id: 'restauration',   label: 'Restauration / Alimentation',  icon: '🍽️' },
     { id: 'autre',          label: 'Autre secteur',                icon: '🏢' },
   ],
 };
@@ -583,6 +590,40 @@ const SECTOR_QUESTIONS_AF = {
     { id: 18, q: "Vos processus de back-office sont-ils automatisés ?", answers: [{ label: "Non, traitement entièrement manuel", score: 0 }, { label: "Partiellement automatisés", score: 1 }, { label: "La majorité est automatisée", score: 2 }, { label: "Back-office STP avec très peu d'interventions manuelles", score: 3 }] },
     { id: 19, q: "Communiquez-vous avec vos clients sur plusieurs canaux numériques ?", answers: [{ label: "Non, uniquement guichet et téléphone", score: 0 }, { label: "SMS uniquement", score: 1 }, { label: "App + SMS + email", score: 2 }, { label: "Stratégie omnicanal (app, WhatsApp, email, SMS, agences)", score: 3 }] },
     { id: 20, q: "Avez-vous un plan de continuité numérique testé en cas de panne ?", answers: [{ label: "Non", score: 0 }, { label: "Plan informel non testé", score: 1 }, { label: "Plan documenté partiellement testé", score: 2 }, { label: "PCA complet testé régulièrement", score: 3 }] },
+  ],
+  transport: [
+    { id: 6,  q: "Gérez-vous vos réservations et courses via une application ou WhatsApp ?", answers: [{ label: "Non, uniquement par appel ou en présentiel", score: 0 }, { label: "WhatsApp pour les demandes", score: 1 }, { label: "Application ou formulaire en ligne", score: 2 }, { label: "Plateforme de réservation intégrée avec suivi", score: 3 }] },
+    { id: 7,  q: "Acceptez-vous le paiement Mobile Money (Wave, Orange Money, MTN...) ?", answers: [{ label: "Non, espèces uniquement", score: 0 }, { label: "Un opérateur Mobile Money", score: 1 }, { label: "Plusieurs opérateurs Mobile Money", score: 2 }, { label: "Multi-paiement + reçus automatiques + historique", score: 3 }] },
+    { id: 8,  q: "Suivez-vous la position de vos véhicules numériquement ?", answers: [{ label: "Non, contact téléphonique uniquement", score: 0 }, { label: "Partage de position WhatsApp ponctuel", score: 1 }, { label: "Application de géolocalisation basique", score: 2 }, { label: "Suivi GPS temps réel intégré à la gestion flotte", score: 3 }] },
+    { id: 9,  q: "Gérez-vous les plannings et affectations de vos chauffeurs numériquement ?", answers: [{ label: "Non, à l'oral ou sur papier", score: 0 }, { label: "Groupe WhatsApp pour les courses", score: 1 }, { label: "Tableur de planning", score: 2 }, { label: "Application de dispatch avec affectation automatique", score: 3 }] },
+    { id: 10, q: "Émettez-vous des factures ou reçus numériques à vos clients ?", answers: [{ label: "Non, reçus manuscrits ou aucun reçu", score: 0 }, { label: "Reçus WhatsApp ou SMS", score: 1 }, { label: "Factures Word ou Excel envoyées par email", score: 2 }, { label: "Facturation automatisée avec historique client", score: 3 }] },
+    { id: 11, q: "Gérez-vous l'entretien et la conformité de votre flotte numériquement ?", answers: [{ label: "Non, à la mémoire", score: 0 }, { label: "Cahier de bord papier", score: 1 }, { label: "Tableur de suivi entretien", score: 2 }, { label: "Application de gestion flotte (entretien, assurances, contrôles)", score: 3 }] },
+    { id: 12, q: "Calculez-vous vos coûts par trajet (carburant, entretien, amortissement) ?", answers: [{ label: "Non, approximatif", score: 0 }, { label: "Calcul manuel mensuel", score: 1 }, { label: "Suivi tableur par véhicule", score: 2 }, { label: "Analyse automatisée coûts/revenus par trajet", score: 3 }] },
+    { id: 13, q: "Avez-vous une présence en ligne pour attirer de nouveaux clients ?", answers: [{ label: "Non, uniquement bouche-à-oreille", score: 0 }, { label: "Page Facebook ou Instagram uniquement", score: 1 }, { label: "Page active + numéro WhatsApp Business visible", score: 2 }, { label: "Site web + réseaux + Google Maps + avis clients", score: 3 }] },
+    { id: 14, q: "Communiquez-vous régulièrement avec vos clients par voie numérique ?", answers: [{ label: "Non", score: 0 }, { label: "Appels téléphoniques uniquement", score: 1 }, { label: "SMS ou WhatsApp pour les confirmations", score: 2 }, { label: "Notifications automatiques + newsletter clients réguliers", score: 3 }] },
+    { id: 15, q: "Gérez-vous vos stocks de pièces détachées ou consommables numériquement ?", answers: [{ label: "Non, à vue", score: 0 }, { label: "Cahier ou mémoire", score: 1 }, { label: "Tableur de stock", score: 2 }, { label: "Application de gestion stocks avec alertes rupture", score: 3 }] },
+    { id: 16, q: "Analysez-vous vos itinéraires pour optimiser les coûts et délais ?", answers: [{ label: "Non, routes habituelles", score: 0 }, { label: "Google Maps pour les trajets inconnus", score: 1 }, { label: "Optimisation systématique via GPS/maps", score: 2 }, { label: "Outil d'optimisation de tournées avec historique", score: 3 }] },
+    { id: 17, q: "Gérez-vous la conformité réglementaire (permis, assurances, visites techniques) numériquement ?", answers: [{ label: "Non, papiers sans suivi", score: 0 }, { label: "Copies numérisées stockées", score: 1 }, { label: "Tableur de suivi des échéances", score: 2 }, { label: "Application avec rappels automatiques d'échéances", score: 3 }] },
+    { id: 18, q: "Collectez-vous les avis et retours de vos clients ?", answers: [{ label: "Non", score: 0 }, { label: "Retours verbaux informels", score: 1 }, { label: "Avis Google ou Facebook", score: 2 }, { label: "Système de notation automatique après chaque course", score: 3 }] },
+    { id: 19, q: "Formez-vous vos chauffeurs ou équipes aux outils numériques ?", answers: [{ label: "Non", score: 0 }, { label: "Apprentissage sur le tas", score: 1 }, { label: "Formation informelle entre collègues", score: 2 }, { label: "Formation organisée aux outils utilisés", score: 3 }] },
+    { id: 20, q: "Utilisez-vous des données pour améliorer votre service (délais, taux de service, satisfaction) ?", answers: [{ label: "Non", score: 0 }, { label: "Observation informelle", score: 1 }, { label: "Quelques indicateurs suivis", score: 2 }, { label: "Tableau de bord performance avec revues régulières", score: 3 }] },
+  ],
+  restauration: [
+    { id: 6,  q: "Prenez-vous des commandes en ligne, via WhatsApp ou une application ?", answers: [{ label: "Non, uniquement au comptoir ou par appel", score: 0 }, { label: "Commandes WhatsApp ponctuelles", score: 1 }, { label: "WhatsApp Business ou page de commande en ligne", score: 2 }, { label: "Plateforme de commande intégrée (Jumia Food, propre site) + paiement Mobile Money", score: 3 }] },
+    { id: 7,  q: "Gérez-vous votre stock de matières premières numériquement ?", answers: [{ label: "Non, à vue ou en mémoire", score: 0 }, { label: "Cahier de stock", score: 1 }, { label: "Tableur de suivi hebdomadaire", score: 2 }, { label: "Application de gestion stocks avec alertes de rupture", score: 3 }] },
+    { id: 8,  q: "Acceptez-vous le paiement Mobile Money (Wave, Orange Money, MTN...) ?", answers: [{ label: "Non, espèces uniquement", score: 0 }, { label: "Un opérateur Mobile Money", score: 1 }, { label: "Plusieurs opérateurs + espèces", score: 2 }, { label: "Multi-paiement avec reçus numériques", score: 3 }] },
+    { id: 9,  q: "Publiez-vous votre menu ou vos offres du jour sur les réseaux sociaux ?", answers: [{ label: "Non", score: 0 }, { label: "Occasion­nellement sans stratégie", score: 1 }, { label: "Publications régulières (Facebook, Instagram, WhatsApp Status)", score: 2 }, { label: "Stratégie sociale avec photos professionnelles, horaires, promotions", score: 3 }] },
+    { id: 10, q: "Calculez-vous vos coûts de revient par plat ou menu ?", answers: [{ label: "Non, prix fixés à l'intuition", score: 0 }, { label: "Estimation approximative", score: 1 }, { label: "Calcul manuel des coûts principaux", score: 2 }, { label: "Fiche technique par plat avec coût, marge et prix de vente", score: 3 }] },
+    { id: 11, q: "Gérez-vous vos approvisionnements et fournisseurs numériquement ?", answers: [{ label: "Non, marché au jour le jour", score: 0 }, { label: "Appels et WhatsApp avec les fournisseurs", score: 1 }, { label: "Listes de commandes sur tableur ou WhatsApp organisé", score: 2 }, { label: "Gestion fournisseurs intégrée avec historique et comparatifs", score: 3 }] },
+    { id: 12, q: "Émettez-vous des factures ou reçus numériques à vos clients ?", answers: [{ label: "Non", score: 0 }, { label: "Reçus manuscrits", score: 1 }, { label: "Reçus imprimés ou Word", score: 2 }, { label: "Facturation numérique automatique", score: 3 }] },
+    { id: 13, q: "Utilisez-vous un logiciel de gestion de restaurant ou de caisse ?", answers: [{ label: "Non, tout est manuel", score: 0 }, { label: "Tableur pour les ventes", score: 1 }, { label: "Application de caisse ou gestion basique", score: 2 }, { label: "Logiciel de restaurant complet (commandes, stock, caisse, analytics)", score: 3 }] },
+    { id: 14, q: "Proposez-vous la livraison à domicile ou le click & collect ?", answers: [{ label: "Non, sur place uniquement", score: 0 }, { label: "Livraison informelle via WhatsApp", score: 1 }, { label: "Livraison organisée avec livreurs ou plateforme", score: 2 }, { label: "Livraison + click & collect + paiement en ligne intégrés", score: 3 }] },
+    { id: 15, q: "Gérez-vous les plannings et horaires de votre équipe numériquement ?", answers: [{ label: "Non, à l'oral", score: 0 }, { label: "Tableau papier ou WhatsApp", score: 1 }, { label: "Tableur de planning", score: 2 }, { label: "Application de gestion RH avec pointage", score: 3 }] },
+    { id: 16, q: "Analysez-vous quels plats se vendent le mieux ?", answers: [{ label: "Non, à l'intuition", score: 0 }, { label: "Observation sans données", score: 1 }, { label: "Suivi manuel hebdomadaire", score: 2 }, { label: "Analyse automatique ventes par plat et par service", score: 3 }] },
+    { id: 17, q: "Collectez-vous les avis de vos clients en ligne ?", answers: [{ label: "Non", score: 0 }, { label: "Retours verbaux informels", score: 1 }, { label: "Avis Google My Business ou Facebook", score: 2 }, { label: "Stratégie d'avis avec réponses et amélioration continue", score: 3 }] },
+    { id: 18, q: "Gérez-vous la conformité sanitaire et les certifications numériquement ?", answers: [{ label: "Non, documents papier", score: 0 }, { label: "Copies numérisées stockées", score: 1 }, { label: "Tableur de suivi des échéances", score: 2 }, { label: "Application de suivi conformité avec rappels automatiques", score: 3 }] },
+    { id: 19, q: "Communiquez-vous vos promotions et événements spéciaux par voie numérique ?", answers: [{ label: "Non", score: 0 }, { label: "WhatsApp personnel ponctuel", score: 1 }, { label: "WhatsApp Business + réseaux réguliers", score: 2 }, { label: "Campagnes multicanal (réseaux + SMS + WhatsApp) planifiées", score: 3 }] },
+    { id: 20, q: "Avez-vous une fiche Google My Business avec vos horaires et photos ?", answers: [{ label: "Non", score: 0 }, { label: "Fiche créée mais non optimisée", score: 1 }, { label: "Fiche complète avec horaires et photos", score: 2 }, { label: "Fiche optimisée + réponses aux avis + publications régulières", score: 3 }] },
   ],
 };
 
@@ -1087,7 +1128,10 @@ export default function AuditModule({ isPlatform = false }) {
     ? [...baseQuestions.slice(0, 5), ...sectorQs]
     : baseQuestions;
 
-  const [step, setStep] = useState('intro'); // 'intro' | 'profil' | 'sector' | 'questions' | 'result'
+  // Sondage pré-audit
+  const [survey, setSurvey] = useState({ nom: '', ca: null, outils: [], defi: null });
+
+  const [step, setStep] = useState('intro'); // 'intro' | 'survey' | 'profil' | 'sector' | 'questions' | 'result'
   const [currentQ, setCurrentQ] = useState(0);
   const [answers, setAnswers] = useState(() => {
     // Restaurer depuis localStorage si disponible
@@ -1161,6 +1205,17 @@ export default function AuditModule({ isPlatform = false }) {
       if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
     };
   }, [step, score]);
+
+  // Sauvegarde automatique toutes les 30 secondes pendant les questions
+  useEffect(() => {
+    if (step !== 'questions') return;
+    const interval = setInterval(() => {
+      if (typeof window !== 'undefined') {
+        try { localStorage.setItem(LS_KEY, JSON.stringify({ answers, sector, step: 'questions' })); } catch {}
+      }
+    }, 30000);
+    return () => clearInterval(interval);
+  }, [step, answers, sector]);
 
   function handleAnswer(questionIndex, answerScore) {
     const updated = [...answers];
@@ -1238,6 +1293,7 @@ export default function AuditModule({ isPlatform = false }) {
     setStep('intro');
     setSector(null);
     setProfil({ equipe: null, pays: null });
+    setSurvey({ nom: '', ca: null, outils: [], defi: null });
     setCurrentQ(0);
     setAnswers(Array(20).fill(null));
     setScore(0);
@@ -1344,7 +1400,7 @@ export default function AuditModule({ isPlatform = false }) {
           </div>
 
           <button
-            onClick={() => setStep('profil')}
+            onClick={() => setStep('survey')}
             style={{
               background: 'var(--nx-accent)',
               color: '#fff',
@@ -1376,6 +1432,104 @@ export default function AuditModule({ isPlatform = false }) {
     );
   }
 
+  // ─── SONDAGE PRÉ-AUDIT ───────────────────────────────────
+  if (step === 'survey') {
+    const caOptions = mode === 'fr'
+      ? [
+          { val: '<5k', label: '< 5 000 € / mois' },
+          { val: '5-50k', label: '5 000 — 50 000 € / mois' },
+          { val: '50-500k', label: '50 000 — 500 000 € / mois' },
+          { val: '>500k', label: '> 500 000 € / mois' },
+        ]
+      : [
+          { val: '<500k', label: '< 500 000 FCFA / mois' },
+          { val: '500k-5m', label: '500 000 — 5 M FCFA / mois' },
+          { val: '5m-50m', label: '5 M — 50 M FCFA / mois' },
+          { val: '>50m', label: '> 50 M FCFA / mois' },
+        ];
+    const outilsOptions = mode === 'fr'
+      ? ['Excel / Google Sheets', 'WhatsApp', 'Réseaux sociaux', 'Site web', 'CRM (HubSpot, Salesforce...)', 'ERP (Odoo, SAP...)', 'Aucun outil numérique']
+      : ['Excel / Google Sheets', 'WhatsApp Business', 'Facebook / Instagram', 'Site web', 'CRM', 'Mobile Money', 'Aucun outil numérique'];
+    const defiOptions = mode === 'fr'
+      ? ['Gagner plus de clients', 'Réduire mes coûts opérationnels', 'Mieux organiser mon équipe', 'Automatiser des tâches répétitives', 'Me lancer ou vendre en ligne']
+      : ['Trouver plus de clients', 'Réduire mes coûts', 'Organiser mon équipe', 'Automatiser des tâches', 'Vendre en ligne / Mobile Money'];
+    const canContinue = survey.ca && survey.defi;
+    const toggleOutil = (o) => setSurvey(s => ({
+      ...s,
+      outils: s.outils.includes(o) ? s.outils.filter(x => x !== o) : [...s.outils, o],
+    }));
+    return (
+      <div style={{ minHeight: '100vh', background: 'var(--nx-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
+        <div style={{ maxWidth: 640, width: '100%' }}>
+          <button onClick={() => setStep('intro')} style={{ background: 'none', border: 'none', color: 'var(--nx-text-secondary)', cursor: 'pointer', fontSize: '0.85rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '4px', padding: 0 }}>
+            ← {mode === 'fr' ? 'Retour' : 'Retour'}
+          </button>
+          <p style={{ fontFamily: 'monospace', fontSize: '0.7rem', letterSpacing: '2px', color: 'var(--nx-accent)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+            {mode === 'fr' ? 'Étape 1 / 4 — Votre contexte' : 'Étape 1 / 4 — Votre contexte'}
+          </p>
+          <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(1.5rem, 4vw, 2.2rem)', fontWeight: 300, color: 'var(--nx-navy)', marginBottom: '0.5rem' }}>
+            {mode === 'fr' ? 'Quelques mots sur votre entreprise' : 'Parlez-nous de votre activité'}
+          </h2>
+          <p style={{ fontSize: '1rem', color: 'var(--nx-text-secondary)', marginBottom: '2rem', lineHeight: 1.6 }}>
+            {mode === 'fr' ? 'Ces informations permettent d\'adapter vos recommandations à votre réalité.' : 'Ces réponses permettent d\'adapter les conseils à votre situation réelle.'}
+          </p>
+
+          {/* Nom entreprise */}
+          <p style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--nx-navy)', marginBottom: '0.5rem' }}>
+            {mode === 'fr' ? 'Nom de votre entreprise (optionnel)' : 'Nom de votre entreprise (facultatif)'}
+          </p>
+          <input
+            type="text"
+            value={survey.nom}
+            onChange={e => setSurvey(s => ({ ...s, nom: e.target.value }))}
+            placeholder={mode === 'fr' ? 'Ex : Boulangerie Martin, Cabinet XYZ...' : 'Ex : Restaurant Maman, Transport Express...'}
+            style={{ width: '100%', padding: '12px 14px', borderRadius: 10, border: '1.5px solid rgba(0,0,0,0.1)', fontSize: '0.95rem', marginBottom: '1.75rem', boxSizing: 'border-box', outline: 'none', fontFamily: 'inherit', color: 'var(--nx-navy)' }}
+          />
+
+          {/* CA mensuel */}
+          <p style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--nx-navy)', marginBottom: '0.75rem' }}>
+            {mode === 'fr' ? 'Votre chiffre d\'affaires mensuel estimé *' : 'Votre chiffre d\'affaires mensuel estimé *'}
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px', marginBottom: '1.75rem' }}>
+            {caOptions.map(opt => (
+              <button key={opt.val} onClick={() => setSurvey(s => ({ ...s, ca: opt.val }))} style={{ padding: '12px', borderRadius: 10, textAlign: 'center', border: `2px solid ${survey.ca === opt.val ? 'var(--nx-accent)' : 'rgba(0,0,0,0.08)'}`, background: survey.ca === opt.val ? 'rgba(78,201,176,0.08)' : '#fff', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 500, color: survey.ca === opt.val ? 'var(--nx-accent)' : 'var(--nx-text-primary)', transition: 'all 0.15s' }}>
+                {opt.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Outils utilisés */}
+          <p style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--nx-navy)', marginBottom: '0.75rem' }}>
+            {mode === 'fr' ? 'Outils numériques déjà utilisés (plusieurs choix possibles)' : 'Outils numériques déjà utilisés (plusieurs choix possibles)'}
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '1.75rem' }}>
+            {outilsOptions.map(o => (
+              <button key={o} onClick={() => toggleOutil(o)} style={{ padding: '8px 14px', borderRadius: 20, border: `2px solid ${survey.outils.includes(o) ? 'var(--nx-accent)' : 'rgba(0,0,0,0.1)'}`, background: survey.outils.includes(o) ? 'rgba(78,201,176,0.1)' : '#fff', cursor: 'pointer', fontSize: '0.82rem', fontWeight: 500, color: survey.outils.includes(o) ? 'var(--nx-accent)' : 'var(--nx-text-primary)', transition: 'all 0.15s' }}>
+                {o}
+              </button>
+            ))}
+          </div>
+
+          {/* Principal défi */}
+          <p style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--nx-navy)', marginBottom: '0.75rem' }}>
+            {mode === 'fr' ? 'Votre principal défi en ce moment *' : 'Votre principal défi en ce moment *'}
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '8px', marginBottom: '2rem' }}>
+            {defiOptions.map(d => (
+              <button key={d} onClick={() => setSurvey(s => ({ ...s, defi: d }))} style={{ padding: '12px 16px', borderRadius: 10, textAlign: 'left', border: `2px solid ${survey.defi === d ? 'var(--nx-accent)' : 'rgba(0,0,0,0.08)'}`, background: survey.defi === d ? 'rgba(78,201,176,0.08)' : '#fff', cursor: 'pointer', fontSize: '0.9rem', fontWeight: 500, color: survey.defi === d ? 'var(--nx-accent)' : 'var(--nx-text-primary)', transition: 'all 0.15s' }}>
+                {d}
+              </button>
+            ))}
+          </div>
+
+          <button disabled={!canContinue} onClick={() => setStep('profil')} style={{ background: canContinue ? 'var(--nx-accent)' : 'rgba(0,0,0,0.1)', color: canContinue ? '#fff' : 'rgba(0,0,0,0.3)', border: 'none', borderRadius: 12, padding: '1rem 2.5rem', fontSize: '1.05rem', fontWeight: 700, cursor: canContinue ? 'pointer' : 'default', transition: 'all 0.2s', width: '100%' }}>
+            {canContinue ? (mode === 'fr' ? 'Continuer →' : 'Continuer →') : (mode === 'fr' ? '* Répondez aux questions obligatoires' : '* Répondez aux questions obligatoires')}
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   // ─── SECTEUR ─────────────────────────────────────────────
   // ─── PROFIL ──────────────────────────────────────────────
   if (step === 'profil') {
@@ -1397,11 +1551,11 @@ export default function AuditModule({ isPlatform = false }) {
     return (
       <div style={{ minHeight: '100vh', background: 'var(--nx-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
         <div style={{ maxWidth: 640, width: '100%' }}>
-          <button onClick={() => setStep('intro')} style={{ background: 'none', border: 'none', color: 'var(--nx-text-secondary)', cursor: 'pointer', fontSize: '0.85rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '4px', padding: 0 }}>
+          <button onClick={() => setStep('survey')} style={{ background: 'none', border: 'none', color: 'var(--nx-text-secondary)', cursor: 'pointer', fontSize: '0.85rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '4px', padding: 0 }}>
             ← {mode === 'fr' ? 'Retour' : 'Retour'}
           </button>
           <p style={{ fontFamily: 'monospace', fontSize: '0.7rem', letterSpacing: '2px', color: 'var(--nx-accent)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-            {mode === 'fr' ? 'Étape 1 / 3 — Votre profil' : 'Étape 1 / 3 — Votre profil'}
+            {mode === 'fr' ? 'Étape 2 / 4 — Votre profil' : 'Étape 2 / 4 — Votre profil'}
           </p>
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(1.5rem, 4vw, 2.2rem)', fontWeight: 300, color: 'var(--nx-navy)', marginBottom: '0.5rem' }}>
             {mode === 'fr' ? 'Parlez-nous de votre équipe' : 'Parlez-nous de votre équipe'}
@@ -1484,7 +1638,7 @@ export default function AuditModule({ isPlatform = false }) {
             ← {mode === 'fr' ? 'Retour' : 'Retour'}
           </button>
           <p style={{ fontFamily: 'monospace', fontSize: '0.7rem', letterSpacing: '2px', color: 'var(--nx-accent)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-            {mode === 'fr' ? 'Étape 2 / 3' : 'Étape 2 / 3'}
+            {mode === 'fr' ? 'Étape 3 / 4' : 'Étape 3 / 4'}
           </p>
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(1.5rem, 4vw, 2.2rem)', fontWeight: 300, color: 'var(--nx-navy)', marginBottom: '0.5rem' }}>
             {mode === 'fr' ? 'Votre secteur d\'activité' : 'Votre secteur d\'activité'}

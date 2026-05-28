@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useMode } from '@/lib/mode-context';
 import { createClient } from '@/lib/supabase/client';
+import { Lock } from 'lucide-react';
 
 const FREE_LIMIT = 3;
 const PLANS_FULL = ['pro', 'institutions', 'starter'];
@@ -10,7 +11,7 @@ const PLANS_FULL = ['pro', 'institutions', 'starter'];
 // ─── Ressources statiques ───────────────────────────────────────────
 const RESOURCES = {
   fr: [
-    { id: 'rgpd-checklist', icon: '🔒', category: 'Conformité', title: 'Checklist RGPD pour PME', desc: '47 points de contrôle pour être conforme en 2024.', type: 'PDF', free: true },
+    { id: 'rgpd-checklist', icon: '🛡️', category: 'Conformité', title: 'Checklist RGPD pour PME', desc: '47 points de contrôle pour être conforme en 2024.', type: 'PDF', free: true },
     { id: 'cdc-digital', icon: '📋', category: 'Templates', title: 'CDC Projet Digital', desc: 'Cahier des charges type pour votre prochain site web ou app.', type: 'DOCX', free: true },
     { id: 'audit-grille', icon: '📊', category: 'Outils', title: "Grille d'auto-évaluation digitale", desc: 'Évaluez 8 dimensions de votre maturité numérique.', type: 'XLS', free: true },
     { id: 'contrat-web', icon: '⚖️', category: 'Juridique', title: 'Contrat prestataire web (FR)', desc: 'Modèle de contrat de développement web conforme au droit français.', type: 'DOCX', free: false },
@@ -162,7 +163,7 @@ export default function ResourcesPage() {
           {/* Cartes verrouillées */}
           {!hasFullAccess && lockedCount > 0 && Array.from({ length: Math.min(lockedCount, 3) }).map((_, i) => (
             <div key={`locked-${i}`} style={{ background: '#F9FAFB', border: '1.5px dashed rgba(0,0,0,0.12)', borderRadius: '14px', padding: '22px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', gap: '10px', minHeight: '180px' }}>
-              <span style={{ fontSize: '28px', filter: 'grayscale(1)', opacity: 0.4 }}>🔒</span>
+              <Lock size={28} color="#9CA3AF" style={{ opacity: 0.4 }} />
               <p style={{ fontSize: '13px', color: '#9CA3AF' }}>Disponible à partir du plan <strong>Starter</strong></p>
               <a href="/pricing" style={{ fontSize: '12px', color: accent, fontWeight: 600, textDecoration: 'none' }}>Débloquer →</a>
             </div>

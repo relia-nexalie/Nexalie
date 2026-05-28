@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useMode } from "@/lib/mode-context";
+import { BarChart2, DollarSign, ClipboardList, Map, Search, FileText, Zap, Building2, Landmark, CheckCircle2, XCircle, Lock, Rocket, Lightbulb, AlertTriangle } from "lucide-react";
 
 // ═══════════════════════════════════════════
 // DESIGN TOKENS — fond blanc, FR/AF
@@ -127,7 +128,7 @@ export default function NexaliSite() {
           <div className="nx-compare-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
             {/* Cabinet */}
             <div style={{ padding: '28px 24px', background: '#fff', border: `1.5px solid ${t.border}`, borderRadius: '16px', opacity: 0.85 }}>
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🏦</div>
+              <div style={{ marginBottom: '12px' }}><Building2 size={28} color={t.muted} /></div>
               <h3 style={{ fontSize: '16px', fontWeight: 700, color: t.text, marginBottom: '6px' }}>Cabinet de conseil</h3>
               <p style={{ fontFamily: 'Georgia, serif', fontSize: '22px', color: '#9CA3AF', fontWeight: 700, marginBottom: '12px' }}>5 000 — 15 000€</p>
               <p style={{ fontSize: '13px', color: t.muted, lineHeight: 1.7 }}>Mission de 3 mois minimum. Déconnecté de votre réalité terrain.</p>
@@ -138,7 +139,7 @@ export default function NexaliSite() {
               <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: isAf ? '#C45E0A' : '#4EC9B0', color: '#fff', fontSize: '10px', fontWeight: 700, padding: '4px 16px', borderRadius: '20px', whiteSpace: 'nowrap', fontFamily: 'monospace', letterSpacing: '0.5px' }}>
                 RECOMMANDÉ
               </div>
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>⚡</div>
+              <div style={{ marginBottom: '12px' }}><Zap size={28} color={isAf ? '#E88C32' : '#4EC9B0'} /></div>
               <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#fff', marginBottom: '6px' }}>Nexalie</h3>
               <p style={{ fontFamily: 'Georgia, serif', fontSize: '22px', color: isAf ? '#E88C32' : '#4EC9B0', fontWeight: 700, marginBottom: '12px' }}>Gratuit — 129€/mois</p>
               <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>20 minutes. Score immédiat. Plan d&apos;action IA personnalisé. Adapté France ET Afrique.</p>
@@ -146,7 +147,7 @@ export default function NexaliSite() {
 
             {/* Bpifrance */}
             <div style={{ padding: '28px 24px', background: '#fff', border: `1.5px solid ${t.border}`, borderRadius: '16px', opacity: 0.85 }}>
-              <div style={{ fontSize: '32px', marginBottom: '12px' }}>🏛️</div>
+              <div style={{ marginBottom: '12px' }}><Landmark size={28} color={t.muted} /></div>
               <h3 style={{ fontSize: '16px', fontWeight: 700, color: t.text, marginBottom: '6px' }}>Bpifrance Diag IA</h3>
               <p style={{ fontFamily: 'Georgia, serif', fontSize: '22px', color: '#9CA3AF', fontWeight: 700, marginBottom: '12px' }}>7 500€ reste à charge</p>
               <p style={{ fontSize: '13px', color: t.muted, lineHeight: 1.7 }}>8 jours d&apos;attente. Réservé aux PME +10 salariés et +1M€ CA.</p>
@@ -155,26 +156,51 @@ export default function NexaliSite() {
         </div>
       </section>
 
-      {/* ── STATS ──────────────────────────────────────────────────── */}
-      <section style={{ borderBottom: `1px solid ${t.border}`, padding: '28px 24px', background: t.bg }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', gap: '16px' }}>
-          {[['20', "Questions par audit"], ['8', 'Secteurs couverts'], ['0€', 'Pour commencer'], ['20 min', 'Pour un bilan complet']].map(([v, l]) => (
-            <div key={l} style={{ textAlign: 'center', padding: '12px' }}>
-              <p style={{ fontFamily: 'Georgia, serif', fontSize: '26px', color: t.accent, marginBottom: '4px' }}>{v}</p>
-              <p style={{ fontSize: '12px', color: t.muted }}>{l}</p>
+      {/* ── PREUVES SOCIALES ──────────────────────────────────────── */}
+      <section style={{ background: t.bg, padding: '56px 24px', borderBottom: `1px solid ${t.border}` }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+          <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: t.muted, textAlign: 'center', marginBottom: '8px', textTransform: 'uppercase' }}>Expertise terrain</p>
+          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(18px,2.5vw,26px)', fontWeight: 300, color: t.text, textAlign: 'center', marginBottom: '40px' }}>
+            Une expertise terrain reconnue
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
+            <div style={{ padding: '28px 24px', background: t.sectionAlt, borderRadius: '16px', border: `1px solid ${t.border}` }}>
+              <div style={{ fontSize: '28px', marginBottom: '12px' }}>✈️</div>
+              <p style={{ fontSize: '13px', fontFamily: 'monospace', fontWeight: 700, color: t.muted, letterSpacing: '1px', marginBottom: '8px', textTransform: 'uppercase' }}>Safran Group</p>
+              <p style={{ fontSize: '22px', fontWeight: 700, color: isAf ? '#C45E0A' : '#0A1628', marginBottom: '8px' }}>17 000</p>
+              <p style={{ fontSize: '13px', color: t.muted, lineHeight: 1.6 }}>collaborateurs accompagnés dans leur transformation digitale. Pilotage des usages IA, no-code et collaboration à distance.</p>
             </div>
-          ))}
+            <div style={{ padding: '28px 24px', background: t.sectionAlt, borderRadius: '16px', border: `1px solid ${t.border}` }}>
+              <div style={{ fontSize: '28px', marginBottom: '12px' }}>🔬</div>
+              <p style={{ fontSize: '13px', fontFamily: 'monospace', fontWeight: 700, color: t.muted, letterSpacing: '1px', marginBottom: '8px', textTransform: 'uppercase' }}>3SP Technologies</p>
+              <p style={{ fontSize: '22px', fontWeight: 700, color: isAf ? '#C45E0A' : '#0A1628', marginBottom: '8px' }}>−20%</p>
+              <p style={{ fontSize: '13px', color: t.muted, lineHeight: 1.6 }}>de délais de fabrication après digitalisation des processus qualité et mise en place d&apos;outils collaboratifs terrain.</p>
+            </div>
+            <div style={{ padding: '28px 24px', background: t.sectionAlt, borderRadius: '16px', border: `1px solid ${t.border}` }}>
+              <div style={{ fontSize: '28px', marginBottom: '12px' }}>🧪</div>
+              <p style={{ fontSize: '13px', fontFamily: 'monospace', fontWeight: 700, color: t.muted, letterSpacing: '1px', marginBottom: '8px', textTransform: 'uppercase' }}>Bêta Nexalie</p>
+              <p style={{ fontSize: '22px', fontWeight: 700, color: isAf ? '#C45E0A' : '#0A1628', marginBottom: '8px' }}>20 PME</p>
+              <p style={{ fontSize: '13px', color: t.muted, lineHeight: 1.6 }}>pilotes en France et en Afrique. Premiers retours : plan d&apos;action reçu en 20 min, ROI estimé dès la première semaine.</p>
+            </div>
+          </div>
         </div>
       </section>
 
+      {/* ── STATS ──────────────────────────────────────────────────── */}
+      <section style={{ borderBottom: `1px solid ${t.border}`, padding: '24px', background: t.bg }}>
+        <p style={{ textAlign: 'center', fontFamily: 'var(--font-mono, monospace)', fontSize: '13px', letterSpacing: '0.15em', color: 'rgba(0,0,0,0.45)', margin: 0 }}>
+          20 questions · 8 secteurs · résultats en 20 min · gratuit
+        </p>
+      </section>
+
       {/* ── COMMENT ÇA MARCHE ──────────────────────────────────────── */}
-      <section style={{ padding: '72px 24px', background: t.sectionAlt }}>
+      <section style={{ padding: '72px 24px', background: '#C45E0A', overflow: 'hidden' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: t.muted, textAlign: 'center', marginBottom: '10px', textTransform: 'uppercase' }}>Processus</p>
-          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(26px,4vw,38px)', fontWeight: 300, color: t.text, textAlign: 'center', marginBottom: '6px' }}>
+          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: 'rgba(255,255,255,0.5)', textAlign: 'center', marginBottom: '10px', textTransform: 'uppercase' }}>Processus</p>
+          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(26px,4vw,38px)', fontWeight: 300, color: '#fff', textAlign: 'center', marginBottom: '6px' }}>
             Comment ça fonctionne
           </h2>
-          <p style={{ fontSize: '16px', color: t.muted, textAlign: 'center', marginBottom: '48px' }}>Simple. Concret. Immédiat.</p>
+          <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.65)', textAlign: 'center', marginBottom: '48px' }}>Simple. Concret. Immédiat.</p>
 
           <div className="nx-steps-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
             {[
@@ -182,31 +208,36 @@ export default function NexaliSite() {
                 num: '01',
                 title: 'Tu réponds à 20 questions',
                 text: 'Secteur, pays, niveau d\'équipement, processus, clients — Nexalie évalue ta maturité digitale sur 5 axes.',
-                color: isAf ? '#C45E0A' : '#4EC9B0',
               },
               {
                 num: '02',
                 title: 'L\'IA génère ton plan d\'action',
                 text: 'Score sur 100, recommandations avec outils précis (nom, coût, durée), roadmap 90 jours personnalisée.',
-                color: isAf ? '#E88C32' : '#2D6A4F',
               },
               {
                 num: '03',
                 title: 'Tu avances, semaine après semaine',
                 text: 'Chaque lundi à 8h, Nexalie t\'envoie ta prochaine action prioritaire. Ton score progresse. Tu le vois.',
-                color: '#7B5EA7',
               },
             ].map(step => (
-              <div key={step.num} style={{ padding: '32px 24px', background: '#fff', border: `1px solid ${t.border}`, borderRadius: '16px', borderTop: `4px solid ${step.color}` }}>
-                <p style={{ fontFamily: 'monospace', fontSize: '36px', fontWeight: 700, color: step.color, marginBottom: '14px', lineHeight: 1 }}>{step.num}</p>
-                <h3 style={{ fontSize: '17px', fontWeight: 700, color: t.text, marginBottom: '12px', lineHeight: 1.4 }}>{step.title}</h3>
-                <p style={{ fontSize: '14px', color: t.muted, lineHeight: 1.75 }}>{step.text}</p>
+              <div key={step.num} style={{ position: 'relative', padding: '32px 24px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '16px', overflow: 'hidden' }}>
+                {/* Large background number */}
+                <span style={{
+                  position: 'absolute', top: '-10px', right: '12px',
+                  fontFamily: 'var(--font-fraunces, Georgia, serif)',
+                  fontSize: '120px', fontWeight: 300,
+                  color: 'rgba(255,255,255,0.12)', lineHeight: 1,
+                  pointerEvents: 'none', userSelect: 'none',
+                }}>{step.num}</span>
+                <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '13px', fontWeight: 700, color: 'rgba(255,255,255,0.5)', marginBottom: '14px', lineHeight: 1 }}>{step.num}</p>
+                <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#fff', marginBottom: '12px', lineHeight: 1.4, position: 'relative' }}>{step.title}</h3>
+                <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.75, position: 'relative' }}>{step.text}</p>
               </div>
             ))}
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '36px' }}>
-            <Link href="/audit" style={{ padding: '14px 32px', background: t.btnPrimary, borderRadius: '10px', color: t.btnText, fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
+            <Link href="/audit" style={{ padding: '14px 32px', background: '#fff', borderRadius: '10px', color: '#C45E0A', fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
               Démarrer maintenant — c&apos;est gratuit →
             </Link>
           </div>
@@ -274,14 +305,33 @@ export default function NexaliSite() {
               Découvrir la plateforme →
             </Link>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
-            {[['📊','Audit Digital','Gratuit'],['💰','Calculateur ROI','Gratuit'],['📋','Business Plan IA','Premium'],['🗺️','Roadmap 12 mois','Premium'],['🔍','Veille Concurrentielle','Premium'],['📄','Cahier des Charges','Premium']].map(([e,n,p]) => (
-              <div key={n} style={{ padding: '16px', background: t.sectionAlt, border: `1px solid ${t.border}`, borderRadius: '12px' }}>
-                <span style={{ fontSize: '20px', display: 'block', marginBottom: '6px' }}>{e}</span>
-                <p style={{ fontSize: '12px', fontWeight: 600, color: t.text, marginBottom: '3px' }}>{n}</p>
-                <p style={{ fontSize: '10px', color: p === 'Gratuit' ? '#2D6A4F' : t.accent, fontFamily: 'monospace', fontWeight: 600 }}>{p}</p>
-              </div>
-            ))}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+            {[
+              { Icon: BarChart2,  name: 'Audit Digital',          plan: 'Gratuit',  wide: true  },
+              { Icon: DollarSign, name: 'Calculateur ROI',        plan: 'Gratuit',  wide: false },
+              { Icon: ClipboardList, name: 'Business Plan IA',    plan: 'Premium',  wide: false },
+              { Icon: Map,        name: 'Roadmap 12 mois',        plan: 'Premium',  wide: false },
+              { Icon: Search,     name: 'Veille Concurrentielle', plan: 'Premium',  wide: false },
+              { Icon: FileText,   name: 'Cahier des Charges',     plan: 'Premium',  wide: false },
+            ].map(({ Icon, name, plan, wide }) => {
+              const isFree = plan === 'Gratuit';
+              const borderColor = isFree ? '#4EC9B0' : '#C45E0A';
+              return (
+                <div key={name} style={{
+                  gridColumn: wide ? '1 / -1' : undefined,
+                  padding: '28px',
+                  background: '#fff',
+                  border: `1px solid rgba(0,0,0,0.06)`,
+                  borderLeft: `3px solid ${borderColor}`,
+                  borderRadius: '12px',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+                }}>
+                  <Icon size={20} color={borderColor} style={{ marginBottom: '10px' }} />
+                  <p style={{ fontSize: '13px', fontWeight: 700, color: '#0A1628', marginBottom: '4px' }}>{name}</p>
+                  <p style={{ fontSize: '11px', color: isFree ? '#2D6A4F' : '#C45E0A', fontFamily: 'var(--font-mono, monospace)', fontWeight: 600, letterSpacing: '0.05em' }}>{plan}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -324,7 +374,7 @@ export default function NexaliSite() {
       {/* ── CTA FINAL ──────────────────────────────────────────────── */}
       <section style={{ padding: '80px 24px', background: t.sectionAlt }}>
         <div style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>
-          <span style={{ fontSize: '40px', display: 'block', marginBottom: '16px' }}>🚀</span>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}><Rocket size={40} color={t.accent} /></div>
           <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(26px,4vw,40px)', fontWeight: 300, color: t.text, marginBottom: '12px', lineHeight: 1.3 }}>
             Votre transformation digitale <em style={{ color: t.accent }}>commence aujourd&apos;hui</em>
           </h2>
