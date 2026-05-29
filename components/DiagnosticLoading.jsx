@@ -72,7 +72,7 @@ export default function DiagnosticLoading({ structureName = '' }) {
 
           {/* Message animé */}
           <p
-            className="font-serif text-xl font-light leading-relaxed text-navy transition-all duration-300"
+            className="font-serif text-2xl font-light leading-relaxed tracking-tight text-[#0F172A] transition-all duration-300"
             style={{
               opacity: visible ? 1 : 0,
               transform: visible ? 'translateY(0)' : 'translateY(6px)',

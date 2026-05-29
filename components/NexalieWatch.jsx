@@ -27,7 +27,7 @@ const MOCK_ACTIONS = [
 
 function MockDashboard() {
   return (
-    <div className="w-full overflow-hidden rounded-md border border-slate-200 bg-white shadow-card">
+    <div className="w-full overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm">
       {/* Barre de titre fenêtre */}
       <div className="flex items-center gap-2 border-b border-slate-200 bg-slate-50 px-4 py-2.5">
         <div className="flex gap-1.5">
@@ -141,11 +141,11 @@ export default function NexalieWatch() {
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-terra">Bientôt disponible</p>
           </div>
 
-          <h2 className="font-serif text-3xl font-light leading-tight text-navy sm:text-4xl">
+          <h2 className="font-serif text-3xl font-light leading-tight tracking-tight text-[#0F172A] sm:text-4xl">
             Nexalie Watch&nbsp;: Pilotez votre exécution en temps réel
           </h2>
 
-          <p className="max-w-xl text-[15px] leading-relaxed text-ink-muted">
+          <p className="max-w-xl font-sans text-base leading-relaxed text-slate-600">
             Ne restez pas seul face à votre feuille de route. Suivez vos indicateurs, automatisez vos processus et connectez vos outils sur un tableau de bord unique — conçu pour les dirigeants, pas pour les développeurs.
           </p>
         </div>
@@ -153,7 +153,7 @@ export default function NexalieWatch() {
         {/* Bloc vidéo / tableau de bord simulé */}
         <div className="group relative mb-10">
           {/* Badge "Preview" */}
-          <div className="absolute -top-3 right-4 z-10 flex items-center gap-1.5 rounded-sm border border-slate-200 bg-white px-3 py-1 shadow-soft">
+          <div className="absolute -top-3 right-4 z-10 flex items-center gap-1.5 rounded border border-slate-200 bg-white px-3 py-1 shadow-sm">
             <div className="h-1.5 w-1.5 rounded-full bg-terra animate-pulse-slow" />
             <span className="font-mono text-[9px] uppercase tracking-widest text-ink-muted">Aperçu prototype</span>
           </div>
@@ -177,8 +177,8 @@ export default function NexalieWatch() {
             { icon: '⚡', label: 'Alertes intelligentes', desc: 'Notifications quand une action de votre feuille de route prend du retard ou dépasse le budget.' },
             { icon: '⊞', label: 'Connexions natives', desc: 'Intégrations Wave, CinetPay, Stripe, WhatsApp Business, Brevo en un clic.' },
           ].map(({ icon, label, desc }) => (
-            <div key={label} className="rounded-sm border border-slate-200 bg-white p-5 shadow-soft">
-              <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-sm border border-slate-200 font-mono text-base text-navy">
+            <div key={label} className="rounded-md border border-slate-200 bg-white p-5 shadow-sm">
+              <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-md border border-slate-200 font-mono text-base text-navy">
                 {icon}
               </div>
               <p className="mb-1.5 font-sans text-[13px] font-semibold text-navy">{label}</p>
@@ -188,7 +188,7 @@ export default function NexalieWatch() {
         </div>
 
         {/* CTA Waitlist */}
-        <div className="rounded-sm border border-slate-200 bg-white p-8 shadow-soft">
+        <div className="rounded-md border border-slate-200 bg-white p-8 shadow-sm">
           {sent ? (
             <div className="flex flex-col items-center gap-3 py-4 text-center animate-fade-up">
               <div className="flex h-10 w-10 items-center justify-center rounded-sm border border-emerald-200 bg-emerald-50">
@@ -210,12 +210,12 @@ export default function NexalieWatch() {
                   onChange={e => setEmail(e.target.value)}
                   placeholder="votre@email.com"
                   required
-                  className="flex-1 rounded-sm border border-slate-200 bg-slate-50 px-4 py-3 font-sans text-sm text-ink placeholder-slate-400 focus:border-navy focus:bg-white focus:outline-none focus:ring-1 focus:ring-navy/20 transition-colors"
+                  className="flex-1 rounded-md border border-slate-200 bg-white px-4 py-4 font-sans text-sm text-ink placeholder-slate-400 focus:border-slate-400 focus:ring-0 focus:outline-none transition-colors"
                 />
                 <button
                   type="submit"
                   disabled={loading}
-                  className="rounded-sm bg-navy px-7 py-3 font-sans text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-60"
+                  className="rounded-md bg-[#0F172A] px-8 py-4 font-sans text-sm font-medium text-white transition-colors hover:bg-slate-800 disabled:opacity-60"
                 >
                   {loading ? 'Inscription…' : 'Rejoindre la liste d\'attente →'}
                 </button>

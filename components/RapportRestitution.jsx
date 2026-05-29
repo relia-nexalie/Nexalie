@@ -117,7 +117,7 @@ function ScoreGauge({ score, levelKey }) {
   return (
     <div className="flex flex-col items-center gap-5 animate-fade-up">
       {/* Cercle score */}
-      <div className="relative flex h-32 w-32 items-center justify-center rounded-sm border border-slate-200 bg-white shadow-soft">
+      <div className="relative flex h-32 w-32 items-center justify-center rounded-md border border-slate-200 bg-white shadow-sm">
         <div className="flex flex-col items-center gap-0.5">
           <span className="font-mono text-5xl font-light tracking-tight text-navy">{displayed}</span>
           <span className="font-mono text-xs tracking-widest text-ink-muted">/100</span>
@@ -156,7 +156,7 @@ function MaturiteSection({ data }) {
   const paragraphs = data.text.split('\n').filter(l => l.trim());
 
   return (
-    <div className="rounded-sm border border-slate-200 bg-white p-8 shadow-soft animate-fade-up">
+    <div className="rounded-md border border-slate-200 bg-white p-8 shadow-sm animate-fade-up">
       <div className="mb-6 flex items-center gap-3">
         <div className="h-5 w-[3px] rounded-full bg-navy" />
         <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">Photo à l'instant T</p>
@@ -188,7 +188,7 @@ function RoadmapCards({ actions, mode }) {
         {actions.map((action, i) => (
           <div
             key={i}
-            className={`group flex flex-col gap-4 rounded-sm border border-t-2 border-slate-200 bg-white p-6 shadow-soft transition-shadow duration-200 hover:shadow-card ${MONTH_ACCENT[i] || 'border-t-slate-300'}`}
+            className={`group flex flex-col gap-4 rounded-md border border-t-2 border-slate-200 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md ${MONTH_ACCENT[i] || 'border-t-slate-300'}`}
           >
             {/* En-tête mois */}
             <div className="flex items-center justify-between">
@@ -242,7 +242,7 @@ function SouveraineteSection({ text }) {
   const body = text || "Vos données stratégiques — audit, feuille de route, documents — restent votre propriété exclusive. Elles sont hébergées en Union Européenne, ne sont jamais revendues ni transmises à des tiers. Vous pouvez les exporter ou les supprimer à tout moment, sur simple demande.";
 
   return (
-    <div className="flex gap-5 rounded-sm border border-slate-200 bg-white p-8 shadow-soft animate-fade-up">
+    <div className="flex gap-5 rounded-md border border-slate-200 bg-white p-8 shadow-sm animate-fade-up">
       {/* Icône — cadenas stylisé */}
       <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-sm border border-slate-200">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -291,15 +291,15 @@ export default function RapportRestitution({
       `}</style>
 
       {/* ─── HEADER PREMIUM ──────────────────────────────────────────── */}
-      <header className="border-b border-slate-200 bg-navy px-6 py-12 sm:px-12">
-        <div className="mx-auto max-w-3xl">
+      <header className="border-b border-slate-200 bg-navy px-6 py-16 sm:px-12 md:py-24">
+        <div className="mx-auto max-w-5xl">
           {/* Fil d'Ariane */}
           <p className="mb-8 font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">
             Nexalie &mdash; Diagnostic Stratégique {mode === 'af' ? '(Afrique)' : '(France)'}
           </p>
 
           {/* Titre */}
-          <h1 className="mb-2 font-serif text-3xl font-light leading-tight text-white sm:text-4xl">
+          <h1 className="mb-2 font-serif text-3xl font-light leading-tight tracking-tight text-white sm:text-4xl">
             Rapport de Maturité Digitale
           </h1>
           {structureName && (
@@ -315,7 +315,7 @@ export default function RapportRestitution({
       </header>
 
       {/* ─── BODY ────────────────────────────────────────────────────── */}
-      <main className="mx-auto max-w-3xl space-y-10 px-6 py-16 sm:px-12">
+      <main className="mx-auto max-w-5xl space-y-12 px-6 py-16 sm:px-12 md:py-20">
 
         {/* Analyse de maturité */}
         <MaturiteSection data={parsed.maturite} />
@@ -331,7 +331,7 @@ export default function RapportRestitution({
           {onDownload && (
             <button
               onClick={onDownload}
-              className="inline-flex items-center gap-2 rounded-sm bg-navy px-6 py-3 font-sans text-sm font-semibold text-white transition-opacity hover:opacity-90"
+              className="inline-flex items-center gap-2 rounded-md bg-[#0F172A] px-8 py-4 font-sans text-sm font-medium text-white transition-colors hover:bg-slate-800"
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                 <path d="M7 1v8M4 6l3 3 3-3M2 11h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -342,7 +342,7 @@ export default function RapportRestitution({
           {onRestart && (
             <button
               onClick={onRestart}
-              className="inline-flex items-center gap-2 rounded-sm border border-slate-300 bg-white px-6 py-3 font-sans text-sm font-medium text-ink transition-colors hover:bg-slate-50"
+              className="inline-flex items-center gap-2 rounded-md border border-slate-200 bg-white px-8 py-4 font-sans text-sm font-medium text-ink transition-colors hover:bg-slate-50"
             >
               Refaire le diagnostic
             </button>

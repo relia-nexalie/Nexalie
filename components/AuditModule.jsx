@@ -1386,58 +1386,36 @@ Génère maintenant le rapport complet en respectant strictement la structure de
   // ─── INTRO ───────────────────────────────────────────────
   if (step === 'intro') {
     return (
-      <div style={{ minHeight: '100vh', background: 'var(--nx-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
-        <div style={{ maxWidth: 640, width: '100%', textAlign: 'center' }}>
-          <div style={{
-            display: 'inline-block',
-            background: 'var(--nx-accent)',
-            color: '#fff',
-            fontSize: '0.75rem',
-            fontWeight: 700,
-            padding: '0.3rem 1rem',
-            borderRadius: 999,
-            marginBottom: '1.5rem',
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
-          }}>
-            {T.free_badge}
+      <div className="flex min-h-screen items-center justify-center bg-cream px-6 py-20 md:py-24">
+        <div className="w-full max-w-3xl text-center">
+          <div className="mb-8 inline-flex items-center gap-2">
+            <div className="h-px w-8 bg-terra" />
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-terra">
+              {T.free_badge}
+            </span>
+            <div className="h-px w-8 bg-terra" />
           </div>
 
-          <h1 style={{
-            fontSize: 'clamp(2rem, 5vw, 3rem)',
-            fontWeight: 700,
-            color: 'var(--nx-navy)',
-            marginBottom: '0.75rem',
-            lineHeight: 1.15,
-            fontFamily: 'Fraunces, serif',
-          }}>
+          <h1 className="mb-4 font-serif text-4xl font-light leading-tight tracking-tight text-[#0F172A] sm:text-5xl">
             {T.intro_title}
           </h1>
 
-          <p style={{ color: 'var(--nx-accent)', fontSize: '1rem', fontWeight: 500, marginBottom: '1.5rem' }}>
+          <p className="mb-3 font-sans text-base font-medium text-terra">
             {T.intro_sub}
           </p>
 
-          <p style={{ color: 'var(--nx-text-secondary)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '2.5rem', maxWidth: 500, margin: '0 auto 2.5rem' }}>
+          <p className="mx-auto mb-10 max-w-lg font-sans text-base leading-relaxed text-slate-600">
             {T.intro_desc}
           </p>
 
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2rem' }}>
+          <div className="mb-10 flex flex-wrap justify-center gap-3">
             {[
               mode === 'fr' ? '20 questions ciblées' : '20 questions adaptées',
               mode === 'fr' ? 'Score sur 100' : 'Score sur 100',
               mode === 'fr' ? 'Recommandations IA' : 'Conseils IA',
               mode === 'fr' ? 'Rapport PDF' : 'Rapport PDF',
             ].map((item, i) => (
-              <div key={i} style={{
-                background: 'var(--nx-section-bg)',
-                border: '1px solid rgba(0,0,0,0.07)',
-                borderRadius: 8,
-                padding: '0.5rem 1rem',
-                fontSize: '0.85rem',
-                color: 'var(--nx-text-secondary)',
-                fontWeight: 500,
-              }}>
+              <div key={i} className="rounded-md border border-slate-200 bg-white px-4 py-2 font-sans text-sm text-slate-600 shadow-sm">
                 {item}
               </div>
             ))}
@@ -1445,30 +1423,12 @@ Génère maintenant le rapport complet en respectant strictement la structure de
 
           <button
             onClick={() => setStep('survey')}
-            style={{
-              background: 'var(--nx-accent)',
-              color: '#fff',
-              border: 'none',
-              borderRadius: 12,
-              padding: '1rem 2.5rem',
-              fontSize: '1.1rem',
-              fontWeight: 700,
-              cursor: 'pointer',
-              transition: 'opacity 0.2s',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
-            }}
-            onMouseOver={e => e.currentTarget.style.opacity = '0.9'}
-            onMouseOut={e => e.currentTarget.style.opacity = '1'}
+            className="rounded-md bg-[#0F172A] px-8 py-4 font-sans text-base font-medium text-white transition-colors hover:bg-slate-800"
           >
             {T.intro_cta}
           </button>
 
-          <p style={{
-            marginTop: '1.25rem',
-            fontSize: '0.8rem',
-            color: 'var(--nx-text-secondary)',
-            opacity: 0.75,
-          }}>
+          <p className="mt-5 font-sans text-xs leading-relaxed text-slate-400">
             🔒 Vos données sont confidentielles. Nexalie ne partage aucune information avec des tiers.
           </p>
         </div>
@@ -1503,23 +1463,23 @@ Génère maintenant le rapport complet en respectant strictement la structure de
       outils: s.outils.includes(o) ? s.outils.filter(x => x !== o) : [...s.outils, o],
     }));
     return (
-      <div style={{ minHeight: '100vh', background: 'var(--nx-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
-        <div style={{ maxWidth: 640, width: '100%' }}>
-          <button onClick={() => setStep('intro')} style={{ background: 'none', border: 'none', color: 'var(--nx-text-secondary)', cursor: 'pointer', fontSize: '0.85rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '4px', padding: 0 }}>
+      <div className="flex min-h-screen items-start justify-center bg-cream px-6 py-16 md:py-20">
+        <div className="w-full max-w-3xl">
+          <button onClick={() => setStep('intro')} className="mb-8 flex items-center gap-1.5 font-sans text-sm text-slate-500 transition-colors hover:text-[#0F172A]">
             ← {mode === 'fr' ? 'Retour' : 'Retour'}
           </button>
-          <p style={{ fontFamily: 'monospace', fontSize: '0.7rem', letterSpacing: '2px', color: 'var(--nx-accent)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+          <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-terra">
             {mode === 'fr' ? 'Étape 1 / 4 — Votre contexte' : 'Étape 1 / 4 — Votre contexte'}
           </p>
-          <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(1.5rem, 4vw, 2.2rem)', fontWeight: 300, color: 'var(--nx-navy)', marginBottom: '0.5rem' }}>
+          <h2 className="mb-2 font-serif text-3xl font-light leading-tight tracking-tight text-[#0F172A] sm:text-4xl">
             {mode === 'fr' ? 'Quelques mots sur votre entreprise' : 'Parlez-nous de votre activité'}
           </h2>
-          <p style={{ fontSize: '1rem', color: 'var(--nx-text-secondary)', marginBottom: '2rem', lineHeight: 1.6 }}>
+          <p className="mb-8 font-sans text-base leading-relaxed text-slate-600">
             {mode === 'fr' ? 'Ces informations permettent d\'adapter vos recommandations à votre réalité.' : 'Ces réponses permettent d\'adapter les conseils à votre situation réelle.'}
           </p>
 
           {/* Nom entreprise */}
-          <p style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--nx-navy)', marginBottom: '0.5rem' }}>
+          <p className="mb-2 font-sans text-sm font-semibold text-[#0F172A]">
             {mode === 'fr' ? 'Nom de votre entreprise (optionnel)' : 'Nom de votre entreprise (facultatif)'}
           </p>
           <input
@@ -1527,46 +1487,78 @@ Génère maintenant le rapport complet en respectant strictement la structure de
             value={survey.nom}
             onChange={e => setSurvey(s => ({ ...s, nom: e.target.value }))}
             placeholder={mode === 'fr' ? 'Ex : Boulangerie Martin, Cabinet XYZ...' : 'Ex : Restaurant Maman, Transport Express...'}
-            style={{ width: '100%', padding: '12px 14px', borderRadius: 10, border: '1.5px solid rgba(0,0,0,0.1)', fontSize: '0.95rem', marginBottom: '1.75rem', boxSizing: 'border-box', outline: 'none', fontFamily: 'inherit', color: 'var(--nx-navy)' }}
+            className="mb-7 w-full rounded-md border border-slate-200 bg-white px-4 py-3 font-sans text-sm text-[#0F172A] shadow-sm placeholder:text-slate-400 focus:border-slate-400 focus:ring-0 focus:outline-none transition-colors"
           />
 
           {/* CA mensuel */}
-          <p style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--nx-navy)', marginBottom: '0.75rem' }}>
+          <p className="mb-3 font-sans text-sm font-semibold text-[#0F172A]">
             {mode === 'fr' ? 'Votre chiffre d\'affaires mensuel estimé *' : 'Votre chiffre d\'affaires mensuel estimé *'}
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px', marginBottom: '1.75rem' }}>
+          <div className="mb-7 grid grid-cols-2 gap-2.5">
             {caOptions.map(opt => (
-              <button key={opt.val} onClick={() => setSurvey(s => ({ ...s, ca: opt.val }))} style={{ padding: '12px', borderRadius: 10, textAlign: 'center', border: `2px solid ${survey.ca === opt.val ? 'var(--nx-accent)' : 'rgba(0,0,0,0.08)'}`, background: survey.ca === opt.val ? 'rgba(78,201,176,0.08)' : '#fff', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 500, color: survey.ca === opt.val ? 'var(--nx-accent)' : 'var(--nx-text-primary)', transition: 'all 0.15s' }}>
+              <button
+                key={opt.val}
+                onClick={() => setSurvey(s => ({ ...s, ca: opt.val }))}
+                className={`rounded-md border px-4 py-3 text-center font-sans text-sm font-medium transition-all ${
+                  survey.ca === opt.val
+                    ? 'border-[#0F172A] bg-[#0F172A]/5 text-[#0F172A]'
+                    : 'border-slate-200 bg-white text-slate-600 hover:border-slate-400'
+                }`}
+              >
                 {opt.label}
               </button>
             ))}
           </div>
 
           {/* Outils utilisés */}
-          <p style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--nx-navy)', marginBottom: '0.75rem' }}>
+          <p className="mb-3 font-sans text-sm font-semibold text-[#0F172A]">
             {mode === 'fr' ? 'Outils numériques déjà utilisés (plusieurs choix possibles)' : 'Outils numériques déjà utilisés (plusieurs choix possibles)'}
           </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '1.75rem' }}>
+          <div className="mb-7 flex flex-wrap gap-2">
             {outilsOptions.map(o => (
-              <button key={o} onClick={() => toggleOutil(o)} style={{ padding: '8px 14px', borderRadius: 20, border: `2px solid ${survey.outils.includes(o) ? 'var(--nx-accent)' : 'rgba(0,0,0,0.1)'}`, background: survey.outils.includes(o) ? 'rgba(78,201,176,0.1)' : '#fff', cursor: 'pointer', fontSize: '0.82rem', fontWeight: 500, color: survey.outils.includes(o) ? 'var(--nx-accent)' : 'var(--nx-text-primary)', transition: 'all 0.15s' }}>
+              <button
+                key={o}
+                onClick={() => toggleOutil(o)}
+                className={`rounded-md border px-4 py-2 font-sans text-sm font-medium transition-all ${
+                  survey.outils.includes(o)
+                    ? 'border-[#0F172A] bg-[#0F172A]/5 text-[#0F172A]'
+                    : 'border-slate-200 bg-white text-slate-600 hover:border-slate-400'
+                }`}
+              >
                 {o}
               </button>
             ))}
           </div>
 
           {/* Principal défi */}
-          <p style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--nx-navy)', marginBottom: '0.75rem' }}>
+          <p className="mb-3 font-sans text-sm font-semibold text-[#0F172A]">
             {mode === 'fr' ? 'Votre principal défi en ce moment *' : 'Votre principal défi en ce moment *'}
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '8px', marginBottom: '2rem' }}>
+          <div className="mb-8 flex flex-col gap-2">
             {defiOptions.map(d => (
-              <button key={d} onClick={() => setSurvey(s => ({ ...s, defi: d }))} style={{ padding: '12px 16px', borderRadius: 10, textAlign: 'left', border: `2px solid ${survey.defi === d ? 'var(--nx-accent)' : 'rgba(0,0,0,0.08)'}`, background: survey.defi === d ? 'rgba(78,201,176,0.08)' : '#fff', cursor: 'pointer', fontSize: '0.9rem', fontWeight: 500, color: survey.defi === d ? 'var(--nx-accent)' : 'var(--nx-text-primary)', transition: 'all 0.15s' }}>
+              <button
+                key={d}
+                onClick={() => setSurvey(s => ({ ...s, defi: d }))}
+                className={`rounded-md border px-4 py-3 text-left font-sans text-sm font-medium transition-all ${
+                  survey.defi === d
+                    ? 'border-[#0F172A] bg-[#0F172A]/5 text-[#0F172A]'
+                    : 'border-slate-200 bg-white text-slate-600 hover:border-slate-400'
+                }`}
+              >
                 {d}
               </button>
             ))}
           </div>
 
-          <button disabled={!canContinue} onClick={() => setStep('profil')} style={{ background: canContinue ? 'var(--nx-accent)' : 'rgba(0,0,0,0.1)', color: canContinue ? '#fff' : 'rgba(0,0,0,0.3)', border: 'none', borderRadius: 12, padding: '1rem 2.5rem', fontSize: '1.05rem', fontWeight: 700, cursor: canContinue ? 'pointer' : 'default', transition: 'all 0.2s', width: '100%' }}>
+          <button
+            disabled={!canContinue}
+            onClick={() => setStep('profil')}
+            className={`w-full rounded-md px-8 py-4 font-sans text-base font-medium transition-colors ${
+              canContinue
+                ? 'bg-[#0F172A] text-white hover:bg-slate-800'
+                : 'cursor-not-allowed bg-slate-100 text-slate-400'
+            }`}
+          >
             {canContinue ? (mode === 'fr' ? 'Continuer →' : 'Continuer →') : (mode === 'fr' ? '* Répondez aux questions obligatoires' : '* Répondez aux questions obligatoires')}
           </button>
         </div>
@@ -1593,38 +1585,35 @@ Génère maintenant le rapport complet en respectant strictement la structure de
     ];
     const canContinue = profil.equipe && profil.pays;
     return (
-      <div style={{ minHeight: '100vh', background: 'var(--nx-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
-        <div style={{ maxWidth: 640, width: '100%' }}>
-          <button onClick={() => setStep('survey')} style={{ background: 'none', border: 'none', color: 'var(--nx-text-secondary)', cursor: 'pointer', fontSize: '0.85rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '4px', padding: 0 }}>
+      <div className="flex min-h-screen items-start justify-center bg-cream px-6 py-16 md:py-20">
+        <div className="w-full max-w-3xl">
+          <button onClick={() => setStep('survey')} className="mb-8 flex items-center gap-1.5 font-sans text-sm text-slate-500 transition-colors hover:text-[#0F172A]">
             ← {mode === 'fr' ? 'Retour' : 'Retour'}
           </button>
-          <p style={{ fontFamily: 'monospace', fontSize: '0.7rem', letterSpacing: '2px', color: 'var(--nx-accent)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+          <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-terra">
             {mode === 'fr' ? 'Étape 2 / 4 — Votre profil' : 'Étape 2 / 4 — Votre profil'}
           </p>
-          <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(1.5rem, 4vw, 2.2rem)', fontWeight: 300, color: 'var(--nx-navy)', marginBottom: '0.5rem' }}>
+          <h2 className="mb-2 font-serif text-3xl font-light leading-tight tracking-tight text-[#0F172A] sm:text-4xl">
             {mode === 'fr' ? 'Parlez-nous de votre équipe' : 'Parlez-nous de votre équipe'}
           </h2>
-          <p style={{ fontSize: '1rem', color: 'var(--nx-text-secondary)', marginBottom: '2rem', lineHeight: 1.6 }}>
+          <p className="mb-8 font-sans text-base leading-relaxed text-slate-600">
             {mode === 'fr' ? '2 questions rapides pour adapter vos résultats.' : '2 questions rapides pour adapter vos résultats.'}
           </p>
 
           {/* Taille équipe */}
-          <p style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--nx-navy)', marginBottom: '0.75rem' }}>
+          <p className="mb-3 font-sans text-sm font-semibold text-[#0F172A]">
             Combien de personnes dans votre équipe ?
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px', marginBottom: '1.75rem' }}>
+          <div className="mb-7 grid grid-cols-2 gap-2.5">
             {equipeOptions.map(opt => (
               <button
                 key={opt.val}
                 onClick={() => setProfil(p => ({ ...p, equipe: opt.val }))}
-                style={{
-                  padding: '14px 12px', borderRadius: 10, textAlign: 'center',
-                  border: `2px solid ${profil.equipe === opt.val ? 'var(--nx-accent)' : 'rgba(0,0,0,0.08)'}`,
-                  background: profil.equipe === opt.val ? 'rgba(78,201,176,0.08)' : '#fff',
-                  cursor: 'pointer', fontSize: '0.9rem', fontWeight: 500,
-                  color: profil.equipe === opt.val ? 'var(--nx-accent)' : 'var(--nx-text-primary)',
-                  transition: 'all 0.15s',
-                }}
+                className={`rounded-md border px-4 py-3 text-center font-sans text-sm font-medium transition-all ${
+                  profil.equipe === opt.val
+                    ? 'border-[#0F172A] bg-[#0F172A]/5 text-[#0F172A]'
+                    : 'border-slate-200 bg-white text-slate-600 hover:border-slate-400'
+                }`}
               >
                 {opt.label}
               </button>
@@ -1632,22 +1621,19 @@ Génère maintenant le rapport complet en respectant strictement la structure de
           </div>
 
           {/* Pays */}
-          <p style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--nx-navy)', marginBottom: '0.75rem' }}>
+          <p className="mb-3 font-sans text-sm font-semibold text-[#0F172A]">
             {mode === 'fr' ? 'Votre pays ?' : 'Votre pays ?'}
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px', marginBottom: '2rem' }}>
+          <div className="mb-8 grid grid-cols-3 gap-2.5">
             {paysOptions.map(opt => (
               <button
                 key={opt.val}
                 onClick={() => setProfil(p => ({ ...p, pays: opt.val }))}
-                style={{
-                  padding: '12px 8px', borderRadius: 10, textAlign: 'center',
-                  border: `2px solid ${profil.pays === opt.val ? 'var(--nx-accent)' : 'rgba(0,0,0,0.08)'}`,
-                  background: profil.pays === opt.val ? 'rgba(78,201,176,0.08)' : '#fff',
-                  cursor: 'pointer', fontSize: '0.85rem', fontWeight: 500,
-                  color: profil.pays === opt.val ? 'var(--nx-accent)' : 'var(--nx-text-primary)',
-                  transition: 'all 0.15s',
-                }}
+                className={`rounded-md border px-3 py-3 text-center font-sans text-sm font-medium transition-all ${
+                  profil.pays === opt.val
+                    ? 'border-[#0F172A] bg-[#0F172A]/5 text-[#0F172A]'
+                    : 'border-slate-200 bg-white text-slate-600 hover:border-slate-400'
+                }`}
               >
                 {opt.label}
               </button>
@@ -1657,14 +1643,11 @@ Génère maintenant le rapport complet en respectant strictement la structure de
           <button
             disabled={!canContinue}
             onClick={() => setStep('sector')}
-            style={{
-              background: canContinue ? 'var(--nx-accent)' : 'rgba(0,0,0,0.1)',
-              color: canContinue ? '#fff' : 'rgba(0,0,0,0.3)',
-              border: 'none', borderRadius: 12, padding: '1rem 2.5rem',
-              fontSize: '1.05rem', fontWeight: 700,
-              cursor: canContinue ? 'pointer' : 'default',
-              transition: 'all 0.2s', width: '100%',
-            }}
+            className={`w-full rounded-md px-8 py-4 font-sans text-base font-medium transition-colors ${
+              canContinue
+                ? 'bg-[#0F172A] text-white hover:bg-slate-800'
+                : 'cursor-not-allowed bg-slate-100 text-slate-400'
+            }`}
           >
             {canContinue ? (mode === 'fr' ? 'Continuer →' : 'Continuer →') : (mode === 'fr' ? 'Répondez aux 2 questions' : 'Répondez aux 2 questions')}
           </button>
@@ -1676,61 +1659,46 @@ Génère maintenant le rapport complet en respectant strictement la structure de
   if (step === 'sector') {
     const sectorList = SECTORS[mode] || SECTORS.fr;
     return (
-      <div style={{ minHeight: '100vh', background: 'var(--nx-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
-        <div style={{ maxWidth: 680, width: '100%' }}>
-          <button onClick={() => setStep('profil')} style={{ background: 'none', border: 'none', color: 'var(--nx-text-secondary)', cursor: 'pointer', fontSize: '0.85rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '4px', padding: 0 }}>
+      <div className="flex min-h-screen items-start justify-center bg-cream px-6 py-16 md:py-20">
+        <div className="w-full max-w-3xl">
+          <button onClick={() => setStep('profil')} className="mb-8 flex items-center gap-1.5 font-sans text-sm text-slate-500 transition-colors hover:text-[#0F172A]">
             ← {mode === 'fr' ? 'Retour' : 'Retour'}
           </button>
-          <p style={{ fontFamily: 'monospace', fontSize: '0.7rem', letterSpacing: '2px', color: 'var(--nx-accent)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
+          <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-terra">
             {mode === 'fr' ? 'Étape 3 / 4' : 'Étape 3 / 4'}
           </p>
-          <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(1.5rem, 4vw, 2.2rem)', fontWeight: 300, color: 'var(--nx-navy)', marginBottom: '0.5rem' }}>
+          <h2 className="mb-2 font-serif text-3xl font-light leading-tight tracking-tight text-[#0F172A] sm:text-4xl">
             {mode === 'fr' ? 'Votre secteur d\'activité' : 'Votre secteur d\'activité'}
           </h2>
-          <p style={{ fontSize: '1rem', color: 'var(--nx-text-secondary)', marginBottom: '2rem', lineHeight: 1.6 }}>
+          <p className="mb-8 font-sans text-base leading-relaxed text-slate-600">
             {mode === 'fr'
               ? 'Sélectionnez votre secteur pour des questions adaptées à vos réalités métier.'
               : 'Choisissez votre secteur pour des questions adaptées à votre activité.'}
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px,1fr))', gap: '12px', marginBottom: '2rem' }}>
+          <div className="mb-8 grid grid-cols-2 gap-2.5 sm:grid-cols-4">
             {sectorList.map(s => (
               <button
                 key={s.id}
                 onClick={() => setSector(s.id)}
-                style={{
-                  padding: '16px 12px',
-                  borderRadius: 12,
-                  border: `2px solid ${sector === s.id ? 'var(--nx-accent)' : 'rgba(0,0,0,0.08)'}`,
-                  background: sector === s.id ? 'rgba(78,201,176,0.08)' : '#fff',
-                  cursor: 'pointer',
-                  textAlign: 'center',
-                  transition: 'all 0.15s',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  gap: '8px',
-                }}
+                className={`flex flex-col items-center gap-2 rounded-md border px-3 py-4 text-center transition-all ${
+                  sector === s.id
+                    ? 'border-[#0F172A] bg-[#0F172A]/5 text-[#0F172A]'
+                    : 'border-slate-200 bg-white text-slate-600 hover:border-slate-400'
+                }`}
               >
-                <span style={{ fontSize: '1.8rem' }}>{s.icon}</span>
-                <span style={{ fontSize: '0.78rem', fontWeight: 600, color: sector === s.id ? 'var(--nx-accent)' : 'var(--nx-text-primary)', lineHeight: 1.3 }}>{s.label}</span>
+                <span className="text-2xl">{s.icon}</span>
+                <span className="font-sans text-xs font-semibold leading-snug">{s.label}</span>
               </button>
             ))}
           </div>
           <button
             disabled={!sector}
             onClick={() => setStep('questions')}
-            style={{
-              background: sector ? 'var(--nx-accent)' : 'rgba(0,0,0,0.1)',
-              color: sector ? '#fff' : 'rgba(0,0,0,0.3)',
-              border: 'none',
-              borderRadius: 12,
-              padding: '1rem 2.5rem',
-              fontSize: '1.05rem',
-              fontWeight: 700,
-              cursor: sector ? 'pointer' : 'default',
-              transition: 'all 0.2s',
-              width: '100%',
-            }}
+            className={`mb-3 w-full rounded-md px-8 py-4 font-sans text-base font-medium transition-colors ${
+              sector
+                ? 'bg-[#0F172A] text-white hover:bg-slate-800'
+                : 'cursor-not-allowed bg-slate-100 text-slate-400'
+            }`}
           >
             {sector
               ? (mode === 'fr' ? 'Démarrer l\'audit →' : 'Démarrer le bilan →')
@@ -1738,7 +1706,7 @@ Génère maintenant le rapport complet en respectant strictement la structure de
           </button>
           <button
             onClick={() => setStep('questions')}
-            style={{ background: 'none', border: 'none', color: 'var(--nx-text-secondary)', cursor: 'pointer', fontSize: '0.82rem', marginTop: '12px', textDecoration: 'underline', width: '100%' }}
+            className="w-full font-sans text-sm text-slate-400 underline transition-colors hover:text-slate-600"
           >
             {mode === 'fr' ? 'Passer cette étape →' : 'Continuer sans secteur →'}
           </button>
@@ -1750,88 +1718,51 @@ Génère maintenant le rapport complet en respectant strictement la structure de
   // ─── QUESTIONS ───────────────────────────────────────────
   if (step === 'questions') {
     return (
-      <div style={{ minHeight: '100vh', background: 'var(--nx-bg)', padding: '2rem 1rem' }}>
+      <div className="min-h-screen bg-cream px-6 py-16">
         {/* CSS Print */}
         <style suppressHydrationWarning>{`@media print { .no-print { display: none !important; } }`}</style>
 
-        <div style={{ maxWidth: 700, margin: '0 auto' }}>
-          {/* Header */}
-          <div style={{ marginBottom: '2rem', className: 'no-print' }} className="no-print">
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-              <span style={{ fontSize: '0.85rem', color: 'var(--nx-text-secondary)', fontWeight: 500 }}>
+        <div className="mx-auto max-w-3xl">
+          {/* Header progression */}
+          <div className="no-print mb-8">
+            <div className="mb-3 flex items-center justify-between">
+              <span className="font-sans text-sm text-slate-500">
                 {T.question_label} {currentQ + 1} / 20
               </span>
-              <span style={{ fontSize: '0.85rem', color: 'var(--nx-accent)', fontWeight: 700 }}>
+              <span className="font-mono text-sm font-semibold text-[#0F172A]">
                 {Math.round(progress)}%
               </span>
             </div>
-            {/* Barre de progression */}
-            <div style={{ background: 'var(--nx-section-bg)', borderRadius: 999, height: 8, overflow: 'hidden' }}>
-              <div style={{
-                height: '100%',
-                width: `${progress}%`,
-                background: 'var(--nx-accent)',
-                borderRadius: 999,
-                transition: 'width 0.4s ease',
-              }} />
+            <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-200">
+              <div
+                className="h-full rounded-full bg-[#0F172A] transition-all duration-500"
+                style={{ width: `${progress}%` }}
+              />
             </div>
           </div>
 
           {/* Question card */}
-          <div style={{
-            background: 'var(--nx-section-bg)',
-            border: '1px solid rgba(0,0,0,0.07)',
-            borderRadius: 16,
-            padding: 'clamp(1.5rem, 4vw, 2.5rem)',
-            marginBottom: '1.5rem',
-          }}>
-            <p style={{
-              fontSize: 'clamp(1rem, 2.5vw, 1.2rem)',
-              fontWeight: 600,
-              color: 'var(--nx-navy)',
-              lineHeight: 1.5,
-              marginBottom: '1.5rem',
-            }}>
+          <div className="mb-5 rounded-md border border-slate-200 bg-white p-8 shadow-sm">
+            <p className="mb-6 font-sans text-lg font-semibold leading-snug text-[#0F172A]">
               <QuestionText text={currentQuestion.q} />
             </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <div className="flex flex-col gap-3">
               {currentQuestion.answers.map((ans, i) => {
                 const selected = currentAnswer === ans.score;
                 return (
                   <button
                     key={i}
                     onClick={() => handleAnswer(currentQ, ans.score)}
-                    style={{
-                      textAlign: 'left',
-                      padding: '0.9rem 1.25rem',
-                      borderRadius: 10,
-                      border: selected ? `2px solid var(--nx-accent)` : '2px solid transparent',
-                      background: selected ? 'rgba(78,201,176,0.1)' : '#fff',
-                      color: 'var(--nx-text-primary)',
-                      fontSize: '0.95rem',
-                      cursor: 'pointer',
-                      transition: 'all 0.18s ease',
-                      fontWeight: selected ? 600 : 400,
-                      boxShadow: selected ? '0 2px 12px rgba(0,0,0,0.08)' : '0 1px 4px rgba(0,0,0,0.05)',
-                    }}
-                    onMouseOver={e => { if (!selected) e.currentTarget.style.borderColor = 'rgba(78,201,176,0.4)'; }}
-                    onMouseOut={e => { if (!selected) e.currentTarget.style.borderColor = 'transparent'; }}
+                    className={`flex items-center gap-4 rounded-md border px-4 py-3 text-left font-sans text-sm transition-all ${
+                      selected
+                        ? 'border-[#0F172A] bg-[#0F172A]/5 font-medium text-[#0F172A] shadow-sm'
+                        : 'border-slate-200 bg-white text-slate-600 hover:border-slate-400'
+                    }`}
                   >
-                    <span style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      width: 24,
-                      height: 24,
-                      borderRadius: '50%',
-                      background: selected ? 'var(--nx-accent)' : 'var(--nx-section-bg)',
-                      color: selected ? '#fff' : 'var(--nx-text-secondary)',
-                      fontSize: '0.75rem',
-                      fontWeight: 700,
-                      marginRight: '0.75rem',
-                      flexShrink: 0,
-                    }}>
+                    <span className={`inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
+                      selected ? 'bg-[#0F172A] text-white' : 'bg-slate-100 text-slate-500'
+                    }`}>
                       {String.fromCharCode(65 + i)}
                     </span>
                     {ans.label}
@@ -1842,22 +1773,13 @@ Génère maintenant le rapport complet en respectant strictement la structure de
           </div>
 
           {/* Navigation */}
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'space-between' }} className="no-print">
+          <div className="no-print flex items-center justify-between gap-4">
             <button
               onClick={() => setCurrentQ(q => Math.max(0, q - 1))}
               disabled={currentQ === 0}
-              style={{
-                background: 'transparent',
-                border: '2px solid var(--nx-section-bg)',
-                borderRadius: 10,
-                padding: '0.75rem 1.5rem',
-                fontSize: '0.95rem',
-                fontWeight: 600,
-                cursor: currentQ === 0 ? 'not-allowed' : 'pointer',
-                color: currentQ === 0 ? 'var(--nx-text-secondary)' : 'var(--nx-navy)',
-                opacity: currentQ === 0 ? 0.5 : 1,
-                transition: 'all 0.18s',
-              }}
+              className={`rounded-md border border-slate-200 bg-white px-6 py-3 font-sans text-sm font-medium transition-all ${
+                currentQ === 0 ? 'cursor-not-allowed opacity-40 text-slate-400' : 'text-[#0F172A] hover:bg-slate-50'
+              }`}
             >
               {T.prev}
             </button>
@@ -1866,18 +1788,11 @@ Génère maintenant le rapport complet en respectant strictement la structure de
               <button
                 onClick={() => { if (canGoNext) setCurrentQ(q => q + 1); }}
                 disabled={!canGoNext}
-                style={{
-                  background: canGoNext ? 'var(--nx-accent)' : 'var(--nx-section-bg)',
-                  color: canGoNext ? '#fff' : 'var(--nx-text-secondary)',
-                  border: 'none',
-                  borderRadius: 10,
-                  padding: '0.75rem 1.5rem',
-                  fontSize: '0.95rem',
-                  fontWeight: 700,
-                  cursor: canGoNext ? 'pointer' : 'not-allowed',
-                  transition: 'all 0.18s',
-                  opacity: canGoNext ? 1 : 0.6,
-                }}
+                className={`rounded-md px-8 py-3 font-sans text-sm font-medium transition-colors ${
+                  canGoNext
+                    ? 'bg-[#0F172A] text-white hover:bg-slate-800'
+                    : 'cursor-not-allowed bg-slate-100 text-slate-400'
+                }`}
               >
                 {T.next}
               </button>
@@ -1885,18 +1800,11 @@ Génère maintenant le rapport complet en respectant strictement la structure de
               <button
                 onClick={() => { if (canGoNext) handleFinish(); }}
                 disabled={!canGoNext}
-                style={{
-                  background: canGoNext ? 'var(--nx-accent)' : 'var(--nx-section-bg)',
-                  color: canGoNext ? '#fff' : 'var(--nx-text-secondary)',
-                  border: 'none',
-                  borderRadius: 10,
-                  padding: '0.75rem 2rem',
-                  fontSize: '0.95rem',
-                  fontWeight: 700,
-                  cursor: canGoNext ? 'pointer' : 'not-allowed',
-                  transition: 'all 0.18s',
-                  opacity: canGoNext ? 1 : 0.6,
-                }}
+                className={`rounded-md px-8 py-3 font-sans text-sm font-medium transition-colors ${
+                  canGoNext
+                    ? 'bg-[#0F172A] text-white hover:bg-slate-800'
+                    : 'cursor-not-allowed bg-slate-100 text-slate-400'
+                }`}
               >
                 {T.finish}
               </button>
@@ -1937,7 +1845,7 @@ Génère maintenant le rapport complet en respectant strictement la structure de
       : [];
 
     return (
-      <div style={{ minHeight: '100vh', background: 'var(--nx-bg)', padding: '2rem 1rem' }}>
+      <div className="min-h-screen bg-cream px-6 py-16 md:py-20">
         {/* CSS Print */}
         <style suppressHydrationWarning>{`
           @media print {
@@ -1947,19 +1855,13 @@ Génère maintenant le rapport complet en respectant strictement la structure de
           }
         `}</style>
 
-        <div style={{ maxWidth: 720, margin: '0 auto' }}>
+        <div className="mx-auto max-w-3xl">
           {/* Titre */}
-          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <h1 style={{
-              fontSize: 'clamp(1.5rem, 4vw, 2.2rem)',
-              fontWeight: 700,
-              color: 'var(--nx-navy)',
-              fontFamily: 'Fraunces, serif',
-              marginBottom: '0.5rem',
-            }}>
+          <div className="mb-10 text-center">
+            <h1 className="mb-2 font-serif text-3xl font-light leading-tight tracking-tight text-[#0F172A] sm:text-4xl">
               {T.result_title}
             </h1>
-            <p style={{ color: 'var(--nx-text-secondary)', fontSize: '0.9rem' }}>
+            <p className="font-sans text-sm text-slate-500">
               {mode === 'fr' ? 'Nexalie OS · Analyse complète' : 'Nexalie OS · Analyse complète'}
             </p>
           </div>
@@ -2134,29 +2036,14 @@ Génère maintenant le rapport complet en respectant strictement la structure de
           )}
 
           {/* Actions */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }} className="no-print">
+          <div className="no-print flex flex-col gap-3 border-t border-slate-200 pt-8">
             {/* Téléchargement PDF */}
             <button
               onClick={handlePrint}
               disabled={pdfLoading}
-              style={{
-                background: 'var(--nx-navy)',
-                color: '#fff',
-                border: 'none',
-                borderRadius: 12,
-                padding: '0.9rem 1.5rem',
-                fontSize: '1rem',
-                fontWeight: 600,
-                cursor: pdfLoading ? 'default' : 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '0.5rem',
-                transition: 'opacity 0.2s',
-                opacity: pdfLoading ? 0.7 : 1,
-              }}
-              onMouseOver={e => { if (!pdfLoading) e.currentTarget.style.opacity = '0.85'; }}
-              onMouseOut={e => e.currentTarget.style.opacity = pdfLoading ? '0.7' : '1'}
+              className={`inline-flex items-center justify-center gap-2 rounded-md px-8 py-4 font-sans text-sm font-medium text-white transition-colors ${
+                pdfLoading ? 'cursor-default bg-slate-700 opacity-70' : 'bg-[#0F172A] hover:bg-slate-800'
+              }`}
             >
               <span>{pdfLoading ? '⏳' : '↓'}</span>
               {pdfLoading ? 'Génération...' : T.download}
@@ -2165,43 +2052,17 @@ Génère maintenant le rapport complet en respectant strictement la structure de
             {/* Sauvegarde / CTA inscription */}
             {isPlatform ? (
               savedId ? (
-                <div style={{
-                  background: '#d4edda',
-                  border: '1px solid #c3e6cb',
-                  borderRadius: 12,
-                  padding: '0.9rem 1.5rem',
-                  textAlign: 'center',
-                  color: '#155724',
-                  fontWeight: 600,
-                }}>
+                <div className="rounded-md border border-emerald-200 bg-emerald-50 px-8 py-4 text-center font-sans text-sm font-medium text-emerald-700">
                   {T.saved} ✓
                 </div>
               ) : isSaving ? (
-                <div style={{
-                  background: 'var(--nx-section-bg)',
-                  borderRadius: 12,
-                  padding: '0.9rem 1.5rem',
-                  textAlign: 'center',
-                  color: 'var(--nx-text-secondary)',
-                }}>
+                <div className="rounded-md border border-slate-200 bg-slate-50 px-8 py-4 text-center font-sans text-sm text-slate-500">
                   {T.saving}
                 </div>
               ) : recommendations && !savedId ? (
                 <button
                   onClick={handleManualSave}
-                  style={{
-                    background: 'var(--nx-accent)',
-                    color: '#fff',
-                    border: 'none',
-                    borderRadius: 12,
-                    padding: '0.9rem 1.5rem',
-                    fontSize: '1rem',
-                    fontWeight: 600,
-                    cursor: 'pointer',
-                    transition: 'opacity 0.2s',
-                  }}
-                  onMouseOver={e => e.currentTarget.style.opacity = '0.9'}
-                  onMouseOut={e => e.currentTarget.style.opacity = '1'}
+                  className="rounded-md bg-[#0F172A] px-8 py-4 font-sans text-sm font-medium text-white transition-colors hover:bg-slate-800"
                 >
                   {mode === 'fr' ? 'Sauvegarder dans mon espace' : 'Sauvegarder dans mon espace'}
                 </button>
@@ -2209,22 +2070,7 @@ Génère maintenant le rapport complet en respectant strictement la structure de
             ) : (
               <a
                 href="/signup"
-                style={{
-                  display: 'block',
-                  background: 'var(--nx-accent)',
-                  color: '#fff',
-                  border: 'none',
-                  borderRadius: 12,
-                  padding: '0.9rem 1.5rem',
-                  fontSize: '1rem',
-                  fontWeight: 600,
-                  cursor: 'pointer',
-                  textAlign: 'center',
-                  textDecoration: 'none',
-                  transition: 'opacity 0.2s',
-                }}
-                onMouseOver={e => e.currentTarget.style.opacity = '0.9'}
-                onMouseOut={e => e.currentTarget.style.opacity = '1'}
+                className="block rounded-md bg-[#0F172A] px-8 py-4 text-center font-sans text-sm font-medium text-white no-underline transition-colors hover:bg-slate-800"
               >
                 {T.save_cta}
               </a>
@@ -2233,19 +2079,7 @@ Génère maintenant le rapport complet en respectant strictement la structure de
             {/* Recommencer */}
             <button
               onClick={handleRestart}
-              style={{
-                background: 'transparent',
-                color: 'var(--nx-text-secondary)',
-                border: '2px solid var(--nx-section-bg)',
-                borderRadius: 12,
-                padding: '0.75rem 1.5rem',
-                fontSize: '0.9rem',
-                fontWeight: 500,
-                cursor: 'pointer',
-                transition: 'all 0.2s',
-              }}
-              onMouseOver={e => { e.currentTarget.style.borderColor = 'var(--nx-accent)'; e.currentTarget.style.color = 'var(--nx-navy)'; }}
-              onMouseOut={e => { e.currentTarget.style.borderColor = 'var(--nx-section-bg)'; e.currentTarget.style.color = 'var(--nx-text-secondary)'; }}
+              className="rounded-md border border-slate-200 bg-white px-8 py-4 font-sans text-sm font-medium text-slate-600 transition-colors hover:bg-slate-50"
             >
               {T.restart}
             </button>
