@@ -1,3 +1,8 @@
+/* ─── Tailwind ───────────────────────────────────────────────────────── */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* ─── Typographie Nexalie ────────────────────────────────────────────── */
 h1, h2 {
   font-family: var(--font-fraunces, 'Georgia', serif);

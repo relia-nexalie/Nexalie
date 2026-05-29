@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useMode } from '@/lib/mode-context';
+import DiagnosticLoading from './DiagnosticLoading';
+import RapportRestitution from './RapportRestitution';
 
 // ─────────────────────────────────────────────────────────────
 // Tooltips pour termes techniques
@@ -1148,6 +1150,7 @@ export default function AuditModule({ isPlatform = false }) {
   const [recommendations, setRecommendations] = useState('');
   const [recoCards, setRecoCards] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [aiReport, setAiReport] = useState('');
   const [isSaving, setIsSaving] = useState(false);
   const [pdfLoading, setPdfLoading] = useState(false);
   const [savedId, setSavedId] = useState(null);
@@ -1227,7 +1230,7 @@ export default function AuditModule({ isPlatform = false }) {
     }
   }
 
-  function handleFinish() {
+  async function handleFinish() {
     const sum = answers.reduce((acc, v) => acc + (v ?? 0), 0);
     const calculatedScore = Math.round((sum * 100) / 60);
     const lvl = getLevel(calculatedScore);
@@ -1243,6 +1246,46 @@ export default function AuditModule({ isPlatform = false }) {
     setRecoCards(cards);
     setRecommendations(recoText);
     setStep('result');
+    setIsLoading(true);
+
+    // ─── Génération du rapport IA structuré ───────────────────
+    try {
+      const sectorList = SECTORS[mode] || SECTORS.fr;
+      const sectorLabel = sectorList.find(s => s.id === sector)?.label || sector || 'non précisé';
+      const companyName = survey.nom || 'votre structure';
+      const caLabel = survey.ca || 'non précisé';
+      const defiLabel = survey.defi || 'non précisé';
+      const outilsLabel = (survey.outils || []).join(', ') || 'aucun outil actuel';
+      const countryLabel = profil?.pays || (mode === 'af' ? 'Afrique francophone' : 'France');
+
+      const auditPrompt = `Génère le rapport complet de diagnostic Nexalie pour cette structure.
+
+DONNÉES DU DIAGNOSTIC :
+- Structure : ${companyName}
+- Secteur : ${sectorLabel}
+- Pays / Marché : ${countryLabel}
+- CA estimé : ${caLabel}
+- Outils actuellement utilisés : ${outilsLabel}
+- Défi principal exprimé : ${defiLabel}
+- Score calculé : ${calculatedScore}/100
+- Niveau de maturité : ${levelLabel}
+
+CONTEXTE DES RÉPONSES :
+${cards.slice(0, 3).map((c, i) => `${i + 1}. ${c.action} (outil recommandé : ${c.tool})`).join('\n')}
+
+Génère maintenant le rapport complet en respectant strictement la structure de rapport Nexalie (🏛️ Maturité / 🗺️ Roadmap 90j / 🛡️ Souveraineté). Sois direct, chiffré, et utilise "Votre structure" ou "${companyName}" — jamais "votre entreprise" de façon générique.`;
+
+      const report = await callClaudeSimple(null, auditPrompt);
+      if (report) {
+        setAiReport(report);
+        setRecommendations(report);
+      }
+    } catch (err) {
+      console.error('[Nexalie] AI report error:', err.message);
+      // Fallback : les recoCards sont déjà en place
+    } finally {
+      setIsLoading(false);
+    }
 
     // Effacer le brouillon localStorage
     if (typeof window !== 'undefined') {
@@ -1300,6 +1343,7 @@ export default function AuditModule({ isPlatform = false }) {
     setLevel(null);
     setRecommendations('');
     setRecoCards([]);
+    setAiReport('');
     setSavedId(null);
     setDisplayScore(0);
     if (typeof window !== 'undefined') {
@@ -1865,6 +1909,25 @@ export default function AuditModule({ isPlatform = false }) {
 
   // ─── RÉSULTATS ───────────────────────────────────────────
   if (step === 'result') {
+    // Écran de transition pendant la génération IA
+    if (isLoading) {
+      return <DiagnosticLoading structureName={survey.nom || ''} />;
+    }
+
+    // Si rapport IA disponible → restitution premium
+    if (aiReport) {
+      return (
+        <RapportRestitution
+          score={score}
+          structureName={survey.nom || ''}
+          rawMarkdown={aiReport}
+          mode={mode}
+          onRestart={handleRestart}
+          onDownload={handlePrint}
+        />
+      );
+    }
+
     const lvl = level || getLevel(score);
     const levelLabel = mode === 'fr' ? lvl.fr : lvl.af;
 
