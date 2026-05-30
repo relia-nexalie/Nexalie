@@ -28,3 +28,6 @@ yarn-error.log*
 
 # Vercel
 .vercel
+
+# Archive — code legacy, hors scope production
+/archive

@@ -125,15 +125,7 @@ export default function NexaliSite() {
           <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(18px,2.5vw,26px)', fontWeight: 300, color: t.text, textAlign: 'center', marginBottom: '36px' }}>
             Ce que Bpifrance facture 7 500€, Nexalie le fait en 20 minutes — gratuitement.
           </h2>
-          <div className="nx-compare-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
-            {/* Cabinet */}
-            <div style={{ padding: '28px 24px', background: '#fff', border: `1.5px solid ${t.border}`, borderRadius: '16px', opacity: 0.85 }}>
-              <div style={{ marginBottom: '12px' }}><Building2 size={28} color={t.muted} /></div>
-              <h3 style={{ fontSize: '16px', fontWeight: 700, color: t.text, marginBottom: '6px' }}>Cabinet de conseil</h3>
-              <p style={{ fontFamily: 'Georgia, serif', fontSize: '22px', color: '#9CA3AF', fontWeight: 700, marginBottom: '12px' }}>5 000 — 15 000€</p>
-              <p style={{ fontSize: '13px', color: t.muted, lineHeight: 1.7 }}>Mission de 3 mois minimum. Déconnecté de votre réalité terrain.</p>
-            </div>
-
+          <div className="nx-compare-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', maxWidth: '680px', margin: '0 auto' }}>
             {/* Nexalie — mis en avant */}
             <div style={{ padding: '28px 24px', background: t.navy, border: `2px solid ${isAf ? '#C45E0A' : '#4EC9B0'}`, borderRadius: '16px', position: 'relative', boxShadow: `0 8px 32px ${isAf ? 'rgba(196,94,10,0.2)' : 'rgba(78,201,176,0.2)'}` }}>
               <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: isAf ? '#C45E0A' : '#4EC9B0', color: '#fff', fontSize: '10px', fontWeight: 700, padding: '4px 16px', borderRadius: '20px', whiteSpace: 'nowrap', fontFamily: 'monospace', letterSpacing: '0.5px' }}>

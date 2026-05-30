@@ -6,7 +6,7 @@
  * Design : institutionnel, sobre, vidéo placeholder industriel.
  */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // ─── Données fictives du tableau de bord simulé ───────────────────────
 const MOCK_METRICS = [
@@ -115,22 +115,70 @@ function MockDashboard() {
 
 // ─── Composant principal ───────────────────────────────────────────────
 
+// ─── Toast minimaliste ────────────────────────────────────────────────
+function Toast({ message, type, onDone }) {
+  useEffect(() => {
+    const t = setTimeout(onDone, 3500);
+    return () => clearTimeout(t);
+  }, [onDone]);
+
+  const colors = type === 'error'
+    ? 'border-red-200 bg-red-50 text-red-700'
+    : 'border-emerald-200 bg-emerald-50 text-emerald-700';
+
+  return (
+    <div className={`fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-md border px-5 py-3 shadow-sm animate-fade-up ${colors}`}>
+      {type === 'error'
+        ? <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="1.4"/><path d="M8 5v4M8 11h.01" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"/></svg>
+        : <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+      }
+      <span className="font-sans text-sm font-medium">{message}</span>
+    </div>
+  );
+}
+
 export default function NexalieWatch() {
   const [email, setEmail] = useState('');
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [toast, setToast] = useState(null); // { message, type }
 
   async function handleSubmit(e) {
     e.preventDefault();
     if (!email || sent) return;
     setLoading(true);
-    // Simulation — remplacer par l'appel API waitlist réel
-    await new Promise(r => setTimeout(r, 900));
-    setSent(true);
-    setLoading(false);
+    try {
+      const res = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, source: 'nexalie-watch' }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Erreur serveur.');
+
+      setSent(true);
+      setToast({
+        message: data.already
+          ? 'Vous êtes déjà sur la liste — on vous contacte à l\'ouverture.'
+          : 'Inscription confirmée ! Vous serez notifié(e) en priorité.',
+        type: 'success',
+      });
+    } catch (err) {
+      setToast({ message: err.message || 'Une erreur est survenue.', type: 'error' });
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
+    <>
+    {toast && (
+      <Toast
+        message={toast.message}
+        type={toast.type}
+        onDone={() => setToast(null)}
+      />
+    )}
     <section className="bg-cream px-6 py-20 sm:px-12">
       <div className="mx-auto max-w-3xl">
 
@@ -226,5 +274,6 @@ export default function NexalieWatch() {
 
       </div>
     </section>
+    </>
   );
 }
