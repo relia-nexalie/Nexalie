@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'Institutions & Partenaires — Nexalie',
-  description: 'Nexalie accompagne les institutions, bailleurs de fonds et réseaux d'appui dans la digitalisation des PME africaines. Données agrégées, outils de diagnostic, impact mesurable.',
+  description: "Nexalie accompagne les institutions, bailleurs de fonds et réseaux d'appui dans la digitalisation des PME africaines. Données agrégées, outils de diagnostic, impact mesurable.",
 };
 
 export default function InstitutionsPage() {
