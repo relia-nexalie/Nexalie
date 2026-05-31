@@ -29,17 +29,17 @@ const mono = DM_Mono({
 export const metadata = {
   metadataBase: new URL('https://nexalie-ecqc.vercel.app'),
   title: {
-    default: 'Nexalie — Transformation Digitale IA · France & Afrique',
+    default: 'Nexalie — La boussole numérique des PME africaines',
     template: '%s — Nexalie',
   },
-  description: 'En 20 minutes, Nexalie analyse votre maturité digitale et génère votre plan d\'action IA. Gratuit. Adapté France et Afrique francophone.',
-  keywords: ['transformation digitale', 'IA', 'Afrique francophone', 'France', 'audit digital', 'PME', 'OHADA', 'Mobile Money', 'roadmap digitale', 'consulting IA'],
+  description: 'Nexalie accompagne les PME africaines dans leur transformation numérique : diagnostic de maturité digitale, feuille de route personnalisée, outils concrets. Gratuit.',
+  keywords: ['transformation digitale', 'IA', 'Afrique', 'Congo', 'audit digital', 'PME africaines', 'OHADA', 'Mobile Money', 'roadmap digitale', 'maturité numérique'],
   authors: [{ name: 'Rélia Ebiya', url: 'https://nexalie-ecqc.vercel.app' }],
   creator: 'Nexalie',
   publisher: 'Nexalie',
   openGraph: {
-    title: 'Nexalie — Transformation Digitale IA · France & Afrique',
-    description: 'Audit gratuit 3 min · Roadmap IA · Badge Digital Ready. Pour PME françaises et africaines.',
+    title: 'Nexalie — La boussole numérique des PME africaines',
+    description: 'Diagnostic de maturité digitale gratuit · Feuille de route personnalisée · Outils concrets pour PME africaines.',
     url: 'https://nexalie-ecqc.vercel.app',
     siteName: 'Nexalie',
     locale: 'fr_FR',

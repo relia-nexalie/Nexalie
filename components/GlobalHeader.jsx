@@ -3,14 +3,13 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useMode } from '@/lib/mode-context';
 import { createClient } from '@/lib/supabase/client';
+import LanguageToggle from '@/components/LanguageToggle';
 
 export default function GlobalHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [authed, setAuthed] = useState(false);
-  const { mode, setMode } = useMode();
   const supabase = createClient();
 
   useEffect(() => {
@@ -21,16 +20,14 @@ export default function GlobalHeader() {
     return () => subscription.unsubscribe();
   }, []);
 
-  const isAfrica = mode === 'af';
-  const navy   = '#0A1628';
-  const accent = isAfrica ? '#C45E0A' : '#4EC9B0';
+  const navy   = '#0F2A4A';
+  const accent = '#C9A84C';
 
   const links = [
-    { href: '/',        label: 'Accueil' },
-    { href: '/audit',   label: 'Audit' },
-    { href: '/pricing', label: 'Tarifs' },
-    { href: '/about',   label: 'À propos' },
-    { href: '/blog',    label: 'Blog' },
+    { href: '/',             label: 'Accueil' },
+    { href: '/audit',        label: 'Audit' },
+    { href: '/institutions', label: 'Institutions' },
+    { href: '/about',        label: 'À propos' },
   ];
 
   const isActive = (href) =>
@@ -41,7 +38,7 @@ export default function GlobalHeader() {
       position: 'sticky',
       top: 0,
       zIndex: 1000,
-      background: 'rgba(10,22,40,0.97)',
+      background: `rgba(15,42,74,0.97)`,
       backdropFilter: 'blur(12px)',
       borderBottom: '1px solid rgba(255,255,255,0.06)',
     }}>
@@ -61,7 +58,7 @@ export default function GlobalHeader() {
             Nexalie
           </span>
           <span style={{ fontSize: '10px', background: accent, color: '#fff', padding: '2px 7px', borderRadius: '20px', fontWeight: 700, letterSpacing: '0.5px' }}>
-            BETA
+            BÊTA
           </span>
         </Link>
 
@@ -88,29 +85,9 @@ export default function GlobalHeader() {
           ))}
         </nav>
 
-        {/* Droite : toggle + auth */}
+        {/* Droite : sélecteur langue + auth */}
         <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexShrink: 0 }} className="global-nav-desktop">
-          {/* Toggle FR / AF */}
-          <div style={{ display: 'flex', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '8px', overflow: 'hidden' }}>
-            {[['fr', '🇫🇷'], ['af', '🌍']].map(([m, flag]) => (
-              <button
-                key={m}
-                onClick={() => setMode(m)}
-                style={{
-                  padding: '5px 10px',
-                  border: 'none',
-                  cursor: 'pointer',
-                  fontSize: '13px',
-                  background: mode === m ? accent : 'transparent',
-                  color: '#fff',
-                  transition: 'all 0.2s',
-                  fontWeight: mode === m ? 700 : 400,
-                }}
-              >
-                {flag}
-              </button>
-            ))}
-          </div>
+          <LanguageToggle />
 
           {authed ? (
             <>
@@ -156,25 +133,8 @@ export default function GlobalHeader() {
           className="global-nav-mobile"
           style={{ background: navy, borderTop: '1px solid rgba(255,255,255,0.06)', padding: '16px 24px 24px' }}
         >
-          <div style={{ display: 'flex', marginBottom: '16px', background: 'rgba(255,255,255,0.06)', borderRadius: '8px', overflow: 'hidden' }}>
-            {[['fr', '🇫🇷 France'], ['af', '🌍 Afrique']].map(([m, label]) => (
-              <button
-                key={m}
-                onClick={() => setMode(m)}
-                style={{
-                  flex: 1,
-                  padding: '9px',
-                  border: 'none',
-                  cursor: 'pointer',
-                  fontSize: '13px',
-                  fontWeight: mode === m ? 700 : 400,
-                  background: mode === m ? accent : 'transparent',
-                  color: '#fff',
-                }}
-              >
-                {label}
-              </button>
-            ))}
+          <div style={{ marginBottom: '16px' }}>
+            <LanguageToggle />
           </div>
 
           {links.map(l => (

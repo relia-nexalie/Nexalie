@@ -1133,7 +1133,7 @@ export default function AuditModule({ isPlatform = false }) {
   // Sondage pré-audit
   const [survey, setSurvey] = useState({ nom: '', ca: null, outils: [], defi: null });
 
-  const [step, setStep] = useState('intro'); // 'intro' | 'survey' | 'profil' | 'sector' | 'questions' | 'result'
+  const [step, setStep] = useState('intro'); // 'intro' | 'survey' | 'profil' | 'sector' | 'questions' | 'email-capture' | 'result'
   const [currentQ, setCurrentQ] = useState(0);
   const [answers, setAnswers] = useState(() => {
     // Restaurer depuis localStorage si disponible
@@ -1151,6 +1151,15 @@ export default function AuditModule({ isPlatform = false }) {
   const [recoCards, setRecoCards] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [aiReport, setAiReport] = useState('');
+  // Email capture — inséré entre questions et résultats
+  const [captureEmail, setCaptureEmail] = useState('');
+  const [captureLoading, setCaptureLoading] = useState(false);
+  const [captureSkipped, setCaptureSkipped] = useState(false);
+  // Score calculé au handleFinish, avant l'email capture
+  const [pendingScore, setPendingScore] = useState(null);
+  const [pendingLevel, setPendingLevel] = useState(null);
+  const [pendingCards, setPendingCards] = useState([]);
+  const [pendingReco, setPendingReco] = useState('');
   const [isSaving, setIsSaving] = useState(false);
   const [pdfLoading, setPdfLoading] = useState(false);
   const [savedId, setSavedId] = useState(null);
@@ -1241,7 +1250,35 @@ export default function AuditModule({ isPlatform = false }) {
       `${i + 1}. ${c.action} — ${c.tool} · ${c.cost} · ${c.time}`
     ).join('\n');
 
-    setScore(calculatedScore);
+    // Stocker les résultats en attente — on les transfère après la capture email
+    setPendingScore(calculatedScore);
+    setPendingLevel(lvl);
+    setPendingCards(cards);
+    setPendingReco(recoText);
+    setStep('email-capture');
+  }
+
+  // ─── Transition email-capture → result ───────────────────────
+  async function handleContinueToResult(email) {
+    const s    = pendingScore;
+    const lvl  = pendingLevel;
+    const cards = pendingCards;
+    const recoText = pendingReco;
+    const levelLabel = mode === 'fr' ? lvl.fr : lvl.af;
+
+    // Sauvegarder le lead si email fourni
+    if (email) {
+      try {
+        await fetch('/api/leads', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, score: s, source: 'audit' }),
+        });
+      } catch {}
+    }
+
+    // Transférer les résultats du pending vers l'état réel
+    setScore(s);
     setLevel(lvl);
     setRecoCards(cards);
     setRecommendations(recoText);
@@ -1251,7 +1288,7 @@ export default function AuditModule({ isPlatform = false }) {
     // ─── Génération du rapport IA structuré ───────────────────
     try {
       const sectorList = SECTORS[mode] || SECTORS.fr;
-      const sectorLabel = sectorList.find(s => s.id === sector)?.label || sector || 'non précisé';
+      const sectorLabel = sectorList.find(sec => sec.id === sector)?.label || sector || 'non précisé';
       const companyName = survey.nom || 'votre structure';
       const caLabel = survey.ca || 'non précisé';
       const defiLabel = survey.defi || 'non précisé';
@@ -1267,7 +1304,7 @@ DONNÉES DU DIAGNOSTIC :
 - CA estimé : ${caLabel}
 - Outils actuellement utilisés : ${outilsLabel}
 - Défi principal exprimé : ${defiLabel}
-- Score calculé : ${calculatedScore}/100
+- Score calculé : ${s}/100
 - Niveau de maturité : ${levelLabel}
 
 CONTEXTE DES RÉPONSES :
@@ -1294,7 +1331,7 @@ Génère maintenant le rapport complet en respectant strictement la structure de
 
     // Sauvegarde automatique si isPlatform
     if (isPlatform) {
-      saveAudit(calculatedScore, lvl, levelLabel, answers, recoText);
+      saveAudit(s, lvl, levelLabel, answers, recoText);
     }
   }
 
@@ -1810,6 +1847,71 @@ Génère maintenant le rapport complet en respectant strictement la structure de
               </button>
             )}
           </div>
+        </div>
+      </div>
+    );
+  }
+
+  // ─── CAPTURE EMAIL (entre questions et résultats) ────────
+  if (step === 'email-capture') {
+    const navy = '#0F2A4A';
+    const gold = '#C9A84C';
+    return (
+      <div style={{ minHeight: '100vh', background: '#F5F3EE', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '32px 24px', fontFamily: 'var(--font-jakarta, system-ui, sans-serif)' }}>
+        <div style={{ maxWidth: '480px', width: '100%', background: '#fff', border: '1px solid #E2E8F0', borderRadius: '12px', padding: '40px 36px', boxShadow: '0 4px 24px rgba(0,0,0,0.06)' }}>
+          {/* Score indicatif */}
+          <div style={{ textAlign: 'center', marginBottom: '28px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'baseline', gap: '4px', background: `${gold}12`, border: `1px solid ${gold}30`, borderRadius: '40px', padding: '8px 20px', marginBottom: '20px' }}>
+              <span style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: '28px', fontWeight: 300, color: navy }}>{pendingScore}</span>
+              <span style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '11px', color: '#94A3B8' }}>/ 100</span>
+            </div>
+            <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: '22px', fontWeight: 300, color: navy, marginBottom: '10px', lineHeight: 1.3 }}>
+              Recevez votre rapport complet
+            </h2>
+            <p style={{ fontSize: '14px', color: '#64748B', lineHeight: 1.7 }}>
+              Entrez votre email pour débloquer votre rapport personnalisé et vos recommandations prioritaires.
+            </p>
+          </div>
+
+          <form
+            onSubmit={async (e) => {
+              e.preventDefault();
+              if (!captureEmail) return;
+              setCaptureLoading(true);
+              await handleContinueToResult(captureEmail);
+              setCaptureLoading(false);
+            }}
+            style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}
+          >
+            <input
+              type="email"
+              value={captureEmail}
+              onChange={e => setCaptureEmail(e.target.value)}
+              placeholder="votre@email.com"
+              required
+              style={{ padding: '14px 16px', border: '1px solid #E2E8F0', borderRadius: '8px', fontSize: '14px', color: '#0F172A', outline: 'none', fontFamily: 'inherit', transition: 'border-color 0.15s' }}
+              onFocus={e => e.target.style.borderColor = '#94A3B8'}
+              onBlur={e => e.target.style.borderColor = '#E2E8F0'}
+            />
+            <button
+              type="submit"
+              disabled={captureLoading}
+              style={{ padding: '14px', background: navy, borderRadius: '8px', color: '#fff', fontSize: '14px', fontWeight: 700, border: 'none', cursor: captureLoading ? 'not-allowed' : 'pointer', opacity: captureLoading ? 0.7 : 1, transition: 'opacity 0.15s', fontFamily: 'inherit' }}
+            >
+              {captureLoading ? 'Chargement…' : 'Recevoir mon rapport →'}
+            </button>
+          </form>
+
+          <button
+            onClick={() => handleContinueToResult('')}
+            style={{ display: 'block', width: '100%', marginTop: '12px', padding: '10px', background: 'none', border: 'none', cursor: 'pointer', fontSize: '13px', color: '#94A3B8', textDecoration: 'underline', textUnderlineOffset: '3px', fontFamily: 'inherit' }}
+          >
+            Continuer sans enregistrer
+          </button>
+
+          <p style={{ marginTop: '16px', textAlign: 'center', fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', color: '#CBD5E1', letterSpacing: '0.05em' }}>
+            Aucun spam. Vos données restent confidentielles.
+          </p>
         </div>
       </div>
     );

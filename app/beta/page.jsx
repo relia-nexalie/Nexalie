@@ -1,3 +1,4 @@
+import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import BetaForm from './BetaForm';
 
@@ -24,6 +25,7 @@ async function getBetaCount() {
 }
 
 export default async function BetaPage() {
+  redirect('/'); // Page désactivée — redirection vers l'accueil
   const taken = await getBetaCount();
   const remaining = Math.max(0, 20 - taken);
 

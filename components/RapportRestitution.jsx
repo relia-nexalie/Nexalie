@@ -17,13 +17,43 @@
 import { useEffect, useRef, useState } from 'react';
 import NexalieWatch from './NexalieWatch';
 
-// ─── Palette niveau ──────────────────────────────────────────────────
+// ─── Palette & descriptions niveau ───────────────────────────────────
 const LEVEL_CONFIG = {
-  debutant:     { label: 'Débutant',       band: 'bg-slate-400',  text: 'text-slate-600',  border: 'border-slate-300' },
-  initie:       { label: 'Initié',         band: 'bg-amber-500',  text: 'text-amber-700',  border: 'border-amber-200' },
-  intermediaire:{ label: 'Intermédiaire',  band: 'bg-blue-500',   text: 'text-blue-700',   border: 'border-blue-200'  },
-  avance:       { label: 'Avancé',         band: 'bg-emerald-600',text: 'text-emerald-700',border: 'border-emerald-200'},
-  expert:       { label: 'Expert',         band: 'bg-navy',       text: 'text-navy',       border: 'border-slate-300' },
+  debutant: {
+    label: 'Débutant',
+    band: 'bg-slate-400', text: 'text-slate-600', border: 'border-slate-300',
+    headline: 'Votre transformation numérique commence ici.',
+    body: 'Moins de 20 % des fondations numériques sont en place. C\'est le point de départ de beaucoup de PME africaines — et c\'est exactement là que Nexalie est le plus utile. Trois actions prioritaires suffisent pour changer de niveau en 60 jours.',
+    priority: 'Priorité absolue : présence en ligne (Google Business Profile / site vitrine) et un outil de paiement digital (Wave, MTN MoMo, CinetPay).',
+  },
+  initie: {
+    label: 'Initié',
+    band: 'bg-amber-500', text: 'text-amber-700', border: 'border-amber-200',
+    headline: 'Vous avez posé les premières briques. Maintenant, connectez-les.',
+    body: 'Vous utilisez quelques outils numériques mais ils fonctionnent en silos. L\'enjeu est de les faire parler entre eux pour gagner du temps sans embaucher.',
+    priority: 'Priorité : automatiser au moins un processus répétitif (devis, relances, facturation) avec Make ou Zapier.',
+  },
+  intermediaire: {
+    label: 'Intermédiaire',
+    band: 'bg-blue-500', text: 'text-blue-700', border: 'border-blue-200',
+    headline: 'Vous avez une base solide. Passez à la vitesse supérieure.',
+    body: 'Vos outils sont en place et utilisés régulièrement. Vous pouvez maintenant vous concentrer sur la croissance : acquisition client digitale, data, automatisation avancée.',
+    priority: 'Priorité : mettre en place un CRM simple (HubSpot gratuit) et un tableau de bord de pilotage de votre activité.',
+  },
+  avance: {
+    label: 'Avancé',
+    band: 'bg-emerald-600', text: 'text-emerald-700', border: 'border-emerald-200',
+    headline: 'Vous êtes parmi les PME les plus digitalisées de votre marché.',
+    body: 'Votre maturité digitale est réelle. L\'enjeu est maintenant l\'optimisation et la différenciation : IA, personnalisation client, sécurité des données, expansion géographique.',
+    priority: 'Priorité : explorer les outils IA (Claude, Copilot) pour augmenter la productivité de votre équipe sans augmenter les coûts.',
+  },
+  expert: {
+    label: 'Expert',
+    band: 'bg-navy', text: 'text-navy', border: 'border-slate-300',
+    headline: 'Vous avez atteint un niveau d\'excellence numérique rare.',
+    body: 'Moins de 12 % des PME africaines atteignent ce niveau. Vous pouvez désormais vous positionner comme référence dans votre secteur et envisager de monétiser votre expertise digitale.',
+    priority: 'Priorité : structurer votre stratégie data, explorer les partenariats institutionnels et envisager une expansion régionale.',
+  },
 };
 
 function getLevelKey(score) {
@@ -74,7 +104,7 @@ function parseRapport(md) {
     const comment = block.match(/\*\*Comment\s*:\*\*\s*([\s\S]+?)(?=\*\s+\*\*|$)/)?.[1]?.trim() || '';
 
     // Extraire les outils mentionnés entre parenthèses ou avant "–" ou ":"
-    const toolMatches = comment.match(/\b(HubSpot|Notion|Brevo|Make|Zapier|Wave|CinetPay|Stripe|Lydia|WhatsApp\s*Business|Airtable|Pennylane|Google\s*My\s*Business|Canva|Mailchimp|MTN\s*MoMo|Orange\s*Money|Shopify)\b/gi) || [];
+    const toolMatches = comment.match(/\b(HubSpot|Notion|Brevo|Make|Zapier|Wave|CinetPay|Stripe|Lydia|WhatsApp\s*Business|WhatsApp|Airtable|Pennylane|Google\s*My\s*Business|Canva|Mailchimp|MTN\s*MoMo|MTN|Orange\s*Money|Shopify|Airtel\s*Money|Moov\s*Money|M-Pesa|M-Kopa|Paystack|Flutterwave|Klaviyo|Trello|ClickUp|Monday|Figma|Calendly|Typeform|Odoo)\b/gi) || [];
     const tools = [...new Set(toolMatches)].slice(0, 3);
 
     if (quoi) actions.push({ quoi, pourquoi, comment, tools, month: actions.length + 1 });
@@ -238,8 +268,28 @@ function RoadmapCards({ actions, mode }) {
   );
 }
 
+function ScoreInterpretation({ levelKey }) {
+  const cfg = LEVEL_CONFIG[levelKey] || LEVEL_CONFIG.debutant;
+  return (
+    <div className="rounded-md border border-slate-200 bg-white p-8 shadow-sm animate-fade-up">
+      <div className="mb-6 flex items-center gap-3">
+        <div className="h-5 w-[3px] rounded-full bg-terra" />
+        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">Interprétation — Niveau {cfg.label}</p>
+      </div>
+      <h3 className="mb-3 font-serif text-xl font-light leading-snug text-navy">
+        {cfg.headline}
+      </h3>
+      <p className="mb-5 text-[14px] leading-relaxed text-ink">{cfg.body}</p>
+      <div className="rounded-sm border border-slate-100 bg-slate-50 px-5 py-4">
+        <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink-muted mb-2">Action immédiate</p>
+        <p className="text-[13px] leading-relaxed text-ink">{cfg.priority}</p>
+      </div>
+    </div>
+  );
+}
+
 function SouveraineteSection({ text }) {
-  const body = text || "Vos données stratégiques — audit, feuille de route, documents — restent votre propriété exclusive. Elles sont hébergées en Union Européenne, ne sont jamais revendues ni transmises à des tiers. Vous pouvez les exporter ou les supprimer à tout moment, sur simple demande.";
+  const body = text || "Vos données stratégiques — audit, feuille de route, documents — restent votre propriété exclusive. Elles sont hébergées en Union Européenne et ne sont jamais revendues ni transmises à des tiers. Vous pouvez les exporter ou les supprimer à tout moment, sur simple demande.";
 
   return (
     <div className="flex gap-5 rounded-md border border-slate-200 bg-white p-8 shadow-sm animate-fade-up">
@@ -252,15 +302,63 @@ function SouveraineteSection({ text }) {
         </svg>
       </div>
       <div className="flex flex-col gap-2">
-        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">Souveraineté & Données</p>
+        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">Confidentialité & Données</p>
         <p className="text-[14px] leading-relaxed text-ink">{body}</p>
         <div className="mt-1 flex flex-wrap gap-3">
-          {['Hébergement UE', 'Zéro revente', 'RGPD conforme', 'Export sur demande'].map(tag => (
+          {['Hébergement UE', 'Zéro revente', 'Loi 29-2019 conforme', 'Export sur demande'].map(tag => (
             <span key={tag} className="font-mono text-[9px] uppercase tracking-widest text-ink-muted">
               ✓ {tag}
             </span>
           ))}
         </div>
+      </div>
+    </div>
+  );
+}
+
+function NextStepsSection({ score }) {
+  const navy = '#0F2A4A';
+  const gold = '#C9A84C';
+
+  const steps = score < 40 ? [
+    { n: '01', text: 'Créer votre fiche Google Business Profile — gratuit, fait en 20 min.' },
+    { n: '02', text: 'Ouvrir un compte Wave ou CinetPay pour recevoir des paiements en ligne.' },
+    { n: '03', text: 'Refaire ce diagnostic dans 60 jours pour mesurer votre progression.' },
+  ] : score < 70 ? [
+    { n: '01', text: 'Connecter vos outils existants avec Make (ex-Integromat) — 2h de setup, 3h/semaine économisées.' },
+    { n: '02', text: 'Mettre en place un suivi client simple : HubSpot CRM (gratuit jusqu\'à 1M contacts).' },
+    { n: '03', text: 'Documenter vos 3 processus les plus répétitifs dans Notion pour préparer l\'automatisation.' },
+  ] : [
+    { n: '01', text: 'Structurer votre stratégie data : définir 3 KPIs clés et les suivre hebdomadairement.' },
+    { n: '02', text: 'Explorer les outils IA (Claude, Copilot) pour accélérer votre production de contenu et d\'analyses.' },
+    { n: '03', text: 'Contacter Nexalie pour un accompagnement institutionnel ou une intégration partenaire.' },
+  ];
+
+  return (
+    <div className="rounded-md border border-slate-200 bg-white p-8 shadow-sm animate-fade-up">
+      <div className="mb-6 flex items-center gap-3">
+        <div className="h-5 w-[3px] rounded-full" style={{ background: gold }} />
+        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">Prochaines étapes</p>
+      </div>
+      <div className="space-y-4">
+        {steps.map((s) => (
+          <div key={s.n} className="flex items-start gap-4">
+            <span className="font-mono text-[10px] font-bold tracking-widest shrink-0 pt-0.5" style={{ color: gold }}>{s.n}</span>
+            <p className="text-[14px] leading-relaxed text-ink">{s.text}</p>
+          </div>
+        ))}
+      </div>
+      <div className="mt-8 rounded-sm bg-slate-50 border border-slate-100 px-6 py-5 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-[13px] text-ink-muted leading-relaxed">
+          Vous souhaitez aller plus loin avec un accompagnement personnalisé ?
+        </p>
+        <a
+          href="mailto:contact@nexalie.com?subject=Accompagnement post-audit"
+          className="shrink-0 inline-flex items-center gap-2 rounded-md px-5 py-3 font-sans text-sm font-semibold text-white no-print"
+          style={{ background: navy, textDecoration: 'none' }}
+        >
+          Discuter de mon plan →
+        </a>
       </div>
     </div>
   );
@@ -295,7 +393,7 @@ export default function RapportRestitution({
         <div className="mx-auto max-w-5xl">
           {/* Fil d'Ariane */}
           <p className="mb-8 font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">
-            Nexalie &mdash; Diagnostic Stratégique {mode === 'af' ? '(Afrique)' : '(France)'}
+            Nexalie &mdash; Diagnostic de Maturité Numérique
           </p>
 
           {/* Titre */}
@@ -317,13 +415,19 @@ export default function RapportRestitution({
       {/* ─── BODY ────────────────────────────────────────────────────── */}
       <main className="mx-auto max-w-5xl space-y-12 px-6 py-16 sm:px-12 md:py-20">
 
-        {/* Analyse de maturité */}
+        {/* Interprétation du score */}
+        <ScoreInterpretation levelKey={levelKey} />
+
+        {/* Analyse de maturité (détail IA) */}
         <MaturiteSection data={parsed.maturite} />
 
         {/* Feuille de route 90 jours */}
         {parsed.roadmap.length > 0 && <RoadmapCards actions={parsed.roadmap} mode={mode} />}
 
-        {/* Souveraineté */}
+        {/* Prochaines étapes concrètes */}
+        <NextStepsSection score={finalScore} />
+
+        {/* Confidentialité */}
         <SouveraineteSection text={parsed.souverainete} />
 
         {/* Actions */}

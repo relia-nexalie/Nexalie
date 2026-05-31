@@ -1,3 +1,4 @@
+import { redirect } from 'next/navigation';
 import Link from 'next/link';
 
 export const metadata = {
@@ -13,6 +14,7 @@ const GOLD      = '#C9A84C';
 const GOLD_LIGHT = '#FDF8EE';
 
 export default function DemoPage() {
+  redirect('/'); // Page désactivée — redirection vers l'accueil
   return (
     <div style={{ background: '#fff', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif', color: NAVY, overflowX: 'hidden' }}>
 

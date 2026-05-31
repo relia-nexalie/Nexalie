@@ -1,326 +1,217 @@
 'use client';
 
-import { useState } from "react";
 import Link from "next/link";
-import { useMode } from "@/lib/mode-context";
-import { BarChart2, DollarSign, ClipboardList, Map, Search, FileText, Zap, Building2, Landmark, CheckCircle2, XCircle, Lock, Rocket, Lightbulb, AlertTriangle } from "lucide-react";
+import { BarChart2, DollarSign, ClipboardList, Map, Search, FileText, Zap, Landmark } from "lucide-react";
 
 // ═══════════════════════════════════════════
-// DESIGN TOKENS — fond blanc, FR/AF
+// DESIGN TOKENS — Nexalie Africa
 // ═══════════════════════════════════════════
 
-const THEMES = {
-  fr: {
-    bg: "#FFFFFF",
-    sectionAlt: "#F8F9FA",
-    text: "#1C1C1C",
-    muted: "#6B7A94",
-    navy: "#0A1628",
-    accent: "#0A1628",
-    teal: "#4EC9B0",
-    border: "rgba(0,0,0,0.08)",
-    btnPrimary: "#0A1628",
-    btnText: "#FFFFFF",
-  },
-  af: {
-    bg: "#FFFFFF",
-    sectionAlt: "#FFF8F3",
-    text: "#1C1C1C",
-    muted: "#6B7A94",
-    navy: "#1A0800",
-    accent: "#C45E0A",
-    teal: "#E88C32",
-    border: "rgba(0,0,0,0.08)",
-    btnPrimary: "#C45E0A",
-    btnText: "#FFFFFF",
-  }
-};
+const NAVY   = '#0F2A4A';
+const GOLD   = '#C9A84C';
+const CREAM  = '#F5F3EE';
+const MUTED  = '#64748B';
+const TEXT   = '#0F172A';
 
 export default function NexaliSite() {
-  const { mode } = useMode();
-  const t = THEMES[mode];
-  const isAf = mode === 'af';
-
   return (
-    <div style={{ background: t.bg, color: t.text, fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif' }}>
+    <div style={{ background: '#fff', color: TEXT, fontFamily: 'var(--font-jakarta, -apple-system, sans-serif)' }}>
       <style suppressHydrationWarning>{`
         @media (max-width: 768px) {
           .nx-hero-grid       { grid-template-columns: 1fr !important; gap: 32px !important; }
           .nx-score-card      { min-width: unset !important; width: 100% !important; }
           .nx-platform-grid   { grid-template-columns: 1fr !important; gap: 32px !important; }
-          .nx-compare-grid    { grid-template-columns: 1fr !important; }
           .nx-steps-grid      { grid-template-columns: 1fr !important; }
           .nx-cta-buttons     { flex-direction: column !important; align-items: stretch !important; }
           .nx-cta-buttons a   { text-align: center !important; }
           .nx-hero-buttons    { flex-direction: column !important; align-items: stretch !important; }
           .nx-hero-buttons a  { text-align: center !important; }
+          .nx-context-grid    { grid-template-columns: 1fr 1fr !important; }
+          .nx-tools-grid      { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 480px) {
+          .nx-context-grid    { grid-template-columns: 1fr !important; }
         }
       `}</style>
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
-      <section style={{ background: t.navy, padding: 'clamp(64px,8vw,100px) 24px' }}>
+      <section style={{ background: NAVY, padding: 'clamp(64px,8vw,100px) 24px' }}>
         <div className="nx-hero-grid" style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr auto', gap: '60px', alignItems: 'center' }}>
           <div>
-            {/* Badge unifié */}
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '20px', padding: '5px 14px', marginBottom: '24px' }}>
-              <span style={{ fontFamily: 'monospace', fontSize: '11px', letterSpacing: '1px', color: isAf ? '#E88C32' : '#4EC9B0' }}>
-                🇫🇷 France · 🌍 Afrique · Audit gratuit
+            {/* Badge */}
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(201,168,76,0.12)', border: '1px solid rgba(201,168,76,0.25)', borderRadius: '20px', padding: '5px 14px', marginBottom: '24px' }}>
+              <span style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '11px', letterSpacing: '1px', color: GOLD }}>
+                Plateforme numérique · PME africaines
               </span>
             </div>
 
-            <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(32px,5vw,54px)', fontWeight: 300, color: '#fff', lineHeight: 1.15, marginBottom: '20px' }}>
-              Votre copilote IA<br />
-              de <em style={{ color: isAf ? '#E88C32' : '#4EC9B0', fontStyle: 'italic' }}>transformation digitale</em>
+            <h1 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(32px,5vw,54px)', fontWeight: 300, color: '#fff', lineHeight: 1.15, marginBottom: '20px', letterSpacing: '-0.02em' }}>
+              La boussole numérique<br />
+              des <em style={{ color: GOLD, fontStyle: 'italic' }}>PME africaines</em>
             </h1>
 
             <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '32px', maxWidth: '520px' }}>
-              En 20 minutes, Nexalie analyse votre entreprise et vous donne un plan d&apos;action concret — adapté à votre secteur, votre pays, votre réalité.{' '}
+              90 000 PME congolaises cherchent à se digitaliser. Nexalie les accompagne pas à pas : diagnostic, feuille de route, outils concrets.{' '}
               <strong style={{ color: '#fff' }}>Gratuit. Sans consultant.</strong>
             </p>
 
             <div className="nx-hero-buttons" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <Link href="/audit" style={{ padding: '15px 30px', background: isAf ? '#C45E0A' : '#4EC9B0', borderRadius: '10px', color: '#fff', fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'inline-block', boxShadow: `0 8px 24px ${isAf ? 'rgba(196,94,10,0.35)' : 'rgba(78,201,176,0.35)'}` }}>
-                Audit gratuit →
+              <Link href="/audit" style={{ padding: '15px 30px', background: GOLD, borderRadius: '8px', color: NAVY, fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'inline-block', boxShadow: '0 8px 24px rgba(201,168,76,0.35)' }}>
+                Faire mon audit gratuit →
               </Link>
-              <Link href="/pricing" style={{ padding: '15px 28px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '10px', color: '#fff', fontSize: '15px', textDecoration: 'none', display: 'inline-block' }}>
-                Nos tarifs
+              <Link href="/institutions" style={{ padding: '15px 28px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '8px', color: '#fff', fontSize: '15px', textDecoration: 'none', display: 'inline-block' }}>
+                Pour les institutions
               </Link>
             </div>
-            <a
-              href="https://wa.me/33786620409"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginTop: '16px', fontSize: '13px', color: 'rgba(255,255,255,0.55)', textDecoration: 'none' }}
-            >
-              <span style={{ fontSize: '16px' }}>💬</span>
-              Une question ? WhatsApp direct → <strong style={{ color: 'rgba(255,255,255,0.85)' }}>+33 7 86 62 04 09</strong>
-            </a>
           </div>
 
           {/* Score card */}
-          <div className="nx-score-card" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '20px', padding: '28px', minWidth: '280px' }}>
-            <p style={{ fontFamily: 'monospace', fontSize: '9px', letterSpacing: '2px', color: 'rgba(255,255,255,0.4)', marginBottom: '20px' }}>MATURITÉ DIGITALE</p>
-            {[['Stratégie & Vision', 35], ['Expérience Client', 55], ['Opérations', 25], ['Technologies', 45], ['Culture & Équipes', 30]].map(([label, w]) => (
+          <div className="nx-score-card" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(201,168,76,0.2)', borderRadius: '16px', padding: '28px', minWidth: '280px' }}>
+            <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '9px', letterSpacing: '2px', color: 'rgba(255,255,255,0.4)', marginBottom: '20px', textTransform: 'uppercase' }}>Maturité digitale</p>
+            {[
+              ['Présence en ligne', 35],
+              ['Outillage numérique', 55],
+              ['Automatisation', 25],
+              ['Financement digital', 45],
+              ['Cybersécurité', 30],
+            ].map(([label, w]) => (
               <div key={label} style={{ marginBottom: '12px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
                   <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.55)' }}>{label}</span>
-                  <span style={{ fontFamily: 'monospace', fontSize: '10px', color: isAf ? '#E88C32' : '#4EC9B0' }}>?/20</span>
+                  <span style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', color: GOLD }}>?/20</span>
                 </div>
                 <div style={{ height: '4px', background: 'rgba(255,255,255,0.08)', borderRadius: '2px' }}>
-                  <div style={{ width: `${w}%`, height: '100%', background: isAf ? '#C45E0A' : '#4EC9B0', borderRadius: '2px' }} />
+                  <div style={{ width: `${w}%`, height: '100%', background: GOLD, borderRadius: '2px' }} />
                 </div>
               </div>
             ))}
-            <Link href="/audit" style={{ display: 'block', width: '100%', marginTop: '16px', padding: '12px', background: isAf ? '#C45E0A' : '#4EC9B0', border: 'none', borderRadius: '10px', color: '#fff', fontSize: '12px', fontWeight: 700, cursor: 'pointer', fontFamily: 'monospace', letterSpacing: '1px', textAlign: 'center', textDecoration: 'none' }}>
+            <Link href="/audit" style={{ display: 'block', width: '100%', marginTop: '16px', padding: '12px', background: GOLD, border: 'none', borderRadius: '8px', color: NAVY, fontSize: '12px', fontWeight: 700, cursor: 'pointer', fontFamily: 'var(--font-mono, monospace)', letterSpacing: '1px', textAlign: 'center', textDecoration: 'none' }}>
               DÉMARRER MON AUDIT GRATUIT
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ── BENCHMARK CONCURRENTS ──────────────────────────────────── */}
-      <section style={{ background: t.sectionAlt, padding: '56px 24px', borderBottom: `1px solid ${t.border}` }}>
+      {/* ── CONTEXTE ─────────────────────────────────────────────── */}
+      <section style={{ background: CREAM, padding: '56px 24px', borderBottom: '1px solid #E2E8F0' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: t.muted, textAlign: 'center', marginBottom: '8px', textTransform: 'uppercase' }}>Pourquoi Nexalie</p>
-          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(18px,2.5vw,26px)', fontWeight: 300, color: t.text, textAlign: 'center', marginBottom: '36px' }}>
-            Ce que Bpifrance facture 7 500€, Nexalie le fait en 20 minutes — gratuitement.
+          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: GOLD, textAlign: 'center', marginBottom: '8px', textTransform: 'uppercase' }}>Contexte</p>
+          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(18px,2.5vw,26px)', fontWeight: 300, color: NAVY, textAlign: 'center', marginBottom: '40px', letterSpacing: '-0.01em' }}>
+            Les PME africaines portent 95 % de l&apos;économie réelle — et manquent d&apos;outils numériques adaptés
           </h2>
-          <div className="nx-compare-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', maxWidth: '680px', margin: '0 auto' }}>
-            {/* Nexalie — mis en avant */}
-            <div style={{ padding: '28px 24px', background: t.navy, border: `2px solid ${isAf ? '#C45E0A' : '#4EC9B0'}`, borderRadius: '16px', position: 'relative', boxShadow: `0 8px 32px ${isAf ? 'rgba(196,94,10,0.2)' : 'rgba(78,201,176,0.2)'}` }}>
-              <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: isAf ? '#C45E0A' : '#4EC9B0', color: '#fff', fontSize: '10px', fontWeight: 700, padding: '4px 16px', borderRadius: '20px', whiteSpace: 'nowrap', fontFamily: 'monospace', letterSpacing: '0.5px' }}>
-                RECOMMANDÉ
+          <div className="nx-context-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px' }}>
+            {[
+              { value: '90 000', label: 'PME formelles au Congo', note: 'Ministère des PME, 2023' },
+              { value: '93,4 %', label: 'opèrent dans l\'informel', note: '~840 000 unités non structurées' },
+              { value: '95 %',   label: 'de l\'économie portée par les PME', note: 'Emploi, VA, maillage territorial' },
+              { value: '< 12 %', label: 'ont des outils numériques actifs', note: 'Estimation Nexalie, 2024' },
+            ].map((s, i) => (
+              <div key={i} style={{ padding: '24px 20px', background: '#fff', border: '1px solid #E2E8F0', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}>
+                <p style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: '32px', fontWeight: 300, color: NAVY, marginBottom: '6px' }}>{s.value}</p>
+                <p style={{ fontSize: '13px', fontWeight: 600, color: TEXT, marginBottom: '6px', lineHeight: 1.4 }}>{s.label}</p>
+                <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '9px', color: '#94A3B8', lineHeight: 1.5 }}>{s.note}</p>
               </div>
-              <div style={{ marginBottom: '12px' }}><Zap size={28} color={isAf ? '#E88C32' : '#4EC9B0'} /></div>
-              <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#fff', marginBottom: '6px' }}>Nexalie</h3>
-              <p style={{ fontFamily: 'Georgia, serif', fontSize: '22px', color: isAf ? '#E88C32' : '#4EC9B0', fontWeight: 700, marginBottom: '12px' }}>Gratuit — 129€/mois</p>
-              <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7 }}>20 minutes. Score immédiat. Plan d&apos;action IA personnalisé. Adapté France ET Afrique.</p>
-            </div>
-
-            {/* Bpifrance */}
-            <div style={{ padding: '28px 24px', background: '#fff', border: `1.5px solid ${t.border}`, borderRadius: '16px', opacity: 0.85 }}>
-              <div style={{ marginBottom: '12px' }}><Landmark size={28} color={t.muted} /></div>
-              <h3 style={{ fontSize: '16px', fontWeight: 700, color: t.text, marginBottom: '6px' }}>Bpifrance Diag IA</h3>
-              <p style={{ fontFamily: 'Georgia, serif', fontSize: '22px', color: '#9CA3AF', fontWeight: 700, marginBottom: '12px' }}>7 500€ reste à charge</p>
-              <p style={{ fontSize: '13px', color: t.muted, lineHeight: 1.7 }}>8 jours d&apos;attente. Réservé aux PME +10 salariés et +1M€ CA.</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── PREUVES SOCIALES ──────────────────────────────────────── */}
-      <section style={{ background: t.bg, padding: '56px 24px', borderBottom: `1px solid ${t.border}` }}>
-        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: t.muted, textAlign: 'center', marginBottom: '8px', textTransform: 'uppercase' }}>Expertise terrain</p>
-          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(18px,2.5vw,26px)', fontWeight: 300, color: t.text, textAlign: 'center', marginBottom: '40px' }}>
-            Une expertise terrain reconnue
-          </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
-            <div style={{ padding: '28px 24px', background: t.sectionAlt, borderRadius: '16px', border: `1px solid ${t.border}` }}>
-              <div style={{ fontSize: '28px', marginBottom: '12px' }}>✈️</div>
-              <p style={{ fontSize: '13px', fontFamily: 'monospace', fontWeight: 700, color: t.muted, letterSpacing: '1px', marginBottom: '8px', textTransform: 'uppercase' }}>Safran Group</p>
-              <p style={{ fontSize: '22px', fontWeight: 700, color: isAf ? '#C45E0A' : '#0A1628', marginBottom: '8px' }}>17 000</p>
-              <p style={{ fontSize: '13px', color: t.muted, lineHeight: 1.6 }}>collaborateurs accompagnés dans leur transformation digitale. Pilotage des usages IA, no-code et collaboration à distance.</p>
-            </div>
-            <div style={{ padding: '28px 24px', background: t.sectionAlt, borderRadius: '16px', border: `1px solid ${t.border}` }}>
-              <div style={{ fontSize: '28px', marginBottom: '12px' }}>🔬</div>
-              <p style={{ fontSize: '13px', fontFamily: 'monospace', fontWeight: 700, color: t.muted, letterSpacing: '1px', marginBottom: '8px', textTransform: 'uppercase' }}>3SP Technologies</p>
-              <p style={{ fontSize: '22px', fontWeight: 700, color: isAf ? '#C45E0A' : '#0A1628', marginBottom: '8px' }}>−20%</p>
-              <p style={{ fontSize: '13px', color: t.muted, lineHeight: 1.6 }}>de délais de fabrication après digitalisation des processus qualité et mise en place d&apos;outils collaboratifs terrain.</p>
-            </div>
-            <div style={{ padding: '28px 24px', background: t.sectionAlt, borderRadius: '16px', border: `1px solid ${t.border}` }}>
-              <div style={{ fontSize: '28px', marginBottom: '12px' }}>🧪</div>
-              <p style={{ fontSize: '13px', fontFamily: 'monospace', fontWeight: 700, color: t.muted, letterSpacing: '1px', marginBottom: '8px', textTransform: 'uppercase' }}>Bêta Nexalie</p>
-              <p style={{ fontSize: '22px', fontWeight: 700, color: isAf ? '#C45E0A' : '#0A1628', marginBottom: '8px' }}>20 PME</p>
-              <p style={{ fontSize: '13px', color: t.muted, lineHeight: 1.6 }}>pilotes en France et en Afrique. Premiers retours : plan d&apos;action reçu en 20 min, ROI estimé dès la première semaine.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── STATS ──────────────────────────────────────────────────── */}
-      <section style={{ borderBottom: `1px solid ${t.border}`, padding: '24px', background: t.bg }}>
-        <p style={{ textAlign: 'center', fontFamily: 'var(--font-mono, monospace)', fontSize: '13px', letterSpacing: '0.15em', color: 'rgba(0,0,0,0.45)', margin: 0 }}>
-          20 questions · 8 secteurs · résultats en 20 min · gratuit
+      {/* ── STAT TICKER ──────────────────────────────────────────── */}
+      <section style={{ borderBottom: '1px solid #E2E8F0', padding: '20px 24px', background: '#fff' }}>
+        <p style={{ textAlign: 'center', fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '0.15em', color: 'rgba(0,0,0,0.4)', margin: 0 }}>
+          20 questions · 6 dimensions · résultats en 5 minutes · gratuit
         </p>
       </section>
 
       {/* ── COMMENT ÇA MARCHE ──────────────────────────────────────── */}
-      <section style={{ padding: '72px 24px', background: '#C45E0A', overflow: 'hidden' }}>
+      <section style={{ padding: '72px 24px', background: NAVY, overflow: 'hidden' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: 'rgba(255,255,255,0.5)', textAlign: 'center', marginBottom: '10px', textTransform: 'uppercase' }}>Processus</p>
-          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(26px,4vw,38px)', fontWeight: 300, color: '#fff', textAlign: 'center', marginBottom: '6px' }}>
+          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: 'rgba(201,168,76,0.7)', textAlign: 'center', marginBottom: '10px', textTransform: 'uppercase' }}>Processus</p>
+          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(26px,4vw,38px)', fontWeight: 300, color: '#fff', textAlign: 'center', marginBottom: '6px', letterSpacing: '-0.01em' }}>
             Comment ça fonctionne
           </h2>
-          <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.65)', textAlign: 'center', marginBottom: '48px' }}>Simple. Concret. Immédiat.</p>
+          <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.55)', textAlign: 'center', marginBottom: '48px' }}>Simple. Concret. Immédiat.</p>
 
           <div className="nx-steps-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
             {[
               {
                 num: '01',
-                title: 'Tu réponds à 20 questions',
-                text: 'Secteur, pays, niveau d\'équipement, processus, clients — Nexalie évalue ta maturité digitale sur 5 axes.',
+                title: 'Vous répondez à 20 questions',
+                text: 'Secteur, niveau d\'équipement, processus, clients, financement — Nexalie évalue votre maturité sur 6 dimensions clés du numérique.',
               },
               {
                 num: '02',
-                title: 'L\'IA génère ton plan d\'action',
-                text: 'Score sur 100, recommandations avec outils précis (nom, coût, durée), roadmap 90 jours personnalisée.',
+                title: 'L\'IA génère votre feuille de route',
+                text: 'Score sur 100, recommandations avec outils adaptés au contexte africain (Wave, CinetPay, Notion, Make…), plan d\'action 90 jours.',
               },
               {
                 num: '03',
-                title: 'Tu avances, semaine après semaine',
-                text: 'Chaque lundi à 8h, Nexalie t\'envoie ta prochaine action prioritaire. Ton score progresse. Tu le vois.',
+                title: 'Vous avancez, étape par étape',
+                text: 'Chaque recommandation est priorisée et accessible. Pas de jargon technique. Des actions concrètes à votre portée.',
               },
             ].map(step => (
-              <div key={step.num} style={{ position: 'relative', padding: '32px 24px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '16px', overflow: 'hidden' }}>
-                {/* Large background number */}
+              <div key={step.num} style={{ position: 'relative', padding: '32px 24px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(201,168,76,0.2)', borderRadius: '8px', overflow: 'hidden' }}>
                 <span style={{
                   position: 'absolute', top: '-10px', right: '12px',
                   fontFamily: 'var(--font-fraunces, Georgia, serif)',
                   fontSize: '120px', fontWeight: 300,
-                  color: 'rgba(255,255,255,0.12)', lineHeight: 1,
+                  color: 'rgba(255,255,255,0.05)', lineHeight: 1,
                   pointerEvents: 'none', userSelect: 'none',
                 }}>{step.num}</span>
-                <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '13px', fontWeight: 700, color: 'rgba(255,255,255,0.5)', marginBottom: '14px', lineHeight: 1 }}>{step.num}</p>
-                <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#fff', marginBottom: '12px', lineHeight: 1.4, position: 'relative' }}>{step.title}</h3>
-                <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.75, position: 'relative' }}>{step.text}</p>
+                <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '11px', fontWeight: 700, color: GOLD, marginBottom: '14px', letterSpacing: '0.1em' }}>{step.num}</p>
+                <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#fff', marginBottom: '12px', lineHeight: 1.4, position: 'relative' }}>{step.title}</h3>
+                <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.75, position: 'relative' }}>{step.text}</p>
               </div>
             ))}
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '36px' }}>
-            <Link href="/audit" style={{ padding: '14px 32px', background: '#fff', borderRadius: '10px', color: '#C45E0A', fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
+            <Link href="/audit" style={{ padding: '14px 32px', background: GOLD, borderRadius: '8px', color: NAVY, fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
               Démarrer maintenant — c&apos;est gratuit →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ── VIDÉO PLACEHOLDER ──────────────────────────────────────── */}
-      <section style={{ padding: '72px 24px', background: t.bg, borderBottom: `1px solid ${t.border}` }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
-          <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: t.muted, marginBottom: '8px', textTransform: 'uppercase' }}>Démonstration</p>
-          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(22px,3vw,32px)', fontWeight: 300, color: t.text, marginBottom: '6px' }}>
-            Nexalie en 60 secondes
-          </h2>
-          <p style={{ fontSize: '15px', color: t.muted, marginBottom: '32px' }}>Regardez comment ça marche</p>
-
-          {/* Bloc vidéo 16:9 */}
-          <div style={{
-            position: 'relative',
-            width: '100%',
-            paddingTop: '56.25%', /* 16:9 */
-            background: t.navy,
-            borderRadius: '16px',
-            border: `2px solid ${isAf ? '#C45E0A' : '#4EC9B0'}`,
-            overflow: 'hidden',
-            boxShadow: `0 16px 48px ${isAf ? 'rgba(196,94,10,0.15)' : 'rgba(78,201,176,0.12)'}`,
-          }}>
-            <div style={{
-              position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
-              display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-              gap: '16px',
-            }}>
-              <div style={{
-                width: '72px', height: '72px', borderRadius: '50%',
-                background: isAf ? 'rgba(196,94,10,0.25)' : 'rgba(78,201,176,0.2)',
-                border: `2px solid ${isAf ? '#C45E0A' : '#4EC9B0'}`,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: '28px',
-              }}>
-                ▶
-              </div>
-              <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.5)', fontFamily: 'monospace', letterSpacing: '1px' }}>
-                Vidéo disponible prochainement
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ── PLATEFORME ─────────────────────────────────────────────── */}
-      <section style={{ padding: '72px 24px', background: t.sectionAlt }}>
+      <section style={{ padding: '72px 24px', background: CREAM }}>
         <div className="nx-platform-grid" style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
           <div>
-            <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: t.muted, marginBottom: '10px', textTransform: 'uppercase' }}>Plateforme SaaS</p>
-            <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(24px,3vw,34px)', fontWeight: 300, color: t.text, marginBottom: '16px', lineHeight: 1.3 }}>
-              Les outils qui remplacent votre <em style={{ color: t.accent }}>chef de projet digital</em>
+            <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: GOLD, marginBottom: '10px', textTransform: 'uppercase' }}>Plateforme</p>
+            <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(24px,3vw,34px)', fontWeight: 300, color: NAVY, marginBottom: '16px', lineHeight: 1.3, letterSpacing: '-0.01em' }}>
+              Les outils adaptés à la réalité des PME africaines
             </h2>
-            <p style={{ fontSize: '15px', color: t.muted, lineHeight: 1.8, marginBottom: '20px' }}>
-              Business plan, roadmap, veille concurrentielle, cahier des charges — générez en 2 minutes ce qui prend des jours.
+            <p style={{ fontSize: '15px', color: MUTED, lineHeight: 1.8, marginBottom: '28px' }}>
+              Diagnostic, business plan, feuille de route, veille — des outils pensés pour votre contexte : Mobile Money, OHADA, marchés locaux.
             </p>
-            <div style={{ display: 'flex', gap: '8px', marginBottom: '24px', flexWrap: 'wrap' }}>
-              <span style={{ padding: '4px 12px', background: `${t.teal}15`, color: t.teal === '#4EC9B0' ? '#1D6B60' : '#A85520', border: `1px solid ${t.teal}30`, borderRadius: '20px', fontSize: '12px', fontWeight: 600 }}>Gratuit</span>
-              <span style={{ padding: '4px 12px', background: `${t.accent}10`, color: t.accent, border: `1px solid ${t.accent}25`, borderRadius: '20px', fontSize: '12px', fontWeight: 600 }}>129€/mois Premium</span>
-            </div>
-            <Link href="/platform" style={{ padding: '12px 24px', background: t.btnPrimary, borderRadius: '10px', color: t.btnText, fontSize: '14px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
+            <Link href="/platform" style={{ padding: '12px 24px', background: NAVY, borderRadius: '8px', color: '#fff', fontSize: '14px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
               Découvrir la plateforme →
             </Link>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+          <div className="nx-tools-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             {[
-              { Icon: BarChart2,  name: 'Audit Digital',          plan: 'Gratuit',  wide: true  },
-              { Icon: DollarSign, name: 'Calculateur ROI',        plan: 'Gratuit',  wide: false },
-              { Icon: ClipboardList, name: 'Business Plan IA',    plan: 'Premium',  wide: false },
-              { Icon: Map,        name: 'Roadmap 12 mois',        plan: 'Premium',  wide: false },
-              { Icon: Search,     name: 'Veille Concurrentielle', plan: 'Premium',  wide: false },
-              { Icon: FileText,   name: 'Cahier des Charges',     plan: 'Premium',  wide: false },
+              { Icon: BarChart2,    name: 'Audit Digital',          plan: 'Gratuit',  wide: true  },
+              { Icon: DollarSign,   name: 'Calculateur ROI',        plan: 'Gratuit',  wide: false },
+              { Icon: ClipboardList,name: 'Business Plan IA',       plan: 'Premium',  wide: false },
+              { Icon: Map,          name: 'Roadmap 12 mois',        plan: 'Premium',  wide: false },
+              { Icon: Search,       name: 'Veille Concurrentielle', plan: 'Premium',  wide: false },
+              { Icon: FileText,     name: 'Cahier des Charges',     plan: 'Premium',  wide: false },
             ].map(({ Icon, name, plan, wide }) => {
               const isFree = plan === 'Gratuit';
-              const borderColor = isFree ? '#4EC9B0' : '#C45E0A';
+              const borderColor = isFree ? '#2D6A4F' : GOLD;
               return (
                 <div key={name} style={{
                   gridColumn: wide ? '1 / -1' : undefined,
-                  padding: '28px',
+                  padding: '24px',
                   background: '#fff',
-                  border: `1px solid rgba(0,0,0,0.06)`,
+                  border: '1px solid #E2E8F0',
                   borderLeft: `3px solid ${borderColor}`,
-                  borderRadius: '12px',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+                  borderRadius: '8px',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
                 }}>
-                  <Icon size={20} color={borderColor} style={{ marginBottom: '10px' }} />
-                  <p style={{ fontSize: '13px', fontWeight: 700, color: '#0A1628', marginBottom: '4px' }}>{name}</p>
-                  <p style={{ fontSize: '11px', color: isFree ? '#2D6A4F' : '#C45E0A', fontFamily: 'var(--font-mono, monospace)', fontWeight: 600, letterSpacing: '0.05em' }}>{plan}</p>
+                  <Icon size={18} color={borderColor} style={{ marginBottom: '10px' }} />
+                  <p style={{ fontSize: '13px', fontWeight: 700, color: NAVY, marginBottom: '4px' }}>{name}</p>
+                  <p style={{ fontSize: '11px', color: isFree ? '#2D6A4F' : '#9A7A2A', fontFamily: 'var(--font-mono, monospace)', fontWeight: 600, letterSpacing: '0.05em' }}>{plan}</p>
                 </div>
               );
             })}
@@ -329,61 +220,72 @@ export default function NexaliSite() {
       </section>
 
       {/* ── À PROPOS TEASER ────────────────────────────────────────── */}
-      <section style={{ padding: '72px 24px', background: t.navy }}>
+      <section style={{ padding: '72px 24px', background: '#fff', borderTop: '1px solid #E2E8F0' }}>
         <div style={{ maxWidth: '760px', margin: '0 auto', textAlign: 'center' }}>
-          <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: 'rgba(255,255,255,0.4)', marginBottom: '12px', textTransform: 'uppercase' }}>La fondatrice</p>
-          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(24px,3vw,36px)', fontWeight: 300, color: '#fff', marginBottom: '20px', lineHeight: 1.4 }}>
-            Un pont entre <em style={{ color: isAf ? '#E88C32' : '#4EC9B0' }}>deux mondes</em>
+          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: GOLD, marginBottom: '12px', textTransform: 'uppercase' }}>Notre raison d&apos;être</p>
+          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(24px,3vw,36px)', fontWeight: 300, color: NAVY, marginBottom: '20px', lineHeight: 1.4, letterSpacing: '-0.01em' }}>
+            Née ici. Pensée pour ici.
           </h2>
-          <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.9, marginBottom: '28px', maxWidth: '600px', margin: '0 auto 28px' }}>
-            <strong style={{ color: '#fff' }}>Rélia Ebiya.</strong> Franco-congolaise. 10 ans chez Safran et Alcatel Optronics. Elle a piloté la transformation digitale pour 17 000 collaborateurs. Elle a construit Nexalie pour que les PME africaines et françaises aient accès au même niveau d&apos;expertise — sans payer 50 000€ de consulting.
+          <p style={{ fontSize: '15px', color: MUTED, lineHeight: 1.9, marginBottom: '28px', maxWidth: '600px', margin: '0 auto 28px' }}>
+            Nexalie est née d&apos;un constat simple : les PME africaines ont accès aux mêmes outils numériques que les grandes entreprises — mais personne ne les aide à les choisir, les déployer, ni à les intégrer dans leur réalité quotidienne. <strong style={{ color: NAVY }}>Rélia Ebiya</strong>, franco-congolaise, a construit Nexalie pour changer ça.
           </p>
-          <Link href="/about" style={{ padding: '12px 28px', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '10px', color: '#fff', fontSize: '14px', textDecoration: 'none', display: 'inline-block' }}>
-            Découvrir Rélia →
+          <Link href="/about" style={{ padding: '12px 28px', border: `1.5px solid #E2E8F0`, borderRadius: '8px', color: NAVY, fontSize: '14px', textDecoration: 'none', display: 'inline-block', fontWeight: 500 }}>
+            Notre histoire →
           </Link>
         </div>
       </section>
 
-      {/* ── BETA TESTEURS ──────────────────────────────────────────── */}
-      <section style={{ padding: '64px 24px', background: t.bg, borderBottom: `1px solid ${t.border}` }}>
-        <div style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>
-          <div style={{ fontSize: '40px', marginBottom: '16px' }}>🧪</div>
-          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(22px,3vw,30px)', fontWeight: 300, color: t.text, marginBottom: '14px', lineHeight: 1.4 }}>
-            Les premiers retours de nos beta testeurs arrivent.
-          </h2>
-          <p style={{ fontSize: '15px', color: t.muted, lineHeight: 1.8, marginBottom: '28px', maxWidth: '500px', margin: '0 auto 28px' }}>
-            Rejoignez le programme beta et soyez parmi les premiers à tester Nexalie — avant tout le monde.
-          </p>
-          <Link
-            href="/beta"
-            style={{ padding: '14px 36px', background: isAf ? '#C45E0A' : '#0A1628', borderRadius: '10px', color: '#fff', fontSize: '14px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}
-          >
-            Rejoindre le programme beta →
-          </Link>
+      {/* ── INSTITUTIONS TEASER ────────────────────────────────────── */}
+      <section style={{ padding: '64px 24px', background: CREAM, borderTop: '1px solid #E2E8F0' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <div style={{ display: 'flex', gap: '32px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <div style={{ flex: 1, minWidth: '280px' }}>
+              <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: GOLD, marginBottom: '10px', textTransform: 'uppercase' }}>Pour les institutions</p>
+              <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(20px,3vw,28px)', fontWeight: 300, color: NAVY, marginBottom: '14px', lineHeight: 1.4, letterSpacing: '-0.01em' }}>
+                Mesurer et accélérer l&apos;impact de vos programmes
+              </h2>
+              <p style={{ fontSize: '14px', color: MUTED, lineHeight: 1.7, marginBottom: '24px' }}>
+                Bailleurs, chambres de commerce, ministères — accédez à des données agrégées et pilotez vos initiatives de digitalisation des PME.
+              </p>
+              <Link href="/institutions" style={{ padding: '12px 24px', background: NAVY, borderRadius: '8px', color: '#fff', fontSize: '14px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
+                Espace institutions →
+              </Link>
+            </div>
+            <div style={{ flexShrink: 0, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', minWidth: '200px' }}>
+              {[
+                { v: '90K',   l: 'PME ciblées' },
+                { v: '95 %',  l: 'de l\'économie' },
+                { v: '6',     l: 'dimensions auditées' },
+                { v: '5 min', l: 'par diagnostic' },
+              ].map((s) => (
+                <div key={s.l} style={{ background: '#fff', border: '1px solid #E2E8F0', borderRadius: '8px', padding: '16px 14px', textAlign: 'center' }}>
+                  <p style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: '24px', fontWeight: 300, color: NAVY, marginBottom: '4px' }}>{s.v}</p>
+                  <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '9px', color: MUTED, letterSpacing: '0.05em', lineHeight: 1.4 }}>{s.l}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* ── CTA FINAL ──────────────────────────────────────────────── */}
-      <section style={{ padding: '80px 24px', background: t.sectionAlt }}>
+      <section style={{ padding: '80px 24px', background: NAVY }}>
         <div style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>
-          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}><Rocket size={40} color={t.accent} /></div>
-          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(26px,4vw,40px)', fontWeight: 300, color: t.text, marginBottom: '12px', lineHeight: 1.3 }}>
-            Votre transformation digitale <em style={{ color: t.accent }}>commence aujourd&apos;hui</em>
+          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(26px,4vw,40px)', fontWeight: 300, color: '#fff', marginBottom: '12px', lineHeight: 1.3, letterSpacing: '-0.01em' }}>
+            Votre transformation numérique<br />
+            <em style={{ color: GOLD, fontStyle: 'italic' }}>commence aujourd&apos;hui</em>
           </h2>
-          <p style={{ fontSize: '15px', color: t.muted, marginBottom: '32px', lineHeight: 1.7 }}>
-            Audit gratuit en 20 minutes. Plan d&apos;action personnalisé. Aucun engagement.
+          <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.55)', marginBottom: '32px', lineHeight: 1.7 }}>
+            Diagnostic gratuit en 5 minutes. Feuille de route personnalisée. Outils concrets. Aucun engagement.
           </p>
           <div className="nx-cta-buttons" style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/audit" style={{ padding: '16px 40px', background: t.btnPrimary, borderRadius: '12px', color: t.btnText, fontSize: '16px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
+            <Link href="/audit" style={{ padding: '16px 40px', background: GOLD, borderRadius: '8px', color: NAVY, fontSize: '16px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
               Je fais mon audit gratuit →
             </Link>
-            <Link href="/contact" style={{ padding: '16px 24px', background: 'transparent', border: `2px solid ${t.border}`, borderRadius: '12px', color: t.muted, fontSize: '15px', textDecoration: 'none', display: 'inline-block' }}>
+            <Link href="/contact" style={{ padding: '16px 24px', background: 'transparent', border: '1.5px solid rgba(255,255,255,0.2)', borderRadius: '8px', color: 'rgba(255,255,255,0.75)', fontSize: '15px', textDecoration: 'none', display: 'inline-block' }}>
               Nous contacter
             </Link>
           </div>
-          <p style={{ fontSize: '12px', color: t.muted, marginTop: '16px' }}>
-            📱 WhatsApp : +33 7 86 62 04 09
-          </p>
         </div>
       </section>
 

@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -162,12 +163,17 @@ function fmtDisplay(amount, currency, displayCurrency, mode) {
 }
 
 export default function PricingPage() {
+  const router = useRouter();
+  // Page désactivée — tarification non publique actuellement
+  useEffect(() => { router.replace('/'); }, [router]);
+  return null;
+
+  /* eslint-disable no-unreachable */
   const { mode, isAfrica } = useMode();
   const [billing, setBilling] = useState('monthly');
   const [displayCurrency, setDisplayCurrency] = useState('eur');
   const [checkoutLoading, setCheckoutLoading] = useState('');
   const [checkoutError, setCheckoutError] = useState('');
-  const router = useRouter();
   const plans = PLANS[mode];
   const packs = CONSULTING[mode];
 

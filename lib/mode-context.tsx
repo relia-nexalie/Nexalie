@@ -15,11 +15,14 @@ const ModeContext = createContext<ModeContextType>({
 });
 
 export function ModeProvider({ children }: { children: ReactNode }) {
-  const [mode, setModeState] = useState<Mode>('fr');
+  // Nexalie est désormais 100 % africaine : 'af' par défaut
+  const [mode, setModeState] = useState<Mode>('af');
 
   useEffect(() => {
     const saved = localStorage.getItem('nexali-mode') as Mode;
     if (saved === 'fr' || saved === 'af') setModeState(saved);
+    // Si aucune préférence sauvegardée, on force 'af'
+    else localStorage.setItem('nexali-mode', 'af');
   }, []);
 
   // Applique les CSS variables et la palette selon le mode
@@ -27,14 +30,14 @@ export function ModeProvider({ children }: { children: ReactNode }) {
     const root = document.documentElement;
     if (mode === 'af') {
       root.style.setProperty('--nx-bg', '#FFFFFF');
-      root.style.setProperty('--nx-section-bg', '#FFF8F4');
-      root.style.setProperty('--nx-navy', '#1A0800');
-      root.style.setProperty('--nx-accent', '#E88C32');
-      root.style.setProperty('--nx-accent-dark', '#A85520');
-      root.style.setProperty('--nx-gold', '#F5C842');
+      root.style.setProperty('--nx-section-bg', '#F5F3EE');
+      root.style.setProperty('--nx-navy', '#0F2A4A');
+      root.style.setProperty('--nx-accent', '#C9A84C');
+      root.style.setProperty('--nx-accent-dark', '#9A7A2A');
+      root.style.setProperty('--nx-gold', '#C9A84C');
       root.style.setProperty('--nx-green', '#2D6A4F');
-      root.style.setProperty('--nx-text-primary', '#1A0800');
-      root.style.setProperty('--nx-text-secondary', '#7A6B62');
+      root.style.setProperty('--nx-text-primary', '#0F172A');
+      root.style.setProperty('--nx-text-secondary', '#64748B');
     } else {
       root.style.setProperty('--nx-bg', '#FFFFFF');
       root.style.setProperty('--nx-section-bg', '#F8FAFC');

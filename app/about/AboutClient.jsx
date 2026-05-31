@@ -7,9 +7,10 @@ import { useMode } from '@/lib/mode-context';
 export default function AboutClient() {
   const { isAfrica } = useMode();
 
-  const navy        = isAfrica ? '#1A0800' : '#0A1628';
-  const accent      = isAfrica ? '#C45E0A' : '#4EC9B0';
-  const accentText  = isAfrica ? '#C45E0A' : '#1D6B60';
+  // Palette institutionnelle africaine — couleurs fixes
+  const navy        = '#0F2A4A';
+  const accent      = '#C9A84C';
+  const accentText  = '#9A7A2A';
 
   return (
     <div style={{ fontFamily: 'var(--font-jakarta, system-ui, sans-serif)', background: '#fff', color: '#1C1C1C' }}>
@@ -22,7 +23,7 @@ export default function AboutClient() {
           gap: 'clamp(32px,5vw,72px)', alignItems: 'center'
         }}>
           <div>
-            <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: '#C45E0A', textTransform: 'uppercase', marginBottom: '20px' }}>La fondatrice</p>
+            <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: accent, textTransform: 'uppercase', marginBottom: '20px' }}>Notre raison d&apos;être</p>
             <blockquote style={{
               fontFamily: 'var(--font-fraunces, Georgia, serif)',
               fontSize: 'clamp(20px,2.8vw,30px)',
@@ -64,23 +65,23 @@ export default function AboutClient() {
             <h2 style={{
               fontFamily: 'var(--font-fraunces, Georgia, serif)',
               fontSize: 'clamp(28px,4vw,46px)',
-              fontWeight: 300, color: '#0A1628',
+              fontWeight: 300, color: navy,
               lineHeight: 1.25, marginBottom: '36px'
             }}>
-              Des PME qui méritent la même rigueur que les grands groupes. Sans le prix du consultant.
+              Les PME africaines méritent les mêmes outils que les grands groupes. Sans en payer le prix.
             </h2>
-            <div style={{ fontSize: '16px', color: '#374151', lineHeight: 2, borderLeft: `2px solid ${accent}30`, paddingLeft: '24px' }}>
+            <div style={{ fontSize: '16px', color: '#374151', lineHeight: 2, borderLeft: `2px solid ${accent}50`, paddingLeft: '24px' }}>
               <p style={{ marginBottom: '20px' }}>
-                Pendant des années, j&apos;ai travaillé dans de grandes entreprises — Safran, Alcatel Optronics. J&apos;ai vu ce que les budgets de transformation digitale permettent d&apos;accomplir quand les outils, les méthodes et l&apos;expertise sont alignés.
+                Nexalie est née d&apos;un constat simple : les PME africaines ont accès aux mêmes outils numériques que les grandes entreprises — mais personne ne les aide à les choisir, les déployer, ni à les intégrer dans leur réalité quotidienne.
               </p>
               <p style={{ marginBottom: '20px' }}>
-                Puis j&apos;ai regardé de l&apos;autre côté. Les PME françaises qui n&apos;ont pas 15 000€ pour un cabinet. Les entrepreneurs africains qui n&apos;ont accès ni aux outils ni aux méthodologies adaptées à leur réalité.
+                Pendant dix ans, j&apos;ai travaillé dans de grands groupes industriels — Safran, Alcatel Optronics. J&apos;ai vu ce que les budgets de transformation digitale permettent d&apos;accomplir quand outils, méthodes et expertise sont alignés. Puis j&apos;ai regardé vers Brazzaville, vers Kinshasa, vers Dakar.
               </p>
               <p style={{ marginBottom: '20px' }}>
-                Chez Nexalie, on part d&apos;une conviction simple : la clarté stratégique et la rigueur opérationnelle ne devraient pas être des privilèges réservés aux grandes organisations.
+                Les entrepreneurs que j&apos;y côtoie portent 95 % de l&apos;économie réelle de leur pays. Ils travaillent sans filet, sans outils numériques adaptés, sans accès aux méthodologies qui leur permettraient de structurer leur croissance.
               </p>
-              <p style={{ fontWeight: 600, color: '#0A1628' }}>
-                Nexalie, c&apos;est cette expertise — accessible en 20 minutes, à un prix que toute PME peut justifier.
+              <p style={{ fontWeight: 600, color: navy }}>
+                Nexalie, c&apos;est cette expertise — disponible en 5 minutes, dans leur langue, adaptée à leur contexte.
               </p>
             </div>
           </div>
@@ -97,7 +98,7 @@ export default function AboutClient() {
               },
               {
                 label: 'DOUBLE CULTURE',
-                color: isAfrica ? '#E88C32' : '#4EC9B0',
+                color: accent,
                 body: 'Paris et Brazzaville. Les deux mondes coexistent dans ma façon de penser. Je comprends le Mobile Money, les coupures de courant, la culture orale — et je comprends le RGPD, les appels d\'offres européens, les reporting trimestriels. Nexalie est construite pour les deux.',
               },
               {
@@ -165,17 +166,17 @@ export default function AboutClient() {
       </section>
 
       {/* ── VISION ──────────────────────────────────────────────────── */}
-      <section style={{ padding: 'clamp(56px,7vw,88px) 24px', background: isAfrica ? '#FFF8F3' : '#F8F9FA' }}>
+      <section style={{ padding: 'clamp(56px,7vw,88px) 24px', background: '#F5F3EE' }}>
         <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: accentText, marginBottom: '12px', textTransform: 'uppercase' }}>Vision 2030</p>
           <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(24px,3.5vw,38px)', fontWeight: 300, color: '#1C1C1C', marginBottom: '24px', lineHeight: 1.4 }}>
-            Une ambition pour l&apos;espace francophone
+            La boussole numérique de l&apos;Afrique francophone
           </h2>
           <p style={{ fontSize: '17px', color: '#374151', lineHeight: 1.95, marginBottom: '40px' }}>
-            D&apos;ici 2030, chaque PME en Afrique francophone et en France aura accès à un plan de transformation digitale concret — sans consultant hors de prix, sans jargon inutile.
+            D&apos;ici 2030, chaque PME africaine aura accès à un plan de transformation numérique concret — dans sa langue, adapté à son marché, à un coût qu&apos;elle peut justifier.
           </p>
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/audit" style={{ padding: '15px 32px', background: isAfrica ? '#C45E0A' : '#0A1628', borderRadius: '10px', color: '#fff', fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
+            <Link href="/audit" style={{ padding: '15px 32px', background: navy, borderRadius: '10px', color: '#fff', fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
               Faire mon bilan gratuit →
             </Link>
             <Link href="/contact" style={{ padding: '15px 24px', background: 'transparent', border: '2px solid rgba(0,0,0,0.12)', borderRadius: '10px', color: '#6B7A94', fontSize: '15px', textDecoration: 'none', display: 'inline-block' }}>
