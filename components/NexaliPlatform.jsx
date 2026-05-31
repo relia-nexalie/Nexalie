@@ -87,20 +87,20 @@ const TABS = [
 ];
 
 const METRICS = [
-  { label: "Visiteurs ce mois", value: "1 247", delta: "+18%", color: "#4EC9B0", icon: "◈" },
-  { label: "Audits lancés", value: "89", delta: "+34%", color: "#C9A84C", icon: "◉" },
-  { label: "Taux conversion", value: "12.4%", delta: "+2.1pts", color: "#C586C0", icon: "◐" },
-  { label: "Abonnés premium", value: "11", delta: "+3 ce mois", color: "#7B5EA7", icon: "◎" },
-  { label: "Revenus passifs", value: "319€", delta: "ce mois", color: "#4A7C59", icon: "◑" },
-  { label: "Outils utilisés", value: "234", delta: "sessions", color: "#CE9178", icon: "⬡" },
+  { label: "PME diagnostiquées", value: "247", delta: "+34 ce mois", color: "#C9A84C", icon: "◈" },
+  { label: "Score moyen", value: "38/100", delta: "Niveau Émergent", color: "#4EC9B0", icon: "◉" },
+  { label: "Audits complétés", value: "189", delta: "+28%", color: "#C586C0", icon: "◐" },
+  { label: "Secteur dominant", value: "Commerce", delta: "41% du total", color: "#CE9178", icon: "◎" },
+  { label: "Niveau critique (0–20)", value: "23%", delta: "Priorité haute", color: "#FF6B4A", icon: "◑" },
+  { label: "Sessions outils", value: "1 204", delta: "ce mois", color: "#4A7C59", icon: "⬡" },
 ];
 
 const FUNNEL = [
-  { label: "Visiteurs", value: 1247, pct: 100, color: "#4EC9B0" },
-  { label: "Outil gratuit", value: 312, pct: 25, color: "#C9A84C" },
-  { label: "Résultat vu", value: 201, pct: 16, color: "#C586C0" },
-  { label: "Inscription", value: 67, pct: 5.4, color: "#7B5EA7" },
-  { label: "Premium", value: 11, pct: 0.9, color: "#CE9178" },
+  { label: "PME visiteurs", value: 1247, pct: 100, color: "#4EC9B0" },
+  { label: "Audit démarré", value: 312, pct: 25, color: "#C9A84C" },
+  { label: "Audit complété", value: 247, pct: 19.8, color: "#C586C0" },
+  { label: "Email fourni", value: 134, pct: 10.7, color: "#7B5EA7" },
+  { label: "Feuille de route générée", value: 89, pct: 7.1, color: "#4A7C59" },
 ];
 
 const SYSTEM = {
@@ -208,7 +208,6 @@ function ToolWrapper({ title, sub, color, isPremium, isUnlocked, fields, systemK
   const set = (k, v) => setValues(p => ({ ...p, [k]: v }));
 
   const generate = async () => {
-    if (isPremium && !isUnlocked) return;
     setLoading(true);
     setResult(null);
     setRawText('');
@@ -237,28 +236,13 @@ function ToolWrapper({ title, sub, color, isPremium, isUnlocked, fields, systemK
     <div style={{ maxWidth: "760px" }}>
       <div style={{ marginBottom: "28px" }}>
         <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", letterSpacing: "2px", color, marginBottom: "6px" }}>
-          {isPremium ? "⭐ OUTIL PREMIUM" : "✅ OUTIL GRATUIT"}
+          ✅ OUTIL DISPONIBLE
         </p>
         <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: "26px", fontWeight: 300, color: "#fff", marginBottom: "4px" }}>{title}</h2>
         <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.4)", fontFamily: "'DM Sans', sans-serif" }}>{sub}</p>
       </div>
 
-      {isPremium && !isUnlocked ? (
-        <div style={{ padding: "32px", background: `${color}08`, border: `1px solid ${color}25`, borderRadius: "16px", textAlign: "center" }}>
-          <p style={{ fontSize: "32px", marginBottom: "12px" }}>🔒</p>
-          <p style={{ fontFamily: "'Fraunces', serif", fontSize: "20px", color: "#fff", marginBottom: "8px" }}>Outil Premium</p>
-          <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.4)", marginBottom: "20px", fontFamily: "'DM Sans', sans-serif" }}>
-            Accédez à tous les outils illimités pour 129€/mois
-          </p>
-          <button style={{ padding: "12px 28px", background: color, border: "none", borderRadius: "10px", color: "#070e1c", fontSize: "14px", fontWeight: "700", cursor: "pointer", fontFamily: "'DM Sans', sans-serif" }}>
-            Passer Premium →
-          </button>
-          <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.2)", marginTop: "12px", fontFamily: "'DM Sans', sans-serif" }}>
-            ou contacter Relia — relia.ebiya@gmail.com
-          </p>
-        </div>
-      ) : (
-        <div>
+      <div>
           {/* Form */}
           <div style={{ display: "flex", flexDirection: "column", gap: "14px", marginBottom: "20px" }}>
             {fields.map(f => (
@@ -310,7 +294,6 @@ function ToolWrapper({ title, sub, color, isPremium, isUnlocked, fields, systemK
 
           {result && renderResult(result, color)}
         </div>
-      )}
     </div>
   );
 }
@@ -442,7 +425,7 @@ const renderRoi = (r, color) => (
     <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "10px", marginBottom: "12px" }}>
       {[
         ["Score actuel", `${r.scoreActuel?.valeur}/100`, r.scoreActuel?.interpretation, "#CE9178"],
-        ["Gain annuel estimé", `${r.potentielGains?.totalGainAnnuel?.toLocaleString()}€`, "productivité + nouveaux revenus", "#4A7C59"],
+        ["Gain annuel estimé", r.potentielGains?.totalGainAnnuel?.toLocaleString() ?? "—", "productivité + nouveaux revenus", "#4A7C59"],
         ["ROI", `${r.roi?.valeur}%`, `Retour en ${r.roi?.delaiRetour}`, color],
       ].map(([l, v, s, c]) => (
         <Card key={l} color={c}>
@@ -458,13 +441,13 @@ const renderRoi = (r, color) => (
           {[["Outils", r.investissementNecessaire?.outils], ["Formation", r.investissementNecessaire?.formation], ["Accompagnement", r.investissementNecessaire?.accompagnement]].map(([l, v]) => (
             <div key={l} style={{ textAlign: "center" }}>
               <p style={{ fontSize: "10px", color: "rgba(255,255,255,0.3)", fontFamily: "monospace" }}>{l}</p>
-              <p style={{ fontFamily: "'Fraunces', serif", fontSize: "18px", color }}>{v}€</p>
+              <p style={{ fontFamily: "'Fraunces', serif", fontSize: "18px", color }}>{v}</p>
             </div>
           ))}
         </div>
         <div style={{ textAlign: "center", marginTop: "8px", padding: "8px", background: `${color}10`, borderRadius: "8px" }}>
           <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.4)", fontFamily: "monospace" }}>TOTAL</p>
-          <p style={{ fontFamily: "'Fraunces', serif", fontSize: "22px", color }}>{r.investissementNecessaire?.total}€</p>
+          <p style={{ fontFamily: "'Fraunces', serif", fontSize: "22px", color }}>{r.investissementNecessaire?.total}</p>
         </div>
       </Section>
     </Card>
@@ -582,14 +565,14 @@ const TOOLS = {
     title: "Générateur de Business Plan",
     sub: "Créez un business plan structuré en 2 minutes avec l'IA",
     color: "#C586C0",
-    isPremium: true,
+    isPremium: false,
     systemKey: "bizplan",
     fields: [
       { key: "nom", label: "Nom de l'entreprise", type: "text", placeholder: "Ex: Mama Africa Restaurant", required: true },
       { key: "secteur", label: "Secteur d'activité", type: "select", required: true, options: ["Commerce", "Restauration", "BTP", "Santé", "Services", "Tech", "Formation", "Agriculture", "Finance", "Mode", "Artisanat", "ONG"] },
       { key: "marche", label: "Marché cible", type: "select", required: true, options: ["Congo Brazzaville", "Cameroun", "Côte d'Ivoire", "Sénégal", "Afrique francophone", "France", "France + Afrique"] },
       { key: "description", label: "Décrivez votre projet", type: "textarea", placeholder: "Votre activité, votre vision, vos clients...", required: true },
-      { key: "budget", label: "Budget de démarrage estimé", type: "select", required: false, options: ["Moins de 5 000€", "5 000 — 20 000€", "20 000 — 50 000€", "Plus de 50 000€"] },
+      { key: "budget", label: "Budget de démarrage estimé", type: "select", required: false, options: ["Moins de 3 M FCFA", "3 — 10 M FCFA", "10 — 30 M FCFA", "Plus de 30 M FCFA"] },
     ],
     promptBuilder: (v) => `Entreprise: ${v.nom} | Secteur: ${v.secteur} | Marché: ${v.marche} | Description: ${v.description} | Budget: ${v.budget || "non précisé"}`,
     renderResult: renderBizplan,
@@ -598,14 +581,14 @@ const TOOLS = {
     title: "Générateur de Roadmap Digitale",
     sub: "Votre plan d'action digital sur 12 mois",
     color: "#4EC9B0",
-    isPremium: true,
+    isPremium: false,
     systemKey: "roadmap",
     fields: [
       { key: "nom", label: "Nom de l'entreprise", type: "text", placeholder: "Ex: Cabinet Espoir", required: true },
       { key: "secteur", label: "Secteur", type: "select", required: true, options: ["Commerce", "Restauration", "BTP", "Santé", "Services", "Tech", "Formation", "Agriculture", "Finance", "Mode"] },
       { key: "niveau", label: "Niveau digital actuel", type: "select", required: true, options: ["Débutant — peu ou pas de digital", "Intermédiaire — quelques outils", "Avancé — bien équipé", "Expert — tout est digitalisé"] },
       { key: "objectif", label: "Objectif principal", type: "select", required: true, options: ["Attirer plus de clients", "Gagner du temps", "Vendre en ligne", "Former mon équipe", "Automatiser mes processus"] },
-      { key: "budget", label: "Budget mensuel disponible", type: "select", required: false, options: ["Moins de 200€/mois", "200 — 500€/mois", "500 — 1000€/mois", "Plus de 1000€/mois"] },
+      { key: "budget", label: "Budget mensuel disponible", type: "select", required: false, options: ["Moins de 100 000 FCFA/mois", "100 000 — 300 000 FCFA/mois", "300 000 — 600 000 FCFA/mois", "Plus de 600 000 FCFA/mois"] },
     ],
     promptBuilder: (v) => `Entreprise: ${v.nom} | Secteur: ${v.secteur} | Niveau actuel: ${v.niveau} | Objectif: ${v.objectif} | Budget: ${v.budget || "non précisé"}`,
     renderResult: renderRoadmap,
@@ -614,7 +597,7 @@ const TOOLS = {
     title: "Cartographie des Processus",
     sub: "Identifiez vos processus et les opportunités de digitalisation",
     color: "#CE9178",
-    isPremium: true,
+    isPremium: false,
     systemKey: "process",
     fields: [
       { key: "nom", label: "Nom de l'entreprise", type: "text", placeholder: "Ex: BTP Congo SARL", required: true },
@@ -633,7 +616,7 @@ const TOOLS = {
     systemKey: "roi",
     fields: [
       { key: "secteur", label: "Secteur", type: "select", required: true, options: ["Commerce", "Restauration", "BTP", "Santé", "Services", "Tech", "Formation", "Agriculture", "Finance"] },
-      { key: "ca", label: "Chiffre d'affaires annuel", type: "select", required: true, options: ["Moins de 50 000€", "50 000 — 200 000€", "200 000 — 500 000€", "Plus de 500 000€"] },
+      { key: "ca", label: "Chiffre d'affaires annuel", type: "select", required: true, options: ["Moins de 10 M FCFA", "10 — 50 M FCFA", "50 — 200 M FCFA", "200 M — 1 Md FCFA", "Plus de 1 Md FCFA"] },
       { key: "effectif", label: "Nombre d'employés", type: "select", required: true, options: ["1-5", "6-20", "21-50", "50+"] },
       { key: "niveau", label: "Niveau digital actuel", type: "select", required: true, options: ["Très faible (0-20/100)", "Faible (20-40/100)", "Moyen (40-60/100)", "Bon (60-80/100)"] },
       { key: "priorite", label: "Priorité d'investissement", type: "select", required: true, options: ["Site web & présence", "Automatisation", "Formation équipe", "IA & données", "Tout à la fois"] },
@@ -645,13 +628,13 @@ const TOOLS = {
     title: "Générateur de Cahier des Charges",
     sub: "Créez un cahier des charges professionnel pour votre projet digital",
     color: "#569CD6",
-    isPremium: true,
+    isPremium: false,
     systemKey: "cdc",
     fields: [
       { key: "projet", label: "Nom du projet", type: "text", placeholder: "Ex: Site e-commerce Mode Élégance", required: true },
       { key: "type", label: "Type de projet", type: "select", required: true, options: ["Site web vitrine", "Site e-commerce", "Application mobile", "Refonte site existant", "Automatisation processus", "Mise en place CRM", "Formation digitale"] },
       { key: "objectif", label: "Objectif principal", type: "textarea", placeholder: "Ex: Créer une boutique en ligne pour vendre nos produits de mode au Congo et en France...", required: true },
-      { key: "budget", label: "Budget estimé", type: "select", required: false, options: ["Moins de 1 000€", "1 000 — 3 000€", "3 000 — 10 000€", "Plus de 10 000€"] },
+      { key: "budget", label: "Budget estimé", type: "select", required: false, options: ["Moins de 600 000 FCFA", "600 000 — 2 M FCFA", "2 — 6 M FCFA", "Plus de 6 M FCFA"] },
       { key: "delai", label: "Délai souhaité", type: "select", required: false, options: ["Urgent — moins d'1 mois", "1-3 mois", "3-6 mois", "Flexible"] },
     ],
     promptBuilder: (v) => `Projet: ${v.projet} | Type: ${v.type} | Objectif: ${v.objectif} | Budget: ${v.budget || "non précisé"} | Délai: ${v.delai || "flexible"}`,
@@ -661,7 +644,7 @@ const TOOLS = {
     title: "Veille Concurrentielle",
     sub: "Analysez votre marché et vos concurrents en 2 minutes",
     color: "#FF6B4A",
-    isPremium: true,
+    isPremium: false,
     systemKey: "veille",
     fields: [
       { key: "secteur", label: "Secteur d'activité", type: "select", required: true, options: ["Commerce / Retail", "Restauration", "BTP / Construction", "Santé", "Services aux entreprises", "Tech / SaaS", "Formation", "Agriculture", "Finance / Fintech", "Mode / Beauté", "Logistique", "Énergie"] },
@@ -678,25 +661,49 @@ const TOOLS = {
 // DASHBOARD
 // ═══════════════════════════════════════════
 
-function DashboardView({ accent = '#4EC9B0' }) {
+const SCORE_LEVELS = [
+  { label: "Critique (0–20)", value: 23, color: "#FF6B4A" },
+  { label: "Émergent (21–40)", value: 38, color: "#D97706" },
+  { label: "Structuré (41–60)", value: 22, color: "#C9A84C" },
+  { label: "Avancé (61–80)", value: 12, color: "#4EC9B0" },
+  { label: "Leader (81–100)", value: 5, color: "#4A7C59" },
+];
+
+const SECTORS = [
+  { label: "Commerce", pct: 41, color: "#C9A84C" },
+  { label: "Services", pct: 22, color: "#4EC9B0" },
+  { label: "BTP", pct: 14, color: "#CE9178" },
+  { label: "Agriculture", pct: 11, color: "#4A7C59" },
+  { label: "Autres", pct: 12, color: "#7B5EA7" },
+];
+
+const NEEDS = [
+  { label: "Présence en ligne", pct: 78, color: "#C9A84C" },
+  { label: "Gestion clients / CRM", pct: 64, color: "#4EC9B0" },
+  { label: "Paiement numérique", pct: 59, color: "#CE9178" },
+  { label: "Formation équipe", pct: 47, color: "#C586C0" },
+  { label: "Automatisation", pct: 31, color: "#4A7C59" },
+];
+
+function DashboardView({ accent = '#C9A84C' }) {
   const cardStyle = { background: "#fff", borderRadius: "14px", boxShadow: "0 2px 8px rgba(0,0,0,0.06)", border: "1px solid rgba(0,0,0,0.06)", padding: "24px" };
   const labelStyle = { fontFamily: "'IBM Plex Mono', monospace", fontSize: "9px", letterSpacing: "2px", color: "#9CA3AF", marginBottom: "16px", textTransform: "uppercase" };
   return (
     <div style={{ background: "#F8F9FA", minHeight: "100%", padding: "32px", margin: "-28px" }}>
       <div style={{ marginBottom: "28px", display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
         <div>
-          <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", letterSpacing: "2px", color: "#9CA3AF", marginBottom: "4px" }}>NEXALIE PLATFORM — VUE D&apos;ENSEMBLE</p>
-          <h1 style={{ fontFamily: "'Fraunces', serif", fontSize: "26px", fontWeight: 300, color: "#0A1628" }}>Bonjour, Relia</h1>
+          <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", letterSpacing: "2px", color: "#9CA3AF", marginBottom: "4px" }}>NEXALIE — TABLEAU DE BORD AGRÉGÉ</p>
+          <h1 style={{ fontFamily: "'Fraunces', serif", fontSize: "26px", fontWeight: 300, color: "#0A1628" }}>Maturité Numérique des PME</h1>
         </div>
         <button
           onClick={() => window.print()}
-          style={{ display: "flex", alignItems: "center", gap: "8px", padding: "10px 20px", background: accent, border: "none", borderRadius: "10px", color: "#fff", fontSize: "13px", fontWeight: 700, cursor: "pointer", fontFamily: "'IBM Plex Mono', monospace", letterSpacing: "0.5px", flexShrink: 0 }}
+          style={{ display: "flex", alignItems: "center", gap: "8px", padding: "10px 20px", background: accent, border: "none", borderRadius: "10px", color: "#0F2A4A", fontSize: "13px", fontWeight: 700, cursor: "pointer", fontFamily: "'IBM Plex Mono', monospace", letterSpacing: "0.5px", flexShrink: 0 }}
         >
-          ↓ Exporter le rapport PDF
+          ↓ Exporter le rapport
         </button>
       </div>
 
-      {/* KPIs */}
+      {/* KPIs agrégés */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px", marginBottom: "24px" }}>
         {METRICS.map(m => (
           <div key={m.label} style={{ ...cardStyle, padding: "24px" }}>
@@ -710,10 +717,25 @@ function DashboardView({ accent = '#4EC9B0' }) {
         ))}
       </div>
 
-      {/* Funnel + Outils */}
+      {/* Répartition niveaux + Tunnel */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px", marginBottom: "24px" }}>
         <div style={cardStyle}>
-          <p style={labelStyle}>Tunnel de conversion</p>
+          <p style={labelStyle}>Répartition par niveau de maturité</p>
+          {SCORE_LEVELS.map((l) => (
+            <div key={l.label} style={{ marginBottom: "12px" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "5px" }}>
+                <span style={{ fontSize: "12px", color: "#374151", fontFamily: "'DM Sans', sans-serif" }}>{l.label}</span>
+                <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "11px", color: l.color, fontWeight: 700 }}>{l.value}%</span>
+              </div>
+              <div style={{ height: "6px", background: "#F3F4F6", borderRadius: "3px", overflow: "hidden" }}>
+                <div style={{ width: `${l.value}%`, height: "100%", background: l.color, borderRadius: "3px", transition: "width 1s ease" }} />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div style={cardStyle}>
+          <p style={labelStyle}>Parcours de diagnostic</p>
           {FUNNEL.map((f) => (
             <div key={f.label} style={{ marginBottom: "12px" }}>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "5px" }}>
@@ -729,59 +751,52 @@ function DashboardView({ accent = '#4EC9B0' }) {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Secteurs + Besoins prioritaires */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px", marginBottom: "24px" }}>
+        <div style={cardStyle}>
+          <p style={labelStyle}>Répartition sectorielle</p>
+          {SECTORS.map((s) => (
+            <div key={s.label} style={{ marginBottom: "12px" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "5px" }}>
+                <span style={{ fontSize: "12px", color: "#374151", fontFamily: "'DM Sans', sans-serif" }}>{s.label}</span>
+                <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "11px", color: s.color, fontWeight: 700 }}>{s.pct}%</span>
+              </div>
+              <div style={{ height: "5px", background: "#F3F4F6", borderRadius: "3px", overflow: "hidden" }}>
+                <div style={{ width: `${s.pct}%`, height: "100%", background: s.color, borderRadius: "3px", transition: "width 1s ease" }} />
+              </div>
+            </div>
+          ))}
+        </div>
 
         <div style={cardStyle}>
-          <p style={labelStyle}>Outils plateforme</p>
-          {TABS.filter(t => t.id !== "dashboard").map(t => (
-            <div key={t.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "7px 0", borderBottom: "1px solid #F3F4F6" }}>
-              <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
-                <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "13px", color: t.free ? "#059669" : "#D97706" }}>{t.icon}</span>
-                <span style={{ fontSize: "12px", color: "#374151", fontFamily: "'DM Sans', sans-serif" }}>{t.label}</span>
+          <p style={labelStyle}>Besoins prioritaires identifiés</p>
+          {NEEDS.map((n) => (
+            <div key={n.label} style={{ marginBottom: "12px" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "5px" }}>
+                <span style={{ fontSize: "12px", color: "#374151", fontFamily: "'DM Sans', sans-serif" }}>{n.label}</span>
+                <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "11px", color: n.color, fontWeight: 700 }}>{n.pct}%</span>
               </div>
-              <span style={{ padding: "2px 8px", borderRadius: "4px", fontSize: "9px", fontFamily: "monospace", background: t.free ? "#D1FAE5" : "#FEF3C7", color: t.free ? "#059669" : "#D97706" }}>
-                {t.free ? "GRATUIT" : "PREMIUM"}
-              </span>
-            </div>
-          ))}
-          <div style={{ marginTop: "14px", padding: "10px 14px", background: "#FFFBEB", borderRadius: "8px", border: "1px solid #FDE68A" }}>
-            <p style={{ fontSize: "12px", color: "#92400E", fontFamily: "'DM Sans', sans-serif" }}>
-              💰 <strong>129€ × 11 abonnés = 1 419€/mois</strong>
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Revenue projection */}
-      <div style={{ ...cardStyle, marginBottom: "24px", borderLeft: `4px solid ${accent}` }}>
-        <p style={labelStyle}>Projection revenus passifs</p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "16px" }}>
-          {[["Aujourd'hui", "11 abonnés", "319€/mois"], ["Dans 3 mois", "50 abonnés", "1 450€/mois"], ["Dans 6 mois", "100 abonnés", "2 900€/mois"], ["Dans 1 an", "200 abonnés", "5 800€/mois"]].map(([p, a, r]) => (
-            <div key={p} style={{ textAlign: "center", padding: "14px", background: "#F9FAFB", borderRadius: "10px", border: "1px solid #F3F4F6" }}>
-              <p style={{ fontSize: "9px", color: "#9CA3AF", fontFamily: "monospace", marginBottom: "4px", textTransform: "uppercase" }}>{p}</p>
-              <p style={{ fontSize: "11px", color: "#6B7280", fontFamily: "'DM Sans', sans-serif", marginBottom: "6px" }}>{a}</p>
-              <p style={{ fontFamily: "'Fraunces', serif", fontSize: "18px", color: accent }}>{r}</p>
+              <div style={{ height: "5px", background: "#F3F4F6", borderRadius: "3px", overflow: "hidden" }}>
+                <div style={{ width: `${n.pct}%`, height: "100%", background: n.color, borderRadius: "3px", transition: "width 1s ease" }} />
+              </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Integrations */}
+      {/* Outils plateforme */}
       <div style={cardStyle}>
-        <p style={labelStyle}>Intégrations disponibles</p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
-          {[
-            { plan: "GRATUIT", color: "#059669", bg: "#F0FDF4", border: "#BBF7D0", items: ["Export PDF du rapport", "Partage par email", "Lien de résultat partageable"] },
-            { plan: "PRO", color: "#D97706", bg: "#FFFBEB", border: "#FDE68A", items: ["Export Google Sheets", "Partage WhatsApp direct", "Webhook Zapier basique", "Notifications Slack"] },
-            { plan: "INSTITUTIONS", color: "#7B5EA7", bg: "#FAF5FF", border: "#DDD6FE", items: ["API complète documentée", "Make / Zapier avancé", "Export CSV / Excel", "Intégration CRM (HubSpot, Salesforce)", "Webhook personnalisé"] },
-          ].map(({ plan, color, bg, border, items }) => (
-            <div key={plan} style={{ padding: "18px", background: bg, border: `1px solid ${border}`, borderRadius: "10px" }}>
-              <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "9px", color, letterSpacing: "1px", marginBottom: "14px" }}>{plan}</p>
-              {items.map(item => (
-                <div key={item} style={{ display: "flex", gap: "6px", alignItems: "flex-start", marginBottom: "7px" }}>
-                  <span style={{ color, fontSize: "10px", flexShrink: 0, marginTop: "2px", fontWeight: 700 }}>✓</span>
-                  <span style={{ fontSize: "11px", color: "#374151", fontFamily: "'DM Sans', sans-serif", lineHeight: 1.5 }}>{item}</span>
-                </div>
-              ))}
+        <p style={labelStyle}>Outils disponibles</p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "10px" }}>
+          {TABS.filter(t => t.id !== "dashboard").map(t => (
+            <div key={t.id} style={{ display: "flex", gap: "10px", alignItems: "center", padding: "10px 12px", background: "#F9FAFB", borderRadius: "8px", border: "1px solid #F3F4F6" }}>
+              <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "14px", color: accent }}>{t.icon}</span>
+              <div>
+                <p style={{ fontSize: "12px", color: "#374151", fontFamily: "'DM Sans', sans-serif", fontWeight: 600 }}>{t.label}</p>
+                <p style={{ fontSize: "10px", color: "#9CA3AF", fontFamily: "'IBM Plex Mono', monospace" }}>GRATUIT</p>
+              </div>
             </div>
           ))}
         </div>
@@ -795,17 +810,14 @@ function DashboardView({ accent = '#4EC9B0' }) {
 // ═══════════════════════════════════════════
 
 export default function App() {
-  const { mode, setMode, isAfrica } = useMode();
-  const accent  = isAfrica ? '#C45E0A' : '#4EC9B0';
-  const navyBg  = isAfrica ? '#1A0800' : '#070e1c';
+  const accent = '#C9A84C';
 
   const [activeTab, setActiveTab] = useState("dashboard");
-  const [isUnlocked, setIsUnlocked] = useState(true); // TEST: outils premium accessibles
   const tab = TABS.find(t => t.id === activeTab);
   const tool = TOOLS[activeTab];
 
   return (
-    <div style={{ minHeight: "100vh", background: isAfrica ? "radial-gradient(ellipse at 10% 10%, #2a0e00 0%, #1a0800 100%)" : "radial-gradient(ellipse at 10% 10%, #0d1f35 0%, #070e1c 100%)", fontFamily: "'DM Sans', sans-serif", display: "flex" }}>
+    <div style={{ minHeight: "100vh", background: "radial-gradient(ellipse at 10% 10%, #0d1f35 0%, #070e1c 100%)", fontFamily: "'DM Sans', sans-serif", display: "flex" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=IBM+Plex+Mono:wght@400;500&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -822,16 +834,8 @@ export default function App() {
       {/* Sidebar */}
       <div style={{ width: "220px", flexShrink: 0, borderRight: "1px solid rgba(255,255,255,0.05)", padding: "20px 12px", display: "flex", flexDirection: "column", gap: "3px" }}>
         <div style={{ marginBottom: "16px", paddingBottom: "14px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
-          <p style={{ fontFamily: "'Fraunces', serif", fontSize: "18px", fontWeight: 200, color: "#fff", marginBottom: "10px" }}>Nexalie</p>
-          {/* Toggle FR / AF */}
-          <div style={{ display: "flex", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "7px", overflow: "hidden" }}>
-            {[['fr', '🇫🇷 France'], ['af', '🌍 Afrique']].map(([m, label]) => (
-              <button key={m} onClick={() => setMode(m)}
-                style={{ flex: 1, padding: "5px 6px", border: "none", cursor: "pointer", fontSize: "10px", fontWeight: mode === m ? 700 : 400, background: mode === m ? accent : "transparent", color: "#fff", transition: "all 0.2s", fontFamily: "'IBM Plex Mono', monospace" }}>
-                {label}
-              </button>
-            ))}
-          </div>
+          <p style={{ fontFamily: "'Fraunces', serif", fontSize: "18px", fontWeight: 200, color: "#fff", marginBottom: "4px" }}>Nexalie</p>
+          <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "9px", color: "rgba(255,255,255,0.25)", letterSpacing: "1px" }}>PME AFRICAINES</p>
         </div>
 
         <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "9px", letterSpacing: "1px", color: "rgba(255,255,255,0.2)", marginBottom: "4px", paddingLeft: "4px" }}>TABLEAU DE BORD</p>
@@ -847,28 +851,17 @@ export default function App() {
 
         {TABS.filter(t => t.id !== "dashboard").map(t => (
           <button key={t.id} className="nav-btn" onClick={() => setActiveTab(t.id)}
-            style={{ width: "100%", padding: "9px 12px", borderRadius: "8px", border: `1px solid ${activeTab === t.id ? (t.free ? "rgba(74,124,89,0.4)" : "rgba(201,168,76,0.3)") : "transparent"}`, background: activeTab === t.id ? (t.free ? "rgba(74,124,89,0.08)" : "rgba(201,168,76,0.06)") : "transparent", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: "8px", transition: "all 0.15s" }}>
-            <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "12px", color: activeTab === t.id ? (t.free ? "#4A7C59" : "#C9A84C") : "rgba(255,255,255,0.2)" }}>{t.icon}</span>
-            <div style={{ flex: 1 }}>
-              <p style={{ fontSize: "12px", color: activeTab === t.id ? "#fff" : "rgba(255,255,255,0.4)", fontFamily: "'DM Sans', sans-serif" }}>{t.label}</p>
-            </div>
-            <span style={{ fontSize: "8px", padding: "1px 5px", borderRadius: "3px", background: t.free ? "rgba(74,124,89,0.2)" : "rgba(201,168,76,0.15)", color: t.free ? "#4A7C59" : "#C9A84C", fontFamily: "monospace" }}>
-              {t.free ? "FREE" : "PRO"}
-            </span>
+            style={{ width: "100%", padding: "9px 12px", borderRadius: "8px", border: `1px solid ${activeTab === t.id ? "rgba(201,168,76,0.3)" : "transparent"}`, background: activeTab === t.id ? "rgba(201,168,76,0.08)" : "transparent", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: "8px", transition: "all 0.15s" }}>
+            <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "12px", color: activeTab === t.id ? "#C9A84C" : "rgba(255,255,255,0.2)" }}>{t.icon}</span>
+            <p style={{ fontSize: "12px", color: activeTab === t.id ? "#fff" : "rgba(255,255,255,0.4)", fontFamily: "'DM Sans', sans-serif" }}>{t.label}</p>
           </button>
         ))}
 
         <div style={{ marginTop: "auto", paddingTop: "16px", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
-          <div style={{ padding: "10px 12px", background: isUnlocked ? "rgba(74,124,89,0.1)" : "rgba(201,168,76,0.08)", border: `1px solid ${isUnlocked ? "rgba(74,124,89,0.3)" : "rgba(201,168,76,0.2)"}`, borderRadius: "8px", marginBottom: "8px" }}>
-            <p style={{ fontSize: "10px", color: isUnlocked ? "#4A7C59" : "#C9A84C", fontFamily: "'IBM Plex Mono', monospace", marginBottom: "2px" }}>{isUnlocked ? "✓ PREMIUM ACTIF" : "PLAN GRATUIT"}</p>
-            <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.4)", fontFamily: "'DM Sans', sans-serif" }}>{isUnlocked ? "Tous les outils débloqués" : "2/7 outils disponibles"}</p>
+          <div style={{ padding: "10px 12px", background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.15)", borderRadius: "8px" }}>
+            <p style={{ fontSize: "10px", color: "#C9A84C", fontFamily: "'IBM Plex Mono', monospace", marginBottom: "2px" }}>✓ ACCÈS COMPLET</p>
+            <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.4)", fontFamily: "'DM Sans', sans-serif" }}>Tous les outils disponibles</p>
           </div>
-          {!isUnlocked && (
-            <button onClick={() => setIsUnlocked(true)}
-              style={{ width: "100%", padding: "9px", background: "#C9A84C", border: "none", borderRadius: "8px", color: "#070e1c", fontSize: "11px", fontWeight: "700", cursor: "pointer", fontFamily: "'IBM Plex Mono', monospace", letterSpacing: "0.5px" }}>
-              PRO — 129€/mois
-            </button>
-          )}
         </div>
       </div>
 
@@ -880,7 +873,7 @@ export default function App() {
           <ToolWrapper
             key={activeTab}
             {...tool}
-            isUnlocked={isUnlocked || tool.isPremium === false}
+            isUnlocked={true}
           />
         ) : null}
       </div>

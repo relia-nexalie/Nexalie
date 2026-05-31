@@ -5,12 +5,14 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import LanguageToggle from '@/components/LanguageToggle';
+import { useLang } from '@/lib/lang-context';
 
 export default function GlobalHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [authed, setAuthed] = useState(false);
   const supabase = createClient();
+  const { t } = useLang();
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => setAuthed(!!data?.user));
@@ -24,10 +26,10 @@ export default function GlobalHeader() {
   const accent = '#C9A84C';
 
   const links = [
-    { href: '/',             label: 'Accueil' },
-    { href: '/audit',        label: 'Audit' },
-    { href: '/institutions', label: 'Institutions' },
-    { href: '/about',        label: 'À propos' },
+    { href: '/',             label: t('nav_home') },
+    { href: '/audit',        label: t('nav_audit') },
+    { href: '/institutions', label: t('nav_institutions') },
+    { href: '/about',        label: t('nav_about') },
   ];
 
   const isActive = (href) =>
@@ -92,25 +94,25 @@ export default function GlobalHeader() {
           {authed ? (
             <>
               <Link href="/platform" style={{ color: 'rgba(255,255,255,0.65)', textDecoration: 'none', fontSize: '13px', padding: '6px 10px', whiteSpace: 'nowrap' }}>
-                Ma plateforme
+                {t('nav_platform')}
               </Link>
               <Link
                 href="/platform/account"
                 style={{ background: accent, color: '#fff', textDecoration: 'none', fontSize: '13px', fontWeight: 700, padding: '8px 16px', borderRadius: '8px', whiteSpace: 'nowrap' }}
               >
-                Mon compte
+                {t('nav_account')}
               </Link>
             </>
           ) : (
             <>
               <Link href="/login" style={{ color: 'rgba(255,255,255,0.65)', textDecoration: 'none', fontSize: '13px', padding: '6px 10px', whiteSpace: 'nowrap' }}>
-                Se connecter
+                {t('nav_login')}
               </Link>
               <Link
                 href="/signup"
                 style={{ background: accent, color: '#fff', textDecoration: 'none', fontSize: '13px', fontWeight: 700, padding: '8px 16px', borderRadius: '8px', whiteSpace: 'nowrap' }}
               >
-                Créer un compte
+                {t('nav_signup')}
               </Link>
             </>
           )}
@@ -149,10 +151,10 @@ export default function GlobalHeader() {
           ))}
           <div style={{ display: 'flex', gap: '12px', marginTop: '20px' }}>
             <Link href="/login" onClick={() => setOpen(false)} style={{ flex: 1, textAlign: 'center', padding: '11px', border: '1.5px solid rgba(255,255,255,0.2)', borderRadius: '8px', color: '#fff', textDecoration: 'none', fontSize: '14px' }}>
-              Se connecter
+              {t('nav_login')}
             </Link>
             <Link href="/signup" onClick={() => setOpen(false)} style={{ flex: 1, textAlign: 'center', padding: '11px', background: accent, borderRadius: '8px', color: '#fff', textDecoration: 'none', fontSize: '14px', fontWeight: 700 }}>
-              Créer un compte
+              {t('nav_signup')}
             </Link>
           </div>
         </div>

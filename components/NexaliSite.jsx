@@ -1,7 +1,8 @@
 'use client';
 
+import { useEffect } from "react";
 import Link from "next/link";
-import { BarChart2, DollarSign, ClipboardList, Map, Search, FileText, Zap, Landmark } from "lucide-react";
+import { BarChart2, DollarSign, ClipboardList, Map, Search, FileText } from "lucide-react";
 
 // ═══════════════════════════════════════════
 // DESIGN TOKENS — Nexalie Africa
@@ -13,7 +14,21 @@ const CREAM  = '#F5F3EE';
 const MUTED  = '#64748B';
 const TEXT   = '#0F172A';
 
+function useReveal() {
+  useEffect(() => {
+    const els = document.querySelectorAll('.reveal');
+    if (!els.length) return;
+    const obs = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }),
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+    els.forEach(el => obs.observe(el));
+    return () => obs.disconnect();
+  }, []);
+}
+
 export default function NexaliSite() {
+  useReveal();
   return (
     <div style={{ background: '#fff', color: TEXT, fontFamily: 'var(--font-jakarta, -apple-system, sans-serif)' }}>
       <style suppressHydrationWarning>{`
@@ -56,7 +71,7 @@ export default function NexaliSite() {
             </p>
 
             <div className="nx-hero-buttons" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <Link href="/audit" style={{ padding: '15px 30px', background: GOLD, borderRadius: '8px', color: NAVY, fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'inline-block', boxShadow: '0 8px 24px rgba(201,168,76,0.35)' }}>
+              <Link href="/audit" className="btn-gold" style={{ padding: '15px 30px', background: GOLD, borderRadius: '8px', color: NAVY, fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'inline-block', boxShadow: '0 8px 24px rgba(201,168,76,0.35)' }}>
                 Faire mon audit gratuit →
               </Link>
               <Link href="/institutions" style={{ padding: '15px 28px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '8px', color: '#fff', fontSize: '15px', textDecoration: 'none', display: 'inline-block' }}>
@@ -106,7 +121,7 @@ export default function NexaliSite() {
               { value: '95 %',   label: 'de l\'économie portée par les PME', note: 'Emploi, VA, maillage territorial' },
               { value: '< 12 %', label: 'ont des outils numériques actifs', note: 'Estimation Nexalie, 2024' },
             ].map((s, i) => (
-              <div key={i} style={{ padding: '24px 20px', background: '#fff', border: '1px solid #E2E8F0', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}>
+              <div key={i} className="card-hover reveal" style={{ padding: '24px 20px', background: '#fff', border: '1px solid #E2E8F0', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.04)', transitionDelay: `${i * 80}ms` }}>
                 <p style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: '32px', fontWeight: 300, color: NAVY, marginBottom: '6px' }}>{s.value}</p>
                 <p style={{ fontSize: '13px', fontWeight: 600, color: TEXT, marginBottom: '6px', lineHeight: 1.4 }}>{s.label}</p>
                 <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '9px', color: '#94A3B8', lineHeight: 1.5 }}>{s.note}</p>
@@ -190,31 +205,27 @@ export default function NexaliSite() {
           </div>
           <div className="nx-tools-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             {[
-              { Icon: BarChart2,    name: 'Audit Digital',          plan: 'Gratuit',  wide: true  },
-              { Icon: DollarSign,   name: 'Calculateur ROI',        plan: 'Gratuit',  wide: false },
-              { Icon: ClipboardList,name: 'Business Plan IA',       plan: 'Premium',  wide: false },
-              { Icon: Map,          name: 'Roadmap 12 mois',        plan: 'Premium',  wide: false },
-              { Icon: Search,       name: 'Veille Concurrentielle', plan: 'Premium',  wide: false },
-              { Icon: FileText,     name: 'Cahier des Charges',     plan: 'Premium',  wide: false },
-            ].map(({ Icon, name, plan, wide }) => {
-              const isFree = plan === 'Gratuit';
-              const borderColor = isFree ? '#2D6A4F' : GOLD;
-              return (
-                <div key={name} style={{
-                  gridColumn: wide ? '1 / -1' : undefined,
-                  padding: '24px',
-                  background: '#fff',
-                  border: '1px solid #E2E8F0',
-                  borderLeft: `3px solid ${borderColor}`,
-                  borderRadius: '8px',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
-                }}>
-                  <Icon size={18} color={borderColor} style={{ marginBottom: '10px' }} />
-                  <p style={{ fontSize: '13px', fontWeight: 700, color: NAVY, marginBottom: '4px' }}>{name}</p>
-                  <p style={{ fontSize: '11px', color: isFree ? '#2D6A4F' : '#9A7A2A', fontFamily: 'var(--font-mono, monospace)', fontWeight: 600, letterSpacing: '0.05em' }}>{plan}</p>
-                </div>
-              );
-            })}
+              { Icon: BarChart2,    name: 'Audit Digital',          wide: true  },
+              { Icon: DollarSign,   name: 'Calculateur ROI',        wide: false },
+              { Icon: ClipboardList,name: 'Business Plan IA',       wide: false },
+              { Icon: Map,          name: 'Roadmap 12 mois',        wide: false },
+              { Icon: Search,       name: 'Veille Concurrentielle', wide: false },
+              { Icon: FileText,     name: 'Cahier des Charges',     wide: false },
+            ].map(({ Icon, name, wide }) => (
+              <div key={name} className="card-hover" style={{
+                gridColumn: wide ? '1 / -1' : undefined,
+                padding: '24px',
+                background: '#fff',
+                border: '1px solid #E2E8F0',
+                borderLeft: `3px solid ${GOLD}`,
+                borderRadius: '8px',
+                boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
+              }}>
+                <Icon size={18} color={GOLD} style={{ marginBottom: '10px' }} />
+                <p style={{ fontSize: '13px', fontWeight: 700, color: NAVY, marginBottom: '4px' }}>{name}</p>
+                <p style={{ fontSize: '11px', color: '#2D6A4F', fontFamily: 'var(--font-mono, monospace)', fontWeight: 600, letterSpacing: '0.05em' }}>Gratuit</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -279,7 +290,7 @@ export default function NexaliSite() {
             Diagnostic gratuit en 5 minutes. Feuille de route personnalisée. Outils concrets. Aucun engagement.
           </p>
           <div className="nx-cta-buttons" style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/audit" style={{ padding: '16px 40px', background: GOLD, borderRadius: '8px', color: NAVY, fontSize: '16px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
+            <Link href="/audit" className="btn-gold" style={{ padding: '16px 40px', background: GOLD, borderRadius: '8px', color: NAVY, fontSize: '16px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
               Je fais mon audit gratuit →
             </Link>
             <Link href="/contact" style={{ padding: '16px 24px', background: 'transparent', border: '1.5px solid rgba(255,255,255,0.2)', borderRadius: '8px', color: 'rgba(255,255,255,0.75)', fontSize: '15px', textDecoration: 'none', display: 'inline-block' }}>

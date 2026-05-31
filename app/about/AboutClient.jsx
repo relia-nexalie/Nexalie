@@ -31,7 +31,7 @@ export default function AboutClient() {
               borderLeft: `3px solid ${accent}`, paddingLeft: '24px',
               marginBottom: '32px', fontStyle: 'italic'
             }}>
-              &ldquo;Je suis née à Brazzaville. J&apos;ai grandi en France. Et entre ces deux mondes, j&apos;ai vu une faille stratégique que Nexalie va combler.&rdquo;
+              &ldquo;Je suis née à Brazzaville, j&apos;ai grandi en France. Entre ces deux mondes, j&apos;ai vu une évidence : les PME africaines ont le talent et l&apos;énergie, mais pas les outils pensés pour leur réalité. Nexalie existe pour ça.&rdquo;
             </blockquote>
             <h1 style={{
               fontFamily: 'var(--font-fraunces, Georgia, serif)',
@@ -72,16 +72,16 @@ export default function AboutClient() {
             </h2>
             <div style={{ fontSize: '16px', color: '#374151', lineHeight: 2, borderLeft: `2px solid ${accent}50`, paddingLeft: '24px' }}>
               <p style={{ marginBottom: '20px' }}>
-                Nexalie est née d&apos;un constat simple : les PME africaines ont accès aux mêmes outils numériques que les grandes entreprises — mais personne ne les aide à les choisir, les déployer, ni à les intégrer dans leur réalité quotidienne.
+                Pendant des années, j&apos;ai piloté des transformations numériques dans l&apos;industrie de pointe. J&apos;y ai appris une chose simple : la technologie ne réussit jamais seule. Elle réussit quand elle part du terrain, des gens, de leur quotidien.
               </p>
               <p style={{ marginBottom: '20px' }}>
-                Pendant dix ans, j&apos;ai travaillé dans de grands groupes industriels — Safran, Alcatel Optronics. J&apos;ai vu ce que les budgets de transformation digitale permettent d&apos;accomplir quand outils, méthodes et expertise sont alignés. Puis j&apos;ai regardé vers Brazzaville, vers Kinshasa, vers Dakar.
+                Puis j&apos;ai regardé vers Brazzaville, vers Kinshasa, vers Dakar. Les entrepreneurs que j&apos;y côtoie portent 95 % de l&apos;économie réelle de leur pays. Ils travaillent sans filet, sans outils adaptés, sans accès aux méthodologies qui leur permettraient de structurer leur croissance.
               </p>
               <p style={{ marginBottom: '20px' }}>
-                Les entrepreneurs que j&apos;y côtoie portent 95 % de l&apos;économie réelle de leur pays. Ils travaillent sans filet, sans outils numériques adaptés, sans accès aux méthodologies qui leur permettraient de structurer leur croissance.
+                Ce n&apos;est pas un manque de talent. C&apos;est un manque d&apos;outils pensés pour leur réalité.
               </p>
               <p style={{ fontWeight: 600, color: navy }}>
-                Nexalie, c&apos;est cette expertise — disponible en 5 minutes, dans leur langue, adaptée à leur contexte.
+                Nexalie existe pour combler cet écart — diagnostic en 5 minutes, feuille de route concrète, outils accessibles.
               </p>
             </div>
           </div>
@@ -94,7 +94,7 @@ export default function AboutClient() {
               {
                 label: 'ANCRAGE INDUSTRIEL',
                 color: accentText,
-                body: '10 ans de gestion de projet et supply chain dans des environnements industriels complexes. Safran Electronics & Defense (17 000 collaborateurs), Alcatel Optronics (3SP Technologies). Chaque outil, chaque méthode chez Nexalie vient d\'un vrai terrain — pas d\'une théorie.',
+                body: 'Plus de dix ans en gestion de projet et transformation digitale dans des environnements exigeants — Safran Electronics & Defense (plus de 13 000 collaborateurs), 3SP Technologies. Chaque outil, chaque méthode chez Nexalie vient d\'un vrai terrain — pas d\'une théorie.',
               },
               {
                 label: 'DOUBLE CULTURE',
@@ -134,7 +134,7 @@ export default function AboutClient() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginBottom: '56px' }}>
             {[
               { stat: '−20%', label: 'Délais de fabrication', sub: '3SP Technologies', color: accent },
-              { stat: '17 000+', label: 'Collaborateurs', sub: 'Safran Electronics', color: '#E88C32' },
+              { stat: '13 000+', label: 'Collaborateurs', sub: 'Safran Electronics', color: '#E88C32' },
               { stat: 'Master 2', label: 'Projet Digital', sub: 'ECEMA Lyon · 2024', color: '#2D6A4F' },
             ].map(card => (
               <div key={card.stat} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '14px', padding: '28px 20px', textAlign: 'center' }}>

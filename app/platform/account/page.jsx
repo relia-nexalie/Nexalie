@@ -192,8 +192,8 @@ export default function AccountPage() {
               )}
             </div>
 
-            {/* Bouton portail Stripe */}
-            {hasStripe ? (
+            {/* Bouton portail Stripe — visible uniquement si abonnement Stripe actif */}
+            {hasStripe && profile?.plan_active && (
               <div>
                 <button
                   onClick={handleOpenPortal}
@@ -204,17 +204,6 @@ export default function AccountPage() {
                 </button>
                 {portalError && <p style={{ fontSize: '12px', color: '#EF4444', marginTop: '6px' }}>{portalError}</p>}
               </div>
-            ) : (
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'flex-start' }}>
-                <button
-                  onClick={handleCheckout}
-                  disabled={checkoutLoading}
-                  style={{ background: TEAL, color: '#fff', border: 'none', borderRadius: '8px', padding: '10px 20px', fontWeight: 700, fontSize: '13px', cursor: checkoutLoading ? 'default' : 'pointer', opacity: checkoutLoading ? 0.7 : 1 }}
-                >
-                  {checkoutLoading ? 'Redirection...' : 'Passer Pro →'}
-                </button>
-                {checkoutError && <p style={{ fontSize: '12px', color: '#EF4444', margin: 0 }}>{checkoutError}</p>}
-              </div>
             )}
           </div>
 
@@ -222,7 +211,7 @@ export default function AccountPage() {
           <div style={{ marginTop: '20px', paddingTop: '16px', borderTop: '1px solid #F3F4F6', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '12px' }}>
             {[
               { label: 'Email',   value: user?.email },
-              { label: 'Marché',  value: profile?.market === 'af' ? '🌍 Afrique' : '🇫🇷 France' },
+              { label: 'Pays',    value: profile?.country || '🇨🇬 Congo' },
               { label: 'Score audit', value: profile?.audit_score != null ? `${profile.audit_score}/100` : '—' },
               { label: 'Membre depuis', value: memberSince || '—' },
             ].map(({ label, value }) => (
