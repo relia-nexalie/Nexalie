@@ -7,8 +7,8 @@ import BugReportModal from '@/components/BugReportModal';
 export default function GlobalFooter() {
   const [showBugModal, setShowBugModal] = useState(false);
 
-  const navy   = '#0F2A4A';
-  const accent = '#C9A84C';
+  const navy   = '#0B3D2E';
+  const accent = '#C9A24B';
   const year   = new Date().getFullYear();
 
   const cols = [
@@ -77,7 +77,7 @@ export default function GlobalFooter() {
 
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '24px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '12px' }}>
           <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.3)' }}>
-            Fait avec ♥ par Rélia Ebiya · Brazzaville &amp; Paris
+            Nexalie · Brazzaville &amp; Paris
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
             <button

@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { createClient } from '@/lib/supabase/client';
 
-const NAVY  = '#0A1628';
+const NAVY  = '#0B3D2E';
 const TEAL  = '#4EC9B0';
 const PLANS = {
   free:         { label: 'Gratuit',      color: '#6B7A94', bg: '#F8FAFC' },

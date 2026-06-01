@@ -8,11 +8,11 @@ import { BarChart2, DollarSign, ClipboardList, Map, Search, FileText } from "luc
 // DESIGN TOKENS — Nexalie Africa
 // ═══════════════════════════════════════════
 
-const NAVY   = '#0F2A4A';
-const GOLD   = '#C9A84C';
-const CREAM  = '#F5F3EE';
+const NAVY   = '#0B3D2E';
+const GOLD   = '#C9A24B';
+const CREAM  = '#F5F1E8';
 const MUTED  = '#64748B';
-const TEXT   = '#0F172A';
+const TEXT   = '#14241C';
 
 function useReveal() {
   useEffect(() => {
@@ -111,7 +111,7 @@ export default function NexaliSite() {
       <section style={{ background: CREAM, padding: '56px 24px', borderBottom: '1px solid #E2E8F0' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '2.5px', color: GOLD, textAlign: 'center', marginBottom: '8px', textTransform: 'uppercase' }}>Contexte</p>
-          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(18px,2.5vw,26px)', fontWeight: 300, color: NAVY, textAlign: 'center', marginBottom: '40px', letterSpacing: '-0.01em' }}>
+          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(26px,3.5vw,38px)', fontWeight: 400, color: NAVY, textAlign: 'center', marginBottom: '40px', letterSpacing: '-0.01em' }}>
             Les PME africaines portent 95 % de l&apos;économie réelle — et manquent d&apos;outils numériques adaptés
           </h2>
           <div className="nx-context-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px' }}>
@@ -142,7 +142,7 @@ export default function NexaliSite() {
       <section style={{ padding: '72px 24px', background: NAVY, overflow: 'hidden' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '2.5px', color: 'rgba(201,168,76,0.7)', textAlign: 'center', marginBottom: '10px', textTransform: 'uppercase' }}>Processus</p>
-          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(26px,4vw,38px)', fontWeight: 300, color: '#fff', textAlign: 'center', marginBottom: '6px', letterSpacing: '-0.01em' }}>
+          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(34px,5vw,50px)', fontWeight: 400, color: '#fff', textAlign: 'center', marginBottom: '6px', letterSpacing: '-0.01em' }}>
             Comment ça fonctionne
           </h2>
           <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.55)', textAlign: 'center', marginBottom: '48px' }}>Simple. Concret. Immédiat.</p>
@@ -193,7 +193,7 @@ export default function NexaliSite() {
         <div className="nx-platform-grid" style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
           <div>
             <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '2.5px', color: GOLD, marginBottom: '10px', textTransform: 'uppercase' }}>Plateforme</p>
-            <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(24px,3vw,34px)', fontWeight: 300, color: NAVY, marginBottom: '16px', lineHeight: 1.3, letterSpacing: '-0.01em' }}>
+            <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(30px,4vw,44px)', fontWeight: 400, color: NAVY, marginBottom: '16px', lineHeight: 1.2, letterSpacing: '-0.01em' }}>
               Les outils adaptés à la réalité des PME africaines
             </h2>
             <p style={{ fontSize: '15px', color: MUTED, lineHeight: 1.8, marginBottom: '28px' }}>
@@ -234,11 +234,11 @@ export default function NexaliSite() {
       <section style={{ padding: '72px 24px', background: '#fff', borderTop: '1px solid #E2E8F0' }}>
         <div style={{ maxWidth: '760px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '2.5px', color: GOLD, marginBottom: '12px', textTransform: 'uppercase' }}>Notre raison d&apos;être</p>
-          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(24px,3vw,36px)', fontWeight: 300, color: NAVY, marginBottom: '20px', lineHeight: 1.4, letterSpacing: '-0.01em' }}>
+          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(30px,4vw,44px)', fontWeight: 400, color: NAVY, marginBottom: '20px', lineHeight: 1.2, letterSpacing: '-0.01em' }}>
             Née ici. Pensée pour ici.
           </h2>
           <p style={{ fontSize: '15px', color: MUTED, lineHeight: 1.9, marginBottom: '28px', maxWidth: '600px', margin: '0 auto 28px' }}>
-            Nexalie est née d&apos;un constat simple : les PME africaines ont accès aux mêmes outils numériques que les grandes entreprises — mais personne ne les aide à les choisir, les déployer, ni à les intégrer dans leur réalité quotidienne. <strong style={{ color: NAVY }}>Rélia Ebiya</strong>, franco-congolaise, a construit Nexalie pour changer ça.
+            Nexalie est née d&apos;un constat simple : les PME africaines ont accès aux mêmes outils numériques que les grandes entreprises — mais personne ne les aide à les choisir, les déployer, ni à les intégrer dans leur réalité quotidienne. <strong style={{ color: NAVY }}>Nexalie est née pour changer ça.</strong>
           </p>
           <Link href="/about" style={{ padding: '12px 28px', border: `1.5px solid #E2E8F0`, borderRadius: '8px', color: NAVY, fontSize: '14px', textDecoration: 'none', display: 'inline-block', fontWeight: 500 }}>
             Notre histoire →
@@ -252,7 +252,7 @@ export default function NexaliSite() {
           <div style={{ display: 'flex', gap: '32px', alignItems: 'center', flexWrap: 'wrap' }}>
             <div style={{ flex: 1, minWidth: '280px' }}>
               <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '2.5px', color: GOLD, marginBottom: '10px', textTransform: 'uppercase' }}>Pour les institutions</p>
-              <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(20px,3vw,28px)', fontWeight: 300, color: NAVY, marginBottom: '14px', lineHeight: 1.4, letterSpacing: '-0.01em' }}>
+              <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(26px,3.5vw,38px)', fontWeight: 400, color: NAVY, marginBottom: '14px', lineHeight: 1.2, letterSpacing: '-0.01em' }}>
                 Mesurer et accélérer l&apos;impact de vos programmes
               </h2>
               <p style={{ fontSize: '14px', color: MUTED, lineHeight: 1.7, marginBottom: '24px' }}>
@@ -282,7 +282,7 @@ export default function NexaliSite() {
       {/* ── CTA FINAL ──────────────────────────────────────────────── */}
       <section style={{ padding: '80px 24px', background: NAVY }}>
         <div style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(26px,4vw,40px)', fontWeight: 300, color: '#fff', marginBottom: '12px', lineHeight: 1.3, letterSpacing: '-0.01em' }}>
+          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(34px,5vw,52px)', fontWeight: 400, color: '#fff', marginBottom: '12px', lineHeight: 1.15, letterSpacing: '-0.01em' }}>
             Votre transformation numérique<br />
             <em style={{ color: GOLD, fontStyle: 'italic' }}>commence aujourd&apos;hui</em>
           </h2>

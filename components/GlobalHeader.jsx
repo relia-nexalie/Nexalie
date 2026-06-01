@@ -22,8 +22,8 @@ export default function GlobalHeader() {
     return () => subscription.unsubscribe();
   }, []);
 
-  const navy   = '#0F2A4A';
-  const accent = '#C9A84C';
+  const navy   = '#0B3D2E';
+  const accent = '#C9A24B';
 
   const links = [
     { href: '/',             label: t('nav_home') },
@@ -40,7 +40,7 @@ export default function GlobalHeader() {
       position: 'sticky',
       top: 0,
       zIndex: 1000,
-      background: `rgba(15,42,74,0.97)`,
+      background: `rgba(11,61,46,0.97)`,
       backdropFilter: 'blur(12px)',
       borderBottom: '1px solid rgba(255,255,255,0.06)',
     }}>

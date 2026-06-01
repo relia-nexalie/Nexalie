@@ -2,10 +2,10 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Link } from '@react-pdf/renderer';
 
-const NAVY  = '#0A1628';
+const NAVY  = '#0B3D2E';
 const TEAL  = '#4EC9B0';
 const TERRA = '#E88C32';
-const GOLD  = '#C9A84C';
+const GOLD  = '#C9A24B';
 const GRAY  = '#6B7A94';
 const LIGHT = '#F8FAFC';
 const WHITE = '#FFFFFF';
@@ -477,12 +477,12 @@ function NextStepsPage({ audit, profile, accent }) {
           <Text style={{ fontSize: 10, fontFamily: 'Helvetica-Bold', color: NAVY }}>nexali.ai</Text>
         </View>
         <View>
-          <Text style={{ fontSize: 9, color: GRAY, marginBottom: 3 }}>Contact fondatrice</Text>
-          <Text style={{ fontSize: 10, fontFamily: 'Helvetica-Bold', color: NAVY }}>relia.ebiya@gmail.com</Text>
+          <Text style={{ fontSize: 9, color: GRAY, marginBottom: 3 }}>Contact</Text>
+          <Text style={{ fontSize: 10, fontFamily: 'Helvetica-Bold', color: NAVY }}>contact@nexalie.com</Text>
         </View>
         <View>
-          <Text style={{ fontSize: 9, color: GRAY, marginBottom: 3 }}>Fondée par</Text>
-          <Text style={{ fontSize: 10, fontFamily: 'Helvetica-Bold', color: NAVY }}>Rélia Ebiya</Text>
+          <Text style={{ fontSize: 9, color: GRAY, marginBottom: 3 }}>Brazzaville &amp; Paris</Text>
+          <Text style={{ fontSize: 10, fontFamily: 'Helvetica-Bold', color: NAVY }}>Nexalie</Text>
         </View>
       </View>
 

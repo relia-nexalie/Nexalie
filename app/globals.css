@@ -3,20 +3,27 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Police des titres — Times New Roman institutionnel ─────────────── */
+/* ─── Palette Nexalie — Vert Émeraude & Or ───────────────────────────── */
 :root {
+  --color-emerald:   #0B3D2E;   /* dominante sombre */
+  --color-gold:      #C9A24B;   /* accent */
+  --color-cream:     #F5F1E8;   /* fonds clairs */
+  --color-offwhite:  #FAF8F3;   /* cartes */
+  --color-text:      #14241C;   /* texte foncé */
+
+  /* Police titres — Times New Roman institutionnel */
   --font-fraunces: "Times New Roman", Times, "Liberation Serif", serif;
 }
 
 /* ─── Typographie Nexalie ────────────────────────────────────────────── */
 h1, h2, h3 {
   font-family: "Times New Roman", Times, "Liberation Serif", serif;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
 }
-h1 { font-weight: 400; }
-h2 { font-weight: 400; }
-h3 { font-weight: 400; }
+h1 { font-weight: 400; font-size: clamp(36px, 5.5vw, 60px); }
+h2 { font-weight: 400; font-size: clamp(30px, 4.5vw, 48px); }
+h3 { font-weight: 400; font-size: clamp(20px, 2.5vw, 28px); }
 
 body {
   font-family: var(--font-jakarta, 'system-ui', sans-serif);

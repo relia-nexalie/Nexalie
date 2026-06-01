@@ -810,20 +810,20 @@ function DashboardView({ accent = '#C9A84C' }) {
 // ═══════════════════════════════════════════
 
 export default function App() {
-  const accent = '#C9A84C';
+  const accent = '#C9A24B';
 
   const [activeTab, setActiveTab] = useState("dashboard");
   const tab = TABS.find(t => t.id === activeTab);
   const tool = TOOLS[activeTab];
 
   return (
-    <div style={{ minHeight: "100vh", background: "radial-gradient(ellipse at 10% 10%, #0d1f35 0%, #070e1c 100%)", fontFamily: "'DM Sans', sans-serif", display: "flex" }}>
+    <div style={{ minHeight: "100vh", background: "radial-gradient(ellipse at 10% 10%, #0f4a37 0%, #0B3D2E 100%)", fontFamily: "'DM Sans', sans-serif", display: "flex" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=IBM+Plex+Mono:wght@400;500&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
         textarea, input, select { outline: none !important; }
         ::placeholder { color: rgba(255,255,255,0.18) !important; }
-        select option { background: #0d1f35; color: white; }
+        select option { background: #0B3D2E; color: white; }
         ::-webkit-scrollbar { width: 3px; }
         ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 2px; }
         @keyframes spin { to { transform: rotate(360deg); } }

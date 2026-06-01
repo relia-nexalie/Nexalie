@@ -61,7 +61,7 @@ export const fr = {
   footer_resources:  'Ressources',
   footer_legal:      'Légal',
   footer_bug:        'Signaler un problème',
-  footer_made_by:    'Fait avec ♥ par Rélia Ebiya · Brazzaville & Paris',
+  footer_made_by:    'Nexalie · Brazzaville & Paris',
   footer_audit_link: 'Faire mon audit gratuit →',
 
   // ── Liens footer ─────────────────────────────────────────────

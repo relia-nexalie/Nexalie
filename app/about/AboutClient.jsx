@@ -4,12 +4,12 @@ import Link from 'next/link';
 
 export default function AboutClient() {
   // Palette institutionnelle africaine — couleurs fixes
-  const navy        = '#0F2A4A';
-  const accent      = '#C9A84C';
-  const accentText  = '#9A7A2A';
+  const navy        = '#0B3D2E';
+  const accent      = '#C9A24B';
+  const accentText  = '#8A6E1A';
 
   return (
-    <div style={{ fontFamily: 'var(--font-jakarta, system-ui, sans-serif)', background: '#fff', color: '#1C1C1C' }}>
+    <div style={{ fontFamily: 'var(--font-jakarta, system-ui, sans-serif)', background: '#FAF8F3', color: '#14241C' }}>
 
       {/* ── HERO — asymétrique ──────────────────────────────────────── */}
       <section style={{ background: navy, padding: 'clamp(56px,7vw,96px) 24px' }}>
@@ -62,16 +62,16 @@ export default function AboutClient() {
       </section>
 
       {/* ── MANIFESTE — 2 colonnes asymétriques ────────────────────── */}
-      <section style={{ padding: 'clamp(64px,8vw,112px) 24px', background: '#F8F9FA' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '5fr 4fr', gap: 'clamp(40px,6vw,88px)', alignItems: 'start' }}>
+      <section style={{ padding: 'clamp(64px,8vw,112px) 24px', background: '#F5F1E8' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(40px,6vw,80px)', alignItems: 'start' }}>
 
           {/* GAUCHE — Le Manifeste */}
           <div>
             <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '3px', color: accentText, marginBottom: '24px', textTransform: 'uppercase' }}>Le Manifeste</p>
             <h2 style={{
               fontFamily: 'var(--font-fraunces, Georgia, serif)',
-              fontSize: 'clamp(28px,4vw,46px)',
-              fontWeight: 300, color: navy,
+              fontSize: 'clamp(32px,4.5vw,52px)',
+              fontWeight: 400, color: navy,
               lineHeight: 1.25, marginBottom: '36px'
             }}>
               Les PME africaines méritent les mêmes outils que les grands groupes. Sans en payer le prix.
@@ -109,13 +109,12 @@ export default function AboutClient() {
               },
               {
                 label: "L'AMBITION NEXALIE",
-                color: '#7B5EA7',
+                color: '#5B8A6A',
                 body: "Bâtir l'infrastructure de confiance numérique de l'espace francophone. D'ici 2030, chaque PME africaine devrait avoir accès à un plan de transformation digitale concret — au même niveau de qualité qu'un grand cabinet, sans en payer le prix.",
               },
-            ].map(({ label, color, body }, i) => (
+            ].map(({ label, color, body }) => (
               <div key={label} style={{
                 padding: '28px 0',
-                borderBottom: i < 2 ? '1px solid rgba(0,0,0,0.07)' : 'none',
               }}>
                 <p style={{
                   fontFamily: 'var(--font-mono, monospace)',
@@ -137,10 +136,10 @@ export default function AboutClient() {
       )}
 
       {/* ── VISION ──────────────────────────────────────────────────── */}
-      <section style={{ padding: 'clamp(56px,7vw,88px) 24px', background: '#F5F3EE' }}>
+      <section style={{ padding: 'clamp(56px,7vw,88px) 24px', background: '#F5F1E8' }}>
         <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '3px', color: accentText, marginBottom: '12px', textTransform: 'uppercase' }}>Vision 2030</p>
-          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(24px,3.5vw,38px)', fontWeight: 300, color: '#1C1C1C', marginBottom: '24px', lineHeight: 1.4 }}>
+          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(30px,4vw,46px)', fontWeight: 400, color: '#14241C', marginBottom: '24px', lineHeight: 1.2 }}>
             La boussole numérique de l&apos;Afrique francophone
           </h2>
           <p style={{ fontSize: '17px', color: '#374151', lineHeight: 1.95, marginBottom: '40px' }}>

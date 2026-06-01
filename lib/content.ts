@@ -63,14 +63,14 @@ export const CONTENT = {
         period: { fr: '/mois', af: '/mois (~61€)' },
         desc: { fr: 'Pour les collectivités et grandes structures', af: 'Pour les grandes entreprises et institutions' },
         features: {
-          fr: ['Tout Pro +', 'Équipes multi-utilisateurs', 'Formation équipes', 'Compte dédié', 'SLA garanti', 'Accompagnement mensuel Rélia'],
-          af: ['Tout Business +', 'Multi-utilisateurs', 'Formation équipes terrain', 'Compte dédié', 'Accompagnement mensuel Rélia', 'Paiement Mobile Money']
+          fr: ['Tout Pro +', 'Équipes multi-utilisateurs', 'Formation équipes', 'Compte dédié', 'SLA garanti', 'Accompagnement mensuel Nexalie'],
+          af: ['Tout Business +', 'Multi-utilisateurs', 'Formation équipes terrain', 'Compte dédié', 'Accompagnement mensuel Nexalie', 'Paiement Mobile Money']
         }
       }
     }
   },
   about: {
-    title: { fr: 'Rélia Ebiya — Experte Transformation Digitale', af: 'Rélia Ebiya — Experte en Numérique' },
+    title: { fr: 'Nexalie — Experte Transformation Digitale', af: 'Nexalie — Experte en Numérique' },
     intro: {
       fr: "Après 10 ans dans des environnements exigeants — de la finance internationale au conseil stratégique — j'ai fondé Nexalie pour démocratiser l'accès aux outils de transformation digitale pour les PME françaises.",
       af: "Après des années entre Paris et l'Afrique, j'ai créé Nexalie pour aider les entrepreneurs africains à utiliser le numérique comme levier de croissance réel — pas juste comme vitrine."
@@ -111,7 +111,7 @@ export const CONTENT = {
         { q: "Combien de temps prend l'audit ?", a: "En moyenne 15 à 20 minutes. Vous recevez votre rapport instantanément." },
         { q: "Mes données sont-elles sécurisées ?", a: "Oui. Données hébergées en Europe (conformité RGPD). Aucune revente à des tiers." },
         { q: "Puis-je annuler à tout moment ?", a: "Oui, résiliation en un clic depuis votre espace client, sans frais ni préavis." },
-        { q: "L'IA remplace-t-elle le conseil humain ?", a: "Non. Nexalie OS est un accélérateur. Rélia intervient personnellement sur les plans Enterprise." },
+        { q: "L'IA remplace-t-elle le conseil humain ?", a: "Non. Nexalie OS est un accélérateur, conçu pour amplifier l'expertise humaine — pas la remplacer." },
       ],
       af: [
         { q: "Le Bilan Numérique est-il vraiment gratuit ?", a: "Oui, 100% gratuit. 20 questions adaptées à l'Afrique, résultat immédiat, rapport PDF — sans carte ni inscription." },
