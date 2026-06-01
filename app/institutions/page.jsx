@@ -47,7 +47,7 @@ export default function InstitutionsPage() {
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '28px' }}>
             <div style={{ width: '3px', height: '20px', background: gold, borderRadius: '2px' }} />
-            <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: gold, margin: 0 }}>
+            <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase', color: gold, margin: 0 }}>
               Pour les institutions &amp; partenaires
             </p>
           </div>
@@ -77,7 +77,7 @@ export default function InstitutionsPage() {
       {/* ── Chiffres clés ───────────────────────────────────────── */}
       <section style={{ background: cream, padding: '72px 24px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: gold, marginBottom: '16px' }}>
+          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase', color: gold, marginBottom: '16px' }}>
             Contexte
           </p>
           <h2 style={{ fontFamily: 'var(--font-fraunces, serif)', fontSize: 'clamp(22px, 4vw, 34px)', fontWeight: 300, color: navy, marginBottom: '48px', letterSpacing: '-0.01em' }}>
@@ -98,7 +98,7 @@ export default function InstitutionsPage() {
       {/* ── Cas d'usage ─────────────────────────────────────────── */}
       <section style={{ background: '#fff', padding: '72px 24px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: gold, marginBottom: '16px' }}>
+          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase', color: gold, marginBottom: '16px' }}>
             Qui nous utilise
           </p>
           <h2 style={{ fontFamily: 'var(--font-fraunces, serif)', fontSize: 'clamp(22px, 4vw, 34px)', fontWeight: 300, color: navy, marginBottom: '48px', letterSpacing: '-0.01em' }}>
@@ -121,7 +121,7 @@ export default function InstitutionsPage() {
       {/* ── Comment ça marche ────────────────────────────────────── */}
       <section style={{ background: cream, padding: '72px 24px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: gold, marginBottom: '16px' }}>
+          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase', color: gold, marginBottom: '16px' }}>
             Fonctionnement
           </p>
           <h2 style={{ fontFamily: 'var(--font-fraunces, serif)', fontSize: 'clamp(22px, 4vw, 34px)', fontWeight: 300, color: navy, marginBottom: '48px', letterSpacing: '-0.01em' }}>

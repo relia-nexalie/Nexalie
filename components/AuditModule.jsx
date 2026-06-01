@@ -346,6 +346,12 @@ const SECTORS = {
     { id: 'education',      label: 'Éducation',                    icon: '🎓' },
     { id: 'telecom',        label: 'Télécom / Tech',               icon: '💻' },
     { id: 'finance',        label: 'Services financiers',          icon: '💳' },
+    { id: 'transport',      label: 'Transport / Logistique',       icon: '🚚' },
+    { id: 'restauration',   label: 'Restauration / Hôtellerie',   icon: '🍽️' },
+    { id: 'artisanat',      label: 'Artisanat',                    icon: '🔨' },
+    { id: 'import_export',  label: 'Import-Export',                icon: '📦' },
+    { id: 'beaute',         label: 'Beauté / Bien-être',           icon: '✨' },
+    { id: 'medias',         label: 'Médias / Création',            icon: '🎬' },
     { id: 'autre',          label: 'Autre secteur',                icon: '🏢' },
   ],
   af: [
@@ -358,7 +364,11 @@ const SECTORS = {
     { id: 'telecom',        label: 'Télécom / Digital',            icon: '💻' },
     { id: 'finance',        label: 'Finance / Mobile Money',       icon: '💳' },
     { id: 'transport',      label: 'Transport / Logistique',       icon: '🚚' },
-    { id: 'restauration',   label: 'Restauration / Alimentation',  icon: '🍽️' },
+    { id: 'restauration',   label: 'Restauration / Hôtellerie',   icon: '🍽️' },
+    { id: 'artisanat',      label: 'Artisanat',                    icon: '🔨' },
+    { id: 'import_export',  label: 'Import-Export',                icon: '📦' },
+    { id: 'beaute',         label: 'Beauté / Bien-être',           icon: '✨' },
+    { id: 'medias',         label: 'Médias / Création',            icon: '🎬' },
     { id: 'autre',          label: 'Autre secteur',                icon: '🏢' },
   ],
 };
@@ -1613,11 +1623,11 @@ Génère maintenant le rapport complet en respectant strictement la structure de
       { val: '20+', label: mode === 'fr' ? 'Plus de 20' : 'Plus de 20' },
     ];
     const paysOptions = [
-      { val: 'fr', label: '🇫🇷 France' },
-      { val: 'ci', label: '🇨🇮 Côte d\'Ivoire' },
       { val: 'cg', label: '🇨🇬 Congo' },
+      { val: 'ci', label: '🇨🇮 Côte d\'Ivoire' },
       { val: 'cm', label: '🇨🇲 Cameroun' },
       { val: 'sn', label: '🇸🇳 Sénégal' },
+      { val: 'ga', label: '🇬🇦 Gabon' },
       { val: 'other', label: '🌍 Autre' },
     ];
     const canContinue = profil.equipe && profil.pays;

@@ -82,7 +82,7 @@ export default function NexaliSite() {
 
           {/* Score card */}
           <div className="nx-score-card" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(201,168,76,0.2)', borderRadius: '16px', padding: '28px', minWidth: '280px' }}>
-            <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '9px', letterSpacing: '2px', color: 'rgba(255,255,255,0.4)', marginBottom: '20px', textTransform: 'uppercase' }}>Maturité digitale</p>
+            <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '11px', letterSpacing: '1.5px', color: 'rgba(255,255,255,0.4)', marginBottom: '20px', textTransform: 'uppercase' }}>Maturité digitale</p>
             {[
               ['Présence en ligne', 35],
               ['Outillage numérique', 55],
@@ -110,7 +110,7 @@ export default function NexaliSite() {
       {/* ── CONTEXTE ─────────────────────────────────────────────── */}
       <section style={{ background: CREAM, padding: '56px 24px', borderBottom: '1px solid #E2E8F0' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: GOLD, textAlign: 'center', marginBottom: '8px', textTransform: 'uppercase' }}>Contexte</p>
+          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '2.5px', color: GOLD, textAlign: 'center', marginBottom: '8px', textTransform: 'uppercase' }}>Contexte</p>
           <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(18px,2.5vw,26px)', fontWeight: 300, color: NAVY, textAlign: 'center', marginBottom: '40px', letterSpacing: '-0.01em' }}>
             Les PME africaines portent 95 % de l&apos;économie réelle — et manquent d&apos;outils numériques adaptés
           </h2>
@@ -141,7 +141,7 @@ export default function NexaliSite() {
       {/* ── COMMENT ÇA MARCHE ──────────────────────────────────────── */}
       <section style={{ padding: '72px 24px', background: NAVY, overflow: 'hidden' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: 'rgba(201,168,76,0.7)', textAlign: 'center', marginBottom: '10px', textTransform: 'uppercase' }}>Processus</p>
+          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '2.5px', color: 'rgba(201,168,76,0.7)', textAlign: 'center', marginBottom: '10px', textTransform: 'uppercase' }}>Processus</p>
           <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(26px,4vw,38px)', fontWeight: 300, color: '#fff', textAlign: 'center', marginBottom: '6px', letterSpacing: '-0.01em' }}>
             Comment ça fonctionne
           </h2>
@@ -192,7 +192,7 @@ export default function NexaliSite() {
       <section style={{ padding: '72px 24px', background: CREAM }}>
         <div className="nx-platform-grid" style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
           <div>
-            <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: GOLD, marginBottom: '10px', textTransform: 'uppercase' }}>Plateforme</p>
+            <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '2.5px', color: GOLD, marginBottom: '10px', textTransform: 'uppercase' }}>Plateforme</p>
             <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(24px,3vw,34px)', fontWeight: 300, color: NAVY, marginBottom: '16px', lineHeight: 1.3, letterSpacing: '-0.01em' }}>
               Les outils adaptés à la réalité des PME africaines
             </h2>
@@ -233,7 +233,7 @@ export default function NexaliSite() {
       {/* ── À PROPOS TEASER ────────────────────────────────────────── */}
       <section style={{ padding: '72px 24px', background: '#fff', borderTop: '1px solid #E2E8F0' }}>
         <div style={{ maxWidth: '760px', margin: '0 auto', textAlign: 'center' }}>
-          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: GOLD, marginBottom: '12px', textTransform: 'uppercase' }}>Notre raison d&apos;être</p>
+          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '2.5px', color: GOLD, marginBottom: '12px', textTransform: 'uppercase' }}>Notre raison d&apos;être</p>
           <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(24px,3vw,36px)', fontWeight: 300, color: NAVY, marginBottom: '20px', lineHeight: 1.4, letterSpacing: '-0.01em' }}>
             Née ici. Pensée pour ici.
           </h2>
@@ -251,7 +251,7 @@ export default function NexaliSite() {
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <div style={{ display: 'flex', gap: '32px', alignItems: 'center', flexWrap: 'wrap' }}>
             <div style={{ flex: 1, minWidth: '280px' }}>
-              <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: GOLD, marginBottom: '10px', textTransform: 'uppercase' }}>Pour les institutions</p>
+              <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '2.5px', color: GOLD, marginBottom: '10px', textTransform: 'uppercase' }}>Pour les institutions</p>
               <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(20px,3vw,28px)', fontWeight: 300, color: NAVY, marginBottom: '14px', lineHeight: 1.4, letterSpacing: '-0.01em' }}>
                 Mesurer et accélérer l&apos;impact de vos programmes
               </h2>

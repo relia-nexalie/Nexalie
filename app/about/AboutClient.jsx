@@ -1,12 +1,8 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
-import { useMode } from '@/lib/mode-context';
 
 export default function AboutClient() {
-  const { isAfrica } = useMode();
-
   // Palette institutionnelle africaine — couleurs fixes
   const navy        = '#0F2A4A';
   const accent      = '#C9A84C';
@@ -23,34 +19,44 @@ export default function AboutClient() {
           gap: 'clamp(32px,5vw,72px)', alignItems: 'center'
         }}>
           <div>
-            <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: accent, textTransform: 'uppercase', marginBottom: '20px' }}>Notre raison d&apos;être</p>
+            <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '3px', color: accent, textTransform: 'uppercase', marginBottom: '20px' }}>Notre raison d&apos;être</p>
             <blockquote style={{
               fontFamily: 'var(--font-fraunces, Georgia, serif)',
               fontSize: 'clamp(20px,2.8vw,30px)',
-              fontWeight: 300, color: '#fff', lineHeight: 1.5,
+              fontWeight: 300, color: '#fff', lineHeight: 1.6,
               borderLeft: `3px solid ${accent}`, paddingLeft: '24px',
               marginBottom: '32px', fontStyle: 'italic'
             }}>
               &ldquo;Je suis née à Brazzaville, j&apos;ai grandi en France. Entre ces deux mondes, j&apos;ai vu une évidence : les PME africaines ont le talent et l&apos;énergie, mais pas les outils pensés pour leur réalité. Nexalie existe pour ça.&rdquo;
             </blockquote>
-            <h1 style={{
-              fontFamily: 'var(--font-fraunces, Georgia, serif)',
-              fontSize: 'clamp(22px,2.5vw,30px)', fontWeight: 300,
-              color: '#fff', marginBottom: '6px'
-            }}>
-              Rélia Ebiya
-            </h1>
-            <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '11px', letterSpacing: '2px', color: 'rgba(255,255,255,0.4)', marginBottom: '20px', textTransform: 'uppercase' }}>
-              Fondatrice &amp; CEO · Nexalie
+            <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '2px', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>
+              Fondatrice de Nexalie
             </p>
-            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-              {['Paris', 'Brazzaville', 'FR · EN · Lingala'].map(t => (
-                <span key={t} style={{ padding: '4px 12px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '20px', fontSize: '12px', color: 'rgba(255,255,255,0.6)', fontFamily: 'var(--font-mono, monospace)' }}>{t}</span>
-              ))}
-            </div>
           </div>
-          <div style={{ width: '260px', height: '260px', borderRadius: '50%', overflow: 'hidden', border: `4px solid ${accent}`, flexShrink: 0, background: `${accent}15`, position: 'relative', boxShadow: `0 8px 40px rgba(0,0,0,0.3), 0 0 0 8px ${accent}18` }}>
-            <Image src="/relia.png" alt="Rélia Ebiya — Fondatrice Nexalie" fill style={{ objectFit: 'cover', objectPosition: 'center top' }} sizes="260px" priority />
+
+          {/* Monogramme — remplace la photo pour préserver la discrétion */}
+          <div style={{
+            width: '200px', height: '200px', borderRadius: '50%',
+            flexShrink: 0,
+            border: `2px solid ${accent}40`,
+            background: `rgba(201,168,76,0.06)`,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            boxShadow: `0 8px 40px rgba(0,0,0,0.25), 0 0 0 8px rgba(201,168,76,0.06)`,
+          }}>
+            {/* Boussole stylisée */}
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="40" r="36" stroke={accent} strokeWidth="1.5" strokeOpacity="0.6" />
+              <circle cx="40" cy="40" r="3" fill={accent} />
+              {/* Aiguille Nord */}
+              <polygon points="40,10 37,40 43,40" fill={accent} fillOpacity="0.9" />
+              {/* Aiguille Sud */}
+              <polygon points="40,70 37,40 43,40" fill={accent} fillOpacity="0.35" />
+              {/* Points cardinaux */}
+              <text x="40" y="8" textAnchor="middle" fill={accent} fontSize="8" fontFamily="monospace" fillOpacity="0.7">N</text>
+              <text x="40" y="78" textAnchor="middle" fill={accent} fontSize="8" fontFamily="monospace" fillOpacity="0.4">S</text>
+              <text x="74" y="43" textAnchor="middle" fill={accent} fontSize="8" fontFamily="monospace" fillOpacity="0.4">E</text>
+              <text x="6" y="43" textAnchor="middle" fill={accent} fontSize="8" fontFamily="monospace" fillOpacity="0.4">O</text>
+            </svg>
           </div>
         </div>
       </section>
@@ -61,7 +67,7 @@ export default function AboutClient() {
 
           {/* GAUCHE — Le Manifeste */}
           <div>
-            <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: accentText, marginBottom: '24px', textTransform: 'uppercase' }}>Le Manifeste</p>
+            <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '3px', color: accentText, marginBottom: '24px', textTransform: 'uppercase' }}>Le Manifeste</p>
             <h2 style={{
               fontFamily: 'var(--font-fraunces, Georgia, serif)',
               fontSize: 'clamp(28px,4vw,46px)',
@@ -88,23 +94,23 @@ export default function AboutClient() {
 
           {/* DROITE — La Légitimité */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0px' }}>
-            <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: '#9CA3AF', marginBottom: '28px', textTransform: 'uppercase' }}>La légitimité</p>
+            <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '3px', color: '#9CA3AF', marginBottom: '28px', textTransform: 'uppercase' }}>La légitimité</p>
 
             {[
               {
                 label: 'ANCRAGE INDUSTRIEL',
                 color: accentText,
-                body: 'Plus de dix ans en gestion de projet et transformation digitale dans des environnements exigeants — Safran Electronics & Defense (plus de 13 000 collaborateurs), 3SP Technologies. Chaque outil, chaque méthode chez Nexalie vient d\'un vrai terrain — pas d\'une théorie.',
+                body: 'Plus de dix ans en gestion de projet et transformation digitale dans des environnements exigeants. Chaque outil, chaque méthode chez Nexalie vient d\'un vrai terrain — pas d\'une théorie.',
               },
               {
                 label: 'DOUBLE CULTURE',
                 color: accent,
-                body: 'Paris et Brazzaville. Les deux mondes coexistent dans ma façon de penser. Je comprends le Mobile Money, les coupures de courant, la culture orale — et je comprends le RGPD, les appels d\'offres européens, les reporting trimestriels. Nexalie est construite pour les deux.',
+                body: 'Paris et Brazzaville. Les deux mondes coexistent dans notre façon de penser. Nexalie comprend le Mobile Money, les réalités locales — et les exigences d\'un accompagnement structuré et rigoureux.',
               },
               {
                 label: "L'AMBITION NEXALIE",
                 color: '#7B5EA7',
-                body: "Bâtir l'infrastructure de confiance numérique de l'espace francophone. D'ici 2030, chaque PME en Afrique et en France devrait avoir accès à un plan de transformation digitale concret — au même niveau de qualité qu'un grand cabinet, sans en payer le prix.",
+                body: "Bâtir l'infrastructure de confiance numérique de l'espace francophone. D'ici 2030, chaque PME africaine devrait avoir accès à un plan de transformation digitale concret — au même niveau de qualité qu'un grand cabinet, sans en payer le prix.",
               },
             ].map(({ label, color, body }, i) => (
               <div key={label} style={{
@@ -113,7 +119,7 @@ export default function AboutClient() {
               }}>
                 <p style={{
                   fontFamily: 'var(--font-mono, monospace)',
-                  fontSize: '9px', letterSpacing: '3px',
+                  fontSize: '11px', letterSpacing: '3px',
                   color, marginBottom: '12px', textTransform: 'uppercase'
                 }}>{label}</p>
                 <p style={{ fontSize: '14px', color: '#374151', lineHeight: 1.85 }}>{body}</p>
@@ -123,52 +129,17 @@ export default function AboutClient() {
         </div>
       </section>
 
-      {/* ── PARCOURS — ligne du temps épurée ───────────────────────── */}
-      <section style={{ background: navy, padding: 'clamp(56px,7vw,88px) 24px' }}>
-        <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: accent, marginBottom: '12px', textTransform: 'uppercase', textAlign: 'center' }}>Expérience</p>
-          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(24px,3vw,34px)', fontWeight: 300, color: '#fff', marginBottom: '48px', textAlign: 'center' }}>
-            Ce qui rend Nexalie crédible
-          </h2>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginBottom: '56px' }}>
-            {[
-              { stat: '−20%', label: 'Délais de fabrication', sub: '3SP Technologies', color: accent },
-              { stat: '13 000+', label: 'Collaborateurs', sub: 'Safran Electronics', color: '#E88C32' },
-              { stat: 'Master 2', label: 'Projet Digital', sub: 'ECEMA Lyon · 2024', color: '#2D6A4F' },
-            ].map(card => (
-              <div key={card.stat} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '14px', padding: '28px 20px', textAlign: 'center' }}>
-                <p style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: '34px', fontWeight: 300, color: card.color, marginBottom: '8px', lineHeight: 1 }}>{card.stat}</p>
-                <p style={{ fontSize: '13px', fontWeight: 600, color: '#fff', marginBottom: '4px' }}>{card.label}</p>
-                <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', color: 'rgba(255,255,255,0.35)', letterSpacing: '1px' }}>{card.sub}</p>
-              </div>
-            ))}
-          </div>
-
-          <div style={{ maxWidth: '480px', margin: '0 auto' }}>
-            <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '9px', letterSpacing: '2px', color: 'rgba(255,255,255,0.3)', marginBottom: '20px', textAlign: 'center' }}>PARCOURS</p>
-            {[
-              ['2026 → Présent',          'Fondatrice &amp; CEO · Nexalie',                                              isAfrica ? '#C45E0A' : '#4EC9B0'],
-              ['Mars 2024 → Janv. 2026',  'Coordinatrice Innovation Participative · Safran Electronics &amp; Defense',   '#E88C32'],
-              ['Août 2021 → Janv. 2024',  'Cheffe de Projet MES · 3SP Technologies (ex Alcatel Optronics)',              '#2D6A4F'],
-              ['2021 → 2023',             'Co-fondatrice &amp; CEO · WEAREEYWA',                                         '#7B5EA7'],
-            ].map(([period, role, color]) => (
-              <div key={period} style={{ display: 'flex', gap: '16px', marginBottom: '14px', alignItems: 'flex-start' }}>
-                <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: color, flexShrink: 0, marginTop: '5px' }} />
-                <div>
-                  <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', color, marginBottom: '2px' }}>{period}</p>
-                  <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.75)' }} dangerouslySetInnerHTML={{ __html: role }} />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ── PARCOURS — masqué (trop personnel) ─────────────────────── */}
+      {false && (
+        <section style={{ background: navy, padding: 'clamp(56px,7vw,88px) 24px' }}>
+          {/* Code conservé mais non affiché */}
+        </section>
+      )}
 
       {/* ── VISION ──────────────────────────────────────────────────── */}
       <section style={{ padding: 'clamp(56px,7vw,88px) 24px', background: '#F5F3EE' }}>
         <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
-          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: accentText, marginBottom: '12px', textTransform: 'uppercase' }}>Vision 2030</p>
+          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '3px', color: accentText, marginBottom: '12px', textTransform: 'uppercase' }}>Vision 2030</p>
           <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(24px,3.5vw,38px)', fontWeight: 300, color: '#1C1C1C', marginBottom: '24px', lineHeight: 1.4 }}>
             La boussole numérique de l&apos;Afrique francophone
           </h2>

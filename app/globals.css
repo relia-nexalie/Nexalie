@@ -3,12 +3,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Typographie Nexalie ────────────────────────────────────────────── */
-h1, h2 {
-  font-family: var(--font-fraunces, 'Georgia', serif);
+/* ─── Police des titres — Times New Roman institutionnel ─────────────── */
+:root {
+  --font-fraunces: "Times New Roman", Times, "Liberation Serif", serif;
 }
-h1 { font-weight: 300; }
-h2 { font-weight: 600; }
+
+/* ─── Typographie Nexalie ────────────────────────────────────────────── */
+h1, h2, h3 {
+  font-family: "Times New Roman", Times, "Liberation Serif", serif;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+h1 { font-weight: 400; }
+h2 { font-weight: 400; }
+h3 { font-weight: 400; }
 
 body {
   font-family: var(--font-jakarta, 'system-ui', sans-serif);
@@ -74,6 +82,12 @@ select {
 /* ─── Scrollbar ─────────────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.1); border-radius: 2px; }
+
+/* ─── Libellés petite casse mono ────────────────────────────────────── */
+/* Assure une lisibilité minimale pour tous les libellés uppercase mono */
+.uppercase, [style*="uppercase"] {
+  -webkit-font-smoothing: antialiased;
+}
 
 /* ─── Boutons globaux ───────────────────────────────────────────────── */
 button {

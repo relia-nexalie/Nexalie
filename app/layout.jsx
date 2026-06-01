@@ -1,16 +1,9 @@
 import Script from 'next/script';
-import { Fraunces, Plus_Jakarta_Sans, DM_Mono } from 'next/font/google';
+import { Plus_Jakarta_Sans, DM_Mono } from 'next/font/google';
 import ClientProviders from '@/components/ClientProviders';
 import GlobalHeader from '@/components/GlobalHeader';
 import GlobalFooter from '@/components/GlobalFooter';
 import './globals.css';
-
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  variable: '--font-fraunces',
-  weight: ['300', '400', '600'],
-  display: 'swap',
-});
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -93,7 +86,7 @@ export default function RootLayout({ children }) {
         )}
       </head>
 
-      <body className={`${fraunces.variable} ${jakarta.variable} ${mono.variable}`} style={{ margin: 0, padding: 0 }}>
+      <body className={`${jakarta.variable} ${mono.variable}`} style={{ margin: 0, padding: 0 }}>
         {/* Google Analytics 4 */}
         {GA_ID && (
           <>
