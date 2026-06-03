@@ -107,7 +107,7 @@ function Header({ accent, generatedAt }) {
 function Footer({ page, total, accent }) {
   return (
     <View style={s.footer} fixed>
-      <Text style={s.footerL}>Confidentiel · Nexalie · nexali.ai — Page {page}/{total}</Text>
+      <Text style={s.footerL}>Confidentiel · Nexalie · nexali.ai · Page {page}/{total}</Text>
       <Text style={[s.footerR, { color: accent }]}>nexali.ai</Text>
     </View>
   );
@@ -211,9 +211,9 @@ function SummaryPage({ audit, profile, accent, benchmark }) {
             <View style={[s.barFill, { width: `${score}%`, backgroundColor: accent }]} />
           </View>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 4 }}>
-            <Text style={{ fontSize: 8, color: GRAY }}>0 — Débutant</Text>
+            <Text style={{ fontSize: 8, color: GRAY }}>0 · Débutant</Text>
             <Text style={{ fontSize: 8, color: accent, fontFamily: 'Helvetica-Bold' }}>{score}/100</Text>
-            <Text style={{ fontSize: 8, color: GRAY }}>100 — Expert</Text>
+            <Text style={{ fontSize: 8, color: GRAY }}>100 · Expert</Text>
           </View>
         </View>
 
@@ -352,9 +352,9 @@ function DimensionsPage({ audit, accent, pageNum }) {
                 <View style={[s.barFill, { width: `${ds}%`, backgroundColor: dimColor }]} />
               </View>
               <Text style={{ fontSize: 8, color: GRAY, marginTop: 5 }}>
-                {ds >= 70 ? 'Dimension mature — continuez à optimiser'
-                  : ds >= 40 ? 'En développement — des actions ciblées peuvent accélérer votre progression'
-                  : 'Point d\'attention majeur — priorité recommandée dans votre plan d\'action'}
+                {ds >= 70 ? 'Dimension mature : continuez à optimiser'
+                  : ds >= 40 ? 'En développement : des actions ciblées peuvent accélérer votre progression'
+                  : 'Point d\'attention majeur : priorité recommandée dans votre plan d\'action'}
               </Text>
             </View>
           );
@@ -384,7 +384,7 @@ function RoadmapPage({ audit, accent }) {
       <Header accent={accent} generatedAt="" />
 
       <View style={s.section}>
-        <Text style={s.sectionTitle}>Plan d'Action — 90 Premiers Jours</Text>
+        <Text style={s.sectionTitle}>Plan d'Action : 90 Premiers Jours</Text>
         <Text style={[s.body, { marginBottom: 14 }]}>
           Ces 5 actions constituent votre feuille de route prioritaire. Elles sont ordonnées par impact et faisabilité.
         </Text>
@@ -537,10 +537,10 @@ export function AuditPDFDocument({ audit, profile, userEmail, generatedAt, bench
 
   return (
     <Document
-      title={`Rapport ${auditTitle} — Nexalie`}
+      title={`Rapport ${auditTitle} · Nexalie`}
       author="Nexalie"
       creator="nexali.ai"
-      subject={`Score : ${audit.score}/100 — ${NIVEAUX[audit.niveau] || audit.niveau}`}
+      subject={`Score : ${audit.score}/100 · ${NIVEAUX[audit.niveau] || audit.niveau}`}
     >
       {/* Page 1 : Couverture */}
       <CoverPage audit={audit} profile={profile} userEmail={userEmail} generatedAt={generatedAt} accent={accent} auditTitle={auditTitle} />

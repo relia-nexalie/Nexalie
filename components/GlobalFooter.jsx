@@ -8,7 +8,7 @@ export default function GlobalFooter() {
   const [showBugModal, setShowBugModal] = useState(false);
 
   const navy   = '#0B3D2E';
-  const accent = '#C9A24B';
+  const accent = 'var(--accent, #C9A24B)';
   const year   = new Date().getFullYear();
 
   const cols = [
@@ -49,7 +49,7 @@ export default function GlobalFooter() {
               <span style={{ fontSize: '22px', fontWeight: 800, color: '#fff', letterSpacing: '-0.5px' }}>Nexalie</span>
             </Link>
             <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.45)', lineHeight: 1.7, marginTop: '12px', maxWidth: '240px' }}>
-              Nexalie – la boussole numérique des PME africaines
+              Nexalie, la boussole numérique des PME africaines
             </p>
             <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.25)', marginTop: '20px' }}>
               © {year} Nexalie

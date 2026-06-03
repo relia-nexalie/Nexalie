@@ -23,7 +23,7 @@ const LEVEL_CONFIG = {
     label: 'Débutant',
     band: 'bg-slate-400', text: 'text-slate-600', border: 'border-slate-300',
     headline: 'Votre transformation numérique commence ici.',
-    body: 'Moins de 20 % des fondations numériques sont en place. C\'est le point de départ de beaucoup de PME africaines — et c\'est exactement là que Nexalie est le plus utile. Trois actions prioritaires suffisent pour changer de niveau en 60 jours.',
+    body: 'Moins de 20 % des fondations numériques sont en place. C\'est le point de départ de beaucoup de PME africaines, et c\'est exactement là que Nexalie est le plus utile. Trois actions prioritaires suffisent pour changer de niveau en 60 jours.',
     priority: 'Priorité absolue : présence en ligne (Google Business Profile / site vitrine) et un outil de paiement digital (Wave, MTN MoMo, CinetPay).',
   },
   initie: {
@@ -211,7 +211,7 @@ function RoadmapCards({ actions, mode }) {
       <div className="mb-6 flex items-center gap-3">
         <div className="h-5 w-[3px] rounded-full bg-terra" />
         <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">
-          Feuille de route — 90 jours
+          Feuille de route : 90 jours
         </p>
       </div>
       <div className="grid gap-4 sm:grid-cols-3">
@@ -274,7 +274,7 @@ function ScoreInterpretation({ levelKey }) {
     <div className="rounded-md border border-slate-200 bg-white p-8 shadow-sm animate-fade-up">
       <div className="mb-6 flex items-center gap-3">
         <div className="h-5 w-[3px] rounded-full bg-terra" />
-        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">Interprétation — Niveau {cfg.label}</p>
+        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted">Interprétation : Niveau {cfg.label}</p>
       </div>
       <h3 className="mb-3 font-serif text-xl font-light leading-snug text-navy">
         {cfg.headline}
@@ -289,7 +289,7 @@ function ScoreInterpretation({ levelKey }) {
 }
 
 function SouveraineteSection({ text }) {
-  const body = text || "Vos données stratégiques — audit, feuille de route, documents — restent votre propriété exclusive. Elles sont hébergées en Union Européenne et ne sont jamais revendues ni transmises à des tiers. Vous pouvez les exporter ou les supprimer à tout moment, sur simple demande.";
+  const body = text || "Vos données stratégiques (audit, feuille de route, documents) restent votre propriété exclusive. Elles sont hébergées en Union Européenne et ne sont jamais revendues ni transmises à des tiers. Vous pouvez les exporter ou les supprimer à tout moment, sur simple demande.";
 
   return (
     <div className="flex gap-5 rounded-md border border-slate-200 bg-white p-8 shadow-sm animate-fade-up">
@@ -321,11 +321,11 @@ function NextStepsSection({ score }) {
   const gold = '#C9A84C';
 
   const steps = score < 40 ? [
-    { n: '01', text: 'Créer votre fiche Google Business Profile — gratuit, fait en 20 min.' },
+    { n: '01', text: 'Créer votre fiche Google Business Profile : gratuit, fait en 20 min.' },
     { n: '02', text: 'Ouvrir un compte Wave ou CinetPay pour recevoir des paiements en ligne.' },
     { n: '03', text: 'Refaire ce diagnostic dans 60 jours pour mesurer votre progression.' },
   ] : score < 70 ? [
-    { n: '01', text: 'Connecter vos outils existants avec Make (ex-Integromat) — 2h de setup, 3h/semaine économisées.' },
+    { n: '01', text: 'Connecter vos outils existants avec Make (ex-Integromat) : 2h de setup, 3h/semaine économisées.' },
     { n: '02', text: 'Mettre en place un suivi client simple : HubSpot CRM (gratuit jusqu\'à 1M contacts).' },
     { n: '03', text: 'Documenter vos 3 processus les plus répétitifs dans Notion pour préparer l\'automatisation.' },
   ] : [

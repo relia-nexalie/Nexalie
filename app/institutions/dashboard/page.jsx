@@ -79,7 +79,7 @@ export default async function InstitutionsDashboardPage({ searchParams }) {
             Tableau de bord · Accès restreint
           </p>
           <h1 style={{ fontFamily: 'var(--font-fraunces, serif)', fontSize: '28px', fontWeight: 300, color: navy, margin: 0 }}>
-            Données agrégées — Leads Nexalie
+            Données agrégées : Leads Nexalie
           </h1>
         </div>
 

@@ -112,7 +112,7 @@ export default function NexaliSite() {
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '2.5px', color: GOLD, textAlign: 'center', marginBottom: '8px', textTransform: 'uppercase' }}>Contexte</p>
           <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(26px,3.5vw,38px)', fontWeight: 400, color: NAVY, textAlign: 'center', marginBottom: '40px', letterSpacing: '-0.01em' }}>
-            Les PME africaines portent 95 % de l&apos;économie réelle — et manquent d&apos;outils numériques adaptés
+            Les PME africaines portent 95 % de l&apos;économie réelle, mais manquent d&apos;outils numériques adaptés
           </h2>
           <div className="nx-context-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px' }}>
             {[
@@ -152,7 +152,7 @@ export default function NexaliSite() {
               {
                 num: '01',
                 title: 'Vous répondez à 20 questions',
-                text: 'Secteur, niveau d\'équipement, processus, clients, financement — Nexalie évalue votre maturité sur 6 dimensions clés du numérique.',
+                text: 'Secteur, niveau d\'équipement, processus, clients, financement : Nexalie évalue votre maturité sur 6 dimensions clés du numérique.',
               },
               {
                 num: '02',
@@ -182,7 +182,7 @@ export default function NexaliSite() {
 
           <div style={{ textAlign: 'center', marginTop: '36px' }}>
             <Link href="/audit" style={{ padding: '14px 32px', background: GOLD, borderRadius: '8px', color: NAVY, fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
-              Démarrer maintenant — c&apos;est gratuit →
+              Démarrer maintenant, c&apos;est gratuit →
             </Link>
           </div>
         </div>
@@ -197,7 +197,7 @@ export default function NexaliSite() {
               Les outils adaptés à la réalité des PME africaines
             </h2>
             <p style={{ fontSize: '15px', color: MUTED, lineHeight: 1.8, marginBottom: '28px' }}>
-              Diagnostic, business plan, feuille de route, veille — des outils pensés pour votre contexte : Mobile Money, OHADA, marchés locaux.
+              Diagnostic, business plan, feuille de route, veille : des outils pensés pour votre contexte. Mobile Money, OHADA, marchés locaux.
             </p>
             <Link href="/platform" style={{ padding: '12px 24px', background: NAVY, borderRadius: '8px', color: '#fff', fontSize: '14px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
               Découvrir la plateforme →
@@ -238,7 +238,7 @@ export default function NexaliSite() {
             Née ici. Pensée pour ici.
           </h2>
           <p style={{ fontSize: '15px', color: MUTED, lineHeight: 1.9, marginBottom: '28px', maxWidth: '600px', margin: '0 auto 28px' }}>
-            Nexalie est née d&apos;un constat simple : les PME africaines ont accès aux mêmes outils numériques que les grandes entreprises — mais personne ne les aide à les choisir, les déployer, ni à les intégrer dans leur réalité quotidienne. <strong style={{ color: NAVY }}>Nexalie est née pour changer ça.</strong>
+            Nexalie est née d&apos;un constat simple : les PME africaines ont accès aux mêmes outils numériques que les grandes entreprises, mais personne ne les aide à les choisir, les déployer, ni à les intégrer dans leur réalité quotidienne. <strong style={{ color: NAVY }}>Nexalie est née pour changer ça.</strong>
           </p>
           <Link href="/about" style={{ padding: '12px 28px', border: `1.5px solid #E2E8F0`, borderRadius: '8px', color: NAVY, fontSize: '14px', textDecoration: 'none', display: 'inline-block', fontWeight: 500 }}>
             Notre histoire →
@@ -256,7 +256,7 @@ export default function NexaliSite() {
                 Mesurer et accélérer l&apos;impact de vos programmes
               </h2>
               <p style={{ fontSize: '14px', color: MUTED, lineHeight: 1.7, marginBottom: '24px' }}>
-                Bailleurs, chambres de commerce, ministères — accédez à des données agrégées et pilotez vos initiatives de digitalisation des PME.
+                Bailleurs, chambres de commerce, ministères : accédez à des données agrégées et pilotez vos initiatives de digitalisation des PME.
               </p>
               <Link href="/institutions" style={{ padding: '12px 24px', background: NAVY, borderRadius: '8px', color: '#fff', fontSize: '14px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
                 Espace institutions →

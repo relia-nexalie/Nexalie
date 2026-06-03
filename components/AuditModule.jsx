@@ -18,7 +18,7 @@ const TOOLTIPS = {
   'agiles':            "Méthodes de travail par petites étapes rapides et itératives (Scrum, Kanban...)",
   'cloud':             "Stockage et traitement de données sur des serveurs distants accessibles via Internet",
   'Cloud':             "Stockage et traitement de données sur des serveurs distants accessibles via Internet",
-  'ROI':               "Retour sur Investissement — mesure combien rapporte chaque euro investi",
+  'ROI':               "Retour sur Investissement : mesure combien rapporte chaque euro investi",
   'SaaS':              "Logiciel accessible en ligne par abonnement, sans installation (ex: Notion, HubSpot)",
   'MVP':               "Version minimale d'un produit pour tester une idée rapidement avec peu de ressources",
   'Tunnel de vente':   "Parcours guidé du prospect jusqu'à l'achat (publicité → landing page → offre → paiement)",
@@ -1257,7 +1257,7 @@ export default function AuditModule({ isPlatform = false }) {
 
     const cards = getRecos(calculatedScore, mode, sector);
     const recoText = cards.map((c, i) =>
-      `${i + 1}. ${c.action} — ${c.tool} · ${c.cost} · ${c.time}`
+      `${i + 1}. ${c.action} : ${c.tool} · ${c.cost} · ${c.time}`
     ).join('\n');
 
     // Stocker les résultats en attente — on les transfère après la capture email
@@ -1488,14 +1488,14 @@ Génère maintenant le rapport complet en respectant strictement la structure de
     const caOptions = mode === 'fr'
       ? [
           { val: '<5k', label: '< 5 000 € / mois' },
-          { val: '5-50k', label: '5 000 — 50 000 € / mois' },
-          { val: '50-500k', label: '50 000 — 500 000 € / mois' },
+          { val: '5-50k', label: '5 000 à 50 000 € / mois' },
+          { val: '50-500k', label: '50 000 à 500 000 € / mois' },
           { val: '>500k', label: '> 500 000 € / mois' },
         ]
       : [
           { val: '<500k', label: '< 500 000 FCFA / mois' },
-          { val: '500k-5m', label: '500 000 — 5 M FCFA / mois' },
-          { val: '5m-50m', label: '5 M — 50 M FCFA / mois' },
+          { val: '500k-5m', label: '500 000 à 5 M FCFA / mois' },
+          { val: '5m-50m', label: '5 M à 50 M FCFA / mois' },
           { val: '>50m', label: '> 50 M FCFA / mois' },
         ];
     const outilsOptions = mode === 'fr'
@@ -1516,7 +1516,7 @@ Génère maintenant le rapport complet en respectant strictement la structure de
             ← {mode === 'fr' ? 'Retour' : 'Retour'}
           </button>
           <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-terra">
-            {mode === 'fr' ? 'Étape 1 / 4 — Votre contexte' : 'Étape 1 / 4 — Votre contexte'}
+            {mode === 'fr' ? 'Étape 1 / 4 : Votre contexte' : 'Étape 1 / 4 : Votre contexte'}
           </p>
           <h2 className="mb-2 font-serif text-3xl font-light leading-tight tracking-tight text-[#0F172A] sm:text-4xl">
             {mode === 'fr' ? 'Quelques mots sur votre entreprise' : 'Parlez-nous de votre activité'}
@@ -1618,8 +1618,8 @@ Génère maintenant le rapport complet en respectant strictement la structure de
   if (step === 'profil') {
     const equipeOptions = [
       { val: 'solo', label: mode === 'fr' ? 'Je suis seul(e)' : 'Je travaille seul(e)' },
-      { val: '2-5', label: '2 — 5 personnes' },
-      { val: '6-20', label: '6 — 20 personnes' },
+      { val: '2-5', label: '2 à 5 personnes' },
+      { val: '6-20', label: '6 à 20 personnes' },
       { val: '20+', label: mode === 'fr' ? 'Plus de 20' : 'Plus de 20' },
     ];
     const paysOptions = [
@@ -1638,7 +1638,7 @@ Génère maintenant le rapport complet en respectant strictement la structure de
             ← {mode === 'fr' ? 'Retour' : 'Retour'}
           </button>
           <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-terra">
-            {mode === 'fr' ? 'Étape 2 / 4 — Votre profil' : 'Étape 2 / 4 — Votre profil'}
+            {mode === 'fr' ? 'Étape 2 / 4 : Votre profil' : 'Étape 2 / 4 : Votre profil'}
           </p>
           <h2 className="mb-2 font-serif text-3xl font-light leading-tight tracking-tight text-[#0F172A] sm:text-4xl">
             {mode === 'fr' ? 'Parlez-nous de votre équipe' : 'Parlez-nous de votre équipe'}

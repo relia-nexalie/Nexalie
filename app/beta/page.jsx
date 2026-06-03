@@ -3,7 +3,7 @@ import { createClient } from '@/lib/supabase/server';
 import BetaForm from './BetaForm';
 
 export const metadata = {
-  title: 'Nexalie Beta — Programme Accès Anticipé',
+  title: 'Nexalie Beta · Programme Accès Anticipé',
   description: 'Rejoignez les 20 premières entreprises à tester Nexalie en avant-première. Accès gratuit 3 mois, influence directe sur le produit.',
 };
 
@@ -79,7 +79,7 @@ export default async function BetaPage() {
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px,1fr))', gap: '20px' }}>
             {[
-              { icon: '🚀', title: 'Accès Pro 3 mois offerts', desc: 'Roadmap IA, Nexalie OS illimité, PDF, certifications — tout débloquer.' },
+              { icon: '🚀', title: 'Accès Pro 3 mois offerts', desc: 'Roadmap IA, Nexalie OS illimité, PDF, certifications : tout débloquer.' },
               { icon: '🎯', title: 'Influence directe', desc: 'Vos retours sont priorisés. Vous participez aux décisions produit.' },
               { icon: '📞', title: 'Session individuelle', desc: 'Un appel 1:1 avec Rélia (fondatrice) pour configurer votre espace.' },
               { icon: '💰', title: '50% de réduction à vie', desc: 'Si vous continuez après la beta, tarif préférentiel garanti à vie.' },
@@ -108,7 +108,7 @@ export default async function BetaPage() {
               'Direction ou manager en charge de la transformation digitale',
               'Prêt à tester activement la plateforme pendant 3 mois',
               'Disponible pour 2 appels de feedback (30 min chacun)',
-              'Pas besoin d\'être expert tech — c\'est fait pour les non-techniciens',
+              'Pas besoin d\'être expert tech : c\'est fait pour les non-techniciens',
             ].map((item) => (
               <div key={item} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start', padding: '14px 18px', background: '#fff', borderRadius: '10px', border: '1.5px solid rgba(0,0,0,0.06)' }}>
                 <span style={{ color: TEAL, fontWeight: 700, flexShrink: 0 }}>✓</span>

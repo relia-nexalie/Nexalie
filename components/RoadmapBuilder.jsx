@@ -22,8 +22,8 @@ const SECTEURS = {
 };
 
 const BUDGETS = {
-  fr: ['< 5 000€', '5 000 – 20 000€', '20 000 – 50 000€', '50 000€+'],
-  af: ['< 3 000 000 FCFA', '3 – 13 000 000 FCFA', '13 – 33 000 000 FCFA', '33 000 000 FCFA+'],
+  fr: ['< 5 000€', '5 000 à 20 000€', '20 000 à 50 000€', '50 000€+'],
+  af: ['< 3 000 000 FCFA', '3 à 13 000 000 FCFA', '13 à 33 000 000 FCFA', '33 000 000 FCFA+'],
 };
 
 const OBJECTIFS = {
@@ -55,9 +55,9 @@ const CONTRAINTES = {
 };
 
 const TAILLES = [
-  { value: '1-5', label: '1 – 5 personnes' },
-  { value: '6-20', label: '6 – 20 personnes' },
-  { value: '21-100', label: '21 – 100 personnes' },
+  { value: '1-5', label: '1 à 5 personnes' },
+  { value: '6-20', label: '6 à 20 personnes' },
+  { value: '21-100', label: '21 à 100 personnes' },
   { value: '100+', label: '100+ personnes' },
 ];
 
@@ -444,7 +444,7 @@ function FormStep({ formData, setFormData, onSubmit, loading, error, mode }) {
         {/* Score audit */}
         <div style={{ marginBottom: 22 }}>
           <label style={s.label}>
-            Score de maturité digitale actuelle — {formData.score_audit}/100
+            Score de maturité digitale actuelle : {formData.score_audit}/100
           </label>
           <div style={s.sliderWrap}>
             <span style={{ fontSize: 12, color: 'var(--nx-text-secondary)' }}>0</span>
@@ -462,12 +462,12 @@ function FormStep({ formData, setFormData, onSubmit, loading, error, mode }) {
           </div>
           <p style={{ fontSize: 12, color: 'var(--nx-text-secondary)', margin: '4px 0 0' }}>
             {formData.score_audit < 30
-              ? 'Débutant — beaucoup de potentiel à exploiter'
+              ? 'Débutant : beaucoup de potentiel à exploiter'
               : formData.score_audit < 60
-              ? 'En progression — des bases solides à consolider'
+              ? 'En progression : des bases solides à consolider'
               : formData.score_audit < 80
-              ? 'Avancé — optimiser et automatiser'
-              : 'Mature — innover et piloter par la donnée'}
+              ? 'Avancé : optimiser et automatiser'
+              : 'Mature : innover et piloter par la donnée'}
           </p>
         </div>
 
@@ -628,7 +628,7 @@ function ResultStep({ roadmap, onSave, saving, saved, onReset }) {
         {activePhase >= 0 && roadmap.phases?.[activePhase] && (
           <div style={s.card}>
             <h4 style={{ fontSize: 15, fontWeight: 700, margin: '0 0 16px', color: 'var(--nx-navy)' }}>
-              {roadmap.phases[activePhase].titre} — Actions détaillées
+              {roadmap.phases[activePhase].titre} : Actions détaillées
             </h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
               {(roadmap.phases[activePhase].actions || []).map((action, aIdx) => (

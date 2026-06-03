@@ -23,7 +23,7 @@ export default function GlobalHeader() {
   }, []);
 
   const navy   = '#0B3D2E';
-  const accent = '#C9A24B';
+  const accent = 'var(--accent, #C9A24B)';
 
   const links = [
     { href: '/',             label: t('nav_home') },

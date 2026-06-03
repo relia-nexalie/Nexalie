@@ -42,7 +42,7 @@ export const ln: Partial<typeof fr> = {
   home_hero_body:     'PME 90 000 ya Congo ezali koluka komikonza na dijitale. Nexalie eza kolonga bango nzela na nzela.',
 
   // ── Footer ───────────────────────────────────────────────────
-  footer_tagline:  'Nexalie – boussole ya dijitale ya PME ya Afrique',
+  footer_tagline:  'Nexalie, boussole ya dijitale ya PME ya Afrique',
   footer_bug:      'Loba likambo',
   footer_audit_link: 'Sala bokisi ya bonsomi →',
 

@@ -15,6 +15,12 @@ const LANG_LABELS: Record<Lang, string> = {
   ktu: 'Kituba',
 };
 
+export const LANG_ACCENTS: Record<Lang, string> = {
+  fr:  '#C9A24B', // or
+  ln:  '#1B7A4D', // vert vif
+  ktu: '#C77B30', // ambre cuivré
+};
+
 interface LangContextType {
   lang: Lang;
   setLang: (l: Lang) => void;
@@ -39,12 +45,16 @@ export function LangProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const saved = localStorage.getItem('nexali-lang') as Lang;
-    if (saved === 'fr' || saved === 'ln' || saved === 'ktu') setLangState(saved);
+    if (saved === 'fr' || saved === 'ln' || saved === 'ktu') {
+      setLangState(saved);
+      document.documentElement.style.setProperty('--accent', LANG_ACCENTS[saved]);
+    }
   }, []);
 
   const setLang = (l: Lang) => {
     setLangState(l);
     localStorage.setItem('nexali-lang', l);
+    document.documentElement.style.setProperty('--accent', LANG_ACCENTS[l]);
   };
 
   const t = useCallback((key: I18nKey, vars?: Record<string, string | number>): string => {

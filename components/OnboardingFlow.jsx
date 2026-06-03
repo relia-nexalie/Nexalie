@@ -349,7 +349,7 @@ function Step4({ mode, userName, onFinish, finishing }) {
       {/* CTA plan gratuit (optionnel — toujours visible comme suggestion) */}
       <div style={{ padding: '14px 16px', background: 'rgba(201,168,76,0.08)', border: '1.5px solid rgba(201,168,76,0.3)', borderRadius: '10px', marginBottom: '24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px' }}>
         <p style={{ fontSize: '13px', color: 'var(--nx-text-primary)', margin: 0 }}>
-          <strong>Plan Pro</strong> — Accède à tous les outils sans limite
+          <strong>Plan Pro</strong> : accède à tous les outils sans limite
         </p>
         <a
           href="/pricing"
@@ -473,7 +473,7 @@ export default function OnboardingFlow({ userName, initialMode }) {
         {/* Greeting */}
         {userName && (
           <p style={{ textAlign: 'center', fontSize: '13px', color: 'var(--nx-text-secondary)', marginBottom: '24px' }}>
-            Bonjour {userName.split('@')[0]} — bienvenue sur Nexalie !
+            Bonjour {userName.split('@')[0]}, bienvenue sur Nexalie !
           </p>
         )}
 

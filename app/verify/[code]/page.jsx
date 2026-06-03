@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export async function generateMetadata({ params }) {
   return {
-    title: `Vérification certificat — Nexalie`,
+    title: `Vérification certificat · Nexalie`,
     description: 'Vérifiez l\'authenticité d\'un certificat Nexalie Digital Ready.',
   };
 }
@@ -165,7 +165,7 @@ export default async function VerifyPage({ params }) {
 
               <div style={{ marginTop: '24px', paddingTop: '20px', borderTop: '1px solid #F3F4F6' }}>
                 <p style={{ fontSize: '11px', color: '#9CA3AF', fontStyle: 'italic' }}>
-                  Nexalie — Intelligence Artificielle pour PME · nexalie.co
+                  Nexalie · Intelligence Artificielle pour PME · nexalie.co
                 </p>
               </div>
             </div>

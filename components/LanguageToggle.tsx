@@ -29,9 +29,9 @@ export default function LanguageToggle({ className }: { className?: string }) {
             cursor: 'pointer',
             fontSize: '12px',
             fontWeight: lang === l ? 700 : 400,
-            background: lang === l ? 'rgba(201,168,76,0.85)' : 'transparent',
+            background: lang === l ? 'var(--accent, #C9A24B)' : 'transparent',
             color: '#fff',
-            transition: 'all 0.2s',
+            transition: 'background-color 0.35s ease, font-weight 0.2s',
             whiteSpace: 'nowrap',
             letterSpacing: lang === l ? '0.02em' : '0',
           }}

@@ -35,7 +35,7 @@ function MockDashboard() {
             <div key={i} className={`h-2.5 w-2.5 rounded-full ${c}`} />
           ))}
         </div>
-        <span className="ml-2 font-mono text-[10px] tracking-widest text-slate-400">NEXALIE WATCH — v0.1 preview</span>
+        <span className="ml-2 font-mono text-[10px] tracking-widest text-slate-400">NEXALIE WATCH · v0.1 preview</span>
       </div>
 
       <div className="grid gap-px bg-slate-100 sm:grid-cols-2 lg:grid-cols-4">
@@ -159,7 +159,7 @@ export default function NexalieWatch() {
       setSent(true);
       setToast({
         message: data.already
-          ? 'Vous êtes déjà sur la liste — on vous contacte à l\'ouverture.'
+          ? 'Vous êtes déjà sur la liste : vous serez contacté(e) à l\'ouverture.'
           : 'Inscription confirmée ! Vous serez notifié(e) en priorité.',
         type: 'success',
       });
@@ -194,7 +194,7 @@ export default function NexalieWatch() {
           </h2>
 
           <p className="max-w-xl font-sans text-base leading-relaxed text-slate-600">
-            Ne restez pas seul face à votre feuille de route. Suivez vos indicateurs, automatisez vos processus et connectez vos outils sur un tableau de bord unique — conçu pour les dirigeants, pas pour les développeurs.
+            Ne restez pas seul face à votre feuille de route. Suivez vos indicateurs, automatisez vos processus et connectez vos outils sur un tableau de bord unique, conçu pour les dirigeants, pas pour les développeurs.
           </p>
         </div>
 
@@ -250,7 +250,7 @@ export default function NexalieWatch() {
           ) : (
             <>
               <p className="mb-1 font-serif text-lg font-light text-navy">Rejoindre la liste d&rsquo;attente Nexalie Watch</p>
-              <p className="mb-6 text-[13px] text-ink-muted">Accès prioritaire à la bêta fermée. Aucun spam — une notification à l&rsquo;ouverture.</p>
+              <p className="mb-6 text-[13px] text-ink-muted">Accès prioritaire à la bêta fermée. Aucun spam : une notification à l&rsquo;ouverture.</p>
               <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row">
                 <input
                   type="email"

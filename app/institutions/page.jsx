@@ -18,7 +18,7 @@ export default function InstitutionsPage() {
   const useCases = [
     {
       title: 'Bailleurs de fonds & agences de développement',
-      body: 'Intégrez le diagnostic Nexalie dans vos programmes d\'appui aux PME. Obtenez une cartographie de la maturité numérique de votre portefeuille — en temps réel, sans déploiement technique.',
+      body: 'Intégrez le diagnostic Nexalie dans vos programmes d\'appui aux PME. Obtenez une cartographie de la maturité numérique de votre portefeuille : en temps réel, sans déploiement technique.',
       icon: '◈',
     },
     {
@@ -36,7 +36,7 @@ export default function InstitutionsPage() {
   const steps = [
     { n: '01', label: 'Diagnostic standardisé', body: 'Les PME passent un audit de maturité digitale en 5 minutes. Les résultats sont structurés selon 6 dimensions clés (présence en ligne, outillage, automatisation, financement numérique, cybersécurité, data).' },
     { n: '02', label: 'Feuille de route personnalisée', body: 'Chaque PME reçoit un plan d\'action priorisé, adapté à son secteur et à ses ressources. L\'IA recommande des outils accessibles au contexte africain (Wave, CinetPay, Notion, Make…).' },
-    { n: '03', label: 'Tableau de bord agrégé', body: 'Vos équipes accèdent à un tableau de bord consolidé : répartition des scores, taux de complétion, secteurs prioritaires, évolution dans le temps — exportable en CSV ou PDF.' },
+    { n: '03', label: 'Tableau de bord agrégé', body: 'Vos équipes accèdent à un tableau de bord consolidé : répartition des scores, taux de complétion, secteurs prioritaires, évolution dans le temps, exportable en CSV ou PDF.' },
   ];
 
   return (
@@ -52,7 +52,7 @@ export default function InstitutionsPage() {
             </p>
           </div>
           <h1 style={{ fontFamily: 'var(--font-fraunces, serif)', fontSize: 'clamp(34px, 5.5vw, 56px)', fontWeight: 400, color: '#fff', lineHeight: 1.2, marginBottom: '24px', letterSpacing: '-0.02em' }}>
-            Accélérer la transformation numérique des PME africaines — ensemble
+            Accélérer la transformation numérique des PME africaines, ensemble
           </h1>
           <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.75, maxWidth: '600px', marginBottom: '40px' }}>
             Nexalie fournit aux institutions, bailleurs et réseaux d'appui les données et les outils pour mesurer, accompagner et démontrer l'impact de leurs programmes de digitalisation des PME.

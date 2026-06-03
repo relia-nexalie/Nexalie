@@ -58,7 +58,7 @@ export default function ConfidentialitePage() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
             <div style={{ width: '3px', height: '20px', background: gold, borderRadius: '2px' }} />
             <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: gold, margin: 0 }}>
-              Loi n° 29-2019 — République du Congo
+              Loi n° 29-2019 · République du Congo
             </p>
           </div>
 

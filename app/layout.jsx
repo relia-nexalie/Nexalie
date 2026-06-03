@@ -22,8 +22,8 @@ const mono = DM_Mono({
 export const metadata = {
   metadataBase: new URL('https://nexalie-ecqc.vercel.app'),
   title: {
-    default: 'Nexalie — La boussole numérique des PME africaines',
-    template: '%s — Nexalie',
+    default: 'Nexalie, la boussole numérique des PME africaines',
+    template: '%s · Nexalie',
   },
   description: 'Nexalie accompagne les PME africaines dans leur transformation numérique : diagnostic de maturité digitale, feuille de route personnalisée, outils concrets. Gratuit.',
   keywords: ['transformation digitale', 'IA', 'Afrique', 'Congo', 'audit digital', 'PME africaines', 'OHADA', 'Mobile Money', 'roadmap digitale', 'maturité numérique'],

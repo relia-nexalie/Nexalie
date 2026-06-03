@@ -70,10 +70,10 @@ export const CONTENT = {
     }
   },
   about: {
-    title: { fr: 'Nexalie — Experte Transformation Digitale', af: 'Nexalie — Experte en Numérique' },
+    title: { fr: 'Nexalie : Experte Transformation Digitale', af: 'Nexalie : Experte en Numérique' },
     intro: {
-      fr: "Après 10 ans dans des environnements exigeants — de la finance internationale au conseil stratégique — j'ai fondé Nexalie pour démocratiser l'accès aux outils de transformation digitale pour les PME françaises.",
-      af: "Après des années entre Paris et l'Afrique, j'ai créé Nexalie pour aider les entrepreneurs africains à utiliser le numérique comme levier de croissance réel — pas juste comme vitrine."
+      fr: "Après 10 ans dans des environnements exigeants, de la finance internationale au conseil stratégique, j'ai fondé Nexalie pour démocratiser l'accès aux outils de transformation digitale pour les PME françaises.",
+      af: "Après des années entre Paris et l'Afrique, j'ai créé Nexalie pour aider les entrepreneurs africains à utiliser le numérique comme levier de croissance réel, pas juste comme vitrine."
     },
     values: {
       fr: ['Résultats mesurables', 'Honnêteté radicale', 'Efficacité sans jargon'],
@@ -82,14 +82,14 @@ export const CONTENT = {
   },
   usecases: {
     fr: [
-      { sector: 'Retail & Commerce', example: 'Une PME de distribution francilienne digitalise sa chaîne logistique en 3 mois — réduction de 40% des erreurs de stock.' },
-      { sector: 'Industrie', example: 'Un fabricant de Normandie automatise ses rapports qualité — 8h économisées par semaine.' },
-      { sector: 'Services B2B', example: 'Un cabinet de conseil parisien déploie un CRM IA — taux de conversion leads +35%.' },
+      { sector: 'Retail & Commerce', example: 'Une PME de distribution francilienne digitalise sa chaîne logistique en 3 mois : réduction de 40% des erreurs de stock.' },
+      { sector: 'Industrie', example: 'Un fabricant de Normandie automatise ses rapports qualité : 8h économisées par semaine.' },
+      { sector: 'Services B2B', example: 'Un cabinet de conseil parisien déploie un CRM IA : taux de conversion leads +35%.' },
     ],
     af: [
-      { sector: 'Commerce & Distribution', example: "Un grossiste d'Abidjan suit ses ventes sur mobile malgré les coupures courant — stock toujours à jour." },
-      { sector: 'Services & Conseil', example: 'Une agence à Brazzaville passe de WhatsApp à un CRM simple — 50% de clients perdus en moins.' },
-      { sector: 'BTP & Construction', example: 'Un entrepreneur camerounais gère ses chantiers à distance depuis son téléphone — coordination multipliée par 3.' },
+      { sector: 'Commerce & Distribution', example: "Un grossiste d'Abidjan suit ses ventes sur mobile malgré les coupures courant : stock toujours à jour." },
+      { sector: 'Services & Conseil', example: 'Une agence à Brazzaville passe de WhatsApp à un CRM simple : 50% de clients perdus en moins.' },
+      { sector: 'BTP & Construction', example: 'Un entrepreneur camerounais gère ses chantiers à distance depuis son téléphone : coordination multipliée par 3.' },
     ]
   },
   contact: {
@@ -107,16 +107,16 @@ export const CONTENT = {
     title: { fr: 'Questions fréquentes', af: 'Vos questions' },
     questions: {
       fr: [
-        { q: "L'audit est-il vraiment gratuit ?", a: "Oui, complètement. 20 questions, résultat immédiat, rapport PDF téléchargeable — sans carte bancaire ni inscription obligatoire." },
+        { q: "L'audit est-il vraiment gratuit ?", a: "Oui, complètement. 20 questions, résultat immédiat, rapport PDF téléchargeable, sans carte bancaire ni inscription obligatoire." },
         { q: "Combien de temps prend l'audit ?", a: "En moyenne 15 à 20 minutes. Vous recevez votre rapport instantanément." },
         { q: "Mes données sont-elles sécurisées ?", a: "Oui. Données hébergées en Europe (conformité RGPD). Aucune revente à des tiers." },
         { q: "Puis-je annuler à tout moment ?", a: "Oui, résiliation en un clic depuis votre espace client, sans frais ni préavis." },
-        { q: "L'IA remplace-t-elle le conseil humain ?", a: "Non. Nexalie OS est un accélérateur, conçu pour amplifier l'expertise humaine — pas la remplacer." },
+        { q: "L'IA remplace-t-elle le conseil humain ?", a: "Non. Nexalie OS est un accélérateur, conçu pour amplifier l'expertise humaine, pas la remplacer." },
       ],
       af: [
-        { q: "Le Bilan Numérique est-il vraiment gratuit ?", a: "Oui, 100% gratuit. 20 questions adaptées à l'Afrique, résultat immédiat, rapport PDF — sans carte ni inscription." },
+        { q: "Le Bilan Numérique est-il vraiment gratuit ?", a: "Oui, 100% gratuit. 20 questions adaptées à l'Afrique, résultat immédiat, rapport PDF, sans carte ni inscription." },
         { q: "Combien de temps prend le bilan ?", a: "Environ 15 minutes. Votre rapport est disponible immédiatement." },
-        { q: "Comment payer ? Avez-vous le Mobile Money ?", a: "Oui — Orange Money, Wave et Mobile Money disponibles. Paiement par carte aussi accepté." },
+        { q: "Comment payer ? Avez-vous le Mobile Money ?", a: "Oui : Orange Money, Wave et Mobile Money disponibles. Paiement par carte aussi accepté." },
         { q: "Ça marche si mon équipe n'est pas très digitale ?", a: "C'est exactement pour ça que Nexalie existe. Tout est conçu pour des équipes peu digitalisées." },
         { q: "L'IA comprend-elle les réalités africaines ?", a: "Oui. Nexalie OS est entraîné avec des cas concrets : coupures courant, mobile-first, culture orale, Mobile Money, etc." },
       ]

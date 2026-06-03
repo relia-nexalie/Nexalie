@@ -56,7 +56,7 @@ export const fr = {
   inst_cta_demo:     'Demander une démonstration',
 
   // ── Footer ───────────────────────────────────────────────────
-  footer_tagline:    'Nexalie – la boussole numérique des PME africaines',
+  footer_tagline:    'Nexalie, la boussole numérique des PME africaines',
   footer_product:    'Produit',
   footer_resources:  'Ressources',
   footer_legal:      'Légal',

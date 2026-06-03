@@ -101,7 +101,7 @@ export default function BugReportModal({ onClose }) {
                 Signaler un problème
               </h2>
               <p style={{ fontSize: '13px', color: '#6B7A94', marginTop: '6px' }}>
-                Décrivez ce qui ne fonctionne pas — nous le corrigerons dès que possible.
+                Décrivez ce qui ne fonctionne pas : nous le corrigerons dès que possible.
               </p>
             </div>
 
