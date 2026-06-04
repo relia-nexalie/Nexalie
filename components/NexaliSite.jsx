@@ -66,8 +66,8 @@ export default function NexaliSite() {
             </h1>
 
             <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '32px', maxWidth: '520px' }}>
-              90 000 PME congolaises cherchent à se digitaliser. Nexalie les accompagne pas à pas : diagnostic, feuille de route, outils concrets.{' '}
-              <strong style={{ color: '#fff' }}>Gratuit. Sans consultant.</strong>
+              Évaluez gratuitement la maturité numérique de votre entreprise en moins de 20 minutes. Recevez une feuille de route concrète, adaptée à votre réalité : Mobile Money, cadre OHADA, marchés locaux.{' '}
+              <strong style={{ color: '#fff' }}>C&apos;est gratuit. Pensé pour vous.</strong>
             </p>
 
             <div className="nx-hero-buttons" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
@@ -145,14 +145,14 @@ export default function NexaliSite() {
           <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(34px,5vw,50px)', fontWeight: 400, color: '#fff', textAlign: 'center', marginBottom: '6px', letterSpacing: '-0.01em' }}>
             Comment ça fonctionne
           </h2>
-          <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.55)', textAlign: 'center', marginBottom: '48px' }}>Simple. Concret. Immédiat.</p>
+          <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.55)', textAlign: 'center', marginBottom: '48px' }}>20 questions. Un score. Trois actions. Sans consultant.</p>
 
           <div className="nx-steps-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
             {[
               {
                 num: '01',
                 title: 'Vous répondez à 20 questions',
-                text: 'Secteur, niveau d\'équipement, processus, clients, financement : Nexalie évalue votre maturité sur 6 dimensions clés du numérique.',
+                text: 'Les questions sont calibrées pour votre réalité : connexion instable, équipe peu digitalisée, paiements mobiles, coupures de courant. Pas de jargon, pas de prérequis technique.',
               },
               {
                 num: '02',
@@ -162,7 +162,7 @@ export default function NexaliSite() {
               {
                 num: '03',
                 title: 'Vous avancez, étape par étape',
-                text: 'Chaque recommandation est priorisée et accessible. Pas de jargon technique. Des actions concrètes à votre portée.',
+                text: 'Chaque action est sélectionnée pour fonctionner dans votre contexte : outils légers, accessibles sur mobile, compatibles avec vos habitudes de terrain.',
               },
             ].map(step => (
               <div key={step.num} style={{ position: 'relative', padding: '32px 24px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(201,168,76,0.2)', borderRadius: '8px', overflow: 'hidden' }}>
@@ -197,7 +197,7 @@ export default function NexaliSite() {
               Les outils adaptés à la réalité des PME africaines
             </h2>
             <p style={{ fontSize: '15px', color: MUTED, lineHeight: 1.8, marginBottom: '28px' }}>
-              Diagnostic, business plan, feuille de route, veille : des outils pensés pour votre contexte. Mobile Money, OHADA, marchés locaux.
+              Un score de maturité en 5 minutes. Une feuille de route sur mesure. Des recommandations qui fonctionnent dans votre réalité, sans consultant ni budget importé.
             </p>
             <Link href="/platform" style={{ padding: '12px 24px', background: NAVY, borderRadius: '8px', color: '#fff', fontSize: '14px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
               Découvrir la plateforme →
@@ -224,6 +224,31 @@ export default function NexaliSite() {
                 <Icon size={18} color={GOLD} style={{ marginBottom: '10px' }} />
                 <p style={{ fontSize: '13px', fontWeight: 700, color: NAVY, marginBottom: '4px' }}>{name}</p>
                 <p style={{ fontSize: '11px', color: '#2D6A4F', fontFamily: 'var(--font-mono, monospace)', fontWeight: 600, letterSpacing: '0.05em' }}>Gratuit</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CAS D'USAGE ────────────────────────────────────────────── */}
+      <section style={{ padding: '72px 24px', background: '#fff', borderTop: '1px solid #E2E8F0' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '2.5px', color: GOLD, textAlign: 'center', marginBottom: '8px', textTransform: 'uppercase' }}>Terrain</p>
+          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(26px,3.5vw,38px)', fontWeight: 400, color: NAVY, textAlign: 'center', marginBottom: '8px', letterSpacing: '-0.01em' }}>
+            Ce que ça change, concrètement
+          </h2>
+          <p style={{ textAlign: 'center', fontSize: '12px', color: '#94A3B8', fontFamily: 'var(--font-mono, monospace)', marginBottom: '40px', letterSpacing: '0.05em' }}>
+            Exemples de cas d&apos;usage illustratifs
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px' }}>
+            {[
+              { sector: 'Commerce & Distribution', text: "Un grossiste d'Abidjan suit ses ventes sur mobile malgré les coupures courant : stock toujours à jour." },
+              { sector: 'Services & Conseil',      text: 'Une agence à Brazzaville passe de WhatsApp à un CRM simple : 50 % de clients perdus en moins.' },
+              { sector: 'BTP & Construction',      text: 'Un entrepreneur camerounais gère ses chantiers à distance depuis son téléphone : coordination multipliée par 3.' },
+            ].map((c) => (
+              <div key={c.sector} className="card-hover reveal" style={{ padding: '32px 28px', background: CREAM, border: '1px solid #E2E8F0', borderLeft: `3px solid ${GOLD}`, borderRadius: '8px' }}>
+                <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: GOLD, marginBottom: '16px' }}>{c.sector}</p>
+                <p style={{ fontSize: '15px', color: TEXT, lineHeight: 1.75 }}>{c.text}</p>
               </div>
             ))}
           </div>
@@ -283,8 +308,8 @@ export default function NexaliSite() {
       <section style={{ padding: '80px 24px', background: NAVY }}>
         <div style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(34px,5vw,52px)', fontWeight: 400, color: '#fff', marginBottom: '12px', lineHeight: 1.15, letterSpacing: '-0.01em' }}>
-            Votre transformation numérique<br />
-            <em style={{ color: GOLD, fontStyle: 'italic' }}>commence aujourd&apos;hui</em>
+            Faites le point sur votre numérique.<br />
+            <em style={{ color: GOLD, fontStyle: 'italic' }}>En 20 minutes, gratuitement.</em>
           </h2>
           <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.55)', marginBottom: '32px', lineHeight: 1.7 }}>
             Diagnostic gratuit en 5 minutes. Feuille de route personnalisée. Outils concrets. Aucun engagement.
