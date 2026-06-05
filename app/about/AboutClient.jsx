@@ -87,7 +87,10 @@ export default function AboutClient() {
                 Ce n&apos;est pas un manque de talent. C&apos;est un manque d&apos;outils pensés pour leur réalité.
               </p>
               <p style={{ fontWeight: 600, color: navy }}>
-                Nexalie existe pour combler cet écart — diagnostic en 5 minutes, feuille de route concrète, outils accessibles.
+                Nexalie existe pour combler cet écart : diagnostic en 5 minutes, feuille de route concrète, outils accessibles.
+              </p>
+              <p style={{ marginTop: '20px', color: '#374151' }}>
+                L&apos;audit est gratuit pour les PME parce que nous croyons que l&apos;accès à l&apos;information ne devrait pas être un privilège. Ce modèle est rendu possible par les institutions, bailleurs et partenaires qui utilisent les données agrégées et anonymisées pour piloter leurs programmes de développement.
               </p>
             </div>
           </div>

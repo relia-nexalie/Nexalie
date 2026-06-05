@@ -52,10 +52,10 @@ export default function InstitutionsPage() {
             </p>
           </div>
           <h1 style={{ fontFamily: 'var(--font-fraunces, serif)', fontSize: 'clamp(34px, 5.5vw, 56px)', fontWeight: 400, color: '#fff', lineHeight: 1.2, marginBottom: '24px', letterSpacing: '-0.02em' }}>
-            Accélérer la transformation numérique des PME africaines, ensemble
+            Vous financez leur développement. Nexalie vous montre où votre impact est le plus fort.
           </h1>
           <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.75, maxWidth: '600px', marginBottom: '40px' }}>
-            Nexalie fournit aux institutions, bailleurs et réseaux d'appui les données et les outils pour mesurer, accompagner et démontrer l'impact de leurs programmes de digitalisation des PME.
+            Les diagnostics réalisés par les PME alimentent, de façon anonymisée, un tableau de bord agrégé. Ministères, bailleurs et chambres de commerce disposent ainsi d'une vision claire du tissu économique local, pour cibler leurs financements là où l'impact sera le plus fort.
           </p>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
             <a

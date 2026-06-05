@@ -16,7 +16,7 @@ export default function GlobalFooter() {
       title: 'Produit',
       links: [
         { href: '/audit',          label: 'Audit gratuit' },
-        { href: '/institutions',   label: 'Institutions' },
+        { href: '/institutions',   label: 'Institutions & Partenaires' },
         { href: '/marque-blanche', label: 'Marque Blanche' },
       ],
     },

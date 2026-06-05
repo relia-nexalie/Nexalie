@@ -278,10 +278,10 @@ export default function NexaliSite() {
             <div style={{ flex: 1, minWidth: '280px' }}>
               <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '2.5px', color: GOLD, marginBottom: '10px', textTransform: 'uppercase' }}>Pour les institutions</p>
               <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(26px,3.5vw,38px)', fontWeight: 400, color: NAVY, marginBottom: '14px', lineHeight: 1.2, letterSpacing: '-0.01em' }}>
-                Mesurer et accélérer l&apos;impact de vos programmes
+                Vous financez leur développement. Nexalie vous montre où votre impact est le plus fort.
               </h2>
               <p style={{ fontSize: '14px', color: MUTED, lineHeight: 1.7, marginBottom: '24px' }}>
-                Bailleurs, chambres de commerce, ministères : accédez à des données agrégées et pilotez vos initiatives de digitalisation des PME.
+                Les diagnostics réalisés par les PME alimentent, de façon anonymisée, un tableau de bord agrégé. Ministères, bailleurs et chambres de commerce disposent ainsi d&apos;une vision claire du tissu économique local, pour cibler leurs actions là où le besoin est réel.
               </p>
               <Link href="/institutions" style={{ padding: '12px 24px', background: NAVY, borderRadius: '8px', color: '#fff', fontSize: '14px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
                 Espace institutions →
