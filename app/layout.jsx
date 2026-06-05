@@ -1,5 +1,6 @@
 import Script from 'next/script';
 import { Plus_Jakarta_Sans, DM_Mono } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import ClientProviders from '@/components/ClientProviders';
 import GlobalHeader from '@/components/GlobalHeader';
 import GlobalFooter from '@/components/GlobalFooter';
@@ -109,6 +110,7 @@ export default function RootLayout({ children }) {
           {children}
           <GlobalFooter />
         </ClientProviders>
+        <Analytics />
       </body>
     </html>
   );
