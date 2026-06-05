@@ -1,6 +1,7 @@
 import Script from 'next/script';
 import { Plus_Jakarta_Sans, DM_Mono } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import ClientProviders from '@/components/ClientProviders';
 import GlobalHeader from '@/components/GlobalHeader';
 import GlobalFooter from '@/components/GlobalFooter';
@@ -111,6 +112,7 @@ export default function RootLayout({ children }) {
           <GlobalFooter />
         </ClientProviders>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
