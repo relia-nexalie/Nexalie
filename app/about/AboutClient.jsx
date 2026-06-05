@@ -103,7 +103,7 @@ export default function AboutClient() {
               {
                 label: 'ANCRAGE INDUSTRIEL',
                 color: accentText,
-                body: 'Plus de dix ans en gestion de projet et transformation digitale dans des environnements exigeants. Chaque outil, chaque méthode chez Nexalie vient d\'un vrai terrain — pas d\'une théorie.',
+                body: 'Plus de dix ans en gestion de projet et transformation digitale dans des environnements exigeants. Chaque outil, chaque méthode chez Nexalie vient du terrain. Pas de recette importée, pas de conseil déconnecté de la réalité locale.',
               },
               {
                 label: 'DOUBLE CULTURE',

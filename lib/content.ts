@@ -12,11 +12,11 @@ export const CONTENT = {
   },
   hero: {
     title: {
-      fr: 'Accélérez votre transformation digitale',
-      af: 'Faites passer votre business au niveau supérieur'
+      fr: 'Évaluez votre maturité numérique, gratuitement',
+      af: 'Faites le point sur votre numérique, en 20 minutes'
     },
     subtitle: {
-      fr: 'Audit intelligent · Roadmap sur-mesure · IA dédiée PME françaises',
+      fr: 'Diagnostic gratuit · Feuille de route sur mesure · Adapté à votre réalité',
       af: 'Audit adapté à votre réalité · Outils concrets · IA pour entrepreneurs africains'
     },
     cta_primary: { fr: 'Faire mon audit gratuit', af: 'Faire mon Bilan Numérique' },

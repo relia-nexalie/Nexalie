@@ -11,7 +11,7 @@ const USE_CASES = [
     icon: '🏦',
     who: 'Banques & Institutions Financières',
     title: 'Offrez l\'audit digital à vos PME clientes',
-    desc: 'Intégrez la plateforme Nexalie sous votre marque pour accompagner vos clients entreprises dans leur transformation digitale. Générez des leads qualifiés et renforcez votre offre conseil.',
+    desc: 'Proposez à vos clients PME un outil de diagnostic numérique directement intégré à votre offre. Votre logo, votre domaine, vos couleurs. Ils passent leur bilan, vous recevez les résultats agrégés.',
     examples: ['Audit digital offert avec l\'ouverture de compte pro', 'Tableau de bord banquier pour suivre la progression des clients', 'Rapport PDF à votre logo envoyé automatiquement'],
     color: '#3B82F6',
   },
@@ -19,7 +19,7 @@ const USE_CASES = [
     icon: '🏛️',
     who: 'Chambres de Commerce & Fédérations',
     title: 'Mesurez le niveau digital de vos membres',
-    desc: 'Déployez l\'audit de maturité à l\'échelle de votre réseau. Produisez des baromètres sectoriels, identifiez les entreprises à accompagner en priorité, valorisez votre offre de formation.',
+    desc: 'Donnez à vos membres un outil concret pour évaluer leur niveau numérique. Identifiez les besoins prioritaires, orientez vos formations et mesurez l\'évolution dans le temps.',
     examples: ['Baromètre digital annuel de votre territoire', 'Segmentation des membres par niveau de maturité', 'Programme d\'accompagnement ciblé sur les plus faibles'],
     color: '#8B5CF6',
   },
@@ -27,7 +27,7 @@ const USE_CASES = [
     icon: '🏛️',
     who: 'Ministères & Agences Gouvernementales',
     title: 'Pilotez la digitalisation des PME de votre pays',
-    desc: 'Une plateforme nationale de diagnostic digital pour les PME. Données agrégées par secteur et région, tableau de bord ministériel, export des indicateurs pour les rapports officiels.',
+    desc: 'Accédez à une vue d\'ensemble de la maturité numérique des PME de votre territoire, par secteur et par région. Des données anonymisées et agrégées pour piloter vos politiques sur la base de preuves.',
     examples: ['Portail national de diagnostic digital PME', 'Indicateurs agrégés par région et secteur d\'activité', 'Rapports officiels prêts à l\'emploi pour les bailleurs de fonds'],
     color: '#10B981',
   },
@@ -261,7 +261,7 @@ export default function MarqueBlanchePage() {
             <div style={{ background: '#fff', border: `2px solid ${accent}`, borderRadius: '16px', padding: '40px', textAlign: 'center' }}>
               <span style={{ fontSize: '48px' }}>✓</span>
               <p style={{ fontSize: '18px', fontWeight: 700, color: NAVY, margin: '16px 0 8px' }}>Message envoyé !</p>
-              <p style={{ fontSize: '14px', color: '#6B7A94' }}>Rélia vous répondra sous 24h ouvrées.</p>
+              <p style={{ fontSize: '14px', color: '#6B7A94' }}>L&apos;équipe Nexalie vous répondra sous 24h ouvrées.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} style={{ background: '#fff', border: '1.5px solid rgba(0,0,0,0.07)', borderRadius: '16px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -301,7 +301,7 @@ export default function MarqueBlanchePage() {
                 {sending ? 'Envoi...' : 'Envoyer ma demande →'}
               </button>
               <p style={{ fontSize: '12px', color: '#9CA3AF', textAlign: 'center' }}>
-                Réponse sous 24h · relia.ebiya@gmail.com
+                Réponse sous 24h · contact@nexalie.com
               </p>
             </form>
           )}
