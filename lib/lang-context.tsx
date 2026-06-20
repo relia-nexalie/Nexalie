@@ -16,9 +16,9 @@ const LANG_LABELS: Record<Lang, string> = {
 };
 
 export const LANG_ACCENTS: Record<Lang, string> = {
-  fr:  '#C9A24B', // or
-  ln:  '#1B7A4D', // vert vif
-  ktu: '#C77B30', // ambre cuivré
+  fr:  '#C8A96B', // or-doux
+  ln:  '#1F5F4A', // vert-profond
+  ktu: '#C8A96B', // or-doux
 };
 
 interface LangContextType {

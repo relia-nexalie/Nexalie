@@ -7,8 +7,8 @@ import BugReportModal from '@/components/BugReportModal';
 export default function GlobalFooter() {
   const [showBugModal, setShowBugModal] = useState(false);
 
-  const navy   = '#0B3D2E';
-  const accent = 'var(--accent, #C9A24B)';
+  const brand  = 'var(--color-brand)';
+  const accent = 'var(--accent, var(--color-gold))';
   const year   = new Date().getFullYear();
 
   const cols = [
@@ -39,7 +39,7 @@ export default function GlobalFooter() {
   ];
 
   return (
-    <footer style={{ background: navy, color: '#fff', padding: '56px 24px 32px' }}>
+    <footer style={{ background: brand, color: '#fff', padding: '56px 24px 32px' }}>
       <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1.5fr repeat(3, 1fr)', gap: '40px', marginBottom: '48px' }}>
 

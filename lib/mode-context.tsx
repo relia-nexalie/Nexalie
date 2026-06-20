@@ -30,24 +30,24 @@ export function ModeProvider({ children }: { children: ReactNode }) {
     const root = document.documentElement;
     if (mode === 'af') {
       root.style.setProperty('--nx-bg', '#FFFFFF');
-      root.style.setProperty('--nx-section-bg', '#F5F3EE');
-      root.style.setProperty('--nx-navy', '#0F2A4A');
-      root.style.setProperty('--nx-accent', '#C9A84C');
+      root.style.setProperty('--nx-section-bg', '#F8F6F1');
+      root.style.setProperty('--nx-navy', '#0F172A');
+      root.style.setProperty('--nx-accent', '#C8A96B');
       root.style.setProperty('--nx-accent-dark', '#9A7A2A');
-      root.style.setProperty('--nx-gold', '#C9A84C');
-      root.style.setProperty('--nx-green', '#2D6A4F');
+      root.style.setProperty('--nx-gold', '#C8A96B');
+      root.style.setProperty('--nx-green', '#1F5F4A');
       root.style.setProperty('--nx-text-primary', '#0F172A');
-      root.style.setProperty('--nx-text-secondary', '#64748B');
+      root.style.setProperty('--nx-text-secondary', '#4B5563');
     } else {
       root.style.setProperty('--nx-bg', '#FFFFFF');
       root.style.setProperty('--nx-section-bg', '#F8FAFC');
-      root.style.setProperty('--nx-navy', '#0A1628');
+      root.style.setProperty('--nx-navy', '#0F172A');
       root.style.setProperty('--nx-accent', '#4EC9B0');
       root.style.setProperty('--nx-accent-dark', '#1D6B60');
-      root.style.setProperty('--nx-gold', '#C9A84C');
+      root.style.setProperty('--nx-gold', '#C8A96B');
       root.style.setProperty('--nx-green', '#2E9B8B');
-      root.style.setProperty('--nx-text-primary', '#0A1628');
-      root.style.setProperty('--nx-text-secondary', '#6B7A94');
+      root.style.setProperty('--nx-text-primary', '#0F172A');
+      root.style.setProperty('--nx-text-secondary', '#4B5563');
     }
     document.documentElement.setAttribute('data-mode', mode);
   }, [mode]);
