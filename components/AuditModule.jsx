@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useMode } from '@/lib/mode-context';
 import DiagnosticLoading from './DiagnosticLoading';
 import RapportRestitution from './RapportRestitution';
+import MotifBackground from './MotifBackground';
 
 // ─────────────────────────────────────────────────────────────
 // Tooltips pour termes techniques
@@ -1433,8 +1434,9 @@ Génère maintenant le rapport complet en respectant strictement la structure de
   // ─── INTRO ───────────────────────────────────────────────
   if (step === 'intro') {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-cream px-6 py-20 md:py-24">
-        <div className="w-full max-w-3xl text-center">
+      <div className="relative flex min-h-screen items-center justify-center bg-cream px-6 py-20 md:py-24">
+        <MotifBackground name="musoni" opacity={0.08} />
+        <div className="relative z-10 w-full max-w-3xl text-center">
           <div className="mb-8 inline-flex items-center gap-2">
             <div className="h-px w-8 bg-terra" />
             <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-terra">
