@@ -50,7 +50,7 @@ export default function NexaliSite() {
       `}</style>
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
-      <section className="kongo-texture" style={{ background: BRAND, padding: 'clamp(64px,8vw,100px) 24px' }}>
+      <section style={{ position: 'relative', background: BRAND, padding: 'clamp(64px,8vw,100px) 24px' }}>
         <div className="nx-hero-grid" style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr auto', gap: '60px', alignItems: 'center' }}>
           <div>
             {/* Badge */}
@@ -139,7 +139,7 @@ export default function NexaliSite() {
       </section>
 
       {/* ── COMMENT ÇA MARCHE ──────────────────────────────────────── */}
-      <section className="kongo-texture" style={{ padding: '72px 24px', background: BRAND, overflow: 'hidden' }}>
+      <section style={{ padding: '72px 24px', background: BRAND, overflow: 'hidden' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '2.5px', color: 'rgba(201,168,76,0.7)', textAlign: 'center', marginBottom: '10px', textTransform: 'uppercase' }}>Processus</p>
           <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(34px,5vw,50px)', fontWeight: 400, color: '#fff', textAlign: 'center', marginBottom: '6px', letterSpacing: '-0.01em' }}>
@@ -305,7 +305,7 @@ export default function NexaliSite() {
       </section>
 
       {/* ── CTA FINAL ──────────────────────────────────────────────── */}
-      <section className="kongo-texture" style={{ padding: '80px 24px', background: BRAND }}>
+      <section style={{ padding: '80px 24px', background: BRAND }}>
         <div style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(34px,5vw,52px)', fontWeight: 400, color: '#fff', marginBottom: '12px', lineHeight: 1.15, letterSpacing: '-0.01em' }}>
             Faites le point sur votre numérique.<br />
