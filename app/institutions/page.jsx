@@ -1,3 +1,5 @@
+import MotifBackground from '@/components/MotifBackground';
+
 export const metadata = {
   title: 'Institutions & Partenaires — Nexalie',
   description: "Nexalie accompagne les institutions, bailleurs de fonds et réseaux d'appui dans la digitalisation des PME africaines. Données agrégées, outils de diagnostic, impact mesurable.",
@@ -43,8 +45,9 @@ export default function InstitutionsPage() {
     <main style={{ background: '#fff', fontFamily: 'var(--font-jakarta, sans-serif)' }}>
 
       {/* ── Hero ────────────────────────────────────────────────── */}
-      <section style={{ background: navy, padding: '80px 24px 72px' }}>
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+      <section style={{ position: 'relative', background: navy, padding: '80px 24px 72px' }}>
+        <MotifBackground name="tukula" opacity={0.06} />
+        <div style={{ position: 'relative', zIndex: 1, maxWidth: '800px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '28px' }}>
             <div style={{ width: '3px', height: '20px', background: gold, borderRadius: '2px' }} />
             <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase', color: gold, margin: 0 }}>
