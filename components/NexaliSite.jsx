@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { BarChart2, DollarSign, ClipboardList, Map, Search, FileText } from "lucide-react";
+import MotifBackground from "@/components/MotifBackground";
 
 // ═══════════════════════════════════════════
 // DESIGN TOKENS — branchés sur globals.css
@@ -51,7 +52,8 @@ export default function NexaliSite() {
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
       <section style={{ position: 'relative', background: BRAND, padding: 'clamp(64px,8vw,100px) 24px' }}>
-        <div className="nx-hero-grid" style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr auto', gap: '60px', alignItems: 'center' }}>
+        <MotifBackground name="diantu" opacity={0.06} />
+        <div className="nx-hero-grid" style={{ position: 'relative', zIndex: 1, maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr auto', gap: '60px', alignItems: 'center' }}>
           <div>
             {/* Badge */}
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(201,168,76,0.12)', border: '1px solid rgba(201,168,76,0.25)', borderRadius: '20px', padding: '5px 14px', marginBottom: '24px' }}>
