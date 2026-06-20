@@ -306,6 +306,11 @@ export default function NexaliSite() {
         </div>
       </section>
 
+      {/* ── Séparateur KINSHASA ────────────────────────────────────── */}
+      <div aria-hidden="true" style={{ position: 'relative', height: 24, overflow: 'hidden', background: BRAND }}>
+        <MotifBackground name="kinshasa" size="48px 24px" opacity={0.14} />
+      </div>
+
       {/* ── CTA FINAL ──────────────────────────────────────────────── */}
       <section style={{ padding: '80px 24px', background: BRAND }}>
         <div style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>
