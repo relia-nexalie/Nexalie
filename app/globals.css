@@ -3,17 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Palette Nexalie : Vert Émeraude & Or ───────────────────────────── */
+/* ─── Palette Nexalie — tokens unifiés ───────────────────────────────── */
 :root {
-  --color-emerald:   #0B3D2E;   /* dominante sombre */
-  --color-gold:      #C9A24B;   /* or par défaut */
-  --color-cream:     #F5F1E8;   /* fonds clairs */
-  --color-offwhite:  #FAF8F3;   /* cartes */
-  --color-text:      #14241C;   /* texte foncé */
+  --color-night:   #0F172A;   /* bleu-nuit    : fonds sombres, texte principal */
+  --color-brand:   #1F5F4A;   /* vert-profond : CTA, liens, états actifs      */
+  --color-gold:    #C8A96B;   /* or-doux      : accents/détails uniquement    */
+  --color-ivory:   #F8F6F1;   /* ivoire       : fonds clairs, cartes          */
+  --color-muted:   #4B5563;   /* gris-ardoise : texte secondaire              */
 
   /* Accent dynamique selon langue (mis à jour via JS dans LangProvider) */
-  --accent:          #C9A24B;   /* fr=or · ln=vert vif · ktu=ambre */
-
+  --accent:        #C8A96B;   /* fr=or-doux · ln=vert-profond · ktu=or-doux  */
 }
 
 /* ─── Typographie Nexalie ────────────────────────────────────────────── */
@@ -178,4 +177,30 @@ button:active:not(:disabled) { transform: scale(0.98); }
 a[style*="background"],
 button[style*="background"] {
   transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+/* ─── Motif Kongo — dikenga (losange · croix · cercle) ──────────────── */
+/*
+   Le dikenga est le cosmogramme fondamental du peuple Kongo :
+   un losange divisé par une croix, avec un cercle au centre —
+   symbolisant le cycle de vie et les quatre moments du soleil.
+   Ici utilisé comme texture décorative en arrière-plan des sections sombres.
+*/
+.kongo-texture {
+  position: relative;
+  overflow: hidden;
+}
+.kongo-texture::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cpolygon points='32,3 61,32 32,61 3,32' fill='none' stroke='white' stroke-width='0.7'/%3E%3Cline x1='32' y1='3' x2='32' y2='61' stroke='white' stroke-width='0.35'/%3E%3Cline x1='3' y1='32' x2='61' y2='32' stroke='white' stroke-width='0.35'/%3E%3Ccircle cx='32' cy='32' r='4.5' fill='none' stroke='white' stroke-width='0.65'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 0;
+}
+.kongo-texture > * {
+  position: relative;
+  z-index: 1;
 }
