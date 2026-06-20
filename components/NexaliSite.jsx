@@ -52,7 +52,7 @@ export default function NexaliSite() {
 
       {/* ── HERO ─────────────────────────────────────────────────── */}
       <section style={{ position: 'relative', background: BRAND, padding: 'clamp(64px,8vw,100px) 24px' }}>
-        <MotifBackground name="diantu" opacity={0.06} />
+        <MotifBackground name="diantu" opacity={0.20} />
         <div className="nx-hero-grid" style={{ position: 'relative', zIndex: 1, maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr auto', gap: '60px', alignItems: 'center' }}>
           <div>
             {/* Badge */}
@@ -308,7 +308,7 @@ export default function NexaliSite() {
 
       {/* ── Séparateur KINSHASA ────────────────────────────────────── */}
       <div aria-hidden="true" style={{ position: 'relative', height: 24, overflow: 'hidden', background: BRAND }}>
-        <MotifBackground name="kinshasa" size="48px 24px" opacity={0.14} />
+        <MotifBackground name="kinshasa" size="48px 24px" opacity={0.25} />
       </div>
 
       {/* ── CTA FINAL ──────────────────────────────────────────────── */}

@@ -1435,7 +1435,7 @@ Génère maintenant le rapport complet en respectant strictement la structure de
   if (step === 'intro') {
     return (
       <div className="relative flex min-h-screen items-center justify-center bg-cream px-6 py-20 md:py-24">
-        <MotifBackground name="musoni" opacity={0.08} />
+        <MotifBackground name="musoni" opacity={0.20} />
         <div className="relative z-10 w-full max-w-3xl text-center">
           <div className="mb-8 inline-flex items-center gap-2">
             <div className="h-px w-8 bg-terra" />

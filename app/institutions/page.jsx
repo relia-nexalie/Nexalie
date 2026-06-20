@@ -46,7 +46,7 @@ export default function InstitutionsPage() {
 
       {/* ── Hero ────────────────────────────────────────────────── */}
       <section style={{ position: 'relative', background: navy, padding: '80px 24px 72px' }}>
-        <MotifBackground name="tukula" opacity={0.06} />
+        <MotifBackground name="tukula" opacity={0.20} />
         <div style={{ position: 'relative', zIndex: 1, maxWidth: '800px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '28px' }}>
             <div style={{ width: '3px', height: '20px', background: gold, borderRadius: '2px' }} />
