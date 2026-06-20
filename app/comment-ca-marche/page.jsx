@@ -26,7 +26,7 @@ const STEPS = [
     emoji: '⚡',
     title: 'L\'IA analyse',
     sub: 'Score sur 100 · Plan d\'action · Rapport PDF',
-    color: '#C9A84C',
+    color: '#C8A96B',
     points: [
       'Score de maturité digitale sur 100',
       '5 axes évalués : Stratégie, Outils, Équipes, Client, Processus',
@@ -56,7 +56,7 @@ export default function CommentCaMarchePage() {
     <div style={{ minHeight: '100vh', background: '#F8FAFC', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif' }}>
 
       {/* Nav */}
-      <nav style={{ background: '#0A1628', padding: '0 32px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+      <nav style={{ background: '#0F172A', padding: '0 32px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '60px' }}>
           <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'baseline', gap: '8px' }}>
             <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '20px', fontWeight: 300, color: '#fff' }}>Nexalie</span>
@@ -69,7 +69,7 @@ export default function CommentCaMarchePage() {
       </nav>
 
       {/* Hero */}
-      <section style={{ background: '#0A1628', padding: 'clamp(56px,8vw,96px) 24px', textAlign: 'center' }}>
+      <section style={{ background: '#0F172A', padding: 'clamp(56px,8vw,96px) 24px', textAlign: 'center' }}>
         <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: 'rgba(255,255,255,0.4)', marginBottom: '16px', textTransform: 'uppercase' }}>
           Processus
         </p>
@@ -101,10 +101,10 @@ export default function CommentCaMarchePage() {
               {/* Contenu */}
               <div>
                 <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '2px', color: step.color, marginBottom: '8px', textTransform: 'uppercase' }}>Étape {step.num}</p>
-                <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(22px,3vw,32px)', fontWeight: 300, color: '#0A1628', marginBottom: '6px' }}>
+                <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(22px,3vw,32px)', fontWeight: 300, color: '#0F172A', marginBottom: '6px' }}>
                   {step.title}
                 </h2>
-                <p style={{ fontSize: '13px', color: '#6B7A94', fontFamily: 'monospace', marginBottom: '20px', letterSpacing: '0.5px' }}>{step.sub}</p>
+                <p style={{ fontSize: '13px', color: '#4B5563', fontFamily: 'monospace', marginBottom: '20px', letterSpacing: '0.5px' }}>{step.sub}</p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   {step.points.map((p, i) => (
                     <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
@@ -130,7 +130,7 @@ export default function CommentCaMarchePage() {
       {/* FAQ rapide */}
       <section style={{ padding: '64px 24px', background: '#fff', borderTop: '1px solid rgba(0,0,0,0.06)', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
         <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '24px', fontWeight: 300, color: '#0A1628', textAlign: 'center', marginBottom: '36px' }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '24px', fontWeight: 300, color: '#0F172A', textAlign: 'center', marginBottom: '36px' }}>
             Questions fréquentes
           </h2>
           {[
@@ -140,15 +140,15 @@ export default function CommentCaMarchePage() {
             ['Qui peut faire cet audit ?', 'Tout dirigeant ou responsable d\'une TPE, PME, ou organisation en France ou en Afrique francophone.'],
           ].map(([q, a]) => (
             <div key={q} style={{ marginBottom: '24px', paddingBottom: '24px', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
-              <p style={{ fontSize: '16px', fontWeight: 700, color: '#0A1628', marginBottom: '8px' }}>{q}</p>
-              <p style={{ fontSize: '14px', color: '#6B7A94', lineHeight: 1.7 }}>{a}</p>
+              <p style={{ fontSize: '16px', fontWeight: 700, color: '#0F172A', marginBottom: '8px' }}>{q}</p>
+              <p style={{ fontSize: '14px', color: '#4B5563', lineHeight: 1.7 }}>{a}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* CTA */}
-      <section style={{ padding: '72px 24px', background: '#0A1628', textAlign: 'center' }}>
+      <section style={{ padding: '72px 24px', background: '#0F172A', textAlign: 'center' }}>
         <p style={{ fontSize: '40px', marginBottom: '16px' }}>🚀</p>
         <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(24px,4vw,36px)', fontWeight: 300, color: '#fff', marginBottom: '12px' }}>
           Prêt à découvrir votre score ?

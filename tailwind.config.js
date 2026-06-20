@@ -12,13 +12,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        navy:   '#0F172A',
-        cream:  '#FDFBF7',
-        terra:  '#C2410C',
-        'terra-light': '#FEF0E8',
-        'terra-mid':   '#F97316',
-        'ink':    '#1E293B',
-        'ink-muted': '#64748B',
+        night:       '#0F172A',   /* bleu-nuit */
+        brand:       '#1F5F4A',   /* vert-profond — CTA, actifs */
+        gold:        '#C8A96B',   /* or-doux — accents */
+        ivory:       '#F8F6F1',   /* ivoire — fonds clairs */
+        muted:       '#4B5563',   /* gris-ardoise */
+        /* aliases de compatibilité — ne pas ajouter de nouvelles classes */
+        navy:        '#0F172A',   /* → night */
+        cream:       '#F8F6F1',   /* → ivory */
+        ink:         '#0F172A',   /* → night */
+        'ink-muted': '#4B5563',   /* → muted */
       },
       fontFamily: {
         serif: ['var(--font-display)', 'system-ui', 'sans-serif'],

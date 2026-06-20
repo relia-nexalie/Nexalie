@@ -2,11 +2,11 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Link } from '@react-pdf/renderer';
 
-const NAVY  = '#0B3D2E';
+const NAVY  = '#1F5F4A';
 const TEAL  = '#4EC9B0';
 const TERRA = '#E88C32';
-const GOLD  = '#C9A24B';
-const GRAY  = '#6B7A94';
+const GOLD  = '#C8A96B';
+const GRAY  = '#4B5563';
 const LIGHT = '#F8FAFC';
 const WHITE = '#FFFFFF';
 

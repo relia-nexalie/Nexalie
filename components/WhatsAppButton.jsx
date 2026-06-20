@@ -17,8 +17,8 @@ export default function WhatsAppButton() {
     <div style={{ position: 'fixed', bottom: '24px', right: '24px', zIndex: 9000, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '8px' }}>
       {tooltip && (
         <div style={{ background: '#fff', border: '1px solid rgba(0,0,0,0.08)', borderRadius: '12px', padding: '12px 16px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)', maxWidth: '220px', animation: 'fadeIn 0.2s ease' }}>
-          <p style={{ fontSize: '13px', color: '#0A1628', fontWeight: 600, marginBottom: '2px' }}>Besoin d'aide ?</p>
-          <p style={{ fontSize: '12px', color: '#6B7A94' }}>Nexalie répond sous 24h</p>
+          <p style={{ fontSize: '13px', color: '#0F172A', fontWeight: 600, marginBottom: '2px' }}>Besoin d'aide ?</p>
+          <p style={{ fontSize: '12px', color: '#4B5563' }}>Nexalie répond sous 24h</p>
         </div>
       )}
       <a

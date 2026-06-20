@@ -5,10 +5,10 @@ import { useMode } from '@/lib/mode-context';
 
 const PALETTE = {
   fr: {
-    pageBg: '#FFFFFF', sectionBg: '#F8FAFC', navyBg: '#0A1628',
-    textPrimary: '#0A1628', textSecondary: '#6B7A94', textOnNavy: '#FFFFFF',
-    textMuted: 'rgba(255,255,255,0.5)', accent: '#2E9B8B', gold: '#C9A84C',
-    border: 'rgba(0,0,0,0.07)', btnPrimary: '#0A1628', btnAccent: '#2E9B8B',
+    pageBg: '#FFFFFF', sectionBg: '#F8FAFC', navyBg: '#0F172A',
+    textPrimary: '#0F172A', textSecondary: '#4B5563', textOnNavy: '#FFFFFF',
+    textMuted: 'rgba(255,255,255,0.5)', accent: '#2E9B8B', gold: '#C8A96B',
+    border: 'rgba(0,0,0,0.07)', btnPrimary: '#0F172A', btnAccent: '#2E9B8B',
   },
   af: {
     pageBg: '#FFFFFF', sectionBg: '#FFF8F4', navyBg: '#1A0800',
@@ -33,7 +33,7 @@ const ARTICLES = [
     excerpt: 'Pas les cas d\'usage théoriques. Ce que des équipes de 5 à 50 personnes ont réellement adopté — et ce qui a été abandonné après 2 semaines.',
     tags: ['IA', 'PME France', 'Outils concrets', 'Retour terrain'],
     content: `Depuis septembre 2025, j'accompagne 12 PME françaises dans l'adoption de l'IA. Secteurs variés : une boulangerie artisanale de Lyon, un cabinet RH à Bordeaux, un e-commerce de prêt-à-porter à Paris, un bureau d'études BTP en région parisienne. Voici ce que j'ai observé — sans filtre.\n\n**Ce qui a été adopté et utilisé 6 mois plus tard**\n\nRédaction d'emails et de devis avec Claude ou ChatGPT : 9 PME sur 12 l'utilisent encore. Le gain est réel — entre 45 minutes et 2 heures par jour selon les équipes. Transcription et résumé de réunions avec Otter.ai ou Whisper : 7 sur 12. Les comptes-rendus de réunion, une corvée parmi les plus universellement détestées, disparaissent presque entièrement. Analyse de données clients avec des prompts bien conçus : 5 sur 12, mais ce sont les 5 qui ont eu le plus d'impact mesurable.\n\n**Ce qui a été abandonné**\n\nLes chatbots sur les sites web : 4 PME ont essayé, 4 ont abandonné en moins d'un mois. Les clients posaient des questions auxquelles le bot ne savait pas répondre, et ça créait plus de frustration que d'aide. La génération automatique de posts réseaux sociaux : le contenu était trop générique. Les équipes l'ont utilisé 2-3 semaines, puis ont repris la main.\n\n**La vraie question à se poser**\n\nQuelle tâche répétitive te coûte le plus de temps chaque semaine ? C'est par là qu'il faut commencer. Pas par "comment intégrer l'IA dans notre stratégie globale". Une tâche. Un outil. Deux semaines de test. Si ça marche, on garde. Sinon, on passe à la suivante.` },
-  { id: 3, cat: 'Méthodologie', readTime: '4 min', date: '15 mars 2026', color: '#C9A84C', emoji: '📋',
+  { id: 3, cat: 'Méthodologie', readTime: '4 min', date: '15 mars 2026', color: '#C8A96B', emoji: '📋',
     title: 'L\'audit digital que j\'aurais voulu faire avant de dépenser 15 000€ inutilement',
     excerpt: 'J\'ai accompagné une PME qui avait investi 15 000€ dans un CRM jamais utilisé. Voici ce qu\'un bon diagnostic aurait évité.',
     tags: ['Audit', 'Diagnostic', 'CRM', 'ROI'],

@@ -3,8 +3,8 @@
 import { useState, useEffect, useCallback } from 'react';
 
 const T = {
-  navyBg: '#0A1628', accent: '#2E9B8B', gold: '#C9A84C',
-  textPrimary: '#0A1628', textSecondary: '#6B7A94',
+  navyBg: '#0F172A', accent: '#2E9B8B', gold: '#C8A96B',
+  textPrimary: '#0F172A', textSecondary: '#4B5563',
   border: 'rgba(0,0,0,0.07)',
 };
 

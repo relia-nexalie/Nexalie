@@ -317,8 +317,8 @@ function SouveraineteSection({ text }) {
 }
 
 function NextStepsSection({ score }) {
-  const navy = '#0F2A4A';
-  const gold = '#C9A84C';
+  const navy = '#0F172A';
+  const gold = '#C8A96B';
 
   const steps = score < 40 ? [
     { n: '01', text: 'Créer votre fiche Google Business Profile : gratuit, fait en 20 min.' },

@@ -7,9 +7,9 @@ import { createClient } from '@/lib/supabase/client';
 import { useRouter } from 'next/navigation';
 
 const T = {
-  pageBg: '#FFFFFF', navyBg: '#0A1628', sectionBg: '#F8FAFC',
-  textPrimary: '#0A1628', textSecondary: '#6B7A94',
-  accent: '#2E9B8B', gold: '#C9A84C', border: 'rgba(0,0,0,0.07)',
+  pageBg: '#FFFFFF', navyBg: '#0F172A', sectionBg: '#F8FAFC',
+  textPrimary: '#0F172A', textSecondary: '#4B5563',
+  accent: '#2E9B8B', gold: '#C8A96B', border: 'rgba(0,0,0,0.07)',
 };
 
 export default function LoginPage() {

@@ -4,12 +4,12 @@ import Link from 'next/link';
 
 export default function AboutClient() {
   // Palette institutionnelle africaine — couleurs fixes
-  const navy        = '#0B3D2E';
-  const accent      = '#C9A24B';
+  const navy        = '#1F5F4A';
+  const accent      = '#C8A96B';
   const accentText  = '#8A6E1A';
 
   return (
-    <div style={{ fontFamily: 'var(--font-jakarta, system-ui, sans-serif)', background: '#FAF8F3', color: '#14241C' }}>
+    <div style={{ fontFamily: 'var(--font-jakarta, system-ui, sans-serif)', background: '#F8F6F1', color: '#0F172A' }}>
 
       {/* ── HERO — asymétrique ──────────────────────────────────────── */}
       <section style={{ background: navy, padding: 'clamp(56px,7vw,96px) 24px' }}>
@@ -62,7 +62,7 @@ export default function AboutClient() {
       </section>
 
       {/* ── MANIFESTE — 2 colonnes asymétriques ────────────────────── */}
-      <section style={{ padding: 'clamp(64px,8vw,112px) 24px', background: '#F5F1E8' }}>
+      <section style={{ padding: 'clamp(64px,8vw,112px) 24px', background: '#F8F6F1' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(40px,6vw,80px)', alignItems: 'start' }}>
 
           {/* GAUCHE — Le Manifeste */}
@@ -139,10 +139,10 @@ export default function AboutClient() {
       )}
 
       {/* ── VISION ──────────────────────────────────────────────────── */}
-      <section style={{ padding: 'clamp(56px,7vw,88px) 24px', background: '#F5F1E8' }}>
+      <section style={{ padding: 'clamp(56px,7vw,88px) 24px', background: '#F8F6F1' }}>
         <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '3px', color: accentText, marginBottom: '12px', textTransform: 'uppercase' }}>Vision 2030</p>
-          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(30px,4vw,46px)', fontWeight: 400, color: '#14241C', marginBottom: '24px', lineHeight: 1.2 }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(30px,4vw,46px)', fontWeight: 400, color: '#0F172A', marginBottom: '24px', lineHeight: 1.2 }}>
             La boussole numérique de l&apos;Afrique francophone
           </h2>
           <p style={{ fontSize: '17px', color: '#374151', lineHeight: 1.95, marginBottom: '40px' }}>
@@ -152,7 +152,7 @@ export default function AboutClient() {
             <Link href="/audit" style={{ padding: '15px 32px', background: navy, borderRadius: '10px', color: '#fff', fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
               Faire mon bilan gratuit →
             </Link>
-            <Link href="/contact" style={{ padding: '15px 24px', background: 'transparent', border: '2px solid rgba(0,0,0,0.12)', borderRadius: '10px', color: '#6B7A94', fontSize: '15px', textDecoration: 'none', display: 'inline-block' }}>
+            <Link href="/contact" style={{ padding: '15px 24px', background: 'transparent', border: '2px solid rgba(0,0,0,0.12)', borderRadius: '10px', color: '#4B5563', fontSize: '15px', textDecoration: 'none', display: 'inline-block' }}>
               Me contacter
             </Link>
           </div>

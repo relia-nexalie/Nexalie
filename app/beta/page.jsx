@@ -7,7 +7,7 @@ export const metadata = {
   description: 'Rejoignez les 20 premières entreprises à tester Nexalie en avant-première. Accès gratuit 3 mois, influence directe sur le produit.',
 };
 
-const NAVY  = '#0A1628';
+const NAVY  = '#0F172A';
 const TEAL  = '#4EC9B0';
 
 async function getBetaCount() {
@@ -89,7 +89,7 @@ export default async function BetaPage() {
               <div key={item.title} style={{ background: '#F8FAFC', borderRadius: '14px', padding: '24px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 <span style={{ fontSize: '28px' }}>{item.icon}</span>
                 <h3 style={{ fontSize: '15px', fontWeight: 700, color: NAVY }}>{item.title}</h3>
-                <p style={{ fontSize: '13px', color: '#6B7A94', lineHeight: 1.6 }}>{item.desc}</p>
+                <p style={{ fontSize: '13px', color: '#4B5563', lineHeight: 1.6 }}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -125,7 +125,7 @@ export default async function BetaPage() {
           <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(22px,3.5vw,36px)', fontWeight: 300, textAlign: 'center', marginBottom: '8px' }}>
             {remaining > 0 ? 'Réserver ma place' : 'Rejoindre la liste d\'attente'}
           </h2>
-          <p style={{ textAlign: 'center', color: '#6B7A94', fontSize: '14px', marginBottom: '32px' }}>
+          <p style={{ textAlign: 'center', color: '#4B5563', fontSize: '14px', marginBottom: '32px' }}>
             {remaining > 0
               ? `${remaining} place${remaining > 1 ? 's' : ''} restante${remaining > 1 ? 's' : ''} sur 20`
               : 'Toutes les places sont prises. Inscrivez-vous pour être notifié en priorité.'}

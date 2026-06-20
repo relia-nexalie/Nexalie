@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-const NAVY = '#0A1628';
+const NAVY = '#0F172A';
 const TEAL = '#4EC9B0';
 const TERRA = '#E88C32';
 
@@ -143,7 +143,7 @@ export default function MarqueBlanchePage() {
           <p style={{ fontSize: '18px', fontStyle: 'italic', color: NAVY, lineHeight: 1.7, marginBottom: '16px' }}>
             "Nous avons déployé la plateforme Nexalie pour accompagner nos PME clientes dans leur digitalisation. En 3 mois, 240 audits réalisés, et un NPS en hausse de 18 points sur notre offre conseil."
           </p>
-          <p style={{ fontSize: '13px', color: '#6B7A94' }}>
+          <p style={{ fontSize: '13px', color: '#4B5563' }}>
             <strong>Directeur Digital</strong> · Banque régionale Afrique de l'Ouest (témoignage illustratif)
           </p>
         </div>
@@ -162,7 +162,7 @@ export default function MarqueBlanchePage() {
                 <span style={{ fontSize: '36px' }}>{uc.icon}</span>
                 <p style={{ fontSize: '11px', fontWeight: 700, color: uc.color, textTransform: 'uppercase', letterSpacing: '1px' }}>{uc.who}</p>
                 <h3 style={{ fontSize: '17px', fontWeight: 700, color: NAVY, lineHeight: 1.3 }}>{uc.title}</h3>
-                <p style={{ fontSize: '13px', color: '#6B7A94', lineHeight: 1.7 }}>{uc.desc}</p>
+                <p style={{ fontSize: '13px', color: '#4B5563', lineHeight: 1.7 }}>{uc.desc}</p>
                 <ul style={{ paddingLeft: 0, listStyle: 'none', margin: 0, display: 'flex', flexDirection: 'column', gap: '6px' }}>
                   {uc.examples.map((ex) => (
                     <li key={ex} style={{ fontSize: '12px', color: NAVY, display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
@@ -188,7 +188,7 @@ export default function MarqueBlanchePage() {
                 <span style={{ fontSize: '36px', fontWeight: 800, color: accent, lineHeight: 1, flexShrink: 0, width: '50px' }}>{step.num}</span>
                 <div>
                   <h3 style={{ fontSize: '16px', fontWeight: 700, color: NAVY, marginBottom: '6px' }}>{step.title}</h3>
-                  <p style={{ fontSize: '14px', color: '#6B7A94', lineHeight: 1.7 }}>{step.desc}</p>
+                  <p style={{ fontSize: '14px', color: '#4B5563', lineHeight: 1.7 }}>{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -218,14 +218,14 @@ export default function MarqueBlanchePage() {
                   </span>
                 )}
                 <div>
-                  <p style={{ fontSize: '12px', fontWeight: 700, color: lic.highlight ? 'rgba(255,255,255,0.5)' : '#6B7A94', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '6px' }}>{lic.name}</p>
+                  <p style={{ fontSize: '12px', fontWeight: 700, color: lic.highlight ? 'rgba(255,255,255,0.5)' : '#4B5563', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '6px' }}>{lic.name}</p>
                   <p style={{ fontSize: '32px', fontWeight: 800, color: lic.highlight ? '#fff' : NAVY, lineHeight: 1 }}>
                     {isAf ? lic.price_af : lic.price_fr}
-                    <span style={{ fontSize: '14px', fontWeight: 400, color: lic.highlight ? 'rgba(255,255,255,0.5)' : '#6B7A94', marginLeft: '4px' }}>
+                    <span style={{ fontSize: '14px', fontWeight: 400, color: lic.highlight ? 'rgba(255,255,255,0.5)' : '#4B5563', marginLeft: '4px' }}>
                       {isAf ? lic.currency_af : lic.currency_fr}
                     </span>
                   </p>
-                  <p style={{ fontSize: '12px', color: lic.highlight ? 'rgba(255,255,255,0.5)' : '#6B7A94', marginTop: '4px' }}>{lic.users}</p>
+                  <p style={{ fontSize: '12px', color: lic.highlight ? 'rgba(255,255,255,0.5)' : '#4B5563', marginTop: '4px' }}>{lic.users}</p>
                 </div>
                 <ul style={{ paddingLeft: 0, listStyle: 'none', margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {lic.features.map((f) => (
@@ -261,7 +261,7 @@ export default function MarqueBlanchePage() {
             <div style={{ background: '#fff', border: `2px solid ${accent}`, borderRadius: '16px', padding: '40px', textAlign: 'center' }}>
               <span style={{ fontSize: '48px' }}>✓</span>
               <p style={{ fontSize: '18px', fontWeight: 700, color: NAVY, margin: '16px 0 8px' }}>Message envoyé !</p>
-              <p style={{ fontSize: '14px', color: '#6B7A94' }}>L&apos;équipe Nexalie vous répondra sous 24h ouvrées.</p>
+              <p style={{ fontSize: '14px', color: '#4B5563' }}>L&apos;équipe Nexalie vous répondra sous 24h ouvrées.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} style={{ background: '#fff', border: '1.5px solid rgba(0,0,0,0.07)', borderRadius: '16px', padding: '32px', display: 'flex', flexDirection: 'column', gap: '16px' }}>

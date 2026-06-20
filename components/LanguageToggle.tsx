@@ -29,7 +29,7 @@ export default function LanguageToggle({ className }: { className?: string }) {
             cursor: 'pointer',
             fontSize: '12px',
             fontWeight: lang === l ? 700 : 400,
-            background: lang === l ? 'var(--accent, #C9A24B)' : 'transparent',
+            background: lang === l ? 'var(--accent, #C8A96B)' : 'transparent',
             color: '#fff',
             transition: 'background-color 0.35s ease, font-weight 0.2s',
             whiteSpace: 'nowrap',

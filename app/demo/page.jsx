@@ -7,10 +7,10 @@ export const metadata = {
   robots: { index: false, follow: false },
 };
 
-const NAVY      = '#0A1628';
+const NAVY      = '#0F172A';
 const TERRA     = '#C25C2A';
 const TERRA_LIGHT = '#FBF0EB';
-const GOLD      = '#C9A84C';
+const GOLD      = '#C8A96B';
 const GOLD_LIGHT = '#FDF8EE';
 
 export default function DemoPage() {

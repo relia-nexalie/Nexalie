@@ -2,7 +2,7 @@ import { createClient } from '@/lib/supabase/server';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
-const NAVY = '#0A1628';
+const NAVY = '#0F172A';
 const TEAL = '#4EC9B0';
 const TERRA = '#E88C32';
 
@@ -162,7 +162,7 @@ export default async function BlogSlugPage({ params }) {
                       </p>
                     )}
                     <h3 style={{ fontSize: '14px', fontWeight: 700, color: NAVY, lineHeight: 1.4, marginBottom: '8px' }}>{rel.titre}</h3>
-                    {rel.extrait && <p style={{ fontSize: '12px', color: '#6B7A94', lineHeight: 1.6 }}>{rel.extrait.slice(0, 100)}…</p>}
+                    {rel.extrait && <p style={{ fontSize: '12px', color: '#4B5563', lineHeight: 1.6 }}>{rel.extrait.slice(0, 100)}…</p>}
                   </Link>
                 );
               })}

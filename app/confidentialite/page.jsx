@@ -4,8 +4,8 @@ export const metadata = {
 };
 
 export default function ConfidentialitePage() {
-  const navy = '#0F2A4A';
-  const gold = '#C9A84C';
+  const navy = '#0F172A';
+  const gold = '#C8A96B';
 
   const sections = [
     {
@@ -65,7 +65,7 @@ export default function ConfidentialitePage() {
           <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(24px, 4vw, 36px)', fontWeight: 300, color: navy, marginBottom: '16px', letterSpacing: '-0.02em' }}>
             Politique de confidentialité
           </h1>
-          <p style={{ fontSize: '14px', color: '#64748B', lineHeight: 1.7, marginBottom: '56px' }}>
+          <p style={{ fontSize: '14px', color: '#4B5563', lineHeight: 1.7, marginBottom: '56px' }}>
             La protection de vos données personnelles est une priorité pour Nexalie. Cette politique décrit comment nous collectons, utilisons et protégeons vos informations, conformément à la loi congolaise n° 29-2019 portant protection des données à caractère personnel.
           </p>
 
@@ -78,8 +78,8 @@ export default function ConfidentialitePage() {
             ))}
           </div>
 
-          <div style={{ marginTop: '64px', padding: '24px', background: '#F5F3EE', borderRadius: '8px', border: '1px solid #E2E8F0' }}>
-            <p style={{ fontSize: '13px', color: '#64748B', lineHeight: 1.7 }}>
+          <div style={{ marginTop: '64px', padding: '24px', background: '#F8F6F1', borderRadius: '8px', border: '1px solid #E2E8F0' }}>
+            <p style={{ fontSize: '13px', color: '#4B5563', lineHeight: 1.7 }}>
               Pour toute question relative à la protection de vos données ou pour exercer vos droits, contactez-nous à{' '}
               <a href="mailto:contact@nexalie.com" style={{ color: navy, fontWeight: 600 }}>contact@nexalie.com</a>.
             </p>

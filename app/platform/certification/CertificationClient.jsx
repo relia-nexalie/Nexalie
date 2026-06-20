@@ -6,8 +6,8 @@ import { QRCodeSVG } from 'qrcode.react';
 export default function CertificationClient({ score, eligible, scoreMin, certification, userEmail, organisation, secteur, userMode }) {
   const { isAfrica } = useMode();
   const accent = isAfrica ? '#E88C32' : '#4EC9B0';
-  const navy = isAfrica ? '#1A0800' : '#0A1628';
-  const gold = isAfrica ? '#F5C842' : '#C9A84C';
+  const navy = isAfrica ? '#1A0800' : '#0F172A';
+  const gold = isAfrica ? '#F5C842' : '#C8A96B';
 
   const orgName = organisation || userEmail?.split('@')[0] || 'Votre organisation';
   const issuedDate = certification?.issued_at ? new Date(certification.issued_at).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : null;
@@ -39,7 +39,7 @@ export default function CertificationClient({ score, eligible, scoreMin, certifi
             <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '28px', fontWeight: 300, color: navy, marginBottom: '12px' }}>
               Score actuel : {score}/100
             </h2>
-            <p style={{ fontSize: '16px', color: '#6B7A94', lineHeight: 1.7, marginBottom: '8px' }}>
+            <p style={{ fontSize: '16px', color: '#4B5563', lineHeight: 1.7, marginBottom: '8px' }}>
               Il vous faut <strong>{scoreMin - score} points supplémentaires</strong> pour obtenir votre badge.
             </p>
             <p style={{ fontSize: '14px', color: '#9CA3AF', marginBottom: '32px' }}>
@@ -94,7 +94,7 @@ export default function CertificationClient({ score, eligible, scoreMin, certifi
                 {orgName}
               </h2>
               {secteur && (
-                <p style={{ fontSize: '14px', color: '#6B7A94', marginBottom: '24px' }}>{secteur}</p>
+                <p style={{ fontSize: '14px', color: '#4B5563', marginBottom: '24px' }}>{secteur}</p>
               )}
 
               <div style={{ display: 'inline-block', background: `${accent}15`, border: `2px solid ${accent}`, borderRadius: '12px', padding: '16px 32px', marginBottom: '24px' }}>
@@ -172,7 +172,7 @@ export default function CertificationClient({ score, eligible, scoreMin, certifi
       <style suppressHydrationWarning>{`
         @media print {
           body > *:not(#certificate) { display: none; }
-          #certificate { border: 3px solid #C9A84C !important; }
+          #certificate { border: 3px solid #C8A96B !important; }
         }
       `}</style>
     </div>

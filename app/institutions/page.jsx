@@ -4,9 +4,9 @@ export const metadata = {
 };
 
 export default function InstitutionsPage() {
-  const navy   = '#0B3D2E';
-  const gold   = '#C9A24B';
-  const cream  = '#F5F1E8';
+  const navy   = '#1F5F4A';
+  const gold   = '#C8A96B';
+  const cream  = '#F8F6F1';
 
   const figures = [
     { value: '90 000',  label: 'PME formelles en République du Congo', note: 'Source : Ministère des PME, 2023' },
@@ -111,7 +111,7 @@ export default function InstitutionsPage() {
                   {u.icon}
                 </div>
                 <p style={{ fontSize: '14px', fontWeight: 700, color: navy, marginBottom: '12px', lineHeight: 1.4 }}>{u.title}</p>
-                <p style={{ fontSize: '13px', color: '#64748B', lineHeight: 1.7 }}>{u.body}</p>
+                <p style={{ fontSize: '13px', color: '#4B5563', lineHeight: 1.7 }}>{u.body}</p>
               </div>
             ))}
           </div>

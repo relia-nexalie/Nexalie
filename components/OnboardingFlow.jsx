@@ -353,7 +353,7 @@ function Step4({ mode, userName, onFinish, finishing }) {
         </p>
         <a
           href="/pricing"
-          style={{ fontSize: '12px', fontWeight: 700, color: 'var(--nx-gold, #C9A84C)', textDecoration: 'none', whiteSpace: 'nowrap' }}
+          style={{ fontSize: '12px', fontWeight: 700, color: 'var(--nx-gold, #C8A96B)', textDecoration: 'none', whiteSpace: 'nowrap' }}
         >
           Voir les plans →
         </a>

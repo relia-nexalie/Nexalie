@@ -59,7 +59,7 @@ export default async function VerifyPage({ params }) {
 
       {/* Logo */}
       <Link href="/" style={{ textDecoration: 'none', marginBottom: '48px', display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-        <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '22px', fontWeight: 300, color: '#0A1628' }}>Nexalie</span>
+        <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '22px', fontWeight: 300, color: '#0F172A' }}>Nexalie</span>
         <span style={{ fontFamily: 'monospace', fontSize: '9px', letterSpacing: '2.5px', color: '#4EC9B0' }}>AI</span>
       </Link>
 
@@ -69,16 +69,16 @@ export default async function VerifyPage({ params }) {
           /* Code invalide */
           <div style={{ background: '#fff', border: '2px solid #FEE2E2', borderRadius: '16px', padding: '48px 32px', textAlign: 'center' }}>
             <div style={{ fontSize: '52px', marginBottom: '20px' }}>❌</div>
-            <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '26px', fontWeight: 300, color: '#0A1628', marginBottom: '12px' }}>
+            <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '26px', fontWeight: 300, color: '#0F172A', marginBottom: '12px' }}>
               Certificat introuvable
             </h1>
-            <p style={{ fontSize: '15px', color: '#6B7A94', lineHeight: 1.7, marginBottom: '8px' }}>
+            <p style={{ fontSize: '15px', color: '#4B5563', lineHeight: 1.7, marginBottom: '8px' }}>
               Le code <code style={{ background: '#F3F4F6', padding: '2px 8px', borderRadius: '4px', fontSize: '13px', color: '#374151' }}>{code}</code> ne correspond à aucun certificat Nexalie.
             </p>
             <p style={{ fontSize: '13px', color: '#9CA3AF', marginBottom: '28px' }}>
               Vérifiez que le lien est complet et n'a pas été modifié.
             </p>
-            <Link href="/" style={{ display: 'inline-block', padding: '12px 28px', background: '#0A1628', color: '#fff', borderRadius: '10px', textDecoration: 'none', fontWeight: 700, fontSize: '14px' }}>
+            <Link href="/" style={{ display: 'inline-block', padding: '12px 28px', background: '#0F172A', color: '#fff', borderRadius: '10px', textDecoration: 'none', fontWeight: 700, fontSize: '14px' }}>
               Retour à Nexalie
             </Link>
           </div>
@@ -87,10 +87,10 @@ export default async function VerifyPage({ params }) {
           /* Certificat expiré */
           <div style={{ background: '#fff', border: '2px solid #FDE68A', borderRadius: '16px', padding: '48px 32px', textAlign: 'center' }}>
             <div style={{ fontSize: '52px', marginBottom: '20px' }}>⏰</div>
-            <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '26px', fontWeight: 300, color: '#0A1628', marginBottom: '12px' }}>
+            <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '26px', fontWeight: 300, color: '#0F172A', marginBottom: '12px' }}>
               Certificat expiré
             </h1>
-            <p style={{ fontSize: '15px', color: '#6B7A94', lineHeight: 1.7, marginBottom: '8px' }}>
+            <p style={{ fontSize: '15px', color: '#4B5563', lineHeight: 1.7, marginBottom: '8px' }}>
               Le certificat de <strong>{orgName}</strong> était valide jusqu'au <strong>{validDate}</strong>.
             </p>
             <p style={{ fontSize: '13px', color: '#9CA3AF', marginBottom: '28px' }}>
@@ -116,8 +116,8 @@ export default async function VerifyPage({ params }) {
             </div>
 
             {/* Certificat */}
-            <div style={{ background: '#fff', border: '2.5px solid #C9A84C', borderRadius: '16px', padding: '40px 32px', textAlign: 'center' }}>
-              <div style={{ width: '64px', height: '64px', background: 'linear-gradient(135deg, #C9A84C, #4EC9B0)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px', fontSize: '28px' }}>
+            <div style={{ background: '#fff', border: '2.5px solid #C8A96B', borderRadius: '16px', padding: '40px 32px', textAlign: 'center' }}>
+              <div style={{ width: '64px', height: '64px', background: 'linear-gradient(135deg, #C8A96B, #4EC9B0)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px', fontSize: '28px' }}>
                 ✓
               </div>
 
@@ -125,12 +125,12 @@ export default async function VerifyPage({ params }) {
                 Certifie que
               </p>
 
-              <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(20px,4vw,32px)', fontWeight: 400, color: '#0A1628', marginBottom: '6px' }}>
+              <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(20px,4vw,32px)', fontWeight: 400, color: '#0F172A', marginBottom: '6px' }}>
                 {orgName}
               </h2>
 
               {cert.profiles?.secteur && (
-                <p style={{ fontSize: '14px', color: '#6B7A94', marginBottom: '20px' }}>{cert.profiles.secteur}</p>
+                <p style={{ fontSize: '14px', color: '#4B5563', marginBottom: '20px' }}>{cert.profiles.secteur}</p>
               )}
 
               <div style={{ display: 'inline-block', background: 'rgba(78,201,176,0.1)', border: '2px solid #4EC9B0', borderRadius: '12px', padding: '14px 28px', marginBottom: '20px' }}>
@@ -142,8 +142,8 @@ export default async function VerifyPage({ params }) {
                 </p>
               </div>
 
-              <h3 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '20px', fontWeight: 400, color: '#0A1628', marginBottom: '16px' }}>
-                est <span style={{ color: '#C9A84C', fontWeight: 700 }}>Nexalie Digital Ready</span>
+              <h3 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '20px', fontWeight: 400, color: '#0F172A', marginBottom: '16px' }}>
+                est <span style={{ color: '#C8A96B', fontWeight: 700 }}>Nexalie Digital Ready</span>
               </h3>
 
               <div style={{ display: 'flex', justifyContent: 'center', gap: '24px', flexWrap: 'wrap', marginBottom: '20px' }}>

@@ -3,10 +3,10 @@
 import { useState, useEffect } from 'react';
 import { createClient } from '@/lib/supabase/client';
 
-const NAVY  = '#0B3D2E';
+const NAVY  = '#1F5F4A';
 const TEAL  = '#4EC9B0';
 const PLANS = {
-  free:         { label: 'Gratuit',      color: '#6B7A94', bg: '#F8FAFC' },
+  free:         { label: 'Gratuit',      color: '#4B5563', bg: '#F8FAFC' },
   starter:      { label: 'Starter',      color: '#3B82F6', bg: '#EFF6FF' },
   pro:          { label: 'Pro',          color: '#10B981', bg: '#ECFDF5' },
   institutions: { label: 'Institutions', color: '#7C3AED', bg: '#F5F3FF' },

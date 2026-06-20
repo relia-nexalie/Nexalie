@@ -48,7 +48,7 @@ export default function ResourcesPage() {
   const [loading, setLoading] = useState(true);
 
   const accent = isAfrica ? '#E88C32' : '#4EC9B0';
-  const navy = isAfrica ? '#1A0800' : '#0A1628';
+  const navy = isAfrica ? '#1A0800' : '#0F172A';
 
   useEffect(() => {
     const supabase = createClient();
@@ -104,7 +104,7 @@ export default function ResourcesPage() {
                 padding: '8px 16px', borderRadius: '20px', border: '1.5px solid',
                 borderColor: filter === cat ? accent : 'rgba(0,0,0,0.12)',
                 background: filter === cat ? `${accent}15` : '#fff',
-                color: filter === cat ? accent : '#6B7A94',
+                color: filter === cat ? accent : '#4B5563',
                 fontSize: '13px', fontWeight: 600, cursor: 'pointer', transition: 'all 0.15s',
               }}
             >
@@ -138,7 +138,7 @@ export default function ResourcesPage() {
                 <div>
                   <p style={{ fontSize: '11px', color: accent, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '4px' }}>{r.category}</p>
                   <h3 style={{ fontSize: '15px', fontWeight: 700, color: navy, marginBottom: '6px', lineHeight: 1.3 }}>{r.title}</h3>
-                  <p style={{ fontSize: '13px', color: '#6B7A94', lineHeight: 1.6 }}>{r.desc}</p>
+                  <p style={{ fontSize: '13px', color: '#4B5563', lineHeight: 1.6 }}>{r.desc}</p>
                 </div>
                 <button
                   style={{
@@ -171,7 +171,7 @@ export default function ResourcesPage() {
         </div>
 
         {!hasFullAccess && lockedCount > 3 && (
-          <p style={{ textAlign: 'center', color: '#6B7A94', fontSize: '13px', marginTop: '20px' }}>
+          <p style={{ textAlign: 'center', color: '#4B5563', fontSize: '13px', marginTop: '20px' }}>
             + {lockedCount - 3} ressources supplémentaires disponibles avec un plan payant.
           </p>
         )}

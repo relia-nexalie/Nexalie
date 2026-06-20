@@ -31,17 +31,17 @@ export default async function CertificationPage() {
         background: '#F8FAFC', textAlign: 'center',
       }}>
         <div style={{ fontSize: '56px', marginBottom: '20px' }}>🏅</div>
-        <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(24px,4vw,40px)', fontWeight: 300, color: '#0A1628', marginBottom: '12px' }}>
+        <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(24px,4vw,40px)', fontWeight: 300, color: '#0F172A', marginBottom: '12px' }}>
           Badge Nexalie Digital Ready
         </h1>
-        <p style={{ fontSize: '16px', color: '#6B7A94', maxWidth: '480px', lineHeight: 1.7, marginBottom: '32px' }}>
+        <p style={{ fontSize: '16px', color: '#4B5563', maxWidth: '480px', lineHeight: 1.7, marginBottom: '32px' }}>
           Obtenez votre certificat de maturité digitale et un QR code vérifiable.
           Disponible à partir du plan <strong>Pro</strong>.
         </p>
         <a href="/pricing" style={{ display: 'inline-block', padding: '14px 40px', background: '#4EC9B0', color: '#fff', borderRadius: '10px', textDecoration: 'none', fontWeight: 700, fontSize: '15px', marginBottom: '16px' }}>
           Passer au plan Pro →
         </a>
-        <a href="/platform" style={{ fontSize: '13px', color: '#6B7A94', textDecoration: 'none' }}>← Retour à la plateforme</a>
+        <a href="/platform" style={{ fontSize: '13px', color: '#4B5563', textDecoration: 'none' }}>← Retour à la plateforme</a>
       </div>
     );
   }

@@ -8,7 +8,7 @@ const FROM_RAPPORTS = 'Nexalie Rapports <rapports@nexalie.co>';
 
 // ─── Templates ──────────────────────────────────────────────────────
 
-function baseLayout(content, accentColor = '#4EC9B0', navy = '#0A1628') {
+function baseLayout(content, accentColor = '#4EC9B0', navy = '#0F172A') {
   return `
     <!DOCTYPE html>
     <html lang="fr">
@@ -24,7 +24,7 @@ function baseLayout(content, accentColor = '#4EC9B0', navy = '#0A1628') {
         .logo-ai { color: ${accentColor}; font-family: monospace; font-size: 9px; letter-spacing: 2px; margin-left: 4px; }
         .body { padding: 36px 40px; }
         .h1 { font-size: 22px; font-weight: 300; color: ${navy}; margin-bottom: 14px; line-height: 1.3; }
-        .p { font-size: 14px; color: #6B7A94; line-height: 1.8; margin-bottom: 16px; }
+        .p { font-size: 14px; color: #4B5563; line-height: 1.8; margin-bottom: 16px; }
         .score-box { background: #F8FAFC; border: 1px solid rgba(0,0,0,0.07); border-radius: 12px; padding: 20px; text-align: center; margin: 20px 0; }
         .score-num { font-size: 40px; font-weight: 800; color: ${accentColor}; line-height: 1; }
         .score-sub { font-size: 12px; color: #9CA3AF; margin-top: 4px; }
@@ -41,7 +41,7 @@ function baseLayout(content, accentColor = '#4EC9B0', navy = '#0A1628') {
         .accent { color: ${accentColor}; }
         .comparison-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
         .comparison-table th { background: #F8FAFC; padding: 10px 14px; font-size: 12px; color: ${navy}; font-weight: 700; text-align: left; border-bottom: 1px solid #E5E7EB; }
-        .comparison-table td { padding: 10px 14px; font-size: 12px; color: #6B7A94; border-bottom: 1px solid #F3F4F6; }
+        .comparison-table td { padding: 10px 14px; font-size: 12px; color: #4B5563; border-bottom: 1px solid #F3F4F6; }
         .comparison-table tr.nexali td { color: ${accentColor}; font-weight: 700; background: rgba(78,201,176,0.05); }
       </style>
     </head>
@@ -68,7 +68,7 @@ function baseLayout(content, accentColor = '#4EC9B0', navy = '#0A1628') {
 function welcomeEmail(name, isAf) {
   const auditLabel = isAf ? 'Bilan Numérique' : 'Audit de Maturité Digitale';
   const accent = isAf ? '#E88C32' : '#4EC9B0';
-  const navy = isAf ? '#1A0800' : '#0A1628';
+  const navy = isAf ? '#1A0800' : '#0F172A';
 
   const content = `
     <h1 class="h1">Bonjour ${name}, bienvenue sur Nexalie&nbsp;!</h1>
@@ -104,7 +104,7 @@ function welcomeEmail(name, isAf) {
 function reminderAuditEmail(name, isAf) {
   const auditLabel = isAf ? 'votre Bilan Numérique' : 'votre audit digital';
   const accent = isAf ? '#E88C32' : '#4EC9B0';
-  const navy = isAf ? '#1A0800' : '#0A1628';
+  const navy = isAf ? '#1A0800' : '#0F172A';
 
   const content = `
     <h1 class="h1">Vous n'avez pas encore fait ${auditLabel}.</h1>
@@ -129,7 +129,7 @@ function reminderAuditEmail(name, isAf) {
 // Séquence 3 — Découvrir Roadmap J+7
 function discoverRoadmapEmail(name, score, isAf) {
   const accent = isAf ? '#E88C32' : '#4EC9B0';
-  const navy = isAf ? '#1A0800' : '#0A1628';
+  const navy = isAf ? '#1A0800' : '#0F172A';
   const roadmapLabel = isAf ? "Plan d'Action Digital" : 'Roadmap Builder';
 
   const content = `
@@ -156,7 +156,7 @@ function discoverRoadmapEmail(name, score, isAf) {
 // Séquence 4 — Rapport généré
 function reportGeneratedEmail(name, toolName, score, level, pdfUrl, isAf) {
   const accent = isAf ? '#E88C32' : '#4EC9B0';
-  const navy = isAf ? '#1A0800' : '#0A1628';
+  const navy = isAf ? '#1A0800' : '#0F172A';
 
   const content = `
     <h1 class="h1">Votre rapport est prêt.</h1>
@@ -190,7 +190,7 @@ function reportGeneratedEmail(name, toolName, score, level, pdfUrl, isAf) {
 // Séquence 5 — Upgrade (plan gratuit > 7 jours)
 function upgradeEmail(name, isAf) {
   const accent = isAf ? '#E88C32' : '#4EC9B0';
-  const navy = isAf ? '#1A0800' : '#0A1628';
+  const navy = isAf ? '#1A0800' : '#0F172A';
   const proPrice = isAf ? '85 000 FCFA/mois' : '129€/mois';
 
   const content = `
@@ -241,7 +241,7 @@ function upgradeEmail(name, isAf) {
 // Séquence 7 — J+1 post-audit (suivi lendemain)
 function postAuditFollowupEmail(name, score, niveau, isAf) {
   const accent = isAf ? '#E88C32' : '#4EC9B0';
-  const navy = isAf ? '#1A0800' : '#0A1628';
+  const navy = isAf ? '#1A0800' : '#0F172A';
   const niveauLabel = { debutant: 'Débutant Digital', intermediaire: 'Intermédiaire', avance: 'Avancé', expert: 'Expert Digital' }[niveau] || niveau;
 
   const content = `
@@ -270,7 +270,7 @@ function postAuditFollowupEmail(name, score, niveau, isAf) {
 // Séquence 8 — Récap mensuel progression (Pro)
 function monthlyProgressEmail(name, audits, isAf) {
   const accent = isAf ? '#E88C32' : '#4EC9B0';
-  const navy = isAf ? '#1A0800' : '#0A1628';
+  const navy = isAf ? '#1A0800' : '#0F172A';
   const latestScore = audits?.[0]?.score ?? 0;
   const firstScore = audits?.[audits.length - 1]?.score ?? latestScore;
   const delta = latestScore - firstScore;
@@ -312,7 +312,7 @@ function monthlyProgressEmail(name, audits, isAf) {
 // Séquence 6 — Confirmation paiement
 function paymentConfirmedEmail(name, plan, isAf) {
   const accent = isAf ? '#E88C32' : '#4EC9B0';
-  const navy = isAf ? '#1A0800' : '#0A1628';
+  const navy = isAf ? '#1A0800' : '#0F172A';
   const planLabel = plan === 'pro' ? 'Pro' : plan === 'institutions' ? 'Institutions' : 'Starter';
 
   const content = `
@@ -342,7 +342,7 @@ function paymentConfirmedEmail(name, plan, isAf) {
 // Séquence 7 — Action hebdomadaire (lundi 8h)
 function weeklyActionEmail(name, nextAction, score, progression, secteur, isAf) {
   const accent = isAf ? '#E88C32' : '#4EC9B0';
-  const navy = isAf ? '#1A0800' : '#0A1628';
+  const navy = isAf ? '#1A0800' : '#0F172A';
   const scoreColor = score >= 70 ? '#10B981' : score >= 40 ? '#F59E0B' : '#EF4444';
 
   const encouragements = isAf ? [
@@ -369,7 +369,7 @@ function weeklyActionEmail(name, nextAction, score, progression, secteur, isAf) 
     </div>
     ` : `
     <div style="background: #F8FAFC; border-radius: 12px; padding: 20px; margin: 20px 0; text-align: center;">
-      <p style="font-size: 14px; color: #6B7A94;">Accédez à votre roadmap pour voir vos prochaines actions planifiées.</p>
+      <p style="font-size: 14px; color: #4B5563;">Accédez à votre roadmap pour voir vos prochaines actions planifiées.</p>
     </div>
     `}
 
@@ -396,10 +396,10 @@ function weeklyActionEmail(name, nextAction, score, progression, secteur, isAf) 
 // Séquence 8 — Rapport mensuel enrichi (1er du mois)
 function monthlyReportEmail(name, data, isAf) {
   const accent = isAf ? '#E88C32' : '#4EC9B0';
-  const navy = isAf ? '#1A0800' : '#0A1628';
+  const navy = isAf ? '#1A0800' : '#0F172A';
   const { currentScore = 0, previousScore = 0, topActions = [], nextActions = [], benchmarkScore = null, secteur = '', plan = 'free' } = data;
   const delta = currentScore - previousScore;
-  const deltaColor = delta > 0 ? '#10B981' : delta < 0 ? '#EF4444' : '#6B7A94';
+  const deltaColor = delta > 0 ? '#10B981' : delta < 0 ? '#EF4444' : '#4B5563';
   const deltaStr = delta > 0 ? `+${delta}` : `${delta}`;
 
   const levelMsg = isAf

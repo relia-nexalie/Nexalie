@@ -87,7 +87,7 @@ const TABS = [
 ];
 
 const METRICS = [
-  { label: "PME diagnostiquées", value: "247", delta: "+34 ce mois", color: "#C9A84C", icon: "◈" },
+  { label: "PME diagnostiquées", value: "247", delta: "+34 ce mois", color: "#C8A96B", icon: "◈" },
   { label: "Score moyen", value: "38/100", delta: "Niveau Émergent", color: "#4EC9B0", icon: "◉" },
   { label: "Audits complétés", value: "189", delta: "+28%", color: "#C586C0", icon: "◐" },
   { label: "Secteur dominant", value: "Commerce", delta: "41% du total", color: "#CE9178", icon: "◎" },
@@ -97,7 +97,7 @@ const METRICS = [
 
 const FUNNEL = [
   { label: "PME visiteurs", value: 1247, pct: 100, color: "#4EC9B0" },
-  { label: "Audit démarré", value: 312, pct: 25, color: "#C9A84C" },
+  { label: "Audit démarré", value: 312, pct: 25, color: "#C8A96B" },
   { label: "Audit complété", value: 247, pct: 19.8, color: "#C586C0" },
   { label: "Email fourni", value: 134, pct: 10.7, color: "#7B5EA7" },
   { label: "Feuille de route générée", value: 89, pct: 7.1, color: "#4A7C59" },
@@ -379,7 +379,7 @@ const renderRoadmap = (r, color) => (
               <p style={{ fontFamily: "'Fraunces', serif", fontSize: "16px", color: "#fff" }}>{p.theme}</p>
               <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", color }}>{p.periode}</p>
             </div>
-            <span style={{ background: p.priorite === "haute" ? "#FF6B4A" : "#C9A84C", color: "#fff", padding: "2px 8px", borderRadius: "4px", fontSize: "9px", fontFamily: "monospace", height: "fit-content" }}>{p.priorite}</span>
+            <span style={{ background: p.priorite === "haute" ? "#FF6B4A" : "#C8A96B", color: "#fff", padding: "2px 8px", borderRadius: "4px", fontSize: "9px", fontFamily: "monospace", height: "fit-content" }}>{p.priorite}</span>
           </div>
           {p.actions?.map((a, j) => <div key={j} style={{ display: "flex", gap: "6px", marginBottom: "3px" }}><span style={{ color, fontSize: "11px" }}>•</span><Txt muted>{a}</Txt></div>)}
           <div style={{ marginTop: "8px", paddingTop: "8px", borderTop: `1px solid ${color}20` }}>
@@ -404,7 +404,7 @@ const renderProcess = (r, color) => (
       <Card key={i} color={color}>
         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
           <div><p style={{ fontFamily: "'Fraunces', serif", fontSize: "16px", color: "#fff" }}>{p.nom}</p><Tag text={p.categorie} color={color} /></div>
-          <span style={{ background: p.prioriteDigitalisation === "haute" ? "#FF6B4A" : p.prioriteDigitalisation === "moyenne" ? "#C9A84C" : "#4A7C59", color: "#fff", padding: "3px 10px", borderRadius: "6px", fontSize: "10px", fontFamily: "monospace", height: "fit-content" }}>Priorité {p.prioriteDigitalisation}</span>
+          <span style={{ background: p.prioriteDigitalisation === "haute" ? "#FF6B4A" : p.prioriteDigitalisation === "moyenne" ? "#C8A96B" : "#4A7C59", color: "#fff", padding: "3px 10px", borderRadius: "6px", fontSize: "10px", fontFamily: "monospace", height: "fit-content" }}>Priorité {p.prioriteDigitalisation}</span>
         </div>
         <Txt muted>{p.description}</Txt>
         <div style={{ marginTop: "8px", padding: "10px", background: "rgba(255,100,74,0.08)", borderRadius: "8px", border: "1px solid rgba(255,100,74,0.15)" }}>
@@ -472,7 +472,7 @@ const renderCdc = (r, color) => (
       <Section title="Fonctionnalités" color={color}>
         {r.fonctionnalites?.map((f, i) => (
           <div key={i} style={{ display: "flex", gap: "10px", marginBottom: "8px", alignItems: "flex-start" }}>
-            <span style={{ padding: "2px 8px", borderRadius: "4px", fontSize: "9px", fontFamily: "monospace", flexShrink: 0, background: f.priorite === "Must Have" ? "#FF6B4A" : f.priorite === "Should Have" ? "#C9A84C" : "#4A7C59", color: "#fff" }}>{f.priorite}</span>
+            <span style={{ padding: "2px 8px", borderRadius: "4px", fontSize: "9px", fontFamily: "monospace", flexShrink: 0, background: f.priorite === "Must Have" ? "#FF6B4A" : f.priorite === "Should Have" ? "#C8A96B" : "#4A7C59", color: "#fff" }}>{f.priorite}</span>
             <Txt>{f.nom} — {f.description}</Txt>
           </div>
         ))}
@@ -664,13 +664,13 @@ const TOOLS = {
 const SCORE_LEVELS = [
   { label: "Critique (0–20)", value: 23, color: "#FF6B4A" },
   { label: "Émergent (21–40)", value: 38, color: "#D97706" },
-  { label: "Structuré (41–60)", value: 22, color: "#C9A84C" },
+  { label: "Structuré (41–60)", value: 22, color: "#C8A96B" },
   { label: "Avancé (61–80)", value: 12, color: "#4EC9B0" },
   { label: "Leader (81–100)", value: 5, color: "#4A7C59" },
 ];
 
 const SECTORS = [
-  { label: "Commerce", pct: 41, color: "#C9A84C" },
+  { label: "Commerce", pct: 41, color: "#C8A96B" },
   { label: "Services", pct: 22, color: "#4EC9B0" },
   { label: "BTP", pct: 14, color: "#CE9178" },
   { label: "Agriculture", pct: 11, color: "#4A7C59" },
@@ -678,14 +678,14 @@ const SECTORS = [
 ];
 
 const NEEDS = [
-  { label: "Présence en ligne", pct: 78, color: "#C9A84C" },
+  { label: "Présence en ligne", pct: 78, color: "#C8A96B" },
   { label: "Gestion clients / CRM", pct: 64, color: "#4EC9B0" },
   { label: "Paiement numérique", pct: 59, color: "#CE9178" },
   { label: "Formation équipe", pct: 47, color: "#C586C0" },
   { label: "Automatisation", pct: 31, color: "#4A7C59" },
 ];
 
-function DashboardView({ accent = '#C9A84C' }) {
+function DashboardView({ accent = '#C8A96B' }) {
   const cardStyle = { background: "#fff", borderRadius: "14px", boxShadow: "0 2px 8px rgba(0,0,0,0.06)", border: "1px solid rgba(0,0,0,0.06)", padding: "24px" };
   const labelStyle = { fontFamily: "'IBM Plex Mono', monospace", fontSize: "9px", letterSpacing: "2px", color: "#9CA3AF", marginBottom: "16px", textTransform: "uppercase" };
   return (
@@ -693,11 +693,11 @@ function DashboardView({ accent = '#C9A84C' }) {
       <div style={{ marginBottom: "28px", display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
         <div>
           <p style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", letterSpacing: "2px", color: "#9CA3AF", marginBottom: "4px" }}>NEXALIE — TABLEAU DE BORD AGRÉGÉ</p>
-          <h1 style={{ fontFamily: "'Fraunces', serif", fontSize: "26px", fontWeight: 300, color: "#0A1628" }}>Maturité Numérique des PME</h1>
+          <h1 style={{ fontFamily: "'Fraunces', serif", fontSize: "26px", fontWeight: 300, color: "#0F172A" }}>Maturité Numérique des PME</h1>
         </div>
         <button
           onClick={() => window.print()}
-          style={{ display: "flex", alignItems: "center", gap: "8px", padding: "10px 20px", background: accent, border: "none", borderRadius: "10px", color: "#0F2A4A", fontSize: "13px", fontWeight: 700, cursor: "pointer", fontFamily: "'IBM Plex Mono', monospace", letterSpacing: "0.5px", flexShrink: 0 }}
+          style={{ display: "flex", alignItems: "center", gap: "8px", padding: "10px 20px", background: accent, border: "none", borderRadius: "10px", color: "#0F172A", fontSize: "13px", fontWeight: 700, cursor: "pointer", fontFamily: "'IBM Plex Mono', monospace", letterSpacing: "0.5px", flexShrink: 0 }}
         >
           ↓ Exporter le rapport
         </button>
@@ -711,7 +711,7 @@ function DashboardView({ accent = '#C9A84C' }) {
               <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "9px", color: "#9CA3AF", letterSpacing: "1px", textTransform: "uppercase", lineHeight: 1.4 }}>{m.label}</span>
               <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "12px", color: m.color }}>{m.icon}</span>
             </div>
-            <p style={{ fontFamily: "'Fraunces', serif", fontSize: "28px", color: "#0A1628", marginBottom: "4px" }}>{m.value}</p>
+            <p style={{ fontFamily: "'Fraunces', serif", fontSize: "28px", color: "#0F172A", marginBottom: "4px" }}>{m.value}</p>
             <p style={{ fontSize: "11px", color: m.color, fontFamily: "'DM Sans', sans-serif", fontWeight: 600 }}>{m.delta}</p>
           </div>
         ))}
@@ -741,7 +741,7 @@ function DashboardView({ accent = '#C9A84C' }) {
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "5px" }}>
                 <span style={{ fontSize: "12px", color: "#374151", fontFamily: "'DM Sans', sans-serif" }}>{f.label}</span>
                 <div style={{ display: "flex", gap: "10px" }}>
-                  <span style={{ fontFamily: "'Fraunces', serif", fontSize: "14px", color: "#0A1628" }}>{f.value}</span>
+                  <span style={{ fontFamily: "'Fraunces', serif", fontSize: "14px", color: "#0F172A" }}>{f.value}</span>
                   <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "10px", color: "#9CA3AF" }}>{f.pct}%</span>
                 </div>
               </div>
@@ -810,20 +810,20 @@ function DashboardView({ accent = '#C9A84C' }) {
 // ═══════════════════════════════════════════
 
 export default function App() {
-  const accent = '#C9A24B';
+  const accent = '#C8A96B';
 
   const [activeTab, setActiveTab] = useState("dashboard");
   const tab = TABS.find(t => t.id === activeTab);
   const tool = TOOLS[activeTab];
 
   return (
-    <div style={{ minHeight: "100vh", background: "radial-gradient(ellipse at 10% 10%, #0f4a37 0%, #0B3D2E 100%)", fontFamily: "'DM Sans', sans-serif", display: "flex" }}>
+    <div style={{ minHeight: "100vh", background: "radial-gradient(ellipse at 10% 10%, #0f4a37 0%, #1F5F4A 100%)", fontFamily: "'DM Sans', sans-serif", display: "flex" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&family=IBM+Plex+Mono:wght@400;500&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
         textarea, input, select { outline: none !important; }
         ::placeholder { color: rgba(255,255,255,0.18) !important; }
-        select option { background: #0B3D2E; color: white; }
+        select option { background: #1F5F4A; color: white; }
         ::-webkit-scrollbar { width: 3px; }
         ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 2px; }
         @keyframes spin { to { transform: rotate(360deg); } }
@@ -852,14 +852,14 @@ export default function App() {
         {TABS.filter(t => t.id !== "dashboard").map(t => (
           <button key={t.id} className="nav-btn" onClick={() => setActiveTab(t.id)}
             style={{ width: "100%", padding: "9px 12px", borderRadius: "8px", border: `1px solid ${activeTab === t.id ? "rgba(201,168,76,0.3)" : "transparent"}`, background: activeTab === t.id ? "rgba(201,168,76,0.08)" : "transparent", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", gap: "8px", transition: "all 0.15s" }}>
-            <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "12px", color: activeTab === t.id ? "#C9A84C" : "rgba(255,255,255,0.2)" }}>{t.icon}</span>
+            <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: "12px", color: activeTab === t.id ? "#C8A96B" : "rgba(255,255,255,0.2)" }}>{t.icon}</span>
             <p style={{ fontSize: "12px", color: activeTab === t.id ? "#fff" : "rgba(255,255,255,0.4)", fontFamily: "'DM Sans', sans-serif" }}>{t.label}</p>
           </button>
         ))}
 
         <div style={{ marginTop: "auto", paddingTop: "16px", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
           <div style={{ padding: "10px 12px", background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.15)", borderRadius: "8px" }}>
-            <p style={{ fontSize: "10px", color: "#C9A84C", fontFamily: "'IBM Plex Mono', monospace", marginBottom: "2px" }}>✓ ACCÈS COMPLET</p>
+            <p style={{ fontSize: "10px", color: "#C8A96B", fontFamily: "'IBM Plex Mono', monospace", marginBottom: "2px" }}>✓ ACCÈS COMPLET</p>
             <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.4)", fontFamily: "'DM Sans', sans-serif" }}>Tous les outils disponibles</p>
           </div>
         </div>

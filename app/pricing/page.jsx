@@ -196,7 +196,7 @@ export default function PricingPage() {
     setCheckoutLoading('');
   }
 
-  const navy   = isAfrica ? '#1A0800' : '#0A1628';
+  const navy   = isAfrica ? '#1A0800' : '#0F172A';
   const accent = isAfrica ? '#C45E0A' : '#4EC9B0';
   const accentText = isAfrica ? '#C45E0A' : '#1D6B60';
 
@@ -254,7 +254,7 @@ export default function PricingPage() {
                   <span style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '9px', letterSpacing: '2px', color: plan.highlight ? accentText : '#9CA3AF', textTransform: 'uppercase' }}>{plan.name}</span>
                 </div>
                 <h3 style={{ fontSize: '20px', fontWeight: 700, color: navy, marginBottom: '6px' }}>{plan.name}</h3>
-                <p style={{ fontSize: '13px', color: '#6B7A94', marginBottom: '20px', lineHeight: 1.5 }}>{plan.desc}</p>
+                <p style={{ fontSize: '13px', color: '#4B5563', marginBottom: '20px', lineHeight: 1.5 }}>{plan.desc}</p>
 
                 {plan.monthly === null ? (
                   <div style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '24px', fontWeight: 300, color: navy, marginBottom: '24px' }}>Sur devis</div>
@@ -264,7 +264,7 @@ export default function PricingPage() {
                   <div style={{ marginBottom: '24px' }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px' }}>
                       <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '34px', fontWeight: 300, color: navy }}>{fmtDisplay(price, plan.currency, displayCurrency, mode)}</span>
-                      <span style={{ fontSize: '13px', color: '#6B7A94' }}>/mois</span>
+                      <span style={{ fontSize: '13px', color: '#4B5563' }}>/mois</span>
                     </div>
                     {billing === 'annual' && (
                       <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '11px', color: accentText, marginTop: '4px' }}>Facturé {fmtDisplay(priceAnnual, plan.currency, displayCurrency, mode)}/an</p>
@@ -366,7 +366,7 @@ export default function PricingPage() {
           ].map(({ q, r }) => (
             <div key={q} style={{ marginBottom: '16px', textAlign: 'left', background: '#fff', borderRadius: '12px', padding: '20px 24px', border: '1px solid rgba(0,0,0,0.07)' }}>
               <p style={{ fontWeight: 700, color: navy, marginBottom: '8px', fontSize: '15px' }}>{q}</p>
-              <p style={{ fontSize: '14px', color: '#6B7A94', lineHeight: 1.7 }}>{r}</p>
+              <p style={{ fontSize: '14px', color: '#4B5563', lineHeight: 1.7 }}>{r}</p>
             </div>
           ))}
         </div>
@@ -403,7 +403,7 @@ export default function PricingPage() {
               <div key={label} style={{ padding: '28px', background: '#fff', borderRadius: '14px', border: '1px solid rgba(0,0,0,0.06)', borderLeft: `3px solid ${color}`, boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
                 <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '9px', letterSpacing: '2px', color, marginBottom: '10px', textTransform: 'uppercase' }}>{label}</p>
                 <p style={{ fontSize: '14px', fontWeight: 700, color: navy, marginBottom: '10px' }}>{title}</p>
-                <p style={{ fontSize: '13px', color: '#6B7A94', lineHeight: 1.75 }}>{body}</p>
+                <p style={{ fontSize: '13px', color: '#4B5563', lineHeight: 1.75 }}>{body}</p>
               </div>
             ))}
           </div>
@@ -415,7 +415,7 @@ export default function PricingPage() {
         <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(24px,3.5vw,38px)', fontWeight: 300, color: navy, marginBottom: '12px' }}>
           Commencez votre transformation avec Nexalie
         </h2>
-        <p style={{ fontSize: '16px', color: '#6B7A94', marginBottom: '28px' }}>Audit gratuit en 20 minutes — pas de carte requise.</p>
+        <p style={{ fontSize: '16px', color: '#4B5563', marginBottom: '28px' }}>Audit gratuit en 20 minutes — pas de carte requise.</p>
         <Link href="/signup" style={{ display: 'inline-block', padding: '16px 48px', background: accent, color: '#fff', borderRadius: '12px', textDecoration: 'none', fontWeight: 700, fontSize: '16px' }}>
           Créer mon compte gratuit
         </Link>

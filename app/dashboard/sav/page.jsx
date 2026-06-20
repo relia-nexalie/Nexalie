@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 
-const NAVY  = '#0A1628';
+const NAVY  = '#0F172A';
 const TEAL  = '#4EC9B0';
 
 const STATUS_CONFIG = {
@@ -123,7 +123,7 @@ export default function SAVPage() {
 
         <button
           onClick={load}
-          style={{ marginLeft: 'auto', background: 'none', border: '1.5px solid #E5E7EB', borderRadius: '8px', padding: '8px 14px', fontSize: '12px', color: '#6B7A94', cursor: 'pointer' }}
+          style={{ marginLeft: 'auto', background: 'none', border: '1.5px solid #E5E7EB', borderRadius: '8px', padding: '8px 14px', fontSize: '12px', color: '#4B5563', cursor: 'pointer' }}
         >
           ↻ Actualiser
         </button>

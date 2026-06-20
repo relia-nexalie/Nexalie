@@ -24,7 +24,7 @@ const NIVEAU_COLORS = {
 function ScoreBar({ value, max = 100, color = '#4EC9B0', label }) {
   return (
     <div style={{ marginBottom: '12px' }}>
-      {label && <p style={{ fontSize: '12px', color: '#6B7A94', marginBottom: '4px' }}>{label}</p>}
+      {label && <p style={{ fontSize: '12px', color: '#4B5563', marginBottom: '4px' }}>{label}</p>}
       <div style={{ background: 'rgba(0,0,0,0.06)', borderRadius: '6px', height: '10px', overflow: 'hidden' }}>
         <div style={{ width: `${(value / max) * 100}%`, height: '100%', background: color, borderRadius: '6px', transition: 'width 0.8s ease' }} />
       </div>
@@ -38,7 +38,7 @@ function CustomTooltip({ active, payload, label, accent }) {
   if (!active || !payload?.length) return null;
   return (
     <div style={{ background: '#fff', border: '1.5px solid rgba(0,0,0,0.08)', borderRadius: '10px', padding: '12px 16px', boxShadow: '0 4px 16px rgba(0,0,0,0.08)' }}>
-      <p style={{ fontSize: '12px', color: '#6B7A94', marginBottom: '4px' }}>{label}</p>
+      <p style={{ fontSize: '12px', color: '#4B5563', marginBottom: '4px' }}>{label}</p>
       <p style={{ fontSize: '18px', fontWeight: 800, color: accent }}>{payload[0].value}<span style={{ fontSize: '12px', color: '#9CA3AF', fontWeight: 400 }}>/100</span></p>
     </div>
   );
@@ -47,7 +47,7 @@ function CustomTooltip({ active, payload, label, accent }) {
 export default function ProgressClient({ audits, benchmarks, userMode, userSecteur }) {
   const { isAfrica } = useMode();
   const accent = isAfrica ? '#E88C32' : '#4EC9B0';
-  const navy = isAfrica ? '#1A0800' : '#0A1628';
+  const navy = isAfrica ? '#1A0800' : '#0F172A';
   const auditLabel = isAfrica ? 'Bilan Numérique' : 'Audit de Maturité';
 
   const lastAudit = audits[audits.length - 1];
@@ -88,7 +88,7 @@ export default function ProgressClient({ audits, benchmarks, userMode, userSecte
             <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '24px', fontWeight: 300, color: navy, marginBottom: '12px' }}>
               Pas encore d'audit
             </h2>
-            <p style={{ fontSize: '15px', color: '#6B7A94', marginBottom: '28px' }}>
+            <p style={{ fontSize: '15px', color: '#4B5563', marginBottom: '28px' }}>
               Réalisez votre premier {auditLabel} pour commencer à suivre votre progression.
             </p>
             <a href="/audit" style={{ display: 'inline-block', padding: '14px 36px', background: accent, color: '#fff', borderRadius: '10px', textDecoration: 'none', fontWeight: 700, fontSize: '15px' }}>
@@ -101,12 +101,12 @@ export default function ProgressClient({ audits, benchmarks, userMode, userSecte
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px,1fr))', gap: '16px', marginBottom: '28px' }}>
               {[
                 { label: 'Score actuel', value: `${lastAudit.score}/100`, color: accent },
-                { label: 'Score moyen', value: `${avgScore}/100`, color: '#6B7A94' },
+                { label: 'Score moyen', value: `${avgScore}/100`, color: '#4B5563' },
                 { label: 'Progression', value: progression > 0 ? `+${progression} pts` : progression === 0 ? '—' : `${progression} pts`, color: progression > 0 ? '#10B981' : '#F59E0B' },
                 { label: 'Niveau', value: lastAudit.niveau, color: NIVEAU_COLORS[lastAudit.niveau] || accent },
               ].map(k => (
                 <div key={k.label} style={{ background: '#fff', border: '1.5px solid rgba(0,0,0,0.07)', borderRadius: '14px', padding: '20px 22px' }}>
-                  <p style={{ fontSize: '12px', color: '#6B7A94', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>{k.label}</p>
+                  <p style={{ fontSize: '12px', color: '#4B5563', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>{k.label}</p>
                   <p style={{ fontSize: '26px', fontWeight: 800, color: k.color, textTransform: 'capitalize' }}>{k.value}</p>
                 </div>
               ))}
@@ -176,11 +176,11 @@ export default function ProgressClient({ audits, benchmarks, userMode, userSecte
                 <h2 style={{ fontSize: '17px', fontWeight: 700, color: navy, marginBottom: '6px' }}>
                   Benchmark — {userSecteur}
                 </h2>
-                <p style={{ fontSize: '13px', color: '#6B7A94', marginBottom: '24px' }}>
+                <p style={{ fontSize: '13px', color: '#4B5563', marginBottom: '24px' }}>
                   Positionnement par rapport aux entreprises du même secteur.
                 </p>
                 <ScoreBar value={lastAudit.score} label="Votre score" color={accent} />
-                <ScoreBar value={benchmarks.score_moyen} label="Moyenne du secteur" color="#6B7A94" />
+                <ScoreBar value={benchmarks.score_moyen} label="Moyenne du secteur" color="#4B5563" />
                 {benchmarks.score_top25 && <ScoreBar value={benchmarks.score_top25} label="Top 25%" color="#3B82F6" />}
                 {benchmarks.score_top10 && <ScoreBar value={benchmarks.score_top10} label="Top 10%" color="#7C3AED" />}
 

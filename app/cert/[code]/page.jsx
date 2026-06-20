@@ -32,9 +32,9 @@ function getServiceClient() {
   );
 }
 
-const NAVY = '#0A1628';
+const NAVY = '#0F172A';
 const TEAL = '#4EC9B0';
-const GOLD = '#C9A84C';
+const GOLD = '#C8A96B';
 
 export default async function CertPage({ params }) {
   const { code } = params;
@@ -86,7 +86,7 @@ export default async function CertPage({ params }) {
           <div style={{ background: '#fff', border: '2px solid #FEE2E2', borderRadius: '16px', padding: '48px 32px' }}>
             <div style={{ fontSize: '48px', marginBottom: '16px' }}>❌</div>
             <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '24px', fontWeight: 300, color: NAVY, marginBottom: '12px' }}>Certificat introuvable</h1>
-            <p style={{ fontSize: '14px', color: '#6B7A94', lineHeight: 1.7 }}>
+            <p style={{ fontSize: '14px', color: '#4B5563', lineHeight: 1.7 }}>
               Le code <code style={{ background: '#F3F4F6', padding: '2px 8px', borderRadius: '4px', fontSize: '12px' }}>{code}</code> ne correspond à aucun certificat valide.
             </p>
           </div>
@@ -148,7 +148,7 @@ export default async function CertPage({ params }) {
           </h1>
 
           {secteur && (
-            <p style={{ fontSize: '14px', color: '#6B7A94', marginBottom: '8px' }}>{secteur}{country ? ` · ${country}` : ''}</p>
+            <p style={{ fontSize: '14px', color: '#4B5563', marginBottom: '8px' }}>{secteur}{country ? ` · ${country}` : ''}</p>
           )}
 
           <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(16px,2.5vw,22px)', fontWeight: 300, color: NAVY, marginBottom: '28px', letterSpacing: '-0.3px' }}>
@@ -223,7 +223,7 @@ export default async function CertPage({ params }) {
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '10px 14px', background: '#F8FAFC', borderRadius: '8px', border: '1px solid rgba(0,0,0,0.06)' }}>
               <span style={{ fontSize: '18px' }}>🔗</span>
-              <span style={{ fontSize: '11px', color: '#6B7A94', fontFamily: 'monospace', wordBreak: 'break-all' }}>{certUrl}</span>
+              <span style={{ fontSize: '11px', color: '#4B5563', fontFamily: 'monospace', wordBreak: 'break-all' }}>{certUrl}</span>
             </div>
           </div>
         </div>

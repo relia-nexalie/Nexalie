@@ -181,7 +181,7 @@ const s = {
   page: {
     minHeight: '100vh',
     background: 'var(--nx-bg, #fff)',
-    color: 'var(--nx-text-primary, #0A1628)',
+    color: 'var(--nx-text-primary, #0F172A)',
     fontFamily: "'Inter', system-ui, sans-serif",
     padding: '32px 16px 80px',
   },
@@ -192,12 +192,12 @@ const s = {
   heading: {
     fontSize: 28,
     fontWeight: 700,
-    color: 'var(--nx-navy, #0A1628)',
+    color: 'var(--nx-navy, #0F172A)',
     marginBottom: 4,
   },
   subheading: {
     fontSize: 15,
-    color: 'var(--nx-text-secondary, #6B7A94)',
+    color: 'var(--nx-text-secondary, #4B5563)',
     marginBottom: 32,
   },
   card: {
@@ -212,7 +212,7 @@ const s = {
     display: 'block',
     fontSize: 13,
     fontWeight: 600,
-    color: 'var(--nx-navy, #0A1628)',
+    color: 'var(--nx-navy, #0F172A)',
     marginBottom: 6,
   },
   select: {
@@ -222,7 +222,7 @@ const s = {
     border: '1px solid #D0D7DE',
     borderRadius: 8,
     background: '#fff',
-    color: 'var(--nx-text-primary, #0A1628)',
+    color: 'var(--nx-text-primary, #0F172A)',
     outline: 'none',
     cursor: 'pointer',
     appearance: 'auto',
@@ -260,7 +260,7 @@ const s = {
     borderRadius: 20,
     border: `1.5px solid ${checked ? 'var(--nx-accent, #4EC9B0)' : '#D0D7DE'}`,
     background: checked ? 'rgba(78,201,176,0.10)' : '#fff',
-    color: checked ? 'var(--nx-accent-dark, #1D6B60)' : 'var(--nx-text-secondary, #6B7A94)',
+    color: checked ? 'var(--nx-accent-dark, #1D6B60)' : 'var(--nx-text-secondary, #4B5563)',
     cursor: 'pointer',
     fontWeight: checked ? 600 : 400,
     transition: 'all .15s',
@@ -549,7 +549,7 @@ function ResultStep({ roadmap, onSave, saving, saved, onReset }) {
       {/* Header */}
       <div style={{
         ...s.card,
-        background: 'linear-gradient(135deg, var(--nx-navy, #0A1628) 0%, #1B3A5C 100%)',
+        background: 'linear-gradient(135deg, var(--nx-navy, #0F172A) 0%, #1B3A5C 100%)',
         color: '#fff',
         border: 'none',
       }}>
@@ -572,7 +572,7 @@ function ResultStep({ roadmap, onSave, saving, saved, onReset }) {
             <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.6)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
               Budget total
             </div>
-            <div style={{ fontSize: 17, fontWeight: 700, color: 'var(--nx-gold, #C9A84C)', marginTop: 4 }}>
+            <div style={{ fontSize: 17, fontWeight: 700, color: 'var(--nx-gold, #C8A96B)', marginTop: 4 }}>
               {roadmap.budget_total_estime}
             </div>
           </div>

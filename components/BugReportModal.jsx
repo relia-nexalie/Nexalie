@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
 const TEAL = '#4EC9B0';
-const NAVY = '#0A1628';
+const NAVY = '#0F172A';
 
 export default function BugReportModal({ onClose }) {
   const pathname = usePathname();
@@ -77,7 +77,7 @@ export default function BugReportModal({ onClose }) {
             <h2 style={{ fontSize: '18px', fontWeight: 700, color: NAVY, marginBottom: '8px' }}>
               Signalement envoyé
             </h2>
-            <p style={{ fontSize: '14px', color: '#6B7A94', marginBottom: '24px' }}>
+            <p style={{ fontSize: '14px', color: '#4B5563', marginBottom: '24px' }}>
               Merci ! Nous avons bien reçu votre signalement et nous allons y remédier rapidement.
             </p>
             <button
@@ -100,7 +100,7 @@ export default function BugReportModal({ onClose }) {
               <h2 style={{ fontSize: '20px', fontWeight: 700, color: NAVY, margin: 0 }}>
                 Signaler un problème
               </h2>
-              <p style={{ fontSize: '13px', color: '#6B7A94', marginTop: '6px' }}>
+              <p style={{ fontSize: '13px', color: '#4B5563', marginTop: '6px' }}>
                 Décrivez ce qui ne fonctionne pas : nous le corrigerons dès que possible.
               </p>
             </div>
@@ -159,7 +159,7 @@ export default function BugReportModal({ onClose }) {
                   style={{
                     background: 'none', border: '1.5px solid #E5E7EB',
                     borderRadius: '8px', padding: '10px 20px',
-                    fontSize: '13px', color: '#6B7A94', cursor: 'pointer',
+                    fontSize: '13px', color: '#4B5563', cursor: 'pointer',
                   }}
                 >
                   Annuler

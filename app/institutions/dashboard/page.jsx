@@ -57,15 +57,15 @@ export default async function InstitutionsDashboardPage({ searchParams }) {
 
   if (!stats) {
     return (
-      <main style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'monospace', fontSize: '13px', color: '#64748B' }}>
+      <main style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'monospace', fontSize: '13px', color: '#4B5563' }}>
         Erreur de chargement des données.
       </main>
     );
   }
 
-  const navy  = '#0F2A4A';
-  const gold  = '#C9A84C';
-  const cream = '#F5F3EE';
+  const navy  = '#0F172A';
+  const gold  = '#C8A96B';
+  const cream = '#F8F6F1';
 
   const maxDist = Math.max(...stats.distribution.map(d => d.count), 1);
 

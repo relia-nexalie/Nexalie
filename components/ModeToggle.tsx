@@ -11,7 +11,7 @@ export default function ModeToggle({ className }: { className?: string }) {
             padding:'7px 14px', border:'none', cursor:'pointer',
             fontSize:'13px', fontWeight: mode === m ? 700 : 400,
             background: mode === m ? 'var(--nx-accent, #2E9B8B)' : 'transparent',
-            color: mode === m ? '#fff' : 'var(--nx-text-secondary, #6B7A94)',
+            color: mode === m ? '#fff' : 'var(--nx-text-secondary, #4B5563)',
             transition:'all 0.2s',
           }}>{label}</button>
       ))}

@@ -21,12 +21,12 @@ export default async function DashboardLayout({ children }) {
     <div style={{ display: 'flex', minHeight: '100vh', fontFamily: 'DM Sans, sans-serif' }}>
       {/* Sidebar */}
       <aside style={{
-        width: '220px', background: '#0A1628', color: '#fff',
+        width: '220px', background: '#0F172A', color: '#fff',
         padding: '0', flexShrink: 0, position: 'sticky', top: 0, height: '100vh',
         display: 'flex', flexDirection: 'column',
       }}>
         <div style={{ padding: '24px 20px', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-          <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#C9A84C', letterSpacing: '-0.02em' }}>Nexalie</div>
+          <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#C8A96B', letterSpacing: '-0.02em' }}>Nexalie</div>
           <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.35)', marginTop: '3px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Admin · Rélia</div>
         </div>
 

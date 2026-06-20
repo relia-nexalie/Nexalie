@@ -45,7 +45,7 @@ function TooltipBadge({ term, definition }) {
           bottom: '130%',
           left: '50%',
           transform: 'translateX(-50%)',
-          background: '#0A1628',
+          background: '#0F172A',
           color: '#fff',
           padding: '7px 12px',
           borderRadius: '8px',
@@ -1864,10 +1864,10 @@ Génère maintenant le rapport complet en respectant strictement la structure de
 
   // ─── CAPTURE EMAIL (entre questions et résultats) ────────
   if (step === 'email-capture') {
-    const navy = '#0F2A4A';
-    const gold = '#C9A84C';
+    const navy = '#0F172A';
+    const gold = '#C8A96B';
     return (
-      <div style={{ minHeight: '100vh', background: '#F5F3EE', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '32px 24px', fontFamily: 'var(--font-jakarta, system-ui, sans-serif)' }}>
+      <div style={{ minHeight: '100vh', background: '#F8F6F1', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '32px 24px', fontFamily: 'var(--font-jakarta, system-ui, sans-serif)' }}>
         <div style={{ maxWidth: '480px', width: '100%', background: '#fff', border: '1px solid #E2E8F0', borderRadius: '12px', padding: '40px 36px', boxShadow: '0 4px 24px rgba(0,0,0,0.06)' }}>
           {/* Score indicatif */}
           <div style={{ textAlign: 'center', marginBottom: '28px' }}>
@@ -1878,7 +1878,7 @@ Génère maintenant le rapport complet en respectant strictement la structure de
             <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '22px', fontWeight: 300, color: navy, marginBottom: '10px', lineHeight: 1.3 }}>
               Recevez votre rapport complet
             </h2>
-            <p style={{ fontSize: '14px', color: '#64748B', lineHeight: 1.7 }}>
+            <p style={{ fontSize: '14px', color: '#4B5563', lineHeight: 1.7 }}>
               Entrez votre email pour débloquer votre rapport personnalisé et vos recommandations prioritaires.
             </p>
           </div>

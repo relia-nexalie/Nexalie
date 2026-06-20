@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { createClient } from '@/lib/supabase/client';
 
 const TEAL = '#4EC9B0';
-const NAVY = '#0A1628';
+const NAVY = '#0F172A';
 
 export default function BetaForm({ remaining }) {
   const [form, setForm] = useState({ nom: '', email: '', entreprise: '', pays: '', secteur: '', taille: '', message: '' });
@@ -56,7 +56,7 @@ export default function BetaForm({ remaining }) {
         <h3 style={{ fontSize: '20px', fontWeight: 700, color: NAVY, marginBottom: '10px' }}>
           {remaining > 0 ? 'Place réservée !' : 'Inscrit sur liste d\'attente !'}
         </h3>
-        <p style={{ fontSize: '14px', color: '#6B7A94', lineHeight: 1.7, marginBottom: '8px' }}>
+        <p style={{ fontSize: '14px', color: '#4B5563', lineHeight: 1.7, marginBottom: '8px' }}>
           {remaining > 0
             ? 'Vous recevrez un email de confirmation dans les prochaines minutes. Rélia vous contactera sous 24h pour planifier votre session d\'onboarding.'
             : 'Nous vous contacterons en priorité dès qu\'une place se libère.'}

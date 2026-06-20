@@ -17,8 +17,8 @@ export default async function ClientsPage() {
     const isPro = plan && !['free', null, ''].includes(plan);
     return (
       <span style={{
-        background: isPro ? '#C9A84C22' : '#F0F0F0',
-        color: isPro ? '#8B6914' : '#6B7A94',
+        background: isPro ? '#C8A96B22' : '#F0F0F0',
+        color: isPro ? '#8B6914' : '#4B5563',
         padding: '2px 10px', borderRadius: '20px', fontSize: '0.72rem', fontWeight: 700,
       }}>{plan || 'free'}</span>
     );
@@ -30,8 +30,8 @@ export default async function ClientsPage() {
     <div style={{ padding: '32px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
         <div>
-          <h1 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0A1628', margin: 0 }}>Clients</h1>
-          <p style={{ color: '#6B7A94', fontSize: '0.85rem', marginTop: '4px' }}>{clients?.length || 0} compte(s)</p>
+          <h1 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0F172A', margin: 0 }}>Clients</h1>
+          <p style={{ color: '#4B5563', fontSize: '0.85rem', marginTop: '4px' }}>{clients?.length || 0} compte(s)</p>
         </div>
       </div>
 
@@ -40,7 +40,7 @@ export default async function ClientsPage() {
           <thead>
             <tr style={{ background: '#FAFAFA' }}>
               {['Nom', 'Plan', 'Marché', 'Pays', 'Secteur', 'Score audit', 'Objectif', 'Onboarding', 'Inscrit'].map(h => (
-                <th key={h} style={{ textAlign: 'left', padding: '12px 16px', fontSize: '0.72rem', color: '#6B7A94', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>{h}</th>
+                <th key={h} style={{ textAlign: 'left', padding: '12px 16px', fontSize: '0.72rem', color: '#4B5563', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>{h}</th>
               ))}
             </tr>
           </thead>
@@ -50,26 +50,26 @@ export default async function ClientsPage() {
                 <td style={{ padding: '12px 16px', fontWeight: 600, fontSize: '0.85rem' }}>{c.full_name || <span style={{ color: '#D0D0D0' }}>Sans nom</span>}</td>
                 <td style={{ padding: '12px 16px' }}>{planBadge(c.plan)}</td>
                 <td style={{ padding: '12px 16px', fontSize: '0.85rem' }}>{c.market === 'af' ? '🌍 Afrique' : '🇫🇷 France'}</td>
-                <td style={{ padding: '12px 16px', fontSize: '0.85rem', color: '#6B7A94' }}>{c.country || '—'}</td>
-                <td style={{ padding: '12px 16px', fontSize: '0.82rem', color: '#6B7A94', maxWidth: '140px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{c.secteur || '—'}</td>
+                <td style={{ padding: '12px 16px', fontSize: '0.85rem', color: '#4B5563' }}>{c.country || '—'}</td>
+                <td style={{ padding: '12px 16px', fontSize: '0.82rem', color: '#4B5563', maxWidth: '140px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{c.secteur || '—'}</td>
                 <td style={{ padding: '12px 16px' }}>
                   {c.audit_score
                     ? <span style={{ fontWeight: 700, color: scoreColor(c.audit_score) }}>{c.audit_score}/100</span>
                     : <span style={{ color: '#D0D0D0' }}>—</span>}
                 </td>
-                <td style={{ padding: '12px 16px', fontSize: '0.82rem', color: '#6B7A94' }}>{c.objectif_principal || '—'}</td>
+                <td style={{ padding: '12px 16px', fontSize: '0.82rem', color: '#4B5563' }}>{c.objectif_principal || '—'}</td>
                 <td style={{ padding: '12px 16px' }}>
                   <span style={{ fontSize: '0.78rem', fontWeight: 600, color: c.onboarding_completed ? '#27AE60' : '#F39C12' }}>
                     {c.onboarding_completed ? '✓ Fait' : '⏳ En attente'}
                   </span>
                 </td>
-                <td style={{ padding: '12px 16px', fontSize: '0.8rem', color: '#6B7A94', whiteSpace: 'nowrap' }}>
+                <td style={{ padding: '12px 16px', fontSize: '0.8rem', color: '#4B5563', whiteSpace: 'nowrap' }}>
                   {c.created_at ? new Date(c.created_at).toLocaleDateString('fr-FR') : '—'}
                 </td>
               </tr>
             ))}
             {(!clients || clients.length === 0) && (
-              <tr><td colSpan={9} style={{ padding: '64px', textAlign: 'center', color: '#6B7A94' }}>Aucun client pour le moment</td></tr>
+              <tr><td colSpan={9} style={{ padding: '64px', textAlign: 'center', color: '#4B5563' }}>Aucun client pour le moment</td></tr>
             )}
           </tbody>
         </table>

@@ -77,17 +77,17 @@ export async function POST(request) {
       subject: `🐛 Nouveau signalement — ${page || '/'}`,
       html: `
         <div style="font-family: sans-serif; max-width: 520px; margin: 0 auto; padding: 32px 24px;">
-          <div style="background: #0A1628; border-radius: 10px; padding: 20px 24px; margin-bottom: 24px;">
+          <div style="background: #0F172A; border-radius: 10px; padding: 20px 24px; margin-bottom: 24px;">
             <h1 style="color: #4EC9B0; font-size: 18px; margin: 0 0 4px;">🐛 Nouveau signalement SAV</h1>
             <p style="color: rgba(255,255,255,0.5); font-size: 12px; margin: 0;">Nexalie Platform</p>
           </div>
 
           <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
-            <tr><td style="padding: 8px 0; color: #6B7A94; font-size: 13px; width: 120px;">Page</td>
-                <td style="padding: 8px 0; font-size: 13px; font-weight: 700; color: #0A1628;">${page || '/'}</td></tr>
-            <tr><td style="padding: 8px 0; color: #6B7A94; font-size: 13px;">Utilisateur</td>
-                <td style="padding: 8px 0; font-size: 13px; color: #0A1628;">${userEmail || 'Non connecté'}</td></tr>
-            <tr><td style="padding: 8px 0; color: #6B7A94; font-size: 13px;">Référence</td>
+            <tr><td style="padding: 8px 0; color: #4B5563; font-size: 13px; width: 120px;">Page</td>
+                <td style="padding: 8px 0; font-size: 13px; font-weight: 700; color: #0F172A;">${page || '/'}</td></tr>
+            <tr><td style="padding: 8px 0; color: #4B5563; font-size: 13px;">Utilisateur</td>
+                <td style="padding: 8px 0; font-size: 13px; color: #0F172A;">${userEmail || 'Non connecté'}</td></tr>
+            <tr><td style="padding: 8px 0; color: #4B5563; font-size: 13px;">Référence</td>
                 <td style="padding: 8px 0; font-size: 11px; color: #9CA3AF; font-family: monospace;">${report.id}</td></tr>
           </table>
 
@@ -95,10 +95,10 @@ export async function POST(request) {
             <p style="font-size: 14px; color: #374151; line-height: 1.6; margin: 0;">${description.trim().replace(/\n/g, '<br>')}</p>
           </div>
 
-          ${screenshot_url ? `<p style="font-size: 13px; color: #6B7A94;">Capture : <a href="${screenshot_url}" style="color: #4EC9B0;">${screenshot_url}</a></p>` : ''}
+          ${screenshot_url ? `<p style="font-size: 13px; color: #4B5563;">Capture : <a href="${screenshot_url}" style="color: #4EC9B0;">${screenshot_url}</a></p>` : ''}
 
           <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://nexalie.co'}/dashboard/sav"
-             style="display: inline-block; background: #0A1628; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13px;">
+             style="display: inline-block; background: #0F172A; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13px;">
             Voir dans le dashboard →
           </a>
         </div>

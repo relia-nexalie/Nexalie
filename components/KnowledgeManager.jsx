@@ -9,7 +9,7 @@ const inputStyle = {
   outline: 'none', transition: 'border-color 0.2s',
 };
 const labelStyle = {
-  display: 'block', fontSize: '0.72rem', fontWeight: 700, color: '#6B7A94',
+  display: 'block', fontSize: '0.72rem', fontWeight: 700, color: '#4B5563',
   marginBottom: '5px', textTransform: 'uppercase', letterSpacing: '0.05em',
 };
 
@@ -75,15 +75,15 @@ export default function KnowledgeManager({ initialItems }) {
 
   return (
     <div style={{ padding: '32px', maxWidth: '900px' }}>
-      <h1 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0A1628', marginBottom: '4px' }}>Mémoire IA</h1>
-      <p style={{ color: '#6B7A94', marginBottom: '32px', fontSize: '0.88rem', lineHeight: 1.5 }}>
+      <h1 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0F172A', marginBottom: '4px' }}>Mémoire IA</h1>
+      <p style={{ color: '#4B5563', marginBottom: '32px', fontSize: '0.88rem', lineHeight: 1.5 }}>
         Ces éléments sont injectés dans chaque prompt Nexalie OS, filtrés par mode (France/Afrique).
         Priorité 1 = injecté en premier.
       </p>
 
       {/* Formulaire */}
       <div style={{ background: '#fff', borderRadius: '12px', padding: '24px', boxShadow: '0 1px 4px rgba(0,0,0,0.07)', marginBottom: '28px' }}>
-        <h2 style={{ fontSize: '1rem', fontWeight: 700, color: '#0A1628', marginBottom: '20px' }}>
+        <h2 style={{ fontSize: '1rem', fontWeight: 700, color: '#0F172A', marginBottom: '20px' }}>
           {editing ? '✏️ Modifier l\'élément' : '+ Nouvel élément'}
         </h2>
 
@@ -120,7 +120,7 @@ export default function KnowledgeManager({ initialItems }) {
         <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
           <button onClick={save} disabled={saving || !form.categorie.trim() || !form.contenu.trim()}
             style={{
-              padding: '10px 24px', background: '#0A1628', color: '#fff', border: 'none',
+              padding: '10px 24px', background: '#0F172A', color: '#fff', border: 'none',
               borderRadius: '8px', fontWeight: 700, cursor: 'pointer', fontSize: '0.88rem',
               opacity: saving || !form.categorie.trim() || !form.contenu.trim() ? 0.45 : 1,
               transition: 'opacity 0.2s',
@@ -140,7 +140,7 @@ export default function KnowledgeManager({ initialItems }) {
       {/* Liste */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
         {items.length === 0 && (
-          <div style={{ textAlign: 'center', padding: '64px', color: '#6B7A94', background: '#fff', borderRadius: '12px' }}>
+          <div style={{ textAlign: 'center', padding: '64px', color: '#4B5563', background: '#fff', borderRadius: '12px' }}>
             Aucun élément. Ajoutez vos premières connaissances ci-dessus.
           </div>
         )}
@@ -155,13 +155,13 @@ export default function KnowledgeManager({ initialItems }) {
           }}>
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{ display: 'flex', gap: '6px', marginBottom: '8px', flexWrap: 'wrap', alignItems: 'center' }}>
-                <span style={{ background: '#0A162815', color: '#0A1628', padding: '2px 10px', borderRadius: '20px', fontSize: '0.72rem', fontWeight: 700 }}>
+                <span style={{ background: '#0F172A15', color: '#0F172A', padding: '2px 10px', borderRadius: '20px', fontSize: '0.72rem', fontWeight: 700 }}>
                   {item.categorie}
                 </span>
-                <span style={{ background: '#C9A84C22', color: '#8B6914', padding: '2px 10px', borderRadius: '20px', fontSize: '0.72rem', fontWeight: 600 }}>
+                <span style={{ background: '#C8A96B22', color: '#8B6914', padding: '2px 10px', borderRadius: '20px', fontSize: '0.72rem', fontWeight: 600 }}>
                   {modeLabel(item.mode)}
                 </span>
-                <span style={{ background: '#F0F0F0', color: '#6B7A94', padding: '2px 10px', borderRadius: '20px', fontSize: '0.72rem' }}>
+                <span style={{ background: '#F0F0F0', color: '#4B5563', padding: '2px 10px', borderRadius: '20px', fontSize: '0.72rem' }}>
                   priorité {item.priorite}
                 </span>
                 {!item.actif && <span style={{ background: '#FFE0E0', color: '#C0392B', padding: '2px 10px', borderRadius: '20px', fontSize: '0.72rem', fontWeight: 600 }}>Désactivé</span>}
@@ -172,7 +172,7 @@ export default function KnowledgeManager({ initialItems }) {
             </div>
             <div style={{ display: 'flex', gap: '6px', flexShrink: 0 }}>
               <button onClick={() => toggle(item.id, item.actif)}
-                style={{ padding: '6px 10px', fontSize: '0.75rem', border: '1px solid #E0E0E0', borderRadius: '6px', cursor: 'pointer', background: 'transparent', color: '#6B7A94' }}>
+                style={{ padding: '6px 10px', fontSize: '0.75rem', border: '1px solid #E0E0E0', borderRadius: '6px', cursor: 'pointer', background: 'transparent', color: '#4B5563' }}>
                 {item.actif ? '⏸' : '▶'}
               </button>
               <button onClick={() => startEdit(item)}

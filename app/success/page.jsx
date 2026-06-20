@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const T = {
-  pageBg: '#FFFFFF', sectionBg: '#F8FAFC', navyBg: '#0A1628',
-  textPrimary: '#0A1628', textSecondary: '#6B7A94', textOnNavy: '#FFFFFF',
-  textMuted: 'rgba(255,255,255,0.5)', accent: '#2E9B8B', gold: '#C9A84C',
+  pageBg: '#FFFFFF', sectionBg: '#F8FAFC', navyBg: '#0F172A',
+  textPrimary: '#0F172A', textSecondary: '#4B5563', textOnNavy: '#FFFFFF',
+  textMuted: 'rgba(255,255,255,0.5)', accent: '#2E9B8B', gold: '#C8A96B',
   border: 'rgba(0,0,0,0.07)',
 };
 
