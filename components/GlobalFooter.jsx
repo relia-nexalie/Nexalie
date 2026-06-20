@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import BugReportModal from '@/components/BugReportModal';
+import MotifBackground from '@/components/MotifBackground';
 
 export default function GlobalFooter() {
   const [showBugModal, setShowBugModal] = useState(false);
@@ -39,8 +40,9 @@ export default function GlobalFooter() {
   ];
 
   return (
-    <footer style={{ background: brand, color: '#fff', padding: '56px 24px 32px' }}>
-      <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+    <footer style={{ position: 'relative', background: brand, color: '#fff', padding: '56px 24px 32px' }}>
+      <MotifBackground name="lovata" opacity={0.06} />
+      <div style={{ position: 'relative', zIndex: 1, maxWidth: '1100px', margin: '0 auto' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1.5fr repeat(3, 1fr)', gap: '40px', marginBottom: '48px' }}>
 
           {/* Col 1 — Nexalie */}
