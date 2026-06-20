@@ -51,7 +51,7 @@ export default function InstitutionsPage() {
               Pour les institutions &amp; partenaires
             </p>
           </div>
-          <h1 style={{ fontFamily: 'var(--font-fraunces, serif)', fontSize: 'clamp(34px, 5.5vw, 56px)', fontWeight: 400, color: '#fff', lineHeight: 1.2, marginBottom: '24px', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(34px, 5.5vw, 56px)', fontWeight: 400, color: '#fff', lineHeight: 1.2, marginBottom: '24px', letterSpacing: '-0.02em' }}>
             Vous financez leur développement. Nexalie vous montre où votre impact est le plus fort.
           </h1>
           <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.75, maxWidth: '600px', marginBottom: '40px' }}>
@@ -80,13 +80,13 @@ export default function InstitutionsPage() {
           <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase', color: gold, marginBottom: '16px' }}>
             Contexte
           </p>
-          <h2 style={{ fontFamily: 'var(--font-fraunces, serif)', fontSize: 'clamp(30px, 4.5vw, 46px)', fontWeight: 400, color: navy, marginBottom: '48px', letterSpacing: '-0.01em' }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(30px, 4.5vw, 46px)', fontWeight: 400, color: navy, marginBottom: '48px', letterSpacing: '-0.01em' }}>
             La digitalisation des PME africaines : un enjeu systémique
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '24px' }}>
             {figures.map((f, i) => (
               <div key={i} style={{ background: '#fff', border: '1px solid #E2E8F0', borderRadius: '8px', padding: '28px 24px', boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}>
-                <p style={{ fontFamily: 'var(--font-fraunces, serif)', fontSize: '36px', fontWeight: 300, color: navy, marginBottom: '8px' }}>{f.value}</p>
+                <p style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '36px', fontWeight: 300, color: navy, marginBottom: '8px' }}>{f.value}</p>
                 <p style={{ fontSize: '14px', fontWeight: 600, color: '#0F172A', marginBottom: '8px', lineHeight: 1.4 }}>{f.label}</p>
                 <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', color: '#94A3B8', lineHeight: 1.5 }}>{f.note}</p>
               </div>
@@ -101,7 +101,7 @@ export default function InstitutionsPage() {
           <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase', color: gold, marginBottom: '16px' }}>
             Qui nous utilise
           </p>
-          <h2 style={{ fontFamily: 'var(--font-fraunces, serif)', fontSize: 'clamp(30px, 4.5vw, 46px)', fontWeight: 400, color: navy, marginBottom: '48px', letterSpacing: '-0.01em' }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(30px, 4.5vw, 46px)', fontWeight: 400, color: navy, marginBottom: '48px', letterSpacing: '-0.01em' }}>
             Une solution pour chaque acteur de l'écosystème
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px' }}>
@@ -124,7 +124,7 @@ export default function InstitutionsPage() {
           <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '0.18em', textTransform: 'uppercase', color: gold, marginBottom: '16px' }}>
             Fonctionnement
           </p>
-          <h2 style={{ fontFamily: 'var(--font-fraunces, serif)', fontSize: 'clamp(30px, 4.5vw, 46px)', fontWeight: 400, color: navy, marginBottom: '48px', letterSpacing: '-0.01em' }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(30px, 4.5vw, 46px)', fontWeight: 400, color: navy, marginBottom: '48px', letterSpacing: '-0.01em' }}>
             De l'audit individuel aux données agrégées
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
@@ -146,7 +146,7 @@ export default function InstitutionsPage() {
       {/* ── CTA final ───────────────────────────────────────────── */}
       <section style={{ background: navy, padding: '72px 24px' }}>
         <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontFamily: 'var(--font-fraunces, serif)', fontSize: 'clamp(30px, 4.5vw, 46px)', fontWeight: 400, color: '#fff', marginBottom: '20px', letterSpacing: '-0.01em' }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(30px, 4.5vw, 46px)', fontWeight: 400, color: '#fff', marginBottom: '20px', letterSpacing: '-0.01em' }}>
             Travaillons ensemble
           </h2>
           <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.75, marginBottom: '36px' }}>

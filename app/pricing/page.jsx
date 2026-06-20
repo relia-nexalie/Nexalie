@@ -206,7 +206,7 @@ export default function PricingPage() {
       {/* Hero */}
       <section style={{ background: navy, padding: '72px 24px 60px', textAlign: 'center' }}>
         <p style={{ fontSize: '11px', letterSpacing: '3px', color: accent, textTransform: 'uppercase', marginBottom: '14px', fontFamily: 'monospace' }}>Tarifs</p>
-        <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(30px,5vw,52px)', fontWeight: 300, color: '#fff', marginBottom: '14px', lineHeight: 1.2 }}>
+        <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(30px,5vw,52px)', fontWeight: 300, color: '#fff', marginBottom: '14px', lineHeight: 1.2 }}>
           {isAfrica ? 'Des prix adaptés à l\'Afrique' : 'Une tarification transparente'}
         </h1>
         <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.6)', maxWidth: '480px', margin: '0 auto 36px', lineHeight: 1.7 }}>
@@ -257,13 +257,13 @@ export default function PricingPage() {
                 <p style={{ fontSize: '13px', color: '#6B7A94', marginBottom: '20px', lineHeight: 1.5 }}>{plan.desc}</p>
 
                 {plan.monthly === null ? (
-                  <div style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: '24px', fontWeight: 300, color: navy, marginBottom: '24px' }}>Sur devis</div>
+                  <div style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '24px', fontWeight: 300, color: navy, marginBottom: '24px' }}>Sur devis</div>
                 ) : plan.monthly === 0 ? (
-                  <div style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: '36px', fontWeight: 300, color: navy, marginBottom: '24px' }}>Gratuit</div>
+                  <div style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '36px', fontWeight: 300, color: navy, marginBottom: '24px' }}>Gratuit</div>
                 ) : (
                   <div style={{ marginBottom: '24px' }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px' }}>
-                      <span style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: '34px', fontWeight: 300, color: navy }}>{fmtDisplay(price, plan.currency, displayCurrency, mode)}</span>
+                      <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '34px', fontWeight: 300, color: navy }}>{fmtDisplay(price, plan.currency, displayCurrency, mode)}</span>
                       <span style={{ fontSize: '13px', color: '#6B7A94' }}>/mois</span>
                     </div>
                     {billing === 'annual' && (
@@ -315,7 +315,7 @@ export default function PricingPage() {
       <section style={{ background: '#F8F9FA', padding: '64px 24px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: '#9CA3AF', textTransform: 'uppercase', textAlign: 'center', marginBottom: '8px' }}>Pourquoi Nexalie</p>
-          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(22px,3vw,32px)', fontWeight: 300, color: navy, textAlign: 'center', marginBottom: '36px' }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(22px,3vw,32px)', fontWeight: 300, color: navy, textAlign: 'center', marginBottom: '36px' }}>
             Nexalie Pro vs. les alternatives
           </h2>
           <div style={{ overflowX: 'auto' }}>
@@ -358,7 +358,7 @@ export default function PricingPage() {
       {/* FAQ */}
       <section style={{ background: '#F8F9FA', padding: '60px 24px' }}>
         <div style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '28px', fontWeight: 300, color: navy, marginBottom: '32px' }}>Questions fréquentes</h2>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '28px', fontWeight: 300, color: navy, marginBottom: '32px' }}>Questions fréquentes</h2>
           {[
             { q: 'Puis-je annuler à tout moment ?', r: "Oui, sans engagement. Votre accès reste actif jusqu'à la fin de la période." },
             { q: isAfrica ? 'Quels modes de paiement ?' : 'Quels moyens de paiement ?', r: isAfrica ? 'Mobile Money (Orange Money, MTN MoMo, Wave), carte bancaire, virement.' : 'Carte bancaire (Visa, Mastercard), virement SEPA.' },
@@ -376,7 +376,7 @@ export default function PricingPage() {
       <section style={{ background: '#F8F9FA', padding: '64px 24px', borderTop: '1px solid rgba(0,0,0,0.06)' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: '#9CA3AF', textAlign: 'center', marginBottom: '8px', textTransform: 'uppercase' }}>Sécurité &amp; Souveraineté</p>
-          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(20px,2.5vw,28px)', fontWeight: 300, color: navy, textAlign: 'center', marginBottom: '40px' }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(20px,2.5vw,28px)', fontWeight: 300, color: navy, textAlign: 'center', marginBottom: '40px' }}>
             Vos données restent les vôtres. Point.
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
@@ -412,7 +412,7 @@ export default function PricingPage() {
 
       {/* CTA final */}
       <section style={{ padding: '60px 24px', textAlign: 'center' }}>
-        <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(24px,3.5vw,38px)', fontWeight: 300, color: navy, marginBottom: '12px' }}>
+        <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(24px,3.5vw,38px)', fontWeight: 300, color: navy, marginBottom: '12px' }}>
           Commencez votre transformation avec Nexalie
         </h2>
         <p style={{ fontSize: '16px', color: '#6B7A94', marginBottom: '28px' }}>Audit gratuit en 20 minutes — pas de carte requise.</p>

@@ -48,7 +48,7 @@ export default function SignupPage() {
     <div style={{ minHeight: '100vh', background: T.pageBg, fontFamily: 'sans-serif', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <div style={{ maxWidth: '440px', padding: '48px 40px', textAlign: 'center' }}>
         <span style={{ fontSize: '48px', display: 'block', marginBottom: '20px' }}>✉️</span>
-        <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '24px', fontWeight: 200, color: T.textPrimary, marginBottom: '12px' }}>
+        <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '24px', fontWeight: 200, color: T.textPrimary, marginBottom: '12px' }}>
           Vérifiez votre email
         </h2>
         <p style={{ fontSize: '14px', color: T.textSecondary, lineHeight: 1.7 }}>
@@ -64,7 +64,7 @@ export default function SignupPage() {
       <nav style={{ background: T.navyBg, padding: '0 40px', borderBottom: `1px solid ${T.gold}15` }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', alignItems: 'center', height: '60px' }}>
           <a href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-            <span style={{ fontFamily: 'Georgia, serif', fontSize: '20px', fontWeight: 300, color: '#fff' }}>Nexalie</span>
+            <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '20px', fontWeight: 300, color: '#fff' }}>Nexalie</span>
             <span style={{ fontFamily: 'monospace', fontSize: '9px', letterSpacing: '2.5px', color: T.accent }}>AI</span>
           </a>
         </div>
@@ -72,7 +72,7 @@ export default function SignupPage() {
 
       <div style={{ maxWidth: '440px', margin: '60px auto', padding: '0 24px', animation: 'fadeIn 0.4s ease' }}>
         <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: T.textSecondary, marginBottom: '10px' }}>CRÉER UN COMPTE</p>
-        <h1 style={{ fontFamily: 'Georgia, serif', fontSize: '28px', fontWeight: 200, color: T.textPrimary, marginBottom: '6px' }}>
+        <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '28px', fontWeight: 200, color: T.textPrimary, marginBottom: '6px' }}>
           Rejoindre <em style={{ color: T.accent, fontStyle: 'normal' }}>Nexalie</em>
         </h1>
         <p style={{ fontSize: '14px', color: T.textSecondary, marginBottom: '28px' }}>

@@ -21,7 +21,7 @@ export default function DemoPage() {
       {/* ── LOGO ──────────────────────────────────────────────────── */}
       <div style={{ textAlign: 'center', padding: '24px 20px 0' }}>
         <Link href="/" style={{ textDecoration: 'none' }}>
-          <span style={{ fontFamily: 'Georgia, serif', fontSize: '24px', fontWeight: 300, color: NAVY }}>Nexalie</span>
+          <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '24px', fontWeight: 300, color: NAVY }}>Nexalie</span>
           <span style={{ fontFamily: 'monospace', fontSize: '9px', letterSpacing: '2.5px', color: TERRA, marginLeft: '5px' }}>AI</span>
         </Link>
       </div>
@@ -42,7 +42,7 @@ export default function DemoPage() {
         </div>
 
         <h1 style={{
-          fontFamily: 'Georgia, serif',
+          fontFamily: 'var(--font-display, system-ui, sans-serif)',
           fontSize: 'clamp(28px, 7vw, 42px)',
           fontWeight: 400, lineHeight: 1.2,
           color: NAVY, marginBottom: '20px',
@@ -129,7 +129,7 @@ export default function DemoPage() {
               width: '44px', height: '44px', flexShrink: 0,
               background: TERRA_LIGHT, border: `2px solid ${TERRA}`,
               borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontFamily: 'Georgia, serif', fontSize: '18px', fontWeight: 700, color: TERRA,
+              fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '18px', fontWeight: 700, color: TERRA,
             }}>
               {step.num}
             </div>
@@ -169,7 +169,7 @@ export default function DemoPage() {
           <div style={{ position: 'absolute', top: '14px', right: '14px', width: '28px', height: '28px', border: `1.5px solid ${GOLD}`, borderLeft: 'none', borderBottom: 'none', opacity: 0.6 }} />
 
           <p style={{ fontSize: '26px', marginBottom: '8px' }}>🎁</p>
-          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 400, color: '#fff', marginBottom: '16px', lineHeight: 1.3 }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '22px', fontWeight: 400, color: '#fff', marginBottom: '16px', lineHeight: 1.3 }}>
             Offre spéciale OSIANE 2026
           </h2>
 
@@ -203,7 +203,7 @@ export default function DemoPage() {
           <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '2px', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '16px', textAlign: 'center' }}>
             Institutions &amp; Gouvernements
           </p>
-          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 400, color: NAVY, textAlign: 'center', marginBottom: '24px' }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '22px', fontWeight: 400, color: NAVY, textAlign: 'center', marginBottom: '24px' }}>
             Pour les institutions et ministères
           </h2>
 
@@ -211,7 +211,7 @@ export default function DemoPage() {
           <div style={{ background: '#fff', border: '1.5px solid rgba(0,0,0,0.08)', borderRadius: '14px', padding: '20px', marginBottom: '20px' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
               <p style={{ fontSize: '12px', fontWeight: 700, color: NAVY, margin: 0 }}>Score moyen national · Congo</p>
-              <p style={{ fontFamily: 'Georgia, serif', fontSize: '26px', color: TERRA, fontWeight: 400, margin: 0 }}>31<span style={{ fontSize: '14px', color: '#9CA3AF' }}>/100</span></p>
+              <p style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '26px', color: TERRA, fontWeight: 400, margin: 0 }}>31<span style={{ fontSize: '14px', color: '#9CA3AF' }}>/100</span></p>
             </div>
 
             <p style={{ fontSize: '11px', color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '10px', fontWeight: 700 }}>Secteurs les plus en retard</p>
@@ -271,7 +271,7 @@ export default function DemoPage() {
 
       {/* ── FOOTER MINIMAL ────────────────────────────────────────── */}
       <footer style={{ background: NAVY, padding: '36px 24px', textAlign: 'center' }}>
-        <p style={{ fontFamily: 'Georgia, serif', fontSize: '20px', fontWeight: 300, color: '#fff', marginBottom: '4px' }}>
+        <p style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '20px', fontWeight: 300, color: '#fff', marginBottom: '4px' }}>
           Nexalie
           <span style={{ fontFamily: 'monospace', fontSize: '9px', letterSpacing: '2px', color: TERRA, marginLeft: '4px' }}>AI</span>
         </p>

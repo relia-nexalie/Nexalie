@@ -50,7 +50,7 @@ export default function ExitPopup() {
           <div style={{ height: '1px', background: `linear-gradient(90deg,transparent,${T.gold}50,transparent)`, marginBottom: '20px' }} />
           <button onClick={dismiss} style={{ position: 'absolute', top: '16px', right: '16px', background: 'none', border: 'none', color: 'rgba(255,255,255,0.4)', fontSize: '18px', cursor: 'pointer', lineHeight: 1 }}>✕</button>
           <p style={{ fontFamily: 'monospace', fontSize: '9px', letterSpacing: '2px', color: 'rgba(255,255,255,0.4)', marginBottom: '8px' }}>AVANT DE PARTIR</p>
-          <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 200, color: '#fff', lineHeight: 1.3 }}>
+          <h3 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '22px', fontWeight: 200, color: '#fff', lineHeight: 1.3 }}>
             Votre score digital gratuit<br />
             <em style={{ color: T.accent, fontStyle: 'normal' }}>en 20 minutes</em>
           </h3>

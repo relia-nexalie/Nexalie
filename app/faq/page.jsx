@@ -32,7 +32,7 @@ export default function FaqPage() {
       <nav style={{ background: T.navyBg, padding: '0 40px', borderBottom: `1px solid ${T.gold}15`, position: 'sticky', top: 0, zIndex: 100 }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '60px' }}>
           <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-            <span style={{ fontFamily: 'Georgia, serif', fontSize: '20px', fontWeight: 300, color: '#fff' }}>Nexalie</span>
+            <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '20px', fontWeight: 300, color: '#fff' }}>Nexalie</span>
             <span style={{ fontFamily: 'monospace', fontSize: '9px', letterSpacing: '2.5px', color: T.accent }}>AI</span>
           </Link>
           <Link href="/" style={{ fontSize: '13px', color: T.textMuted, textDecoration: 'none' }}>← Retour</Link>
@@ -44,7 +44,7 @@ export default function FaqPage() {
         <div style={{ height: '1px', background: `linear-gradient(90deg,transparent,${T.gold}40,transparent)`, marginBottom: '36px' }} />
         <div style={{ maxWidth: '760px', margin: '0 auto' }}>
           <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: T.textMuted, marginBottom: '10px' }}>AIDE & SUPPORT</p>
-          <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(26px,4vw,40px)', fontWeight: 200, color: '#fff', marginBottom: '10px' }}>
+          <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(26px,4vw,40px)', fontWeight: 200, color: '#fff', marginBottom: '10px' }}>
             Questions <em style={{ color: T.accent, fontStyle: 'normal' }}>fréquentes</em>
           </h1>
           <p style={{ fontSize: '15px', color: T.textMuted }}>10 réponses aux questions que tout le monde se pose sur Nexalie.</p>
@@ -59,7 +59,7 @@ export default function FaqPage() {
               onClick={() => setOpen(open === i ? null : i)}
               style={{ width: '100%', padding: '20px 0', background: 'none', border: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', textAlign: 'left', gap: '16px' }}
             >
-              <span style={{ fontFamily: 'Georgia, serif', fontSize: '16px', fontWeight: 300, color: open === i ? T.accent : T.textPrimary, lineHeight: 1.4 }}>{faq.q}</span>
+              <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '16px', fontWeight: 300, color: open === i ? T.accent : T.textPrimary, lineHeight: 1.4 }}>{faq.q}</span>
               <span style={{ fontSize: '18px', color: T.accent, flexShrink: 0, transition: 'transform 0.2s', transform: open === i ? 'rotate(45deg)' : 'none' }}>+</span>
             </button>
             {open === i && (
@@ -72,7 +72,7 @@ export default function FaqPage() {
 
         {/* CTA contact */}
         <div style={{ marginTop: '48px', padding: '32px', background: T.navyBg, borderRadius: '16px', textAlign: 'center' }}>
-          <p style={{ fontFamily: 'Georgia, serif', fontSize: '20px', fontWeight: 200, color: '#fff', marginBottom: '8px' }}>
+          <p style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '20px', fontWeight: 200, color: '#fff', marginBottom: '8px' }}>
             Vous n'avez pas trouvé votre réponse ?
           </p>
           <p style={{ fontSize: '14px', color: T.textMuted, marginBottom: '20px' }}>

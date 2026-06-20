@@ -21,7 +21,7 @@ export default function AboutClient() {
           <div>
             <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '3px', color: accent, textTransform: 'uppercase', marginBottom: '20px' }}>Notre raison d&apos;être</p>
             <blockquote style={{
-              fontFamily: 'var(--font-fraunces, Georgia, serif)',
+              fontFamily: 'var(--font-display, system-ui, sans-serif)',
               fontSize: 'clamp(20px,2.8vw,30px)',
               fontWeight: 300, color: '#fff', lineHeight: 1.6,
               borderLeft: `3px solid ${accent}`, paddingLeft: '24px',
@@ -69,7 +69,7 @@ export default function AboutClient() {
           <div>
             <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '3px', color: accentText, marginBottom: '24px', textTransform: 'uppercase' }}>Le Manifeste</p>
             <h2 style={{
-              fontFamily: 'var(--font-fraunces, Georgia, serif)',
+              fontFamily: 'var(--font-display, system-ui, sans-serif)',
               fontSize: 'clamp(32px,4.5vw,52px)',
               fontWeight: 400, color: navy,
               lineHeight: 1.25, marginBottom: '36px'
@@ -142,7 +142,7 @@ export default function AboutClient() {
       <section style={{ padding: 'clamp(56px,7vw,88px) 24px', background: '#F5F1E8' }}>
         <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '3px', color: accentText, marginBottom: '12px', textTransform: 'uppercase' }}>Vision 2030</p>
-          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(30px,4vw,46px)', fontWeight: 400, color: '#14241C', marginBottom: '24px', lineHeight: 1.2 }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(30px,4vw,46px)', fontWeight: 400, color: '#14241C', marginBottom: '24px', lineHeight: 1.2 }}>
             La boussole numérique de l&apos;Afrique francophone
           </h2>
           <p style={{ fontSize: '17px', color: '#374151', lineHeight: 1.95, marginBottom: '40px' }}>

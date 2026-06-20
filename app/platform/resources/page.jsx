@@ -82,7 +82,7 @@ export default function ResourcesPage() {
       <div style={{ background: navy, padding: '48px 24px 40px', color: '#fff' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <p style={{ fontSize: '11px', letterSpacing: '3px', color: accent, textTransform: 'uppercase', marginBottom: '10px' }}>Bibliothèque</p>
-          <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(24px,4vw,42px)', fontWeight: 300, marginBottom: '10px' }}>
+          <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(24px,4vw,42px)', fontWeight: 300, marginBottom: '10px' }}>
             {isAfrica ? 'Ressources terrain Afrique' : 'Ressources & Templates'}
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '15px' }}>

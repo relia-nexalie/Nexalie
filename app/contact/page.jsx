@@ -34,7 +34,7 @@ export default function ContactPage() {
       <nav style={{ background: T.navyBg, padding: '0 40px', borderBottom: `1px solid ${T.gold}15`, position: 'sticky', top: 0, zIndex: 100 }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '60px' }}>
           <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-            <span style={{ fontFamily: 'Georgia, serif', fontSize: '20px', fontWeight: 300, color: '#fff' }}>Nexalie</span>
+            <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '20px', fontWeight: 300, color: '#fff' }}>Nexalie</span>
             <span style={{ fontFamily: 'monospace', fontSize: '9px', letterSpacing: '2.5px', color: T.accent }}>AI</span>
           </Link>
           <Link href="/" style={{ fontSize: '13px', color: T.textMuted, textDecoration: 'none' }}>← Retour</Link>
@@ -46,7 +46,7 @@ export default function ContactPage() {
         <div style={{ height: '1px', background: `linear-gradient(90deg,transparent,${T.gold}40,transparent)`, marginBottom: '36px' }} />
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: T.textMuted, marginBottom: '10px' }}>CONTACT</p>
-          <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(26px,4vw,40px)', fontWeight: 200, color: '#fff', marginBottom: '10px' }}>
+          <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(26px,4vw,40px)', fontWeight: 200, color: '#fff', marginBottom: '10px' }}>
             Parlons de <em style={{ color: T.accent, fontStyle: 'normal' }}>votre projet</em>
           </h1>
           <p style={{ fontSize: '15px', color: T.textMuted }}>Réponse garantie sous 24h · WhatsApp disponible</p>
@@ -89,7 +89,7 @@ export default function ContactPage() {
           {sent ? (
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', padding: '60px 40px', background: '#fff', border: `1px solid ${T.border}`, borderRadius: '16px', textAlign: 'center' }}>
               <span style={{ fontSize: '48px', marginBottom: '20px' }}>✅</span>
-              <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 200, color: T.textPrimary, marginBottom: '8px' }}>Message envoyé !</h2>
+              <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '22px', fontWeight: 200, color: T.textPrimary, marginBottom: '8px' }}>Message envoyé !</h2>
               <p style={{ fontSize: '14px', color: T.textSecondary, marginBottom: '20px' }}>WhatsApp ouvert avec votre message pré-rempli. Réponse sous 24h.</p>
               <button onClick={() => setSent(false)} style={{ padding: '11px 24px', background: T.navyBg, border: 'none', borderRadius: '8px', color: '#fff', fontSize: '13px', fontWeight: 700, cursor: 'pointer' }}>
                 Envoyer un autre message

@@ -21,7 +21,7 @@ module.exports = {
         'ink-muted': '#64748B',
       },
       fontFamily: {
-        serif: ['var(--font-fraunces)', 'Georgia', 'serif'],
+        serif: ['var(--font-display)', 'system-ui', 'sans-serif'],
         sans:  ['var(--font-jakarta)', 'system-ui', 'sans-serif'],
         mono:  ['var(--font-mono)', 'monospace'],
       },

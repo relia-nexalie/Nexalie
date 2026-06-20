@@ -43,7 +43,7 @@ export default function LoginPage() {
       <nav style={{ background: T.navyBg, padding: '0 40px', borderBottom: `1px solid ${T.gold}15` }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', alignItems: 'center', height: '60px' }}>
           <a href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-            <span style={{ fontFamily: 'Georgia, serif', fontSize: '20px', fontWeight: 300, color: '#fff' }}>Nexalie</span>
+            <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '20px', fontWeight: 300, color: '#fff' }}>Nexalie</span>
             <span style={{ fontFamily: 'monospace', fontSize: '9px', letterSpacing: '2.5px', color: T.accent, fontWeight: 600 }}>AI</span>
           </a>
         </div>
@@ -54,7 +54,7 @@ export default function LoginPage() {
         <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: T.textSecondary, marginBottom: '10px' }}>
           ESPACE CLIENT
         </p>
-        <h1 style={{ fontFamily: 'Georgia, serif', fontSize: '28px', fontWeight: 200, color: T.textPrimary, marginBottom: '6px' }}>
+        <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '28px', fontWeight: 200, color: T.textPrimary, marginBottom: '6px' }}>
           Connexion à <em style={{ color: T.accent, fontStyle: 'normal' }}>Nexalie</em>
         </h1>
         <p style={{ fontSize: '14px', color: T.textSecondary, marginBottom: '32px' }}>

@@ -60,7 +60,7 @@ function ArticleView({ article, onBack, T }) {
             <Badge label={article.cat} color={article.color} filled />
             <span style={{ fontSize: '12px', color: T.textMuted }}>{article.readTime} · {article.date}</span>
           </div>
-          <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(22px,3.5vw,34px)', fontWeight: 200, color: '#fff', lineHeight: 1.3, marginBottom: '14px' }}>{article.title}</h1>
+          <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(22px,3.5vw,34px)', fontWeight: 200, color: '#fff', lineHeight: 1.3, marginBottom: '14px' }}>{article.title}</h1>
           <p style={{ fontSize: '15px', color: T.textMuted, lineHeight: 1.8 }}>{article.excerpt}</p>
         </div>
       </div>
@@ -68,14 +68,14 @@ function ArticleView({ article, onBack, T }) {
         <div style={{ height: '2px', background: `linear-gradient(90deg,${article.color}40,transparent)`, marginBottom: '36px' }} />
         {article.content.split('\n\n').map((para, i) => {
           if (para.startsWith('**') && para.endsWith('**'))
-            return <h3 key={i} style={{ fontFamily: 'Georgia, serif', fontSize: '20px', fontWeight: 300, color: T.textPrimary, margin: '28px 0 10px' }}>{para.replace(/\*\*/g, '')}</h3>;
+            return <h3 key={i} style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '20px', fontWeight: 300, color: T.textPrimary, margin: '28px 0 10px' }}>{para.replace(/\*\*/g, '')}</h3>;
           return <p key={i} style={{ fontSize: '15px', color: T.textSecondary, lineHeight: 1.9, marginBottom: '18px' }}>{para.replace(/\*\*/g, '')}</p>;
         })}
         <div style={{ display: 'flex', gap: '8px', marginTop: '36px', paddingTop: '20px', borderTop: `1px solid ${T.border}` }}>
           {article.tags.map(t => <Badge key={t} label={t} color={article.color} />)}
         </div>
         <div style={{ marginTop: '36px', padding: '28px', background: T.navyBg, borderRadius: '14px', textAlign: 'center' }}>
-          <p style={{ fontFamily: 'Georgia, serif', fontSize: '18px', fontWeight: 200, color: '#fff', marginBottom: '8px' }}>Prêt à commencer votre transformation ?</p>
+          <p style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '18px', fontWeight: 200, color: '#fff', marginBottom: '8px' }}>Prêt à commencer votre transformation ?</p>
           <p style={{ fontSize: '13px', color: T.textMuted, marginBottom: '16px' }}>Audit gratuit en 20 minutes · Rapport IA personnalisé</p>
           <a href="/" style={{ display: 'inline-block', padding: '12px 24px', background: T.btnAccent, borderRadius: '8px', color: '#fff', fontSize: '13px', fontWeight: 700, textDecoration: 'none' }}>Faire mon audit gratuit →</a>
         </div>
@@ -101,7 +101,7 @@ export default function BlogPage() {
       <nav style={{ background: T.navyBg, padding: '0 40px', borderBottom: `1px solid ${T.gold}15`, position: 'sticky', top: 0, zIndex: 100 }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '60px' }}>
           <a href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-            <span style={{ fontFamily: 'Georgia, serif', fontSize: '20px', fontWeight: 300, color: '#fff' }}>Nexalie</span>
+            <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '20px', fontWeight: 300, color: '#fff' }}>Nexalie</span>
             <span style={{ fontFamily: 'monospace', fontSize: '9px', letterSpacing: '2.5px', color: T.accent }}>AI</span>
           </a>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
@@ -123,7 +123,7 @@ export default function BlogPage() {
         <div style={{ height: '2px', background: `linear-gradient(90deg,${T.gold}40,transparent)`, marginBottom: '40px' }} />
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '3px', color: 'rgba(255,255,255,0.35)', marginBottom: '20px', textTransform: 'uppercase' }}>Think Tank</p>
-          <h1 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(32px,5vw,56px)', fontWeight: 300, color: '#fff', marginBottom: '20px', lineHeight: 1.1 }}>
+          <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(32px,5vw,56px)', fontWeight: 300, color: '#fff', marginBottom: '20px', lineHeight: 1.1 }}>
             Les Carnets de Nexalie
           </h1>
           <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.55)', maxWidth: '640px', lineHeight: 1.85 }}>
@@ -150,12 +150,12 @@ export default function BlogPage() {
                 <Badge label={filtered[0].cat} color={filtered[0].color} />
                 <span style={{ fontSize: '12px', color: T.textSecondary }}>{filtered[0].readTime} · {filtered[0].date}</span>
               </div>
-              <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 300, color: T.textPrimary, lineHeight: 1.4, marginBottom: '10px' }}>{filtered[0].title}</h2>
+              <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '22px', fontWeight: 300, color: T.textPrimary, lineHeight: 1.4, marginBottom: '10px' }}>{filtered[0].title}</h2>
               <p style={{ fontSize: '14px', color: T.textSecondary, lineHeight: 1.7, marginBottom: '14px' }}>{filtered[0].excerpt}</p>
               <span style={{ fontSize: '13px', fontWeight: 600, color: filtered[0].color }}>Lire l'article →</span>
             </div>
             <div style={{ width: '200px', height: '160px', background: filtered[0].color, borderRadius: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, overflow: 'hidden', position: 'relative' }}>
-              <span style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: '120px', fontWeight: 300, color: 'rgba(255,255,255,0.18)', lineHeight: 1, userSelect: 'none', position: 'absolute' }}>{filtered[0].title.charAt(0)}</span>
+              <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '120px', fontWeight: 300, color: 'rgba(255,255,255,0.18)', lineHeight: 1, userSelect: 'none', position: 'absolute' }}>{filtered[0].title.charAt(0)}</span>
               <span style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '11px', letterSpacing: '2px', color: 'rgba(255,255,255,0.85)', textTransform: 'uppercase', position: 'relative' }}>{filtered[0].cat}</span>
             </div>
           </div>
@@ -168,7 +168,7 @@ export default function BlogPage() {
                 <Badge label={a.cat} color={a.color} />
                 <span style={{ fontSize: '11px', color: T.textSecondary }}>{a.readTime}</span>
               </div>
-              <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '17px', fontWeight: 300, color: T.textPrimary, lineHeight: 1.4, marginBottom: '8px' }}>{a.title}</h3>
+              <h3 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '17px', fontWeight: 300, color: T.textPrimary, lineHeight: 1.4, marginBottom: '8px' }}>{a.title}</h3>
               <p style={{ fontSize: '13px', color: T.textSecondary, lineHeight: 1.6, marginBottom: '12px' }}>{a.excerpt}</p>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ fontSize: '11px', color: T.textSecondary }}>{a.date}</span>
@@ -178,7 +178,7 @@ export default function BlogPage() {
           ))}
         </div>
         <div style={{ marginTop: '48px', padding: '40px', background: T.navyBg, borderRadius: '20px', textAlign: 'center' }}>
-          <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 200, color: '#fff', marginBottom: '8px' }}>Recevez les prochains articles</h3>
+          <h3 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '22px', fontWeight: 200, color: '#fff', marginBottom: '8px' }}>Recevez les prochains articles</h3>
           <p style={{ fontSize: '14px', color: T.textMuted, marginBottom: '20px' }}>Transformation digitale · IA · Afrique — chaque semaine</p>
           <div style={{ display: 'flex', gap: '8px', maxWidth: '400px', margin: '0 auto' }}>
             <input placeholder="votre@email.com" style={{ flex: 1, padding: '12px 16px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', color: '#fff', fontSize: '14px', outline: 'none' }} />

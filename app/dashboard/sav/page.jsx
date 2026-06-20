@@ -84,7 +84,7 @@ export default function SAVPage() {
         <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '2.5px', color: TEAL, textTransform: 'uppercase', marginBottom: '6px' }}>
           Dashboard Admin
         </p>
-        <h1 style={{ fontFamily: 'Georgia, serif', fontSize: '26px', fontWeight: 300, color: NAVY, margin: 0 }}>
+        <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '26px', fontWeight: 300, color: NAVY, margin: 0 }}>
           SAV — Signalements
         </h1>
       </div>

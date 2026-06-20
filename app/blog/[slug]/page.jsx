@@ -103,7 +103,7 @@ export default async function BlogSlugPage({ params }) {
             ))}
           </div>
 
-          <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(22px,4vw,40px)', fontWeight: 300, color: '#fff', lineHeight: 1.25, marginBottom: '16px' }}>
+          <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(22px,4vw,40px)', fontWeight: 300, color: '#fff', lineHeight: 1.25, marginBottom: '16px' }}>
             {article.titre}
           </h1>
 
@@ -132,7 +132,7 @@ export default async function BlogSlugPage({ params }) {
       {/* CTA AUDIT */}
       <section style={{ background: NAVY, margin: '0 24px clamp(32px,5vw,60px)', borderRadius: '20px', padding: 'clamp(32px,5vw,56px)', textAlign: 'center', maxWidth: '720px', marginLeft: 'auto', marginRight: 'auto' }}>
         <p style={{ fontSize: '11px', letterSpacing: '3px', color: accent, textTransform: 'uppercase', marginBottom: '12px' }}>Gratuit · 3 minutes</p>
-        <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(20px,3.5vw,30px)', fontWeight: 300, color: '#fff', marginBottom: '12px', lineHeight: 1.3 }}>
+        <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(20px,3.5vw,30px)', fontWeight: 300, color: '#fff', marginBottom: '12px', lineHeight: 1.3 }}>
           Évaluez votre maturité digitale maintenant
         </h2>
         <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '14px', lineHeight: 1.7, marginBottom: '24px' }}>

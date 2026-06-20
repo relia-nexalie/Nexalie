@@ -15,7 +15,7 @@ const T = {
 function Section({ id, title, children }) {
   return (
     <div id={id} style={{ marginBottom: '48px' }}>
-      <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 300, color: T.textPrimary, marginBottom: '16px', paddingBottom: '12px', borderBottom: `1px solid ${T.border}` }}>{title}</h2>
+      <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '22px', fontWeight: 300, color: T.textPrimary, marginBottom: '16px', paddingBottom: '12px', borderBottom: `1px solid ${T.border}` }}>{title}</h2>
       {children}
     </div>
   );
@@ -32,7 +32,7 @@ export default function LegalPage() {
       <nav style={{ background: T.navyBg, padding: '0 40px', borderBottom: `1px solid ${T.gold}15` }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '60px' }}>
           <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-            <span style={{ fontFamily: 'Georgia, serif', fontSize: '20px', fontWeight: 300, color: '#fff' }}>Nexalie</span>
+            <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '20px', fontWeight: 300, color: '#fff' }}>Nexalie</span>
             <span style={{ fontFamily: 'monospace', fontSize: '9px', letterSpacing: '2.5px', color: T.accent }}>AI</span>
           </Link>
           <Link href="/" style={{ fontSize: '13px', color: T.textMuted, textDecoration: 'none' }}>← Retour</Link>
@@ -41,7 +41,7 @@ export default function LegalPage() {
 
       <div style={{ maxWidth: '860px', margin: '0 auto', padding: '60px 40px' }}>
         <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: T.textSecondary, marginBottom: '10px' }}>DOCUMENTS LÉGAUX</p>
-        <h1 style={{ fontFamily: 'Georgia, serif', fontSize: '32px', fontWeight: 200, color: T.textPrimary, marginBottom: '8px' }}>CGV & Mentions légales</h1>
+        <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '32px', fontWeight: 200, color: T.textPrimary, marginBottom: '8px' }}>CGV & Mentions légales</h1>
         <p style={{ fontSize: '13px', color: T.textSecondary, marginBottom: '48px' }}>Dernière mise à jour : avril 2026</p>
 
         {/* Sommaire */}

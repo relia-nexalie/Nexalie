@@ -81,11 +81,11 @@ export default async function CertPage({ params }) {
       <div style={{ minHeight: '100vh', background: '#F8FAFC', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px 24px', fontFamily: '-apple-system, sans-serif' }}>
         <div style={{ maxWidth: '480px', width: '100%', textAlign: 'center' }}>
           <Link href="/" style={{ textDecoration: 'none', display: 'inline-block', marginBottom: '40px' }}>
-            <span style={{ fontFamily: 'Georgia, serif', fontSize: '22px', color: NAVY }}>Nexalie</span>
+            <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '22px', color: NAVY }}>Nexalie</span>
           </Link>
           <div style={{ background: '#fff', border: '2px solid #FEE2E2', borderRadius: '16px', padding: '48px 32px' }}>
             <div style={{ fontSize: '48px', marginBottom: '16px' }}>❌</div>
-            <h1 style={{ fontFamily: 'Georgia, serif', fontSize: '24px', fontWeight: 300, color: NAVY, marginBottom: '12px' }}>Certificat introuvable</h1>
+            <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '24px', fontWeight: 300, color: NAVY, marginBottom: '12px' }}>Certificat introuvable</h1>
             <p style={{ fontSize: '14px', color: '#6B7A94', lineHeight: 1.7 }}>
               Le code <code style={{ background: '#F3F4F6', padding: '2px 8px', borderRadius: '4px', fontSize: '12px' }}>{code}</code> ne correspond à aucun certificat valide.
             </p>
@@ -102,7 +102,7 @@ export default async function CertPage({ params }) {
         {/* Logo */}
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <Link href="/" style={{ textDecoration: 'none' }}>
-            <span style={{ fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 300, color: NAVY }}>Nexalie</span>
+            <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '22px', fontWeight: 300, color: NAVY }}>Nexalie</span>
             <span style={{ fontFamily: 'monospace', fontSize: '9px', letterSpacing: '2.5px', color: TEAL, marginLeft: '4px' }}>AI</span>
           </Link>
         </div>
@@ -143,7 +143,7 @@ export default async function CertPage({ params }) {
             Nexalie certifie que
           </p>
 
-          <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(22px,4vw,36px)', fontWeight: 400, color: NAVY, marginBottom: '8px', lineHeight: 1.2 }}>
+          <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(22px,4vw,36px)', fontWeight: 400, color: NAVY, marginBottom: '8px', lineHeight: 1.2 }}>
             {orgName}
           </h1>
 
@@ -151,14 +151,14 @@ export default async function CertPage({ params }) {
             <p style={{ fontSize: '14px', color: '#6B7A94', marginBottom: '8px' }}>{secteur}{country ? ` · ${country}` : ''}</p>
           )}
 
-          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(16px,2.5vw,22px)', fontWeight: 300, color: NAVY, marginBottom: '28px', letterSpacing: '-0.3px' }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(16px,2.5vw,22px)', fontWeight: 300, color: NAVY, marginBottom: '28px', letterSpacing: '-0.3px' }}>
             est <span style={{ color: GOLD, fontWeight: 700 }}>Nexalie Digital Ready</span>
           </h2>
 
           {/* Score */}
           <div style={{ display: 'inline-block', background: `${TEAL}12`, border: `2.5px solid ${TEAL}`, borderRadius: '16px', padding: '20px 40px', marginBottom: '28px' }}>
             <p style={{ fontSize: '11px', color: TEAL, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '6px' }}>Score de maturité digitale</p>
-            <p style={{ fontFamily: 'Georgia, serif', fontSize: '52px', color: TEAL, lineHeight: 1, fontWeight: 400 }}>
+            <p style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '52px', color: TEAL, lineHeight: 1, fontWeight: 400 }}>
               {cert.score}<span style={{ fontSize: '20px', color: '#9CA3AF', fontWeight: 300 }}>/100</span>
             </p>
           </div>

@@ -78,7 +78,7 @@ export default async function InstitutionsDashboardPage({ searchParams }) {
           <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: gold, marginBottom: '8px' }}>
             Tableau de bord · Accès restreint
           </p>
-          <h1 style={{ fontFamily: 'var(--font-fraunces, serif)', fontSize: '28px', fontWeight: 300, color: navy, margin: 0 }}>
+          <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '28px', fontWeight: 300, color: navy, margin: 0 }}>
             Données agrégées : Leads Nexalie
           </h1>
         </div>
@@ -94,7 +94,7 @@ export default async function InstitutionsDashboardPage({ searchParams }) {
             <div key={i} style={{ background: '#fff', border: '1px solid #E2E8F0', borderRadius: '8px', padding: '24px 20px', boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}>
               <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '9px', textTransform: 'uppercase', letterSpacing: '0.15em', color: '#94A3B8', marginBottom: '8px' }}>{k.label}</p>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-                <span style={{ fontFamily: 'var(--font-fraunces, serif)', fontSize: '32px', fontWeight: 300, color: navy }}>{k.value}</span>
+                <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '32px', fontWeight: 300, color: navy }}>{k.value}</span>
                 <span style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '10px', color: '#94A3B8' }}>{k.unit}</span>
               </div>
             </div>

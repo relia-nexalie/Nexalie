@@ -38,7 +38,7 @@ export default async function BetaPage() {
           <div style={{ display: 'inline-block', background: `${TEAL}20`, border: `1px solid ${TEAL}40`, color: TEAL, fontSize: '11px', fontWeight: 700, letterSpacing: '2px', padding: '6px 16px', borderRadius: '20px', marginBottom: '24px', textTransform: 'uppercase' }}>
             Programme Beta · Places limitées
           </div>
-          <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(28px,5vw,52px)', fontWeight: 300, lineHeight: 1.2, marginBottom: '20px' }}>
+          <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(28px,5vw,52px)', fontWeight: 300, lineHeight: 1.2, marginBottom: '20px' }}>
             Accès anticipé Nexalie
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '17px', lineHeight: 1.7, marginBottom: '36px' }}>
@@ -74,7 +74,7 @@ export default async function BetaPage() {
       {/* CE QUE VOUS OBTENEZ */}
       <section style={{ padding: 'clamp(48px,6vw,80px) 24px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(22px,3.5vw,36px)', fontWeight: 300, textAlign: 'center', marginBottom: '48px' }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(22px,3.5vw,36px)', fontWeight: 300, textAlign: 'center', marginBottom: '48px' }}>
             Ce que vous obtenez
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px,1fr))', gap: '20px' }}>
@@ -99,7 +99,7 @@ export default async function BetaPage() {
       {/* PROFIL RECHERCHÉ */}
       <section style={{ background: '#F8FAFC', padding: 'clamp(40px,5vw,64px) 24px' }}>
         <div style={{ maxWidth: '680px', margin: '0 auto' }}>
-          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(20px,3vw,30px)', fontWeight: 300, textAlign: 'center', marginBottom: '32px' }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(20px,3vw,30px)', fontWeight: 300, textAlign: 'center', marginBottom: '32px' }}>
             Profil recherché
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -122,7 +122,7 @@ export default async function BetaPage() {
       {/* FORMULAIRE */}
       <section id="formulaire" style={{ padding: 'clamp(48px,6vw,80px) 24px' }}>
         <div style={{ maxWidth: '600px', margin: '0 auto' }}>
-          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(22px,3.5vw,36px)', fontWeight: 300, textAlign: 'center', marginBottom: '8px' }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(22px,3.5vw,36px)', fontWeight: 300, textAlign: 'center', marginBottom: '8px' }}>
             {remaining > 0 ? 'Réserver ma place' : 'Rejoindre la liste d\'attente'}
           </h2>
           <p style={{ textAlign: 'center', color: '#6B7A94', fontSize: '14px', marginBottom: '32px' }}>

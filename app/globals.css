@@ -14,13 +14,11 @@
   /* Accent dynamique selon langue (mis à jour via JS dans LangProvider) */
   --accent:          #C9A24B;   /* fr=or · ln=vert vif · ktu=ambre */
 
-  /* Police titres : Times New Roman institutionnel */
-  --font-fraunces: "Times New Roman", Times, "Liberation Serif", serif;
 }
 
 /* ─── Typographie Nexalie ────────────────────────────────────────────── */
 h1, h2, h3 {
-  font-family: "Times New Roman", Times, "Liberation Serif", serif;
+  font-family: var(--font-display), system-ui, sans-serif;
   letter-spacing: -0.015em;
   line-height: 1.15;
 }
@@ -125,7 +123,7 @@ button:active:not(:disabled) { transform: scale(0.98); }
 
 /* ─── Contenu article blog ──────────────────────────────────────────── */
 .article-content h2 {
-  font-family: Georgia, serif;
+  font-family: var(--font-display), system-ui, sans-serif;
   font-size: 22px;
   font-weight: 600;
   color: #0A1628;

@@ -59,7 +59,7 @@ export default async function VerifyPage({ params }) {
 
       {/* Logo */}
       <Link href="/" style={{ textDecoration: 'none', marginBottom: '48px', display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-        <span style={{ fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 300, color: '#0A1628' }}>Nexalie</span>
+        <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '22px', fontWeight: 300, color: '#0A1628' }}>Nexalie</span>
         <span style={{ fontFamily: 'monospace', fontSize: '9px', letterSpacing: '2.5px', color: '#4EC9B0' }}>AI</span>
       </Link>
 
@@ -69,7 +69,7 @@ export default async function VerifyPage({ params }) {
           /* Code invalide */
           <div style={{ background: '#fff', border: '2px solid #FEE2E2', borderRadius: '16px', padding: '48px 32px', textAlign: 'center' }}>
             <div style={{ fontSize: '52px', marginBottom: '20px' }}>❌</div>
-            <h1 style={{ fontFamily: 'Georgia, serif', fontSize: '26px', fontWeight: 300, color: '#0A1628', marginBottom: '12px' }}>
+            <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '26px', fontWeight: 300, color: '#0A1628', marginBottom: '12px' }}>
               Certificat introuvable
             </h1>
             <p style={{ fontSize: '15px', color: '#6B7A94', lineHeight: 1.7, marginBottom: '8px' }}>
@@ -87,7 +87,7 @@ export default async function VerifyPage({ params }) {
           /* Certificat expiré */
           <div style={{ background: '#fff', border: '2px solid #FDE68A', borderRadius: '16px', padding: '48px 32px', textAlign: 'center' }}>
             <div style={{ fontSize: '52px', marginBottom: '20px' }}>⏰</div>
-            <h1 style={{ fontFamily: 'Georgia, serif', fontSize: '26px', fontWeight: 300, color: '#0A1628', marginBottom: '12px' }}>
+            <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '26px', fontWeight: 300, color: '#0A1628', marginBottom: '12px' }}>
               Certificat expiré
             </h1>
             <p style={{ fontSize: '15px', color: '#6B7A94', lineHeight: 1.7, marginBottom: '8px' }}>
@@ -125,7 +125,7 @@ export default async function VerifyPage({ params }) {
                 Certifie que
               </p>
 
-              <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(20px,4vw,32px)', fontWeight: 400, color: '#0A1628', marginBottom: '6px' }}>
+              <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(20px,4vw,32px)', fontWeight: 400, color: '#0A1628', marginBottom: '6px' }}>
                 {orgName}
               </h2>
 
@@ -142,7 +142,7 @@ export default async function VerifyPage({ params }) {
                 </p>
               </div>
 
-              <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '20px', fontWeight: 400, color: '#0A1628', marginBottom: '16px' }}>
+              <h3 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '20px', fontWeight: 400, color: '#0A1628', marginBottom: '16px' }}>
                 est <span style={{ color: '#C9A84C', fontWeight: 700 }}>Nexalie Digital Ready</span>
               </h3>
 

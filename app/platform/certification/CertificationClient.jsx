@@ -22,7 +22,7 @@ export default function CertificationClient({ score, eligible, scoreMin, certifi
       {/* Header */}
       <div style={{ background: navy, padding: '48px 24px 40px', color: '#fff', textAlign: 'center' }}>
         <p style={{ fontSize: '11px', letterSpacing: '3px', color: accent, textTransform: 'uppercase', marginBottom: '12px' }}>Certification</p>
-        <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(24px,4vw,42px)', fontWeight: 300, marginBottom: '10px' }}>
+        <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(24px,4vw,42px)', fontWeight: 300, marginBottom: '10px' }}>
           Badge Nexalie Digital Ready
         </h1>
         <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '15px' }}>
@@ -36,7 +36,7 @@ export default function CertificationClient({ score, eligible, scoreMin, certifi
           /* Pas encore éligible */
           <div style={{ background: '#fff', borderRadius: '16px', padding: '48px 32px', textAlign: 'center', border: '2px solid rgba(0,0,0,0.07)' }}>
             <div style={{ fontSize: '56px', marginBottom: '20px' }}>🎯</div>
-            <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '28px', fontWeight: 300, color: navy, marginBottom: '12px' }}>
+            <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '28px', fontWeight: 300, color: navy, marginBottom: '12px' }}>
               Score actuel : {score}/100
             </h2>
             <p style={{ fontSize: '16px', color: '#6B7A94', lineHeight: 1.7, marginBottom: '8px' }}>
@@ -78,7 +78,7 @@ export default function CertificationClient({ score, eligible, scoreMin, certifi
               }}
             >
               {/* Watermark */}
-              <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%) rotate(-20deg)', fontSize: '120px', opacity: 0.03, pointerEvents: 'none', fontFamily: 'Georgia, serif' }}>
+              <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%) rotate(-20deg)', fontSize: '120px', opacity: 0.03, pointerEvents: 'none', fontFamily: 'var(--font-display, system-ui, sans-serif)' }}>
                 Nexalie
               </div>
 
@@ -90,7 +90,7 @@ export default function CertificationClient({ score, eligible, scoreMin, certifi
               <p style={{ fontSize: '11px', letterSpacing: '3px', color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '12px' }}>
                 Certifie que
               </p>
-              <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(22px,4vw,36px)', fontWeight: 400, color: navy, marginBottom: '6px' }}>
+              <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(22px,4vw,36px)', fontWeight: 400, color: navy, marginBottom: '6px' }}>
                 {orgName}
               </h2>
               {secteur && (
@@ -102,7 +102,7 @@ export default function CertificationClient({ score, eligible, scoreMin, certifi
                 <p style={{ fontSize: '48px', fontWeight: 900, color: accent, lineHeight: 1 }}>{score}<span style={{ fontSize: '20px', color: '#9CA3AF' }}>/100</span></p>
               </div>
 
-              <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 400, color: navy, marginBottom: '8px' }}>
+              <h3 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '22px', fontWeight: 400, color: navy, marginBottom: '8px' }}>
                 est <span style={{ color: gold, fontWeight: 700 }}>Nexalie Digital Ready</span>
               </h3>
               <p style={{ fontSize: '13px', color: '#9CA3AF', marginBottom: '28px' }}>
@@ -127,7 +127,7 @@ export default function CertificationClient({ score, eligible, scoreMin, certifi
               )}
 
               <div style={{ marginTop: '28px', paddingTop: '20px', borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-                <p style={{ fontSize: '12px', color: '#9CA3AF', fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+                <p style={{ fontSize: '12px', color: '#9CA3AF', fontFamily: 'var(--font-display, system-ui, sans-serif)', fontStyle: 'italic' }}>
                   Nexalie — Intelligence Artificielle pour PME · nexalie.co
                 </p>
               </div>

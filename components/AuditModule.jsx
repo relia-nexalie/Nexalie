@@ -1872,10 +1872,10 @@ Génère maintenant le rapport complet en respectant strictement la structure de
           {/* Score indicatif */}
           <div style={{ textAlign: 'center', marginBottom: '28px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'baseline', gap: '4px', background: `${gold}12`, border: `1px solid ${gold}30`, borderRadius: '40px', padding: '8px 20px', marginBottom: '20px' }}>
-              <span style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: '28px', fontWeight: 300, color: navy }}>{pendingScore}</span>
+              <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '28px', fontWeight: 300, color: navy }}>{pendingScore}</span>
               <span style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '11px', color: '#94A3B8' }}>/ 100</span>
             </div>
-            <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: '22px', fontWeight: 300, color: navy, marginBottom: '10px', lineHeight: 1.3 }}>
+            <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '22px', fontWeight: 300, color: navy, marginBottom: '10px', lineHeight: 1.3 }}>
               Recevez votre rapport complet
             </h2>
             <p style={{ fontSize: '14px', color: '#64748B', lineHeight: 1.7 }}>

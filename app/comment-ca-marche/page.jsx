@@ -59,7 +59,7 @@ export default function CommentCaMarchePage() {
       <nav style={{ background: '#0A1628', padding: '0 32px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '60px' }}>
           <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-            <span style={{ fontFamily: 'Georgia, serif', fontSize: '20px', fontWeight: 300, color: '#fff' }}>Nexalie</span>
+            <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '20px', fontWeight: 300, color: '#fff' }}>Nexalie</span>
             <span style={{ fontFamily: 'monospace', fontSize: '9px', letterSpacing: '2.5px', color: '#4EC9B0' }}>AI</span>
           </Link>
           <Link href="/audit" style={{ padding: '8px 20px', background: '#4EC9B0', borderRadius: '8px', color: '#fff', fontSize: '13px', fontWeight: 700, textDecoration: 'none' }}>
@@ -73,7 +73,7 @@ export default function CommentCaMarchePage() {
         <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: 'rgba(255,255,255,0.4)', marginBottom: '16px', textTransform: 'uppercase' }}>
           Processus
         </p>
-        <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(28px,5vw,52px)', fontWeight: 300, color: '#fff', marginBottom: '16px', lineHeight: 1.2 }}>
+        <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(28px,5vw,52px)', fontWeight: 300, color: '#fff', marginBottom: '16px', lineHeight: 1.2 }}>
           Comment ça marche
         </h1>
         <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.55)', maxWidth: '520px', margin: '0 auto 32px', lineHeight: 1.7 }}>
@@ -101,7 +101,7 @@ export default function CommentCaMarchePage() {
               {/* Contenu */}
               <div>
                 <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '2px', color: step.color, marginBottom: '8px', textTransform: 'uppercase' }}>Étape {step.num}</p>
-                <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(22px,3vw,32px)', fontWeight: 300, color: '#0A1628', marginBottom: '6px' }}>
+                <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(22px,3vw,32px)', fontWeight: 300, color: '#0A1628', marginBottom: '6px' }}>
                   {step.title}
                 </h2>
                 <p style={{ fontSize: '13px', color: '#6B7A94', fontFamily: 'monospace', marginBottom: '20px', letterSpacing: '0.5px' }}>{step.sub}</p>
@@ -130,7 +130,7 @@ export default function CommentCaMarchePage() {
       {/* FAQ rapide */}
       <section style={{ padding: '64px 24px', background: '#fff', borderTop: '1px solid rgba(0,0,0,0.06)', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
         <div style={{ maxWidth: '700px', margin: '0 auto' }}>
-          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '24px', fontWeight: 300, color: '#0A1628', textAlign: 'center', marginBottom: '36px' }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '24px', fontWeight: 300, color: '#0A1628', textAlign: 'center', marginBottom: '36px' }}>
             Questions fréquentes
           </h2>
           {[
@@ -150,7 +150,7 @@ export default function CommentCaMarchePage() {
       {/* CTA */}
       <section style={{ padding: '72px 24px', background: '#0A1628', textAlign: 'center' }}>
         <p style={{ fontSize: '40px', marginBottom: '16px' }}>🚀</p>
-        <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(24px,4vw,36px)', fontWeight: 300, color: '#fff', marginBottom: '12px' }}>
+        <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(24px,4vw,36px)', fontWeight: 300, color: '#fff', marginBottom: '12px' }}>
           Prêt à découvrir votre score ?
         </h2>
         <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.55)', marginBottom: '32px' }}>

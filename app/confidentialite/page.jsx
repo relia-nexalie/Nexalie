@@ -62,7 +62,7 @@ export default function ConfidentialitePage() {
             </p>
           </div>
 
-          <h1 style={{ fontFamily: 'var(--font-fraunces, serif)', fontSize: 'clamp(24px, 4vw, 36px)', fontWeight: 300, color: navy, marginBottom: '16px', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(24px, 4vw, 36px)', fontWeight: 300, color: navy, marginBottom: '16px', letterSpacing: '-0.02em' }}>
             Politique de confidentialité
           </h1>
           <p style={{ fontSize: '14px', color: '#64748B', lineHeight: 1.7, marginBottom: '56px' }}>
@@ -72,7 +72,7 @@ export default function ConfidentialitePage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
             {sections.map((s) => (
               <div key={s.title}>
-                <h2 style={{ fontFamily: 'var(--font-fraunces, serif)', fontSize: '18px', fontWeight: 400, color: navy, marginBottom: '14px' }}>{s.title}</h2>
+                <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '18px', fontWeight: 400, color: navy, marginBottom: '14px' }}>{s.title}</h2>
                 <div style={{ fontSize: '14px', color: '#475569', lineHeight: 1.8, whiteSpace: 'pre-line' }}>{s.body}</div>
               </div>
             ))}

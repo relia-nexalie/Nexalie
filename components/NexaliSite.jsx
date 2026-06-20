@@ -60,7 +60,7 @@ export default function NexaliSite() {
               </span>
             </div>
 
-            <h1 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(32px,5vw,54px)', fontWeight: 300, color: '#fff', lineHeight: 1.15, marginBottom: '20px', letterSpacing: '-0.02em' }}>
+            <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(32px,5vw,54px)', fontWeight: 300, color: '#fff', lineHeight: 1.15, marginBottom: '20px', letterSpacing: '-0.02em' }}>
               La boussole numérique<br />
               des <em style={{ color: GOLD, fontStyle: 'italic' }}>PME africaines</em>
             </h1>
@@ -111,7 +111,7 @@ export default function NexaliSite() {
       <section style={{ background: CREAM, padding: '56px 24px', borderBottom: '1px solid #E2E8F0' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '2.5px', color: GOLD, textAlign: 'center', marginBottom: '8px', textTransform: 'uppercase' }}>Contexte</p>
-          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(26px,3.5vw,38px)', fontWeight: 400, color: NAVY, textAlign: 'center', marginBottom: '40px', letterSpacing: '-0.01em' }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(26px,3.5vw,38px)', fontWeight: 400, color: NAVY, textAlign: 'center', marginBottom: '40px', letterSpacing: '-0.01em' }}>
             Les PME africaines portent 95 % de l&apos;économie réelle, mais manquent d&apos;outils numériques adaptés
           </h2>
           <div className="nx-context-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px' }}>
@@ -122,7 +122,7 @@ export default function NexaliSite() {
               { value: '< 12 %', label: 'ont des outils numériques actifs', note: 'Estimation Nexalie, 2024' },
             ].map((s, i) => (
               <div key={i} className="card-hover reveal" style={{ padding: '24px 20px', background: '#fff', border: '1px solid #E2E8F0', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.04)', transitionDelay: `${i * 80}ms` }}>
-                <p style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: '32px', fontWeight: 300, color: NAVY, marginBottom: '6px' }}>{s.value}</p>
+                <p style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '32px', fontWeight: 300, color: NAVY, marginBottom: '6px' }}>{s.value}</p>
                 <p style={{ fontSize: '13px', fontWeight: 600, color: TEXT, marginBottom: '6px', lineHeight: 1.4 }}>{s.label}</p>
                 <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '9px', color: '#94A3B8', lineHeight: 1.5 }}>{s.note}</p>
               </div>
@@ -142,7 +142,7 @@ export default function NexaliSite() {
       <section style={{ padding: '72px 24px', background: NAVY, overflow: 'hidden' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '2.5px', color: 'rgba(201,168,76,0.7)', textAlign: 'center', marginBottom: '10px', textTransform: 'uppercase' }}>Processus</p>
-          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(34px,5vw,50px)', fontWeight: 400, color: '#fff', textAlign: 'center', marginBottom: '6px', letterSpacing: '-0.01em' }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(34px,5vw,50px)', fontWeight: 400, color: '#fff', textAlign: 'center', marginBottom: '6px', letterSpacing: '-0.01em' }}>
             Comment ça fonctionne
           </h2>
           <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.55)', textAlign: 'center', marginBottom: '48px' }}>20 questions. Un score. Trois actions. Sans consultant.</p>
@@ -168,7 +168,7 @@ export default function NexaliSite() {
               <div key={step.num} style={{ position: 'relative', padding: '32px 24px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(201,168,76,0.2)', borderRadius: '8px', overflow: 'hidden' }}>
                 <span style={{
                   position: 'absolute', top: '-10px', right: '12px',
-                  fontFamily: 'var(--font-fraunces, Georgia, serif)',
+                  fontFamily: 'var(--font-display, system-ui, sans-serif)',
                   fontSize: '120px', fontWeight: 300,
                   color: 'rgba(255,255,255,0.05)', lineHeight: 1,
                   pointerEvents: 'none', userSelect: 'none',
@@ -193,7 +193,7 @@ export default function NexaliSite() {
         <div className="nx-platform-grid" style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
           <div>
             <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '2.5px', color: GOLD, marginBottom: '10px', textTransform: 'uppercase' }}>Plateforme</p>
-            <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(30px,4vw,44px)', fontWeight: 400, color: NAVY, marginBottom: '16px', lineHeight: 1.2, letterSpacing: '-0.01em' }}>
+            <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(30px,4vw,44px)', fontWeight: 400, color: NAVY, marginBottom: '16px', lineHeight: 1.2, letterSpacing: '-0.01em' }}>
               Les outils adaptés à la réalité des PME africaines
             </h2>
             <p style={{ fontSize: '15px', color: MUTED, lineHeight: 1.8, marginBottom: '28px' }}>
@@ -234,7 +234,7 @@ export default function NexaliSite() {
       <section style={{ padding: '72px 24px', background: '#fff', borderTop: '1px solid #E2E8F0' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '2.5px', color: GOLD, textAlign: 'center', marginBottom: '8px', textTransform: 'uppercase' }}>Terrain</p>
-          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(26px,3.5vw,38px)', fontWeight: 400, color: NAVY, textAlign: 'center', marginBottom: '8px', letterSpacing: '-0.01em' }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(26px,3.5vw,38px)', fontWeight: 400, color: NAVY, textAlign: 'center', marginBottom: '8px', letterSpacing: '-0.01em' }}>
             Ce que ça change, concrètement
           </h2>
           <p style={{ textAlign: 'center', fontSize: '12px', color: '#94A3B8', fontFamily: 'var(--font-mono, monospace)', marginBottom: '40px', letterSpacing: '0.05em' }}>
@@ -259,7 +259,7 @@ export default function NexaliSite() {
       <section style={{ padding: '72px 24px', background: '#fff', borderTop: '1px solid #E2E8F0' }}>
         <div style={{ maxWidth: '760px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '2.5px', color: GOLD, marginBottom: '12px', textTransform: 'uppercase' }}>Notre raison d&apos;être</p>
-          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(30px,4vw,44px)', fontWeight: 400, color: NAVY, marginBottom: '20px', lineHeight: 1.2, letterSpacing: '-0.01em' }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(30px,4vw,44px)', fontWeight: 400, color: NAVY, marginBottom: '20px', lineHeight: 1.2, letterSpacing: '-0.01em' }}>
             Née ici. Pensée pour ici.
           </h2>
           <p style={{ fontSize: '15px', color: MUTED, lineHeight: 1.9, marginBottom: '28px', maxWidth: '600px', margin: '0 auto 28px' }}>
@@ -277,7 +277,7 @@ export default function NexaliSite() {
           <div style={{ display: 'flex', gap: '32px', alignItems: 'center', flexWrap: 'wrap' }}>
             <div style={{ flex: 1, minWidth: '280px' }}>
               <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '2.5px', color: GOLD, marginBottom: '10px', textTransform: 'uppercase' }}>Pour les institutions</p>
-              <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(26px,3.5vw,38px)', fontWeight: 400, color: NAVY, marginBottom: '14px', lineHeight: 1.2, letterSpacing: '-0.01em' }}>
+              <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(26px,3.5vw,38px)', fontWeight: 400, color: NAVY, marginBottom: '14px', lineHeight: 1.2, letterSpacing: '-0.01em' }}>
                 Vous financez leur développement. Nexalie vous montre où votre impact est le plus fort.
               </h2>
               <p style={{ fontSize: '14px', color: MUTED, lineHeight: 1.7, marginBottom: '24px' }}>
@@ -295,7 +295,7 @@ export default function NexaliSite() {
                 { v: '5 min', l: 'par diagnostic' },
               ].map((s) => (
                 <div key={s.l} style={{ background: '#fff', border: '1px solid #E2E8F0', borderRadius: '8px', padding: '16px 14px', textAlign: 'center' }}>
-                  <p style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: '24px', fontWeight: 300, color: NAVY, marginBottom: '4px' }}>{s.v}</p>
+                  <p style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '24px', fontWeight: 300, color: NAVY, marginBottom: '4px' }}>{s.v}</p>
                   <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '9px', color: MUTED, letterSpacing: '0.05em', lineHeight: 1.4 }}>{s.l}</p>
                 </div>
               ))}
@@ -307,7 +307,7 @@ export default function NexaliSite() {
       {/* ── CTA FINAL ──────────────────────────────────────────────── */}
       <section style={{ padding: '80px 24px', background: NAVY }}>
         <div style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontFamily: 'var(--font-fraunces, Georgia, serif)', fontSize: 'clamp(34px,5vw,52px)', fontWeight: 400, color: '#fff', marginBottom: '12px', lineHeight: 1.15, letterSpacing: '-0.01em' }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(34px,5vw,52px)', fontWeight: 400, color: '#fff', marginBottom: '12px', lineHeight: 1.15, letterSpacing: '-0.01em' }}>
             Faites le point sur votre numérique.<br />
             <em style={{ color: GOLD, fontStyle: 'italic' }}>En 20 minutes, gratuitement.</em>
           </h2>

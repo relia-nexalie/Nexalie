@@ -70,7 +70,7 @@ export default function ProgressClient({ audits, benchmarks, userMode, userSecte
           <p style={{ fontSize: '11px', letterSpacing: '3px', color: accent, textTransform: 'uppercase', marginBottom: '10px' }}>
             Progression
           </p>
-          <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(24px,4vw,42px)', fontWeight: 300, marginBottom: '10px' }}>
+          <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(24px,4vw,42px)', fontWeight: 300, marginBottom: '10px' }}>
             Votre évolution dans le temps
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '15px' }}>
@@ -85,7 +85,7 @@ export default function ProgressClient({ audits, benchmarks, userMode, userSecte
         {audits.length === 0 ? (
           <div style={{ background: '#fff', borderRadius: '16px', padding: '60px 24px', textAlign: 'center', border: '2px dashed rgba(0,0,0,0.08)' }}>
             <div style={{ fontSize: '48px', marginBottom: '16px' }}>📊</div>
-            <h2 style={{ fontFamily: 'Georgia, serif', fontSize: '24px', fontWeight: 300, color: navy, marginBottom: '12px' }}>
+            <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '24px', fontWeight: 300, color: navy, marginBottom: '12px' }}>
               Pas encore d'audit
             </h2>
             <p style={{ fontSize: '15px', color: '#6B7A94', marginBottom: '28px' }}>

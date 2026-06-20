@@ -107,7 +107,7 @@ export default function MarqueBlanchePage() {
           <p style={{ fontSize: '11px', letterSpacing: '3px', color: accent, textTransform: 'uppercase', marginBottom: '16px' }}>
             Solution B2B · Marque Blanche
           </p>
-          <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(28px,5vw,52px)', fontWeight: 300, lineHeight: 1.2, marginBottom: '20px' }}>
+          <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(28px,5vw,52px)', fontWeight: 300, lineHeight: 1.2, marginBottom: '20px' }}>
             Déployez Nexalie<br />sous votre marque
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '17px', lineHeight: 1.7, marginBottom: '36px' }}>
@@ -153,7 +153,7 @@ export default function MarqueBlanchePage() {
       <section style={{ padding: 'clamp(48px,6vw,80px) 24px' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <p style={{ fontSize: '11px', letterSpacing: '3px', color: accent, textTransform: 'uppercase', textAlign: 'center', marginBottom: '12px' }}>Cas d'usage</p>
-          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(22px,3.5vw,36px)', fontWeight: 300, textAlign: 'center', marginBottom: '48px' }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(22px,3.5vw,36px)', fontWeight: 300, textAlign: 'center', marginBottom: '48px' }}>
             Pour qui ?
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px,1fr))', gap: '24px' }}>
@@ -179,7 +179,7 @@ export default function MarqueBlanchePage() {
       {/* PROCESSUS */}
       <section style={{ background: '#F8FAFC', padding: 'clamp(48px,6vw,80px) 24px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(22px,3.5vw,36px)', fontWeight: 300, textAlign: 'center', marginBottom: '48px' }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(22px,3.5vw,36px)', fontWeight: 300, textAlign: 'center', marginBottom: '48px' }}>
             3 étapes pour démarrer
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
@@ -200,7 +200,7 @@ export default function MarqueBlanchePage() {
       <section id="tarifs" style={{ padding: 'clamp(48px,6vw,80px) 24px' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <p style={{ fontSize: '11px', letterSpacing: '3px', color: accent, textTransform: 'uppercase', textAlign: 'center', marginBottom: '12px' }}>Licences</p>
-          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(22px,3.5vw,36px)', fontWeight: 300, textAlign: 'center', marginBottom: '48px' }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(22px,3.5vw,36px)', fontWeight: 300, textAlign: 'center', marginBottom: '48px' }}>
             Tarifs transparents
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px,1fr))', gap: '20px' }}>
@@ -253,7 +253,7 @@ export default function MarqueBlanchePage() {
       <section id="contact" style={{ background: '#F8FAFC', padding: 'clamp(48px,6vw,80px) 24px' }}>
         <div style={{ maxWidth: '600px', margin: '0 auto' }}>
           <p style={{ fontSize: '11px', letterSpacing: '3px', color: accent, textTransform: 'uppercase', textAlign: 'center', marginBottom: '12px' }}>Contact</p>
-          <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(22px,3.5vw,36px)', fontWeight: 300, textAlign: 'center', marginBottom: '32px' }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(22px,3.5vw,36px)', fontWeight: 300, textAlign: 'center', marginBottom: '32px' }}>
             Parlons de votre projet
           </h2>
 

@@ -125,7 +125,7 @@ function Step1({ mode, data, onChange }) {
 
   return (
     <div>
-      <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(22px,3.5vw,32px)', fontWeight: 300, color: 'var(--nx-text-primary)', marginBottom: '8px' }}>
+      <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(22px,3.5vw,32px)', fontWeight: 300, color: 'var(--nx-text-primary)', marginBottom: '8px' }}>
         Qui es-tu ?
       </h2>
       <p style={{ fontSize: '15px', color: 'var(--nx-text-secondary)', marginBottom: '32px', lineHeight: 1.6 }}>
@@ -200,7 +200,7 @@ function Step2({ mode, onGoAudit, onSkip }) {
   return (
     <div style={{ textAlign: 'center' }}>
       <div style={{ fontSize: '48px', marginBottom: '20px' }}>📊</div>
-      <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(22px,3.5vw,32px)', fontWeight: 300, color: 'var(--nx-text-primary)', marginBottom: '12px' }}>
+      <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(22px,3.5vw,32px)', fontWeight: 300, color: 'var(--nx-text-primary)', marginBottom: '12px' }}>
         Connais-tu ton niveau numérique ?
       </h2>
       <p style={{ fontSize: '15px', color: 'var(--nx-text-secondary)', marginBottom: '36px', lineHeight: 1.7, maxWidth: '400px', margin: '0 auto 36px' }}>
@@ -230,7 +230,7 @@ function Step3({ mode, data, onChange }) {
 
   return (
     <div>
-      <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(22px,3.5vw,32px)', fontWeight: 300, color: 'var(--nx-text-primary)', marginBottom: '8px' }}>
+      <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(22px,3.5vw,32px)', fontWeight: 300, color: 'var(--nx-text-primary)', marginBottom: '8px' }}>
         Quel est ton objectif principal ?
       </h2>
       <p style={{ fontSize: '15px', color: 'var(--nx-text-secondary)', marginBottom: '28px', lineHeight: 1.6 }}>
@@ -292,7 +292,7 @@ function Step4({ mode, userName, onFinish, finishing }) {
 
   return (
     <div>
-      <h2 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(20px,3vw,28px)', fontWeight: 300, color: 'var(--nx-text-primary)', marginBottom: '6px' }}>
+      <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(20px,3vw,28px)', fontWeight: 300, color: 'var(--nx-text-primary)', marginBottom: '6px' }}>
         Découvre tes outils en 60 sec
       </h2>
       <p style={{ fontSize: '14px', color: 'var(--nx-text-secondary)', marginBottom: '28px' }}>
@@ -465,7 +465,7 @@ export default function OnboardingFlow({ userName, initialMode }) {
         {/* Logo */}
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <a href="/" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'baseline', gap: '6px' }}>
-            <span style={{ fontFamily: 'Georgia, serif', fontSize: '22px', fontWeight: 300, color: 'var(--nx-text-primary)' }}>Nexalie</span>
+            <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '22px', fontWeight: 300, color: 'var(--nx-text-primary)' }}>Nexalie</span>
             <span style={{ fontFamily: 'monospace', fontSize: '9px', letterSpacing: '2.5px', color: 'var(--nx-accent)' }}>AI</span>
           </a>
         </div>

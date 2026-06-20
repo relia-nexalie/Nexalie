@@ -32,7 +32,7 @@ export default function SuccessPage() {
       <nav style={{ background: T.navyBg, padding: '0 40px', borderBottom: `1px solid ${T.gold}15` }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', alignItems: 'center', height: '60px' }}>
           <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-            <span style={{ fontFamily: 'Georgia, serif', fontSize: '20px', fontWeight: 300, color: '#fff' }}>Nexalie</span>
+            <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '20px', fontWeight: 300, color: '#fff' }}>Nexalie</span>
             <span style={{ fontFamily: 'monospace', fontSize: '9px', letterSpacing: '2.5px', color: T.accent }}>AI</span>
           </Link>
         </div>
@@ -42,7 +42,7 @@ export default function SuccessPage() {
       <div style={{ background: T.navyBg, padding: '72px 40px', textAlign: 'center' }}>
         <div style={{ height: '1px', background: `linear-gradient(90deg,transparent,${T.gold}40,transparent)`, marginBottom: '40px' }} />
         <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '80px', height: '80px', borderRadius: '50%', background: 'rgba(46,155,139,0.15)', border: '2px solid rgba(46,155,139,0.4)', marginBottom: '24px', fontSize: '28px' }}>✓</div>
-        <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(24px,4vw,38px)', fontWeight: 200, color: '#fff', marginBottom: '10px' }}>
+        <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(24px,4vw,38px)', fontWeight: 200, color: '#fff', marginBottom: '10px' }}>
           Bienvenue dans <em style={{ color: T.accent, fontStyle: 'normal' }}>Nexalie Premium</em>
         </h1>
         <p style={{ fontSize: '15px', color: T.textMuted, maxWidth: '480px', margin: '0 auto', lineHeight: 1.8 }}>

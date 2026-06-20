@@ -30,7 +30,7 @@ export default async function ProgressPage() {
         background: '#F8FAFC', textAlign: 'center',
       }}>
         <div style={{ fontSize: '48px', marginBottom: '20px' }}>📈</div>
-        <h1 style={{ fontFamily: 'Georgia, serif', fontSize: 'clamp(24px,4vw,40px)', fontWeight: 300, color: '#0A1628', marginBottom: '12px' }}>
+        <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(24px,4vw,40px)', fontWeight: 300, color: '#0A1628', marginBottom: '12px' }}>
           Suivi de progression
         </h1>
         <p style={{ fontSize: '16px', color: '#6B7A94', maxWidth: '480px', lineHeight: 1.7, marginBottom: '32px' }}>

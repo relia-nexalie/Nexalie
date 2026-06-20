@@ -166,7 +166,7 @@ export default function AccountPage() {
           <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '2.5px', color: TEAL, textTransform: 'uppercase', marginBottom: '6px' }}>
             Nexalie Platform
           </p>
-          <h1 style={{ fontFamily: 'Georgia, serif', fontSize: '26px', fontWeight: 300, color: NAVY, margin: 0 }}>
+          <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '26px', fontWeight: 300, color: NAVY, margin: 0 }}>
             Mon compte
           </h1>
         </div>
