@@ -3,6 +3,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Responsive landing page ────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .lp-nav        { padding: 18px 24px !important; }
+  .lp-nav-links  { display: none !important; }
+  .lp-hero       { grid-template-columns: 1fr !important; padding: 48px 24px 40px !important; gap: 40px !important; }
+  .lp-h1         { font-size: 38px !important; letter-spacing: -1px !important; }
+  .lp-steps      { grid-template-columns: 1fr !important; }
+  .lp-band       { flex-direction: column !important; align-items: flex-start !important; margin: 0 24px 60px !important; padding: 40px 28px !important; }
+  .lp-how        { padding: 56px 24px !important; }
+  .lp-score-num  { font-size: 72px !important; letter-spacing: -3px !important; }
+}
+
 /* ─── Palette Nexalie — tokens unifiés ───────────────────────────────── */
 :root {
   --color-night:   #0F172A;   /* bleu-nuit    : fonds sombres, texte principal */

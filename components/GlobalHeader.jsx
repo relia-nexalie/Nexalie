@@ -22,6 +22,8 @@ export default function GlobalHeader() {
     return () => subscription.unsubscribe();
   }, []);
 
+  if (pathname === '/') return null;
+
   const brand  = 'var(--color-brand)';
   const accent = 'var(--accent, var(--color-gold))';
 
