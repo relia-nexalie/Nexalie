@@ -2,11 +2,15 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import BugReportModal from '@/components/BugReportModal';
 import MotifBackground from '@/components/MotifBackground';
 
 export default function GlobalFooter() {
+  const pathname = usePathname();
   const [showBugModal, setShowBugModal] = useState(false);
+
+  if (pathname === '/') return null;
 
   const brand  = 'var(--color-brand)';
   const accent = 'var(--accent, var(--color-gold))';
