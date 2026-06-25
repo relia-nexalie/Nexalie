@@ -22,7 +22,8 @@ export default function GlobalHeader() {
     return () => subscription.unsubscribe();
   }, []);
 
-  const accent = 'var(--color-gold)';
+  const brand  = 'var(--color-brand)';
+  const accent = 'var(--accent, var(--color-gold))';
 
   const links = [
     { href: '/',             label: t('nav_home') },
@@ -39,7 +40,7 @@ export default function GlobalHeader() {
       position: 'sticky',
       top: 0,
       zIndex: 1000,
-      background: 'rgba(15,23,42,0.95)',
+      background: `rgba(31,95,74,0.97)`,
       backdropFilter: 'blur(12px)',
       borderBottom: '1px solid rgba(255,255,255,0.06)',
     }}>
@@ -132,7 +133,7 @@ export default function GlobalHeader() {
       {open && (
         <div
           className="global-nav-mobile"
-          style={{ background: '#1e293b', borderTop: '1px solid rgba(255,255,255,0.06)', padding: '16px 24px 24px' }}
+          style={{ background: brand, borderTop: '1px solid rgba(255,255,255,0.06)', padding: '16px 24px 24px' }}
         >
           <div style={{ marginBottom: '16px' }}>
             <LanguageToggle />

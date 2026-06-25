@@ -3,29 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Responsive landing page ────────────────────────────────────────── */
-@media (max-width: 860px) {
-  .lp-nav        { padding: 18px 24px !important; }
-  .lp-nav-links  { display: none !important; }
-  .lp-hero       { grid-template-columns: 1fr !important; padding: 48px 24px 40px !important; gap: 40px !important; }
-  .lp-h1         { font-size: 38px !important; letter-spacing: -1px !important; }
-  .lp-steps      { grid-template-columns: 1fr !important; }
-  .lp-band       { flex-direction: column !important; align-items: flex-start !important; margin: 0 24px 60px !important; padding: 40px 28px !important; }
-  .lp-how        { padding: 56px 24px !important; }
-  .lp-score-num  { font-size: 72px !important; letter-spacing: -3px !important; }
-}
-
 /* ─── Palette Nexalie — tokens unifiés ───────────────────────────────── */
 :root {
-  --color-night:   #0F172A;   /* navy profond  : fond principal               */
-  --color-brand:   #1E293B;   /* navy2         : fonds cartes, header, footer */
-  --color-gold:    #f59e0b;   /* or ambre      : accent unique                */
-  --color-ivory:   #F8F6F1;   /* ivoire        : fonds clairs                 */
-  --color-muted:   #94a3b8;   /* slate         : texte secondaire             */
-  --color-snow:    #f8fafc;   /* blanc doux    : texte principal              */
+  --color-night:   #0F172A;   /* bleu-nuit    : fonds sombres, texte principal */
+  --color-brand:   #1F5F4A;   /* vert-profond : CTA, liens, états actifs      */
+  --color-gold:    #C8A96B;   /* or-doux      : accents/détails uniquement    */
+  --color-ivory:   #F8F6F1;   /* ivoire       : fonds clairs, cartes          */
+  --color-muted:   #4B5563;   /* gris-ardoise : texte secondaire              */
 
-  /* Accent dynamique */
-  --accent:        #f59e0b;
+  /* Accent dynamique selon langue (mis à jour via JS dans LangProvider) */
+  --accent:        #C8A96B;   /* fr=or-doux · ln=vert-profond · ktu=or-doux  */
 }
 
 /* ─── Typographie Nexalie ────────────────────────────────────────────── */
