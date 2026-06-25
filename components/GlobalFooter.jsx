@@ -10,10 +10,7 @@ export default function GlobalFooter() {
   const pathname = usePathname();
   const [showBugModal, setShowBugModal] = useState(false);
 
-  if (pathname === '/') return null;
-
-  const brand  = 'var(--color-brand)';
-  const accent = 'var(--accent, var(--color-gold))';
+  const accent = 'var(--color-gold)';
   const year   = new Date().getFullYear();
 
   const cols = [
@@ -44,7 +41,7 @@ export default function GlobalFooter() {
   ];
 
   return (
-    <footer style={{ position: 'relative', background: brand, color: '#fff', padding: '56px 24px 32px' }}>
+    <footer style={{ position: 'relative', background: '#0f172a', color: '#f8fafc', padding: '56px 24px 32px', borderTop: '1px solid rgba(148,163,184,.15)' }}>
       <MotifBackground name="lovata" opacity={0.20} />
       <div style={{ position: 'relative', zIndex: 1, maxWidth: '1100px', margin: '0 auto' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1.5fr repeat(3, 1fr)', gap: '40px', marginBottom: '48px' }}>

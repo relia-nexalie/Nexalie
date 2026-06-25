@@ -29,34 +29,6 @@ export default function NexaliSite() {
   return (
     <div style={{ background: '#0f172a', color: '#f8fafc', fontFamily: 'var(--font-jakarta, "Plus Jakarta Sans", sans-serif)', minHeight: '100vh' }}>
 
-      {/* ── NAV ────────────────────────────────────────────────────── */}
-      <nav className="lp-nav" style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: '24px 48px',
-        borderBottom: '1px solid rgba(148,163,184,.15)',
-        position: 'sticky',
-        top: 0,
-        background: 'rgba(15,23,42,.92)',
-        backdropFilter: 'blur(16px)',
-        WebkitBackdropFilter: 'blur(16px)',
-        zIndex: 100,
-      }}>
-        <div style={{ fontSize: 20, fontWeight: 800, letterSpacing: '-0.5px' }}>
-          Nexalie<span style={{ color: '#f59e0b' }}>.</span>
-        </div>
-
-        <div className="lp-nav-links" style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
-          <Link href="/audit"             style={{ fontSize: 14, fontWeight: 500, color: '#94a3b8', textDecoration: 'none' }}>Le diagnostic</Link>
-          <Link href="#comment-ca-marche" style={{ fontSize: 14, fontWeight: 500, color: '#94a3b8', textDecoration: 'none' }}>Comment ça marche</Link>
-          <Link href="/pricing"           style={{ fontSize: 14, fontWeight: 500, color: '#94a3b8', textDecoration: 'none' }}>Tarif</Link>
-          <Link href="/audit" style={{ background: '#f59e0b', color: '#0f172a', fontWeight: 700, fontSize: 14, padding: '10px 20px', borderRadius: 8, textDecoration: 'none' }}>
-            Commencer
-          </Link>
-        </div>
-      </nav>
-
       {/* ── HERO ────────────────────────────────────────────────────── */}
       <section className="lp-hero" style={{
         maxWidth: 1200,
