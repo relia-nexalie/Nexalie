@@ -2271,8 +2271,10 @@ Génère maintenant le rapport complet en respectant strictement la structure de
             <button
               onClick={handlePrint}
               disabled={pdfLoading}
-              style={{ background: 'var(--nx-accent)', border: 'none', cursor: pdfLoading ? 'default' : 'pointer', opacity: pdfLoading ? 0.75 : 1 }}
-              className="inline-flex items-center justify-center gap-2 rounded-md px-8 py-4 font-sans text-sm font-medium text-white transition-colors"
+              className={`inline-flex items-center justify-center gap-2 rounded-md px-8 py-4 font-sans text-sm font-medium text-white transition-colors ${
+                pdfLoading ? 'cursor-default opacity-70' : 'cursor-pointer'
+              }`}
+              style={{ background: 'var(--nx-bg)', border: 'none' }}
             >
               <span>{pdfLoading ? '⏳' : '↓'}</span>
               {pdfLoading ? 'Génération en cours...' : T.download}
