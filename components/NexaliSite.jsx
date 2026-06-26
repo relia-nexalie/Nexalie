@@ -77,7 +77,7 @@ export default function NexaliSite() {
             </p>
 
             <div className="nx-hero-buttons" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '20px' }}>
-              <Link href="/audit" style={{ padding: '15px 30px', background: ACTION, borderRadius: '8px', color: '#fff', fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'inline-block', boxShadow: '0 8px 24px rgba(212,144,12,.35)' }}>
+              <Link href="/audit" style={{ padding: '15px 30px', background: ACCENT, borderRadius: '8px', color: '#0f2e24', fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'inline-block', boxShadow: '0 8px 24px rgba(201,162,75,.25)' }}>
                 Je fais mon diagnostic gratuit
               </Link>
               <Link href="/audit" style={{ padding: '15px 28px', background: 'rgba(245,240,232,.08)', border: '1px solid rgba(245,240,232,.2)', borderRadius: '8px', color: TEXT, fontSize: '15px', textDecoration: 'none', display: 'inline-block' }}>
@@ -117,12 +117,12 @@ export default function NexaliSite() {
                   <span style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '11px', color: ACCENT, fontWeight: 600 }}>{w}%</span>
                 </div>
                 <div style={{ height: '4px', background: 'rgba(245,240,232,.08)', borderRadius: '2px' }}>
-                  <div style={{ width: `${w}%`, height: '100%', background: `linear-gradient(90deg, ${ACCENT}, #d4900c)`, borderRadius: '2px' }} />
+                  <div style={{ width: `${w}%`, height: '100%', background: ACCENT, borderRadius: '2px' }} />
                 </div>
               </div>
             ))}
 
-            <Link href="/audit" style={{ display: 'block', width: '100%', marginTop: '20px', padding: '13px', background: ACTION, border: 'none', borderRadius: '10px', color: '#fff', fontSize: '13px', fontWeight: 700, cursor: 'pointer', fontFamily: 'var(--font-mono, monospace)', letterSpacing: '0.5px', textAlign: 'center', textDecoration: 'none' }}>
+            <Link href="/audit" style={{ display: 'block', width: '100%', marginTop: '20px', padding: '13px', background: ACCENT, border: 'none', borderRadius: '10px', color: '#0f2e24', fontSize: '13px', fontWeight: 700, cursor: 'pointer', fontFamily: 'var(--font-mono, monospace)', letterSpacing: '0.5px', textAlign: 'center', textDecoration: 'none' }}>
               VOIR MON VRAI SCORE →
             </Link>
           </div>
@@ -199,7 +199,7 @@ export default function NexaliSite() {
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '40px' }}>
-            <Link href="/audit" style={{ padding: '14px 32px', background: ACTION, borderRadius: '8px', color: '#fff', fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
+            <Link href="/audit" style={{ padding: '14px 32px', background: ACCENT, borderRadius: '8px', color: '#0f2e24', fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
               Je fais mon diagnostic gratuit
             </Link>
           </div>
@@ -341,7 +341,7 @@ export default function NexaliSite() {
             Diagnostic gratuit · Plan d&apos;action concret · Suivi humain inclus · Aucun engagement
           </p>
           <div className="nx-cta-buttons" style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/audit" style={{ padding: '16px 40px', background: ACTION, borderRadius: '8px', color: '#fff', fontSize: '16px', fontWeight: 700, textDecoration: 'none', display: 'inline-block', boxShadow: '0 8px 24px rgba(212,144,12,.35)' }}>
+            <Link href="/audit" style={{ padding: '16px 40px', background: ACCENT, borderRadius: '8px', color: '#0f2e24', fontSize: '16px', fontWeight: 700, textDecoration: 'none', display: 'inline-block', boxShadow: '0 8px 24px rgba(201,162,75,.25)' }}>
               Je fais mon diagnostic gratuit
             </Link>
             <Link href="/contact" style={{ padding: '16px 24px', background: 'transparent', border: `1.5px solid ${BORDER}`, borderRadius: '8px', color: 'rgba(245,240,232,.75)', fontSize: '15px', textDecoration: 'none', display: 'inline-block' }}>
