@@ -3,16 +3,27 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Palette Nexalie — tokens unifiés ───────────────────────────────── */
+/* ─── Palette Nexalie — vert profond + or ───────────────────────────── */
 :root {
-  --color-night:   #0F172A;   /* bleu-nuit    : fonds sombres, texte principal */
-  --color-brand:   #1F5F4A;   /* vert-profond : CTA, liens, états actifs      */
-  --color-gold:    #C8A96B;   /* or-doux      : accents/détails uniquement    */
-  --color-ivory:   #F8F6F1;   /* ivoire       : fonds clairs, cartes          */
-  --color-muted:   #4B5563;   /* gris-ardoise : texte secondaire              */
+  /* Tokens principaux */
+  --nx-bg:             #0f2e24;          /* vert forêt profond  — fond principal        */
+  --nx-bg2:            #1a3d2e;          /* vert intermédiaire  — cartes sur fond sombre */
+  --nx-accent:         #c9a24b;          /* or identité         — marque, labels, liens  */
+  --nx-accent-action:  #d4900c;          /* or ambre saturé     — CTAs uniquement        */
+  --nx-text:           #f5f0e8;          /* crème doux          — texte sur fond vert    */
+  --nx-text-muted:     rgba(245,240,232,.58); /* crème atténué   — texte secondaire      */
+  --nx-section-bg:     #f5f0e8;          /* crème               — sections claires       */
+  --nx-section-text:   #0f2e24;          /* vert profond        — texte sur fond crème   */
+  --nx-border:         rgba(201,162,75,.18); /* bordure or subtile                       */
+  --nx-border-light:   rgba(15,46,36,.10);   /* bordure légère sur fond crème            */
 
-  /* Accent dynamique selon langue (mis à jour via JS dans LangProvider) */
-  --accent:        #C8A96B;   /* fr=or-doux · ln=vert-profond · ktu=or-doux  */
+  /* Rétro-compatibilité — composants existants */
+  --color-brand:   #0f2e24;
+  --color-night:   #0f2e24;
+  --color-gold:    #c9a24b;
+  --color-ivory:   #f5f0e8;
+  --color-muted:   rgba(245,240,232,.58);
+  --accent:        #c9a24b;
 }
 
 /* ─── Typographie Nexalie ────────────────────────────────────────────── */

@@ -29,29 +29,29 @@ const mono = DM_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://nexalie-ecqc.vercel.app'),
+  metadataBase: new URL('https://nexalie.co'),
   title: {
-    default: 'Nexalie, la boussole numérique des PME africaines',
+    default: 'Nexalie · La boussole numérique des entrepreneurs africains',
     template: '%s · Nexalie',
   },
-  description: 'Nexalie accompagne les PME africaines dans leur transformation numérique : diagnostic de maturité digitale, feuille de route personnalisée, outils concrets. Gratuit.',
-  keywords: ['transformation digitale', 'IA', 'Afrique', 'Congo', 'audit digital', 'PME africaines', 'OHADA', 'Mobile Money', 'roadmap digitale', 'maturité numérique'],
-  authors: [{ name: 'Rélia Ebiya', url: 'https://nexalie-ecqc.vercel.app' }],
+  description: 'En 15 minutes depuis votre téléphone, Nexalie évalue votre entreprise et vous donne un plan clair. Diagnostic gratuit, accompagnement humain inclus.',
+  keywords: ['maturité numérique PME Congo', 'comment digitaliser mon entreprise Congo', 'diagnostic numérique entreprise Afrique', 'digitalisation PME Brazzaville', 'par où commencer pour digitaliser ma PME', 'transformation digitale Afrique', 'PME africaines'],
+  authors: [{ name: 'Rélia Ebiya', url: 'https://nexalie.co' }],
   creator: 'Nexalie',
   publisher: 'Nexalie',
   openGraph: {
-    title: 'Nexalie — La boussole numérique des PME africaines',
-    description: 'Diagnostic de maturité digitale gratuit · Feuille de route personnalisée · Outils concrets pour PME africaines.',
-    url: 'https://nexalie-ecqc.vercel.app',
+    title: 'Nexalie · La boussole numérique des entrepreneurs africains',
+    description: 'Vous savez où vous voulez aller. On vous montre par où commencer. Diagnostic gratuit, 15 minutes, depuis votre téléphone.',
+    url: 'https://nexalie.co',
     siteName: 'Nexalie',
     locale: 'fr_FR',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Nexalie — Transformation Digitale IA' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Nexalie · Boussole numérique des PME africaines' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nexalie — Transformation Digitale IA',
-    description: 'Audit gratuit · Roadmap IA · Badge Digital Ready',
+    title: 'Nexalie · Boussole numérique des PME africaines',
+    description: 'Diagnostic gratuit · Plan d\'action daté · Accompagnement humain',
     images: ['/og-image.png'],
   },
   robots: {

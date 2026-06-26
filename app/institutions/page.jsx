@@ -6,9 +6,9 @@ export const metadata = {
 };
 
 export default function InstitutionsPage() {
-  const navy   = '#1F5F4A';
-  const gold   = '#C8A96B';
-  const cream  = '#F8F6F1';
+  const navy   = 'var(--nx-bg)';
+  const gold   = 'var(--nx-accent)';
+  const cream  = 'var(--nx-section-bg)';
 
   const figures = [
     { value: '90 000',  label: 'PME formelles en République du Congo', note: 'Source : Ministère des PME, 2023' },
@@ -57,8 +57,11 @@ export default function InstitutionsPage() {
           <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(34px, 5.5vw, 56px)', fontWeight: 400, color: '#fff', lineHeight: 1.2, marginBottom: '24px', letterSpacing: '-0.02em' }}>
             Vous financez leur développement. Nexalie vous montre où votre impact est le plus fort.
           </h1>
-          <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.75, maxWidth: '600px', marginBottom: '40px' }}>
-            Les diagnostics réalisés par les PME alimentent, de façon anonymisée, un tableau de bord agrégé. Ministères, bailleurs et chambres de commerce disposent ainsi d'une vision claire du tissu économique local, pour cibler leurs financements là où l'impact sera le plus fort.
+          <p style={{ fontSize: '16px', color: 'rgba(255,255,255,0.65)', lineHeight: 1.75, maxWidth: '620px', marginBottom: '16px' }}>
+            Les diagnostics réalisés par les PME alimentent, de façon anonymisée, un tableau de bord agrégé. Ministères, bailleurs et chambres de commerce disposent ainsi d&apos;une vision claire du tissu économique local, pour cibler leurs financements là où l&apos;impact sera le plus fort.
+          </p>
+          <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, maxWidth: '620px', marginBottom: '40px' }}>
+            Derrière chaque diagnostic, il y a un dirigeant qui veut avancer. Mis bout à bout, anonymisés, ces diagnostics vous donnent une carte vivante du tissu économique local : où sont les blocages, où votre franc investi change vraiment quelque chose. La confidentialité des données individuelles est absolue et non négociable.
           </p>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
             <a

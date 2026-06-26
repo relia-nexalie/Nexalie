@@ -4,10 +4,16 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 const T = {
-  pageBg: '#FFFFFF', sectionBg: '#F8FAFC', navyBg: '#0F172A',
-  textPrimary: '#0F172A', textSecondary: '#4B5563', textOnNavy: '#FFFFFF',
-  textMuted: 'rgba(255,255,255,0.5)', accent: '#2E9B8B', gold: '#C8A96B',
-  border: 'rgba(0,0,0,0.07)',
+  pageBg:       'var(--nx-section-bg)',
+  sectionBg:    '#fff',
+  navyBg:       'var(--nx-bg)',
+  textPrimary:  'var(--nx-section-text)',
+  textSecondary: '#4B5563',
+  textOnNavy:   'var(--nx-text)',
+  textMuted:    'rgba(245,240,232,.55)',
+  accent:       'var(--nx-accent)',
+  gold:         'var(--nx-accent)',
+  border:       'rgba(0,0,0,0.07)',
 };
 
 export default function ContactPage() {
@@ -29,32 +35,22 @@ export default function ContactPage() {
   };
 
   return (
-    <div style={{ background: T.pageBg, minHeight: '100vh', fontFamily: 'sans-serif' }}>
-
-      <nav style={{ background: T.navyBg, padding: '0 40px', borderBottom: `1px solid ${T.gold}15`, position: 'sticky', top: 0, zIndex: 100 }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '60px' }}>
-          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-            <span style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '20px', fontWeight: 300, color: '#fff' }}>Nexalie</span>
-            <span style={{ fontFamily: 'monospace', fontSize: '9px', letterSpacing: '2.5px', color: T.accent }}>AI</span>
-          </Link>
-          <Link href="/" style={{ fontSize: '13px', color: T.textMuted, textDecoration: 'none' }}>← Retour</Link>
-        </div>
-      </nav>
+    <div style={{ background: T.pageBg, minHeight: '100vh', fontFamily: 'var(--font-jakarta, sans-serif)' }}>
 
       {/* Header */}
-      <div style={{ background: T.navyBg, padding: '60px 40px' }}>
-        <div style={{ height: '1px', background: `linear-gradient(90deg,transparent,${T.gold}40,transparent)`, marginBottom: '36px' }} />
+      <div style={{ background: T.navyBg, padding: 'clamp(48px,7vw,80px) 24px' }}>
+        <div style={{ height: '1px', background: `linear-gradient(90deg,transparent,var(--nx-accent)30,transparent)`, marginBottom: '36px' }} />
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <p style={{ fontFamily: 'monospace', fontSize: '10px', letterSpacing: '3px', color: T.textMuted, marginBottom: '10px' }}>CONTACT</p>
-          <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(26px,4vw,40px)', fontWeight: 200, color: '#fff', marginBottom: '10px' }}>
-            Parlons de <em style={{ color: T.accent, fontStyle: 'normal' }}>votre projet</em>
+          <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '11px', letterSpacing: '3px', color: 'rgba(201,162,75,.6)', marginBottom: '12px', textTransform: 'uppercase' }}>Contact</p>
+          <h1 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(28px,4.5vw,44px)', fontWeight: 300, color: T.textOnNavy, marginBottom: '12px', lineHeight: 1.2 }}>
+            Parlons de <em style={{ color: T.accent, fontStyle: 'italic' }}>votre entreprise</em>
           </h1>
-          <p style={{ fontSize: '15px', color: T.textMuted }}>Réponse garantie sous 24h · WhatsApp disponible</p>
+          <p style={{ fontSize: '15px', color: T.textMuted, lineHeight: 1.7 }}>Réponse personnelle sous 24h · WhatsApp prioritaire</p>
         </div>
       </div>
 
       {/* Content */}
-      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '60px 40px', animation: 'fadeIn 0.4s ease' }}>
+      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: 'clamp(40px,5vw,64px) 24px', animation: 'fadeIn 0.4s ease' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: '60px' }}>
 
           {/* Infos */}
@@ -91,7 +87,7 @@ export default function ContactPage() {
               <span style={{ fontSize: '48px', marginBottom: '20px' }}>✅</span>
               <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: '22px', fontWeight: 200, color: T.textPrimary, marginBottom: '8px' }}>Message envoyé !</h2>
               <p style={{ fontSize: '14px', color: T.textSecondary, marginBottom: '20px' }}>WhatsApp ouvert avec votre message pré-rempli. Réponse sous 24h.</p>
-              <button onClick={() => setSent(false)} style={{ padding: '11px 24px', background: T.navyBg, border: 'none', borderRadius: '8px', color: '#fff', fontSize: '13px', fontWeight: 700, cursor: 'pointer' }}>
+              <button onClick={() => setSent(false)} style={{ padding: '11px 24px', background: T.navyBg, border: 'none', borderRadius: '8px', color: T.textOnNavy, fontSize: '13px', fontWeight: 700, cursor: 'pointer' }}>
                 Envoyer un autre message
               </button>
             </div>

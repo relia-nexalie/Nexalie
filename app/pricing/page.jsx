@@ -164,7 +164,10 @@ function fmtDisplay(amount, currency, displayCurrency, mode) {
 
 export default function PricingPage() {
   const router = useRouter();
-  // Page désactivée — tarification non publique actuellement
+  // BÊTA : page de tarification désactivée pendant la phase d'accès anticipé.
+  // Le diagnostic est gratuit pour tous les utilisateurs bêta.
+  // Modèle économique (plans SaaS Starter/Pro/Institutions) conservé ci-dessous
+  // pour réactivation post-bêta — ne pas supprimer ce code.
   useEffect(() => { router.replace('/'); }, [router]);
   return null;
 

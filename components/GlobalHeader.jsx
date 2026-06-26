@@ -40,7 +40,7 @@ export default function GlobalHeader() {
       position: 'sticky',
       top: 0,
       zIndex: 1000,
-      background: `rgba(31,95,74,0.97)`,
+      background: 'rgba(15,46,36,.97)',
       backdropFilter: 'blur(12px)',
       borderBottom: '1px solid rgba(255,255,255,0.06)',
     }}>
@@ -59,8 +59,8 @@ export default function GlobalHeader() {
           <span style={{ fontSize: '18px', fontWeight: 800, color: '#fff', letterSpacing: '-0.5px' }}>
             Nexalie
           </span>
-          <span style={{ fontSize: '10px', background: accent, color: '#fff', padding: '2px 7px', borderRadius: '20px', fontWeight: 700, letterSpacing: '0.5px' }}>
-            BÊTA
+          <span style={{ fontSize: '10px', background: accent, color: '#0f2e24', padding: '2px 9px', borderRadius: '20px', fontWeight: 700, letterSpacing: '0.3px' }}>
+            Bêta · places limitées
           </span>
         </Link>
 

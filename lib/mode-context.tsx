@@ -25,30 +25,24 @@ export function ModeProvider({ children }: { children: ReactNode }) {
     else localStorage.setItem('nexali-mode', 'af');
   }, []);
 
-  // Applique les CSS variables et la palette selon le mode
+  // Applique les CSS variables — direction unique vert profond + or
   useEffect(() => {
     const root = document.documentElement;
-    if (mode === 'af') {
-      root.style.setProperty('--nx-bg', '#FFFFFF');
-      root.style.setProperty('--nx-section-bg', '#F8F6F1');
-      root.style.setProperty('--nx-navy', '#0F172A');
-      root.style.setProperty('--nx-accent', '#C8A96B');
-      root.style.setProperty('--nx-accent-dark', '#9A7A2A');
-      root.style.setProperty('--nx-gold', '#C8A96B');
-      root.style.setProperty('--nx-green', '#1F5F4A');
-      root.style.setProperty('--nx-text-primary', '#0F172A');
-      root.style.setProperty('--nx-text-secondary', '#4B5563');
-    } else {
-      root.style.setProperty('--nx-bg', '#FFFFFF');
-      root.style.setProperty('--nx-section-bg', '#F8FAFC');
-      root.style.setProperty('--nx-navy', '#0F172A');
-      root.style.setProperty('--nx-accent', '#4EC9B0');
-      root.style.setProperty('--nx-accent-dark', '#1D6B60');
-      root.style.setProperty('--nx-gold', '#C8A96B');
-      root.style.setProperty('--nx-green', '#2E9B8B');
-      root.style.setProperty('--nx-text-primary', '#0F172A');
-      root.style.setProperty('--nx-text-secondary', '#4B5563');
-    }
+    // Même palette pour les deux modes — identité unique
+    root.style.setProperty('--nx-bg',             '#0f2e24');
+    root.style.setProperty('--nx-bg2',            '#1a3d2e');
+    root.style.setProperty('--nx-accent',         '#c9a24b');
+    root.style.setProperty('--nx-accent-action',  '#d4900c');
+    root.style.setProperty('--nx-text',           '#f5f0e8');
+    root.style.setProperty('--nx-text-muted',     'rgba(245,240,232,.58)');
+    root.style.setProperty('--nx-section-bg',     '#f5f0e8');
+    root.style.setProperty('--nx-section-text',   '#0f2e24');
+    // Compatibilité audit existant
+    root.style.setProperty('--nx-navy',           '#0f2e24');
+    root.style.setProperty('--nx-gold',           '#c9a24b');
+    root.style.setProperty('--nx-green',          '#1a3d2e');
+    root.style.setProperty('--nx-text-primary',   '#0f2e24');
+    root.style.setProperty('--nx-text-secondary', '#4B5563');
     document.documentElement.setAttribute('data-mode', mode);
   }, [mode]);
 

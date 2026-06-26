@@ -50,10 +50,10 @@ export default function GlobalFooter() {
             <Link href="/" style={{ textDecoration: 'none' }}>
               <span style={{ fontSize: '22px', fontWeight: 800, color: '#fff', letterSpacing: '-0.5px' }}>Nexalie</span>
             </Link>
-            <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.45)', lineHeight: 1.7, marginTop: '12px', maxWidth: '240px' }}>
-              Nexalie, la boussole numérique des PME africaines
+            <p style={{ fontSize: '13px', color: 'rgba(245,240,232,.65)', lineHeight: 1.7, marginTop: '12px', maxWidth: '240px' }}>
+              La boussole numérique des entrepreneurs africains
             </p>
-            <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.25)', marginTop: '20px' }}>
+            <p style={{ fontSize: '12px', color: 'rgba(245,240,232,.4)', marginTop: '20px' }}>
               © {year} Nexalie
             </p>
           </div>
@@ -68,7 +68,7 @@ export default function GlobalFooter() {
                 <Link
                   key={`${l.href}-${i}`}
                   href={l.href}
-                  style={{ display: 'block', color: 'rgba(255,255,255,0.55)', textDecoration: 'none', fontSize: '13px', marginBottom: '10px', transition: 'color 0.15s' }}
+                  style={{ display: 'block', color: 'rgba(245,240,232,.7)', textDecoration: 'none', fontSize: '13px', marginBottom: '10px', transition: 'color 0.15s' }}
                 >
                   {l.label}
                 </Link>
@@ -78,7 +78,7 @@ export default function GlobalFooter() {
         </div>
 
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '24px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '12px' }}>
-          <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.3)' }}>
+          <p style={{ fontSize: '12px', color: 'rgba(245,240,232,.5)' }}>
             Nexalie · Brazzaville &amp; Paris
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
@@ -86,7 +86,7 @@ export default function GlobalFooter() {
               onClick={() => setShowBugModal(true)}
               style={{
                 background: 'none', border: 'none', cursor: 'pointer',
-                fontSize: '12px', color: 'rgba(255,255,255,0.3)',
+                fontSize: '12px', color: 'rgba(245,240,232,.5)',
                 padding: 0, textDecoration: 'underline', textUnderlineOffset: '3px',
               }}
             >

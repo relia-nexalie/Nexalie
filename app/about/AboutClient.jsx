@@ -3,13 +3,12 @@
 import Link from 'next/link';
 
 export default function AboutClient() {
-  // Palette institutionnelle africaine — couleurs fixes
-  const navy        = '#1F5F4A';
-  const accent      = '#C8A96B';
-  const accentText  = '#8A6E1A';
+  const navy        = 'var(--nx-bg)';
+  const accent      = 'var(--nx-accent)';
+  const accentText  = 'var(--nx-accent)';
 
   return (
-    <div style={{ fontFamily: 'var(--font-jakarta, system-ui, sans-serif)', background: '#F8F6F1', color: '#0F172A' }}>
+    <div style={{ fontFamily: 'var(--font-jakarta, system-ui, sans-serif)', background: 'var(--nx-section-bg)', color: 'var(--nx-section-text)' }}>
 
       {/* ── HERO — asymétrique ──────────────────────────────────────── */}
       <section style={{ background: navy, padding: 'clamp(56px,7vw,96px) 24px' }}>
@@ -62,7 +61,7 @@ export default function AboutClient() {
       </section>
 
       {/* ── MANIFESTE — 2 colonnes asymétriques ────────────────────── */}
-      <section style={{ padding: 'clamp(64px,8vw,112px) 24px', background: '#F8F6F1' }}>
+      <section style={{ padding: 'clamp(64px,8vw,112px) 24px', background: 'var(--nx-section-bg)' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(40px,6vw,80px)', alignItems: 'start' }}>
 
           {/* GAUCHE — Le Manifeste */}
@@ -78,7 +77,7 @@ export default function AboutClient() {
             </h2>
             <div style={{ fontSize: '16px', color: '#374151', lineHeight: 2, borderLeft: `2px solid ${accent}50`, paddingLeft: '24px' }}>
               <p style={{ marginBottom: '20px' }}>
-                Pendant des années, j&apos;ai piloté des transformations numériques dans l&apos;industrie de pointe. J&apos;y ai appris une chose simple : la technologie ne réussit jamais seule. Elle réussit quand elle part du terrain, des gens, de leur quotidien.
+                J&apos;ai piloté la transformation numérique de grands groupes industriels. Je sais ce que ces outils coûtent, et je sais qu&apos;une PME de Brazzaville n&apos;en a pas besoin de la moitié. Nexalie, c&apos;est ce que j&apos;aurais voulu donner à mon oncle commerçant.
               </p>
               <p style={{ marginBottom: '20px' }}>
                 Puis j&apos;ai regardé vers Brazzaville, vers Kinshasa, vers Dakar. Les entrepreneurs que j&apos;y côtoie portent 95 % de l&apos;économie réelle de leur pays. Ils travaillent sans filet, sans outils adaptés, sans accès aux méthodologies qui leur permettraient de structurer leur croissance.
@@ -112,7 +111,7 @@ export default function AboutClient() {
               },
               {
                 label: "L'AMBITION NEXALIE",
-                color: '#5B8A6A',
+                color: 'var(--nx-accent)',
                 body: "Bâtir l'infrastructure de confiance numérique de l'espace francophone. D'ici 2030, chaque PME africaine devrait avoir accès à un plan de transformation digitale concret — au même niveau de qualité qu'un grand cabinet, sans en payer le prix.",
               },
             ].map(({ label, color, body }) => (
@@ -139,18 +138,18 @@ export default function AboutClient() {
       )}
 
       {/* ── VISION ──────────────────────────────────────────────────── */}
-      <section style={{ padding: 'clamp(56px,7vw,88px) 24px', background: '#F8F6F1' }}>
+      <section style={{ padding: 'clamp(56px,7vw,88px) 24px', background: 'var(--nx-section-bg)' }}>
         <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
           <p style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: '12px', letterSpacing: '3px', color: accentText, marginBottom: '12px', textTransform: 'uppercase' }}>Vision 2030</p>
-          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(30px,4vw,46px)', fontWeight: 400, color: '#0F172A', marginBottom: '24px', lineHeight: 1.2 }}>
+          <h2 style={{ fontFamily: 'var(--font-display, system-ui, sans-serif)', fontSize: 'clamp(30px,4vw,46px)', fontWeight: 400, color: 'var(--nx-section-text)', marginBottom: '24px', lineHeight: 1.2 }}>
             La boussole numérique de l&apos;Afrique francophone
           </h2>
           <p style={{ fontSize: '17px', color: '#374151', lineHeight: 1.95, marginBottom: '40px' }}>
             D&apos;ici 2030, chaque PME africaine aura accès à un plan de transformation numérique concret — dans sa langue, adapté à son marché, à un coût qu&apos;elle peut justifier.
           </p>
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/audit" style={{ padding: '15px 32px', background: navy, borderRadius: '10px', color: '#fff', fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
-              Faire mon bilan gratuit →
+            <Link href="/audit" style={{ padding: '15px 32px', background: navy, borderRadius: '10px', color: 'var(--nx-text)', fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'inline-block' }}>
+              Je fais mon diagnostic gratuit
             </Link>
             <Link href="/contact" style={{ padding: '15px 24px', background: 'transparent', border: '2px solid rgba(0,0,0,0.12)', borderRadius: '10px', color: '#4B5563', fontSize: '15px', textDecoration: 'none', display: 'inline-block' }}>
               Me contacter
