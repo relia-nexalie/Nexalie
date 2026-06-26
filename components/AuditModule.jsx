@@ -1488,7 +1488,7 @@ Génère maintenant le rapport complet en respectant strictement la structure de
               <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
                 <button
                   onClick={handleResume}
-                  style={{ padding: '10px 20px', background: '#0f2e24', borderRadius: '8px', color: '#f5f0e8', fontSize: '13px', fontWeight: 700, border: 'none', cursor: 'pointer' }}
+                  style={{ padding: '10px 20px', background: 'var(--nx-accent)', borderRadius: '8px', color: '#0f2e24', fontSize: '13px', fontWeight: 700, border: 'none', cursor: 'pointer' }}
                 >
                   Continuer mon diagnostic →
                 </button>
@@ -1537,7 +1537,8 @@ Génère maintenant le rapport complet en respectant strictement la structure de
 
           <button
             onClick={() => setStep('survey')}
-            className="rounded-md bg-[#0F172A] px-8 py-4 font-sans text-base font-medium text-white transition-colors hover:bg-slate-800"
+            className="rounded-md px-8 py-4 font-sans text-base font-medium transition-colors"
+            style={{ background: 'var(--nx-accent)', color: '#0f2e24', fontWeight: 700, border: 'none', cursor: 'pointer' }}
           >
             {T.intro_cta}
           </button>
@@ -1667,13 +1668,12 @@ Génère maintenant le rapport complet en respectant strictement la structure de
           <button
             disabled={!canContinue}
             onClick={() => setStep('profil')}
-            className={`w-full rounded-md px-8 py-4 font-sans text-base font-medium transition-colors ${
-              canContinue
-                ? 'bg-[#0F172A] text-white hover:bg-slate-800'
-                : 'cursor-not-allowed bg-slate-100 text-slate-400'
-            }`}
+            className="w-full rounded-md px-8 py-4 font-sans text-base font-medium transition-colors"
+            style={canContinue
+              ? { background: 'var(--nx-accent)', color: '#0f2e24', fontWeight: 700, border: 'none', cursor: 'pointer' }
+              : { background: '#f1f5f9', color: '#94a3b8', border: 'none', cursor: 'not-allowed' }}
           >
-            {canContinue ? (mode === 'fr' ? 'Continuer →' : 'Continuer →') : (mode === 'fr' ? '* Répondez aux questions obligatoires' : '* Répondez aux questions obligatoires')}
+            {canContinue ? 'Continuer →' : '* Répondez aux questions obligatoires'}
           </button>
         </div>
       </div>
@@ -1757,13 +1757,12 @@ Génère maintenant le rapport complet en respectant strictement la structure de
           <button
             disabled={!canContinue}
             onClick={() => setStep('sector')}
-            className={`w-full rounded-md px-8 py-4 font-sans text-base font-medium transition-colors ${
-              canContinue
-                ? 'bg-[#0F172A] text-white hover:bg-slate-800'
-                : 'cursor-not-allowed bg-slate-100 text-slate-400'
-            }`}
+            className="w-full rounded-md px-8 py-4 font-sans text-base font-medium transition-colors"
+            style={canContinue
+              ? { background: 'var(--nx-accent)', color: '#0f2e24', fontWeight: 700, border: 'none', cursor: 'pointer' }
+              : { background: '#f1f5f9', color: '#94a3b8', border: 'none', cursor: 'not-allowed' }}
           >
-            {canContinue ? (mode === 'fr' ? 'Continuer →' : 'Continuer →') : (mode === 'fr' ? 'Répondez aux 2 questions' : 'Répondez aux 2 questions')}
+            {canContinue ? 'Continuer →' : 'Répondez aux 2 questions'}
           </button>
         </div>
       </div>
@@ -1808,11 +1807,10 @@ Génère maintenant le rapport complet en respectant strictement la structure de
           <button
             disabled={!sector}
             onClick={() => setStep('questions')}
-            className={`mb-3 w-full rounded-md px-8 py-4 font-sans text-base font-medium transition-colors ${
-              sector
-                ? 'bg-[#0F172A] text-white hover:bg-slate-800'
-                : 'cursor-not-allowed bg-slate-100 text-slate-400'
-            }`}
+            className="mb-3 w-full rounded-md px-8 py-4 font-sans text-base font-medium transition-colors"
+            style={sector
+              ? { background: 'var(--nx-accent)', color: '#0f2e24', fontWeight: 700, border: 'none', cursor: 'pointer' }
+              : { background: '#f1f5f9', color: '#94a3b8', border: 'none', cursor: 'not-allowed' }}
           >
             {sector
               ? (mode === 'fr' ? 'Démarrer l\'audit →' : 'Démarrer le bilan →')
@@ -1849,8 +1847,8 @@ Génère maintenant le rapport complet en respectant strictement la structure de
             </div>
             <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-200">
               <div
-                className="h-full rounded-full bg-[#0F172A] transition-all duration-500"
-                style={{ width: `${progress}%` }}
+                className="h-full rounded-full transition-all duration-500"
+                style={{ width: `${progress}%`, background: 'var(--nx-accent)' }}
               />
             </div>
             <div className="mt-1.5 flex justify-end">
@@ -1908,11 +1906,10 @@ Génère maintenant le rapport complet en respectant strictement la structure de
               <button
                 onClick={() => { if (canGoNext) setCurrentQ(q => q + 1); }}
                 disabled={!canGoNext}
-                className={`rounded-md px-8 py-3 font-sans text-sm font-medium transition-colors ${
-                  canGoNext
-                    ? 'bg-[#0F172A] text-white hover:bg-slate-800'
-                    : 'cursor-not-allowed bg-slate-100 text-slate-400'
-                }`}
+                className="rounded-md px-8 py-3 font-sans text-sm font-medium transition-colors"
+                style={canGoNext
+                  ? { background: 'var(--nx-accent)', color: '#0f2e24', fontWeight: 700, border: 'none', cursor: 'pointer' }
+                  : { background: '#f1f5f9', color: '#94a3b8', border: 'none', cursor: 'not-allowed' }}
               >
                 {T.next}
               </button>
@@ -1920,11 +1917,10 @@ Génère maintenant le rapport complet en respectant strictement la structure de
               <button
                 onClick={() => { if (canGoNext) handleFinish(); }}
                 disabled={!canGoNext}
-                className={`rounded-md px-8 py-3 font-sans text-sm font-medium transition-colors ${
-                  canGoNext
-                    ? 'bg-[#0F172A] text-white hover:bg-slate-800'
-                    : 'cursor-not-allowed bg-slate-100 text-slate-400'
-                }`}
+                className="rounded-md px-8 py-3 font-sans text-sm font-medium transition-colors"
+                style={canGoNext
+                  ? { background: 'var(--nx-accent)', color: '#0f2e24', fontWeight: 700, border: 'none', cursor: 'pointer' }
+                  : { background: '#f1f5f9', color: '#94a3b8', border: 'none', cursor: 'not-allowed' }}
               >
                 {T.finish}
               </button>
@@ -2271,10 +2267,10 @@ Génère maintenant le rapport complet en respectant strictement la structure de
             <button
               onClick={handlePrint}
               disabled={pdfLoading}
-              className={`inline-flex items-center justify-center gap-2 rounded-md px-8 py-4 font-sans text-sm font-medium text-white transition-colors ${
+              className={`inline-flex items-center justify-center gap-2 rounded-md px-8 py-4 font-sans text-sm font-medium transition-colors ${
                 pdfLoading ? 'cursor-default opacity-70' : 'cursor-pointer'
               }`}
-              style={{ background: 'var(--nx-bg)', border: 'none' }}
+              style={{ background: 'var(--nx-accent)', color: '#0f2e24', fontWeight: 700, border: 'none' }}
             >
               <span>{pdfLoading ? '⏳' : '↓'}</span>
               {pdfLoading ? 'Génération en cours...' : T.download}
@@ -2298,7 +2294,8 @@ Génère maintenant le rapport complet en respectant strictement la structure de
               ) : recommendations && !savedId ? (
                 <button
                   onClick={handleManualSave}
-                  className="rounded-md bg-[#0F172A] px-8 py-4 font-sans text-sm font-medium text-white transition-colors hover:bg-slate-800"
+                  className="rounded-md px-8 py-4 font-sans text-sm font-medium transition-colors"
+                  style={{ background: 'var(--nx-accent)', color: '#0f2e24', fontWeight: 700, border: 'none', cursor: 'pointer' }}
                 >
                   {mode === 'fr' ? 'Sauvegarder dans mon espace' : 'Sauvegarder dans mon espace'}
                 </button>
@@ -2306,7 +2303,8 @@ Génère maintenant le rapport complet en respectant strictement la structure de
             ) : (
               <a
                 href="/signup"
-                className="block rounded-md bg-[#0F172A] px-8 py-4 text-center font-sans text-sm font-medium text-white no-underline transition-colors hover:bg-slate-800"
+                className="block rounded-md px-8 py-4 text-center font-sans text-sm font-medium no-underline transition-colors"
+                style={{ background: 'var(--nx-accent)', color: '#0f2e24', fontWeight: 700 }}
               >
                 {T.save_cta}
               </a>
