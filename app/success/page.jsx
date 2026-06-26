@@ -81,7 +81,7 @@ export default function SuccessPage() {
           <Link href="/platform" style={{ flex: 1, padding: '14px', background: T.navyBg, borderRadius: '10px', color: '#fff', fontSize: '14px', fontWeight: 700, textDecoration: 'none', textAlign: 'center' }}>
             Accéder à la plateforme →
           </Link>
-          <a href="https://wa.me/33786620409" target="_blank" rel="noreferrer"
+          <a href="https://wa.me/33632407737" target="_blank" rel="noreferrer"
             style={{ padding: '14px 20px', background: '#25D366', borderRadius: '10px', color: '#fff', fontSize: '14px', fontWeight: 700, textDecoration: 'none' }}>
             💬
           </a>

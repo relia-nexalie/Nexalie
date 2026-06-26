@@ -1,13 +1,14 @@
 import AboutClient from './AboutClient';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata = {
   title: 'À propos — Nexalie',
   description: 'Rélia Ebiya, fondatrice de Nexalie — transformation digitale pour PME françaises et entreprises africaines.',
-  alternates: { canonical: 'https://nexalie-ecqc.vercel.app/about' },
+  alternates: { canonical: `${SITE_URL}/about` },
   openGraph: {
     title: 'Rélia Ebiya — Fondatrice Nexalie',
     description: 'Franco-congolaise. 10 ans chez Safran et Alcatel. Elle a construit Nexalie pour démocratiser la transformation digitale.',
-    url: 'https://nexalie-ecqc.vercel.app/about',
+    url: `${SITE_URL}/about`,
   },
 };
 

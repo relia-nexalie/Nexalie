@@ -14,10 +14,17 @@ const AuditModule = dynamic(
   }
 );
 
+import { SITE_URL } from '@/lib/site';
+
 export const metadata = {
   title: 'Audit de Maturité Digitale Gratuit — Nexalie',
   description: 'Évaluez votre niveau digital en 3 minutes. Score sur 100, niveau de maturité, 5 recommandations IA personnalisées. Gratuit, sans engagement.',
-  alternates: { canonical: 'https://nexalie-ecqc.vercel.app/audit' },
+  alternates: { canonical: `${SITE_URL}/audit` },
+  openGraph: {
+    title: 'Audit de Maturité Digitale Gratuit — Nexalie',
+    description: 'Évaluez votre niveau digital en 3 minutes. Score sur 100, niveau de maturité, 5 recommandations IA personnalisées. Gratuit, sans engagement.',
+    url: `${SITE_URL}/audit`,
+  },
 };
 
 export default function AuditPage() {

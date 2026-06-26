@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/site';
 
 const NAVY = '#0F172A';
 const TEAL = '#4EC9B0';
@@ -35,12 +36,12 @@ export async function generateMetadata({ params }) {
   return {
     title: article.titre,
     description: article.extrait,
-    alternates: { canonical: `https://nexalie-ecqc.vercel.app/blog/${params.slug}` },
+    alternates: { canonical: `${SITE_URL}/blog/${params.slug}` },
     openGraph: {
       title: article.titre,
       description: article.extrait,
       type: 'article',
-      url: `https://nexalie-ecqc.vercel.app/blog/${params.slug}`,
+      url: `${SITE_URL}/blog/${params.slug}`,
     },
   };
 }

@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata = {
   title: 'Nexalie — Ton chef de projet digital, 24h/24',
@@ -258,14 +259,16 @@ export default function DemoPage() {
         <div style={{ display: 'inline-block', background: '#fff', border: '1.5px solid rgba(0,0,0,0.08)', borderRadius: '16px', padding: '20px 28px', boxShadow: '0 4px 20px rgba(0,0,0,0.06)' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://nexalie.co/demo&bgcolor=ffffff&color=0A1628&margin=8"
+            src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(`${SITE_URL}/demo`)}&bgcolor=ffffff&color=0A1628&margin=8`}
             alt="QR Code Nexalie Demo"
             width={180}
             height={180}
+            loading="lazy"
+            decoding="async"
             style={{ display: 'block', margin: '0 auto 14px' }}
           />
           <p style={{ fontWeight: 700, fontSize: '14px', color: NAVY, margin: '0 0 4px' }}>Scanne pour accéder à Nexalie</p>
-          <p style={{ fontFamily: 'monospace', fontSize: '12px', color: '#9CA3AF', margin: 0 }}>nexalie.co/demo</p>
+          <p style={{ fontFamily: 'monospace', fontSize: '12px', color: '#9CA3AF', margin: 0 }}>{SITE_URL}/demo</p>
         </div>
       </section>
 
@@ -281,8 +284,8 @@ export default function DemoPage() {
         <a href="mailto:relia.ebiya@gmail.com" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '12px', textDecoration: 'none', display: 'block', marginBottom: '4px' }}>
           relia.ebiya@gmail.com
         </a>
-        <a href="tel:+33786620409" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '12px', textDecoration: 'none' }}>
-          +33 7 86 62 04 09
+        <a href="https://wa.me/33632407737" target="_blank" rel="noreferrer" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '12px', textDecoration: 'none' }}>
+          +33 6 32 40 77 37
         </a>
       </footer>
 

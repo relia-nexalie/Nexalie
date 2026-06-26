@@ -29,7 +29,7 @@ export default function ContactPage() {
     setLoading(true);
     // Ouvre WhatsApp avec le message pré-rempli
     const msg = encodeURIComponent(`Bonjour Relia,\n\nNom: ${form.name}\nEmail: ${form.email}\nSujet: ${form.subject}\nMarché: ${form.market === 'fr' ? 'France' : 'Afrique'}\n\n${form.message}`);
-    window.open(`https://wa.me/33786620409?text=${msg}`, '_blank');
+    window.open(`https://wa.me/33632407737?text=${msg}`, '_blank');
     setSent(true);
     setLoading(false);
   };
@@ -55,16 +55,22 @@ export default function ContactPage() {
 
           {/* Infos */}
           <div>
-            {[['✉️', 'Email', 'relia.ebiya@nexalie.co'],
-              ['📱', 'WhatsApp', '+33 7 86 62 04 09'],
-              ['🌐', 'Site', 'nexalie.co'],
-              ['📍', 'Zones', 'France · Côte d\'Ivoire · Congo']].map(([e, l, v]) => (
+            {[
+              ['✉️', 'Email', 'relia@rebiyadigital.com', 'mailto:relia@rebiyadigital.com'],
+              ['📱', 'WhatsApp', '+33 6 32 40 77 37', 'https://wa.me/33632407737'],
+              ['🌐', 'Site', 'nexalie.co', 'https://nexalie.co'],
+              ['📍', 'Zones', 'France · Côte d\'Ivoire · Congo', null],
+            ].map(([e, l, v, href]) => (
               <div key={l} style={{ padding: '14px', background: '#fff', border: `1px solid ${T.border}`, borderRadius: '10px', marginBottom: '10px' }}>
                 <p style={{ fontFamily: 'monospace', fontSize: '10px', color: T.textSecondary, marginBottom: '4px' }}>{e} {l.toUpperCase()}</p>
-                <p style={{ fontSize: '14px', color: T.accent }}>{v}</p>
+                {href ? (
+                  <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer' : undefined} style={{ fontSize: '14px', color: T.accent, textDecoration: 'none' }}>{v}</a>
+                ) : (
+                  <p style={{ fontSize: '14px', color: T.accent }}>{v}</p>
+                )}
               </div>
             ))}
-            <a href="https://wa.me/33786620409" target="_blank" rel="noreferrer"
+            <a href="https://wa.me/33632407737" target="_blank" rel="noreferrer"
               style={{ display: 'block', marginTop: '8px', padding: '13px', background: '#25D366', borderRadius: '10px', color: '#fff', fontSize: '14px', fontWeight: 700, textAlign: 'center', textDecoration: 'none' }}>
               💬 WhatsApp Business direct
             </a>

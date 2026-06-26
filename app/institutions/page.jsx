@@ -1,8 +1,15 @@
 import MotifBackground from '@/components/MotifBackground';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata = {
   title: 'Institutions & Partenaires — Nexalie',
   description: "Nexalie accompagne les institutions, bailleurs de fonds et réseaux d'appui dans la digitalisation des PME africaines. Données agrégées, outils de diagnostic, impact mesurable.",
+  alternates: { canonical: `${SITE_URL}/institutions` },
+  openGraph: {
+    title: 'Institutions & Partenaires — Nexalie',
+    description: "Nexalie accompagne les institutions, bailleurs de fonds et réseaux d'appui dans la digitalisation des PME africaines.",
+    url: `${SITE_URL}/institutions`,
+  },
 };
 
 export default function InstitutionsPage() {

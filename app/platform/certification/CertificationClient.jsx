@@ -2,6 +2,7 @@
 
 import { useMode } from '@/lib/mode-context';
 import { QRCodeSVG } from 'qrcode.react';
+import { SITE_URL } from '@/lib/site';
 
 export default function CertificationClient({ score, eligible, scoreMin, certification, userEmail, organisation, secteur, userMode }) {
   const { isAfrica } = useMode();
@@ -14,7 +15,7 @@ export default function CertificationClient({ score, eligible, scoreMin, certifi
   const validDate = certification?.valid_until ? new Date(certification.valid_until).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) : null;
 
   const qrUrl = certification?.public_code
-    ? `https://nexalie-ecqc.vercel.app/verify/${certification.public_code}`
+    ? `${SITE_URL}/verify/${certification.public_code}`
     : null;
 
   return (
@@ -113,7 +114,7 @@ export default function CertificationClient({ score, eligible, scoreMin, certifi
               {certification?.public_code && (
                 <div style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: '8px', background: '#F8FAFC', borderRadius: '12px', padding: '16px 20px' }}>
                   <QRCodeSVG
-                    value={`https://nexalie-ecqc.vercel.app/verify/${certification.public_code}`}
+                    value={`${SITE_URL}/verify/${certification.public_code}`}
                     size={80}
                     bgColor="#F8FAFC"
                     fgColor={navy}
@@ -128,7 +129,7 @@ export default function CertificationClient({ score, eligible, scoreMin, certifi
 
               <div style={{ marginTop: '28px', paddingTop: '20px', borderTop: '1px solid rgba(0,0,0,0.06)' }}>
                 <p style={{ fontSize: '12px', color: '#9CA3AF', fontFamily: 'var(--font-display, system-ui, sans-serif)', fontStyle: 'italic' }}>
-                  Nexalie — Intelligence Artificielle pour PME · nexalie.co
+                  Nexalie · Boussole numérique pour PME
                 </p>
               </div>
             </div>
@@ -157,7 +158,7 @@ export default function CertificationClient({ score, eligible, scoreMin, certifi
                 💼 Partagez votre badge sur LinkedIn
               </p>
               <a
-                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(qrUrl || 'https://nexalie-ecqc.vercel.app')}`}
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(qrUrl || SITE_URL)}`}
                 target="_blank"
                 rel="noreferrer"
                 style={{ display: 'inline-block', padding: '10px 24px', background: '#0A66C2', color: '#fff', borderRadius: '8px', textDecoration: 'none', fontWeight: 700, fontSize: '13px' }}

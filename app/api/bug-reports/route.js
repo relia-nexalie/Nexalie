@@ -97,7 +97,7 @@ export async function POST(request) {
 
           ${screenshot_url ? `<p style="font-size: 13px; color: #4B5563;">Capture : <a href="${screenshot_url}" style="color: #4EC9B0;">${screenshot_url}</a></p>` : ''}
 
-          <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://nexalie.co'}/dashboard/sav"
+          <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://nexalie-ecqc.vercel.app'}/dashboard/sav"
              style="display: inline-block; background: #0F172A; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13px;">
             Voir dans le dashboard →
           </a>

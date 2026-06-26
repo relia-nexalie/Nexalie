@@ -153,7 +153,7 @@ export async function GET(request) {
       }
 
       // Appeler la route email interne
-      const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://nexalie.co';
+      const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://nexalie-ecqc.vercel.app';
       const emailRes = await fetch(`${baseUrl}/api/email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

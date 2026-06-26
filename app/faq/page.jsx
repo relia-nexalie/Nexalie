@@ -100,7 +100,7 @@ export default function FaqPage() {
             Relia répond personnellement sous 24h. Via WhatsApp, c&apos;est souvent beaucoup plus rapide.
           </p>
           <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="https://wa.me/33786620409" target="_blank" rel="noreferrer"
+            <a href="https://wa.me/33632407737" target="_blank" rel="noreferrer"
               style={{ padding: '13px 28px', background: '#25D366', borderRadius: '8px', color: '#fff', fontSize: '14px', fontWeight: 700, textDecoration: 'none' }}>
               💬 Écrire sur WhatsApp
             </a>

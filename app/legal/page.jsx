@@ -54,7 +54,7 @@ export default function LegalPage() {
 
         <Section id="mentions" title="Mentions légales">
           <P><strong>Éditeur :</strong> Nexalie Consulting — Rélia Ebiya</P>
-          <P><strong>Contact :</strong> relia.ebiya@nexalie.co — +33 7 86 62 04 09</P>
+          <P><strong>Contact :</strong> <a href="mailto:relia@rebiyadigital.com" style={{ color: 'inherit' }}>relia@rebiyadigital.com</a> · <a href="https://wa.me/33632407737" style={{ color: 'inherit' }}>+33 6 32 40 77 37</a></P>
           <P><strong>Hébergement :</strong> Vercel Inc., 340 Pine Street, Suite 1200, San Francisco, CA 94104, États-Unis</P>
           <P><strong>Directrice de la publication :</strong> Rélia Ebiya</P>
         </Section>
@@ -72,7 +72,7 @@ export default function LegalPage() {
           <P><strong>Données collectées :</strong> nom, email, marché (France/Afrique), historique des rapports générés, données de paiement (gérées par Stripe — Nexalie ne conserve pas les données de carte bancaire).</P>
           <P><strong>Finalité :</strong> exécution des services souscrits, envoi des rapports, support client, amélioration de la plateforme.</P>
           <P><strong>Conservation :</strong> les données sont conservées pendant la durée de l'abonnement + 3 ans.</P>
-          <P><strong>Droits RGPD :</strong> conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement et de portabilité. Pour exercer ces droits : relia.ebiya@nexalie.co</P>
+          <P><strong>Droits RGPD :</strong> conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement et de portabilité. Pour exercer ces droits : relia@rebiyadigital.com</P>
           <P><strong>Sous-traitants :</strong> Supabase (hébergement données), Stripe (paiement), Resend (emails transactionnels), Anthropic (génération IA — les prompts ne sont pas utilisés pour entraîner les modèles).</P>
         </Section>
 

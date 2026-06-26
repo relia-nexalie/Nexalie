@@ -44,7 +44,7 @@ export async function POST(request) {
       }).eq('id', userId);
 
       // Déclencher email de bienvenue Pro
-      const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://nexalie.co';
+      const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://nexalie-ecqc.vercel.app';
       fetch(`${baseUrl}/api/email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

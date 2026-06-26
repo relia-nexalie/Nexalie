@@ -1114,11 +1114,31 @@ const RECOS = {
   },
 };
 
+function enrichCard(card, index) {
+  const t = card.time || '';
+  const isQuick = /\d+\s*min/i.test(t) || /^[1-4]h$/.test(t.trim());
+  const isDay   = /\bjour\b/i.test(t);
+  const difficulté = isQuick ? 'Facile' : isDay ? 'Moyen' : 'Avancé';
+  const horizon    = isQuick || t === '1 jour' ? 'Cette semaine'
+                   : /semaine/i.test(t)         ? 'Ce mois-ci'
+                   :                              'Dans 1-3 mois';
+  return {
+    ...card,
+    id:          card.id          || `reco-${index}`,
+    axe:         card.axe         || 'Transformation numérique',
+    titre:       card.titre       || card.action,
+    tempsEstimé: card.tempsEstimé || card.time,
+    difficulté:  card.difficulté  || difficulté,
+    horizon:     card.horizon     || horizon,
+  };
+}
+
 function getRecos(score, mode, sector) {
   const m = RECOS[mode] || RECOS.fr;
   const levelKey = score < 30 ? 'debutant' : score < 60 ? 'progression' : 'avance';
   const level = m[levelKey];
-  return (sector && level[sector]) ? level[sector] : level.default;
+  const cards = (sector && level[sector]) ? level[sector] : level.default;
+  return cards.map(enrichCard);
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -1173,8 +1193,16 @@ export default function AuditModule({ isPlatform = false }) {
   const [pendingReco, setPendingReco] = useState('');
   const [isSaving, setIsSaving] = useState(false);
   const [pdfLoading, setPdfLoading] = useState(false);
+  const [pdfError, setPdfError] = useState('');
   const [savedId, setSavedId] = useState(null);
   const [displayScore, setDisplayScore] = useState(0);
+  const [hasDraft, setHasDraft] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    try {
+      const saved = JSON.parse(localStorage.getItem(LS_KEY) || 'null');
+      return !!(saved?.answers && saved.answers.some(a => a !== null));
+    } catch { return false; }
+  });
   const animFrameRef = useRef(null);
 
   // Textes selon mode
@@ -1229,24 +1257,22 @@ export default function AuditModule({ isPlatform = false }) {
     };
   }, [step, score]);
 
-  // Sauvegarde automatique toutes les 30 secondes pendant les questions
   useEffect(() => {
     if (step !== 'questions') return;
     const interval = setInterval(() => {
       if (typeof window !== 'undefined') {
-        try { localStorage.setItem(LS_KEY, JSON.stringify({ answers, sector, step: 'questions' })); } catch {}
+        try { localStorage.setItem(LS_KEY, JSON.stringify({ answers, currentQ, sector, profil, survey, step: 'questions' })); } catch {}
       }
     }, 30000);
     return () => clearInterval(interval);
-  }, [step, answers, sector]);
+  }, [step, answers, currentQ, sector, profil, survey]);
 
   function handleAnswer(questionIndex, answerScore) {
     const updated = [...answers];
     updated[questionIndex] = answerScore;
     setAnswers(updated);
-    // Sauvegarde automatique en localStorage
     if (typeof window !== 'undefined') {
-      try { localStorage.setItem(LS_KEY, JSON.stringify({ answers: updated, sector, step: 'questions' })); } catch {}
+      try { localStorage.setItem(LS_KEY, JSON.stringify({ answers: updated, currentQ: questionIndex, sector, profil, survey, step: 'questions' })); } catch {}
     }
   }
 
@@ -1394,35 +1420,51 @@ Génère maintenant le rapport complet en respectant strictement la structure de
     setAiReport('');
     setSavedId(null);
     setDisplayScore(0);
+    setHasDraft(false);
     if (typeof window !== 'undefined') {
       try { localStorage.removeItem(LS_KEY); } catch {}
     }
   }
 
+  function handleResume() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(LS_KEY) || 'null');
+      if (saved?.answers) setAnswers(saved.answers);
+      if (saved?.sector != null) setSector(saved.sector);
+      if (saved?.profil) setProfil(saved.profil);
+      if (saved?.survey) setSurvey(saved.survey);
+      const savedQ = typeof saved?.currentQ === 'number' ? saved.currentQ : 0;
+      setCurrentQ(savedQ);
+    } catch {}
+    setHasDraft(false);
+    setStep('questions');
+  }
+
   async function handlePrint() {
-    if (isPlatform && savedId) {
-      try {
-        setPdfLoading(true);
-        const res = await fetch('/api/pdf', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ auditId: savedId }),
-        });
-        if (!res.ok) throw new Error();
-        const blob = await res.blob();
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `rapport-nexalie-${score}.pdf`;
-        a.click();
-        URL.revokeObjectURL(url);
-      } catch {
-        window.print();
-      } finally {
-        setPdfLoading(false);
-      }
-    } else {
-      window.print();
+    setPdfError('');
+    if (typeof navigator !== 'undefined' && !navigator.onLine) {
+      setPdfError('Reconnectez-vous pour télécharger votre rapport, vos réponses sont gardées.');
+      return;
+    }
+    try {
+      setPdfLoading(true);
+      const res = await fetch('/api/report/pdf', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ score, recoCards, profil, mode, sector }),
+      });
+      if (!res.ok) throw new Error('pdf_error');
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `rapport-nexalie-${score}.pdf`;
+      a.click();
+      URL.revokeObjectURL(url);
+    } catch {
+      setPdfError('Erreur lors de la génération. Vérifiez votre connexion et réessayez.');
+    } finally {
+      setPdfLoading(false);
     }
   }
 
@@ -1437,6 +1479,29 @@ Génère maintenant le rapport complet en respectant strictement la structure de
       <div className="relative flex min-h-screen items-center justify-center bg-cream px-6 py-20 md:py-24">
         <MotifBackground name="musoni" opacity={0.20} />
         <div className="relative z-10 w-full max-w-3xl text-center">
+
+          {/* Banner de reprise — affiché uniquement si un brouillon existe */}
+          {hasDraft && (
+            <div style={{ marginBottom: '32px', padding: '20px 24px', background: 'rgba(201,162,75,0.08)', border: '1px solid rgba(201,162,75,0.28)', borderRadius: '14px', textAlign: 'left' }}>
+              <p style={{ fontSize: '14px', fontWeight: 700, color: '#0f2e24', marginBottom: '4px' }}>On a gardé vos réponses</p>
+              <p style={{ fontSize: '13px', color: '#4B5563', marginBottom: '16px', lineHeight: 1.6 }}>Vous reprenez là où vous en étiez. Aucune réponse n&apos;a été perdue.</p>
+              <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                <button
+                  onClick={handleResume}
+                  style={{ padding: '10px 20px', background: '#0f2e24', borderRadius: '8px', color: '#f5f0e8', fontSize: '13px', fontWeight: 700, border: 'none', cursor: 'pointer' }}
+                >
+                  Continuer mon diagnostic →
+                </button>
+                <button
+                  onClick={handleRestart}
+                  style={{ padding: '10px 20px', background: 'transparent', border: '1px solid rgba(0,0,0,0.15)', borderRadius: '8px', color: '#4B5563', fontSize: '13px', cursor: 'pointer' }}
+                >
+                  Repartir de zéro
+                </button>
+              </div>
+            </div>
+          )}
+
           <div className="mb-8 inline-flex items-center gap-2">
             <div className="h-px w-8 bg-terra" />
             <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-terra">
@@ -1788,6 +1853,12 @@ Génère maintenant le rapport complet en respectant strictement la structure de
                 style={{ width: `${progress}%` }}
               />
             </div>
+            <div className="mt-1.5 flex justify-end">
+              <span className="flex items-center gap-1.5 font-mono text-[10px] text-slate-400">
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                Réponses enregistrées
+              </span>
+            </div>
           </div>
 
           {/* Question card */}
@@ -1953,10 +2024,6 @@ Génère maintenant le rapport complet en respectant strictement la structure de
     const lvl = level || getLevel(score);
     const levelLabel = mode === 'fr' ? lvl.fr : lvl.af;
 
-    // Formater les recommandations en liste
-    const recoLines = recommendations
-      ? recommendations.split('\n').filter(l => l.trim())
-      : [];
 
     return (
       <div className="min-h-screen bg-cream px-6 py-16 md:py-20">
@@ -2073,35 +2140,54 @@ Génère maintenant le rapport complet en respectant strictement la structure de
               {T.reco_title}
             </h2>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-              {recoCards.map((card, i) => {
-                const isFree = card.cost.toLowerCase().startsWith('gratuit') || card.cost === '0 % de frais' || card.cost === '0% de frais';
+            {/* Votre action de lundi — carte mise en valeur (fiche priorité 1) */}
+            {recoCards.length > 0 && (() => {
+              const top = recoCards[0];
+              const isFree = top.cost.toLowerCase().startsWith('gratuit') || top.cost === '0 % de frais';
+              return (
+                <div style={{ background: '#0f2e24', borderRadius: 14, padding: '20px', marginBottom: '16px', border: '1px solid rgba(201,162,75,0.25)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '8px', marginBottom: '10px' }}>
+                    <span style={{ fontSize: '10px', fontFamily: 'monospace', letterSpacing: '2px', color: '#c9a24b', textTransform: 'uppercase' }}>Votre action de lundi</span>
+                    <span style={{ fontSize: '10px', background: 'rgba(201,162,75,0.15)', color: '#c9a24b', padding: '2px 8px', borderRadius: '20px', fontWeight: 700 }}>{top.horizon}</span>
+                    <span style={{ fontSize: '10px', background: 'rgba(201,162,75,0.15)', color: '#c9a24b', padding: '2px 8px', borderRadius: '20px', fontWeight: 700 }}>{top.difficulté}</span>
+                  </div>
+                  <p style={{ fontSize: '15px', fontWeight: 700, color: '#f5f0e8', marginBottom: '12px', lineHeight: 1.45 }}>{top.titre}</p>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', alignItems: 'center' }}>
+                    <a href={top.url} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', background: 'rgba(201,162,75,0.12)', border: '1px solid rgba(201,162,75,0.3)', borderRadius: 6, padding: '4px 12px', fontSize: '0.78rem', fontWeight: 600, color: '#c9a24b', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+                      🔗 {top.tool}
+                    </a>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', background: isFree ? '#ECFDF5' : '#FEF3C7', color: isFree ? '#065F46' : '#92400E', borderRadius: 6, padding: '4px 12px', fontSize: '0.75rem', fontWeight: 700, whiteSpace: 'nowrap' }}>
+                      {isFree ? '✓ ' : '€ '}{top.cost}
+                    </span>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '3px', background: '#EFF6FF', color: '#1D4ED8', borderRadius: 6, padding: '4px 12px', fontSize: '0.75rem', fontWeight: 600, whiteSpace: 'nowrap' }}>
+                      ⏱ {top.tempsEstimé}
+                    </span>
+                  </div>
+                </div>
+              );
+            })()}
+
+            {/* Vos 3 priorités */}
+            <p style={{ fontSize: '10px', fontFamily: 'monospace', letterSpacing: '2px', color: '#94A3B8', textTransform: 'uppercase', marginBottom: '10px' }}>Vos 3 priorités</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: recoCards.length > 3 ? '24px' : '0' }}>
+              {recoCards.slice(0, 3).map((card, i) => {
+                const isFree = card.cost.toLowerCase().startsWith('gratuit') || card.cost === '0 % de frais';
                 return (
-                  <div key={i} style={{ background: '#fff', borderRadius: 12, border: '1px solid rgba(0,0,0,0.06)', padding: '1rem 1.25rem', display: 'flex', gap: '0.75rem' }}>
-                    {/* Numéro */}
-                    <div style={{ flexShrink: 0, width: 28, height: 28, borderRadius: 8, background: 'var(--nx-accent)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 700, marginTop: 2 }}>
+                  <div key={i} style={{ background: '#fff', borderRadius: 12, border: '1px solid rgba(0,0,0,0.06)', padding: '14px 16px', display: 'flex', gap: '12px' }}>
+                    <div style={{ flexShrink: 0, width: 26, height: 26, borderRadius: 7, background: i === 0 ? '#0f2e24' : '#c9a24b', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.78rem', fontWeight: 700, marginTop: 2 }}>
                       {i + 1}
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      {/* Action */}
-                      <p style={{ margin: '0 0 8px', fontWeight: 700, color: 'var(--nx-navy)', fontSize: '0.95rem', lineHeight: 1.4 }}>
-                        {card.action}
-                      </p>
-                      {/* Outil + badges */}
-                      <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '6px' }}>
-                        <a
-                          href={card.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', background: 'var(--nx-section-bg)', border: '1px solid rgba(0,0,0,0.08)', borderRadius: 6, padding: '3px 10px', fontSize: '0.78rem', fontWeight: 600, color: 'var(--nx-accent)', textDecoration: 'none', whiteSpace: 'nowrap' }}
-                        >
+                      <p style={{ margin: '0 0 8px', fontWeight: 700, color: '#0f2e24', fontSize: '0.92rem', lineHeight: 1.4 }}>{card.titre}</p>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '5px' }}>
+                        <a href={card.url} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', background: 'var(--nx-section-bg)', border: '1px solid rgba(0,0,0,0.08)', borderRadius: 6, padding: '3px 10px', fontSize: '0.75rem', fontWeight: 600, color: 'var(--nx-accent)', textDecoration: 'none', whiteSpace: 'nowrap' }}>
                           🔗 {card.tool}
                         </a>
-                        <span style={{ display: 'inline-flex', alignItems: 'center', background: isFree ? '#ECFDF5' : '#FEF3C7', color: isFree ? '#065F46' : '#92400E', borderRadius: 6, padding: '3px 10px', fontSize: '0.75rem', fontWeight: 700, whiteSpace: 'nowrap' }}>
-                          {isFree ? '✓' : '€'} {card.cost}
+                        <span style={{ display: 'inline-flex', alignItems: 'center', background: isFree ? '#ECFDF5' : '#FEF3C7', color: isFree ? '#065F46' : '#92400E', borderRadius: 6, padding: '3px 10px', fontSize: '0.72rem', fontWeight: 700, whiteSpace: 'nowrap' }}>
+                          {isFree ? '✓ ' : '€ '}{card.cost}
                         </span>
-                        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '3px', background: '#EFF6FF', color: '#1D4ED8', borderRadius: 6, padding: '3px 10px', fontSize: '0.75rem', fontWeight: 600, whiteSpace: 'nowrap' }}>
-                          ⏱ {card.time}
+                        <span style={{ display: 'inline-flex', alignItems: 'center', background: '#F0FDF4', color: '#15803D', borderRadius: 6, padding: '3px 10px', fontSize: '0.72rem', fontWeight: 600, whiteSpace: 'nowrap' }}>
+                          {card.difficulté}
                         </span>
                       </div>
                     </div>
@@ -2109,6 +2195,36 @@ Génère maintenant le rapport complet en respectant strictement la structure de
                 );
               })}
             </div>
+
+            {/* Pour aller plus loin (fiches 4+) */}
+            {recoCards.length > 3 && (
+              <>
+                <p style={{ fontSize: '10px', fontFamily: 'monospace', letterSpacing: '2px', color: '#94A3B8', textTransform: 'uppercase', margin: '0 0 10px' }}>Pour aller plus loin</p>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                  {recoCards.slice(3).map((card, i) => {
+                    const isFree = card.cost.toLowerCase().startsWith('gratuit') || card.cost === '0 % de frais';
+                    return (
+                      <div key={i} style={{ background: '#fff', borderRadius: 10, border: '1px solid rgba(0,0,0,0.05)', padding: '12px 14px', display: 'flex', gap: '10px', opacity: 0.72 }}>
+                        <div style={{ flexShrink: 0, width: 22, height: 22, borderRadius: 6, background: '#E2E8F0', color: '#64748B', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.72rem', fontWeight: 700, marginTop: 2 }}>
+                          {i + 4}
+                        </div>
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                          <p style={{ margin: '0 0 6px', fontWeight: 600, color: '#374151', fontSize: '0.88rem', lineHeight: 1.4 }}>{card.titre}</p>
+                          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '5px' }}>
+                            <a href={card.url} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', background: '#F8FAFC', border: '1px solid rgba(0,0,0,0.06)', borderRadius: 5, padding: '2px 8px', fontSize: '0.72rem', fontWeight: 600, color: '#64748B', textDecoration: 'none', whiteSpace: 'nowrap' }}>
+                              🔗 {card.tool}
+                            </a>
+                            <span style={{ display: 'inline-flex', alignItems: 'center', background: isFree ? '#ECFDF5' : '#FEF3C7', color: isFree ? '#065F46' : '#92400E', borderRadius: 5, padding: '2px 8px', fontSize: '0.7rem', fontWeight: 700, whiteSpace: 'nowrap' }}>
+                              {isFree ? '✓ ' : '€ '}{card.cost}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </>
+            )}
           </div>
 
           {/* Benchmark sectoriel */}
@@ -2155,13 +2271,17 @@ Génère maintenant le rapport complet en respectant strictement la structure de
             <button
               onClick={handlePrint}
               disabled={pdfLoading}
-              className={`inline-flex items-center justify-center gap-2 rounded-md px-8 py-4 font-sans text-sm font-medium text-white transition-colors ${
-                pdfLoading ? 'cursor-default bg-slate-700 opacity-70' : 'bg-[#0F172A] hover:bg-slate-800'
-              }`}
+              style={{ background: 'var(--nx-accent)', border: 'none', cursor: pdfLoading ? 'default' : 'pointer', opacity: pdfLoading ? 0.75 : 1 }}
+              className="inline-flex items-center justify-center gap-2 rounded-md px-8 py-4 font-sans text-sm font-medium text-white transition-colors"
             >
               <span>{pdfLoading ? '⏳' : '↓'}</span>
-              {pdfLoading ? 'Génération...' : T.download}
+              {pdfLoading ? 'Génération en cours...' : T.download}
             </button>
+            {pdfError && (
+              <p style={{ fontSize: '13px', color: '#b45309', background: 'rgba(251,191,36,0.08)', border: '1px solid rgba(251,191,36,0.25)', borderRadius: '8px', padding: '10px 14px', margin: 0 }}>
+                {pdfError}
+              </p>
+            )}
 
             {/* Sauvegarde / CTA inscription */}
             {isPlatform ? (

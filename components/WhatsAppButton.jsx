@@ -22,7 +22,7 @@ export default function WhatsAppButton() {
         </div>
       )}
       <a
-        href="https://wa.me/33786620409?text=Bonjour%2C%20j%27ai%20une%20question%20sur%20Nexalie."
+        href="https://wa.me/33632407737?text=Bonjour%2C%20j%27ai%20une%20question%20sur%20Nexalie."
         target="_blank"
         rel="noreferrer"
         onMouseEnter={() => setTooltip(true)}

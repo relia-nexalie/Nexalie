@@ -1,9 +1,15 @@
 import Link from 'next/link';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata = {
   title: 'Comment ça marche · Nexalie',
   description: 'Trois étapes simples : 20 questions depuis votre téléphone, un score clair, un plan d\'action daté. Une action par semaine. Vous savez exactement quoi faire lundi matin.',
-  alternates: { canonical: 'https://nexalie.co/comment-ca-marche' },
+  alternates: { canonical: `${SITE_URL}/comment-ca-marche` },
+  openGraph: {
+    title: 'Comment ça marche · Nexalie',
+    description: 'Trois étapes simples : 20 questions, un score, un plan daté. Une action par semaine.',
+    url: `${SITE_URL}/comment-ca-marche`,
+  },
 };
 
 const BG      = 'var(--nx-bg)';

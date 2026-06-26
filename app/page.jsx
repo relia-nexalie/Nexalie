@@ -1,9 +1,13 @@
 import NexaliSite from '@/components/NexaliSite';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata = {
   title: 'Nexalie — Transformation Digitale IA · France & Afrique',
   description: 'Faites votre audit de maturité digitale gratuit en 3 minutes. Obtenez votre Roadmap IA personnalisée. Pour PME françaises et entreprises africaines.',
-  alternates: { canonical: 'https://nexalie-ecqc.vercel.app' },
+  alternates: { canonical: SITE_URL },
+  openGraph: {
+    url: SITE_URL,
+  },
 };
 
 const jsonLd = {
@@ -11,7 +15,7 @@ const jsonLd = {
   '@type': 'SoftwareApplication',
   name: 'Nexalie',
   applicationCategory: 'BusinessApplication',
-  url: 'https://nexalie-ecqc.vercel.app',
+  url: SITE_URL,
   description: 'Plateforme SaaS d\'audit de maturité digitale et de transformation numérique pour PME françaises et entreprises africaines.',
   offers: [
     { '@type': 'Offer', name: 'Gratuit', price: '0', priceCurrency: 'EUR' },
@@ -21,7 +25,7 @@ const jsonLd = {
     '@type': 'Person',
     name: 'Rélia Ebiya',
     jobTitle: 'Fondatrice',
-    url: 'https://nexalie-ecqc.vercel.app/about',
+    url: `${SITE_URL}/about`,
   },
   operatingSystem: 'Web',
   inLanguage: 'fr',

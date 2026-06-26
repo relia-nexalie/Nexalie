@@ -5,6 +5,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import ClientProviders from '@/components/ClientProviders';
 import GlobalHeader from '@/components/GlobalHeader';
 import GlobalFooter from '@/components/GlobalFooter';
+import { SITE_URL } from '@/lib/site';
 import './globals.css';
 
 const display = Bricolage_Grotesque({
@@ -29,30 +30,28 @@ const mono = DM_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://nexalie.co'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Nexalie · La boussole numérique des entrepreneurs africains',
     template: '%s · Nexalie',
   },
   description: 'En 15 minutes depuis votre téléphone, Nexalie évalue votre entreprise et vous donne un plan clair. Diagnostic gratuit, accompagnement humain inclus.',
   keywords: ['maturité numérique PME Congo', 'comment digitaliser mon entreprise Congo', 'diagnostic numérique entreprise Afrique', 'digitalisation PME Brazzaville', 'par où commencer pour digitaliser ma PME', 'transformation digitale Afrique', 'PME africaines'],
-  authors: [{ name: 'Rélia Ebiya', url: 'https://nexalie.co' }],
+  authors: [{ name: 'Rélia Ebiya', url: SITE_URL }],
   creator: 'Nexalie',
   publisher: 'Nexalie',
   openGraph: {
     title: 'Nexalie · La boussole numérique des entrepreneurs africains',
     description: 'Vous savez où vous voulez aller. On vous montre par où commencer. Diagnostic gratuit, 15 minutes, depuis votre téléphone.',
-    url: 'https://nexalie.co',
+    url: SITE_URL,
     siteName: 'Nexalie',
     locale: 'fr_FR',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Nexalie · Boussole numérique des PME africaines' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Nexalie · Boussole numérique des PME africaines',
     description: 'Diagnostic gratuit · Plan d\'action daté · Accompagnement humain',
-    images: ['/og-image.png'],
   },
   robots: {
     index: true,

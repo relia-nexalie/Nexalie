@@ -1,6 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 import Link from 'next/link';
 import Image from 'next/image';
+import { SITE_URL } from '@/lib/site';
 
 export async function generateMetadata({ params }) {
   const supabase = createClient(
@@ -69,8 +70,8 @@ export default async function CertPage({ params }) {
   const secteur = cert?.profiles?.secteur || null;
   const country = cert?.profiles?.country || null;
 
-  const verifyUrl = `https://nexalie-ecqc.vercel.app/verify/${code}`;
-  const certUrl = `https://nexalie-ecqc.vercel.app/cert/${code}`;
+  const verifyUrl = `${SITE_URL}/verify/${code}`;
+  const certUrl = `${SITE_URL}/cert/${code}`;
   const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(verifyUrl)}&bgcolor=ffffff&color=0A1628&margin=8`;
 
   const linkedinMsg = `Je suis fier(e) d'annoncer que ${orgName} vient d'obtenir la certification #NexalieDigitalReady avec un score de ${cert?.score ?? '—'}/100 ! 🚀 Notre transformation digitale avance. Vérifiez notre certificat : ${certUrl}`;
@@ -193,7 +194,7 @@ export default async function CertPage({ params }) {
         <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '24px', alignItems: 'start', maxWidth: '600px', margin: '0 auto 32px' }}>
           {/* QR */}
           <div style={{ background: '#fff', border: '1.5px solid rgba(0,0,0,0.08)', borderRadius: '14px', padding: '16px', textAlign: 'center', flexShrink: 0 }}>
-            <img src={qrUrl} alt="QR Code vérification" width={120} height={120} style={{ display: 'block', marginBottom: '8px' }} />
+            <img src={qrUrl} alt="QR Code vérification" width={120} height={120} loading="lazy" decoding="async" style={{ display: 'block', marginBottom: '8px' }} />
             <p style={{ fontSize: '10px', color: '#9CA3AF', fontFamily: 'monospace' }}>Scanner pour vérifier</p>
           </div>
 
